@@ -1,0 +1,16 @@
+{
+    "name": "Cards",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1c1f815a6731e0c96a5f4033334e7dcb"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
