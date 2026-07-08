@@ -1,3 +1,5 @@
 ﻿<Solution>
+  <Project Path="Core.csproj" />
   <Project Path="Cards.csproj" />
+  <Project Path="Effects.csproj" />
 </Solution>
