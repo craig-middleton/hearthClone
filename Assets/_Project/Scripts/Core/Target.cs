@@ -1,9 +1,14 @@
 namespace HearthstoneClone.Core
 {
-    // Placeholder for now - will expand once Board/Player exist
+    // Placeholder - will hold a real reference to Minion or Player once those exist
     public class Target
     {
         public bool IsPlayer;
-        // Later: reference to Minion, Player, etc.
+        public int CurrentHealth;
+
+        public void TakeDamage(int amount)
+        {
+            CurrentHealth -= amount;
+        }
     }
 }

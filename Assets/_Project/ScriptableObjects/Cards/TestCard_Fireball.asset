@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf6095b2f6aefa88b5b95b06c03ab4f, type: 3}
   m_Name: TestCard_Fireball
   m_EditorClassIdentifier: Cards::HearthstoneClone.Cards.CardData
-  cardName: 
+  cardName: Fireball
   description: 
   artwork: {fileID: 0}
-  manaCost: 0
-  cardType: 0
+  manaCost: 4
+  cardType: 1
   attack: 0
   health: 0
+  onPlayEffect: {fileID: 11400000, guid: 2ab3d9ef8a1286f51b35158d0287b60d, type: 2}

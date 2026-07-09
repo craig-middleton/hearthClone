@@ -1,4 +1,5 @@
 using UnityEngine;
+using HearthstoneClone.Effects;
 
 namespace HearthstoneClone.Cards
 {
@@ -23,5 +24,8 @@ namespace HearthstoneClone.Cards
         [Header("Minion Stats (ignored for Spells)")]
         public int attack;
         public int health;
+
+        [Header("Behavior")]
+        public CardEffect onPlayEffect;
     }
 }
