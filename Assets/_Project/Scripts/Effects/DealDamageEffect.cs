@@ -11,7 +11,7 @@ namespace HearthstoneClone.Effects
         public override void Execute(GameContext context, Target target)
         {
             target.TakeDamage(damageAmount);
-            Debug.Log($"Dealt {damageAmount} damage to target. Remaining health: {target.CurrentHealth}");
+            Debug.Log($"Dealt {damageAmount} damage to target. Remaining health: {target.GetCurrentHealth()}");
         }
     }
 }

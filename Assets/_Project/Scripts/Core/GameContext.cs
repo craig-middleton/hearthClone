@@ -1,8 +1,12 @@
 namespace HearthstoneClone.Core
 {
-    // Placeholder - will hold references to Board, Players, TurnManager etc.
     public class GameContext
     {
-        // Populated once Board/Player/TurnManager exist
+        public Board Board;
+
+        public GameContext(Board board)
+        {
+            Board = board;
+        }
     }
 }

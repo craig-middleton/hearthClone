@@ -16,10 +16,14 @@ namespace HearthstoneClone.Cards
                 return;
             }
 
-            var context = new GameContext();
-            var target = new Target { CurrentHealth = 10 };
+            var playerOne = new Player("Player One");
+            var playerTwo = new Player("Player Two");
+            var board = new Board(playerOne, playerTwo);
+            var context = new GameContext(board);
 
-            Debug.Log($"Playing card: {cardToTest.cardName}. Target starting health: {target.CurrentHealth}");
+            var target = new Target(playerTwo); // test: damage the opponent player
+
+            Debug.Log($"Playing card: {cardToTest.cardName}. Target starting health: {target.GetCurrentHealth()}");
             cardToTest.onPlayEffect.Execute(context, target);
         }
     }
