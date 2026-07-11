@@ -3,7 +3,7 @@
 ## Working Preferences
 - Craig wants a 2-paragraph explanation after each new/updated code block, describing what it does and why.
 
-_Last updated: 2026-07-10 (session 3)_
+_Last updated: 2026-07-10 (session 3, ended mid-task on Card UI)_
 
 ## How to use this file
 Paste the contents of this file at the start of any new Claude chat to get instant context on the project. Update it at the end of each working session (ask Claude to update it, or do it yourself) so it never goes stale.
@@ -59,7 +59,21 @@ Confirmed end-to-end, four rounds now, most recently:
 `TurnManager.StartGame()` correctly sets Player One's turn with 1/1 mana. `PlayerHand.DrawCard()` still works. `PlayerHand.PlayCard()` correctly **rejected** playing `TestCard_Fireball` (4 mana cost) against 1 available mana, logging the expected "not enough mana" message — confirming the mana-gate guard clause works as intended. `TurnManager.EndTurn()` correctly advanced to Turn 2, Player Two, 1/1 mana. Full Console output matched predictions exactly.
 
 ## Current Blocker / Last Thing Worked On
-None. Just finished: `TurnManager` (turn order + mana refill) and `PlayerHand.PlayCard()` (mana-gated card playing, minion summoning, effect execution) both built and verified via `EffectTester`. Optional follow-up not yet done: temporarily lowering `TestCard_Fireball`'s mana cost to 1 to confirm the successful-play path (summon/effect execution) logs correctly, then resetting it back to 4.
+**Mid-task, not yet complete.** Building the first Card UI. Plan and code given for:
+- `CardView.cs` (new, `Scripts/UI/`) — displays one card's name/cost/stats on UI Text elements. Written but not yet confirmed created/compiled.
+- `HandDisplay.cs` (new, `Scripts/UI/`) — instantiates a `CardView` prefab per card in a hand list, parented under a UI panel with a Horizontal Layout Group. Written but not yet confirmed created/compiled.
+- `EffectTester.cs` — needs to **move from `Scripts/Cards/` to `Scripts/UI/`** and change namespace to `HearthstoneClone.UI`, because it now needs to reference both `Cards`-layer types (`CardData`, `PlayerHand`) and the new `UI`-layer `HandDisplay` — only `UI` can see both without creating a circular reference. **This move had not been done yet when the session ended.**
+- Editor setup not yet done: Canvas (`GameCanvas`), a `CardView` UI prefab (Panel + 3 Text children: NameText/CostText/StatsText), a `HandPanel` with Horizontal Layout Group, and a `HandDisplayController` GameObject with `HandDisplay` attached.
+
+**Not yet confirmed working** — this is unverified, untested code from the end of a session, unlike everything else in this doc which has been confirmed via Play mode. Treat this whole UI section with more caution than the rest of the file until it's actually tested.
+
+## Immediate Next Steps (pick up here)
+1. Move `EffectTester.cs` to `Scripts/UI/`, update namespace to `HearthstoneClone.UI`.
+2. Create `CardView.cs` and `HandDisplay.cs` in `Scripts/UI/` (code already written, see git history/last chat for full listings if needed).
+3. Build the Canvas/Panel/prefab hierarchy in the Unity Editor (see steps above).
+4. Wire `HandDisplayController` into `EffectTester`'s new `Hand Display` field.
+5. Save scene (`Ctrl+S`), Play, confirm a card panel showing "Fireball / 4 / (blank stats)" actually renders on screen.
+6. Once confirmed: commit properly with a clean message, then continue to remaining Next Steps below.
 
 ## Lessons Learned / Gotchas (useful to remember)
 - **Script filename must exactly match the class name** for Unity to allow attaching it as a Component ("script needs to derive from MonoBehaviour" error can actually mean a filename/class mismatch, not a real inheritance problem).
@@ -75,13 +89,14 @@ None. Just finished: `TurnManager` (turn order + mana refill) and `PlayerHand.Pl
 - **Keep `Core` types generic, not `CardData`-aware** — e.g. `Minion`/`Player` in `Core` can't hold `List<CardData>` directly since `Core` can't reference `Cards`. Any type that needs both "real game state" and "card asset data" belongs in the `Cards` layer instead, as a wrapper around the `Core` type.
 - **Scene changes (new GameObjects, component assignments) must be explicitly saved with `Ctrl+S`** — they're not automatically written to the `.unity` scene file just by existing in the Hierarchy. If Unity closes uncleanly (or a different scene gets opened) before saving, GameObject setup done that session can be lost even though script/asset changes (which live in their own files) are safe. Get in the habit of `Ctrl+S` after any Hierarchy change, not just after script edits.
 
-## Next Steps (in order)
-**Plan reordered**: basic Card UI moved ahead of AI logic, to get visuals on screen sooner (Craig's preference).
-1. Build basic Card UI — Unity UI Canvas + card prefab (image, name/cost/attack/health text), rendering `Player One`'s hand on screen. Placeholder colors/art is fine for now, no real illustrations needed yet. This is the first real visuals milestone.
-2. Wire up basic drag-and-drop or click-to-play from hand to board (visual representation of `PlayerHand.PlayCard()`).
-3. Build basic AI opponent logic.
-4. Delete `EffectTester` once real play/board interaction replaces it.
-5. Add real deck shuffling to `PlayerHand.DrawCard()` (currently just takes index 0).
+## Next Steps (after the UI is confirmed working — see "Immediate Next Steps" above for the current task)
+1. Wire up basic drag-and-drop or click-to-play from hand to board (visual representation of `PlayerHand.PlayCard()`).
+2. Build basic AI opponent logic.
+3. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
+4. Add real deck shuffling to `PlayerHand.DrawCard()` (currently just takes index 0).
+
+## Working Preferences
+- Craig wants a 2-paragraph explanation after each new/updated code block, describing what it does and why.
 
 ## Git Habits Being Followed
 - Commit at each logical checkpoint (not just end-of-day)
