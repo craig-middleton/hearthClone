@@ -1,6 +1,9 @@
 # HearthstoneClone - Project Status
 
-_Last updated: 2026-07-10 (session 2)_
+## Working Preferences
+- Craig wants a 2-paragraph explanation after each new/updated code block, describing what it does and why.
+
+_Last updated: 2026-07-10 (session 3)_
 
 ## How to use this file
 Paste the contents of this file at the start of any new Claude chat to get instant context on the project. Update it at the end of each working session (ask Claude to update it, or do it yourself) so it never goes stale.
@@ -44,20 +47,19 @@ A Hearthstone-style card game built in Unity, single-player vs AI, using C# with
 | `GameContext.cs` | `Scripts/Core/` | Now holds a real `Board` reference (was an empty placeholder). |
 | `Target.cs` | `Scripts/Core/` | Now points to either a real `Player` or `Minion` (was a fake standalone health tracker). Provides `TakeDamage()` and `GetCurrentHealth()`. |
 | `EffectTester.cs` | `Scripts/Cards/` | Temporary MonoBehaviour for manual testing; now constructs a real `Player`/`Board`/`GameContext`/`Target`, plus a `PlayerHand` to test drawing. **Not permanent** — delete once real gameplay loop exists. |
-| `PlayerHand.cs` | `Scripts/Cards/` | Wraps a `Core.Player` with a `Deck`/`Hand` of `CardData`. Lives in `Cards` (not `Core`) since it needs to reference `CardData`. `DrawCard()` moves a card from deck to hand (currently takes index 0, no shuffling yet). |
+| `PlayerHand.cs` | `Scripts/Cards/` | Wraps a `Core.Player` with a `Deck`/`Hand` of `CardData`. `DrawCard()` moves a card from deck to hand (index 0, no shuffling yet). `PlayCard()` validates the card is in hand and mana is sufficient, deducts mana, removes from hand, summons a `Minion` if applicable, and fires the card's `onPlayEffect` if a target is given. Returns bool success/failure rather than throwing. |
+| `TurnManager.cs` | `Scripts/Core/` | Owns turn order and mana progression. `StartGame()` sets turn 1, Player One first. `EndTurn()` swaps to opponent via `Board.GetOpponent()`, increments turn number, refills mana. Mana ramps +1 per turn for that player, capped at 10, refilling to max each time. Lives in `Core` since it only needs `Player`/`Board` — no card dependency. |
 
 ## Test Assets Created
 - `TestCard_Fireball.asset` — a Spell card, 4 mana, linked to `Effect_Deal3Damage`
 - `Effect_Deal3Damage.asset` — a `DealDamageEffect` instance, damage = 3
 
 ## Verified Working
-Confirmed end-to-end, three rounds now:
-1. Placeholder `Target`/`GameContext` version.
-2. Real `Player`/`Board`/`Minion` version.
-3. `PlayerHand` draw logic — `EffectTester` builds a starter deck containing `TestCard_Fireball`, draws it into hand (confirmed via log showing hand/deck counts), then still successfully plays the card's effect against the opponent `Player`, reducing their health.
+Confirmed end-to-end, four rounds now, most recently:
+`TurnManager.StartGame()` correctly sets Player One's turn with 1/1 mana. `PlayerHand.DrawCard()` still works. `PlayerHand.PlayCard()` correctly **rejected** playing `TestCard_Fireball` (4 mana cost) against 1 available mana, logging the expected "not enough mana" message — confirming the mana-gate guard clause works as intended. `TurnManager.EndTurn()` correctly advanced to Turn 2, Player Two, 1/1 mana. Full Console output matched predictions exactly.
 
 ## Current Blocker / Last Thing Worked On
-None currently. Just resolved: after a Unity Editor restart, the scene's `EffectTester` GameObject appeared to be missing (Hierarchy showed only default `SampleScene` contents — Main Camera + Global Light 2D). Root cause: the GameObject/component setup was done in a previous session but never saved to the scene file with `Ctrl+S` before closing — it only existed in memory for that session. Fixed by recreating `EffectTester` in the Hierarchy, re-assigning `TestCard_Fireball`, and explicitly saving with `Ctrl+S` this time. Confirmed scene is `Assets/Scenes/SampleScene.unity` (never got moved to `_Project/Scenes/` — left as-is, not required).
+None. Just finished: `TurnManager` (turn order + mana refill) and `PlayerHand.PlayCard()` (mana-gated card playing, minion summoning, effect execution) both built and verified via `EffectTester`. Optional follow-up not yet done: temporarily lowering `TestCard_Fireball`'s mana cost to 1 to confirm the successful-play path (summon/effect execution) logs correctly, then resetting it back to 4.
 
 ## Lessons Learned / Gotchas (useful to remember)
 - **Script filename must exactly match the class name** for Unity to allow attaching it as a Component ("script needs to derive from MonoBehaviour" error can actually mean a filename/class mismatch, not a real inheritance problem).
@@ -74,11 +76,12 @@ None currently. Just resolved: after a Unity Editor restart, the scene's `Effect
 - **Scene changes (new GameObjects, component assignments) must be explicitly saved with `Ctrl+S`** — they're not automatically written to the `.unity` scene file just by existing in the Hierarchy. If Unity closes uncleanly (or a different scene gets opened) before saving, GameObject setup done that session can be lost even though script/asset changes (which live in their own files) are safe. Get in the habit of `Ctrl+S` after any Hierarchy change, not just after script edits.
 
 ## Next Steps (in order)
-1. Build `TurnManager` (turn order, mana refill each turn, win/loss conditions). This will also be a natural place to add a proper `PlayCard()` method to `PlayerHand` that checks/spends mana.
-2. Build basic AI opponent logic.
-3. Build Card UI (hand display, drag-and-drop to board) — first real visuals milestone.
+**Plan reordered**: basic Card UI moved ahead of AI logic, to get visuals on screen sooner (Craig's preference).
+1. Build basic Card UI — Unity UI Canvas + card prefab (image, name/cost/attack/health text), rendering `Player One`'s hand on screen. Placeholder colors/art is fine for now, no real illustrations needed yet. This is the first real visuals milestone.
+2. Wire up basic drag-and-drop or click-to-play from hand to board (visual representation of `PlayerHand.PlayCard()`).
+3. Build basic AI opponent logic.
 4. Delete `EffectTester` once real play/board interaction replaces it.
-5. Add real deck shuffling to `PlayerHand.DrawCard()` (currently just takes index 0 — fine for single-test-card scenarios, not for a real deck).
+5. Add real deck shuffling to `PlayerHand.DrawCard()` (currently just takes index 0).
 
 ## Git Habits Being Followed
 - Commit at each logical checkpoint (not just end-of-day)
