@@ -21,16 +21,20 @@ namespace HearthstoneClone.Cards
             var playerTwo = new Player("Player Two");
             var board = new Board(playerOne, playerTwo);
             var context = new GameContext(board);
+            var turnManager = new TurnManager(board);
 
-            // Test hand/deck
+            turnManager.StartGame();
+            Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
+
             var starterDeck = new List<CardData> { cardToTest };
             var playerOneHand = new PlayerHand(playerOne, starterDeck);
             playerOneHand.DrawCard();
 
-            // Test effect execution (existing test)
             var target = new Target(playerTwo);
-            Debug.Log($"Playing card: {cardToTest.cardName}. Target starting health: {target.GetCurrentHealth()}");
-            cardToTest.onPlayEffect.Execute(context, target);
+            playerOneHand.PlayCard(cardToTest, context, target);
+
+            turnManager.EndTurn();
+            Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
         }
     }
 }
