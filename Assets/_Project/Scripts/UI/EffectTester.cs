@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using HearthstoneClone.Cards;
 using HearthstoneClone.Core;
 
-namespace HearthstoneClone.Cards
+namespace HearthstoneClone.UI
 {
     public class EffectTester : MonoBehaviour
     {
         public CardData cardToTest;
+        public HandDisplay handDisplay;
 
         void Start()
         {
@@ -29,6 +30,11 @@ namespace HearthstoneClone.Cards
             var starterDeck = new List<CardData> { cardToTest };
             var playerOneHand = new PlayerHand(playerOne, starterDeck);
             playerOneHand.DrawCard();
+
+            if (handDisplay != null)
+            {
+                handDisplay.RenderHand(playerOneHand.Hand);
+            }
 
             var target = new Target(playerTwo);
             playerOneHand.PlayCard(cardToTest, context, target);
