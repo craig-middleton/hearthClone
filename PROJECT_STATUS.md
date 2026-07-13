@@ -3,7 +3,7 @@
 ## Working Preferences
 - Craig wants a 2-paragraph explanation after each new/updated code block, describing what it does and why.
 
-_Last updated: 2026-07-12 (session 4, ended mid-task on Card UI — Scene view/Rect Transform work was frustrating this session)_
+_Last updated: 2026-07-13 (session 5 — first visual milestone achieved)_
 
 ## How to use this file
 Paste the contents of this file at the start of any new Claude chat to get instant context on the project. Update it at the end of each working session (ask Claude to update it, or do it yourself) so it never goes stale.
@@ -49,7 +49,8 @@ A Hearthstone-style card game built in Unity, single-player vs AI, using C# with
 | `GameContext.cs` | `Scripts/Core/` | Now holds a real `Board` reference (was an empty placeholder). |
 | `Target.cs` | `Scripts/Core/` | Now points to either a real `Player` or `Minion` (was a fake standalone health tracker). Provides `TakeDamage()` and `GetCurrentHealth()`. |
 | `EffectTester.cs` | `Scripts/UI/` | Temporary MonoBehaviour for manual testing; constructs `Player`/`Board`/`GameContext`/`Target`/`PlayerHand`/`TurnManager`, and (once wiring is complete) feeds the hand to `HandDisplay` for rendering. Moved here from `Scripts/Cards/` this session since it needs visibility into both `Cards` and `UI` layers. **Not permanent** — delete once real gameplay loop exists. |
-| `CardView.cs` | `Scripts/UI/` | Thin display component for one card — takes a `CardData` via `SetCard()` and writes name/cost/stats onto TMP Text fields. Uses `TMP_Text` (TextMeshPro), not legacy `Text` (project uses Unity 6.5, which favors TMP). Attached to the `CardView` prefab. |
+| `CardView.cs` | `Scripts/UI/` | Thin display component for one card — takes a `CardData` via `SetCard()` and writes name/cost/stats onto TMP Text fields. Uses `TMP_Text` (TextMeshPro), not legacy `Text` (project uses Unity 6.5, which favors TMP). Attached to the `CardView` prefab (`Prefabs/Cards/CardView.prefab`). |
+| `HandDisplay.cs` | `Scripts/UI/` | Manages a collection of card visuals — `RenderHand(List<CardData>)` clears any previously spawned cards under `handPanel`, then instantiates one `CardView` prefab per card and populates it. Attached to `HandDisplayController` GameObject in the scene. |
 | `PlayerHand.cs` | `Scripts/Cards/` | Wraps a `Core.Player` with a `Deck`/`Hand` of `CardData`. `DrawCard()` moves a card from deck to hand (index 0, no shuffling yet). `PlayCard()` validates the card is in hand and mana is sufficient, deducts mana, removes from hand, summons a `Minion` if applicable, and fires the card's `onPlayEffect` if a target is given. Returns bool success/failure rather than throwing. |
 | `TurnManager.cs` | `Scripts/Core/` | Owns turn order and mana progression. `StartGame()` sets turn 1, Player One first. `EndTurn()` swaps to opponent via `Board.GetOpponent()`, increments turn number, refills mana. Mana ramps +1 per turn for that player, capped at 10, refilling to max each time. Lives in `Core` since it only needs `Player`/`Board` — no card dependency. |
 
@@ -58,28 +59,12 @@ A Hearthstone-style card game built in Unity, single-player vs AI, using C# with
 - `Effect_Deal3Damage.asset` — a `DealDamageEffect` instance, damage = 3
 
 ## Verified Working
-Confirmed end-to-end, four rounds now, most recently:
-`TurnManager.StartGame()` correctly sets Player One's turn with 1/1 mana. `PlayerHand.DrawCard()` still works. `PlayerHand.PlayCard()` correctly **rejected** playing `TestCard_Fireball` (4 mana cost) against 1 available mana, logging the expected "not enough mana" message — confirming the mana-gate guard clause works as intended. `TurnManager.EndTurn()` correctly advanced to Turn 2, Player Two, 1/1 mana. Full Console output matched predictions exactly.
+Confirmed end-to-end, five rounds now, most recently: **first visual milestone** — `TestCard_Fireball` renders as an actual card panel on screen (name "Fireball", cost "4") via `CardView`/`HandDisplay`/`HandPanel`, alongside the existing Console-verified logic (draw, mana-gate rejection at 1/4 mana, turn advance to Player Two). Screenshot confirms visual + log output both correct simultaneously.
 
 ## Current Blocker / Last Thing Worked On
-**Mid-task, not yet complete.** Card UI build-out, in progress across two sessions now. Confirmed done so far:
-- `EffectTester.cs` moved to `Scripts/UI/`, namespace updated — compiles clean.
-- `CardView.cs` created in `Scripts/UI/`, using TextMeshPro (`TMP_Text`). Required adding a reference to the `Unity.TextMeshPro` assembly on `UI.asmdef` (Assembly Definition References → search/add `Unity.TextMeshPro`) — this was NOT a missing `using` statement, the asmdef itself needed the package reference. Confirmed working, no compile errors.
-- In the Editor: `GameCanvas` created; `CardView` panel created and sized (160x220, centered anchor); three TMP Text children created (`NameText`, `CostText`, `StatsText`), positioned without overlap (NameText: Pos 0/80, Width 140, Height 30; CostText: Pos -55/90, Width 40, Height 30; StatsText: Pos 0/-80, Width 140, Height 30). Auto Size enabled on the text components to avoid wrapping issues.
-- `CardView` script component attached to the `CardView` panel GameObject; all three Text fields (Name/Cost/Stats) assigned in the Inspector.
-- Scene saved.
+None. **First visual milestone achieved this session**: `CardView` (prefab, TMP-based), `HandDisplay`, `HandPanel` (bottom-stretch anchor + Horizontal Layout Group), and `HandDisplayController` all built and wired together. Confirmed in Play mode: a card panel showing "Fireball" (name) and "4" (cost) renders on screen at the bottom of the Game view, alongside the existing Console log output (draw, mana-gate rejection, turn advance) all still working correctly. This is the first real graphical output of the project — everything before this was Console-only.
 
-**Not yet done (pick up here next session):**
-1. Drag `CardView` GameObject into `Assets/_Project/Prefabs/Cards/` to make it a prefab, then delete the scene instance.
-2. Create `HandPanel` (UI Panel, bottom-stretch anchor, Height ~250, small Pos Y offset from bottom edge).
-3. Add **Horizontal Layout Group** to `HandPanel` (Child Force Expand Width/Height off, Spacing ~20).
-4. Create `HandDisplay.cs` in `Scripts/UI/` — **code has been written/shared but the file has not actually been created yet.**
-5. Create `HandDisplayController` empty GameObject, attach `HandDisplay`, assign `CardView` prefab + `HandPanel`.
-6. Assign `HandDisplayController` into `EffectTester`'s **Hand Display** field.
-7. Save, Play, confirm a card panel renders on screen showing "Fireball" / "4" / blank stats — **this would be the first real visual milestone of the project; not yet achieved.**
-
-## Immediate Next Steps (pick up here)
-Continue from step 1 in the list directly above ("Not yet done"). All code for `HandDisplay.cs` was already written in a previous chat — if starting a brand new chat, ask Claude to re-provide the `HandDisplay.cs` code (it's a straightforward component: instantiates a `CardView` prefab per card in a `List<CardData>`, parented under a hand panel transform).
+**Known cosmetic issue, not yet fixed**: the rendered card panel appeared to span nearly the full width of the screen rather than the expected fixed 160-wide card. Likely cause: the Horizontal Layout Group's "Child Force Expand → Width" may not have been unticked, or the `CardView` prefab's own Width isn't holding at 160 once instantiated under the layout group. Worth checking next session if a tidy card-sized (not full-width) visual is wanted.
 
 ## Lessons Learned / Gotchas (useful to remember)
 - **Script filename must exactly match the class name** for Unity to allow attaching it as a Component ("script needs to derive from MonoBehaviour" error can actually mean a filename/class mismatch, not a real inheritance problem).
@@ -101,11 +86,12 @@ Continue from step 1 in the list directly above ("Not yet done"). All code for `
 - **Scene view can lose track of your work area** if the camera was originally framed elsewhere (e.g. around Main Camera/Global Light 2D) — press **F** with the relevant object selected (e.g. `GameCanvas`) to snap/zoom the Scene view to frame it.
 - **Always select the specific GameObject you mean to edit** — clicking a parent (e.g. `GameCanvas`) when you meant to edit a child (e.g. `NameText`) will show a different, larger Rect Transform in the Inspector; double-check the Inspector header shows the expected object name before typing position values.
 
-## Next Steps (after the UI is confirmed working — see "Immediate Next Steps" above for the current task)
-1. Wire up basic drag-and-drop or click-to-play from hand to board (visual representation of `PlayerHand.PlayCard()`).
-2. Build basic AI opponent logic.
-3. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
-4. Add real deck shuffling to `PlayerHand.DrawCard()` (currently just takes index 0).
+## Next Steps (in order)
+1. **Cosmetic fix**: investigate why the rendered card panel spans nearly full screen width instead of a fixed 160-wide card — check Horizontal Layout Group's Child Force Expand Width setting on `HandPanel`, and confirm `CardView` prefab's own Width holds at 160 when instantiated.
+2. Wire up basic drag-and-drop or click-to-play from hand to board (visual representation of `PlayerHand.PlayCard()`).
+3. Build basic AI opponent logic.
+4. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
+5. Add real deck shuffling to `PlayerHand.DrawCard()` (currently just takes index 0).
 
 ## Git Habits Being Followed
 - Commit at each logical checkpoint (not just end-of-day)
