@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using HearthstoneClone.Cards;
@@ -9,7 +10,7 @@ namespace HearthstoneClone.UI
         public GameObject cardViewPrefab;
         public Transform handPanel;
 
-        public void RenderHand(List<CardData> hand)
+        public void RenderHand(List<CardData> hand, Action<CardData> onCardClicked)
         {
             foreach (Transform child in handPanel)
             {
@@ -20,7 +21,7 @@ namespace HearthstoneClone.UI
             {
                 GameObject cardObj = Instantiate(cardViewPrefab, handPanel);
                 CardView view = cardObj.GetComponent<CardView>();
-                view.SetCard(card);
+                view.SetCard(card, onCardClicked);
             }
         }
     }

@@ -3,7 +3,7 @@
 ## Working Preferences
 - Craig wants a 2-paragraph explanation after each new/updated code block, describing what it does and why.
 
-_Last updated: 2026-07-14 (session 6 — cosmetic width issue resolved, was a transparency illusion not a real bug)_
+_Last updated: 2026-07-17 (session 7 — click-to-play working, first real interactive input)_
 
 ## How to use this file
 Paste the contents of this file at the start of any new Claude chat to get instant context on the project. Update it at the end of each working session (ask Claude to update it, or do it yourself) so it never goes stale.
@@ -48,9 +48,9 @@ A Hearthstone-style card game built in Unity, single-player vs AI, using C# with
 | `Board.cs` | `Scripts/Core/` | Holds both `Player`s; `GetOpponent(player)` helper. |
 | `GameContext.cs` | `Scripts/Core/` | Now holds a real `Board` reference (was an empty placeholder). |
 | `Target.cs` | `Scripts/Core/` | Now points to either a real `Player` or `Minion` (was a fake standalone health tracker). Provides `TakeDamage()` and `GetCurrentHealth()`. |
-| `EffectTester.cs` | `Scripts/UI/` | Temporary MonoBehaviour for manual testing; constructs `Player`/`Board`/`GameContext`/`Target`/`PlayerHand`/`TurnManager`, and (once wiring is complete) feeds the hand to `HandDisplay` for rendering. Moved here from `Scripts/Cards/` this session since it needs visibility into both `Cards` and `UI` layers. **Not permanent** — delete once real gameplay loop exists. |
-| `CardView.cs` | `Scripts/UI/` | Thin display component for one card — takes a `CardData` via `SetCard()` and writes name/cost/stats onto TMP Text fields. Uses `TMP_Text` (TextMeshPro), not legacy `Text` (project uses Unity 6.5, which favors TMP). Attached to the `CardView` prefab (`Prefabs/Cards/CardView.prefab`). |
-| `HandDisplay.cs` | `Scripts/UI/` | Manages a collection of card visuals — `RenderHand(List<CardData>)` clears any previously spawned cards under `handPanel`, then instantiates one `CardView` prefab per card and populates it. Attached to `HandDisplayController` GameObject in the scene. |
+| `EffectTester.cs` | `Scripts/UI/` | Temporary MonoBehaviour bootstrapper; constructs `Player`/`Board`/`GameContext`/`Target`/`PlayerHand`/`TurnManager` in `Start()`, then renders the hand and waits for clicks. `OnCardClicked(CardData)` calls `PlayerHand.PlayCard()` and re-renders the hand on success — this is the click-to-play handler. `playerOneHand`/`context`/`opponentTarget` are class fields (not local vars) so they persist for use after `Start()` returns. **Not permanent** — delete/rename once real gameplay loop exists. |
+| `CardView.cs` | `Scripts/UI/` | Thin display component for one card — `SetCard(CardData, Action<CardData> clickCallback)` writes name/cost/stats onto TMP Text fields, stores the card + callback, and wires a `Button` component's `onClick` to invoke the callback with this card. Uses `TMP_Text` (TextMeshPro). Attached to the `CardView` prefab (`Prefabs/Cards/CardView.prefab`), which also needed a Unity `Button` component added manually (see gotchas). |
+| `HandDisplay.cs` | `Scripts/UI/` | Manages a collection of card visuals — `RenderHand(List<CardData> hand, Action<CardData> onCardClicked)` clears previously spawned cards under `handPanel`, then instantiates one `CardView` prefab per card, passing the click callback through to each. Purely a pass-through for the callback — doesn't know what a click means. Attached to `HandDisplayController` GameObject in the scene. |
 | `PlayerHand.cs` | `Scripts/Cards/` | Wraps a `Core.Player` with a `Deck`/`Hand` of `CardData`. `DrawCard()` moves a card from deck to hand (index 0, no shuffling yet). `PlayCard()` validates the card is in hand and mana is sufficient, deducts mana, removes from hand, summons a `Minion` if applicable, and fires the card's `onPlayEffect` if a target is given. Returns bool success/failure rather than throwing. |
 | `TurnManager.cs` | `Scripts/Core/` | Owns turn order and mana progression. `StartGame()` sets turn 1, Player One first. `EndTurn()` swaps to opponent via `Board.GetOpponent()`, increments turn number, refills mana. Mana ramps +1 per turn for that player, capped at 10, refilling to max each time. Lives in `Core` since it only needs `Player`/`Board` — no card dependency. |
 
@@ -59,10 +59,10 @@ A Hearthstone-style card game built in Unity, single-player vs AI, using C# with
 - `Effect_Deal3Damage.asset` — a `DealDamageEffect` instance, damage = 3
 
 ## Verified Working
-Confirmed end-to-end, five rounds now, most recently: **first visual milestone** — `TestCard_Fireball` renders as an actual card panel on screen (name "Fireball", cost "4") via `CardView`/`HandDisplay`/`HandPanel`, alongside the existing Console-verified logic (draw, mana-gate rejection at 1/4 mana, turn advance to Player Two). Screenshot confirms visual + log output both correct simultaneously.
+Confirmed end-to-end, six rounds now, most recently: **click-to-play works**. Clicking the rendered "Fireball" card in the hand fires the full chain — `CardView` Button → `HandDisplay` callback pass-through → `EffectTester.OnCardClicked()` → `PlayerHand.PlayCard()` → mana deducted, card removed from hand, `DealDamageEffect` fired, damage logged, hand visually updated. Confirmed via Console output showing draw → played → damage dealt, all triggered by an actual mouse click rather than hardcoded test calls. This is the first real interactive input in the project, not just automated logic.
 
 ## Current Blocker / Last Thing Worked On
-None. Investigated and resolved the "card panel spans nearly full screen width" cosmetic issue from last session — turned out to be a **false alarm**, not an actual sizing bug. `HandPanel`'s own Image background (default Unity panel color, ~200,200,200,200) was rendering behind `CardView` and visually blending with it, creating the illusion of one large stretched card. Setting `HandPanel`'s Image alpha to `0` revealed that `CardView` was correctly sized at 160x220 all along. No code or layout changes were needed — just a background transparency fix on `HandPanel`.
+None. Just finished click-to-play (see above). Two small cleanup items to do at the very start of next session if not already done: (1) exit Prefab Edit Mode if still in it, (2) confirm `TestCard_Fireball`'s Mana Cost is reset to `4` (was temporarily set to `1` to test the successful-play path with only 1 starting mana).
 
 ## Lessons Learned / Gotchas (useful to remember)
 **Assembly definitions (.asmdef)**
@@ -78,6 +78,8 @@ None. Investigated and resolved the "card panel spans nearly full screen width" 
 - TMP Auto Size won't stop wrapping if placeholder text itself is too long for the box — usually resolves once real (shorter) data replaces it, not a real bug.
 - Overlapping semi-transparent UI panels of similar default grey color can visually merge into what looks like one oversized element. If something looks wrongly sized, try setting a suspect parent panel's alpha to 0 first to rule out a layering illusion before assuming a real layout bug.
 - If the Scene view camera seems "lost," select the relevant object and press **F** to frame it.
+- **Editing a runtime `(Clone)` GameObject in the Hierarchy during Play mode is temporary** — changes vanish when Play mode stops. To make a permanent change to a prefab (e.g. adding a missing `Button` component), stop Play mode, then double-click the prefab **asset** in the Project window to enter Prefab Edit Mode (Hierarchy shows the name with no `(Clone)` suffix), make the change there, and exit/save.
+- When a script field expects a specific Component type (e.g. a `Button` field) but the target GameObject doesn't have that component yet, add the component first (Add Component → Button), then drag the **GameObject** itself onto the field — Unity finds the right component on it automatically. A `NullReferenceException` on a line touching a component field usually means the field was never assigned in the Inspector.
 
 **Core architecture principle**
 - Keep `Core` types generic and unaware of `CardData` — anything needing both real game state and card asset data belongs in the `Cards` layer as a wrapper.
@@ -89,10 +91,11 @@ None. Investigated and resolved the "card panel spans nearly full screen width" 
 - .NET SDK (install via Microsoft's apt feed, not Ubuntu's default repo) is only needed for VS Code's C# IntelliSense/debugging — separate from Unity's own compiler.
 
 ## Next Steps (in order)
-1. Wire up basic drag-and-drop or click-to-play from hand to board (visual representation of `PlayerHand.PlayCard()`).
-2. Build basic AI opponent logic.
+1. Board visuals — minion slots so summoned minions actually appear somewhere (currently only logged to Console via `Player.BoardMinions`).
+2. Build basic AI opponent logic (even a simple "play first affordable card" AI).
 3. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
 4. Add real deck shuffling to `PlayerHand.DrawCard()` (currently just takes index 0).
+5. Consider upgrading click-to-play to real drag-and-drop, if desired (click-to-play works fine as an interim/MVP interaction model).
 
 ## Git Habits Being Followed
 - Commit at each logical checkpoint (not just end-of-day)

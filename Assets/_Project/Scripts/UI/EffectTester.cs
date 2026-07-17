@@ -10,6 +10,10 @@ namespace HearthstoneClone.UI
         public CardData cardToTest;
         public HandDisplay handDisplay;
 
+        private PlayerHand playerOneHand;
+        private GameContext context;
+        private Target opponentTarget;
+
         void Start()
         {
             if (cardToTest == null || cardToTest.onPlayEffect == null)
@@ -21,26 +25,36 @@ namespace HearthstoneClone.UI
             var playerOne = new Player("Player One");
             var playerTwo = new Player("Player Two");
             var board = new Board(playerOne, playerTwo);
-            var context = new GameContext(board);
+            context = new GameContext(board);
             var turnManager = new TurnManager(board);
 
             turnManager.StartGame();
             Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
 
             var starterDeck = new List<CardData> { cardToTest };
-            var playerOneHand = new PlayerHand(playerOne, starterDeck);
+            playerOneHand = new PlayerHand(playerOne, starterDeck);
             playerOneHand.DrawCard();
 
+            opponentTarget = new Target(playerTwo);
+
+            RefreshHandDisplay();
+        }
+
+        private void OnCardClicked(CardData card)
+        {
+            bool success = playerOneHand.PlayCard(card, context, opponentTarget);
+            if (success)
+            {
+                RefreshHandDisplay();
+            }
+        }
+
+        private void RefreshHandDisplay()
+        {
             if (handDisplay != null)
             {
-                handDisplay.RenderHand(playerOneHand.Hand);
+                handDisplay.RenderHand(playerOneHand.Hand, OnCardClicked);
             }
-
-            var target = new Target(playerTwo);
-            playerOneHand.PlayCard(cardToTest, context, target);
-
-            turnManager.EndTurn();
-            Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
         }
     }
 }
