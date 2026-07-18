@@ -3,7 +3,7 @@
 ## Working Preferences
 - Craig wants a 2-paragraph explanation after each new/updated code block, describing what it does and why.
 
-_Last updated: 2026-07-17 (session 7 — click-to-play working, first real interactive input)_
+_Last updated: 2026-07-17 (session 8 — mid-task on board visuals, MinionView panel built, prefab conversion not yet done)_
 
 ## How to use this file
 Paste the contents of this file at the start of any new Claude chat to get instant context on the project. Update it at the end of each working session (ask Claude to update it, or do it yourself) so it never goes stale.
@@ -53,6 +53,8 @@ A Hearthstone-style card game built in Unity, single-player vs AI, using C# with
 | `HandDisplay.cs` | `Scripts/UI/` | Manages a collection of card visuals — `RenderHand(List<CardData> hand, Action<CardData> onCardClicked)` clears previously spawned cards under `handPanel`, then instantiates one `CardView` prefab per card, passing the click callback through to each. Purely a pass-through for the callback — doesn't know what a click means. Attached to `HandDisplayController` GameObject in the scene. |
 | `PlayerHand.cs` | `Scripts/Cards/` | Wraps a `Core.Player` with a `Deck`/`Hand` of `CardData`. `DrawCard()` moves a card from deck to hand (index 0, no shuffling yet). `PlayCard()` validates the card is in hand and mana is sufficient, deducts mana, removes from hand, summons a `Minion` if applicable, and fires the card's `onPlayEffect` if a target is given. Returns bool success/failure rather than throwing. |
 | `TurnManager.cs` | `Scripts/Core/` | Owns turn order and mana progression. `StartGame()` sets turn 1, Player One first. `EndTurn()` swaps to opponent via `Board.GetOpponent()`, increments turn number, refills mana. Mana ramps +1 per turn for that player, capped at 10, refilling to max each time. Lives in `Core` since it only needs `Player`/`Board` — no card dependency. |
+| `MinionView.cs` | `Scripts/UI/` | Display-only component for one board minion — `SetMinion(Minion)` writes name/attack-health onto TMP Text fields. Takes a `Core.Minion` directly (not `CardData`), since board minions are runtime state. No click/Button yet — board minions aren't interactive. Attached to the `MinionView` prefab (`Prefabs/Board/MinionView.prefab`). |
+| `BoardDisplay.cs` | `Scripts/UI/` | Manages a collection of minion visuals — `RenderBoard(List<Minion>)` clears previously spawned minions under `boardPanel`, then instantiates one `MinionView` prefab per minion. Structurally identical to `HandDisplay`, same pattern reused deliberately. |
 
 ## Test Assets Created
 - `TestCard_Fireball.asset` — a Spell card, 4 mana, linked to `Effect_Deal3Damage`
@@ -62,7 +64,20 @@ A Hearthstone-style card game built in Unity, single-player vs AI, using C# with
 Confirmed end-to-end, six rounds now, most recently: **click-to-play works**. Clicking the rendered "Fireball" card in the hand fires the full chain — `CardView` Button → `HandDisplay` callback pass-through → `EffectTester.OnCardClicked()` → `PlayerHand.PlayCard()` → mana deducted, card removed from hand, `DealDamageEffect` fired, damage logged, hand visually updated. Confirmed via Console output showing draw → played → damage dealt, all triggered by an actual mouse click rather than hardcoded test calls. This is the first real interactive input in the project, not just automated logic.
 
 ## Current Blocker / Last Thing Worked On
-None. Just finished click-to-play (see above). Two small cleanup items to do at the very start of next session if not already done: (1) exit Prefab Edit Mode if still in it, (2) confirm `TestCard_Fireball`'s Mana Cost is reset to `4` (was temporarily set to `1` to test the successful-play path with only 1 starting mana).
+**Mid-task, not yet complete.** Building board visuals (showing summoned minions on screen). Progress so far:
+- `MinionView.cs` and `BoardDisplay.cs` created in `Scripts/UI/` (code confirmed written — see Code Written So Far table above for what each does).
+- In the Editor: `MinionView` panel created (anchor centered, sized ~120x160), two TMP Text children (`NameText`, `StatsText`) created and positioned without overlap, `MinionView` script component attached with both text fields assigned.
+- **Not yet done**: the `MinionView` GameObject still needs to be dragged into `Assets/_Project/Prefabs/Board/` to become a prefab, and the leftover scene instance deleted afterward (session ended right before this cleanup step — there may be a stray `MinionView` GameObject sitting in the Hierarchy still, safe to delete).
+
+**Not yet started (remaining steps for this feature):**
+1. Finish making `MinionView` a prefab + delete scene instance (see above).
+2. Create `BoardPanel` (UI Panel, bottom-stretch anchor like `HandPanel` but positioned higher — Pos Y ~290, Height ~200), add Horizontal Layout Group (Child Force Expand off, Spacing 20), consider alpha 0 on its Image (same transparency lesson as `HandPanel`).
+3. Create `BoardDisplayController` empty GameObject, attach `BoardDisplay`, assign `MinionView` prefab + `BoardPanel`.
+4. Create a test Minion card asset: `TestCard_Goblin` (Mana Cost 2, Card Type Minion, Attack 2, Health 2, no `onPlayEffect`).
+5. Update `EffectTester.cs` — code already written in chat history: adds a `minionCardToTest` field, draws a second card in `Start()`, calls `RefreshBoardDisplay()` after successful plays (alongside the existing `RefreshHandDisplay()`), added `boardDisplay` field. **Not yet applied to the actual file.**
+6. Wire `TestCard_Goblin` into the new **Minion Card To Test** field and `BoardDisplayController` into **Board Display** on the `EffectTester` component in the Inspector.
+7. Temporarily set `TestCard_Goblin`'s mana cost to `1` (same trick as Fireball) to test successful play with only 1 starting mana; reset to `2` after confirming.
+8. Save, Play, click the Goblin card, confirm a "Goblin / 2 / 2" panel appears in the board area above the hand.
 
 ## Lessons Learned / Gotchas (useful to remember)
 **Assembly definitions (.asmdef)**
@@ -90,12 +105,11 @@ None. Just finished click-to-play (see above). Two small cleanup items to do at 
 - Unity's crash-recovery prompt (`Assets/_Recovery/`) is safe to accept; delete the folder after and gitignore it if unneeded.
 - .NET SDK (install via Microsoft's apt feed, not Ubuntu's default repo) is only needed for VS Code's C# IntelliSense/debugging — separate from Unity's own compiler.
 
-## Next Steps (in order)
-1. Board visuals — minion slots so summoned minions actually appear somewhere (currently only logged to Console via `Player.BoardMinions`).
-2. Build basic AI opponent logic (even a simple "play first affordable card" AI).
-3. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
-4. Add real deck shuffling to `PlayerHand.DrawCard()` (currently just takes index 0).
-5. Consider upgrading click-to-play to real drag-and-drop, if desired (click-to-play works fine as an interim/MVP interaction model).
+## Next Steps (after board visuals feature above is complete)
+1. Build basic AI opponent logic (even a simple "play first affordable card" AI).
+2. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
+3. Add real deck shuffling to `PlayerHand.DrawCard()` (currently just takes index 0).
+4. Consider upgrading click-to-play to real drag-and-drop, if desired (click-to-play works fine as an interim/MVP interaction model).
 
 ## Git Habits Being Followed
 - Commit at each logical checkpoint (not just end-of-day)
