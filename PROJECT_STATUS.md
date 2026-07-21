@@ -3,7 +3,7 @@
 ## Working Preferences
 - Craig wants a 2-paragraph explanation after each new/updated code block, describing what it does and why.
 
-_Last updated: 2026-07-17 (session 8 — mid-task on board visuals, MinionView panel built, prefab conversion not yet done)_
+_Last updated: 2026-07-22 (session 9 — board visuals fully working, Goblin minion renders on board after being played)_
 
 ## How to use this file
 Paste the contents of this file at the start of any new Claude chat to get instant context on the project. Update it at the end of each working session (ask Claude to update it, or do it yourself) so it never goes stale.
@@ -59,25 +59,17 @@ A Hearthstone-style card game built in Unity, single-player vs AI, using C# with
 ## Test Assets Created
 - `TestCard_Fireball.asset` — a Spell card, 4 mana, linked to `Effect_Deal3Damage`
 - `Effect_Deal3Damage.asset` — a `DealDamageEffect` instance, damage = 3
+- `TestCard_Goblin.asset` — a Minion card, 2 mana (check this is set to 2, not the temporary 1 used for testing), Attack 2, Health 2, no `onPlayEffect`
 
 ## Verified Working
-Confirmed end-to-end, six rounds now, most recently: **click-to-play works**. Clicking the rendered "Fireball" card in the hand fires the full chain — `CardView` Button → `HandDisplay` callback pass-through → `EffectTester.OnCardClicked()` → `PlayerHand.PlayCard()` → mana deducted, card removed from hand, `DealDamageEffect` fired, damage logged, hand visually updated. Confirmed via Console output showing draw → played → damage dealt, all triggered by an actual mouse click rather than hardcoded test calls. This is the first real interactive input in the project, not just automated logic.
+Confirmed end-to-end, seven rounds now, most recently: **board visuals work**. Clicking "Goblin" in hand fires the full chain — `PlayerHand.PlayCard()` deducts mana, creates a `Minion`, adds it to `Player.BoardMinions`, `EffectTester.RefreshBoardDisplay()` calls `BoardDisplay.RenderBoard()`, which spawns a `MinionView` showing "Goblin / 2 / 2" in the board area. Confirmed via Console (`"Player One played Goblin. Mana remaining: 0"`, `"Goblin summoned to Player One's board."`) and visually on screen — Goblin disappeared from hand, appeared on board, Fireball remained in hand untouched.
 
 ## Current Blocker / Last Thing Worked On
-**Mid-task, not yet complete.** Building board visuals (showing summoned minions on screen). Progress so far:
-- `MinionView.cs` and `BoardDisplay.cs` created in `Scripts/UI/` (code confirmed written — see Code Written So Far table above for what each does).
-- In the Editor: `MinionView` panel created (anchor centered, sized ~120x160), two TMP Text children (`NameText`, `StatsText`) created and positioned without overlap, `MinionView` script component attached with both text fields assigned.
-- **Not yet done**: the `MinionView` GameObject still needs to be dragged into `Assets/_Project/Prefabs/Board/` to become a prefab, and the leftover scene instance deleted afterward (session ended right before this cleanup step — there may be a stray `MinionView` GameObject sitting in the Hierarchy still, safe to delete).
+None — **board visuals feature is complete** (see Verified Working above). All of `MinionView`, `BoardDisplay`, `BoardPanel`, `BoardDisplayController` built, wired, and confirmed working with the `TestCard_Goblin` minion.
 
-**Not yet started (remaining steps for this feature):**
-1. Finish making `MinionView` a prefab + delete scene instance (see above).
-2. Create `BoardPanel` (UI Panel, bottom-stretch anchor like `HandPanel` but positioned higher — Pos Y ~290, Height ~200), add Horizontal Layout Group (Child Force Expand off, Spacing 20), consider alpha 0 on its Image (same transparency lesson as `HandPanel`).
-3. Create `BoardDisplayController` empty GameObject, attach `BoardDisplay`, assign `MinionView` prefab + `BoardPanel`.
-4. Create a test Minion card asset: `TestCard_Goblin` (Mana Cost 2, Card Type Minion, Attack 2, Health 2, no `onPlayEffect`).
-5. Update `EffectTester.cs` — code already written in chat history: adds a `minionCardToTest` field, draws a second card in `Start()`, calls `RefreshBoardDisplay()` after successful plays (alongside the existing `RefreshHandDisplay()`), added `boardDisplay` field. **Not yet applied to the actual file.**
-6. Wire `TestCard_Goblin` into the new **Minion Card To Test** field and `BoardDisplayController` into **Board Display** on the `EffectTester` component in the Inspector.
-7. Temporarily set `TestCard_Goblin`'s mana cost to `1` (same trick as Fireball) to test successful play with only 1 starting mana; reset to `2` after confirming.
-8. Save, Play, click the Goblin card, confirm a "Goblin / 2 / 2" panel appears in the board area above the hand.
+**One cosmetic loose end, not yet fixed**: the rendered `MinionView` on the board appeared positioned partly off the left edge of the screen (text showed as "oblin" instead of "Goblin", cut off). Likely a Horizontal Layout Group padding/alignment issue on `BoardPanel`, or the panel's own horizontal positioning — not yet investigated. Low priority since functionality is fully confirmed; worth a quick look next time UI polish is on the agenda.
+
+**Also confirm before next session**: `TestCard_Goblin`'s Mana Cost should be reset to `2` (was temporarily `1` for testing with only 1 starting mana).
 
 ## Lessons Learned / Gotchas (useful to remember)
 **Assembly definitions (.asmdef)**
@@ -105,11 +97,12 @@ Confirmed end-to-end, six rounds now, most recently: **click-to-play works**. Cl
 - Unity's crash-recovery prompt (`Assets/_Recovery/`) is safe to accept; delete the folder after and gitignore it if unneeded.
 - .NET SDK (install via Microsoft's apt feed, not Ubuntu's default repo) is only needed for VS Code's C# IntelliSense/debugging — separate from Unity's own compiler.
 
-## Next Steps (after board visuals feature above is complete)
-1. Build basic AI opponent logic (even a simple "play first affordable card" AI).
-2. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
-3. Add real deck shuffling to `PlayerHand.DrawCard()` (currently just takes index 0).
-4. Consider upgrading click-to-play to real drag-and-drop, if desired (click-to-play works fine as an interim/MVP interaction model).
+## Next Steps (in order)
+1. Optional: investigate/fix the `BoardPanel` positioning issue (minion rendering partly off-screen left) — check Horizontal Layout Group padding/alignment on `BoardPanel`.
+2. Build basic AI opponent logic (even a simple "play first affordable card" AI).
+3. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
+4. Add real deck shuffling to `PlayerHand.DrawCard()` (currently just takes index 0).
+5. Consider upgrading click-to-play to real drag-and-drop, if desired (click-to-play works fine as an interim/MVP interaction model).
 
 ## Git Habits Being Followed
 - Commit at each logical checkpoint (not just end-of-day)

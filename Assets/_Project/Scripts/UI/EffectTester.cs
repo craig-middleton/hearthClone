@@ -8,11 +8,14 @@ namespace HearthstoneClone.UI
     public class EffectTester : MonoBehaviour
     {
         public CardData cardToTest;
+        public CardData minionCardToTest;
         public HandDisplay handDisplay;
+        public BoardDisplay boardDisplay;
 
         private PlayerHand playerOneHand;
         private GameContext context;
         private Target opponentTarget;
+        private Player playerOne;
 
         void Start()
         {
@@ -22,7 +25,7 @@ namespace HearthstoneClone.UI
                 return;
             }
 
-            var playerOne = new Player("Player One");
+            playerOne = new Player("Player One");
             var playerTwo = new Player("Player Two");
             var board = new Board(playerOne, playerTwo);
             context = new GameContext(board);
@@ -31,13 +34,15 @@ namespace HearthstoneClone.UI
             turnManager.StartGame();
             Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
 
-            var starterDeck = new List<CardData> { cardToTest };
+            var starterDeck = new List<CardData> { cardToTest, minionCardToTest };
             playerOneHand = new PlayerHand(playerOne, starterDeck);
+            playerOneHand.DrawCard();
             playerOneHand.DrawCard();
 
             opponentTarget = new Target(playerTwo);
 
             RefreshHandDisplay();
+            RefreshBoardDisplay();
         }
 
         private void OnCardClicked(CardData card)
@@ -46,6 +51,7 @@ namespace HearthstoneClone.UI
             if (success)
             {
                 RefreshHandDisplay();
+                RefreshBoardDisplay();
             }
         }
 
@@ -54,6 +60,14 @@ namespace HearthstoneClone.UI
             if (handDisplay != null)
             {
                 handDisplay.RenderHand(playerOneHand.Hand, OnCardClicked);
+            }
+        }
+
+        private void RefreshBoardDisplay()
+        {
+            if (boardDisplay != null)
+            {
+                boardDisplay.RenderBoard(playerOne.BoardMinions);
             }
         }
     }
