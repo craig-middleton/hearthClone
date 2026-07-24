@@ -1,0 +1,51 @@
+using System.Collections.Generic;
+using UnityEngine;
+using HearthstoneClone.Core;
+using HearthstoneClone.Cards;
+
+namespace HearthstoneClone.AI
+{
+    public class AIController
+    {
+        private readonly PlayerHand aiHand;
+        private readonly GameContext context;
+        private readonly Board board;
+
+        public AIController(PlayerHand aiHand, GameContext context, Board board)
+        {
+            this.aiHand = aiHand;
+            this.context = context;
+            this.board = board;
+        }
+
+        public void TakeTurn()
+        {
+            Player aiPlayer = aiHand.CorePlayer;
+            Player opponent = board.GetOpponent(aiPlayer);
+
+            Debug.Log($"--- {aiPlayer.PlayerName} (AI) is taking its turn ---");
+
+            bool playedSomething = true;
+            while (playedSomething)
+            {
+                playedSomething = false;
+
+                foreach (var card in new List<CardData>(aiHand.Hand))
+                {
+                    if (card.manaCost > aiPlayer.CurrentMana)
+                        continue;
+
+                    Target target = card.onPlayEffect != null ? new Target(opponent) : null;
+
+                    if (aiHand.PlayCard(card, context, target))
+                    {
+                        playedSomething = true;
+                        break; // Hand mutated — restart the foreach on a fresh snapshot
+                    }
+                }
+            }
+
+            Debug.Log($"--- {aiPlayer.PlayerName} (AI) ends its turn ---");
+        }
+    }
+}

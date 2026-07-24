@@ -1,9 +1,9 @@
-using HearthstoneClone.AI;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using HearthstoneClone.Cards;
 using HearthstoneClone.Core;
+using HearthstoneClone.AI;
 
 namespace HearthstoneClone.UI
 {
