@@ -13,6 +13,7 @@ namespace HearthstoneClone.UI
         public CardData minionCardToTest;
         public HandDisplay handDisplay;
         public BoardDisplay boardDisplay;
+        public BoardDisplay opponentBoardDisplay; 
         public Button endTurnButton;
 
         private PlayerHand playerOneHand;
@@ -102,11 +103,16 @@ namespace HearthstoneClone.UI
         }
 
         private void RefreshBoardDisplay()
+    {
+        if (boardDisplay != null)
         {
-            if (boardDisplay != null)
-            {
-                boardDisplay.RenderBoard(playerOne.BoardMinions);
-            }
+            boardDisplay.RenderBoard(playerOne.BoardMinions);
+        }
+
+        if (opponentBoardDisplay != null)
+        {
+            opponentBoardDisplay.RenderBoard(playerTwo.BoardMinions);
         }
     }
-}
+    }
+    }
