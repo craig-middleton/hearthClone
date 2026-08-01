@@ -30,6 +30,23 @@ namespace HearthstoneClone.Cards
             UnityEngine.Debug.Log($"{CorePlayer.PlayerName} drew {drawn.cardName}. Hand size: {Hand.Count}, Deck remaining: {Deck.Count}");
         }
 
+        public void Shuffle()
+{
+    for (int i = Deck.Count - 1; i > 0; i--)
+    {
+        int j = UnityEngine.Random.Range(0, i + 1);
+        (Deck[i], Deck[j]) = (Deck[j], Deck[i]);
+    }
+}
+
+public void DrawOpeningHand(int count = 5)
+{
+    for (int i = 0; i < count; i++)
+    {
+        DrawCard();
+    }
+}
+
         public bool PlayCard(CardData card, GameContext context, Target effectTarget = null)
         {
             if (!Hand.Contains(card))

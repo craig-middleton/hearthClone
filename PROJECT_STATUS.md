@@ -3,7 +3,7 @@
 ## Working Preferences
 - Craig wants a 2-paragraph explanation after each new/updated code block, describing what it does and why.
 
-_Last updated: 2026-07-26 (session 11 — opponent (AI) board minions now have a visual home; both players' boards render simultaneously)_
+_Last updated: 2026-08-01 (session 12 — real deck (5 unique cards, shuffled, 5-card opening hands) for both players; AI's hand now visible on screen)_
 
 ## How to use this file
 Paste the contents of this file at the start of any new Claude chat to get instant context on the project. Update it at the end of each working session (ask Claude to update it, or do it yourself) so it never goes stale.
@@ -42,7 +42,7 @@ A Hearthstone-style card game built in Unity, single-player vs AI, using C# with
 
 | File | Location | Purpose |
 |---|---|---|
-| `CardData.cs` | `Scripts/Cards/` | ScriptableObject: card identity, stats, mana cost, and a link to its `onPlayEffect` |
+| `CardData.cs` | `Scripts/Cards/` | ScriptableObject: `cardName`, `description`, `artwork`, `manaCost`, `cardType` (`Minion`/`Spell`), `attack`, `health`, `onPlayEffect`. |
 | `CardEffect.cs` | `Scripts/Effects/` | Abstract base class all effects inherit from; defines `Execute(GameContext, Target)` |
 | `DealDamageEffect.cs` | `Scripts/Effects/` | Concrete effect; deals damage to a Target; logs remaining health via `Target.GetCurrentHealth()` |
 | `Minion.cs` | `Scripts/Core/` | Runtime instance of a minion on the board (name, attack, health). Deliberately generic — knows nothing about `CardData`. |
@@ -51,82 +51,95 @@ A Hearthstone-style card game built in Unity, single-player vs AI, using C# with
 | `GameContext.cs` | `Scripts/Core/` | Holds a real `Board` reference. |
 | `Target.cs` | `Scripts/Core/` | Points to either a real `Player` or `Minion`. Provides `TakeDamage()` and `GetCurrentHealth()`. |
 | `TurnManager.cs` | `Scripts/Core/` | Owns turn order and mana progression. `StartGame()` sets turn 1, Player One first. `EndTurn()` swaps `CurrentPlayer` via `Board.GetOpponent()`, increments turn number, refills mana (+1/turn, capped at 10). |
-| `EffectTester.cs` | `Scripts/UI/` | Bootstrapper MonoBehaviour. Constructs `Player`/`Board`/`GameContext`/`TurnManager`/both `PlayerHand`s/`AIController` in `Start()`. `OnCardClicked(CardData)` handles the human's card plays. `OnEndTurnClicked()` wired to a public `endTurnButton` field — ends the human's turn, auto-runs the AI's turn if `CurrentPlayer` swaps to Player Two, then ends turn again to hand control back. **New this session:** added a second public `opponentBoardDisplay` field; `RefreshBoardDisplay()` now renders both `playerOne.BoardMinions` (existing `boardDisplay`) AND `playerTwo.BoardMinions` (new `opponentBoardDisplay`) every time it's called. **Not permanent** — delete/rename once real gameplay loop exists. |
-| `CardView.cs` | `Scripts/UI/` | Thin display component for one card — writes name/cost/stats onto TMP fields, wires a `Button.onClick` to a click callback. Attached to `CardView` prefab. |
-| `HandDisplay.cs` | `Scripts/UI/` | `RenderHand(List<CardData>, Action<CardData>)` — clears and respawns one `CardView` per hand card. |
-| `PlayerHand.cs` | `Scripts/Cards/` | Wraps a `Core.Player` with a `Deck`/`Hand` of `CardData`. `DrawCard()` takes index 0 (no shuffle yet). `PlayCard(CardData, GameContext, Target)` validates hand membership + mana, deducts mana, summons a `Minion` if applicable, fires `onPlayEffect` if a target given, returns bool. |
+| `EffectTester.cs` | `Scripts/UI/` | Bootstrapper MonoBehaviour. **Rewritten this session**: replaced the old individual `CardData` test fields with a single `public List<CardData> cardPool` (drag all unique test cards in via Inspector) plus `public int copiesPerCard` (default 2). `BuildDeck(pool)` expands the pool into a full deck list by repeating each card `copiesPerCard` times. In `Start()`, both `playerOneHand` and `playerTwoHand` are built via `BuildDeck()`, then `.Shuffle()`, then `.DrawOpeningHand()` (5 cards). Added a second `public HandDisplay opponentHandDisplay` field alongside the existing `opponentBoardDisplay`; `RefreshHandDisplay()` now renders both hands every call — the human's via `handDisplay.RenderHand(playerOneHand.Hand, OnCardClicked)`, the AI's via `opponentHandDisplay.RenderHand(playerTwoHand.Hand, null)` (read-only, non-clickable). `OnEndTurnClicked()` and card-play logic otherwise unchanged from last session. **Not permanent** — delete/rename once real gameplay loop exists. |
+| `CardView.cs` | `Scripts/UI/` | Thin display component for one card. `SetCard(CardData, Action<CardData> clickCallback)` writes name/cost/stats onto TMP fields, wires `Button.onClick` via `AddListener(() => onClicked?.Invoke(card))`. The `?.` null-conditional is what makes passing `null` as the callback safe (clicking silently does nothing) — this is what allows the AI's hand to be displayed read-only with zero code changes to this file. |
+| `HandDisplay.cs` | `Scripts/UI/` | `RenderHand(List<CardData>, Action<CardData>)` — clears and respawns one `CardView` per hand card, passing the callback straight through to each. Fully generic — reused as-is for the opponent's hand, same pattern as `BoardDisplay`. |
+| `PlayerHand.cs` | `Scripts/Cards/` | Wraps a `Core.Player` with a `Deck`/`Hand` of `CardData`. **New this session**: `Shuffle()` — in-place Fisher-Yates shuffle of `Deck`. `DrawOpeningHand(int count = 5)` — calls `DrawCard()` `count` times. `DrawCard()` itself unchanged (still takes index 0 — correct now that the deck is pre-shuffled). `PlayCard(CardData, GameContext, Target)` validates hand membership + mana, deducts mana, summons a `Minion` if applicable, fires `onPlayEffect` if a target given, returns bool. |
 | `MinionView.cs` | `Scripts/UI/` | Display-only — `SetMinion(Minion)` writes name/attack-health onto TMP fields. No click/Button (board minions aren't interactive yet). |
-| `BoardDisplay.cs` | `Scripts/UI/` | `RenderBoard(List<Minion>)` — clears and respawns one `MinionView` per board minion. Fully generic (no player-specific logic) — this is why adding opponent board visualization only needed a second *instance* of this same component, not a code change to the component itself. |
-| `AIController.cs` | `Scripts/AI/` | Wraps a `PlayerHand` (the AI's) plus `GameContext`/`Board`. `TakeTurn()` loops: scan hand for any card whose `manaCost <= CurrentMana`, play the first one found via `PlayerHand.PlayCard()`, repeat until a full pass plays nothing. For cards with an `onPlayEffect` (e.g. Fireball), builds a `Target` pointing at the opponent player's face — no board-state evaluation yet, so it always burns face. Lives in its own `AI` assembly. |
+| `BoardDisplay.cs` | `Scripts/UI/` | `RenderBoard(List<Minion>)` — clears and respawns one `MinionView` per board minion. Fully generic — reused for both boards via two separate instances. |
+| `AIController.cs` | `Scripts/AI/` | Wraps a `PlayerHand` (the AI's) plus `GameContext`/`Board`. `TakeTurn()` loops: scan hand for any card whose `manaCost <= CurrentMana`, play the first one found via `PlayerHand.PlayCard()`, repeat until a full pass plays nothing. For cards with an `onPlayEffect` (e.g. Fireball), builds a `Target` pointing at the opponent player's face. Lives in its own `AI` assembly. |
 
-## Scene/Editor Setup (new this session)
-- Duplicated `BoardPanel` → `OpponentBoardPanel`, repositioned via Rect Transform `Pos Y: 600` (stretch-anchored, same Left/Right/Height as original) to sit near the top of the play area, visually separate from the player's board and the End Turn button.
-- Duplicated `BoardDisplayController` → `OpponentBoardDisplayController`, with its `BoardDisplay` component's `Board Panel` field pointed at `OpponentBoardPanel` and `Minion View Prefab` set to the same `MinionView` prefab.
-- `OpponentBoardDisplayController` dragged onto `EffectTester`'s new `Opponent Board Display` field.
+## Scene/Editor Setup
+- `BoardPanel` (Player One's board) + `OpponentBoardPanel` (duplicate, repositioned via Rect Transform `Pos Y`) — each with their own `BoardDisplay` controller (`BoardDisplayController` / `OpponentBoardDisplayController`), both wired to `EffectTester`'s `boardDisplay` / `opponentBoardDisplay` fields.
+- **New this session**: `HandPanel` (Player One's hand) + `OpponentHandPanel` (duplicate, repositioned to sit near the top of the screen) — each with their own `HandDisplay` controller (`HandDisplayController` / `OpponentHandDisplayController`), both using the same `CardView` prefab. Wired to `EffectTester`'s `handDisplay` / `opponentHandDisplay` fields.
+- `EffectTester`'s old individual card fields (`Card To Test`, `Minion Card To Test`, `Third Card To Test`) are gone — replaced by a single `Card Pool` list (drag all 5 unique cards in) and a `Copies Per Card` int field.
 
 ## Test Assets Created
-- `TestCard_Fireball.asset` — a Spell card, 4 mana, linked to `Effect_Deal3Damage`
+- `TestCard_Wisp.asset` — Minion, 1 mana, Attack 1, Health 1, no effect
+- `TestCard_Goblin.asset` — Minion, 2 mana, Attack 2, Health 2, no effect
+- `TestCard_RiverCroc.asset` ("River Crocodile") — Minion, 3 mana, Attack 2, Health 3, no effect
+- `TestCard_Fireball.asset` — Spell, 4 mana, linked to `Effect_Deal3Damage`
+- `TestCard_Boulderfist.asset` — Minion, 5 mana, Attack 4, Health 4, no effect
 - `Effect_Deal3Damage.asset` — a `DealDamageEffect` instance, damage = 3
-- `TestCard_Goblin.asset` — a Minion card, Attack 2, Health 2, no `onPlayEffect`. **Mana Cost needs re-confirming** — Craig said he reset it to `2` last session, but the Inspector was observed showing `1` again mid-session this time. Worth a fresh check next session before assuming it's correct.
+- All 5 unique cards are dragged into `EffectTester`'s `Card Pool` list; `Copies Per Card = 2` gives each player a 10-card deck to draw a 5-card opening hand from.
 
 ## Verified Working
-- **Board visuals** (session 9): click-to-play chain confirmed end-to-end with visual + Console confirmation.
-- **AI opponent turn logic** (session 10): full turn cycle confirmed via Console — AI correctly skips unaffordable cards, plays what it can afford, hands control back to the human automatically.
-- **Opponent board visualization (this session)**: Confirmed visually — after a full turn cycle (Player One plays Goblin → End Turn → AI plays Goblin → control returns), **both** Goblins are now rendered on screen simultaneously: Player One's in the original `BoardPanel`, Player Two's (AI's) in the new `OpponentBoardPanel` above it. Matches Console log showing both `"Goblin summoned to Player One's board."` and `"Goblin summoned to Player Two's board."`.
+- **Board visuals** (session 9): click-to-play chain confirmed end-to-end.
+- **AI opponent turn logic** (session 10): full turn cycle confirmed via Console — AI skips unaffordable cards, plays what it can afford, hands control back to the human automatically.
+- **Opponent board visualization** (session 11): both players' board minions render simultaneously in separate panels.
+- **Fireball face-damage targeting** (session 12, earlier in this session before the deck rework): confirmed via Console — `"Player Two played Fireball... Dealt 3 damage to target. Remaining health: 27"` — Player One's health correctly dropped 30 → 27.
+- **Real deck + shuffled 5-card opening hands (this session)**: Confirmed via Console and on-screen — both players draw 5 cards each from a shuffled 10-card deck (5 unique cards × 2 copies), with visibly different draw orders/compositions between the two hands each playthrough (duplicates included, e.g. two Wisps in one hand, two River Crocodiles + two Boulderfists in another).
+- **Opponent hand visualization (this session)**: Both hands now render on screen simultaneously — the human's hand (bottom, clickable) and the AI's hand (top, read-only). Confirmed the AI's cards are visible but non-interactive, achieved via passing `null` as `CardView`'s click callback (safe due to the existing `?.Invoke()` null-conditional — no code changes needed to `CardView`/`HandDisplay` themselves).
 
 ## Current Blocker / Last Thing Worked On
-None — **opponent board visualization is complete and verified**. Session ended here on a clean, visible milestone (both players' boards rendering side by side).
+None — session ended on a clean, visible milestone: both players' hands and boards fully visible on screen, drawn from real shuffled decks.
 
-**Not yet tested / worth checking next session:**
-1. **Multi-card AI turns** — still only tested with enough mana for one card. Confirm the AI correctly chains multiple plays in a single turn once mana is higher.
-2. **Fireball's targeting in practice** — `AIController` builds a `Target` at the opponent's face for any card with an `onPlayEffect`, but this still hasn't been exercised in a real playtest — the AI hasn't had 4 mana yet in any test run. Session ended at Turn 3 (Player One, 2/2 mana) — a few more End Turn clicks should get both sides to 4 mana.
-3. **Re-confirm `TestCard_Goblin`'s Mana Cost is actually `2`** — see Test Assets Created note above; this flipped back to `1` in the Inspector at some point this session and wasn't re-verified before ending.
+**Explicitly deferred / not done this session:**
+- **Multi-card AI turns still not observed in actual play.** Investigated at length this session: with the *old* fixed 2-3 card, fully-drawn-at-start test deck, this was structurally near-impossible to trigger (see reasoning below) — but the deck rework this session (5 unique cards, 10-card deck, shuffled 5-card hands) may make it possible to observe now, simply because hands are bigger and more varied. **Not yet re-tested post-rework** — worth checking next session by playing a few turns and watching for two `"Player Two played..."` lines within one `--- Player Two (AI) is taking its turn ---` block.
+  - *Prior reasoning, kept for context*: with a small, fully-pre-drawn hand and linear +1/turn mana, the cheapest unplayed card in hand is almost always snapped up the instant it's affordable, which typically leaves too little mana left that same turn to also afford a second card — so single-card turns were the structurally likely outcome, not a bug in `AIController.TakeTurn()`'s loop itself (the loop logic — scan, play, re-scan, repeat until nothing affordable — is correct and was verified by code review even when not observed in play).
+- **Mulligan system** — scoped and agreed with Craig (both players get a 5-card draw + can mulligan up to 2 cards for new random ones from their deck, via a click-to-mulligan UI similar to the existing play-card interaction, with a separate mulligan phase before turn 1) but **not yet built**. This session only completed the prerequisite work (real shuffled deck, 5-card draw). Mulligan logic itself (`PlayerHand` swap-and-redraw method + UI) is the next planned step.
+- Snapshot-folder handoff convention (dated source-file folders in the repo) was tried for two sessions and then **dropped** at Craig's request — going forward, only `PROJECT_STATUS.md` is updated at end of session, no separate source snapshot.
 
 **Cosmetic, still low priority:**
-- The known `BoardPanel` text-clipping issue (minion name cut off at the left edge, e.g. "oblin" instead of "Goblin") is now visible on **both** boards, not just the player's. Still not investigated — likely a Horizontal Layout Group padding/alignment issue.
-- The two board panels are currently fairly close together vertically (slightly cramped visual separation) — worth nudging `OpponentBoardPanel`'s `Pos Y` a bit higher, or the player's `BoardPanel` a bit lower, for clearer separation between "your board" and "opponent's board."
+- The known `BoardPanel`/`OpponentBoardPanel` text-clipping issue (minion name cut off at the left edge) is still unaddressed.
+- Board panel vertical spacing could still use a bit more separation for clarity.
+
+**Also worth double-checking next session:** confirm `TestCard_Goblin`'s Mana Cost is holding at `2` (this flip-flopped a couple of times across recent sessions).
 
 ## Lessons Learned / Gotchas (useful to remember)
 **Assembly definitions (.asmdef)**
-- Circular references are rejected by Unity — keep dependency direction one-way (`Cards → Effects → Core`; `Core` and `Effects` never reference `Cards`). If a script needs types from two assemblies with no relationship, it belongs in whichever assembly sits "above" both.
+- Circular references are rejected by Unity — keep dependency direction one-way (`Cards → Effects → Core`; `Core` and `Effects` never reference `Cards`).
 - An asmdef's real identity is its **Name** field (Inspector), not its filename — check this if references silently fail.
-- `CS0246` errors can mean either a missing asmdef reference OR a missing `using` statement — check both. Unity packages (e.g. TextMeshPro/`Unity.TextMeshPro`) need an explicit asmdef reference too, separate from any `using` line.
-- When a script in one assembly (e.g. `UI`) calls into a type from another assembly (e.g. `AI`), BOTH the `using` directive AND an explicit **Assembly Definition Reference** on the calling assembly's `.asmdef` are needed. Fix via: select the `.asmdef` asset → Inspector → Assembly Definition References → `+` → add the missing one → **Apply**.
+- `CS0246` errors can mean either a missing asmdef reference OR a missing `using` statement — check both.
+- When a script in one assembly calls into a type from another assembly, BOTH the `using` directive AND an explicit **Assembly Definition Reference** on the calling assembly's `.asmdef` are needed. Fix via: select the `.asmdef` asset → Inspector → Assembly Definition References → `+` → add the missing one → **Apply**.
 
 **Unity Editor / UI basics**
 - Script filename must exactly match its class name, or Unity won't allow attaching it as a Component.
-- Scene changes (new GameObjects, component assignments) aren't saved until `Ctrl+S` — get in the habit of saving after Hierarchy changes, not just script edits.
-- Always confirm the Inspector is showing the GameObject you actually mean to edit (easy to accidentally edit a parent instead of the intended child).
-- Rect Transform anchor presets: hold **Alt** while clicking a preset to also reposition the object. New UI Text/Panels default to a stretch anchor (Width/Height fields only appear after switching to a fixed-point anchor like center).
-- **New this session**: for stretch-anchored panels, repositioning is done via the Rect Transform's `Pos Y`/`Left`/`Right`/`Height` fields in the Inspector, not by freely dragging in Scene view (dragging can fight the anchor/stretch setup). Easiest approach: roughly drag into place with the Move tool (`W`) first — Unity auto-updates `Pos Y` to match — then fine-tune the number directly.
-- TMP Auto Size won't stop wrapping if placeholder text itself is too long for the box — usually resolves once real (shorter) data replaces it, not a real bug.
-- Overlapping semi-transparent UI panels of similar default grey color can visually merge into what looks like one oversized element. If something looks wrongly sized, try setting a suspect parent panel's alpha to 0 first to rule out a layering illusion before assuming a real layout bug.
+- Scene changes (new GameObjects, component assignments) aren't saved until `Ctrl+S`.
+- Always confirm the Inspector is showing the GameObject you actually mean to edit.
+- Rect Transform anchor presets: hold **Alt** while clicking a preset to also reposition the object.
+- For stretch-anchored panels, reposition via the Rect Transform's `Pos Y`/`Left`/`Right`/`Height` fields, not by freely dragging in Scene view. Easiest approach: roughly drag into place with the Move tool (`W`) first — Unity auto-updates `Pos Y` to match — then fine-tune the number directly.
+- TMP Auto Size won't stop wrapping if placeholder text itself is too long for the box — usually resolves once real (shorter) data replaces it.
+- Overlapping semi-transparent UI panels of similar default grey color can visually merge into what looks like one oversized element — try setting a suspect parent panel's alpha to 0 to rule out a layering illusion.
 - If the Scene view camera seems "lost," select the relevant object and press **F** to frame it.
-- **New this session**: a circular gizmo appearing in the Scene view unexpectedly is likely just the `Global Light 2D` range/direction gizmo overlapping your selection — it's editor-only, doesn't appear in Game view or builds, and isn't attached to whatever UI element you're inspecting. Toggle off 2D light gizmos via the Scene view's Gizmos dropdown if it's distracting.
-- **Editing a runtime `(Clone)` GameObject in the Hierarchy during Play mode is temporary** — changes vanish when Play mode stops. To make a permanent change to a prefab, stop Play mode, double-click the prefab asset to enter Prefab Edit Mode, make the change there, exit/save.
-- When a script field expects a specific Component type but the target GameObject doesn't have that component yet, add the component first, then drag the **GameObject** itself onto the field — Unity finds the right component on it automatically. A `NullReferenceException` on a line touching a component field usually means the field was never assigned in the Inspector.
-- An empty/unassigned Inspector field for a listener-style hookup (e.g. a `Button` field that gets `.onClick.AddListener(...)` in `Start()`) fails **silently** — no error, the button just does nothing when clicked. If a wired button appears inert, check the field isn't still `None` before suspecting the underlying logic.
-- Editing a TMP label's `Text Input` box in the Inspector requires clicking into the box, changing the text, then clicking away elsewhere in the Inspector to commit the change — the Hierarchy GameObject's name does NOT reflect the label text, so don't use the Hierarchy name as a check for whether the edit "took."
+- A circular gizmo appearing unexpectedly in Scene view is likely just the `Global Light 2D` gizmo overlapping your selection — editor-only, not a bug.
+- Editing a runtime `(Clone)` GameObject in Play mode is temporary — for permanent prefab changes, stop Play mode, double-click the prefab asset to enter Prefab Edit Mode.
+- When a script field expects a specific Component type, add the component first, then drag the **GameObject** itself onto the field.
+- An empty/unassigned Inspector field for a listener-style hookup (e.g. a `Button` field with `.onClick.AddListener(...)` in `Start()`) fails **silently** — no error, just inert behavior. Check the field isn't `None` before suspecting the underlying logic.
+- Editing a TMP label's `Text Input` box requires clicking in, changing the text, then clicking away elsewhere in the Inspector to commit — the Hierarchy GameObject's name does NOT reflect the label text.
+- **New this session**: when reusing an existing prefab reference for a duplicated controller (e.g. `OpponentHandDisplayController`'s `Card View Prefab` field), don't guess/re-drag from the Project window from memory — instead check the *original* controller's Inspector for exactly which asset is assigned, and use that same one, to guarantee no accidental mismatch between two supposedly-identical setups.
 
 **Core architecture principle**
-- Keep `Core` types generic and unaware of `CardData` — anything needing both real game state and card asset data belongs in the `Cards` layer as a wrapper.
-- AI-ness isn't a flag on `Player` — `AIController` is simply told which `PlayerHand` it controls at construction time, keeping `Core.Player` free of any AI-specific concept.
-- **New this session**: when a display/rendering component is already written generically (takes a plain list/data with zero player-specific logic, like `BoardDisplay`), the cheapest way to support "two of something" (two boards, potentially two hands later) is usually a second *instance* of the same component pointed at a second data source and a second UI panel — not a code change to make the component juggle two lists itself. Keeps the "one component, one job" pattern consistent.
+- Keep `Core` types generic and unaware of `CardData`.
+- AI-ness isn't a flag on `Player` — `AIController` is simply told which `PlayerHand` it controls at construction time.
+- When a display/rendering component is already written generically (takes a plain list/data with zero player-specific logic, like `BoardDisplay` or `HandDisplay`), the cheapest way to support "two of something" is usually a second *instance* of the same component pointed at a second data source and a second UI panel — not a code change to make the component juggle two lists itself.
+- **New this session**: a callback-based click handler that uses the null-conditional operator (`onClicked?.Invoke(card)`) is "free" read-only-mode support — passing `null` instead of a real callback makes the UI element inert without any special-casing, disabling, or hiding logic needed. Worth designing future interactive display components (e.g. anything with a `Button` + `Action` callback) this way from the start.
+- **New this session (deck-building)**: `ScriptableObject`-based cards support "multiple copies in a deck" for free by simply referencing the same asset multiple times in a `List<CardData>` — no need to duplicate the asset itself. A small pool of unique `CardData` assets plus a `copiesPerCard` multiplier is enough to build a realistic-sized deck without maintaining N separate near-identical assets.
+- **New this session (shuffling)**: use an in-place Fisher-Yates shuffle for randomizing a `List<T>` — swapping each element with a random earlier-or-equal index, iterating from the end — rather than a naive "pick random index, remove it" approach, which is easy to get subtly biased.
 
 **Git / GitHub / environment**
-- GitHub requires `gh auth login` or a PAT (repo scope only) for HTTPS git auth — plain passwords no longer work.
-- `.gitignore` should exclude auto-generated files: `Library/`, `Temp/`, `.sln`/`.slnx`, `.csproj`. Git doesn't track empty folders (expected, not a bug).
-- Unity's crash-recovery prompt (`Assets/_Recovery/`) is safe to accept; delete the folder after and gitignore it if unneeded.
-- .NET SDK (install via Microsoft's apt feed, not Ubuntu's default repo) is only needed for VS Code's C# IntelliSense/debugging — separate from Unity's own compiler.
+- GitHub requires `gh auth login` or a PAT (repo scope only) for HTTPS git auth.
+- `.gitignore` should exclude `Library/`, `Temp/`, `.sln`/`.slnx`, `.csproj`.
+- Unity's crash-recovery prompt (`Assets/_Recovery/`) is safe to accept; delete the folder after.
+- .NET SDK (install via Microsoft's apt feed, not Ubuntu's default repo) is only needed for VS Code's C# IntelliSense/debugging.
 
 ## Next Steps (in order)
-1. Re-confirm `TestCard_Goblin`'s Mana Cost is `2`, not `1`.
-2. Playtest further (a few more End Turn clicks) to reach 4 mana on both sides — confirm multi-card AI turns and Fireball's face-damage targeting actually work as expected.
-3. Adjust vertical spacing between `BoardPanel` and `OpponentBoardPanel` for clearer visual separation.
-4. Optional: investigate/fix the minion-text-clipping issue on both board panels — check Horizontal Layout Group padding/alignment.
+1. Re-test whether multi-card AI turns now occur naturally with the bigger, shuffled 5-card hands (no code change needed to check this — just playtest a few turns).
+2. Build the mulligan system: `PlayerHand` method(s) to swap a chosen hand card back into the deck and draw a new random replacement, then a click-to-mulligan UI (separate phase before turn 1) for the human, plus a simple AI auto-mulligan strategy.
+3. Re-confirm `TestCard_Goblin`'s Mana Cost is `2`.
+4. Adjust vertical spacing between the board panels; investigate the minion-text-clipping issue.
 5. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
-6. Add real deck shuffling to `PlayerHand.DrawCard()` (currently just takes index 0).
-7. Consider upgrading click-to-play to real drag-and-drop, if desired (click-to-play works fine as an interim/MVP interaction model).
+6. Consider upgrading click-to-play to real drag-and-drop, if desired.
 
 ## Git Habits Being Followed
 - Simple commit template: `git add .` / `git commit -m "short one-line summary"` / `git push`

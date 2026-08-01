@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cf6095b2f6aefa88b5b95b06c03ab4f, type: 3}
-  m_Name: TestCard_Goblin
+  m_Name: TestCard_Wisp
   m_EditorClassIdentifier: Cards::HearthstoneClone.Cards.CardData
-  cardName: Goblin
+  cardName: Wisp
   description: 
   artwork: {fileID: 0}
   manaCost: 2
   cardType: 0
-  attack: 2
-  health: 2
+  attack: 1
+  health: 1
   onPlayEffect: {fileID: 0}

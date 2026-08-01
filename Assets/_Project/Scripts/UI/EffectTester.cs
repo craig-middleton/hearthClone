@@ -1,19 +1,21 @@
-using HearthstoneClone.AI;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using HearthstoneClone.Cards;
 using HearthstoneClone.Core;
+using HearthstoneClone.AI;
 
 namespace HearthstoneClone.UI
 {
     public class EffectTester : MonoBehaviour
     {
-        public CardData cardToTest;
-        public CardData minionCardToTest;
+        public List<CardData> cardPool;             // drag all unique test cards here in Inspector
+        public int copiesPerCard = 2;
+
         public HandDisplay handDisplay;
-        public BoardDisplay boardDisplay;
-        public BoardDisplay opponentBoardDisplay; 
+        public HandDisplay opponentHandDisplay;
+        public BoardDisplay boardDisplay;            // Player One's board
+        public BoardDisplay opponentBoardDisplay;    // Player Two's (AI's) board
         public Button endTurnButton;
 
         private PlayerHand playerOneHand;
@@ -28,9 +30,9 @@ namespace HearthstoneClone.UI
 
         void Start()
         {
-            if (cardToTest == null || cardToTest.onPlayEffect == null)
+            if (cardPool == null || cardPool.Count == 0)
             {
-                Debug.LogWarning("No card or effect assigned to EffectTester.");
+                Debug.LogWarning("No cards assigned to EffectTester's Card Pool.");
                 return;
             }
 
@@ -43,17 +45,13 @@ namespace HearthstoneClone.UI
             turnManager.StartGame();
             Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
 
-            var starterDeck = new List<CardData> { cardToTest, minionCardToTest };
+            playerOneHand = new PlayerHand(playerOne, BuildDeck(cardPool));
+            playerOneHand.Shuffle();
+            playerOneHand.DrawOpeningHand();
 
-            playerOneHand = new PlayerHand(playerOne, starterDeck);
-            playerOneHand.DrawCard();
-            playerOneHand.DrawCard();
-
-            // AI gets its own copy of the starter deck so its hand is independent of Player One's.
-            var aiDeck = new List<CardData> { cardToTest, minionCardToTest };
-            playerTwoHand = new PlayerHand(playerTwo, aiDeck);
-            playerTwoHand.DrawCard();
-            playerTwoHand.DrawCard();
+            playerTwoHand = new PlayerHand(playerTwo, BuildDeck(cardPool));
+            playerTwoHand.Shuffle();
+            playerTwoHand.DrawOpeningHand();
 
             aiController = new AIController(playerTwoHand, context, board);
 
@@ -66,6 +64,19 @@ namespace HearthstoneClone.UI
 
             RefreshHandDisplay();
             RefreshBoardDisplay();
+        }
+
+        private List<CardData> BuildDeck(List<CardData> pool)
+        {
+            var deck = new List<CardData>();
+            foreach (var card in pool)
+            {
+                for (int i = 0; i < copiesPerCard; i++)
+                {
+                    deck.Add(card);
+                }
+            }
+            return deck;
         }
 
         private void OnCardClicked(CardData card)
@@ -95,24 +106,29 @@ namespace HearthstoneClone.UI
         }
 
         private void RefreshHandDisplay()
-        {
-            if (handDisplay != null)
-            {
-                handDisplay.RenderHand(playerOneHand.Hand, OnCardClicked);
-            }
-        }
+{
+    if (handDisplay != null)
+    {
+        handDisplay.RenderHand(playerOneHand.Hand, OnCardClicked);
+    }
+
+    if (opponentHandDisplay != null)
+    {
+        opponentHandDisplay.RenderHand(playerTwoHand.Hand, null);   // null = not clickable
+    }
+}
 
         private void RefreshBoardDisplay()
-    {
-        if (boardDisplay != null)
         {
-            boardDisplay.RenderBoard(playerOne.BoardMinions);
-        }
+            if (boardDisplay != null)
+            {
+                boardDisplay.RenderBoard(playerOne.BoardMinions);
+            }
 
-        if (opponentBoardDisplay != null)
-        {
-            opponentBoardDisplay.RenderBoard(playerTwo.BoardMinions);
+            if (opponentBoardDisplay != null)
+            {
+                opponentBoardDisplay.RenderBoard(playerTwo.BoardMinions);
+            }
         }
     }
-    }
-    }
+}
