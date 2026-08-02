@@ -27,5 +27,6 @@ namespace HearthstoneClone.Cards
 
         [Header("Behavior")]
         public CardEffect onPlayEffect;
+        public bool targetsSelf;
     }
 }

@@ -11,9 +11,10 @@ namespace HearthstoneClone.UI
     {
         public List<CardData> cardPool;             // drag all unique test cards here in Inspector
         public int copiesPerCard = 2;
+        public CardData coinCard;                   // The Coin — given directly to whoever goes second
 
         public HandDisplay handDisplay;
-        public HandDisplay opponentHandDisplay;
+        public HandDisplay opponentHandDisplay;      // AI's hand, read-only
         public BoardDisplay boardDisplay;            // Player One's board
         public BoardDisplay opponentBoardDisplay;    // Player Two's (AI's) board
         public Button endTurnButton;
@@ -45,13 +46,19 @@ namespace HearthstoneClone.UI
             turnManager.StartGame();
             Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
 
+            // Player One goes first: 3-card opening hand, no Coin.
             playerOneHand = new PlayerHand(playerOne, BuildDeck(cardPool));
             playerOneHand.Shuffle();
-            playerOneHand.DrawOpeningHand();
+            playerOneHand.DrawOpeningHand(3);
 
+            // Player Two goes second: 4-card opening hand, plus The Coin.
             playerTwoHand = new PlayerHand(playerTwo, BuildDeck(cardPool));
             playerTwoHand.Shuffle();
-            playerTwoHand.DrawOpeningHand();
+            playerTwoHand.DrawOpeningHand(4);
+            if (coinCard != null)
+            {
+                playerTwoHand.AddCardToHand(coinCard);
+            }
 
             aiController = new AIController(playerTwoHand, context, board);
 
@@ -81,7 +88,8 @@ namespace HearthstoneClone.UI
 
         private void OnCardClicked(CardData card)
         {
-            bool success = playerOneHand.PlayCard(card, context, opponentTarget);
+            Target target = card.targetsSelf ? new Target(playerOne) : opponentTarget;
+            bool success = playerOneHand.PlayCard(card, context, target);
             if (success)
             {
                 RefreshHandDisplay();
@@ -106,17 +114,17 @@ namespace HearthstoneClone.UI
         }
 
         private void RefreshHandDisplay()
-{
-    if (handDisplay != null)
-    {
-        handDisplay.RenderHand(playerOneHand.Hand, OnCardClicked);
-    }
+        {
+            if (handDisplay != null)
+            {
+                handDisplay.RenderHand(playerOneHand.Hand, OnCardClicked);
+            }
 
-    if (opponentHandDisplay != null)
-    {
-        opponentHandDisplay.RenderHand(playerTwoHand.Hand, null);   // null = not clickable
-    }
-}
+            if (opponentHandDisplay != null)
+            {
+                opponentHandDisplay.RenderHand(playerTwoHand.Hand, null);
+            }
+        }
 
         private void RefreshBoardDisplay()
         {

@@ -35,7 +35,11 @@ namespace HearthstoneClone.AI
                     if (card.manaCost > aiPlayer.CurrentMana)
                         continue;
 
-                    Target target = card.onPlayEffect != null ? new Target(opponent) : null;
+                    Target target = null;
+                    if (card.onPlayEffect != null)
+                    {
+                        target = card.targetsSelf ? new Target(aiPlayer) : new Target(opponent);
+                    }
 
                     if (aiHand.PlayCard(card, context, target))
                     {

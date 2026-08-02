@@ -1450,6 +1450,10 @@ PrefabInstance:
       value: EffectTester
       objectReference: {fileID: 0}
     - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
+      propertyPath: coinCard
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a751756f9c443c889d8b5468911f233, type: 2}
+    - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
       propertyPath: handDisplay
       value: 
       objectReference: {fileID: 1075946670}

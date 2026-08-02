@@ -28,5 +28,13 @@ namespace HearthstoneClone.Core
             if (TargetMinion != null) return TargetMinion.CurrentHealth;
             return 0;
         }
+
+        public void GainMana(int amount)
+        {
+            if (TargetPlayer != null)
+            {
+                TargetPlayer.CurrentMana += amount;
+            }
+        }
     }
 }
