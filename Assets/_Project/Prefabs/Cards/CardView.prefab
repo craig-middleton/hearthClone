@@ -371,6 +371,9 @@ MonoBehaviour:
   costText: {fileID: 1562839249582177762}
   statsText: {fileID: 8727678197781046348}
   button: {fileID: 986345657593005840}
+  cardBackground: {fileID: 743032704441256433}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  selectedForMulliganColor: {r: 0.4, g: 0.4, b: 0.4, a: 1}
 --- !u!114 &8525898132255636522
 MonoBehaviour:
   m_ObjectHideFlags: 0

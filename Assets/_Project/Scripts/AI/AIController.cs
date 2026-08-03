@@ -18,6 +18,21 @@ namespace HearthstoneClone.AI
             this.board = board;
         }
 
+        public void PerformMulligan(int mulliganThreshold = 4)
+        {
+            var handSnapshot = new List<CardData>(aiHand.Hand);
+
+            foreach (var card in handSnapshot)
+            {
+                if (card.manaCost >= mulliganThreshold)
+                {
+                    aiHand.MulliganCard(card);
+                }
+            }
+
+            Debug.Log($"{aiHand.CorePlayer.PlayerName} (AI) completed mulligan.");
+        }
+
         public void TakeTurn()
         {
             Player aiPlayer = aiHand.CorePlayer;

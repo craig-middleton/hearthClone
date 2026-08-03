@@ -13,24 +13,62 @@ namespace HearthstoneClone.UI
         public TMP_Text costText;
         public TMP_Text statsText;
         public Button button;
+        public Image cardBackground;   // NEW — assign to the card's existing background Image
+
+        [Header("Mulligan Visuals")]
+        public Color normalColor = Color.white;
+        public Color selectedForMulliganColor = new Color(0.4f, 0.4f, 0.4f);
 
         private CardData card;
         private Action<CardData> onClicked;
+        private Action<CardData> onMulliganToggled;
+        private bool isSelectedForMulligan;
 
         public void SetCard(CardData cardData, Action<CardData> clickCallback)
         {
             card = cardData;
             onClicked = clickCallback;
 
+            WriteCardText();
+
+            button.onClick.RemoveAllListeners();
+            button.onClick.AddListener(() => onClicked?.Invoke(card));
+        }
+
+        public void SetCardForMulligan(CardData cardData, Action<CardData> toggleCallback)
+        {
+            card = cardData;
+            onMulliganToggled = toggleCallback;
+            isSelectedForMulligan = false;
+
+            WriteCardText();
+            UpdateMulliganVisual();
+
+            button.onClick.RemoveAllListeners();
+            button.onClick.AddListener(() =>
+            {
+                isSelectedForMulligan = !isSelectedForMulligan;
+                UpdateMulliganVisual();
+                onMulliganToggled?.Invoke(card);
+            });
+        }
+
+        private void WriteCardText()
+        {
             nameText.text = card.cardName;
             costText.text = card.manaCost.ToString();
 
             statsText.text = card.cardType == CardType.Minion
                 ? $"{card.attack} / {card.health}"
                 : "";
+        }
 
-            button.onClick.RemoveAllListeners();
-            button.onClick.AddListener(() => onClicked?.Invoke(card));
+        private void UpdateMulliganVisual()
+        {
+            if (cardBackground != null)
+            {
+                cardBackground.color = isSelectedForMulligan ? selectedForMulliganColor : normalColor;
+            }
         }
     }
 }

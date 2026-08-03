@@ -9,15 +9,20 @@ namespace HearthstoneClone.UI
 {
     public class EffectTester : MonoBehaviour
     {
-        public List<CardData> cardPool;             // drag all unique test cards here in Inspector
+        public List<CardData> cardPool;
         public int copiesPerCard = 2;
-        public CardData coinCard;                   // The Coin — given directly to whoever goes second
+        public CardData coinCard;
 
         public HandDisplay handDisplay;
-        public HandDisplay opponentHandDisplay;      // AI's hand, read-only
-        public BoardDisplay boardDisplay;            // Player One's board
-        public BoardDisplay opponentBoardDisplay;    // Player Two's (AI's) board
+        public HandDisplay opponentHandDisplay;
+        public BoardDisplay boardDisplay;
+        public BoardDisplay opponentBoardDisplay;
         public Button endTurnButton;
+
+        [Header("Mulligan UI")]
+        public Transform mulliganPanel;
+        public GameObject cardViewPrefab;
+        public Button confirmMulliganButton;
 
         private PlayerHand playerOneHand;
         private PlayerHand playerTwoHand;
@@ -28,6 +33,10 @@ namespace HearthstoneClone.UI
         private Board board;
         private TurnManager turnManager;
         private AIController aiController;
+
+        private HashSet<CardData> mulliganSelections = new HashSet<CardData>();
+        private List<GameObject> mulliganCardObjects = new List<GameObject>();
+        private bool mulliganComplete = false;
 
         void Start()
         {
@@ -44,14 +53,11 @@ namespace HearthstoneClone.UI
 
             turnManager = new TurnManager(board);
             turnManager.StartGame();
-            Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
 
-            // Player One goes first: 3-card opening hand, no Coin.
             playerOneHand = new PlayerHand(playerOne, BuildDeck(cardPool));
             playerOneHand.Shuffle();
             playerOneHand.DrawOpeningHand(3);
 
-            // Player Two goes second: 4-card opening hand, plus The Coin.
             playerTwoHand = new PlayerHand(playerTwo, BuildDeck(cardPool));
             playerTwoHand.Shuffle();
             playerTwoHand.DrawOpeningHand(4);
@@ -61,16 +67,17 @@ namespace HearthstoneClone.UI
             }
 
             aiController = new AIController(playerTwoHand, context, board);
-
             opponentTarget = new Target(playerTwo);
 
-            if (endTurnButton != null)
+            // AI resolves its own mulligan instantly, no UI needed.
+            aiController.PerformMulligan();
+
+            if (confirmMulliganButton != null)
             {
-                endTurnButton.onClick.AddListener(OnEndTurnClicked);
+                confirmMulliganButton.onClick.AddListener(OnConfirmMulliganClicked);
             }
 
-            RefreshHandDisplay();
-            RefreshBoardDisplay();
+            ShowMulliganUI();
         }
 
         private List<CardData> BuildDeck(List<CardData> pool)
@@ -86,8 +93,83 @@ namespace HearthstoneClone.UI
             return deck;
         }
 
+        private void ShowMulliganUI()
+        {
+            if (mulliganPanel == null || cardViewPrefab == null)
+            {
+                Debug.LogWarning("Mulligan UI not wired up — skipping mulligan phase.");
+                mulliganComplete = true;
+                RefreshHandDisplay();
+                RefreshBoardDisplay();
+                return;
+            }
+
+            mulliganSelections.Clear();
+
+            foreach (Transform child in mulliganPanel)
+            {
+                Destroy(child.gameObject);
+            }
+            mulliganCardObjects.Clear();
+
+            foreach (CardData card in playerOneHand.Hand)
+            {
+                GameObject cardObj = Instantiate(cardViewPrefab, mulliganPanel);
+                CardView view = cardObj.GetComponent<CardView>();
+                view.SetCardForMulligan(card, OnMulliganCardToggled);
+                mulliganCardObjects.Add(cardObj);
+            }
+        }
+
+        private void OnMulliganCardToggled(CardData card)
+        {
+            if (mulliganSelections.Contains(card))
+            {
+                mulliganSelections.Remove(card);
+            }
+            else
+            {
+                mulliganSelections.Add(card);
+            }
+        }
+
+        private void OnConfirmMulliganClicked()
+        {
+            foreach (CardData card in new List<CardData>(mulliganSelections))
+            {
+                playerOneHand.MulliganCard(card);
+            }
+
+            mulliganSelections.Clear();
+
+            foreach (GameObject obj in mulliganCardObjects)
+            {
+                Destroy(obj);
+            }
+            mulliganCardObjects.Clear();
+
+            if (mulliganPanel != null)
+            {
+                mulliganPanel.gameObject.SetActive(false);
+            }
+
+            mulliganComplete = true;
+
+            Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
+
+            RefreshHandDisplay();
+            RefreshBoardDisplay();
+
+            if (endTurnButton != null)
+            {
+                endTurnButton.onClick.AddListener(OnEndTurnClicked);
+            }
+        }
+
         private void OnCardClicked(CardData card)
         {
+            if (!mulliganComplete) return;
+
             Target target = card.targetsSelf ? new Target(playerOne) : opponentTarget;
             bool success = playerOneHand.PlayCard(card, context, target);
             if (success)
@@ -99,6 +181,8 @@ namespace HearthstoneClone.UI
 
         private void OnEndTurnClicked()
         {
+            if (!mulliganComplete) return;
+
             turnManager.EndTurn();
             Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
 
