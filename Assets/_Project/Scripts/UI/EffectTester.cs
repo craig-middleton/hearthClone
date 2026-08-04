@@ -13,6 +13,9 @@ namespace HearthstoneClone.UI
         public int copiesPerCard = 2;
         public CardData coinCard;
 
+        [Header("Testing")]
+        public bool manualControlMode = false;   // true = human controls both players' cards
+
         public HandDisplay handDisplay;
         public HandDisplay opponentHandDisplay;
         public BoardDisplay boardDisplay;
@@ -69,7 +72,7 @@ namespace HearthstoneClone.UI
             aiController = new AIController(playerTwoHand, context, board);
             opponentTarget = new Target(playerTwo);
 
-            // AI resolves its own mulligan instantly, no UI needed.
+            // AI still auto-mulligans regardless of manual mode — mulligan UI stays human-only for Player One.
             aiController.PerformMulligan();
 
             if (confirmMulliganButton != null)
@@ -167,17 +170,32 @@ namespace HearthstoneClone.UI
         }
 
         private void OnCardClicked(CardData card)
-        {
-            if (!mulliganComplete) return;
+{
+    if (!mulliganComplete) return;
+    if (turnManager.CurrentPlayer != playerOne) return;
 
-            Target target = card.targetsSelf ? new Target(playerOne) : opponentTarget;
-            bool success = playerOneHand.PlayCard(card, context, target);
-            if (success)
-            {
-                RefreshHandDisplay();
-                RefreshBoardDisplay();
-            }
-        }
+    Target target = card.targetsSelf ? new Target(playerOne) : opponentTarget;
+    bool success = playerOneHand.PlayCard(card, context, target);
+    if (success)
+    {
+        RefreshHandDisplay();
+        RefreshBoardDisplay();
+    }
+}
+
+        private void OnOpponentCardClicked(CardData card)
+{
+    if (!mulliganComplete || !manualControlMode) return;
+    if (turnManager.CurrentPlayer != playerTwo) return;
+
+    Target target = card.targetsSelf ? new Target(playerTwo) : new Target(playerOne);
+    bool success = playerTwoHand.PlayCard(card, context, target);
+    if (success)
+    {
+        RefreshHandDisplay();
+        RefreshBoardDisplay();
+    }
+}
 
         private void OnEndTurnClicked()
         {
@@ -186,7 +204,7 @@ namespace HearthstoneClone.UI
             turnManager.EndTurn();
             Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
 
-            if (turnManager.CurrentPlayer == playerTwo)
+            if (!manualControlMode && turnManager.CurrentPlayer == playerTwo)
             {
                 aiController.TakeTurn();
                 turnManager.EndTurn();
@@ -206,7 +224,7 @@ namespace HearthstoneClone.UI
 
             if (opponentHandDisplay != null)
             {
-                opponentHandDisplay.RenderHand(playerTwoHand.Hand, null);
+                opponentHandDisplay.RenderHand(playerTwoHand.Hand, manualControlMode ? OnOpponentCardClicked : null);
             }
         }
 

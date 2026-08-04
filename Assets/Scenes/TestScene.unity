@@ -1759,138 +1759,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075897922}
   m_CullTransparentMesh: 1
---- !u!1001 &2654081119424397469
-PrefabInstance:
+--- !u!1 &5059876971311781917
+GameObject:
   m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8891225264576291116}
+  - component: {fileID: 5493842290916087515}
+  m_Layer: 0
+  m_Name: EffectTester
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &5493842290916087515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5059876971311781917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e35ca5aeb2460502b5b07d8ad2baa0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Cards::HearthstoneClone.Cards.EffectTester
+  cardPool:
+  - {fileID: 11400000, guid: 9e52f0a84fec4ca63bd7f461a8e4e1a8, type: 2}
+  - {fileID: 11400000, guid: 6a2a4893482e908e9933700906973d29, type: 2}
+  - {fileID: 11400000, guid: e3593a271aceb8365890e6bf621e4ff7, type: 2}
+  - {fileID: 11400000, guid: 9a67ea36edcfd1f7bb692c8e552712e4, type: 2}
+  - {fileID: 11400000, guid: 111fe1502c0affb3387292b044bb85fd, type: 2}
+  - {fileID: 11400000, guid: 60a98b7ba87db20c68b648ee8023fd35, type: 2}
+  - {fileID: 11400000, guid: 965ce3960630cc9689a6c86a19459b68, type: 2}
+  - {fileID: 11400000, guid: 1ac1caefd6a4dbfec9d2f62fc9cfc7e9, type: 2}
+  - {fileID: 11400000, guid: bb302eaf862fd659f8fd18b4ed044d6b, type: 2}
+  - {fileID: 11400000, guid: 88b035f4620bd2039bab3c9d73ca4552, type: 2}
+  - {fileID: 11400000, guid: e86febe8eb0e5755e97f9e144e2101ff, type: 2}
+  - {fileID: 11400000, guid: 3c582adbe89f2156b89467fa3841e8b8, type: 2}
+  - {fileID: 11400000, guid: f08b9662c75b1939cb3aaea42ad8d88e, type: 2}
+  - {fileID: 11400000, guid: ec9e725f97f60d512ae193dc53a3315f, type: 2}
+  - {fileID: 11400000, guid: 1aeeeba4d63facb85907ae3776bc3f08, type: 2}
+  copiesPerCard: 2
+  coinCard: {fileID: 11400000, guid: 7a751756f9c443c889d8b5468911f233, type: 2}
+  manualControlMode: 1
+  handDisplay: {fileID: 1075946670}
+  opponentHandDisplay: {fileID: 643822025}
+  boardDisplay: {fileID: 1406536911}
+  opponentBoardDisplay: {fileID: 1769888302}
+  endTurnButton: {fileID: 1498638378}
+  mulliganPanel: {fileID: 2075897923}
+  cardViewPrefab: {fileID: 734474561267406190, guid: caa0f13ab5b5297f28ebc651839c5f8f, type: 3}
+  confirmMulliganButton: {fileID: 411525890}
+--- !u!4 &8891225264576291116
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5059876971311781917}
   serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6896923021728063921, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896923021728063921, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896923021728063921, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896923021728063921, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896923021728063921, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896923021728063921, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896923021728063921, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896923021728063921, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896923021728063921, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6896923021728063921, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7128490104547121280, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: m_Name
-      value: EffectTester
-      objectReference: {fileID: 0}
-    - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: coinCard
-      value: 
-      objectReference: {fileID: 11400000, guid: 7a751756f9c443c889d8b5468911f233, type: 2}
-    - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: handDisplay
-      value: 
-      objectReference: {fileID: 1075946670}
-    - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: boardDisplay
-      value: 
-      objectReference: {fileID: 1406536911}
-    - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: endTurnButton
-      value: 
-      objectReference: {fileID: 1498638378}
-    - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: mulliganPanel
-      value: 
-      objectReference: {fileID: 2075897923}
-    - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: cardViewPrefab
-      value: 
-      objectReference: {fileID: 734474561267406190, guid: caa0f13ab5b5297f28ebc651839c5f8f, type: 3}
-    - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: thirdCardToTest
-      value: 
-      objectReference: {fileID: 11400000, guid: 111fe1502c0affb3387292b044bb85fd, type: 2}
-    - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: minionCardToTest
-      value: 
-      objectReference: {fileID: 11400000, guid: e3593a271aceb8365890e6bf621e4ff7, type: 2}
-    - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: cardPool.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: opponentHandDisplay
-      value: 
-      objectReference: {fileID: 643822025}
-    - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: opponentBoardDisplay
-      value: 
-      objectReference: {fileID: 1769888302}
-    - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: confirmMulliganButton
-      value: 
-      objectReference: {fileID: 411525890}
-    - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: 'cardPool.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 9e52f0a84fec4ca63bd7f461a8e4e1a8, type: 2}
-    - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: 'cardPool.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 6a2a4893482e908e9933700906973d29, type: 2}
-    - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: 'cardPool.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: e3593a271aceb8365890e6bf621e4ff7, type: 2}
-    - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: 'cardPool.Array.data[3]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 9a67ea36edcfd1f7bb692c8e552712e4, type: 2}
-    - target: {fileID: 7560203211484599878, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
-      propertyPath: 'cardPool.Array.data[4]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 111fe1502c0affb3387292b044bb85fd, type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c5ba3d6f14c23a321ba2199987401501, type: 3}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
-  - {fileID: 2654081119424397469}
+  - {fileID: 8891225264576291116}
   - {fileID: 1119497695}
   - {fileID: 705681}
   - {fileID: 1075946671}
