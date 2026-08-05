@@ -5,7 +5,7 @@
 - For code changes, always provide the full rewritten class/file, not just a diff/snippet — Craig pastes a complete file each time rather than manually merging partial additions.
 - For hearthClone architecture, avoid singletons where possible — prefer explicit constructor/field-passed references (as the project already does throughout) over globally-reachable static instances, to keep dependencies visible and avoid Unity singleton pitfalls (script execution order, DontDestroyOnLoad issues, creeping responsibility).
 
-_Last updated: 2026-08-04 (session 15 — added a manual-control testing toggle so Craig can play both sides directly; scoped a future combat/Taunt system; deck expanded to a real 30 cards; cleaned up an accidental EffectTester prefab)_
+_Last updated: 2026-08-05 (session 16 — full verification queue closed out, plus a substantial visual cleanup pass: proper Layout Element sizing for board minions, centered hand/board layouts across all panels)_
 
 ## How to use this file
 Paste the contents of this file at the start of any new Claude chat to get instant context on the project. Update it at the end of each working session (ask Claude to update it, or do it yourself) so it never goes stale.
@@ -73,14 +73,26 @@ A Hearthstone-style card game built in Unity, single-player vs AI, using C# with
 - **Manual control mode (this session)**: toggle exists and Player Two's hand does become clickable when enabled. **Turn-gating bug found via direct testing** (Craig played Player Two's Coin during Player One's turn) — root cause diagnosed (missing `CurrentPlayer` check) and fix written, but **not yet re-tested after the fix was applied** — confirm next session that turn order is now properly enforced in manual mode.
 
 ## Current Blocker / Last Thing Worked On
-None blocking, but several verification steps are queued for next session — this was a session heavy on building/setup with less time left for playtesting than usual. In order: manual control mode was built, a real bug found and fixed (turn-gating), fix not yet re-verified; the 10 new test cards were completed and confirmed in `Card Pool` (30-card deck), but not yet playtested; and `EffectTester` was found to have accidentally become a prefab asset at some point (likely from being dragged into the Project window) rather than staying a plain scene GameObject — this was fixed at the very end of the session via **Unpack Completely** + deleting the orphaned prefab asset from the Project window, restoring it to a normal scene GameObject. **This fix itself hasn't been tested with a fresh Play session yet either** — worth confirming `EffectTester` still behaves identically now that it's unpacked.
+None — this session closed out the full session 15 verification queue AND completed a substantial visual cleanup pass. Good stopping point.
 
-**Immediate next-session priorities, in order:**
-1. Confirm `EffectTester` still works correctly after being unpacked from its accidental prefab state (quick sanity check — Play, confirm no missing references, no errors).
-2. Confirm the 30-card deck plays correctly — a fresh Play session hasn't been run since the 10 new cards were added (console should show `Deck remaining: 27` after Player One's 3-card draw, `Deck remaining: 25` after Player Two's 4-card draw + Coin, given a 30-card deck).
-3. Confirm the turn-gating fix (`OnCardClicked`/`OnOpponentCardClicked` now checking `turnManager.CurrentPlayer`) actually resolves the manual-mode issue — Player Two's cards should be unclickable during Player One's turn and vice versa.
-4. **Original regression check, still not done** (carried over from session 14, got sidetracked into manual-mode work this session): confirm End Turn / normal AI-controlled turn-taking still works correctly after a mulligan completes — this predates the manual-mode toggle and should be checked with `manualControlMode = false`.
-5. Re-confirm `TestCard_Goblin`'s Mana Cost is `2` (long-running check-item, still not re-verified in several sessions).
+**Confirmed working this session:**
+1. `EffectTester` unpack fix solid (zero errors on fresh Play).
+2. 30-card deck confirmed working (correct `Deck remaining` counts through multiple mulligan cycles).
+3. Manual-mode turn-gating fix confirmed working (Player Two's mana correctly starts at proper `1/1` on their turn, not the old broken `0`).
+4. **AI-mode regression confirmed working** — with `Manual Control Mode` unchecked live during Play, `aiController.TakeTurn()` fired automatically and completely on its own after End Turn (`--- Player Two (AI) is taking its turn ---` block, played Murloc then The Coin, handed control back cleanly). Note: this was tested via a live Play-mode toggle, not a saved-and-reloaded state — worth a quick fresh-session sanity check next time, though there's no reason to expect different behavior.
+5. **`TestCard_Goblin`'s Mana Cost confirmed at `2`** — long-running check item, finally resolved.
+
+**Cosmetic cleanup completed this session** (the bulk of tonight's work):
+- **Root cause found**: `MinionView`'s prefab had no `Layout Element` component, unlike `CardView`'s prefab. This meant that once `Control Child Size` was enabled on the board panels' Horizontal Layout Groups (a necessary step to fix long-standing text clipping), minions had no defined preferred size to be laid out with — they briefly rendered as giant, broken, un-sized text floating on screen until the fix was applied.
+- **Fix applied**: added a `Layout Element` component to `MinionView`'s prefab, `Preferred Width: 120`, `Preferred Height: 160` (intentionally a bit smaller than hand cards' 160×220, matching how Hearthstone board minions read as slightly smaller than hand cards).
+- **`BoardPanel` and `OpponentBoardPanel`** both updated: `Control Child Size` (Width + Height) checked, `Child Alignment: Middle Center`, `Spacing: 40`.
+- **`HandPanel`, `OpponentHandPanel`, and `MulliganPanel`** also updated to `Child Alignment: Middle Center` (previously `Upper Left`, causing hands to bunch toward the screen edge) plus `Control Child Size` confirmed checked.
+- `HandPanel` was also manually repositioned in the scene (exact new position not documented — worth checking Rect Transform values next session for the record) to resolve an apparent Editor-view-cropping issue that turned out to be resolved by repositioning rather than being a true rendering bug.
+- **End result, confirmed visually**: both hands (player and opponent) and both boards now render as clean, evenly-spaced, centered rows of correctly-sized cards, with consistent font rendering (no more shrink-to-fit inconsistency between short and long card names) — a big visual step toward actually looking like Hearthstone, per Craig's stated goal for this session.
+
+**Not yet done / worth a look next session:**
+- The vertical "facing each other" positioning of the two board rows (`BoardPanel` Pos Y 290 vs `OpponentBoardPanel` Pos Y 600) hasn't been deliberately tuned — it happens to look reasonable now but wasn't the focus of tonight's fixes, which were about sizing/alignment/spacing rather than the vertical gap between the two rows. Worth a look with fresh eyes.
+- Record `HandPanel`'s exact new Rect Transform position for documentation completeness (worked correctly by feel tonight, values not captured).
 
 **Newly scoped, deliberately deferred to its own future session:**
 - **Combat system (attacking + Taunt)** — currently minions can be summoned to a board but nothing can ever attack anything; `Target.TakeDamage()` is only ever invoked by spell effects (Fireball) today, never by minion combat. Taunt is a targeting *rule* ("must attack a Taunt minion first if one exists") that inherently depends on an attack system existing first, so it can't be built in isolation. This is a meaningfully large feature — likely comparable in scope to the mulligan system or larger — touching `Minion` (Taunt flag, "has attacked this turn" tracking), `Player`/`Board` (attack targeting/validation rules), UI (click-to-attack interaction), and `AIController` (attack decision-making). Deliberately not started casually at a session's end; needs its own planning pass (design decisions, then build) the way mulligan got.
@@ -121,6 +133,8 @@ None blocking, but several verification steps are queued for next session — th
 - A "confirm/complete" boolean guard flag checked at the top of interactive handlers is a simple way to gate a whole phase without a full state machine — appropriate at small scale; worth revisiting as a real state machine if more phases (e.g. combat) get added.
 - **New this session**: when adding a toggleable alternate mode (like `manualControlMode`) to code that already has implicit assumptions baked in (like "only Player One's hand is ever clickable, so no one checks whose turn it is"), audit those implicit assumptions explicitly — the toggle didn't introduce a new bug so much as expose a check (turn ownership) that was never needed before because only one hand was ever interactive. New modes are a good forcing function for surfacing this kind of hidden coupling.
 - **New this session (deck design)**: Hearthstone's real deckbuilding rule is many unique cards each capped at ~2 copies, not few unique cards with many copies — worth preserving that shape (add more `CardData` assets, not a higher `copiesPerCard`) to keep matches feeling varied, and because `BuildDeck()`/`Copies Per Card` was deliberately built to scale to any pool size without code changes, so growing the card pool is pure content work, not engineering work.
+- **New this session (UI Layout Groups)**: any prefab that's a child of a Horizontal/Vertical Layout Group with `Control Child Size` enabled MUST have a `Layout Element` component defining its own `Preferred Width`/`Height` — without one, the layout group has no sensible size to assign it and results can range from squished/clipped to comically oversized, depending on what "no size" resolves to. When one prefab (`CardView`) works fine in a layout group but a sibling prefab (`MinionView`) renders broken under the same layout settings, checking whether both actually have a `Layout Element` component is the first thing to check — don't assume the layout group settings themselves are wrong.
+- **New this session (Editor view vs. real UI bugs)**: before concluding a UI element is actually clipped/broken, check whether the Game view *pane itself* in the Editor is just too short (e.g. a Console panel docked directly below eating vertical space) — this can crop the rendered frame and look identical to a real clipping bug. Try maximizing/resizing the Game view tab before assuming the underlying Rect Transform or Layout Group settings need changing.
 
 **Git / GitHub / environment**
 - GitHub requires `gh auth login` or a PAT (repo scope only) for HTTPS git auth.
@@ -129,15 +143,11 @@ None blocking, but several verification steps are queued for next session — th
 - .NET SDK (install via Microsoft's apt feed, not Ubuntu's default repo) is only needed for VS Code's C# IntelliSense/debugging.
 
 ## Next Steps (in order)
-1. Confirm `EffectTester` behaves correctly after being unpacked from its accidental prefab state.
-2. Verify the 30-card deck draws correctly in a fresh Play session.
-3. Confirm the manual-mode turn-gating fix works.
-4. Regression-check normal AI-controlled turn-taking (manual mode off) still works post-mulligan.
-5. Re-confirm `TestCard_Goblin`'s Mana Cost is `2`.
-6. Board panel spacing + minion text-clipping cosmetic cleanup.
-7. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
-8. Consider upgrading click-to-play to real drag-and-drop, if desired.
-9. **Combat system (attacking + Taunt)** — dedicated future session; needs its own design/scoping pass before building (see "Newly scoped" above).
+1. Fine-tune the vertical "facing each other" gap between `BoardPanel` and `OpponentBoardPanel` with fresh eyes (functional and reasonable-looking now, just not deliberately tuned).
+2. Record `HandPanel`'s current Rect Transform values for documentation completeness.
+3. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
+4. Consider upgrading click-to-play to real drag-and-drop, if desired.
+5. **Combat system (attacking + Taunt)** — dedicated future session; needs its own design/scoping pass before building (see "Newly scoped" above).
 
 ## Git Habits Being Followed
 - Simple commit template: `git add .` / `git commit -m "short one-line summary"` / `git push`
