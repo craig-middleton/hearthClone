@@ -5,7 +5,7 @@
 - For code changes, always provide the full rewritten class/file, not just a diff/snippet — Craig pastes a complete file each time rather than manually merging partial additions.
 - For hearthClone architecture, avoid singletons where possible — prefer explicit constructor/field-passed references (as the project already does throughout) over globally-reachable static instances, to keep dependencies visible and avoid Unity singleton pitfalls (script execution order, DontDestroyOnLoad issues, creeping responsibility).
 
-_Last updated: 2026-08-05 (session 16 — full verification queue closed out, plus a substantial visual cleanup pass: proper Layout Element sizing for board minions, centered hand/board layouts across all panels)_
+_Last updated: 2026-08-06 (session 17 — built and wired the first version of the combat system: click-to-attack, summoning sickness, one-attack-per-turn, minion death, face health display, and basic AI attacking. Compiling cleanly, not yet playtested.)_
 
 ## How to use this file
 Paste the contents of this file at the start of any new Claude chat to get instant context on the project. Update it at the end of each working session (ask Claude to update it, or do it yourself) so it never goes stale.
@@ -37,19 +37,21 @@ A Hearthstone-style card game built in Unity, single-player vs AI, using C# with
 | `CardEffect.cs` | `Scripts/Effects/` | Abstract `ScriptableObject` base; `Execute(GameContext, Target)`. |
 | `DealDamageEffect.cs` | `Scripts/Effects/` | Deals damage to a Target, logs remaining health. |
 | `GainManaEffect.cs` | `Scripts/Effects/` | Calls `target.GainMana(manaAmount)`. Powers The Coin (and a planned second ramp card). |
-| `Minion.cs` | `Scripts/Core/` | Runtime board minion (name, attack, health) only — **no Taunt flag, no attack/combat capability yet** (see Next Steps: Combat System). |
+| `Minion.cs` | `Scripts/Core/` | Runtime board minion (name, attack, health). **New this session:** `HasSummoningSickness` (true from construction, i.e. the instant a minion is played), `HasAttackedThisTurn`, `CanAttack` (computed: `!HasSummoningSickness && !HasAttackedThisTurn`), `ResetForNewTurn()` (clears both flags). Two independent flags rather than one combined bool, since sickness only ever needs clearing once (on the controller's next turn) while "already attacked" needs clearing every turn. |
 | `Player.cs` | `Scripts/Core/` | Health, mana (current/max), board minions list. No `IsAI` flag. |
-| `Board.cs` | `Scripts/Core/` | Holds both `Player`s; `GetOpponent(player)` helper. |
+| `Board.cs` | `Scripts/Core/` | Holds both `Player`s; `GetOpponent(player)` helper. **New this session:** `RemoveDeadMinions()` — strips any minion with `IsDead == true` from both players' boards in one call, since a single attack can affect either side (the attacker can die too, from a minion trade). |
 | `GameContext.cs` | `Scripts/Core/` | Holds a real `Board` reference. |
 | `Target.cs` | `Scripts/Core/` | Points to a `Player` or `Minion`. `TakeDamage()`, `GetCurrentHealth()`, `GainMana(int)`. |
-| `TurnManager.cs` | `Scripts/Core/` | Turn order + mana progression. `StartGame()`: turn 1, Player One first, **only refills Player One's mana at game start** — Player Two's mana stays at 0/0 until their first real `EndTurn()`. `EndTurn()`: swaps `CurrentPlayer`, increments turn, refills mana (+1/turn, capped at 10). |
-| `EffectTester.cs` | `Scripts/UI/` | Bootstrapper. Builds both decks/hands, asymmetric 3-vs-4+Coin opening hands, full mulligan flow (human UI + AI auto-mulligan). **New this session:** `manualControlMode` bool field (Inspector-toggleable) — when true, Player Two's hand becomes clickable via a new `OnOpponentCardClicked()` handler (mirrors `OnCardClicked()`, operates on `playerTwoHand`/`playerTwo`), and `OnEndTurnClicked()` skips `aiController.TakeTurn()` entirely, leaving both sides to be played manually. `RefreshHandDisplay()` passes `OnOpponentCardClicked` as the opponent hand's callback only when `manualControlMode` is true (`null` otherwise, same as before). **Bug found and fixed this session**: both `OnCardClicked()` and `OnOpponentCardClicked()` now also check `turnManager.CurrentPlayer` and early-return if it's not that hand's owner's turn — without this, both hands were clickable at any time regardless of whose turn it was, which let Player Two's cards be played during Player One's turn (surfaced as a mana-tracking confusion, since Player Two's mana hadn't been refilled by a real turn yet). Mulligan phase itself is unaffected by `manualControlMode` — the AI always auto-mulligans for Player Two, only card-play/turn-taking is manual-mode-aware. |
+| `Combat.cs` | `Scripts/Core/` (**new this session**) | Static class, `TryAttack(Minion attacker, Target target, out string failReason)` — validates `attacker.CanAttack`, applies the attacker's damage to the target (reusing the existing `Target` class unchanged), and strikes back at the attacker if the target is a minion (simultaneous damage, matching Hearthstone). Static because it holds no state of its own — a pure function operating on whatever's passed in, closer to `Mathf`/`UnityEngine.Random` than a singleton; nothing reaches into it globally. |
+| `TurnManager.cs` | `Scripts/Core/` | Turn order + mana progression. **New this session:** a private `StartTurnFor(player)` now wraps both mana refill and a new `ResetMinionsForNewTurn(player)` pass (calls `minion.ResetForNewTurn()` on every minion that player controls), called from both `StartGame()` and `EndTurn()`. This guarantees a minion summoned on Player One's turn stays sick through all of Player Two's turn, only clearing on Player One's own next turn — exactly matching real Hearthstone timing, no separate "turns since summoned" counter needed. |
+| `EffectTester.cs` | `Scripts/UI/` | Bootstrapper. Builds decks/hands, asymmetric opening hands + Coin, full mulligan flow, manual control mode toggle. **New this session:** a `selectedAttacker` field tracks the currently-chosen attacking minion. `OnMinionClicked(minion, owner)` does double duty — clicking your own eligible minion selects it as an attacker (or deselects if clicked again); clicking an enemy minion while an attacker is already selected resolves an attack via `Combat.TryAttack()`. `OnFaceClicked(owner)` handles attacking a player's face the same way, gated so you can't click your own face while you have an attacker selected. `ResolveAttack()` calls `Combat.TryAttack()`, then `board.RemoveDeadMinions()` on success, then refreshes all displays. A new `RefreshAll()` consolidates hand/board/face refresh calls, since combat can affect health, kill minions, and change state across all three at once. New `Face View`/`Opponent Face View` fields wire up the first-ever visible health display. Turn-ownership gating for minion/face clicks reuses the same "is this the current player, and are they either the always-human Player One or is manual mode on" logic already used for card-play clicks. **Not permanent** — delete/rename once real gameplay loop exists. |
 | `CardView.cs` | `Scripts/UI/` | Displays one card. Two setup modes sharing a private `WriteCardText()` helper — `SetCard()` (play mode) and `SetCardForMulligan()` (toggle-select mode with dim/highlight visual). |
 | `HandDisplay.cs` | `Scripts/UI/` | `RenderHand(List<CardData>, Action<CardData>)` — generic, reused for both hands. |
 | `PlayerHand.cs` | `Scripts/Cards/` | Wraps a `Core.Player` with `Deck`/`Hand`. `Shuffle()`, `DrawOpeningHand(int)`, `DrawCard()`, `AddCardToHand()`, `MulliganCard()`. `PlayCard()` unchanged. |
-| `MinionView.cs` | `Scripts/UI/` | Display-only, no click/Button. |
-| `BoardDisplay.cs` | `Scripts/UI/` | `RenderBoard(List<Minion>)` — generic, reused for both boards. |
-| `AIController.cs` | `Scripts/AI/` | `PerformMulligan(int threshold = 4)` — mulligans expensive cards. `TakeTurn()` — greedy play-what's-affordable loop, targeting-aware via `card.targetsSelf`. |
+| `MinionView.cs` | `Scripts/UI/` | **New this session:** now clickable — added `Button` and `Image` (`minionBackground`) fields. `SetMinion()` gains optional `clickCallback`, `isSelected`, and `showAttackEligibility` parameters (all default so every pre-existing call site keeps compiling unchanged). Visual state: selected attacker tints green (`selectedColor`); a minion that can't currently attack (only checked when `showAttackEligibility` is true, i.e. only for the board belonging to whoever's turn it currently is) tints grey (`cannotAttackColor`) — deliberately never applied to an opponent's board, since a defender's own `CanAttack` status is irrelevant to whether it can be attacked. |
+| `BoardDisplay.cs` | `Scripts/UI/` | `RenderBoard()` — **new this session:** now takes optional `onMinionClicked`, `selectedAttacker`, and `showAttackEligibility` parameters, passed straight through to each `MinionView.SetMinion()` call. Still generic, still reused for both boards via two separate instances. |
+| `FaceView.cs` | `Scripts/UI/` (**new this session**) | The first-ever visible player health display. `SetPlayer(Player, Action<Player> clickCallback)` writes `"{PlayerName}: {Health} HP"` to a TMP text field and wires a `Button` click to the callback — doubles as the attack target for face damage. |
+| `AIController.cs` | `Scripts/AI/` | `PerformMulligan(int threshold = 4)` — mulligans expensive cards. `TakeTurn()` — greedy play-what's-affordable loop, targeting-aware via `card.targetsSelf`. **New this session:** after the card-play loop, a new pass attacks the opponent's face directly with every minion that `CanAttack` — simple pure-aggression strategy (no trading/risk logic yet), then calls `board.RemoveDeadMinions()`. |
 
 ## Test Assets Created / In Progress
 - Original 5: `TestCard_Wisp` (1, 1/1), `TestCard_Goblin` (2, 2/2), `TestCard_RiverCroc` "River Crocodile" (3, 2/3), `TestCard_Fireball` (4, Spell → `Effect_Deal3Damage`), `TestCard_Boulderfist` (5, 4/4).
@@ -73,30 +75,21 @@ A Hearthstone-style card game built in Unity, single-player vs AI, using C# with
 - **Manual control mode (this session)**: toggle exists and Player Two's hand does become clickable when enabled. **Turn-gating bug found via direct testing** (Craig played Player Two's Coin during Player One's turn) — root cause diagnosed (missing `CurrentPlayer` check) and fix written, but **not yet re-tested after the fix was applied** — confirm next session that turn order is now properly enforced in manual mode.
 
 ## Current Blocker / Last Thing Worked On
-None — this session closed out the full session 15 verification queue AND completed a substantial visual cleanup pass. Good stopping point.
+Session 17 built the first version of the combat system end-to-end: `Minion` attack-eligibility tracking (summoning sickness + one-attack-per-turn), `Combat.TryAttack()`, dead-minion cleanup on `Board`, click-to-attack UI wiring in `EffectTester` (select your minion → click a target, enemy minion or face), the first-ever visible player health display (`FaceView`), and basic AI face-attacking after its card-play phase. **Everything pasted in cleanly with zero compile errors, and all Editor setup steps (MinionView Button/Image, new FaceView prefab, two scene instances, EffectTester wiring) were completed with no errors. However, none of this has been playtested yet** — session ended right after Editor setup, before a single Play session was run to confirm the combat loop actually works end-to-end.
 
-**Confirmed working this session:**
-1. `EffectTester` unpack fix solid (zero errors on fresh Play).
-2. 30-card deck confirmed working (correct `Deck remaining` counts through multiple mulligan cycles).
-3. Manual-mode turn-gating fix confirmed working (Player Two's mana correctly starts at proper `1/1` on their turn, not the old broken `0`).
-4. **AI-mode regression confirmed working** — with `Manual Control Mode` unchecked live during Play, `aiController.TakeTurn()` fired automatically and completely on its own after End Turn (`--- Player Two (AI) is taking its turn ---` block, played Murloc then The Coin, handed control back cleanly). Note: this was tested via a live Play-mode toggle, not a saved-and-reloaded state — worth a quick fresh-session sanity check next time, though there's no reason to expect different behavior.
-5. **`TestCard_Goblin`'s Mana Cost confirmed at `2`** — long-running check item, finally resolved.
+**Deliberately out of scope for this session** (per the plan agreed with Craig): Taunt, and win-condition handling when a player's `Health` hits 0 — neither exists yet. Also out of scope: any AI trading/risk logic — the AI's attack strategy is currently pure face-aggression only, ignoring board state entirely.
 
-**Cosmetic cleanup completed this session** (the bulk of tonight's work):
-- **Root cause found**: `MinionView`'s prefab had no `Layout Element` component, unlike `CardView`'s prefab. This meant that once `Control Child Size` was enabled on the board panels' Horizontal Layout Groups (a necessary step to fix long-standing text clipping), minions had no defined preferred size to be laid out with — they briefly rendered as giant, broken, un-sized text floating on screen until the fix was applied.
-- **Fix applied**: added a `Layout Element` component to `MinionView`'s prefab, `Preferred Width: 120`, `Preferred Height: 160` (intentionally a bit smaller than hand cards' 160×220, matching how Hearthstone board minions read as slightly smaller than hand cards).
-- **`BoardPanel` and `OpponentBoardPanel`** both updated: `Control Child Size` (Width + Height) checked, `Child Alignment: Middle Center`, `Spacing: 40`.
-- **`HandPanel`, `OpponentHandPanel`, and `MulliganPanel`** also updated to `Child Alignment: Middle Center` (previously `Upper Left`, causing hands to bunch toward the screen edge) plus `Control Child Size` confirmed checked.
-- `HandPanel` was also manually repositioned in the scene (exact new position not documented — worth checking Rect Transform values next session for the record) to resolve an apparent Editor-view-cropping issue that turned out to be resolved by repositioning rather than being a true rendering bug.
-- **End result, confirmed visually**: both hands (player and opponent) and both boards now render as clean, evenly-spaced, centered rows of correctly-sized cards, with consistent font rendering (no more shrink-to-fit inconsistency between short and long card names) — a big visual step toward actually looking like Hearthstone, per Craig's stated goal for this session.
+**First thing to do next session — full playtest of the combat loop:**
+1. Play a game up through the mulligan, into normal turns.
+2. Play a minion, confirm it does NOT show as attack-eligible (or rejects an attack attempt) the turn it's summoned — verifies summoning sickness.
+3. End turn, come back around — confirm that same minion IS now attack-eligible.
+4. Click that minion (should visually select/highlight), then click an enemy minion — confirm damage applies both ways, and check `Board.RemoveDeadMinions()` correctly clears anything that dies.
+5. Click a minion, then click the opponent's face (via the new `FaceView`) — confirm face damage applies and the health display updates.
+6. Try attacking twice with the same minion in one turn — should be rejected (`HasAttackedThisTurn`).
+7. Confirm the AI actually attacks face with eligible minions during its turn (watch console for whatever log line fires, or lack thereof if none was added — worth checking `ResolveAttack()`'s pattern was mirrored in `AIController`).
+8. Confirm `FaceView`'s health numbers actually update visually after any of the above, not just internally.
 
-**Not yet done / worth a look next session:**
-- The vertical "facing each other" positioning of the two board rows (`BoardPanel` Pos Y 290 vs `OpponentBoardPanel` Pos Y 600) hasn't been deliberately tuned — it happens to look reasonable now but wasn't the focus of tonight's fixes, which were about sizing/alignment/spacing rather than the vertical gap between the two rows. Worth a look with fresh eyes.
-- Record `HandPanel`'s exact new Rect Transform position for documentation completeness (worked correctly by feel tonight, values not captured).
-
-**Newly scoped, deliberately deferred to its own future session:**
-- **Combat system (attacking + Taunt)** — currently minions can be summoned to a board but nothing can ever attack anything; `Target.TakeDamage()` is only ever invoked by spell effects (Fireball) today, never by minion combat. Taunt is a targeting *rule* ("must attack a Taunt minion first if one exists") that inherently depends on an attack system existing first, so it can't be built in isolation. This is a meaningfully large feature — likely comparable in scope to the mulligan system or larger — touching `Minion` (Taunt flag, "has attacked this turn" tracking), `Player`/`Board` (attack targeting/validation rules), UI (click-to-attack interaction), and `AIController` (attack decision-making). Deliberately not started casually at a session's end; needs its own planning pass (design decisions, then build) the way mulligan got.
-- Related, smaller and still deferred: on-play effects beyond simple spell-style damage/mana (e.g. Deathrattles, passive/aura effects) — `CardEffect`/`onPlayEffect` currently only models one-shot Battlecry-style effects.
+Given how much is new and untested here, treat this as "built but unverified" rather than "working" until a real playtest happens.
 
 **Cosmetic, still low priority:**
 - `BoardPanel`/`OpponentBoardPanel` text-clipping issue (minion name cut off at left edge) unaddressed.
@@ -143,11 +136,14 @@ None — this session closed out the full session 15 verification queue AND comp
 - .NET SDK (install via Microsoft's apt feed, not Ubuntu's default repo) is only needed for VS Code's C# IntelliSense/debugging.
 
 ## Next Steps (in order)
-1. Fine-tune the vertical "facing each other" gap between `BoardPanel` and `OpponentBoardPanel` with fresh eyes (functional and reasonable-looking now, just not deliberately tuned).
-2. Record `HandPanel`'s current Rect Transform values for documentation completeness.
-3. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
-4. Consider upgrading click-to-play to real drag-and-drop, if desired.
-5. **Combat system (attacking + Taunt)** — dedicated future session; needs its own design/scoping pass before building (see "Newly scoped" above).
+1. **Full combat system playtest** (see checklist above) — this is unverified, untested code and should be treated as the top priority.
+2. Once combat is confirmed working: build **Taunt** (targeting rule — must attack a Taunt minion first if one exists) as a fast follow-up, now that the underlying attack system exists to hang the rule on.
+3. Build **win condition** handling (a player loses when `Health` hits 0) — currently nothing checks for this at all.
+4. Consider smarter AI attack logic (trading/risk awareness) once basic face-aggression is confirmed working.
+5. Fine-tune the vertical "facing each other" gap between `BoardPanel` and `OpponentBoardPanel`.
+6. Record `HandPanel`'s current Rect Transform values for documentation completeness.
+7. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
+8. Consider upgrading click-to-play to real drag-and-drop, if desired.
 
 ## Git Habits Being Followed
 - Simple commit template: `git add .` / `git commit -m "short one-line summary"` / `git push`

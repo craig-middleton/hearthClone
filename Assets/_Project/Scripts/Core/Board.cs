@@ -15,5 +15,11 @@ namespace HearthstoneClone.Core
         {
             return player == PlayerOne ? PlayerTwo : PlayerOne;
         }
+
+        public void RemoveDeadMinions()
+        {
+            PlayerOne.BoardMinions.RemoveAll(m => m.IsDead);
+            PlayerTwo.BoardMinions.RemoveAll(m => m.IsDead);
+        }
     }
 }

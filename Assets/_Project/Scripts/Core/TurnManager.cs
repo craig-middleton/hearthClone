@@ -5,7 +5,6 @@ namespace HearthstoneClone.Core
         public Board Board;
         public Player CurrentPlayer;
         public int TurnNumber = 1;
-
         private const int MaxManaCap = 10;
 
         public TurnManager(Board board)
@@ -18,22 +17,35 @@ namespace HearthstoneClone.Core
         {
             TurnNumber = 1;
             CurrentPlayer = Board.PlayerOne;
-            RefillMana(CurrentPlayer);
+            StartTurnFor(CurrentPlayer);
         }
 
         public void EndTurn()
         {
             CurrentPlayer = Board.GetOpponent(CurrentPlayer);
             TurnNumber++;
-            RefillMana(CurrentPlayer);
+            StartTurnFor(CurrentPlayer);
+        }
+
+        private void StartTurnFor(Player player)
+        {
+            RefillMana(player);
+            ResetMinionsForNewTurn(player);
         }
 
         private void RefillMana(Player player)
         {
             if (player.MaxMana < MaxManaCap)
                 player.MaxMana++;
-
             player.CurrentMana = player.MaxMana;
+        }
+
+        private void ResetMinionsForNewTurn(Player player)
+        {
+            foreach (var minion in player.BoardMinions)
+            {
+                minion.ResetForNewTurn();
+            }
         }
     }
 }

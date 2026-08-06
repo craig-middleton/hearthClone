@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using HearthstoneClone.Core;
@@ -9,7 +10,7 @@ namespace HearthstoneClone.UI
         public GameObject minionViewPrefab;
         public Transform boardPanel;
 
-        public void RenderBoard(List<Minion> minions)
+        public void RenderBoard(List<Minion> minions, Action<Minion> onMinionClicked = null, Minion selectedAttacker = null, bool showAttackEligibility = false)
         {
             foreach (Transform child in boardPanel)
             {
@@ -20,7 +21,8 @@ namespace HearthstoneClone.UI
             {
                 GameObject minionObj = Instantiate(minionViewPrefab, boardPanel);
                 MinionView view = minionObj.GetComponent<MinionView>();
-                view.SetMinion(minion);
+                bool isSelected = minion == selectedAttacker;
+                view.SetMinion(minion, onMinionClicked, isSelected, showAttackEligibility);
             }
         }
     }

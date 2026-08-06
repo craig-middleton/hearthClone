@@ -59,10 +59,19 @@ namespace HearthstoneClone.AI
                     if (aiHand.PlayCard(card, context, target))
                     {
                         playedSomething = true;
-                        break; // Hand mutated — restart the foreach on a fresh snapshot
+                        break;
                     }
                 }
             }
+
+            foreach (var minion in new List<Minion>(aiPlayer.BoardMinions))
+            {
+                if (minion.CanAttack)
+                {
+                    Combat.TryAttack(minion, new Target(opponent), out _);
+                }
+            }
+            board.RemoveDeadMinions();
 
             Debug.Log($"--- {aiPlayer.PlayerName} (AI) ends its turn ---");
         }

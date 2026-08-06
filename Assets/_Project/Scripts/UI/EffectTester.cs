@@ -14,13 +14,17 @@ namespace HearthstoneClone.UI
         public CardData coinCard;
 
         [Header("Testing")]
-        public bool manualControlMode = false;   // true = human controls both players' cards
+        public bool manualControlMode = false;
 
         public HandDisplay handDisplay;
         public HandDisplay opponentHandDisplay;
         public BoardDisplay boardDisplay;
         public BoardDisplay opponentBoardDisplay;
         public Button endTurnButton;
+
+        [Header("Face UI")]
+        public FaceView faceView;
+        public FaceView opponentFaceView;
 
         [Header("Mulligan UI")]
         public Transform mulliganPanel;
@@ -40,6 +44,8 @@ namespace HearthstoneClone.UI
         private HashSet<CardData> mulliganSelections = new HashSet<CardData>();
         private List<GameObject> mulliganCardObjects = new List<GameObject>();
         private bool mulliganComplete = false;
+
+        private Minion selectedAttacker = null;
 
         void Start()
         {
@@ -72,7 +78,6 @@ namespace HearthstoneClone.UI
             aiController = new AIController(playerTwoHand, context, board);
             opponentTarget = new Target(playerTwo);
 
-            // AI still auto-mulligans regardless of manual mode — mulligan UI stays human-only for Player One.
             aiController.PerformMulligan();
 
             if (confirmMulliganButton != null)
@@ -102,8 +107,7 @@ namespace HearthstoneClone.UI
             {
                 Debug.LogWarning("Mulligan UI not wired up — skipping mulligan phase.");
                 mulliganComplete = true;
-                RefreshHandDisplay();
-                RefreshBoardDisplay();
+                RefreshAll();
                 return;
             }
 
@@ -160,8 +164,7 @@ namespace HearthstoneClone.UI
 
             Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
 
-            RefreshHandDisplay();
-            RefreshBoardDisplay();
+            RefreshAll();
 
             if (endTurnButton != null)
             {
@@ -170,37 +173,89 @@ namespace HearthstoneClone.UI
         }
 
         private void OnCardClicked(CardData card)
-{
-    if (!mulliganComplete) return;
-    if (turnManager.CurrentPlayer != playerOne) return;
+        {
+            if (!mulliganComplete) return;
+            if (turnManager.CurrentPlayer != playerOne) return;
 
-    Target target = card.targetsSelf ? new Target(playerOne) : opponentTarget;
-    bool success = playerOneHand.PlayCard(card, context, target);
-    if (success)
-    {
-        RefreshHandDisplay();
-        RefreshBoardDisplay();
-    }
-}
+            Target target = card.targetsSelf ? new Target(playerOne) : opponentTarget;
+            bool success = playerOneHand.PlayCard(card, context, target);
+            if (success)
+            {
+                RefreshAll();
+            }
+        }
 
         private void OnOpponentCardClicked(CardData card)
-{
-    if (!mulliganComplete || !manualControlMode) return;
-    if (turnManager.CurrentPlayer != playerTwo) return;
+        {
+            if (!mulliganComplete || !manualControlMode) return;
+            if (turnManager.CurrentPlayer != playerTwo) return;
 
-    Target target = card.targetsSelf ? new Target(playerTwo) : new Target(playerOne);
-    bool success = playerTwoHand.PlayCard(card, context, target);
-    if (success)
-    {
-        RefreshHandDisplay();
-        RefreshBoardDisplay();
-    }
-}
+            Target target = card.targetsSelf ? new Target(playerTwo) : new Target(playerOne);
+            bool success = playerTwoHand.PlayCard(card, context, target);
+            if (success)
+            {
+                RefreshAll();
+            }
+        }
+
+        private void OnMinionClicked(Minion minion, Player owner)
+        {
+            if (!mulliganComplete) return;
+            if (!manualControlMode && turnManager.CurrentPlayer == playerTwo) return;
+
+            bool ownerIsActingPlayer = owner == turnManager.CurrentPlayer && (owner == playerOne || manualControlMode);
+
+            if (ownerIsActingPlayer)
+            {
+                if (selectedAttacker == minion)
+                {
+                    selectedAttacker = null;
+                }
+                else if (minion.CanAttack)
+                {
+                    selectedAttacker = minion;
+                }
+                RefreshBoardDisplay();
+                return;
+            }
+
+            if (selectedAttacker == null) return;
+
+            ResolveAttack(selectedAttacker, new Target(minion));
+        }
+
+        private void OnFaceClicked(Player owner)
+        {
+            if (!mulliganComplete) return;
+            if (!manualControlMode && turnManager.CurrentPlayer == playerTwo) return;
+            if (selectedAttacker == null) return;
+            if (owner == turnManager.CurrentPlayer) return;
+
+            ResolveAttack(selectedAttacker, new Target(owner));
+        }
+
+        private void ResolveAttack(Minion attacker, Target target)
+        {
+            bool success = Combat.TryAttack(attacker, target, out string failReason);
+            if (success)
+            {
+                board.RemoveDeadMinions();
+                Debug.Log($"{attacker.MinionName} attacked.");
+            }
+            else
+            {
+                Debug.LogWarning(failReason);
+            }
+
+            selectedAttacker = null;
+            RefreshAll();
+        }
 
         private void OnEndTurnClicked()
         {
             if (!mulliganComplete) return;
 
+            selectedAttacker = null;
             turnManager.EndTurn();
             Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
 
@@ -211,8 +266,14 @@ namespace HearthstoneClone.UI
                 Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
             }
 
+            RefreshAll();
+        }
+
+        private void RefreshAll()
+        {
             RefreshHandDisplay();
             RefreshBoardDisplay();
+            RefreshFaceDisplay();
         }
 
         private void RefreshHandDisplay()
@@ -232,12 +293,33 @@ namespace HearthstoneClone.UI
         {
             if (boardDisplay != null)
             {
-                boardDisplay.RenderBoard(playerOne.BoardMinions);
+                boardDisplay.RenderBoard(
+                    playerOne.BoardMinions,
+                    m => OnMinionClicked(m, playerOne),
+                    selectedAttacker,
+                    showAttackEligibility: turnManager.CurrentPlayer == playerOne);
             }
 
             if (opponentBoardDisplay != null)
             {
-                opponentBoardDisplay.RenderBoard(playerTwo.BoardMinions);
+                opponentBoardDisplay.RenderBoard(
+                    playerTwo.BoardMinions,
+                    m => OnMinionClicked(m, playerTwo),
+                    selectedAttacker,
+                    showAttackEligibility: turnManager.CurrentPlayer == playerTwo && manualControlMode);
+            }
+        }
+
+        private void RefreshFaceDisplay()
+        {
+            if (faceView != null)
+            {
+                faceView.SetPlayer(playerOne, OnFaceClicked);
+            }
+
+            if (opponentFaceView != null)
+            {
+                opponentFaceView.SetPlayer(playerTwo, OnFaceClicked);
             }
         }
     }
