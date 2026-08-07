@@ -5,7 +5,7 @@
 - For code changes, always provide the full rewritten class/file, not just a diff/snippet — Craig pastes a complete file each time rather than manually merging partial additions.
 - For hearthClone architecture, avoid singletons where possible — prefer explicit constructor/field-passed references (as the project already does throughout) over globally-reachable static instances, to keep dependencies visible and avoid Unity singleton pitfalls (script execution order, DontDestroyOnLoad issues, creeping responsibility).
 
-_Last updated: 2026-08-06 (session 17 — built and wired the first version of the combat system: click-to-attack, summoning sickness, one-attack-per-turn, minion death, face health display, and basic AI attacking. Compiling cleanly, not yet playtested.)_
+_Last updated: 2026-08-07 (session 18 — combat system fully playtested and verified end-to-end: summoning sickness, minion trades, dead minion cleanup, face damage both directions, AI attacking. Several UI bugs found and fixed along the way. Win condition is the clear next gap.)_
 
 ## How to use this file
 Paste the contents of this file at the start of any new Claude chat to get instant context on the project. Update it at the end of each working session (ask Claude to update it, or do it yourself) so it never goes stale.
@@ -75,21 +75,26 @@ A Hearthstone-style card game built in Unity, single-player vs AI, using C# with
 - **Manual control mode (this session)**: toggle exists and Player Two's hand does become clickable when enabled. **Turn-gating bug found via direct testing** (Craig played Player Two's Coin during Player One's turn) — root cause diagnosed (missing `CurrentPlayer` check) and fix written, but **not yet re-tested after the fix was applied** — confirm next session that turn order is now properly enforced in manual mode.
 
 ## Current Blocker / Last Thing Worked On
-Session 17 built the first version of the combat system end-to-end: `Minion` attack-eligibility tracking (summoning sickness + one-attack-per-turn), `Combat.TryAttack()`, dead-minion cleanup on `Board`, click-to-attack UI wiring in `EffectTester` (select your minion → click a target, enemy minion or face), the first-ever visible player health display (`FaceView`), and basic AI face-attacking after its card-play phase. **Everything pasted in cleanly with zero compile errors, and all Editor setup steps (MinionView Button/Image, new FaceView prefab, two scene instances, EffectTester wiring) were completed with no errors. However, none of this has been playtested yet** — session ended right after Editor setup, before a single Play session was run to confirm the combat loop actually works end-to-end.
+Session 18 fully playtested the combat system built in session 17. **Every item on the playtest checklist is now confirmed working in real play**, plus several real bugs (not code logic bugs — all UI/Editor setup issues) were found and fixed along the way. Ends on a strong, clean milestone.
 
-**Deliberately out of scope for this session** (per the plan agreed with Craig): Taunt, and win-condition handling when a player's `Health` hits 0 — neither exists yet. Also out of scope: any AI trading/risk logic — the AI's attack strategy is currently pure face-aggression only, ignoring board state entirely.
+**Confirmed working via direct playtesting:**
+1. ✅ Summoning sickness — a newly-played minion visibly dims (`cannotAttackColor`) and cannot be selected as an attacker until the controller's next turn.
+2. ✅ Click-to-attack + minion selection — clicking an eligible minion highlights it green (`selectedColor`).
+3. ✅ Minion combat trades — attacking an enemy minion applies damage both ways simultaneously; confirmed with two 1/1s trading and both dying correctly.
+4. ✅ `Board.RemoveDeadMinions()` — dead minions correctly removed from the board after combat.
+5. ✅ Face damage, both directions — confirmed Player One's health visibly dropping (down to `-34 HP` across a long test session) via direct attacks, and the AI attacking Player One's face too (`"Ancient Colossus attacked."` in console).
+6. ✅ AI attacking during its own turn — confirmed via console logs across many turns (`AIController.TakeTurn()`'s new attack-phase pass firing correctly).
+7. ✅ Mana cap — confirmed both players correctly capping at `10/10` after many turns.
 
-**First thing to do next session — full playtest of the combat loop:**
-1. Play a game up through the mulligan, into normal turns.
-2. Play a minion, confirm it does NOT show as attack-eligible (or rejects an attack attempt) the turn it's summoned — verifies summoning sickness.
-3. End turn, come back around — confirm that same minion IS now attack-eligible.
-4. Click that minion (should visually select/highlight), then click an enemy minion — confirm damage applies both ways, and check `Board.RemoveDeadMinions()` correctly clears anything that dies.
-5. Click a minion, then click the opponent's face (via the new `FaceView`) — confirm face damage applies and the health display updates.
-6. Try attacking twice with the same minion in one turn — should be rejected (`HasAttackedThisTurn`).
-7. Confirm the AI actually attacks face with eligible minions during its turn (watch console for whatever log line fires, or lack thereof if none was added — worth checking `ResolveAttack()`'s pattern was mirrored in `AIController`).
-8. Confirm `FaceView`'s health numbers actually update visually after any of the above, not just internally.
+**Real UI/Editor bugs found and fixed this session** (none of these were code-logic bugs — `Combat.cs`, `Minion.cs`, `TurnManager.cs` etc. all worked correctly on the first try; every issue was scene/Editor setup):
+- **`BoardPanel`'s `Pos Y` had drifted to ~488** (nearly identical to `OpponentBoardPanel`'s `600`), causing the two board rows to visually overlap — almost certainly an accidental drag in the Scene view at some point, unrelated to any code change. Fixed by resetting `Pos Y` to a properly separated value (~150-ish; exact final value not recorded, worth checking next session).
+- **`BoardPanel` and `OpponentBoardPanel`'s background `Image` components had `Raycast Target` checked**, which was intercepting clicks meant for other UI underneath once the panels' positions shifted — cards became unclickable. Fixed by unchecking `Raycast Target` on both panels' `Image` components. This is a good general practice for any plain background image that isn't itself meant to be interactive.
+- **`PlayerFaceDisplay` and `OpponentFaceDisplay` were siblings of `GameCanvas` rather than children of it** (same category of bug hit once before with these exact two objects, a few sessions back) — meaning neither ever rendered at all despite perfectly correct script wiring, Rect Transform values, and Inspector field assignments on `EffectTester`. This cost a long diagnostic detour (checked `FaceView.cs` source, Inspector wiring, position values — all correct) before the actual cause (Canvas nesting) was spotted. Fixed by dragging both back under `GameCanvas` in the Hierarchy.
+- **Lesson reinforced**: when a UI element that was definitely wired correctly still doesn't render at all, checking its Hierarchy nesting under a `Canvas` should be one of the first things checked, not a last resort — this is the second time this exact failure mode has cost significant diagnostic time on these same two GameObjects.
 
-Given how much is new and untested here, treat this as "built but unverified" rather than "working" until a real playtest happens.
+**Not yet done — the clear next priority:**
+- **Win condition.** Playtested a very long session tonight (Turn 25+, Player One's health at `-34`) and nothing stops the game or declares a winner — there is currently no check anywhere for `Health <= 0`. This wasn't in tonight's scope (deliberately deferred from session 17's planning), but seeing it play out live makes it obvious this is the natural next thing to build. Should be a relatively small addition: check `Health <= 0` after any attack or turn transition, log/display a winner, and disable further input (End Turn, card clicks, attack clicks) once the game is over.
+- Double-attack rejection (same minion attacking twice in one turn) was never explicitly tried this session — worth a quick check next time, though the underlying `HasAttackedThisTurn` flag logic is straightforward and was effectively exercised indirectly by every successful attack in this session (each one set the flag, and no minion was ever seen attacking twice).
 
 **Cosmetic, still low priority:**
 - `BoardPanel`/`OpponentBoardPanel` text-clipping issue (minion name cut off at left edge) unaddressed.
@@ -128,6 +133,8 @@ Given how much is new and untested here, treat this as "built but unverified" ra
 - **New this session (deck design)**: Hearthstone's real deckbuilding rule is many unique cards each capped at ~2 copies, not few unique cards with many copies — worth preserving that shape (add more `CardData` assets, not a higher `copiesPerCard`) to keep matches feeling varied, and because `BuildDeck()`/`Copies Per Card` was deliberately built to scale to any pool size without code changes, so growing the card pool is pure content work, not engineering work.
 - **New this session (UI Layout Groups)**: any prefab that's a child of a Horizontal/Vertical Layout Group with `Control Child Size` enabled MUST have a `Layout Element` component defining its own `Preferred Width`/`Height` — without one, the layout group has no sensible size to assign it and results can range from squished/clipped to comically oversized, depending on what "no size" resolves to. When one prefab (`CardView`) works fine in a layout group but a sibling prefab (`MinionView`) renders broken under the same layout settings, checking whether both actually have a `Layout Element` component is the first thing to check — don't assume the layout group settings themselves are wrong.
 - **New this session (Editor view vs. real UI bugs)**: before concluding a UI element is actually clipped/broken, check whether the Game view *pane itself* in the Editor is just too short (e.g. a Console panel docked directly below eating vertical space) — this can crop the rendered frame and look identical to a real clipping bug. Try maximizing/resizing the Game view tab before assuming the underlying Rect Transform or Layout Group settings need changing.
+- **New this session (Canvas nesting — recurring failure mode)**: if a UI GameObject has completely correct script wiring, Rect Transform values, and Inspector field assignments, but still never renders anything at all, check whether it's actually nested *under* the scene's `Canvas` in the Hierarchy before debugging anything else. A UI element that's a sibling of the Canvas (same indentation level) rather than a child of it will not render, full stop, regardless of how correct everything else about it is — and this is easy to cause by accident when dragging objects around in the Hierarchy. This exact issue hit the same two GameObjects (`PlayerFaceDisplay`/`OpponentFaceDisplay`) twice across sessions — worth checking Canvas nesting FIRST for any newly-invisible UI element, before checking scripts, values, or Inspector wiring.
+- **New this session (Raycast Target on background images)**: a plain background `Image` component (one that isn't itself meant to be clicked) rarely needs `Raycast Target` checked. If it's left checked and the panel's position/size ever changes to overlap other clickable UI, it can silently intercept clicks meant for elements underneath it — with no error, just unresponsive buttons. Worth unchecking `Raycast Target` on purely-decorative background images as a general habit, not just when a bug like this actually appears.
 
 **Git / GitHub / environment**
 - GitHub requires `gh auth login` or a PAT (repo scope only) for HTTPS git auth.
@@ -136,14 +143,13 @@ Given how much is new and untested here, treat this as "built but unverified" ra
 - .NET SDK (install via Microsoft's apt feed, not Ubuntu's default repo) is only needed for VS Code's C# IntelliSense/debugging.
 
 ## Next Steps (in order)
-1. **Full combat system playtest** (see checklist above) — this is unverified, untested code and should be treated as the top priority.
-2. Once combat is confirmed working: build **Taunt** (targeting rule — must attack a Taunt minion first if one exists) as a fast follow-up, now that the underlying attack system exists to hang the rule on.
-3. Build **win condition** handling (a player loses when `Health` hits 0) — currently nothing checks for this at all.
-4. Consider smarter AI attack logic (trading/risk awareness) once basic face-aggression is confirmed working.
-5. Fine-tune the vertical "facing each other" gap between `BoardPanel` and `OpponentBoardPanel`.
-6. Record `HandPanel`'s current Rect Transform values for documentation completeness.
-7. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
-8. Consider upgrading click-to-play to real drag-and-drop, if desired.
+1. **Build win condition handling** — check `Health <= 0` after any attack or turn transition; log/display a winner; disable further input (End Turn, card clicks, attack clicks) once the game is over. Currently the game just continues indefinitely past 0 health (confirmed live at `-34 HP` this session).
+2. Quick explicit check: same minion attacking twice in one turn should be rejected (`HasAttackedThisTurn`) — logic looks sound and was indirectly exercised, but never explicitly tried.
+3. Consider smarter AI attack logic (trading/risk awareness) once win condition is in place — right now it's pure face-aggression only.
+4. Build **Taunt** (targeting rule — must attack a Taunt minion first if one exists), now that the underlying attack system is proven working.
+5. Record `BoardPanel`'s corrected `Pos Y` value and `HandPanel`'s current Rect Transform values for documentation completeness.
+6. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
+7. Consider upgrading click-to-play to real drag-and-drop, if desired.
 
 ## Git Habits Being Followed
 - Simple commit template: `git add .` / `git commit -m "short one-line summary"` / `git push`
