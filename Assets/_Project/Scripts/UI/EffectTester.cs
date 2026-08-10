@@ -31,6 +31,9 @@ namespace HearthstoneClone.UI
         public GameObject cardViewPrefab;
         public Button confirmMulliganButton;
 
+        [Header("Game Over UI")]
+        public TMPro.TMP_Text gameOverText;
+
         private PlayerHand playerOneHand;
         private PlayerHand playerTwoHand;
         private GameContext context;
@@ -46,6 +49,9 @@ namespace HearthstoneClone.UI
         private bool mulliganComplete = false;
 
         private Minion selectedAttacker = null;
+
+        private bool gameOver = false;
+        private Player winner = null;
 
         void Start()
         {
@@ -83,6 +89,11 @@ namespace HearthstoneClone.UI
             if (confirmMulliganButton != null)
             {
                 confirmMulliganButton.onClick.AddListener(OnConfirmMulliganClicked);
+            }
+
+            if (gameOverText != null)
+            {
+                gameOverText.gameObject.SetActive(false);
             }
 
             ShowMulliganUI();
@@ -174,6 +185,7 @@ namespace HearthstoneClone.UI
 
         private void OnCardClicked(CardData card)
         {
+            if (gameOver) return;
             if (!mulliganComplete) return;
             if (turnManager.CurrentPlayer != playerOne) return;
 
@@ -187,6 +199,7 @@ namespace HearthstoneClone.UI
 
         private void OnOpponentCardClicked(CardData card)
         {
+            if (gameOver) return;
             if (!mulliganComplete || !manualControlMode) return;
             if (turnManager.CurrentPlayer != playerTwo) return;
 
@@ -200,6 +213,7 @@ namespace HearthstoneClone.UI
 
         private void OnMinionClicked(Minion minion, Player owner)
         {
+            if (gameOver) return;
             if (!mulliganComplete) return;
             if (!manualControlMode && turnManager.CurrentPlayer == playerTwo) return;
 
@@ -226,6 +240,7 @@ namespace HearthstoneClone.UI
 
         private void OnFaceClicked(Player owner)
         {
+            if (gameOver) return;
             if (!mulliganComplete) return;
             if (!manualControlMode && turnManager.CurrentPlayer == playerTwo) return;
             if (selectedAttacker == null) return;
@@ -249,24 +264,67 @@ namespace HearthstoneClone.UI
 
             selectedAttacker = null;
             RefreshAll();
+            CheckWinCondition();
         }
 
         private void OnEndTurnClicked()
         {
+            if (gameOver) return;
             if (!mulliganComplete) return;
 
             selectedAttacker = null;
             turnManager.EndTurn();
+            DrawForCurrentPlayer();
             Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
 
             if (!manualControlMode && turnManager.CurrentPlayer == playerTwo)
             {
                 aiController.TakeTurn();
                 turnManager.EndTurn();
+                DrawForCurrentPlayer();
                 Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
             }
 
             RefreshAll();
+            CheckWinCondition();
+        }
+
+        private void DrawForCurrentPlayer()
+        {
+            if (turnManager.CurrentPlayer == playerOne)
+            {
+                playerOneHand.DrawCard();
+            }
+            else
+            {
+                playerTwoHand.DrawCard();
+            }
+        }
+
+        private void CheckWinCondition()
+        {
+            if (gameOver) return;
+
+            if (playerOne.Health <= 0)
+            {
+                winner = playerTwo;
+            }
+            else if (playerTwo.Health <= 0)
+            {
+                winner = playerOne;
+            }
+
+            if (winner != null)
+            {
+                gameOver = true;
+                Debug.Log($"*** {winner.PlayerName} wins! ***");
+
+                if (gameOverText != null)
+                {
+                    gameOverText.gameObject.SetActive(true);
+                    gameOverText.text = $"{winner.PlayerName} wins!";
+                }
+            }
         }
 
         private void RefreshAll()

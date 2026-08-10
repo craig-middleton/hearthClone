@@ -21,7 +21,7 @@ namespace HearthstoneClone.UI
 
             if (healthText != null)
             {
-                healthText.text = $"{player.PlayerName}: {player.Health} HP";
+                healthText.text = $"{player.PlayerName}: {player.Health} HP\nMana: {player.CurrentMana}/{player.MaxMana}";
             }
 
             if (button != null)
