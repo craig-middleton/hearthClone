@@ -24,6 +24,7 @@ namespace HearthstoneClone.Cards
         [Header("Minion Stats (ignored for Spells)")]
         public int attack;
         public int health;
+        public bool hasTaunt;
 
         [Header("Behavior")]
         public CardEffect onPlayEffect;

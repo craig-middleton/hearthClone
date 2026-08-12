@@ -8,8 +8,8 @@ namespace HearthstoneClone.Core
         public int Health = 30;
         public int CurrentMana;
         public int MaxMana;
-
         public List<Minion> BoardMinions = new List<Minion>();
+        public int FatigueDamage = 0;
 
         public Player(string playerName)
         {

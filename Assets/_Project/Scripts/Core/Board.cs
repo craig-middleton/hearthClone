@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace HearthstoneClone.Core
 {
     public class Board
@@ -20,6 +22,11 @@ namespace HearthstoneClone.Core
         {
             PlayerOne.BoardMinions.RemoveAll(m => m.IsDead);
             PlayerTwo.BoardMinions.RemoveAll(m => m.IsDead);
+        }
+
+        public List<Minion> GetTauntMinions(Player player)
+        {
+            return player.BoardMinions.FindAll(m => m.HasTaunt);
         }
     }
 }

@@ -9,6 +9,9 @@ namespace HearthstoneClone.Cards
         public List<CardData> Deck = new List<CardData>();
         public List<CardData> Hand = new List<CardData>();
 
+        private const int MaxHandSize = 10;
+        private const int MaxBoardSize = 7;
+
         public PlayerHand(Player corePlayer, List<CardData> startingDeck)
         {
             CorePlayer = corePlayer;
@@ -19,14 +22,22 @@ namespace HearthstoneClone.Cards
         {
             if (Deck.Count == 0)
             {
-                UnityEngine.Debug.Log($"{CorePlayer.PlayerName} tried to draw but deck is empty.");
+                CorePlayer.FatigueDamage++;
+                CorePlayer.TakeDamage(CorePlayer.FatigueDamage);
+                UnityEngine.Debug.Log($"{CorePlayer.PlayerName} is out of cards! Fatigue damage: {CorePlayer.FatigueDamage}. Health remaining: {CorePlayer.Health}");
                 return;
             }
 
             CardData drawn = Deck[0];
             Deck.RemoveAt(0);
-            Hand.Add(drawn);
 
+            if (Hand.Count >= MaxHandSize)
+            {
+                UnityEngine.Debug.Log($"{CorePlayer.PlayerName}'s hand is full — {drawn.cardName} was burned.");
+                return;
+            }
+
+            Hand.Add(drawn);
             UnityEngine.Debug.Log($"{CorePlayer.PlayerName} drew {drawn.cardName}. Hand size: {Hand.Count}, Deck remaining: {Deck.Count}");
         }
 
@@ -49,6 +60,12 @@ namespace HearthstoneClone.Cards
 
         public void AddCardToHand(CardData card)
         {
+            if (Hand.Count >= MaxHandSize)
+            {
+                UnityEngine.Debug.Log($"{CorePlayer.PlayerName}'s hand is full — {card.cardName} could not be added.");
+                return;
+            }
+
             Hand.Add(card);
             UnityEngine.Debug.Log($"{CorePlayer.PlayerName} gained {card.cardName}. Hand size: {Hand.Count}");
         }
@@ -83,6 +100,12 @@ namespace HearthstoneClone.Cards
                 return false;
             }
 
+            if (card.cardType == CardType.Minion && CorePlayer.BoardMinions.Count >= MaxBoardSize)
+            {
+                UnityEngine.Debug.Log($"{CorePlayer.PlayerName} cannot play {card.cardName} - board is full ({MaxBoardSize}/{MaxBoardSize}).");
+                return false;
+            }
+
             CorePlayer.CurrentMana -= card.manaCost;
             Hand.Remove(card);
 
@@ -90,7 +113,7 @@ namespace HearthstoneClone.Cards
 
             if (card.cardType == CardType.Minion)
             {
-                var minion = new Minion(card.cardName, card.attack, card.health);
+                var minion = new Minion(card.cardName, card.attack, card.health, card.hasTaunt);
                 CorePlayer.BoardMinions.Add(minion);
                 UnityEngine.Debug.Log($"{minion.MinionName} summoned to {CorePlayer.PlayerName}'s board.");
             }

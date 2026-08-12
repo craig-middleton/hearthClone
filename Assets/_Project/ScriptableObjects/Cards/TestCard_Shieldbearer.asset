@@ -19,5 +19,6 @@ MonoBehaviour:
   cardType: 0
   attack: 1
   health: 5
+  hasTaunt: 1
   onPlayEffect: {fileID: 0}
   targetsSelf: 0

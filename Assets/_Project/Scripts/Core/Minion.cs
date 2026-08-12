@@ -10,12 +10,14 @@ namespace HearthstoneClone.Core
         public int CurrentHealth;
         public bool HasSummoningSickness = true;
         public bool HasAttackedThisTurn = false;
+        public bool HasTaunt;
 
-        public Minion(string minionName, int attack, int health)
+        public Minion(string minionName, int attack, int health, bool hasTaunt = false)
         {
             MinionName = minionName;
             CurrentAttack = attack;
             CurrentHealth = health;
+            HasTaunt = hasTaunt;
         }
 
         public void TakeDamage(int amount)

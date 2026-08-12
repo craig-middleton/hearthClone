@@ -235,6 +235,13 @@ namespace HearthstoneClone.UI
 
             if (selectedAttacker == null) return;
 
+            var defenderTaunts = board.GetTauntMinions(owner);
+            if (defenderTaunts.Count > 0 && !minion.HasTaunt)
+            {
+                Debug.LogWarning($"{owner.PlayerName} has a Taunt minion — you must attack it first.");
+                return;
+            }
+
             ResolveAttack(selectedAttacker, new Target(minion));
         }
 
@@ -245,6 +252,13 @@ namespace HearthstoneClone.UI
             if (!manualControlMode && turnManager.CurrentPlayer == playerTwo) return;
             if (selectedAttacker == null) return;
             if (owner == turnManager.CurrentPlayer) return;
+
+            var defenderTaunts = board.GetTauntMinions(owner);
+            if (defenderTaunts.Count > 0)
+            {
+                Debug.LogWarning($"{owner.PlayerName} has a Taunt minion — you must attack it first.");
+                return;
+            }
 
             ResolveAttack(selectedAttacker, new Target(owner));
         }

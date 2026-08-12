@@ -66,10 +66,14 @@ namespace HearthstoneClone.AI
 
             foreach (var minion in new List<Minion>(aiPlayer.BoardMinions))
             {
-                if (minion.CanAttack)
-                {
-                    Combat.TryAttack(minion, new Target(opponent), out _);
-                }
+                if (!minion.CanAttack) continue;
+
+                var opponentTaunts = board.GetTauntMinions(opponent);
+                Target attackTarget = opponentTaunts.Count > 0
+                    ? new Target(opponentTaunts[0])
+                    : new Target(opponent);
+
+                Combat.TryAttack(minion, attackTarget, out _);
             }
             board.RemoveDeadMinions();
 

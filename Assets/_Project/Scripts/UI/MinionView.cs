@@ -27,7 +27,7 @@ namespace HearthstoneClone.UI
             minion = minionData;
             onClicked = clickCallback;
 
-            nameText.text = minion.MinionName;
+            nameText.text = minion.HasTaunt ? $"{minion.MinionName} (Taunt)" : minion.MinionName;
             statsText.text = $"{minion.CurrentAttack} / {minion.CurrentHealth}";
 
             UpdateVisual(isSelected, showAttackEligibility);
