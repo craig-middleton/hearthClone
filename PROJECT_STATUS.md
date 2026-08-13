@@ -5,10 +5,19 @@
 - For code changes, always provide the full rewritten class/file, not just a diff/snippet — Craig pastes a complete file each time rather than manually merging partial additions.
 - For hearthClone architecture, avoid singletons where possible — prefer explicit constructor/field-passed references (as the project already does throughout) over globally-reachable static instances, to keep dependencies visible and avoid Unity singleton pitfalls (script execution order, DontDestroyOnLoad issues, creeping responsibility).
 
-_Last updated: 2026-08-12 (session 21 — Tier 1 fatigue/board/hand caps pasted in and compiling; Taunt built and fully verified on both the human and AI attack paths)_
+_Last updated: 2026-08-13 (session 22 — added a basic Hero Power (2 mana, deal 1 to enemy face), confirmed working; discussed visuals/card artwork as the next planned feature)_
 
 ## How to use this file
 Paste the contents of this file at the start of any new Claude chat to get instant context on the project. Update it at the end of each working session (ask Claude to update it, or do it yourself) so it never goes stale.
+
+## NEXT SESSION PRIORITY: Card Artwork
+Craig wants to start introducing visuals, beginning with real card artwork (not effects/animations first). He'll generate images externally via an AI image tool of his choice — Claude has no image-generation capability inside this Unity/coding context, so this step happens outside the conversation. Plan, agreed but not yet started:
+1. Craig generates card art externally (even just 1-2 images to start is enough to wire up and test before doing all 15).
+2. Import into Unity: drag image files into the `Art` folder, select each, change **Texture Type** to `Sprite (2D and UI)` in the Inspector, Apply.
+3. Assign to `CardData`: each card asset already has an unused `Artwork` field (a `Sprite`, present since the very first `CardData.cs` was written) — drag the sprite onto the field for the matching card.
+4. **Code change needed (not yet written)**: `CardView.cs` currently only ever writes text (name/cost/stats) — it needs a new `Image` component reference and one line in both `SetCard()` and `SetCardForMulligan()` to display `card.artwork`.
+5. Editor step: add an `Image` child (or reuse the existing background) on the `CardView` prefab, wire it to the new field.
+Craig explicitly asked Claude to remember this as the very next thing to pick up.
 
 ## Project Goal
 A Hearthstone-style card game built in Unity, single-player vs AI, using C# with a data-driven card/effect system (ScriptableObjects). Developed on Ubuntu using Unity + VS Code, version controlled via Git/GitHub (with Git LFS enabled for art/audio).
@@ -44,7 +53,9 @@ A Hearthstone-style card game built in Unity, single-player vs AI, using C# with
 | `Target.cs` | `Scripts/Core/` | Points to a `Player` or `Minion`. `TakeDamage()`, `GetCurrentHealth()`, `GainMana(int)`. |
 | `Combat.cs` | `Scripts/Core/` (**new this session**) | Static class, `TryAttack(Minion attacker, Target target, out string failReason)` — validates `attacker.CanAttack`, applies the attacker's damage to the target (reusing the existing `Target` class unchanged), and strikes back at the attacker if the target is a minion (simultaneous damage, matching Hearthstone). Static because it holds no state of its own — a pure function operating on whatever's passed in, closer to `Mathf`/`UnityEngine.Random` than a singleton; nothing reaches into it globally. |
 | `TurnManager.cs` | `Scripts/Core/` | Turn order + mana progression. **New this session:** a private `StartTurnFor(player)` now wraps both mana refill and a new `ResetMinionsForNewTurn(player)` pass (calls `minion.ResetForNewTurn()` on every minion that player controls), called from both `StartGame()` and `EndTurn()`. This guarantees a minion summoned on Player One's turn stays sick through all of Player Two's turn, only clearing on Player One's own next turn — exactly matching real Hearthstone timing, no separate "turns since summoned" counter needed. |
-| `EffectTester.cs` | `Scripts/UI/` | Bootstrapper. Builds decks/hands, asymmetric opening hands + Coin, full mulligan flow, manual control mode toggle, click-to-attack combat wiring, `FaceView` health/mana display, win condition, per-turn draw (`DrawForCurrentPlayer()`). **New this session (Taunt)**: `OnMinionClicked()` and `OnFaceClicked()` both now check `board.GetTauntMinions(owner)` before letting an attack resolve — if the defender has any Taunt minions and the click target isn't one of them, the attack is rejected with a console warning and `selectedAttacker` stays selected (so the player can just click the correct Taunt target next, rather than losing their selection). **Not permanent** — delete/rename once real gameplay loop exists. |
+| `EffectTester.cs` | `Scripts/UI/` | Bootstrapper. Builds decks/hands, asymmetric opening hands + Coin, full mulligan flow, manual control mode toggle, click-to-attack combat wiring, `FaceView` health/mana display, win condition, per-turn draw, Taunt enforcement on both `OnMinionClicked()`/`OnFaceClicked()`. **New this session**: `heroPowerButton` field + `OnHeroPowerClicked()` — a minimal, deliberately human-only, face-only Hero Power (2 mana, deal 1 damage to the enemy player), gated the same way as every other action (`gameOver`, `mulliganComplete`, current-turn ownership) plus a new `HasUsedHeroPowerThisTurn` check. Confirmed working via console log and `FaceView` health drop (30 → 29). Explicitly a placeholder slice, not the real Hero Power/Hero Class system (see Tier 2 list). **Not permanent** — delete/rename once real gameplay loop exists. |
+| `Player.cs` | `Scripts/Core/` | Health, mana, board minions, `FatigueDamage`. **New this session**: `HasUsedHeroPowerThisTurn` bool, mirroring `Minion.HasAttackedThisTurn`'s pattern. |
+| `TurnManager.cs` | `Scripts/Core/` | Turn order + mana progression + minion turn-reset. **New this session**: `StartTurnFor()` also resets `player.HasUsedHeroPowerThisTurn = false` alongside the existing mana refill and minion reset. |
 | `MinionView.cs` | `Scripts/UI/` | Displays one board minion. **New this session**: `nameText.text` appends `" (Taunt)"` when `minion.HasTaunt` — a minimal but functional visual indicator (no new prefab art), confirmed rendering correctly on both boards. |
 | `AIController.cs` | `Scripts/AI/` | `PerformMulligan()`, `TakeTurn()` (card-play loop + attack phase). **New this session (Taunt)**: the attack loop now checks `board.GetTauntMinions(opponent)` before choosing a target for each attacking minion — if the opponent has any Taunt minions, the AI attacks the first one found instead of face; otherwise face as before. Uses the same `Board.GetTauntMinions()` helper as the human path, keeping both sides consistent. |
 | `CardView.cs` | `Scripts/UI/` | Displays one card. Two setup modes sharing a private `WriteCardText()` helper — `SetCard()` (play mode) and `SetCardForMulligan()` (toggle-select mode with dim/highlight visual). |
@@ -140,15 +151,16 @@ None — a productive session under time pressure. Tier 1 (fatigue, board/hand c
 - .NET SDK (install via Microsoft's apt feed, not Ubuntu's default repo) is only needed for VS Code's C# IntelliSense/debugging.
 
 ## Next Steps (in order)
-1. Longer playtest to actually trigger and confirm fatigue and the 7-minion board cap (neither came up in this session's shorter test).
-2. Watch for an AI-initiated attack against an opposing Taunt minion to confirm that side of the enforcement too (built symmetrically with the human path, but not separately observed yet).
-3. Quick check: confirm all input is truly inert after game over (cards, minions, End Turn all clicked once post-win to verify no residual action fires).
-4. Quick explicit check: same minion attacking twice in one turn should be rejected (`HasAttackedThisTurn`).
-5. Consider smarter AI attack logic (trading/risk awareness) — right now it's pure face/Taunt-aggression, no board evaluation.
-6. **Remaining Tier 2 content work**: Deathrattle, Charge/Rush, Divine Shield, Windfury, Silence, Hero classes + Hero Powers, Weapons — each needs its own scoping/design pass before building, same as mulligan, combat, and Taunt did.
-7. Record `BoardPanel`'s corrected `Pos Y` value and `HandPanel`'s current Rect Transform values for documentation completeness.
-8. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
-9. Consider upgrading click-to-play to real drag-and-drop, if desired.
+1. **Card artwork** (see "NEXT SESSION PRIORITY" note above) — the very next thing to pick up.
+2. Longer playtest to actually trigger and confirm fatigue and the 7-minion board cap.
+3. Watch for an AI-initiated attack against an opposing Taunt minion to confirm that side of the enforcement too.
+4. Quick check: confirm all input is truly inert after game over.
+5. Quick explicit check: same minion attacking twice in one turn should be rejected.
+6. Consider smarter AI attack logic (trading/risk awareness).
+7. **Remaining Tier 2 content work**: Deathrattle, Charge/Rush, Divine Shield, Windfury, Silence, full Hero classes + real Hero Powers (current one is a deliberate minimal placeholder, not the real system), Weapons — each needs its own scoping/design pass before building.
+8. Record `BoardPanel`'s corrected `Pos Y` value and `HandPanel`'s current Rect Transform values for documentation completeness.
+9. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
+10. Consider upgrading click-to-play to real drag-and-drop, if desired.
 
 ## Git Habits Being Followed
 - Simple commit template: `git add .` / `git commit -m "short one-line summary"` / `git push`
