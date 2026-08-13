@@ -10,6 +10,7 @@ namespace HearthstoneClone.Core
         public int MaxMana;
         public List<Minion> BoardMinions = new List<Minion>();
         public int FatigueDamage = 0;
+        public bool HasUsedHeroPowerThisTurn = false;
 
         public Player(string playerName)
         {

@@ -31,6 +31,7 @@ namespace HearthstoneClone.Core
         {
             RefillMana(player);
             ResetMinionsForNewTurn(player);
+            player.HasUsedHeroPowerThisTurn = false;
         }
 
         private void RefillMana(Player player)

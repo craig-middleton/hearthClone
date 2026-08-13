@@ -21,6 +21,7 @@ namespace HearthstoneClone.UI
         public BoardDisplay boardDisplay;
         public BoardDisplay opponentBoardDisplay;
         public Button endTurnButton;
+        public Button heroPowerButton;
 
         [Header("Face UI")]
         public FaceView faceView;
@@ -33,6 +34,8 @@ namespace HearthstoneClone.UI
 
         [Header("Game Over UI")]
         public TMPro.TMP_Text gameOverText;
+
+        private const int HeroPowerCost = 2;
 
         private PlayerHand playerOneHand;
         private PlayerHand playerTwoHand;
@@ -89,6 +92,11 @@ namespace HearthstoneClone.UI
             if (confirmMulliganButton != null)
             {
                 confirmMulliganButton.onClick.AddListener(OnConfirmMulliganClicked);
+            }
+
+            if (heroPowerButton != null)
+            {
+                heroPowerButton.onClick.AddListener(OnHeroPowerClicked);
             }
 
             if (gameOverText != null)
@@ -261,6 +269,24 @@ namespace HearthstoneClone.UI
             }
 
             ResolveAttack(selectedAttacker, new Target(owner));
+        }
+
+        private void OnHeroPowerClicked()
+        {
+            if (gameOver) return;
+            if (!mulliganComplete) return;
+            if (turnManager.CurrentPlayer != playerOne) return;
+            if (playerOne.HasUsedHeroPowerThisTurn) return;
+            if (playerOne.CurrentMana < HeroPowerCost) return;
+
+            playerOne.CurrentMana -= HeroPowerCost;
+            playerOne.HasUsedHeroPowerThisTurn = true;
+            playerTwo.TakeDamage(1);
+
+            Debug.Log($"{playerOne.PlayerName} used Hero Power. Dealt 1 damage to {playerTwo.PlayerName}.");
+
+            RefreshAll();
+            CheckWinCondition();
         }
 
         private void ResolveAttack(Minion attacker, Target target)
