@@ -316,17 +316,23 @@ namespace HearthstoneClone.UI
             turnManager.EndTurn();
             DrawForCurrentPlayer();
             Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
+            CheckWinCondition();
 
-            if (!manualControlMode && turnManager.CurrentPlayer == playerTwo)
+            if (!gameOver && !manualControlMode && turnManager.CurrentPlayer == playerTwo)
             {
                 aiController.TakeTurn();
-                turnManager.EndTurn();
-                DrawForCurrentPlayer();
-                Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
+                CheckWinCondition();
+
+                if (!gameOver)
+                {
+                    turnManager.EndTurn();
+                    DrawForCurrentPlayer();
+                    Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
+                    CheckWinCondition();
+                }
             }
 
             RefreshAll();
-            CheckWinCondition();
         }
 
         private void DrawForCurrentPlayer()

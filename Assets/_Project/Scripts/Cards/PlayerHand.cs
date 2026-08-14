@@ -118,9 +118,16 @@ namespace HearthstoneClone.Cards
                 UnityEngine.Debug.Log($"{minion.MinionName} summoned to {CorePlayer.PlayerName}'s board.");
             }
 
-            if (card.onPlayEffect != null && effectTarget != null)
+            if (card.onPlayEffect != null)
             {
-                card.onPlayEffect.Execute(context, effectTarget);
+                if (effectTarget != null)
+                {
+                    card.onPlayEffect.Execute(context, effectTarget);
+                }
+                else
+                {
+                    UnityEngine.Debug.LogWarning($"{card.cardName} has an onPlayEffect but no target was provided — effect was skipped.");
+                }
             }
 
             return true;
