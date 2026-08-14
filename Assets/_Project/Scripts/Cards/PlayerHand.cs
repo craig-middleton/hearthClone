@@ -113,21 +113,18 @@ namespace HearthstoneClone.Cards
 
             if (card.cardType == CardType.Minion)
             {
-                var minion = new Minion(card.cardName, card.attack, card.health, card.hasTaunt);
+                var minion = new Minion(card.cardName, card.attack, card.health, card.hasTaunt, card.artwork);
                 CorePlayer.BoardMinions.Add(minion);
                 UnityEngine.Debug.Log($"{minion.MinionName} summoned to {CorePlayer.PlayerName}'s board.");
             }
 
-            if (card.onPlayEffect != null)
+            if (card.onPlayEffect != null && effectTarget != null)
             {
-                if (effectTarget != null)
-                {
-                    card.onPlayEffect.Execute(context, effectTarget);
-                }
-                else
-                {
-                    UnityEngine.Debug.LogWarning($"{card.cardName} has an onPlayEffect but no target was provided — effect was skipped.");
-                }
+                card.onPlayEffect.Execute(context, effectTarget);
+            }
+            else if (card.onPlayEffect != null)
+            {
+                UnityEngine.Debug.LogWarning($"{card.cardName} has an onPlayEffect but no target was provided — effect was skipped.");
             }
 
             return true;

@@ -13,6 +13,7 @@ namespace HearthstoneClone.UI
         public TMP_Text statsText;
         public Button button;
         public Image minionBackground;
+        public Image artworkImage;
 
         [Header("Visuals")]
         public Color normalColor = Color.white;
@@ -29,6 +30,19 @@ namespace HearthstoneClone.UI
 
             nameText.text = minion.HasTaunt ? $"{minion.MinionName} (Taunt)" : minion.MinionName;
             statsText.text = $"{minion.CurrentAttack} / {minion.CurrentHealth}";
+
+            if (artworkImage != null)
+            {
+                if (minion.Artwork != null)
+                {
+                    artworkImage.sprite = minion.Artwork;
+                    artworkImage.enabled = true;
+                }
+                else
+                {
+                    artworkImage.enabled = false;
+                }
+            }
 
             UpdateVisual(isSelected, showAttackEligibility);
 

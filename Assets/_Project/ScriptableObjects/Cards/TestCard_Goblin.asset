@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Cards::HearthstoneClone.Cards.CardData
   cardName: Goblin
   description: 
-  artwork: {fileID: 0}
+  artwork: {fileID: -2990747811082275872, guid: 832500db2a949a17cb66821cdce479f7, type: 3}
   manaCost: 2
   cardType: 0
   attack: 2
   health: 2
+  hasTaunt: 0
   onPlayEffect: {fileID: 0}
+  targetsSelf: 0

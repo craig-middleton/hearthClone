@@ -13,7 +13,8 @@ namespace HearthstoneClone.UI
         public TMP_Text costText;
         public TMP_Text statsText;
         public Button button;
-        public Image cardBackground;   // NEW — assign to the card's existing background Image
+        public Image cardBackground;
+        public Image artworkImage;
 
         [Header("Mulligan Visuals")]
         public Color normalColor = Color.white;
@@ -61,6 +62,19 @@ namespace HearthstoneClone.UI
             statsText.text = card.cardType == CardType.Minion
                 ? $"{card.attack} / {card.health}"
                 : "";
+
+            if (artworkImage != null)
+            {
+                if (card.artwork != null)
+                {
+                    artworkImage.sprite = card.artwork;
+                    artworkImage.enabled = true;
+                }
+                else
+                {
+                    artworkImage.enabled = false;
+                }
+            }
         }
 
         private void UpdateMulliganVisual()

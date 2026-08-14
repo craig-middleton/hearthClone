@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace HearthstoneClone.Core
 {
     // A runtime instance of a minion on the board.
@@ -11,13 +13,15 @@ namespace HearthstoneClone.Core
         public bool HasSummoningSickness = true;
         public bool HasAttackedThisTurn = false;
         public bool HasTaunt;
+        public Sprite Artwork;
 
-        public Minion(string minionName, int attack, int health, bool hasTaunt = false)
+        public Minion(string minionName, int attack, int health, bool hasTaunt = false, Sprite artwork = null)
         {
             MinionName = minionName;
             CurrentAttack = attack;
             CurrentHealth = health;
             HasTaunt = hasTaunt;
+            Artwork = artwork;
         }
 
         public void TakeDamage(int amount)
