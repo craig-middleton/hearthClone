@@ -66,6 +66,7 @@ namespace HearthstoneClone.AI
 
             foreach (var minion in new List<Minion>(aiPlayer.BoardMinions))
             {
+                if (opponent.Health <= 0) break;
                 if (!minion.CanAttack) continue;
 
                 var opponentTaunts = board.GetTauntMinions(opponent);
@@ -74,8 +75,8 @@ namespace HearthstoneClone.AI
                     : new Target(opponent);
 
                 Combat.TryAttack(minion, attackTarget, out _);
+                board.RemoveDeadMinions();
             }
-            board.RemoveDeadMinions();
 
             Debug.Log($"--- {aiPlayer.PlayerName} (AI) ends its turn ---");
         }

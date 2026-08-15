@@ -67,16 +67,16 @@ namespace HearthstoneClone.UI
 
         void Start()
         {
+            Random.InitState(System.DateTime.Now.Millisecond + System.Environment.TickCount);
+
+            SetRandomBoardBackground();
+            SetRandomMusic();
+
             if (cardPool == null || cardPool.Count == 0)
             {
                 Debug.LogWarning("No cards assigned to EffectTester's Card Pool.");
                 return;
             }
-
-            Random.InitState(System.DateTime.Now.Millisecond + System.Environment.TickCount);
-
-            SetRandomBoardBackground();
-            SetRandomMusic();
 
             playerOne = new Player("Player One");
             playerTwo = new Player("Player Two");
@@ -111,6 +111,11 @@ namespace HearthstoneClone.UI
             if (heroPowerButton != null)
             {
                 heroPowerButton.onClick.AddListener(OnHeroPowerClicked);
+            }
+
+            if (endTurnButton != null)
+            {
+                endTurnButton.onClick.AddListener(OnEndTurnClicked);
             }
 
             if (gameOverText != null)
@@ -204,6 +209,8 @@ namespace HearthstoneClone.UI
 
         private void OnConfirmMulliganClicked()
         {
+            if (mulliganComplete) return;
+
             foreach (CardData card in new List<CardData>(mulliganSelections))
             {
                 playerOneHand.MulliganCard(card);
@@ -222,16 +229,16 @@ namespace HearthstoneClone.UI
                 mulliganPanel.gameObject.SetActive(false);
             }
 
+            if (confirmMulliganButton != null)
+            {
+                confirmMulliganButton.gameObject.SetActive(false);
+            }
+
             mulliganComplete = true;
 
             Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
 
             RefreshAll();
-
-            if (endTurnButton != null)
-            {
-                endTurnButton.onClick.AddListener(OnEndTurnClicked);
-            }
         }
 
         private void OnCardClicked(CardData card)
@@ -245,6 +252,7 @@ namespace HearthstoneClone.UI
             if (success)
             {
                 RefreshAll();
+                CheckWinCondition();
             }
         }
 
@@ -259,6 +267,7 @@ namespace HearthstoneClone.UI
             if (success)
             {
                 RefreshAll();
+                CheckWinCondition();
             }
         }
 

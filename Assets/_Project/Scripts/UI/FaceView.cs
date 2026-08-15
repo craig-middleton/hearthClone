@@ -10,9 +10,20 @@ namespace HearthstoneClone.UI
     {
         public TMP_Text healthText;
         public Button button;
+        public Image avatarImage;
+
+        [Header("Idle Animation")]
+        public float breathScaleAmount = 0.03f;
+        public float breathSpeed = 1.2f;
+        public float swayAmount = 3f;
+        public float swaySpeed = 0.8f;
 
         private Player player;
         private Action<Player> onClicked;
+
+        private RectTransform avatarRect;
+        private Vector3 avatarBaseScale;
+        private Vector3 avatarBasePosition;
 
         public void SetPlayer(Player playerData, Action<Player> clickCallback)
         {
@@ -29,6 +40,24 @@ namespace HearthstoneClone.UI
                 button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(() => onClicked?.Invoke(player));
             }
+
+            if (avatarImage != null && avatarRect == null)
+            {
+                avatarRect = avatarImage.rectTransform;
+                avatarBaseScale = avatarRect.localScale;
+                avatarBasePosition = avatarRect.localPosition;
+            }
+        }
+
+        void Update()
+        {
+            if (avatarRect == null) return;
+
+            float breath = 1f + Mathf.Sin(Time.time * breathSpeed) * breathScaleAmount;
+            avatarRect.localScale = avatarBaseScale * breath;
+
+            float sway = Mathf.Sin(Time.time * swaySpeed) * swayAmount;
+            avatarRect.localPosition = avatarBasePosition + new Vector3(sway, 0f, 0f);
         }
     }
 }
