@@ -35,6 +35,15 @@ namespace HearthstoneClone.UI
         [Header("Game Over UI")]
         public TMPro.TMP_Text gameOverText;
 
+        [Header("Board Background")]
+        public Image boardBackgroundImage;
+        public List<Sprite> boardBackgrounds;
+
+        [Header("Music")]
+        public AudioSource musicSource;
+        public List<AudioClip> musicTracks;
+        [Range(0f, 1f)] public float musicVolume = 0.5f;
+
         private const int HeroPowerCost = 2;
 
         private PlayerHand playerOneHand;
@@ -63,6 +72,11 @@ namespace HearthstoneClone.UI
                 Debug.LogWarning("No cards assigned to EffectTester's Card Pool.");
                 return;
             }
+
+            Random.InitState(System.DateTime.Now.Millisecond + System.Environment.TickCount);
+
+            SetRandomBoardBackground();
+            SetRandomMusic();
 
             playerOne = new Player("Player One");
             playerTwo = new Player("Player Two");
@@ -105,6 +119,35 @@ namespace HearthstoneClone.UI
             }
 
             ShowMulliganUI();
+        }
+
+        private void SetRandomBoardBackground()
+        {
+            if (boardBackgroundImage == null || boardBackgrounds == null || boardBackgrounds.Count == 0)
+            {
+                return;
+            }
+
+            int index = Random.Range(0, boardBackgrounds.Count);
+            boardBackgroundImage.sprite = boardBackgrounds[index];
+
+            Debug.Log($"Board background selected: index {index} ({boardBackgrounds[index].name})");
+        }
+
+        private void SetRandomMusic()
+        {
+            if (musicSource == null || musicTracks == null || musicTracks.Count == 0)
+            {
+                return;
+            }
+
+            int index = Random.Range(0, musicTracks.Count);
+            musicSource.clip = musicTracks[index];
+            musicSource.volume = musicVolume;
+            musicSource.loop = true;
+            musicSource.Play();
+
+            Debug.Log($"Music track selected: index {index} ({musicTracks[index].name})");
         }
 
         private List<CardData> BuildDeck(List<CardData> pool)
