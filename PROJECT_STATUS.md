@@ -152,16 +152,17 @@ None — a productive session under time pressure. Tier 1 (fatigue, board/hand c
 
 ## Next Steps (in order)
 1. Generate art for the remaining 14 cards, following the same Leonardo AI → import → assign steps documented above (only Goblin has real art so far).
-2. Longer playtest to actually trigger and confirm fatigue and the 7-minion board cap.
-3. Watch for an AI-initiated attack against an opposing Taunt minion to confirm that side of the enforcement too.
-4. Quick check: confirm all input is truly inert after game over.
-5. Quick explicit check: same minion attacking twice in one turn should be rejected.
-6. Consider smarter AI attack logic (trading/risk awareness).
-7. **Remaining Tier 2 content work**: Deathrattle, Charge/Rush, Divine Shield, Windfury, Silence, full Hero classes + real Hero Powers (current one is a deliberate minimal placeholder, not the real system), Weapons — each needs its own scoping/design pass before building.
-8. Record `BoardPanel`'s corrected `Pos Y` value and `HandPanel`'s current Rect Transform values for documentation completeness.
-9. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
-10. Consider upgrading click-to-play to real drag-and-drop, if desired.
-11. Consider simple visual effects/animation feedback (flashes, particles for spells/attacks) as the next visual layer after card artwork.
+2. **Board background art** — Craig wants a background image for the play area itself (currently a plain flat blue `Canvas`/panel color), not yet scoped. Will likely need: an image generated the same way as card art (Leonardo AI), imported as a Sprite, and applied to the main Canvas/background `Image` component (or a new full-screen `Image` behind everything else in the Hierarchy) rather than `CardData`/`Minion` — this is a scene-level background, not a per-card asset, so it's a different wiring path than the card artwork pipeline. Needs a design decision on where exactly it sits in the Canvas hierarchy (behind `HandPanel`/`BoardPanel`/etc. but still part of the same Canvas) before building.
+3. Longer playtest to actually trigger and confirm fatigue and the 7-minion board cap.
+4. Watch for an AI-initiated attack against an opposing Taunt minion to confirm that side of the enforcement too.
+5. Quick check: confirm all input is truly inert after game over.
+6. Quick explicit check: same minion attacking twice in one turn should be rejected.
+7. Consider smarter AI attack logic (trading/risk awareness).
+8. **Remaining Tier 2 content work**: Deathrattle, Charge/Rush, Divine Shield, Windfury, Silence, full Hero classes + real Hero Powers (current one is a deliberate minimal placeholder, not the real system), Weapons — each needs its own scoping/design pass before building.
+9. Record `BoardPanel`'s corrected `Pos Y` value and `HandPanel`'s current Rect Transform values for documentation completeness.
+10. Delete `EffectTester`/rename to something like `GameBootstrapper` once real play/board interaction replaces the manual test setup.
+11. Consider upgrading click-to-play to real drag-and-drop, if desired.
+12. Consider simple visual effects/animation feedback (flashes, particles for spells/attacks) as a further visual layer after card artwork and board background.
 
 ## Git Habits Being Followed
 - Simple commit template: `git add .` / `git commit -m "short one-line summary"` / `git push`
