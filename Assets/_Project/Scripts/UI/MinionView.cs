@@ -34,8 +34,15 @@ namespace HearthstoneClone.UI
             minion = minionData;
             onClicked = clickCallback;
 
-            nameText.text = minion.HasTaunt ? $"{minion.MinionName} (Taunt)" : minion.MinionName;
-            statsText.text = $"{minion.CurrentAttack} / {minion.CurrentHealth}";
+            if (nameText != null)
+            {
+                nameText.text = minion.HasTaunt ? $"{minion.MinionName} (Taunt)" : minion.MinionName;
+            }
+
+            if (statsText != null)
+            {
+                statsText.text = $"{minion.CurrentAttack} / {minion.CurrentHealth}";
+            }
 
             if (artworkImage != null)
             {

@@ -12,12 +12,23 @@ namespace HearthstoneClone.UI
 
         public void RenderHand(List<CardData> hand, Action<CardData> onCardClicked)
         {
+            if (handPanel == null)
+            {
+                Debug.LogWarning("HandDisplay.RenderHand called with no handPanel assigned.");
+                return;
+            }
+
             foreach (Transform child in handPanel)
             {
                 Destroy(child.gameObject);
             }
 
             if (hand == null) return;
+            if (cardViewPrefab == null)
+            {
+                Debug.LogWarning("HandDisplay.RenderHand has no cardViewPrefab assigned.");
+                return;
+            }
 
             foreach (CardData card in hand)
             {
@@ -25,6 +36,13 @@ namespace HearthstoneClone.UI
 
                 GameObject cardObj = Instantiate(cardViewPrefab, handPanel);
                 CardView view = cardObj.GetComponent<CardView>();
+                if (view == null)
+                {
+                    Debug.LogWarning("Instantiated card prefab has no CardView component.");
+                    Destroy(cardObj);
+                    continue;
+                }
+
                 view.SetCard(card, onCardClicked);
             }
         }

@@ -37,7 +37,7 @@ namespace HearthstoneClone.Core
             }
 
             List<Minion> defenderTaunts = board.GetTauntMinions(defender);
-            if (defenderTaunts != null && defenderTaunts.Count > 0)
+            if (defenderTaunts.Count > 0)
             {
                 bool targetingTaunt = target.TargetMinion != null && defenderTaunts.Contains(target.TargetMinion);
                 if (!targetingTaunt)

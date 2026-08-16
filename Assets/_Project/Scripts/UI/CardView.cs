@@ -38,8 +38,11 @@ namespace HearthstoneClone.UI
 
             WriteCardText();
 
-            button.onClick.RemoveAllListeners();
-            button.onClick.AddListener(() => onClicked?.Invoke(card));
+            if (button != null)
+            {
+                button.onClick.RemoveAllListeners();
+                button.onClick.AddListener(() => onClicked?.Invoke(card));
+            }
         }
 
         public void SetCardForMulligan(CardData cardData, Action<CardData> toggleCallback)
@@ -57,23 +60,36 @@ namespace HearthstoneClone.UI
             WriteCardText();
             UpdateMulliganVisual();
 
-            button.onClick.RemoveAllListeners();
-            button.onClick.AddListener(() =>
+            if (button != null)
             {
-                isSelectedForMulligan = !isSelectedForMulligan;
-                UpdateMulliganVisual();
-                onMulliganToggled?.Invoke(card);
-            });
+                button.onClick.RemoveAllListeners();
+                button.onClick.AddListener(() =>
+                {
+                    isSelectedForMulligan = !isSelectedForMulligan;
+                    UpdateMulliganVisual();
+                    onMulliganToggled?.Invoke(card);
+                });
+            }
         }
 
         private void WriteCardText()
         {
-            nameText.text = card.cardName;
-            costText.text = card.manaCost.ToString();
+            if (nameText != null)
+            {
+                nameText.text = card.cardName;
+            }
 
-            statsText.text = card.cardType == CardType.Minion
-                ? $"{card.attack} / {card.health}"
-                : "";
+            if (costText != null)
+            {
+                costText.text = card.manaCost.ToString();
+            }
+
+            if (statsText != null)
+            {
+                statsText.text = card.cardType == CardType.Minion
+                    ? $"{card.attack} / {card.health}"
+                    : "";
+            }
 
             if (artworkImage != null)
             {

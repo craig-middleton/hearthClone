@@ -355,6 +355,15 @@ namespace HearthstoneClone.UI
         private void AfterGameAction()
         {
             board.RemoveDeadMinions();
+
+            // A rejected attack keeps the attacker selected so it can be retargeted,
+            // but a minion that just died must not stay selected - it is no longer
+            // rendered, so there would be no way to deselect it.
+            if (selectedAttacker != null && selectedAttacker.IsDead)
+            {
+                selectedAttacker = null;
+            }
+
             RefreshAll();
             CheckWinCondition();
         }
