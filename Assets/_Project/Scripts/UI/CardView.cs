@@ -27,6 +27,12 @@ namespace HearthstoneClone.UI
 
         public void SetCard(CardData cardData, Action<CardData> clickCallback)
         {
+            if (cardData == null)
+            {
+                Debug.LogWarning("CardView.SetCard called with a null CardData — skipping.");
+                return;
+            }
+
             card = cardData;
             onClicked = clickCallback;
 
@@ -38,6 +44,12 @@ namespace HearthstoneClone.UI
 
         public void SetCardForMulligan(CardData cardData, Action<CardData> toggleCallback)
         {
+            if (cardData == null)
+            {
+                Debug.LogWarning("CardView.SetCardForMulligan called with a null CardData — skipping.");
+                return;
+            }
+
             card = cardData;
             onMulliganToggled = toggleCallback;
             isSelectedForMulligan = false;

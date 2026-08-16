@@ -160,6 +160,8 @@ namespace HearthstoneClone.UI
             var deck = new List<CardData>();
             foreach (var card in pool)
             {
+                if (card == null) continue;
+
                 for (int i = 0; i < copiesPerCard; i++)
                 {
                     deck.Add(card);
@@ -188,8 +190,17 @@ namespace HearthstoneClone.UI
 
             foreach (CardData card in playerOneHand.Hand)
             {
+                if (card == null) continue;
+
                 GameObject cardObj = Instantiate(cardViewPrefab, mulliganPanel);
                 CardView view = cardObj.GetComponent<CardView>();
+                if (view == null)
+                {
+                    Debug.LogWarning("Instantiated card prefab has no CardView component.");
+                    Destroy(cardObj);
+                    continue;
+                }
+
                 view.SetCardForMulligan(card, OnMulliganCardToggled);
                 mulliganCardObjects.Add(cardObj);
             }
@@ -251,8 +262,7 @@ namespace HearthstoneClone.UI
             bool success = playerOneHand.PlayCard(card, context, target);
             if (success)
             {
-                RefreshAll();
-                CheckWinCondition();
+                AfterGameAction();
             }
         }
 
@@ -266,8 +276,7 @@ namespace HearthstoneClone.UI
             bool success = playerTwoHand.PlayCard(card, context, target);
             if (success)
             {
-                RefreshAll();
-                CheckWinCondition();
+                AfterGameAction();
             }
         }
 
@@ -275,6 +284,7 @@ namespace HearthstoneClone.UI
         {
             if (gameOver) return;
             if (!mulliganComplete) return;
+            if (minion == null) return;
             if (!manualControlMode && turnManager.CurrentPlayer == playerTwo) return;
 
             bool ownerIsActingPlayer = owner == turnManager.CurrentPlayer && (owner == playerOne || manualControlMode);
@@ -295,14 +305,7 @@ namespace HearthstoneClone.UI
 
             if (selectedAttacker == null) return;
 
-            var defenderTaunts = board.GetTauntMinions(owner);
-            if (defenderTaunts.Count > 0 && !minion.HasTaunt)
-            {
-                Debug.LogWarning($"{owner.PlayerName} has a Taunt minion — you must attack it first.");
-                return;
-            }
-
-            ResolveAttack(selectedAttacker, new Target(minion));
+            ResolveAttack(selectedAttacker, new Target(minion), owner);
         }
 
         private void OnFaceClicked(Player owner)
@@ -313,14 +316,7 @@ namespace HearthstoneClone.UI
             if (selectedAttacker == null) return;
             if (owner == turnManager.CurrentPlayer) return;
 
-            var defenderTaunts = board.GetTauntMinions(owner);
-            if (defenderTaunts.Count > 0)
-            {
-                Debug.LogWarning($"{owner.PlayerName} has a Taunt minion — you must attack it first.");
-                return;
-            }
-
-            ResolveAttack(selectedAttacker, new Target(owner));
+            ResolveAttack(selectedAttacker, new Target(owner), owner);
         }
 
         private void OnHeroPowerClicked()
@@ -337,24 +333,28 @@ namespace HearthstoneClone.UI
 
             Debug.Log($"{playerOne.PlayerName} used Hero Power. Dealt 1 damage to {playerTwo.PlayerName}.");
 
-            RefreshAll();
-            CheckWinCondition();
+            AfterGameAction();
         }
 
-        private void ResolveAttack(Minion attacker, Target target)
+        private void ResolveAttack(Minion attacker, Target target, Player defender)
         {
-            bool success = Combat.TryAttack(attacker, target, out string failReason);
+            bool success = Combat.TryAttack(attacker, target, board, defender, out string failReason);
             if (success)
             {
-                board.RemoveDeadMinions();
                 Debug.Log($"{attacker.MinionName} attacked.");
+                selectedAttacker = null;
             }
             else
             {
                 Debug.LogWarning(failReason);
             }
 
-            selectedAttacker = null;
+            AfterGameAction();
+        }
+
+        private void AfterGameAction()
+        {
+            board.RemoveDeadMinions();
             RefreshAll();
             CheckWinCondition();
         }
@@ -384,7 +384,7 @@ namespace HearthstoneClone.UI
                 }
             }
 
-            RefreshAll();
+            AfterGameAction();
         }
 
         private void DrawForCurrentPlayer()

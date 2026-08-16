@@ -17,8 +17,12 @@ namespace HearthstoneClone.UI
                 Destroy(child.gameObject);
             }
 
+            if (hand == null) return;
+
             foreach (CardData card in hand)
             {
+                if (card == null) continue;
+
                 GameObject cardObj = Instantiate(cardViewPrefab, handPanel);
                 CardView view = cardObj.GetComponent<CardView>();
                 view.SetCard(card, onCardClicked);

@@ -25,6 +25,12 @@ namespace HearthstoneClone.UI
 
         public void SetMinion(Minion minionData, Action<Minion> clickCallback = null, bool isSelected = false, bool showAttackEligibility = false)
         {
+            if (minionData == null)
+            {
+                Debug.LogWarning("MinionView.SetMinion called with a null Minion — skipping.");
+                return;
+            }
+
             minion = minionData;
             onClicked = clickCallback;
 

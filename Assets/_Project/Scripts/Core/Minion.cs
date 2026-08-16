@@ -31,7 +31,7 @@ namespace HearthstoneClone.Core
 
         public bool IsDead => CurrentHealth <= 0;
 
-        public bool CanAttack => !HasSummoningSickness && !HasAttackedThisTurn;
+        public bool CanAttack => !IsDead && !HasSummoningSickness && !HasAttackedThisTurn;
 
         public void ResetForNewTurn()
         {

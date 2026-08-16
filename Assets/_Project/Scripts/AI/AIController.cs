@@ -24,6 +24,8 @@ namespace HearthstoneClone.AI
 
             foreach (var card in handSnapshot)
             {
+                if (card == null) continue;
+
                 if (card.manaCost >= mulliganThreshold)
                 {
                     aiHand.MulliganCard(card);
@@ -47,6 +49,7 @@ namespace HearthstoneClone.AI
 
                 foreach (var card in new List<CardData>(aiHand.Hand))
                 {
+                    if (card == null) continue;
                     if (card.manaCost > aiPlayer.CurrentMana)
                         continue;
 
@@ -64,17 +67,19 @@ namespace HearthstoneClone.AI
                 }
             }
 
+            board.RemoveDeadMinions();
+
             foreach (var minion in new List<Minion>(aiPlayer.BoardMinions))
             {
                 if (opponent.Health <= 0) break;
-                if (!minion.CanAttack) continue;
+                if (minion == null || !minion.CanAttack) continue;
 
                 var opponentTaunts = board.GetTauntMinions(opponent);
                 Target attackTarget = opponentTaunts.Count > 0
                     ? new Target(opponentTaunts[0])
                     : new Target(opponent);
 
-                Combat.TryAttack(minion, attackTarget, out _);
+                Combat.TryAttack(minion, attackTarget, board, opponent, out _);
                 board.RemoveDeadMinions();
             }
 

@@ -27,6 +27,12 @@ namespace HearthstoneClone.UI
 
         public void SetPlayer(Player playerData, Action<Player> clickCallback)
         {
+            if (playerData == null)
+            {
+                Debug.LogWarning("FaceView.SetPlayer called with a null Player — skipping.");
+                return;
+            }
+
             player = playerData;
             onClicked = clickCallback;
 
