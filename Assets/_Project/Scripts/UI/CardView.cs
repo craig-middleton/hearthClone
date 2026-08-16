@@ -43,6 +43,10 @@ namespace HearthstoneClone.UI
                 button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(() => onClicked?.Invoke(card));
             }
+            else
+            {
+                Debug.LogWarning("CardView: 'button' is not assigned in the Inspector — this card cannot be clicked to play.", this);
+            }
         }
 
         public void SetCardForMulligan(CardData cardData, Action<CardData> toggleCallback)
@@ -70,6 +74,10 @@ namespace HearthstoneClone.UI
                     onMulliganToggled?.Invoke(card);
                 });
             }
+            else
+            {
+                Debug.LogWarning("CardView: 'button' is not assigned in the Inspector — this card cannot be toggled for mulligan.", this);
+            }
         }
 
         private void WriteCardText()
@@ -78,10 +86,18 @@ namespace HearthstoneClone.UI
             {
                 nameText.text = card.cardName;
             }
+            else
+            {
+                Debug.LogWarning("CardView: 'nameText' is not assigned in the Inspector — card name will not render.", this);
+            }
 
             if (costText != null)
             {
                 costText.text = card.manaCost.ToString();
+            }
+            else
+            {
+                Debug.LogWarning("CardView: 'costText' is not assigned in the Inspector — card mana cost will not render.", this);
             }
 
             if (statsText != null)
@@ -89,6 +105,10 @@ namespace HearthstoneClone.UI
                 statsText.text = card.cardType == CardType.Minion
                     ? $"{card.attack} / {card.health}"
                     : "";
+            }
+            else
+            {
+                Debug.LogWarning("CardView: 'statsText' is not assigned in the Inspector — card attack/health will not render.", this);
             }
 
             if (artworkImage != null)

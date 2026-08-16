@@ -24,6 +24,14 @@ namespace HearthstoneClone.Core
             PlayerTwo.BoardMinions.RemoveAll(m => m.IsDead);
         }
 
+        /// <summary>
+        /// Returns the given player's Taunt minions, or an empty list if they have none.
+        /// MUST NEVER RETURN NULL. Combat.TryAttack calls .Count on the result directly,
+        /// so adding a null-returning guard clause here would silently reintroduce an NRE
+        /// at that call site. List.FindAll already returns an empty list when nothing
+        /// matches, which is the correct "this player has no Taunt minions" answer.
+        /// No separate IsDead filter is needed - corpses are stripped by RemoveDeadMinions().
+        /// </summary>
         public List<Minion> GetTauntMinions(Player player)
         {
             return player.BoardMinions.FindAll(m => m.HasTaunt);

@@ -38,10 +38,18 @@ namespace HearthstoneClone.UI
             {
                 nameText.text = minion.HasTaunt ? $"{minion.MinionName} (Taunt)" : minion.MinionName;
             }
+            else
+            {
+                Debug.LogWarning("MinionView: 'nameText' is not assigned in the Inspector — minion name will not render.", this);
+            }
 
             if (statsText != null)
             {
                 statsText.text = $"{minion.CurrentAttack} / {minion.CurrentHealth}";
+            }
+            else
+            {
+                Debug.LogWarning("MinionView: 'statsText' is not assigned in the Inspector — minion attack/health will not render.", this);
             }
 
             if (artworkImage != null)
@@ -63,6 +71,10 @@ namespace HearthstoneClone.UI
             {
                 button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(() => onClicked?.Invoke(minion));
+            }
+            else
+            {
+                Debug.LogWarning("MinionView: 'button' is not assigned in the Inspector — this minion cannot be clicked or selected to attack.", this);
             }
         }
 
