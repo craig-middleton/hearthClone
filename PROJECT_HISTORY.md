@@ -94,6 +94,8 @@ A full line-by-line audit of `PROJECT_STATUS.md` against the source, run in both
 - **`FaceView` brought into the logging convention** — `healthText` and `button` now log named warnings with `this` as context; `avatarImage` stays silent as decorative.
 - **Log context (`this`) made universal** across all five view scripts and `EffectTester`, so clicking any console warning selects the offending object in the Hierarchy. (`EffectTester`'s fourth `LogWarning`, the combat rejection message, deliberately has no context — it's gameplay feedback, not a wiring diagnostic.)
 
+**A later pass in the same session** audited all 16 `CardData` assets field-by-field and found two more things the docs had never recorded. First, **the asset YAML is not uniform**: `hasTaunt` is physically absent from 14 of 16 files and `targetsSelf` from 4, because Unity only wrote a field once it was explicitly set or the asset re-serialized. That is now Live Constraint 12 — it means grepping the assets for a field name misses most cards, and changing a field's initializer in `CardData.cs` would silently flip every asset that omits it. Second, **`TestCard_Wisp`'s mana cost was documented as 1 and has been 2 in the asset since `d1cd398`** — a fifth wrong row, inherited from the original `PROJECT_STATUS.md`, and the second fabricated card-asset detail after the `TesCard_Watchman` typo. Both were found by reading the assets rather than the docs, which is the point.
+
 **Deliberately not fixed:** the mulligan redraw (needs the mulligan restructured from per-card to batch — a behaviour change needing its own decision), and the off-board-attacker gap in `Combat` (documented as an accepted gap instead).
 
 ---
@@ -117,7 +119,7 @@ Same "list + random pick" shape as `cardPool`:
 - **Bug hit and fixed**: the background wasn't varying between Play-mode restarts. Root cause was Unity's default `Random` seeding, which can produce the same first result on rapid consecutive restarts in the Editor — a known quirk, not a logic bug. Fixed with an explicit `Random.InitState(System.DateTime.Now.Millisecond + System.Environment.TickCount)` at the top of `Start()`, shared by both picks. A debug log showing the picked index/sprite name was added so this is directly verifiable in the console rather than by eyeballing.
 
 ## Test Assets
-- Original 5: `TestCard_Wisp` (1, 1/1), `TestCard_Goblin` (2, 2/2), `TestCard_RiverCroc` "River Crocodile" (3, 2/3), `TestCard_Fireball` (4, Spell → `Effect_Deal3Damage`), `TestCard_Boulderfist` (5, 4/4).
+- Original 5: `TestCard_Wisp` (2, 1/1 — **documented as cost 1 until session 28; the asset has said 2 since it was created in `d1cd398`**), `TestCard_Goblin` (2, 2/2), `TestCard_RiverCroc` "River Crocodile" (3, 2/3), `TestCard_Fireball` (4, Spell → `Effect_Deal3Damage`), `TestCard_Boulderfist` (5, 4/4).
 - `TestCard_Coin` "The Coin" (0, Spell, `targetsSelf = true` → `Effect_GainMana1`) — kept OUT of `Card Pool`, granted only via `EffectTester`'s dedicated `Coin Card` field.
 - `Effect_Deal3Damage` (damage = 3), `Effect_GainMana1` (manaAmount = 1).
 - **10 more added in an earlier session**, bringing `Card Pool` to 15 entries × `Copies Per Card = 2` = a real 30-card deck — matching Hearthstone's max-2-copies rule rather than just raising the copy count on the original 5:

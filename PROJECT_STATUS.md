@@ -5,7 +5,8 @@
 _Last updated: 2026-08-17 (session 28 — audited this file against the source and corrected four wrong rows; removed `Combat.TryAttack`'s `defender` parameter; fixed Hero Power for manual control mode; universal log context; split into STATUS + HISTORY)_
 
 ## How to use these files
-- **`PROJECT_STATUS.md` (this file)** — paste at the start of a new Claude chat. Current truth, stands alone: enough to start the next feature.
+- **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.
+- **Upload the file rather than pasting it.** Uploading avoids truncation entirely; pasting is what silently drops the middle of a long file, and the chat does not notice it happened.
 - **`PROJECT_HISTORY.md`** — read for *why*: which bug a guard prevents, what a refactor abandoned, how the pipelines work.
 - **If a session claims something isn't documented, check HISTORY before believing it.** A chat given only STATUS lacks the history, and pastes can truncate silently.
 - **New work goes to HISTORY.** In STATUS only current-state sections are *updated in place*. STATUS must not grow.
@@ -43,7 +44,8 @@ Read before changing the named code. Kept above the table deliberately — a tru
 9. **Which view guards log**: `CardView` (`nameText`/`costText`/`statsText`/`button`), `MinionView` (`nameText`/`statsText`/`button`) and `FaceView` (`healthText`/`button`) log a named warning with `this` as context. `artworkImage`, `cardBackground`, `minionBackground` and `avatarImage` are guarded but **deliberately silent** — unassigned is a valid configuration for decorative fields.
 10. **`BoardDisplay` skips `IsDead` minions** as defence-in-depth against a future damage path forgetting to sweep.
 11. **`EffectTester` is temporary** — delete or rename to `GameBootstrapper` once a real gameplay loop exists.
-12. **`.csproj` files are gitignored and Unity-generated.** Fine for editing existing scripts, but adding a new script and building without letting Unity regenerate would build clean while silently omitting it — open Unity after adding files.
+12. **Older `CardData` assets physically omit later-added fields.** Unity wrote a field into an asset only once it was explicitly set or the asset was otherwise re-serialized, so the YAML is not uniform: **`hasTaunt` is absent from 14 of the 16 assets** (present only on `TestCard_Shieldbearer` as `1` and `TestCard_Goblin` as `0`), and **`targetsSelf` is absent from 4** (`Wisp`, `RiverCroc`, `Fireball`, `Boulderfist`). `artwork` and `description` are present on all 16. Two consequences: **grepping the assets for a field name will not find every card** (`grep hasTaunt` returns 2 of 16), and **changing a field's initializer in `CardData.cs` would silently flip every asset that omits it** while leaving the explicit ones alone. For an omitted field the C# default is the real value.
+13. **`.csproj` files are gitignored and Unity-generated.** Fine for editing existing scripts, but adding a new script and building without letting Unity regenerate would build clean while silently omitting it — open Unity after adding files.
 
 ## Code Written So Far
 Constraint notes live above; these rows say what each file does.
@@ -71,7 +73,24 @@ Constraint notes live above; these rows say what each file does.
 | `AIController.cs` | `Scripts/AI/` | `PerformMulligan()` (returns cards at/above a mana threshold) and `TakeTurn()` (card-play loop, then attacks). Sweeps `RemoveDeadMinions()` after the card-play loop and after every swing. Attack loop breaks early if the opponent is dead, skips null and non-`CanAttack` minions, targets the first opponent Taunt else the face. The AI owns its *heuristic*; the *legality* of its pick is validated by `Combat.TryAttack`. |
 
 ## Card Pool
-15 `CardData` assets in `EffectTester.cardPool` × `copiesPerCard = 2` = a 30-card deck. 12 are Minions (stats in HISTORY); the spells are:
+15 `CardData` assets in `EffectTester.cardPool` × `copiesPerCard = 2` = a 30-card deck: 12 Minions and 3 Spells. The Coin sits outside the pool.
+
+| Minion | Cost | A/H | Note |
+|---|---|---|---|
+| Murloc | 1 | 1/1 | |
+| Goblin | 2 | 2/2 | only card with artwork |
+| Watchman | 2 | 3/1 | |
+| Wisp | 2 | 1/1 | |
+| River Crocodile | 3 | 2/3 | |
+| Shieldbearer | 3 | 1/5 | **only Taunt** (`hasTaunt: 1`) |
+| Warhorse | 3 | 3/3 | |
+| Bear | 4 | 3/6 | |
+| Boulderfist | 5 | 4/4 | |
+| Charging Rhino | 6 | 5/5 | |
+| Stone Guardian | 6 | 4/8 | |
+| Ancient Colossus | 7 | 7/7 | |
+
+Spells:
 
 | Spell | Cost | `onPlayEffect` | `targetsSelf` |
 |---|---|---|---|
@@ -102,7 +121,11 @@ Constraint notes live above; these rows say what each file does.
 - **Cosmetic**: `BoardPanel`/`OpponentBoardPanel` text clipping (minion name cut off at the left edge); board panel vertical spacing needs more separation; `MulliganPanel` shares `HandPanel`'s screen position (fine, hidden after confirm).
 
 ## Next Steps (in order)
-1. **Playtest.** Newly changed and entirely unverified: **(a) Hero Power under manual control mode** — as Player Two, check the *correct player* is charged 2 mana, flagged as having used it, and takes the 1 damage; then regression-check with manual control **off** (should be unchanged). **(b) Taunt rejection** — attacking a non-Taunt target while a Taunt is up must be rejected, the message must name the owner (`"Player Two has a Taunt minion — you must attack it first."`), and **the attacker must stay selected**. Also re-confirm the rest of the attack path (see Verification Status), and do a **visual render check** — every card and minion shows name, cost, stats. Both prefabs are fully wired, so that last one is a layout/text-clipping check, not a guard check.
+1. **Playtest — four separate checks, newest code first. Do them as four passes, not one.**
+   - **1a — Hero Power under manual control mode** (new in session 28, never run). As Player Two: the *correct player* is charged 2 mana, the *correct player* is flagged `HasUsedHeroPowerThisTurn`, the *correct player* takes the 1 damage. Then regression-check with manual control **off** — behaviour should be identical to before.
+   - **1b — Taunt rejection** (rewritten twice, last confirmed before both). With a Taunt up, attacking a non-Taunt target must be rejected, the message must name the owner (`"Player Two has a Taunt minion — you must attack it first."`), and **the attacker must stay selected**.
+   - **1c — The wider attack path** (same staleness as 1b, and the easiest to skip). Re-confirm: attacking the Taunt minion itself resolves; AI-side Taunt enforcement; the AI re-targeting correctly after killing a Taunt; the attack phase of AI turn logic generally. All were confirmed once, before `Combat.TryAttack` was rewritten twice. Note the new own-side rejection **cannot be reached from the UI today** — own-minion clicks route to selection and own-face clicks are blocked in `OnFaceClicked` — so there is nothing to click; it stays unverified until targeting or drag-and-drop can reach it.
+   - **1d — Visual render check.** Every card in hand and every minion on both boards shows name, cost and stats. Both prefabs are fully wired, so this is a layout and text-clipping check, not a guard check.
 2. **Targeting system — let spells target minions, not just the face.** Build "select a card → select a target". First of the three features, since drag-and-drop needs the same interaction layer; can likely reuse the `selectedAttacker` pattern.
 3. **More spells.** Content on the existing `CardEffect` system, but AoE / heal / buff / draw each need a new `CardEffect` subclass. Scope first: pick the spells, then sort into "new asset only" vs "needs a new effect class".
 4. **Drag-and-drop to play cards.** After targeting, so it layers over a working system. Touches all five UI scripts — `IBeginDragHandler`/`IDragHandler`/`IEndDragHandler`, drop zones, a drag ghost, canvas raycasting.
