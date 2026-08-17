@@ -4,7 +4,7 @@ namespace HearthstoneClone.Core
 {
     public static class Combat
     {
-        public static bool TryAttack(Minion attacker, Target target, Board board, Player defender, out string failReason)
+        public static bool TryAttack(Minion attacker, Target target, Board board, out string failReason)
         {
             if (attacker == null || target == null)
             {
@@ -12,9 +12,9 @@ namespace HearthstoneClone.Core
                 return false;
             }
 
-            if (board == null || defender == null)
+            if (board == null)
             {
-                failReason = "Attack rejected: board or defending player was null.";
+                failReason = "Attack rejected: board was null.";
                 return false;
             }
 
@@ -23,6 +23,13 @@ namespace HearthstoneClone.Core
                 failReason = "Attack rejected: target had neither a player nor a minion.";
                 return false;
             }
+
+            // The defending player is derived from the target, never passed in. A caller
+            // cannot hand this method the wrong side of the board, so the Taunt rule below
+            // is checked against the actual owner of whatever is being attacked.
+            Player defender = target.TargetPlayer != null
+                ? target.TargetPlayer
+                : board.GetOwnerOf(target.TargetMinion);
 
             if (attacker.IsDead)
             {
@@ -33,6 +40,18 @@ namespace HearthstoneClone.Core
             if (target.TargetMinion != null && target.TargetMinion.IsDead)
             {
                 failReason = $"{target.TargetMinion.MinionName} is already dead and cannot be attacked.";
+                return false;
+            }
+
+            if (defender == null)
+            {
+                failReason = "Target minion is not on the board.";
+                return false;
+            }
+
+            if (board.GetOwnerOf(attacker) == defender)
+            {
+                failReason = "Cannot attack your own side of the board.";
                 return false;
             }
 

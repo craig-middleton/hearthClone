@@ -18,6 +18,26 @@ namespace HearthstoneClone.Core
             return player == PlayerOne ? PlayerTwo : PlayerOne;
         }
 
+        /// <summary>
+        /// Returns the player whose board holds the given minion.
+        /// RETURNS NULL for a minion that is on neither board - a corpse already
+        /// swept by RemoveDeadMinions(), a minion still in hand, or a stale
+        /// reference held past its lifetime. Callers MUST handle the null case
+        /// rather than dereferencing the result; Combat.TryAttack derives the
+        /// defending player this way and rejects the attack outright when the
+        /// lookup comes back null.
+        /// Matching is by reference identity, which is safe here: Minion overrides
+        /// neither Equals nor GetHashCode, and every board minion is constructed
+        /// exactly once, so a reference identifies one specific minion for its
+        /// whole lifetime.
+        /// </summary>
+        public Player GetOwnerOf(Minion minion)
+        {
+            if (PlayerOne.BoardMinions.Contains(minion)) return PlayerOne;
+            if (PlayerTwo.BoardMinions.Contains(minion)) return PlayerTwo;
+            return null;
+        }
+
         public void RemoveDeadMinions()
         {
             PlayerOne.BoardMinions.RemoveAll(m => m.IsDead);

@@ -14,7 +14,7 @@ namespace HearthstoneClone.UI
         {
             if (handPanel == null)
             {
-                Debug.LogWarning("HandDisplay.RenderHand called with no handPanel assigned.");
+                Debug.LogWarning("HandDisplay.RenderHand called with no handPanel assigned.", this);
                 return;
             }
 
@@ -26,7 +26,7 @@ namespace HearthstoneClone.UI
             if (hand == null) return;
             if (cardViewPrefab == null)
             {
-                Debug.LogWarning("HandDisplay.RenderHand has no cardViewPrefab assigned.");
+                Debug.LogWarning("HandDisplay.RenderHand has no cardViewPrefab assigned.", this);
                 return;
             }
 
@@ -38,7 +38,7 @@ namespace HearthstoneClone.UI
                 CardView view = cardObj.GetComponent<CardView>();
                 if (view == null)
                 {
-                    Debug.LogWarning("Instantiated card prefab has no CardView component.");
+                    Debug.LogWarning("Instantiated card prefab has no CardView component.", this);
                     Destroy(cardObj);
                     continue;
                 }

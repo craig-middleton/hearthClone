@@ -79,7 +79,7 @@ namespace HearthstoneClone.AI
                     ? new Target(opponentTaunts[0])
                     : new Target(opponent);
 
-                Combat.TryAttack(minion, attackTarget, board, opponent, out _);
+                Combat.TryAttack(minion, attackTarget, board, out _);
                 board.RemoveDeadMinions();
             }
 

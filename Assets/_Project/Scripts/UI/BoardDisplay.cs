@@ -14,7 +14,7 @@ namespace HearthstoneClone.UI
         {
             if (boardPanel == null)
             {
-                Debug.LogWarning("BoardDisplay.RenderBoard called with no boardPanel assigned.");
+                Debug.LogWarning("BoardDisplay.RenderBoard called with no boardPanel assigned.", this);
                 return;
             }
 
@@ -26,7 +26,7 @@ namespace HearthstoneClone.UI
             if (minions == null) return;
             if (minionViewPrefab == null)
             {
-                Debug.LogWarning("BoardDisplay.RenderBoard has no minionViewPrefab assigned.");
+                Debug.LogWarning("BoardDisplay.RenderBoard has no minionViewPrefab assigned.", this);
                 return;
             }
 
@@ -39,7 +39,7 @@ namespace HearthstoneClone.UI
                 MinionView view = minionObj.GetComponent<MinionView>();
                 if (view == null)
                 {
-                    Debug.LogWarning("Instantiated minion prefab has no MinionView component.");
+                    Debug.LogWarning("Instantiated minion prefab has no MinionView component.", this);
                     Destroy(minionObj);
                     continue;
                 }

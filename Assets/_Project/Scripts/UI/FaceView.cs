@@ -29,7 +29,7 @@ namespace HearthstoneClone.UI
         {
             if (playerData == null)
             {
-                Debug.LogWarning("FaceView.SetPlayer called with a null Player — skipping.");
+                Debug.LogWarning("FaceView.SetPlayer called with a null Player — skipping.", this);
                 return;
             }
 
@@ -40,11 +40,19 @@ namespace HearthstoneClone.UI
             {
                 healthText.text = $"{player.PlayerName}: {player.Health} HP\nMana: {player.CurrentMana}/{player.MaxMana}";
             }
+            else
+            {
+                Debug.LogWarning("FaceView: 'healthText' is not assigned in the Inspector — player name, health and mana will not render.", this);
+            }
 
             if (button != null)
             {
                 button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(() => onClicked?.Invoke(player));
+            }
+            else
+            {
+                Debug.LogWarning("FaceView: 'button' is not assigned in the Inspector — this face cannot be clicked to be attacked.", this);
             }
 
             if (avatarImage != null && avatarRect == null)

@@ -74,7 +74,7 @@ namespace HearthstoneClone.UI
 
             if (cardPool == null || cardPool.Count == 0)
             {
-                Debug.LogWarning("No cards assigned to EffectTester's Card Pool.");
+                Debug.LogWarning("No cards assigned to EffectTester's Card Pool.", this);
                 return;
             }
 
@@ -174,7 +174,7 @@ namespace HearthstoneClone.UI
         {
             if (mulliganPanel == null || cardViewPrefab == null)
             {
-                Debug.LogWarning("Mulligan UI not wired up — skipping mulligan phase.");
+                Debug.LogWarning("Mulligan UI not wired up — skipping mulligan phase.", this);
                 mulliganComplete = true;
                 RefreshAll();
                 return;
@@ -196,7 +196,7 @@ namespace HearthstoneClone.UI
                 CardView view = cardObj.GetComponent<CardView>();
                 if (view == null)
                 {
-                    Debug.LogWarning("Instantiated card prefab has no CardView component.");
+                    Debug.LogWarning("Instantiated card prefab has no CardView component.", this);
                     Destroy(cardObj);
                     continue;
                 }
@@ -305,7 +305,7 @@ namespace HearthstoneClone.UI
 
             if (selectedAttacker == null) return;
 
-            ResolveAttack(selectedAttacker, new Target(minion), owner);
+            ResolveAttack(selectedAttacker, new Target(minion));
         }
 
         private void OnFaceClicked(Player owner)
@@ -316,29 +316,36 @@ namespace HearthstoneClone.UI
             if (selectedAttacker == null) return;
             if (owner == turnManager.CurrentPlayer) return;
 
-            ResolveAttack(selectedAttacker, new Target(owner), owner);
+            ResolveAttack(selectedAttacker, new Target(owner));
         }
 
         private void OnHeroPowerClicked()
         {
             if (gameOver) return;
             if (!mulliganComplete) return;
-            if (turnManager.CurrentPlayer != playerOne) return;
-            if (playerOne.HasUsedHeroPowerThisTurn) return;
-            if (playerOne.CurrentMana < HeroPowerCost) return;
+            if (!manualControlMode && turnManager.CurrentPlayer == playerTwo) return;
 
-            playerOne.CurrentMana -= HeroPowerCost;
-            playerOne.HasUsedHeroPowerThisTurn = true;
-            playerTwo.TakeDamage(1);
+            // Everything below resolves through whoever is actually taking the turn,
+            // so the single Hero Power button works for Player Two under manual
+            // control mode instead of silently charging Player One.
+            Player actingPlayer = turnManager.CurrentPlayer;
+            Player opposingPlayer = board.GetOpponent(actingPlayer);
 
-            Debug.Log($"{playerOne.PlayerName} used Hero Power. Dealt 1 damage to {playerTwo.PlayerName}.");
+            if (actingPlayer.HasUsedHeroPowerThisTurn) return;
+            if (actingPlayer.CurrentMana < HeroPowerCost) return;
+
+            actingPlayer.CurrentMana -= HeroPowerCost;
+            actingPlayer.HasUsedHeroPowerThisTurn = true;
+            opposingPlayer.TakeDamage(1);
+
+            Debug.Log($"{actingPlayer.PlayerName} used Hero Power. Dealt 1 damage to {opposingPlayer.PlayerName}.");
 
             AfterGameAction();
         }
 
-        private void ResolveAttack(Minion attacker, Target target, Player defender)
+        private void ResolveAttack(Minion attacker, Target target)
         {
-            bool success = Combat.TryAttack(attacker, target, board, defender, out string failReason);
+            bool success = Combat.TryAttack(attacker, target, board, out string failReason);
             if (success)
             {
                 Debug.Log($"{attacker.MinionName} attacked.");

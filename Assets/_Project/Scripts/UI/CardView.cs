@@ -29,7 +29,7 @@ namespace HearthstoneClone.UI
         {
             if (cardData == null)
             {
-                Debug.LogWarning("CardView.SetCard called with a null CardData — skipping.");
+                Debug.LogWarning("CardView.SetCard called with a null CardData — skipping.", this);
                 return;
             }
 
@@ -53,7 +53,7 @@ namespace HearthstoneClone.UI
         {
             if (cardData == null)
             {
-                Debug.LogWarning("CardView.SetCardForMulligan called with a null CardData — skipping.");
+                Debug.LogWarning("CardView.SetCardForMulligan called with a null CardData — skipping.", this);
                 return;
             }
 

@@ -27,7 +27,7 @@ namespace HearthstoneClone.UI
         {
             if (minionData == null)
             {
-                Debug.LogWarning("MinionView.SetMinion called with a null Minion — skipping.");
+                Debug.LogWarning("MinionView.SetMinion called with a null Minion — skipping.", this);
                 return;
             }
 
