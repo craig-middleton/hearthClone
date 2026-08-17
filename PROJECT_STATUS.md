@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-08-18 (session 29 — playtest confirmed Next Steps 1a–1d; logged text-overflow bug on `nameText` in `MinionView`/`CardView`)_
+_Last updated: 2026-08-18 (session 29 — playtest confirmed Next Steps 1a–1d; fixed `MinionView` nameText/statsText overflow and undersized card)_
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.
@@ -113,7 +113,6 @@ Spells:
 - **Compile-verified**: all five assemblies build clean via `dotnet build Core.csproj` (and `Effects`, `Cards`, `AI`, `UI`), no Unity launch needed. **Catches syntax, not behaviour.**
 
 ## Known Issues — real, not fixed
-- **`MinionView` and `CardView` text overflow on long card names.** `nameText` renders outside the card's bounds instead of wrapping or shrinking. Needs Auto Size + word wrap enabled on `nameText` in both prefabs, and possibly a larger card `RectTransform`.
 - **Mulligan can hand back the card you just returned.** `MulliganCard()` removes → adds to deck → shuffles → draws, so the returned card is in the deck when the replacement is drawn. Real Hearthstone shuffles replacements back only *after* drawing. Fixing means restructuring the mulligan from per-card to batch — a behaviour change needing its own decision (Next Steps 6).
 - **`FaceView` idle-animation base capture can land pre-layout.** Only `OpponentAvatarImage` is exposed (stretch-anchored under a canvas-stretched parent); `AvatarImage` is point-anchored and safe. **Cannot fire on the normal path** — the only trigger is `ShowMulliganUI()`'s unwired-panel fallback, which calls `RefreshAll()` from inside `Start()`. Full analysis and the exact anchor values in HISTORY.
 - **Both avatar `Image`s still have `Raycast Target` checked** (should be unchecked for decorative images), and the two avatars use inconsistent anchor types.
@@ -131,7 +130,7 @@ Spells:
    - **1a — Hero Power under manual control mode**: confirmed. As Player Two, the *correct player* is charged 2 mana, flagged `HasUsedHeroPowerThisTurn`, and takes the 1 damage; regression-checked identical with manual control off.
    - **1b — Taunt rejection**: confirmed. With a Taunt up, attacking a non-Taunt target is rejected, the message names the owner, and the attacker stays selected.
    - **1c — The wider attack path**: confirmed. Attacking the Taunt minion itself resolves; AI-side Taunt enforcement and re-targeting after killing a Taunt work; AI attack phase generally works. The own-side rejection **still cannot be reached from the UI** — own-minion clicks route to selection and own-face clicks are blocked in `OnFaceClicked` — so it remains unverified until targeting or drag-and-drop can reach it.
-   - **1d — Visual render check**: confirmed. Every card in hand and every minion on both boards shows name, cost and stats — **except long card names, which overflow the card bounds** (new Known Issue above).
+   - **1d — Visual render check**: confirmed. Every card in hand and every minion on both boards shows name, cost and stats. `MinionView`'s `nameText`/`statsText` originally overflowed the card (box wider than the card, no word wrap, and the card's `RectTransform` didn't match the `LayoutElement` size the layout group actually rendered at) — fixed session 29: word wrap + TMP auto-sizing enabled, text boxes narrowed to fit, and the card resized to 170x190 (`RectTransform` and `LayoutElement` now match, as large as fits the 200px-tall board panel).
 2. **Targeting system — let spells target minions, not just the face.** Build "select a card → select a target". First of the three features, since drag-and-drop needs the same interaction layer; can likely reuse the `selectedAttacker` pattern.
 3. **More spells.** Content on the existing `CardEffect` system, but AoE / heal / buff / draw each need a new `CardEffect` subclass. Scope first: pick the spells, then sort into "new asset only" vs "needs a new effect class".
 4. **Drag-and-drop to play cards.** After targeting, so it layers over a working system. Touches all five UI scripts — `IBeginDragHandler`/`IDragHandler`/`IEndDragHandler`, drop zones, a drag ghost, canvas raycasting.
