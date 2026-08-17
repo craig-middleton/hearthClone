@@ -126,6 +126,7 @@ Same "list + random pick" shape as `cardPool`:
   `TestCard_Murloc` (1, 1/1) · `TestCard_Watchman` (2, 3/1) · `TestCard_Shieldbearer` (3, 1/5, **the only Taunt card**) · `TestCard_Warhorse` (3, 3/3) · `TestCard_ArcaneBolt` (3, Spell, `targetsSelf = false` → `Effect_Deal3Damage`) · `TestCard_Bear` (4, 3/6) · `TestCard_MagePupil` (4, Spell, `targetsSelf = true` → `Effect_GainMana1`) · `TestCard_ChargingRhino` (6, 5/5) · `TestCard_StoneGuardian` (6, 4/8) · `TestCard_AncientColossus` (7, 7/7).
 - No code changes were needed — `BuildDeck()`/`Copies Per Card` already handled any pool size. Playtested extensively across sessions 26–27 with no pool-related errors.
 - Only Goblin has generated art so far.
+- ✅ **This list was diffed against the actual `.asset` files in session 28** — every name, mana cost, attack, health, card type, effect asset and `targetsSelf` value above now matches the assets. Two entries were wrong and are fixed: the `TesCard_Watchman` typo (which never existed) and Wisp's mana cost. The other 14 were correct. Re-check after any bulk card edit rather than trusting this line indefinitely.
 
 ## Tooling Setup
 - Unity Hub + Unity LTS installed via AppImage.
