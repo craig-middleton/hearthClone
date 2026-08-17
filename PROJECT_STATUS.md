@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-08-17 (session 28 — audited this file against the source and corrected four wrong rows; removed `Combat.TryAttack`'s `defender` parameter; fixed Hero Power for manual control mode; universal log context; split into STATUS + HISTORY)_
+_Last updated: 2026-08-18 (session 29 — playtest confirmed Next Steps 1a–1d; logged text-overflow bug on `nameText` in `MinionView`/`CardView`)_
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.
@@ -108,11 +108,12 @@ Spells:
 
 ## Verification Status
 - **Confirmed in play, still valid**: rendering both sides, decks/shuffle/draw, opening hands + Coin, mulligan both sides, lethal-via-spell ending the game with input genuinely locked out, `ConfirmMulliganButton` not lingering, background/music. Per-session detail in HISTORY.
-- ⚠️ **Confirmed in play, but *before* `Combat.TryAttack` was rewritten — twice.** Session 27 centralised Taunt and changed the signature; session 28 removed the `defender` parameter and added two rejections. Everything on the attack path was last confirmed before both: **human-side Taunt rejection and success, AI-side Taunt enforcement and re-targeting after a kill, and the attack phase of AI turn logic.** Genuinely confirmed once, never re-confirmed since — **treat as unverified** until Next Steps 1. (This is why Taunt reads as both confirmed and unverified: it is both.)
-- **Never verified at all**: Hero Power under manual control mode and the own-side rejection (both new in session 28), plus the visual render check.
+- ✅ **Confirmed via playtest (Next Steps 1a–1d)**: Hero Power under manual control mode (correct player charged/flagged/damaged, regression-checked with manual control off), Taunt rejection (message, attacker stays selected), the wider attack path (Taunt resolves, AI-side Taunt enforcement and re-targeting after a kill, AI attack phase generally), and the visual render check (name/cost/stats on every card and minion). The own-side rejection remains unreachable from the UI and stays unverified.
+- **Never verified at all**: the own-side rejection (unreachable from the UI today — see Next Steps 1c note).
 - **Compile-verified**: all five assemblies build clean via `dotnet build Core.csproj` (and `Effects`, `Cards`, `AI`, `UI`), no Unity launch needed. **Catches syntax, not behaviour.**
 
 ## Known Issues — real, not fixed
+- **`MinionView` and `CardView` text overflow on long card names.** `nameText` renders outside the card's bounds instead of wrapping or shrinking. Needs Auto Size + word wrap enabled on `nameText` in both prefabs, and possibly a larger card `RectTransform`.
 - **Mulligan can hand back the card you just returned.** `MulliganCard()` removes → adds to deck → shuffles → draws, so the returned card is in the deck when the replacement is drawn. Real Hearthstone shuffles replacements back only *after* drawing. Fixing means restructuring the mulligan from per-card to batch — a behaviour change needing its own decision (Next Steps 6).
 - **`FaceView` idle-animation base capture can land pre-layout.** Only `OpponentAvatarImage` is exposed (stretch-anchored under a canvas-stretched parent); `AvatarImage` is point-anchored and safe. **Cannot fire on the normal path** — the only trigger is `ShowMulliganUI()`'s unwired-panel fallback, which calls `RefreshAll()` from inside `Start()`. Full analysis and the exact anchor values in HISTORY.
 - **Both avatar `Image`s still have `Raycast Target` checked** (should be unchecked for decorative images), and the two avatars use inconsistent anchor types.
@@ -126,11 +127,11 @@ Spells:
 - **Cosmetic**: `BoardPanel`/`OpponentBoardPanel` text clipping (minion name cut off at the left edge); board panel vertical spacing needs more separation; `MulliganPanel` shares `HandPanel`'s screen position (fine, hidden after confirm).
 
 ## Next Steps (in order)
-1. **Playtest — four separate checks, newest code first. Do them as four passes, not one.**
-   - **1a — Hero Power under manual control mode** (new in session 28, never run). As Player Two: the *correct player* is charged 2 mana, the *correct player* is flagged `HasUsedHeroPowerThisTurn`, the *correct player* takes the 1 damage. Then regression-check with manual control **off** — behaviour should be identical to before.
-   - **1b — Taunt rejection** (rewritten twice, last confirmed before both). With a Taunt up, attacking a non-Taunt target must be rejected, the message must name the owner (`"Player Two has a Taunt minion — you must attack it first."`), and **the attacker must stay selected**.
-   - **1c — The wider attack path** (same staleness as 1b, and the easiest to skip). Re-confirm: attacking the Taunt minion itself resolves; AI-side Taunt enforcement; the AI re-targeting correctly after killing a Taunt; the attack phase of AI turn logic generally. All were confirmed once, before `Combat.TryAttack` was rewritten twice. Note the new own-side rejection **cannot be reached from the UI today** — own-minion clicks route to selection and own-face clicks are blocked in `OnFaceClicked` — so there is nothing to click; it stays unverified until targeting or drag-and-drop can reach it.
-   - **1d — Visual render check.** Every card in hand and every minion on both boards shows name, cost and stats. Both prefabs are fully wired, so this is a layout and text-clipping check, not a guard check.
+1. ✅ **Playtest — confirmed, all four passes.**
+   - **1a — Hero Power under manual control mode**: confirmed. As Player Two, the *correct player* is charged 2 mana, flagged `HasUsedHeroPowerThisTurn`, and takes the 1 damage; regression-checked identical with manual control off.
+   - **1b — Taunt rejection**: confirmed. With a Taunt up, attacking a non-Taunt target is rejected, the message names the owner, and the attacker stays selected.
+   - **1c — The wider attack path**: confirmed. Attacking the Taunt minion itself resolves; AI-side Taunt enforcement and re-targeting after killing a Taunt work; AI attack phase generally works. The own-side rejection **still cannot be reached from the UI** — own-minion clicks route to selection and own-face clicks are blocked in `OnFaceClicked` — so it remains unverified until targeting or drag-and-drop can reach it.
+   - **1d — Visual render check**: confirmed. Every card in hand and every minion on both boards shows name, cost and stats — **except long card names, which overflow the card bounds** (new Known Issue above).
 2. **Targeting system — let spells target minions, not just the face.** Build "select a card → select a target". First of the three features, since drag-and-drop needs the same interaction layer; can likely reuse the `selectedAttacker` pattern.
 3. **More spells.** Content on the existing `CardEffect` system, but AoE / heal / buff / draw each need a new `CardEffect` subclass. Scope first: pick the spells, then sort into "new asset only" vs "needs a new effect class".
 4. **Drag-and-drop to play cards.** After targeting, so it layers over a working system. Touches all five UI scripts — `IBeginDragHandler`/`IDragHandler`/`IEndDragHandler`, drop zones, a drag ghost, canvas raycasting.
