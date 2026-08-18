@@ -10,7 +10,7 @@ namespace HearthstoneClone.UI
         public GameObject cardViewPrefab;
         public Transform handPanel;
 
-        public void RenderHand(List<CardData> hand, Action<CardData> onCardClicked)
+        public void RenderHand(List<CardData> hand, Action<CardData, CardView> onCardClicked)
         {
             if (handPanel == null)
             {

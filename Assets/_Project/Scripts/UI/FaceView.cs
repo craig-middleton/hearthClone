@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -18,12 +19,18 @@ namespace HearthstoneClone.UI
         public float swayAmount = 3f;
         public float swaySpeed = 0.8f;
 
+        [Header("Spell Reaction")]
+        public float reactionDuration = 0.25f;
+        public Color damageFlashColor = new Color(1f, 0.3f, 0.3f);
+
         private Player player;
         private Action<Player> onClicked;
 
         private RectTransform avatarRect;
         private Vector3 avatarBaseScale;
         private Vector3 avatarBasePosition;
+        private Color avatarBaseColor = Color.white;
+        private Coroutine reactionRoutine;
 
         public void SetPlayer(Player playerData, Action<Player> clickCallback)
         {
@@ -60,7 +67,39 @@ namespace HearthstoneClone.UI
                 avatarRect = avatarImage.rectTransform;
                 avatarBaseScale = avatarRect.localScale;
                 avatarBasePosition = avatarRect.localPosition;
+                avatarBaseColor = avatarImage.color;
             }
+        }
+
+        // Called by SpellAnimationSequencer when a damage spell's travel effect lands.
+        // Only tints avatarImage.color - Update() below drives avatarRect's scale/position
+        // every frame for the idle sway, so a reaction that touched position/scale directly
+        // would just get overwritten the next frame instead of composing with it.
+        public void PlayDamageReaction()
+        {
+            if (avatarImage == null) return;
+
+            if (reactionRoutine != null)
+            {
+                StopCoroutine(reactionRoutine);
+            }
+            reactionRoutine = StartCoroutine(FlashRoutine(damageFlashColor));
+        }
+
+        private IEnumerator FlashRoutine(Color flashColor)
+        {
+            float elapsed = 0f;
+            while (elapsed < reactionDuration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / reactionDuration);
+                float intensity = 1f - Mathf.Abs((t * 2f) - 1f);
+                avatarImage.color = Color.Lerp(avatarBaseColor, flashColor, intensity);
+                yield return null;
+            }
+
+            avatarImage.color = avatarBaseColor;
+            reactionRoutine = null;
         }
 
         void Update()

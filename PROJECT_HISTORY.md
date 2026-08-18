@@ -21,6 +21,7 @@ Sessions are recorded here as they were documented at the time. Sessions 15–22
   Also corrected in session 26: the assembly dependency graph had been documented as `AI`/`UI` being parallel leaves. In reality `UI` references `AI` directly (`EffectTester` constructs and calls `AIController`), confirmed via both the asmdef reference list and the `using HearthstoneClone.AI;` in `EffectTester.cs`.
 - **Session 27** — playtest of session 26's fixes, the Taunt refactor, the guard backfill, and three rounds of review. Full account below.
 - **Session 28** — full audit of `PROJECT_STATUS.md` against the source, four code fixes arising from it, and the split into STATUS + HISTORY. Full account below.
+- **Session 30** — `MinionView`/`CardView` size parity fix (Live Constraint 14), and the spell-cast animation's travel-effect + target-reaction vertical slice, confirmed via playtest. Full account below.
 
 ---
 
@@ -97,6 +98,47 @@ A full line-by-line audit of `PROJECT_STATUS.md` against the source, run in both
 **A later pass in the same session** audited all 16 `CardData` assets field-by-field and found two more things the docs had never recorded. First, **the asset YAML is not uniform**: `hasTaunt` is physically absent from 14 of 16 files and `targetsSelf` from 4, because Unity only wrote a field once it was explicitly set or the asset re-serialized. That is now Live Constraint 12 — it means grepping the assets for a field name misses most cards, and changing a field's initializer in `CardData.cs` would silently flip every asset that omits it. Second, **`TestCard_Wisp`'s mana cost was documented as 1 and has been 2 in the asset since `d1cd398`** — a fifth wrong row, inherited from the original `PROJECT_STATUS.md`, and the second fabricated card-asset detail after the `TesCard_Watchman` typo. Both were found by reading the assets rather than the docs, which is the point.
 
 **Deliberately not fixed:** the mulligan redraw (needs the mulligan restructured from per-card to batch — a behaviour change needing its own decision), and the off-board-attacker gap in `Combat` (documented as an accepted gap instead).
+
+---
+
+## Session 30 — card size parity, and the spell-cast animation vertical slice
+
+### 1. `MinionView`/`CardView` size parity (Live Constraint 14)
+Craig had manually resized `MinionView`'s root and `ArtworkImage` to 160x220 to match `CardView`, so board minions and hand cards render at the same size. After that change, minions *with* artwork (Goblin) still appeared to render larger on the board than minions without (Wisp, Warhorse, Murloc) — same prefab, same `LayoutElement`.
+
+Investigated in the order the task specified: (a) `BoardPanel`'s `HorizontalLayoutGroup` sizes every child from the same fixed `LayoutElement` (160x220 for every instance), so it can't explain a per-card difference on its own; (b) `ArtworkImage` was point-anchored (`AnchorMin == AnchorMax == 0.5,0.5`) with a `SizeDelta` hand-matched to 160x220 — an *absolute* size, not one that tracks the parent; (c) confirmed algebraically that every `MinionView` root resolves to the identical size regardless of artwork, since `LayoutElement.minWidth`/`minHeight` are unset (0) uniformly, so a width shortfall shrinks every card by the same ratio.
+
+The real mechanism: when the board has enough minions to exceed the panel's width, the layout group shrinks every root below 160x220 — but `ArtworkImage`, a grandchild rather than a direct child, is invisible to the layout group and stays fixed at 160x220, overflowing past the shrunk card. Invisible on cards with no artwork (`Image.enabled = false`), visible on Goblin. **The apparent size difference was an illusion** — root sizes were identical the whole time. Fixed by switching `ArtworkImage` to stretch anchors (`0,0`→`1,1`, `SizeDelta 0,0`) so it always exactly fills whatever size the root actually resolves to, compressed or not.
+
+Couldn't verify live in Play mode — Craig's Unity Editor had the project locked, so a second batch-mode instance couldn't open it to instantiate and inspect at runtime. The fix is deterministic anchor math, not something that needed runtime confirmation, but this is worth flagging: a future session hitting the same lock should either ask Craig to close/unfocus the Editor for a batch-mode check, or accept the same static-analysis approach and say so explicitly rather than claim an unverified runtime check.
+
+Also confirmed **`MinionView` has never had a `costText` field** — board minions have never shown mana cost, not a regression from the resize. Asked Craig explicitly rather than adding the field speculatively; answer was leave it as-is (matches real Hearthstone, which doesn't show cost on played minions either).
+
+### 2. Spell-cast animation — planning, then the vertical slice
+
+**Planning pass.** Read `CardEffect.Execute()`, `DealDamageEffect`, `GainManaEffect`, and how `EffectTester.OnCardClicked`/`PlayerHand.PlayCard` resolve a spell play, before proposing anything. Key finding: `PlayerHand.PlayCard` mutates mana/hand/effect all synchronously in one call, and `HandDisplay.RenderHand` (called from `AfterGameAction()` right after) destroys and rebuilds every `CardView` from the post-mutation `Hand` list — same frame. There is currently no persisting visual object to animate mid-sequence; that's the central architectural obstacle for a four-beat animation, not a missing tween library.
+
+Recommended (Option A, accepted): keep `CardEffect.Execute()` synchronous and keep `Effects.asmdef` completely animation-ignorant — state mutates instantly as it does today, and the animation sequence is a purely visual overlay built entirely in `UI.asmdef`. The alternative (Option B — split `PlayCard` into validate/commit phases so damage lands on visual impact, matching real Hearthstone's timing exactly) was flagged as a possible phase-2, not needed to make the sequence look right for a first pass, and it would touch `Cards.asmdef`, which Option A leaves untouched entirely.
+
+Tooling survey: no coroutines, no `ParticleSystem`, no Animator usage anywhere in the project — `FaceView`'s idle sway (`Update()` + sine math) is the only existing "animation," and is the precedent this feature follows. No DOTween/LeanTween in `Packages/manifest.json`. Recommended plain coroutines + `AnimationCurve`, consistent with that precedent, and explicitly recommended against Animator (state-machine overhead for four short procedural beats) and against Timeline (installed but wrong tool — it's for hand-authored sequences, not a system needing to resolve an arbitrary runtime source/target pair).
+
+Build order recommended: travel + impact reaction first (needs zero architecture change — `FaceView` persists across refresh, so both source and target can be handled without touching the destroy/rebuild pattern), then lift/zoom (first piece that actually needs the destroy-timing problem solved), then discard-off last (same fix, plus a new discard-pile anchor that doesn't exist yet). Craig confirmed this plan and asked for the vertical slice built and reported back before anything past it.
+
+**The order-of-operations question, and why it mattered.** Before building, Craig asked to confirm explicitly whether the sequencer captures the `CardView`'s position *before* `PlayCard` runs. Checking `CardView.SetCard`/`HandDisplay.RenderHand` showed the click callback only ever carried `CardData` — `Action<CardData>` — with no way to reach the clicked `CardView` at all. That had to change: `CardView.SetCard`, `HandDisplay.RenderHand`, and both `EffectTester` click handlers now thread `Action<CardData, CardView>` instead, invoked as `onClicked?.Invoke(card, this)` at the moment of the actual click, while the `CardView` is still guaranteed alive.
+
+Inside `OnCardClicked`, the position is captured as a plain `Vector3` — `cardView.transform.position` — *before* `PlayCard()`/`AfterGameAction()` run, specifically because `RefreshHandDisplay()` (called synchronously from `AfterGameAction()` right after) destroys that exact `CardView` in the same frame, before any coroutine would get a second frame to read a live `Transform` off it. A live `Transform` reference carried into the coroutine would not have survived; the `Vector3` snapshot does, because the projectile the sequencer spawns is its own GameObject, entirely decoupled from the `CardView`'s fate. This is now Live Constraint 15.
+
+**What got built.** `SpellAnimationSequencer.cs` — new file, spawns a plain runtime `Image` (no new prefab or particle asset needed) and lerps it from the captured source position to the (live, persistent) target `Transform` over an `AnimationCurve`, re-sampling the target's position every frame since `FaceView`'s idle sway is running concurrently. On arrival it destroys the projectile and, for damage effects, calls a new `FaceView.PlayDamageReaction()`.
+
+`FaceView.PlayDamageReaction()` is deliberately color-flash only, not shake. `FaceView.Update()` already drives `avatarRect.localPosition`/`localScale` every frame for the idle breathe/sway; a reaction that touched position or scale from outside `Update()` would just get overwritten the next frame instead of composing with it. Color is untouched by the existing `Update()`, so it's the safe surface to animate from outside. Shake is a legitimate later addition, but needs `Update()` itself taught to combine a shake offset with the sway base — not something to bolt on from the sequencer without touching `FaceView`'s existing animation loop.
+
+Heal/buff glow (the fourth reaction type in the original ask) isn't wired at all — there's no `CardEffect` subtype to key off yet (`GainManaEffect` is self-targeted mana gain, not a heal). Left as a comment at the call site rather than stubbed.
+
+`EffectTester.ResolveViewTransform(Target)` was written generically against `Target.TargetPlayer`/`TargetMinion` even though the `Minion` branch is unreachable today (spells can only target a face) — per the plan, so the animation's targeting doesn't need rework once minion-targeting for spells lands; it just needs `BoardDisplay` to start tracking a `Minion → MinionView` mapping, which doesn't exist yet.
+
+**Compile verification hit Live Constraint 13 directly.** After creating `SpellAnimationSequencer.cs`, `dotnet build UI.csproj` failed with `CS0246: SpellAnimationSequencer could not be found` — not a code error, but the Unity-generated `.csproj` not yet regenerated to include the new file, because Craig's Editor window wasn't focused and hadn't reimported it. Waited ~100s with no pickup; asked Craig to focus the Editor. Once focused, the `.meta` file appeared within moments and all five assemblies built clean, confirmed both via `dotnet build` and Unity's own `Editor.log` showing no `error CS` lines.
+
+**Confirmed via playtest**: Craig wired the `SpellAnimationSequencer` component (the one manual step — same pattern as every other view reference on `EffectTester`, dragged into the Inspector, no code-side wiring) and played Fireball/Arcane Bolt against the opponent's face. Travel effect and impact flash both fired correctly.
 
 ---
 

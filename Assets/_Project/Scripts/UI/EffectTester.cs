@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using HearthstoneClone.Cards;
 using HearthstoneClone.Core;
 using HearthstoneClone.AI;
+using HearthstoneClone.Effects;
 
 namespace HearthstoneClone.UI
 {
@@ -26,6 +27,9 @@ namespace HearthstoneClone.UI
         [Header("Face UI")]
         public FaceView faceView;
         public FaceView opponentFaceView;
+
+        [Header("Spell Animation")]
+        public SpellAnimationSequencer spellAnimationSequencer;
 
         [Header("Mulligan UI")]
         public Transform mulliganPanel;
@@ -252,32 +256,79 @@ namespace HearthstoneClone.UI
             RefreshAll();
         }
 
-        private void OnCardClicked(CardData card)
+        private void OnCardClicked(CardData card, CardView cardView)
         {
             if (gameOver) return;
             if (!mulliganComplete) return;
             if (turnManager.CurrentPlayer != playerOne) return;
 
             Target target = card.targetsSelf ? new Target(playerOne) : opponentTarget;
+
+            // Captured before PlayCard/AfterGameAction run: PlayCard removes the card from
+            // Hand, and the RefreshHandDisplay() inside AfterGameAction() destroys this exact
+            // CardView synchronously, in the same frame. The Vector3 survives that; a live
+            // Transform reference would not.
+            Vector3 sourcePosition = cardView.transform.position;
+            Transform targetViewTransform = ResolveViewTransform(target);
+
             bool success = playerOneHand.PlayCard(card, context, target);
             if (success)
             {
+                TriggerSpellAnimation(card, sourcePosition, targetViewTransform);
                 AfterGameAction();
             }
         }
 
-        private void OnOpponentCardClicked(CardData card)
+        private void OnOpponentCardClicked(CardData card, CardView cardView)
         {
             if (gameOver) return;
             if (!mulliganComplete || !manualControlMode) return;
             if (turnManager.CurrentPlayer != playerTwo) return;
 
             Target target = card.targetsSelf ? new Target(playerTwo) : new Target(playerOne);
+
+            Vector3 sourcePosition = cardView.transform.position;
+            Transform targetViewTransform = ResolveViewTransform(target);
+
             bool success = playerTwoHand.PlayCard(card, context, target);
             if (success)
             {
+                TriggerSpellAnimation(card, sourcePosition, targetViewTransform);
                 AfterGameAction();
             }
+        }
+
+        // Resolves a Target to the Transform of the view that represents it on screen.
+        // Only the Player branch is reachable today — spells can only ever target a face
+        // (see OnCardClicked/OnOpponentCardClicked above). The Minion branch is written now,
+        // ahead of need, so the animation system needs no rework once spell targeting can
+        // reach a minion: BoardDisplay doesn't yet track a Minion -> MinionView mapping, so
+        // there is nothing to resolve to yet, but the shape of this method won't change.
+        private Transform ResolveViewTransform(Target target)
+        {
+            if (target.TargetPlayer != null)
+            {
+                if (target.TargetPlayer == playerOne) return faceView != null ? faceView.transform : null;
+                if (target.TargetPlayer == playerTwo) return opponentFaceView != null ? opponentFaceView.transform : null;
+                return null;
+            }
+
+            if (target.TargetMinion != null)
+            {
+                return null;
+            }
+
+            return null;
+        }
+
+        private void TriggerSpellAnimation(CardData card, Vector3 sourcePosition, Transform targetViewTransform)
+        {
+            if (spellAnimationSequencer == null) return;
+            if (card.onPlayEffect == null) return;
+            if (targetViewTransform == null) return;
+
+            bool isDamage = card.onPlayEffect is DealDamageEffect;
+            spellAnimationSequencer.PlayTravelAndReaction(sourcePosition, targetViewTransform, isDamage);
         }
 
         private void OnMinionClicked(Minion minion, Player owner)

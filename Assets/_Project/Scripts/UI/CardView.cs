@@ -21,11 +21,11 @@ namespace HearthstoneClone.UI
         public Color selectedForMulliganColor = new Color(0.4f, 0.4f, 0.4f);
 
         private CardData card;
-        private Action<CardData> onClicked;
+        private Action<CardData, CardView> onClicked;
         private Action<CardData> onMulliganToggled;
         private bool isSelectedForMulligan;
 
-        public void SetCard(CardData cardData, Action<CardData> clickCallback)
+        public void SetCard(CardData cardData, Action<CardData, CardView> clickCallback)
         {
             if (cardData == null)
             {
@@ -41,7 +41,7 @@ namespace HearthstoneClone.UI
             if (button != null)
             {
                 button.onClick.RemoveAllListeners();
-                button.onClick.AddListener(() => onClicked?.Invoke(card));
+                button.onClick.AddListener(() => onClicked?.Invoke(card, this));
             }
             else
             {
