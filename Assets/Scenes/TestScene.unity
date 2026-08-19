@@ -2659,6 +2659,7 @@ GameObject:
   - component: {fileID: 8891225264576291116}
   - component: {fileID: 5493842290916087515}
   - component: {fileID: 8891225264576291117}
+  - component: {fileID: 8891225264576291118}
   m_Layer: 0
   m_Name: EffectTester
   m_TagString: Untagged
@@ -2705,6 +2706,7 @@ MonoBehaviour:
   heroPowerButton: {fileID: 1554877595}
   faceView: {fileID: 1192946945}
   opponentFaceView: {fileID: 573316583}
+  spellAnimationSequencer: {fileID: 8891225264576291118}
   mulliganPanel: {fileID: 2075897923}
   cardViewPrefab: {fileID: 734474561267406190, guid: caa0f13ab5b5297f28ebc651839c5f8f, type: 3}
   confirmMulliganButton: {fileID: 411525890}
@@ -2830,6 +2832,45 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8891225264576291118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5059876971311781917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eb3007fbba9461ca65768cf3bf0458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UI::HearthstoneClone.UI.SpellAnimationSequencer
+  travelDuration: 0.35
+  travelCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  projectileColor: {r: 1, g: 1, b: 1, a: 1}
+  projectileSize: {x: 24, y: 24}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
