@@ -20,4 +20,4 @@ MonoBehaviour:
   attack: 0
   health: 0
   onPlayEffect: {fileID: 11400000, guid: d0f7d607e2593206293e9e72ff8177f6, type: 2}
-  targetsSelf: 1
+  targetRequirement: 1

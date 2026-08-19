@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -20,8 +21,13 @@ namespace HearthstoneClone.UI
         public Color selectedColor = new Color(0.6f, 0.9f, 0.6f);
         public Color cannotAttackColor = new Color(0.45f, 0.45f, 0.45f);
 
+        [Header("Spell Reaction")]
+        public float reactionDuration = 0.25f;
+        public Color damageFlashColor = new Color(1f, 0.3f, 0.3f);
+
         private Minion minion;
         private Action<Minion> onClicked;
+        private Coroutine reactionRoutine;
 
         public void SetMinion(Minion minionData, Action<Minion> clickCallback = null, bool isSelected = false, bool showAttackEligibility = false)
         {
@@ -76,6 +82,38 @@ namespace HearthstoneClone.UI
             {
                 Debug.LogWarning("MinionView: 'button' is not assigned in the Inspector — this minion cannot be clicked or selected to attack.", this);
             }
+        }
+
+        // Called by SpellAnimationSequencer when a damage spell's travel effect lands on
+        // this minion. Captures whatever color minionBackground currently shows (selected /
+        // cannot-attack / normal) as the flash baseline and restores it afterward, since
+        // unlike FaceView there's no continuous per-frame recompute to just let overwrite it.
+        public void PlayDamageReaction()
+        {
+            if (minionBackground == null) return;
+
+            if (reactionRoutine != null)
+            {
+                StopCoroutine(reactionRoutine);
+            }
+            reactionRoutine = StartCoroutine(FlashRoutine(damageFlashColor));
+        }
+
+        private IEnumerator FlashRoutine(Color flashColor)
+        {
+            Color baseColor = minionBackground.color;
+            float elapsed = 0f;
+            while (elapsed < reactionDuration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / reactionDuration);
+                float intensity = 1f - Mathf.Abs((t * 2f) - 1f);
+                minionBackground.color = Color.Lerp(baseColor, flashColor, intensity);
+                yield return null;
+            }
+
+            minionBackground.color = baseColor;
+            reactionRoutine = null;
         }
 
         private void UpdateVisual(bool isSelected, bool showAttackEligibility)

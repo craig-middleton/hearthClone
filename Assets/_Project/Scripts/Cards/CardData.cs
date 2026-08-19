@@ -9,6 +9,15 @@ namespace HearthstoneClone.Cards
         Spell
     }
 
+    // Controls whether OnCardClicked/OnOpponentCardClicked play the card immediately
+    // (None, Self) or put EffectTester into a pending-target-selection state (Any).
+    public enum TargetRequirement
+    {
+        None,
+        Self,
+        Any
+    }
+
     [CreateAssetMenu(fileName = "NewCard", menuName = "Cards/Card Data")]
     public class CardData : ScriptableObject
     {
@@ -28,6 +37,6 @@ namespace HearthstoneClone.Cards
 
         [Header("Behavior")]
         public CardEffect onPlayEffect;
-        public bool targetsSelf;
+        public TargetRequirement targetRequirement;
     }
 }

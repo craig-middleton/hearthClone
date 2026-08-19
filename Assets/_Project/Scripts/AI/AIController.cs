@@ -56,7 +56,7 @@ namespace HearthstoneClone.AI
                     Target target = null;
                     if (card.onPlayEffect != null)
                     {
-                        target = card.targetsSelf ? new Target(aiPlayer) : new Target(opponent);
+                        target = card.targetRequirement == TargetRequirement.Self ? new Target(aiPlayer) : new Target(opponent);
                     }
 
                     if (aiHand.PlayCard(card, context, target))

@@ -10,7 +10,11 @@ namespace HearthstoneClone.UI
         public GameObject cardViewPrefab;
         public Transform handPanel;
 
-        public void RenderHand(List<CardData> hand, Action<CardData, CardView> onCardClicked)
+        // onCardClicked's third argument is the clicked card's index in `hand` at render
+        // time - passed through so callers can distinguish duplicate copies of the same
+        // CardData by hand position rather than by a reference two copies both share.
+        // pendingSpellIndex (-1 for none) highlights by that same index, for the same reason.
+        public void RenderHand(List<CardData> hand, Action<CardData, CardView, int> onCardClicked, int pendingSpellIndex = -1)
         {
             if (handPanel == null)
             {
@@ -30,8 +34,10 @@ namespace HearthstoneClone.UI
                 return;
             }
 
+            int index = -1;
             foreach (CardData card in hand)
             {
+                index++;
                 if (card == null) continue;
 
                 GameObject cardObj = Instantiate(cardViewPrefab, handPanel);
@@ -43,7 +49,8 @@ namespace HearthstoneClone.UI
                     continue;
                 }
 
-                view.SetCard(card, onCardClicked);
+                int capturedIndex = index;
+                view.SetCard(card, (c, v) => onCardClicked?.Invoke(c, v, capturedIndex), index == pendingSpellIndex);
             }
         }
     }

@@ -21,4 +21,3 @@ MonoBehaviour:
   health: 2
   hasTaunt: 0
   onPlayEffect: {fileID: 0}
-  targetsSelf: 0

@@ -10,6 +10,11 @@ namespace HearthstoneClone.UI
         public GameObject minionViewPrefab;
         public Transform boardPanel;
 
+        // Rebuilt every RenderBoard call (views are destroyed/recreated each refresh),
+        // so a Minion's Transform is only ever valid until the next refresh - callers
+        // must resolve it fresh rather than caching it.
+        private Dictionary<Minion, Transform> minionViewTransforms = new Dictionary<Minion, Transform>();
+
         public void RenderBoard(List<Minion> minions, Action<Minion> onMinionClicked = null, Minion selectedAttacker = null, bool showAttackEligibility = false)
         {
             if (boardPanel == null)
@@ -22,6 +27,8 @@ namespace HearthstoneClone.UI
             {
                 Destroy(child.gameObject);
             }
+
+            minionViewTransforms.Clear();
 
             if (minions == null) return;
             if (minionViewPrefab == null)
@@ -46,7 +53,16 @@ namespace HearthstoneClone.UI
 
                 bool isSelected = minion == selectedAttacker;
                 view.SetMinion(minion, onMinionClicked, isSelected, showAttackEligibility);
+                minionViewTransforms[minion] = view.transform;
             }
+        }
+
+        // Returns null if the minion isn't currently rendered by this display (e.g. it
+        // died, or it belongs to the other player's board).
+        public Transform GetViewTransform(Minion minion)
+        {
+            if (minion == null) return null;
+            return minionViewTransforms.TryGetValue(minion, out Transform t) ? t : null;
         }
     }
 }

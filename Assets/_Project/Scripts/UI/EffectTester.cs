@@ -53,7 +53,6 @@ namespace HearthstoneClone.UI
         private PlayerHand playerOneHand;
         private PlayerHand playerTwoHand;
         private GameContext context;
-        private Target opponentTarget;
         private Player playerOne;
         private Player playerTwo;
         private Board board;
@@ -65,6 +64,22 @@ namespace HearthstoneClone.UI
         private bool mulliganComplete = false;
 
         private Minion selectedAttacker = null;
+
+        // A card with TargetRequirement.Any that's waiting for the player to click a
+        // minion or face. pendingSpellCard is the CardData to play; pendingSpellHandIndex
+        // identifies WHICH physical card was clicked (its position in Hand at click time),
+        // since duplicate copies of a card share the same CardData reference and can't be
+        // told apart by it alone - two Fireballs in hand would otherwise look identical to
+        // the cancel/switch check. This can't be a live CardView reference either: selecting
+        // a card triggers RefreshHandDisplay() to show the pending highlight, which destroys
+        // and rebuilds every CardView that same call, including the one just clicked - so the
+        // index (stable as long as Hand doesn't reorder while a spell is pending, which it
+        // doesn't) is what survives, not the view instance. pendingSpellSourcePosition is
+        // likewise captured as a plain Vector3 rather than a Transform, for the same reason.
+        private CardData pendingSpellCard = null;
+        private int pendingSpellHandIndex = -1;
+        private Vector3 pendingSpellSourcePosition;
+        private Player pendingSpellCaster = null;
 
         private bool gameOver = false;
         private Player winner = null;
@@ -103,7 +118,6 @@ namespace HearthstoneClone.UI
             }
 
             aiController = new AIController(playerTwoHand, context, board);
-            opponentTarget = new Target(playerTwo);
 
             aiController.PerformMulligan();
 
@@ -256,22 +270,62 @@ namespace HearthstoneClone.UI
             RefreshAll();
         }
 
-        private void OnCardClicked(CardData card, CardView cardView)
+        private void OnCardClicked(CardData card, CardView cardView, int handIndex)
         {
             if (gameOver) return;
             if (!mulliganComplete) return;
             if (turnManager.CurrentPlayer != playerOne) return;
 
-            Target target = card.targetsSelf ? new Target(playerOne) : opponentTarget;
+            HandleHandCardClicked(card, cardView, handIndex, playerOne);
+        }
+
+        private void OnOpponentCardClicked(CardData card, CardView cardView, int handIndex)
+        {
+            if (gameOver) return;
+            if (!mulliganComplete || !manualControlMode) return;
+            if (turnManager.CurrentPlayer != playerTwo) return;
+
+            HandleHandCardClicked(card, cardView, handIndex, playerTwo);
+        }
+
+        // Shared by OnCardClicked and OnOpponentCardClicked (manual control mode). A
+        // TargetRequirement.Any card enters the pending-selection state instead of playing
+        // immediately; None/Self cards resolve and play right away, same as before targeting
+        // existed. Identity for the cancel/switch check is (actingPlayer, handIndex), not the
+        // CardData reference - see the pendingSpellHandIndex field comment for why.
+        private void HandleHandCardClicked(CardData card, CardView cardView, int handIndex, Player actingPlayer)
+        {
+            if (pendingSpellCaster == actingPlayer && pendingSpellHandIndex == handIndex)
+            {
+                pendingSpellCard = null;
+                pendingSpellCaster = null;
+                pendingSpellHandIndex = -1;
+                RefreshHandDisplay();
+                return;
+            }
+
+            if (card.targetRequirement == TargetRequirement.Any)
+            {
+                selectedAttacker = null;
+                pendingSpellCard = card;
+                pendingSpellCaster = actingPlayer;
+                pendingSpellHandIndex = handIndex;
+                pendingSpellSourcePosition = cardView.transform.position;
+                RefreshAll();
+                return;
+            }
+
+            Target target = card.targetRequirement == TargetRequirement.Self ? new Target(actingPlayer) : null;
 
             // Captured before PlayCard/AfterGameAction run: PlayCard removes the card from
             // Hand, and the RefreshHandDisplay() inside AfterGameAction() destroys this exact
             // CardView synchronously, in the same frame. The Vector3 survives that; a live
             // Transform reference would not.
             Vector3 sourcePosition = cardView.transform.position;
-            Transform targetViewTransform = ResolveViewTransform(target);
+            Transform targetViewTransform = target != null ? ResolveViewTransform(target) : null;
 
-            bool success = playerOneHand.PlayCard(card, context, target);
+            PlayerHand hand = actingPlayer == playerOne ? playerOneHand : playerTwoHand;
+            bool success = hand.PlayCard(card, context, target);
             if (success)
             {
                 TriggerSpellAnimation(card, sourcePosition, targetViewTransform);
@@ -279,31 +333,33 @@ namespace HearthstoneClone.UI
             }
         }
 
-        private void OnOpponentCardClicked(CardData card, CardView cardView)
+        // Resolves a spell that's pending target selection (TargetRequirement.Any) against
+        // the minion or face the player just clicked. Called from OnMinionClicked/OnFaceClicked.
+        private void ResolveSpell(Target target)
         {
-            if (gameOver) return;
-            if (!mulliganComplete || !manualControlMode) return;
-            if (turnManager.CurrentPlayer != playerTwo) return;
+            CardData card = pendingSpellCard;
+            Vector3 sourcePosition = pendingSpellSourcePosition;
+            Player caster = pendingSpellCaster;
+            PlayerHand hand = caster == playerOne ? playerOneHand : playerTwoHand;
 
-            Target target = card.targetsSelf ? new Target(playerTwo) : new Target(playerOne);
-
-            Vector3 sourcePosition = cardView.transform.position;
             Transform targetViewTransform = ResolveViewTransform(target);
 
-            bool success = playerTwoHand.PlayCard(card, context, target);
+            bool success = hand.PlayCard(card, context, target);
             if (success)
             {
+                // Cleared only on success, same as ResolveAttack clearing selectedAttacker:
+                // a rejected play (e.g. mana changed) leaves the card selected so the player
+                // can retry a different target instead of losing the selection.
+                pendingSpellCard = null;
+                pendingSpellCaster = null;
+                pendingSpellHandIndex = -1;
                 TriggerSpellAnimation(card, sourcePosition, targetViewTransform);
-                AfterGameAction();
             }
+
+            AfterGameAction();
         }
 
         // Resolves a Target to the Transform of the view that represents it on screen.
-        // Only the Player branch is reachable today — spells can only ever target a face
-        // (see OnCardClicked/OnOpponentCardClicked above). The Minion branch is written now,
-        // ahead of need, so the animation system needs no rework once spell targeting can
-        // reach a minion: BoardDisplay doesn't yet track a Minion -> MinionView mapping, so
-        // there is nothing to resolve to yet, but the shape of this method won't change.
         private Transform ResolveViewTransform(Target target)
         {
             if (target.TargetPlayer != null)
@@ -315,6 +371,9 @@ namespace HearthstoneClone.UI
 
             if (target.TargetMinion != null)
             {
+                Player owner = board.GetOwnerOf(target.TargetMinion);
+                if (owner == playerOne) return boardDisplay != null ? boardDisplay.GetViewTransform(target.TargetMinion) : null;
+                if (owner == playerTwo) return opponentBoardDisplay != null ? opponentBoardDisplay.GetViewTransform(target.TargetMinion) : null;
                 return null;
             }
 
@@ -337,6 +396,16 @@ namespace HearthstoneClone.UI
             if (!mulliganComplete) return;
             if (minion == null) return;
             if (!manualControlMode && turnManager.CurrentPlayer == playerTwo) return;
+
+            // A pending spell takes priority over attacker-selection: clicking any minion
+            // (either side - see approved plan, no friendly-fire/Taunt restriction on spell
+            // targets) while a spell is pending resolves the spell instead of selecting the
+            // minion as an attacker.
+            if (pendingSpellCard != null)
+            {
+                ResolveSpell(new Target(minion));
+                return;
+            }
 
             bool ownerIsActingPlayer = owner == turnManager.CurrentPlayer && (owner == playerOne || manualControlMode);
 
@@ -364,6 +433,15 @@ namespace HearthstoneClone.UI
             if (gameOver) return;
             if (!mulliganComplete) return;
             if (!manualControlMode && turnManager.CurrentPlayer == playerTwo) return;
+
+            // Same priority as OnMinionClicked: a pending spell resolves against whichever
+            // face was clicked, including the caster's own (no self-targeting restriction).
+            if (pendingSpellCard != null)
+            {
+                ResolveSpell(new Target(owner));
+                return;
+            }
+
             if (selectedAttacker == null) return;
             if (owner == turnManager.CurrentPlayer) return;
 
@@ -432,6 +510,9 @@ namespace HearthstoneClone.UI
             if (!mulliganComplete) return;
 
             selectedAttacker = null;
+            pendingSpellCard = null;
+            pendingSpellCaster = null;
+            pendingSpellHandIndex = -1;
             turnManager.EndTurn();
             DrawForCurrentPlayer();
             Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
@@ -503,12 +584,14 @@ namespace HearthstoneClone.UI
         {
             if (handDisplay != null)
             {
-                handDisplay.RenderHand(playerOneHand.Hand, OnCardClicked);
+                int pendingIndex = pendingSpellCaster == playerOne ? pendingSpellHandIndex : -1;
+                handDisplay.RenderHand(playerOneHand.Hand, OnCardClicked, pendingIndex);
             }
 
             if (opponentHandDisplay != null)
             {
-                opponentHandDisplay.RenderHand(playerTwoHand.Hand, manualControlMode ? OnOpponentCardClicked : null);
+                int pendingIndex = pendingSpellCaster == playerTwo ? pendingSpellHandIndex : -1;
+                opponentHandDisplay.RenderHand(playerTwoHand.Hand, manualControlMode ? OnOpponentCardClicked : null, pendingIndex);
             }
         }
 

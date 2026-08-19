@@ -20,4 +20,3 @@ MonoBehaviour:
   attack: 3
   health: 3
   onPlayEffect: {fileID: 0}
-  targetsSelf: 0

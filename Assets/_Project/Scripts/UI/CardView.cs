@@ -20,12 +20,15 @@ namespace HearthstoneClone.UI
         public Color normalColor = Color.white;
         public Color selectedForMulliganColor = new Color(0.4f, 0.4f, 0.4f);
 
+        [Header("Targeting Visuals")]
+        public Color pendingSpellColor = new Color(0.6f, 0.9f, 0.6f);
+
         private CardData card;
         private Action<CardData, CardView> onClicked;
         private Action<CardData> onMulliganToggled;
         private bool isSelectedForMulligan;
 
-        public void SetCard(CardData cardData, Action<CardData, CardView> clickCallback)
+        public void SetCard(CardData cardData, Action<CardData, CardView> clickCallback, bool isPendingSpell = false)
         {
             if (cardData == null)
             {
@@ -37,6 +40,11 @@ namespace HearthstoneClone.UI
             onClicked = clickCallback;
 
             WriteCardText();
+
+            if (cardBackground != null)
+            {
+                cardBackground.color = isPendingSpell ? pendingSpellColor : normalColor;
+            }
 
             if (button != null)
             {
