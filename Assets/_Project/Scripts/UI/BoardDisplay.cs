@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using HearthstoneClone.Core;
 
 namespace HearthstoneClone.UI
@@ -14,6 +15,32 @@ namespace HearthstoneClone.UI
         // so a Minion's Transform is only ever valid until the next refresh - callers
         // must resolve it fresh rather than caching it.
         private Dictionary<Minion, Transform> minionViewTransforms = new Dictionary<Minion, Transform>();
+
+        private void Awake()
+        {
+            EnsureRaycastCatcher();
+        }
+
+        // Empty board space carries no raycastable Graphic by default - a bare RectTransform
+        // panel isn't hit-testable, so EventSystem.current.RaycastAll returns zero hits there
+        // even though the board is visually right under the pointer (confirmed via
+        // [DragDiag]: 0 hits over empty board space). A fully transparent Image with
+        // raycastTarget on gives the whole panel bounds a hittable surface without changing
+        // how it looks or affecting the visible board background (a separate, decorative
+        // Image elsewhere - not reused here on purpose).
+        private void EnsureRaycastCatcher()
+        {
+            if (boardPanel == null) return;
+
+            Image catcherImage = boardPanel.GetComponent<Image>();
+            bool justAdded = catcherImage == null;
+            if (justAdded)
+            {
+                catcherImage = boardPanel.gameObject.AddComponent<Image>();
+                catcherImage.color = new Color(0f, 0f, 0f, 0f);
+            }
+            catcherImage.raycastTarget = true;
+        }
 
         public void RenderBoard(List<Minion> minions, Action<Minion> onMinionClicked = null, Minion selectedAttacker = null, bool showAttackEligibility = false)
         {

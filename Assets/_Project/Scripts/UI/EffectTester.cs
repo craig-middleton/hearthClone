@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using HearthstoneClone.Cards;
 using HearthstoneClone.Core;
@@ -65,24 +66,15 @@ namespace HearthstoneClone.UI
 
         private Minion selectedAttacker = null;
 
-        // A card with TargetRequirement.Any that's waiting for the player to click a
-        // minion or face. pendingSpellCard is the CardData to play; pendingSpellHandIndex
-        // identifies WHICH physical card was clicked (its position in Hand at click time),
-        // since duplicate copies of a card share the same CardData reference and can't be
-        // told apart by it alone - two Fireballs in hand would otherwise look identical to
-        // the cancel/switch check. This can't be a live CardView reference either: selecting
-        // a card triggers RefreshHandDisplay() to show the pending highlight, which destroys
-        // and rebuilds every CardView that same call, including the one just clicked - so the
-        // index (stable as long as Hand doesn't reorder while a spell is pending, which it
-        // doesn't) is what survives, not the view instance. pendingSpellSourcePosition is
-        // likewise captured as a plain Vector3 rather than a Transform, for the same reason.
-        private CardData pendingSpellCard = null;
-        private int pendingSpellHandIndex = -1;
-        private Vector3 pendingSpellSourcePosition;
-        private Player pendingSpellCaster = null;
-
         private bool gameOver = false;
         private Player winner = null;
+
+        // Set while a hand card is mid-drag (between CardView's OnBeginDrag and OnEndDrag).
+        // RefreshHandDisplay destroys/rebuilds every CardView, which would pull the rug out
+        // from under Unity's EventSystem mid-gesture - see slice-1 investigation notes.
+        // Nothing currently calls RefreshAll/RefreshHandDisplay during that window, but this
+        // guards against a future change accidentally introducing one.
+        private bool dragInProgress = false;
 
         void Start()
         {
@@ -270,52 +262,109 @@ namespace HearthstoneClone.UI
             RefreshAll();
         }
 
-        private void OnCardClicked(CardData card, CardView cardView, int handIndex)
+        private void OnCardDragBegan(CardData card, CardView cardView)
         {
-            if (gameOver) return;
-            if (!mulliganComplete) return;
-            if (turnManager.CurrentPlayer != playerOne) return;
-
-            HandleHandCardClicked(card, cardView, handIndex, playerOne);
+            dragInProgress = true;
         }
 
-        private void OnOpponentCardClicked(CardData card, CardView cardView, int handIndex)
+        // Shared eligibility checks - used both to gate drop resolution (below) and to gate
+        // drag initiation itself (passed as CardView's canDrag predicate via RenderHand, so
+        // an ineligible card doesn't even spawn a ghost - see HandDisplay/CardView wiring).
+        private bool CanPlayerOneDrag()
         {
-            if (gameOver) return;
-            if (!mulliganComplete || !manualControlMode) return;
-            if (turnManager.CurrentPlayer != playerTwo) return;
-
-            HandleHandCardClicked(card, cardView, handIndex, playerTwo);
+            return !gameOver && mulliganComplete && turnManager.CurrentPlayer == playerOne;
         }
 
-        // Shared by OnCardClicked and OnOpponentCardClicked (manual control mode). A
-        // TargetRequirement.Any card enters the pending-selection state instead of playing
-        // immediately; None/Self cards resolve and play right away, same as before targeting
-        // existed. Identity for the cancel/switch check is (actingPlayer, handIndex), not the
-        // CardData reference - see the pendingSpellHandIndex field comment for why.
-        private void HandleHandCardClicked(CardData card, CardView cardView, int handIndex, Player actingPlayer)
+        private bool CanPlayerTwoDrag()
         {
-            if (pendingSpellCaster == actingPlayer && pendingSpellHandIndex == handIndex)
+            return !gameOver && mulliganComplete && manualControlMode && turnManager.CurrentPlayer == playerTwo;
+        }
+
+        private void OnCardDragEnd(CardData card, CardView cardView, PointerEventData eventData)
+        {
+            dragInProgress = false;
+
+            if (!CanPlayerOneDrag()) return;
+
+            ResolveCardDrag(card, cardView, eventData, playerOne);
+        }
+
+        private void OnOpponentCardDragEnd(CardData card, CardView cardView, PointerEventData eventData)
+        {
+            dragInProgress = false;
+
+            if (!CanPlayerTwoDrag()) return;
+
+            ResolveCardDrag(card, cardView, eventData, playerTwo);
+        }
+
+        // Shared by OnCardDragEnd and OnOpponentCardDragEnd. Unlike the old click-then-click
+        // flow, a drag is a single gesture: BeginDrag/EndDrag happen within the same
+        // interaction, so target selection is just "what's under the pointer at drop time" -
+        // no cross-frame pending state needed. Minion cards require a friendly-board drop
+        // (summoning onto the opponent's board isn't a real thing); Any-target spells need a
+        // MinionView or FaceView hit; None/Self spells accept any recognized zone. Anything
+        // else (empty space, the hand panel) is an invalid drop and simply does nothing - the
+        // CardView itself was never touched, so there's nothing to snap back.
+        private void ResolveCardDrag(CardData card, CardView cardView, PointerEventData eventData, Player actingPlayer)
+        {
+            var results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventData, results);
+
+            BoardDisplay friendlyBoard = actingPlayer == playerOne ? boardDisplay : opponentBoardDisplay;
+            BoardDisplay enemyBoard = actingPlayer == playerOne ? opponentBoardDisplay : boardDisplay;
+
+            MinionView hitMinionView = null;
+            FaceView hitFaceView = null;
+            bool hitFriendlyBoard = false;
+            bool hitEnemyBoard = false;
+
+            foreach (var result in results)
             {
-                pendingSpellCard = null;
-                pendingSpellCaster = null;
-                pendingSpellHandIndex = -1;
-                RefreshHandDisplay();
-                return;
+                if (hitMinionView == null) hitMinionView = result.gameObject.GetComponentInParent<MinionView>();
+                if (hitFaceView == null) hitFaceView = result.gameObject.GetComponentInParent<FaceView>();
+                if (!hitFriendlyBoard) hitFriendlyBoard = IsUnderPanel(result.gameObject.transform, friendlyBoard);
+                if (!hitEnemyBoard) hitEnemyBoard = IsUnderPanel(result.gameObject.transform, enemyBoard);
             }
 
-            if (card.targetRequirement == TargetRequirement.Any)
+            Target target = null;
+            bool validDrop;
+
+            if (card.cardType == CardType.Minion)
             {
-                selectedAttacker = null;
-                pendingSpellCard = card;
-                pendingSpellCaster = actingPlayer;
-                pendingSpellHandIndex = handIndex;
-                pendingSpellSourcePosition = cardView.transform.position;
-                RefreshAll();
-                return;
+                validDrop = hitFriendlyBoard;
+            }
+            else if (card.targetRequirement == TargetRequirement.Any)
+            {
+                if (hitMinionView != null)
+                {
+                    target = new Target(hitMinionView.Minion);
+                    validDrop = true;
+                }
+                else if (hitFaceView != null)
+                {
+                    target = new Target(hitFaceView.Player);
+                    validDrop = true;
+                }
+                else
+                {
+                    validDrop = false;
+                }
+            }
+            else
+            {
+                validDrop = hitFriendlyBoard || hitEnemyBoard || hitMinionView != null || hitFaceView != null;
+                if (validDrop && card.targetRequirement == TargetRequirement.Self)
+                {
+                    target = new Target(actingPlayer);
+                }
             }
 
-            Target target = card.targetRequirement == TargetRequirement.Self ? new Target(actingPlayer) : null;
+            if (!validDrop)
+            {
+                Debug.Log($"{actingPlayer.PlayerName} dropped '{card.cardName}' on an invalid zone — no action taken.");
+                return;
+            }
 
             // Captured before PlayCard/AfterGameAction run: PlayCard removes the card from
             // Hand, and the RefreshHandDisplay() inside AfterGameAction() destroys this exact
@@ -333,30 +382,10 @@ namespace HearthstoneClone.UI
             }
         }
 
-        // Resolves a spell that's pending target selection (TargetRequirement.Any) against
-        // the minion or face the player just clicked. Called from OnMinionClicked/OnFaceClicked.
-        private void ResolveSpell(Target target)
+        private bool IsUnderPanel(Transform hit, BoardDisplay board)
         {
-            CardData card = pendingSpellCard;
-            Vector3 sourcePosition = pendingSpellSourcePosition;
-            Player caster = pendingSpellCaster;
-            PlayerHand hand = caster == playerOne ? playerOneHand : playerTwoHand;
-
-            Transform targetViewTransform = ResolveViewTransform(target);
-
-            bool success = hand.PlayCard(card, context, target);
-            if (success)
-            {
-                // Cleared only on success, same as ResolveAttack clearing selectedAttacker:
-                // a rejected play (e.g. mana changed) leaves the card selected so the player
-                // can retry a different target instead of losing the selection.
-                pendingSpellCard = null;
-                pendingSpellCaster = null;
-                pendingSpellHandIndex = -1;
-                TriggerSpellAnimation(card, sourcePosition, targetViewTransform);
-            }
-
-            AfterGameAction();
+            if (board == null || board.boardPanel == null) return false;
+            return hit == board.boardPanel || hit.IsChildOf(board.boardPanel);
         }
 
         // Resolves a Target to the Transform of the view that represents it on screen.
@@ -397,16 +426,6 @@ namespace HearthstoneClone.UI
             if (minion == null) return;
             if (!manualControlMode && turnManager.CurrentPlayer == playerTwo) return;
 
-            // A pending spell takes priority over attacker-selection: clicking any minion
-            // (either side - see approved plan, no friendly-fire/Taunt restriction on spell
-            // targets) while a spell is pending resolves the spell instead of selecting the
-            // minion as an attacker.
-            if (pendingSpellCard != null)
-            {
-                ResolveSpell(new Target(minion));
-                return;
-            }
-
             bool ownerIsActingPlayer = owner == turnManager.CurrentPlayer && (owner == playerOne || manualControlMode);
 
             if (ownerIsActingPlayer)
@@ -433,14 +452,6 @@ namespace HearthstoneClone.UI
             if (gameOver) return;
             if (!mulliganComplete) return;
             if (!manualControlMode && turnManager.CurrentPlayer == playerTwo) return;
-
-            // Same priority as OnMinionClicked: a pending spell resolves against whichever
-            // face was clicked, including the caster's own (no self-targeting restriction).
-            if (pendingSpellCard != null)
-            {
-                ResolveSpell(new Target(owner));
-                return;
-            }
 
             if (selectedAttacker == null) return;
             if (owner == turnManager.CurrentPlayer) return;
@@ -510,9 +521,6 @@ namespace HearthstoneClone.UI
             if (!mulliganComplete) return;
 
             selectedAttacker = null;
-            pendingSpellCard = null;
-            pendingSpellCaster = null;
-            pendingSpellHandIndex = -1;
             turnManager.EndTurn();
             DrawForCurrentPlayer();
             Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
@@ -582,16 +590,19 @@ namespace HearthstoneClone.UI
 
         private void RefreshHandDisplay()
         {
+            // See dragInProgress's declaration: a rebuild here mid-drag would destroy the
+            // CardView the EventSystem is still actively dragging. Not currently reachable,
+            // but cheap to guard against.
+            if (dragInProgress) return;
+
             if (handDisplay != null)
             {
-                int pendingIndex = pendingSpellCaster == playerOne ? pendingSpellHandIndex : -1;
-                handDisplay.RenderHand(playerOneHand.Hand, OnCardClicked, pendingIndex);
+                handDisplay.RenderHand(playerOneHand.Hand, OnCardDragEnd, OnCardDragBegan, CanPlayerOneDrag);
             }
 
             if (opponentHandDisplay != null)
             {
-                int pendingIndex = pendingSpellCaster == playerTwo ? pendingSpellHandIndex : -1;
-                opponentHandDisplay.RenderHand(playerTwoHand.Hand, manualControlMode ? OnOpponentCardClicked : null, pendingIndex);
+                opponentHandDisplay.RenderHand(playerTwoHand.Hand, OnOpponentCardDragEnd, OnCardDragBegan, CanPlayerTwoDrag);
             }
         }
 

@@ -9,8 +9,8 @@ namespace HearthstoneClone.Cards
         Spell
     }
 
-    // Controls whether OnCardClicked/OnOpponentCardClicked play the card immediately
-    // (None, Self) or put EffectTester into a pending-target-selection state (Any).
+    // Controls how a dropped card resolves in EffectTester.ResolveCardDrag: None/Self play
+    // immediately on any recognized drop zone, Any requires dropping on a MinionView/FaceView.
     public enum TargetRequirement
     {
         None,

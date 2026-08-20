@@ -29,6 +29,8 @@ namespace HearthstoneClone.UI
         private Action<Minion> onClicked;
         private Coroutine reactionRoutine;
 
+        public Minion Minion => minion;
+
         public void SetMinion(Minion minionData, Action<Minion> clickCallback = null, bool isSelected = false, bool showAttackEligibility = false)
         {
             if (minionData == null)

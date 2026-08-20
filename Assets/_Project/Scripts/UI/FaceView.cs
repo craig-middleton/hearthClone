@@ -26,6 +26,8 @@ namespace HearthstoneClone.UI
         private Player player;
         private Action<Player> onClicked;
 
+        public Player Player => player;
+
         private RectTransform avatarRect;
         private Vector3 avatarBaseScale;
         private Vector3 avatarBasePosition;
