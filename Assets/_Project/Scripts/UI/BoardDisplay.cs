@@ -23,9 +23,8 @@ namespace HearthstoneClone.UI
 
         // Empty board space carries no raycastable Graphic by default - a bare RectTransform
         // panel isn't hit-testable, so EventSystem.current.RaycastAll returns zero hits there
-        // even though the board is visually right under the pointer (confirmed via
-        // [DragDiag]: 0 hits over empty board space). A fully transparent Image with
-        // raycastTarget on gives the whole panel bounds a hittable surface without changing
+        // even though the board is visually right under the pointer. A fully transparent Image
+        // with raycastTarget on gives the whole panel bounds a hittable surface without changing
         // how it looks or affecting the visible board background (a separate, decorative
         // Image elsewhere - not reused here on purpose).
         private void EnsureRaycastCatcher()
