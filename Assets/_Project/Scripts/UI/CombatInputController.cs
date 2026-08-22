@@ -99,7 +99,7 @@ namespace HearthstoneClone.UI
             onAfterAction?.Invoke();
         }
 
-        // Called from EffectTester.AfterGameAction, after RemoveDeadMinions() and before
+        // Called from GameManager.AfterGameAction, after RemoveDeadMinions() and before
         // RefreshAll() - matches Constraint 6's ordering exactly, just delegating the
         // dead-check to whoever now owns selectedAttacker. A rejected attack keeps the
         // attacker selected so it can be retargeted, but a minion that just died must not
@@ -112,7 +112,7 @@ namespace HearthstoneClone.UI
             }
         }
 
-        // Called from EffectTester.OnEndTurnClicked - an unconditional reset (not the
+        // Called from GameManager.OnEndTurnClicked - an unconditional reset (not the
         // dead-check above), since attacker selection doesn't carry across a turn boundary.
         public void ClearSelection()
         {
