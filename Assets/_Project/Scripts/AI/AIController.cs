@@ -21,6 +21,7 @@ namespace HearthstoneClone.AI
         public void PerformMulligan(int mulliganThreshold = 4)
         {
             var handSnapshot = new List<CardData>(aiHand.Hand);
+            var toMulligan = new List<CardData>();
 
             foreach (var card in handSnapshot)
             {
@@ -28,9 +29,11 @@ namespace HearthstoneClone.AI
 
                 if (card.manaCost >= mulliganThreshold)
                 {
-                    aiHand.MulliganCard(card);
+                    toMulligan.Add(card);
                 }
             }
+
+            aiHand.MulliganCards(toMulligan);
 
             Debug.Log($"{aiHand.CorePlayer.PlayerName} (AI) completed mulligan.");
         }

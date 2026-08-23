@@ -70,20 +70,31 @@ namespace HearthstoneClone.Cards
             UnityEngine.Debug.Log($"{CorePlayer.PlayerName} gained {card.cardName}. Hand size: {Hand.Count}");
         }
 
-        public void MulliganCard(CardData card)
+        public void MulliganCards(List<CardData> cards)
         {
-            if (!Hand.Contains(card))
+            var setAside = new List<CardData>();
+
+            foreach (CardData card in cards)
             {
-                UnityEngine.Debug.LogWarning($"{CorePlayer.PlayerName} tried to mulligan a card not in hand: {card.cardName}");
-                return;
+                if (!Hand.Contains(card))
+                {
+                    UnityEngine.Debug.LogWarning($"{CorePlayer.PlayerName} tried to mulligan a card not in hand: {card.cardName}");
+                    continue;
+                }
+
+                Hand.Remove(card);
+                setAside.Add(card);
             }
 
-            Hand.Remove(card);
-            Deck.Add(card);
-            Shuffle();
-            DrawCard();
+            for (int i = 0; i < setAside.Count; i++)
+            {
+                DrawCard();
+            }
 
-            UnityEngine.Debug.Log($"{CorePlayer.PlayerName} mulliganed {card.cardName}.");
+            Deck.AddRange(setAside);
+            Shuffle();
+
+            UnityEngine.Debug.Log($"{CorePlayer.PlayerName} mulliganed {setAside.Count} card(s).");
         }
 
         public bool PlayCard(CardData card, GameContext context, Target effectTarget = null)

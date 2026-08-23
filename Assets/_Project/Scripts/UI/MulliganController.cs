@@ -89,10 +89,7 @@ namespace HearthstoneClone.UI
         {
             if (MulliganComplete) return;
 
-            foreach (CardData card in new List<CardData>(mulliganSelections))
-            {
-                playerOneHand.MulliganCard(card);
-            }
+            playerOneHand.MulliganCards(new List<CardData>(mulliganSelections));
 
             mulliganSelections.Clear();
 
