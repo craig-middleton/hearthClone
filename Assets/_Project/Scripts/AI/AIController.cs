@@ -78,11 +78,33 @@ namespace HearthstoneClone.AI
                 if (minion == null || !minion.CanAttack) continue;
 
                 var opponentTaunts = board.GetTauntMinions(opponent);
-                Target attackTarget = opponentTaunts.Count > 0
-                    ? new Target(opponentTaunts[0])
-                    : new Target(opponent);
+                Target attackTarget;
+                if (opponentTaunts.Count > 0)
+                {
+                    attackTarget = new Target(opponentTaunts[0]);
+                }
+                else
+                {
+                    Minion favorableTarget = null;
+                    foreach (var enemyMinion in opponent.BoardMinions)
+                    {
+                        if (enemyMinion == null) continue;
+                        if (AICombatEvaluator.IsFavorableTrade(minion, enemyMinion))
+                        {
+                            favorableTarget = enemyMinion;
+                            break;
+                        }
+                    }
 
-                Combat.TryAttack(minion, attackTarget, board, out _);
+                    attackTarget = favorableTarget != null
+                        ? new Target(favorableTarget)
+                        : new Target(opponent);
+                }
+
+                if (!Combat.TryAttack(minion, attackTarget, board, out string failReason))
+                {
+                    Debug.Log($"{aiPlayer.PlayerName} (AI) attack failed: {failReason}");
+                }
                 board.RemoveDeadMinions();
             }
 
