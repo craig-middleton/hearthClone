@@ -96,6 +96,14 @@ namespace HearthstoneClone.AI
                         }
                     }
 
+                    // Safety net for future candidate-selection logic (lethal override, board-state
+                    // reasoning): never let a genuinely bad trade through, even if some later step
+                    // picks favorableTarget by means other than IsFavorableTrade above.
+                    if (favorableTarget != null && AICombatEvaluator.IsUnfavorableTrade(minion, favorableTarget))
+                    {
+                        favorableTarget = null;
+                    }
+
                     attackTarget = favorableTarget != null
                         ? new Target(favorableTarget)
                         : new Target(opponent);

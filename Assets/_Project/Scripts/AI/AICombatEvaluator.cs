@@ -13,5 +13,15 @@ namespace HearthstoneClone.AI
 
             return kills && survives;
         }
+
+        public static bool IsUnfavorableTrade(Minion attacker, Minion target)
+        {
+            if (attacker == null || target == null) return false;
+
+            bool attackerDies = target.CurrentAttack >= attacker.CurrentHealth;
+            bool targetSurvives = attacker.CurrentAttack < target.CurrentHealth;
+
+            return attackerDies && targetSurvives;
+        }
     }
 }
