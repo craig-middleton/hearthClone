@@ -72,6 +72,18 @@ namespace HearthstoneClone.AI
 
             board.RemoveDeadMinions();
 
+            bool lethalAvailable = false;
+            if (board.GetTauntMinions(opponent).Count == 0)
+            {
+                int unblockedDamage = 0;
+                foreach (var minion in aiPlayer.BoardMinions)
+                {
+                    if (minion == null || !minion.CanAttack) continue;
+                    unblockedDamage += minion.CurrentAttack;
+                }
+                lethalAvailable = unblockedDamage >= opponent.Health;
+            }
+
             foreach (var minion in new List<Minion>(aiPlayer.BoardMinions))
             {
                 if (opponent.Health <= 0) break;
@@ -82,6 +94,10 @@ namespace HearthstoneClone.AI
                 if (opponentTaunts.Count > 0)
                 {
                     attackTarget = new Target(opponentTaunts[0]);
+                }
+                else if (lethalAvailable)
+                {
+                    attackTarget = new Target(opponent);
                 }
                 else
                 {
