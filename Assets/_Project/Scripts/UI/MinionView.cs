@@ -31,6 +31,55 @@ namespace HearthstoneClone.UI
 
         public Minion Minion => minion;
 
+        private int holdCount = 0;
+        private float holdExpiresAt = 0f;
+
+        // True while an in-flight animation (e.g. SpellAnimationSequencer on a lethal hit)
+        // still needs this GameObject to survive the next BoardDisplay.RenderBoard refresh,
+        // even though the Minion it represents has already been removed from the model by
+        // then. Self-expires via holdExpiresAt so a caller that forgets EndHold() can't leak
+        // the view forever - the next refresh after the TTL lapses destroys it anyway, logged
+        // since that indicates a caller bug rather than expected behavior.
+        public bool IsHeld
+        {
+            get
+            {
+                if (holdCount <= 0) return false;
+                if (Time.time >= holdExpiresAt)
+                {
+                    Debug.LogWarning($"MinionView: hold on '{(minion != null ? minion.MinionName : "(unknown)")}' expired via TTL sweep (holdCount was {holdCount}) - an animation likely didn't call EndHold(). Treating as unheld.", this);
+                    holdCount = 0;
+                    return false;
+                }
+                return true;
+            }
+        }
+
+        // Counter-based (not a bool) so two overlapping holds on the same view - e.g. two
+        // quick spells targeting the same dying minion before the first animation finishes -
+        // don't get cleared early by the first one's EndHold(). maxSeconds bounds the hold via
+        // IsHeld's TTL check above.
+        public void BeginHold(float maxSeconds)
+        {
+            holdCount++;
+            holdExpiresAt = Mathf.Max(holdExpiresAt, Time.time + maxSeconds);
+
+            // A held-but-already-dead minion must not stay clickable - the model no longer
+            // contains it, so a click during the hold window would invoke onClicked with a
+            // stale Minion reference. Mirrors the exact bug class Constraint 16 fixed for
+            // SpellAnimationSequencer's destroyed-Transform read, just triggered by input
+            // instead of an animation frame.
+            if (button != null)
+            {
+                button.onClick.RemoveAllListeners();
+            }
+        }
+
+        public void EndHold()
+        {
+            holdCount = Mathf.Max(0, holdCount - 1);
+        }
+
         public void SetMinion(Minion minionData, Action<Minion> clickCallback = null, bool isSelected = false, bool showAttackEligibility = false)
         {
             if (minionData == null)

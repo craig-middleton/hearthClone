@@ -31,6 +31,25 @@ namespace HearthstoneClone.UI
 
         private IEnumerator TravelAndReactRoutine(Vector3 sourceWorldPosition, Transform targetView, bool isDamage, SpellSchool school)
         {
+            // A lethal hit already removed this Minion from the model synchronously, in
+            // PlayerHand.PlayCard, before this coroutine started - so Minion.IsDead here
+            // reflects the kill this same spell is about to animate. Holding keeps
+            // BoardDisplay.RenderBoard from destroying the view out from under this sequence
+            // (Constraint 15/16's whole problem). Only held when actually dead: holding a
+            // still-alive minion's view would make RenderBoard's rebuild loop spawn a second,
+            // fresh view for the same (still-present) Minion while the held one lingers too -
+            // a visible duplicate. A non-lethal hit needs no hold; its view was never at risk.
+            MinionView heldMinionView = null;
+            if (isDamage && targetView != null)
+            {
+                MinionView candidateView = targetView.GetComponent<MinionView>();
+                if (candidateView != null && candidateView.Minion != null && candidateView.Minion.IsDead)
+                {
+                    heldMinionView = candidateView;
+                    heldMinionView.BeginHold(travelDuration + heldMinionView.reactionDuration + 1f);
+                }
+            }
+
             GameObject projectile = SpawnProjectile(sourceWorldPosition, targetView);
             RectTransform projectileRect = (RectTransform)projectile.transform;
 
@@ -89,6 +108,18 @@ namespace HearthstoneClone.UI
             // state PlayDamageReaction encodes. Uses lastKnownTargetPosition rather than
             // chasing a possibly-destroyed targetView.
             PlaySchoolBurst(school, lastKnownTargetPosition);
+
+            // The hold kept BoardDisplay.RenderBoard from destroying this view earlier -
+            // nothing else will ever destroy it now (a held view is skipped on every refresh
+            // until EndHold), so this sequence owns doing it explicitly once it's done with
+            // it. The kill already happened (Board.RemoveDeadMinions ran synchronously back
+            // in PlayerHand.PlayCard); this is only the deferred view cleanup, not a deferred
+            // kill.
+            if (heldMinionView != null)
+            {
+                heldMinionView.EndHold();
+                Destroy(heldMinionView.gameObject);
+            }
         }
 
         // Only Fire is wired up so far (spell VFX plan step 2) - Frost/Arcane/Nature fall

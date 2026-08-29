@@ -51,6 +51,16 @@ namespace HearthstoneClone.UI
 
             foreach (Transform child in boardPanel)
             {
+                // A held view (SpellAnimationSequencer, on a lethal hit) still owns its own
+                // destruction - see MinionView.BeginHold/EndHold. Its Minion has already been
+                // removed from `minions` by the time this runs, so skipping it here can't
+                // create a duplicate when the rebuild loop below runs.
+                MinionView view = child.GetComponent<MinionView>();
+                if (view != null && view.IsHeld)
+                {
+                    continue;
+                }
+
                 Destroy(child.gameObject);
             }
 
