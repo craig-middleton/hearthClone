@@ -21,3 +21,4 @@ MonoBehaviour:
   health: 0
   onPlayEffect: {fileID: 11400000, guid: 2ab3d9ef8a1286f51b35158d0287b60d, type: 2}
   targetRequirement: 2
+  spellSchool: 1

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using HearthstoneClone.Cards;
 
 namespace HearthstoneClone.UI
 {
@@ -14,18 +15,21 @@ namespace HearthstoneClone.UI
         public Color projectileColor = Color.white;
         public Vector2 projectileSize = new Vector2(24, 24);
 
+        [Header("Spell VFX")]
+        public UIParticleBurstRenderer burstRenderer;
+
         // Takes a plain world position (not a Transform) for the source, since the CardView
         // that position was read from may already be destroyed by the time this coroutine
         // runs - HandDisplay.RenderHand rebuilds synchronously right after PlayCard. The
         // target Transform, by contrast, is a persistent view (FaceView or MinionView)
         // and is safe to track live.
-        public void PlayTravelAndReaction(Vector3 sourceWorldPosition, Transform targetView, bool isDamage)
+        public void PlayTravelAndReaction(Vector3 sourceWorldPosition, Transform targetView, bool isDamage, SpellSchool school)
         {
             if (targetView == null) return;
-            StartCoroutine(TravelAndReactRoutine(sourceWorldPosition, targetView, isDamage));
+            StartCoroutine(TravelAndReactRoutine(sourceWorldPosition, targetView, isDamage, school));
         }
 
-        private IEnumerator TravelAndReactRoutine(Vector3 sourceWorldPosition, Transform targetView, bool isDamage)
+        private IEnumerator TravelAndReactRoutine(Vector3 sourceWorldPosition, Transform targetView, bool isDamage, SpellSchool school)
         {
             GameObject projectile = SpawnProjectile(sourceWorldPosition, targetView);
             RectTransform projectileRect = (RectTransform)projectile.transform;
@@ -78,6 +82,33 @@ namespace HearthstoneClone.UI
                 }
                 // No heal/buff reaction yet - there's no CardEffect subtype for it to key
                 // off (GainManaEffect is self-targeted mana gain, not a heal).
+            }
+
+            // Purely additive on top of the flash reaction above, not a replacement - the
+            // burst is visual flavor keyed off the card's school, independent of whatever
+            // state PlayDamageReaction encodes. Uses lastKnownTargetPosition rather than
+            // chasing a possibly-destroyed targetView.
+            PlaySchoolBurst(school, lastKnownTargetPosition);
+        }
+
+        // Only Fire is wired up so far (spell VFX plan step 2) - Frost/Arcane/Nature fall
+        // through the switch as a deliberate no-op until their factory methods exist.
+        private void PlaySchoolBurst(SpellSchool school, Vector3 screenPosition)
+        {
+            if (burstRenderer == null) return;
+
+            // GameCanvas is Screen Space - Overlay, where a UI RectTransform's world .position
+            // already *is* the screen-space pixel position (no camera transform involved) -
+            // the same value SpawnProjectile above assigns straight to projectileRect.position.
+            // Converting it again through a camera (e.g. Camera.main.WorldToScreenPoint) would
+            // double-transform it.
+            Transform spawnPoint = burstRenderer.ShowAt(screenPosition);
+
+            switch (school)
+            {
+                case SpellSchool.Fire:
+                    SpellBurstFactory.CreateFireBurst(spawnPoint);
+                    break;
             }
         }
 

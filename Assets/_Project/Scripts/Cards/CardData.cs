@@ -18,6 +18,19 @@ namespace HearthstoneClone.Cards
         Any
     }
 
+    // Which spell-VFX burst SpellAnimationSequencer plays on impact (SpellBurstFactory).
+    // Property of the card's flavor/theme, not of its CardEffect - two different damage
+    // spells can share DealDamageEffect and differ only in spellSchool. None covers non-spell
+    // cards and spells with no visual school (e.g. GainManaEffect-based ones).
+    public enum SpellSchool
+    {
+        None,
+        Fire,
+        Frost,
+        Arcane,
+        Nature
+    }
+
     [CreateAssetMenu(fileName = "NewCard", menuName = "Cards/Card Data")]
     public class CardData : ScriptableObject
     {
@@ -38,5 +51,8 @@ namespace HearthstoneClone.Cards
         [Header("Behavior")]
         public CardEffect onPlayEffect;
         public TargetRequirement targetRequirement;
+
+        [Header("Spell Visuals")]
+        public SpellSchool spellSchool;
     }
 }

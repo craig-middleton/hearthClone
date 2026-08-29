@@ -228,7 +228,7 @@ namespace HearthstoneClone.UI
             if (targetViewTransform == null) return;
 
             bool isDamage = card.onPlayEffect is DealDamageEffect;
-            spellAnimationSequencer.PlayTravelAndReaction(sourcePosition, targetViewTransform, isDamage);
+            spellAnimationSequencer.PlayTravelAndReaction(sourcePosition, targetViewTransform, isDamage, card.spellSchool);
         }
     }
 }
