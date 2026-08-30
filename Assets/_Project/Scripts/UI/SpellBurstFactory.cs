@@ -66,6 +66,66 @@ namespace HearthstoneClone.UI
             return particles;
         }
 
+        public static ParticleSystem CreateArcaneBurst(Transform parent)
+        {
+            ParticleSystem particles = CreateBase("ArcaneBurst", parent);
+
+            var main = particles.main;
+            main.duration = 0.5f;
+            main.loop = false;
+            main.startLifetime = 0.5f;
+            // Fewer, larger, slower motes than Fire's chaotic burst - Arcane reads as
+            // deliberate/magical rather than explosive, and the swirl (Noise module below) is
+            // what should read as its distinct identity, not raw particle count.
+            main.startSpeed = 1f;
+            main.startSize = new ParticleSystem.MinMaxCurve(0.2f, 0.4f);
+            main.gravityModifier = 0f;
+            main.stopAction = ParticleSystemStopAction.Destroy;
+
+            var emission = particles.emission;
+            emission.rateOverTime = 0f;
+            emission.SetBursts(new[] { new ParticleSystem.Burst(0f, new ParticleSystem.MinMaxCurve(12f, 18f)) });
+
+            var shape = particles.shape;
+            shape.shapeType = ParticleSystemShapeType.Circle;
+            shape.radius = 0.15f;
+
+            // The one school that should visibly curl/spiral rather than burst in straight
+            // lines like Fire/Frost - turbulence via the Noise module is the distinguishing
+            // visual identity here, not color alone.
+            var noise = particles.noise;
+            noise.enabled = true;
+            noise.strength = 1.2f;
+            noise.frequency = 0.8f;
+            noise.scrollSpeed = 1f;
+
+            var colorOverLifetime = particles.colorOverLifetime;
+            colorOverLifetime.enabled = true;
+            Gradient gradient = new Gradient();
+            gradient.SetKeys(
+                new[]
+                {
+                    new GradientColorKey(new Color(0.95f, 0.85f, 1f), 0f),
+                    new GradientColorKey(new Color(0.65f, 0.25f, 0.95f), 0.4f),
+                    new GradientColorKey(new Color(0.85f, 0.2f, 0.6f), 1f),
+                },
+                new[]
+                {
+                    new GradientAlphaKey(1f, 0f),
+                    new GradientAlphaKey(0.85f, 0.6f),
+                    new GradientAlphaKey(0f, 1f),
+                });
+            colorOverLifetime.color = gradient;
+
+            var sizeOverLifetime = particles.sizeOverLifetime;
+            sizeOverLifetime.enabled = true;
+            sizeOverLifetime.size = new ParticleSystem.MinMaxCurve(1f, AnimationCurve.Linear(0f, 1f, 1f, 0.3f));
+
+            ApplyUnlitMaterial(particles);
+            particles.Play();
+            return particles;
+        }
+
         private static ParticleSystem CreateBase(string name, Transform parent)
         {
             GameObject go = new GameObject(name, typeof(ParticleSystem));

@@ -122,8 +122,8 @@ namespace HearthstoneClone.UI
             }
         }
 
-        // Only Fire is wired up so far (spell VFX plan step 2) - Frost/Arcane/Nature fall
-        // through the switch as a deliberate no-op until their factory methods exist.
+        // Fire and Arcane are wired up (spell VFX plan steps 2-3) - Frost/Nature fall through
+        // the switch as a deliberate no-op until their factory methods exist (step 4).
         private void PlaySchoolBurst(SpellSchool school, Vector3 screenPosition)
         {
             if (burstRenderer == null) return;
@@ -139,6 +139,9 @@ namespace HearthstoneClone.UI
             {
                 case SpellSchool.Fire:
                     SpellBurstFactory.CreateFireBurst(spawnPoint);
+                    break;
+                case SpellSchool.Arcane:
+                    SpellBurstFactory.CreateArcaneBurst(spawnPoint);
                     break;
             }
         }

@@ -33,6 +33,7 @@ namespace HearthstoneClone.UI
 
         private int holdCount = 0;
         private float holdExpiresAt = 0f;
+        private LayoutElement layoutElement;
 
         // True while an in-flight animation (e.g. SpellAnimationSequencer on a lethal hit)
         // still needs this GameObject to survive the next BoardDisplay.RenderBoard refresh,
@@ -49,6 +50,10 @@ namespace HearthstoneClone.UI
                 {
                     Debug.LogWarning($"MinionView: hold on '{(minion != null ? minion.MinionName : "(unknown)")}' expired via TTL sweep (holdCount was {holdCount}) - an animation likely didn't call EndHold(). Treating as unheld.", this);
                     holdCount = 0;
+                    if (layoutElement != null)
+                    {
+                        layoutElement.ignoreLayout = false;
+                    }
                     return false;
                 }
                 return true;
@@ -61,6 +66,26 @@ namespace HearthstoneClone.UI
         // IsHeld's TTL check above.
         public void BeginHold(float maxSeconds)
         {
+            // First hold on this view: pull it out of the parent HorizontalLayoutGroup's
+            // control before RenderBoard can rebuild siblings around it. A held view keeps
+            // its GameObject (BoardDisplay.RenderBoard skips destroying it) but its Minion is
+            // already gone from the model, so the surviving minions get re-instantiated as
+            // new children appended after it - which shifts this view's sibling index and
+            // lets the layout group snap it to a recalculated (wrong) slot mid-animation.
+            // ignoreLayout freezes it exactly where it visually sits right now, decoupled
+            // from whatever the group does to its rebuilt siblings afterward.
+            if (holdCount == 0)
+            {
+                if (layoutElement == null)
+                {
+                    layoutElement = GetComponent<LayoutElement>();
+                }
+                if (layoutElement != null)
+                {
+                    layoutElement.ignoreLayout = true;
+                }
+            }
+
             holdCount++;
             holdExpiresAt = Mathf.Max(holdExpiresAt, Time.time + maxSeconds);
 
@@ -78,6 +103,11 @@ namespace HearthstoneClone.UI
         public void EndHold()
         {
             holdCount = Mathf.Max(0, holdCount - 1);
+
+            if (holdCount == 0 && layoutElement != null)
+            {
+                layoutElement.ignoreLayout = false;
+            }
         }
 
         public void SetMinion(Minion minionData, Action<Minion> clickCallback = null, bool isSelected = false, bool showAttackEligibility = false)

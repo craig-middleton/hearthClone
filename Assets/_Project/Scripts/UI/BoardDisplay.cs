@@ -49,6 +49,8 @@ namespace HearthstoneClone.UI
                 return;
             }
 
+            List<Transform> heldChildren = new List<Transform>();
+
             foreach (Transform child in boardPanel)
             {
                 // A held view (SpellAnimationSequencer, on a lethal hit) still owns its own
@@ -58,6 +60,7 @@ namespace HearthstoneClone.UI
                 MinionView view = child.GetComponent<MinionView>();
                 if (view != null && view.IsHeld)
                 {
+                    heldChildren.Add(child);
                     continue;
                 }
 
@@ -90,6 +93,20 @@ namespace HearthstoneClone.UI
                 bool isSelected = minion == selectedAttacker;
                 view.SetMinion(minion, onMinionClicked, isSelected, showAttackEligibility);
                 minionViewTransforms[minion] = view.transform;
+            }
+
+            // A held view keeps its OLD sibling index above (skipped, not destroyed/re-added),
+            // while every surviving minion above just got a NEW, higher sibling index from
+            // Instantiate appending it last. ignoreLayout (MinionView.BeginHold) only excludes
+            // the held view from the HorizontalLayoutGroup's position math - sibling index still
+            // independently controls draw order in this single-Canvas (no per-view Canvas
+            // override) Screen Space - Overlay setup, so without this the held view silently
+            // renders behind its freshly-rebuilt siblings. Runs every call, not just once at
+            // BeginHold, since the rebuild loop above re-appends survivors with fresh indices
+            // on every refresh a hold spans.
+            foreach (Transform heldChild in heldChildren)
+            {
+                heldChild.SetAsLastSibling();
             }
         }
 
