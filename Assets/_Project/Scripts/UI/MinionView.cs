@@ -33,7 +33,7 @@ namespace HearthstoneClone.UI
 
         private int holdCount = 0;
         private float holdExpiresAt = 0f;
-        private LayoutElement layoutElement;
+        private Canvas sortingCanvas;
 
         // True while an in-flight animation (e.g. SpellAnimationSequencer on a lethal hit)
         // still needs this GameObject to survive the next BoardDisplay.RenderBoard refresh,
@@ -50,9 +50,9 @@ namespace HearthstoneClone.UI
                 {
                     Debug.LogWarning($"MinionView: hold on '{(minion != null ? minion.MinionName : "(unknown)")}' expired via TTL sweep (holdCount was {holdCount}) - an animation likely didn't call EndHold(). Treating as unheld.", this);
                     holdCount = 0;
-                    if (layoutElement != null)
+                    if (sortingCanvas != null)
                     {
-                        layoutElement.ignoreLayout = false;
+                        sortingCanvas.overrideSorting = false;
                     }
                     return false;
                 }
@@ -66,24 +66,24 @@ namespace HearthstoneClone.UI
         // IsHeld's TTL check above.
         public void BeginHold(float maxSeconds)
         {
-            // First hold on this view: pull it out of the parent HorizontalLayoutGroup's
-            // control before RenderBoard can rebuild siblings around it. A held view keeps
-            // its GameObject (BoardDisplay.RenderBoard skips destroying it) but its Minion is
-            // already gone from the model, so the surviving minions get re-instantiated as
-            // new children appended after it - which shifts this view's sibling index and
-            // lets the layout group snap it to a recalculated (wrong) slot mid-animation.
-            // ignoreLayout freezes it exactly where it visually sits right now, decoupled
-            // from whatever the group does to its rebuilt siblings afterward.
+            // First hold on this view: force it to draw above its siblings independent of
+            // sibling index. The held view stays a normal, counted HorizontalLayoutGroup
+            // participant (BoardDisplay.RenderBoard now keeps its sibling index pinned to its
+            // pre-death slot so the layout stays stable) - so sibling index can't also be used
+            // for draw order any more. A local overrideSorting Canvas gives it independent
+            // render-on-top behavior in this single-Canvas Screen Space - Overlay setup.
             if (holdCount == 0)
             {
-                if (layoutElement == null)
+                if (sortingCanvas == null)
                 {
-                    layoutElement = GetComponent<LayoutElement>();
+                    sortingCanvas = GetComponent<Canvas>();
+                    if (sortingCanvas == null)
+                    {
+                        sortingCanvas = gameObject.AddComponent<Canvas>();
+                    }
                 }
-                if (layoutElement != null)
-                {
-                    layoutElement.ignoreLayout = true;
-                }
+                sortingCanvas.overrideSorting = true;
+                sortingCanvas.sortingOrder = 1;
             }
 
             holdCount++;
@@ -104,9 +104,9 @@ namespace HearthstoneClone.UI
         {
             holdCount = Mathf.Max(0, holdCount - 1);
 
-            if (holdCount == 0 && layoutElement != null)
+            if (holdCount == 0 && sortingCanvas != null)
             {
-                layoutElement.ignoreLayout = false;
+                sortingCanvas.overrideSorting = false;
             }
         }
 

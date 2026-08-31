@@ -49,7 +49,11 @@ namespace HearthstoneClone.UI
                 return;
             }
 
+            // Pinned indices captured BEFORE any destroy/instantiate touches the hierarchy,
+            // so they reflect each held child's actual pre-death board slot. Sorted ascending
+            // so the merge below can insert survivors around them in order.
             List<Transform> heldChildren = new List<Transform>();
+            List<int> heldPinnedIndices = new List<int>();
 
             foreach (Transform child in boardPanel)
             {
@@ -61,6 +65,7 @@ namespace HearthstoneClone.UI
                 if (view != null && view.IsHeld)
                 {
                     heldChildren.Add(child);
+                    heldPinnedIndices.Add(child.GetSiblingIndex());
                     continue;
                 }
 
@@ -75,6 +80,8 @@ namespace HearthstoneClone.UI
                 Debug.LogWarning("BoardDisplay.RenderBoard has no minionViewPrefab assigned.", this);
                 return;
             }
+
+            List<Transform> survivorViews = new List<Transform>();
 
             foreach (Minion minion in minions)
             {
@@ -93,20 +100,45 @@ namespace HearthstoneClone.UI
                 bool isSelected = minion == selectedAttacker;
                 view.SetMinion(minion, onMinionClicked, isSelected, showAttackEligibility);
                 minionViewTransforms[minion] = view.transform;
+                survivorViews.Add(view.transform);
             }
 
-            // A held view keeps its OLD sibling index above (skipped, not destroyed/re-added),
-            // while every surviving minion above just got a NEW, higher sibling index from
-            // Instantiate appending it last. ignoreLayout (MinionView.BeginHold) only excludes
-            // the held view from the HorizontalLayoutGroup's position math - sibling index still
-            // independently controls draw order in this single-Canvas (no per-view Canvas
-            // override) Screen Space - Overlay setup, so without this the held view silently
-            // renders behind its freshly-rebuilt siblings. Runs every call, not just once at
-            // BeginHold, since the rebuild loop above re-appends survivors with fresh indices
-            // on every refresh a hold spans.
-            foreach (Transform heldChild in heldChildren)
+            // Held views are no longer ignoreLayout (MinionView.BeginHold now uses an
+            // overrideSorting Canvas for draw order instead - see MinionView), so they stay
+            // counted HorizontalLayoutGroup participants and their sibling index now controls
+            // their actual layout slot, not just draw order. To keep survivors from reflowing,
+            // rebuild the sibling order as a merge of the held views (pinned to their pre-death
+            // index) and the freshly-instantiated survivors (in board order), inserting each
+            // held view back at its original relative position instead of leaving it wherever
+            // Destroy/Instantiate happened to put it.
+            if (heldChildren.Count > 0)
             {
-                heldChild.SetAsLastSibling();
+                List<int> sortedHeldOrder = new List<int>();
+                for (int i = 0; i < heldChildren.Count; i++) sortedHeldOrder.Add(i);
+                sortedHeldOrder.Sort((a, b) => heldPinnedIndices[a].CompareTo(heldPinnedIndices[b]));
+
+                int survivorCursor = 0;
+                int nextSiblingIndex = 0;
+                foreach (int heldOrderIdx in sortedHeldOrder)
+                {
+                    int pinnedIndex = heldPinnedIndices[heldOrderIdx];
+                    while (survivorCursor < survivorViews.Count && nextSiblingIndex < pinnedIndex)
+                    {
+                        survivorViews[survivorCursor].SetSiblingIndex(nextSiblingIndex);
+                        survivorCursor++;
+                        nextSiblingIndex++;
+                    }
+
+                    heldChildren[heldOrderIdx].SetSiblingIndex(nextSiblingIndex);
+                    nextSiblingIndex++;
+                }
+
+                while (survivorCursor < survivorViews.Count)
+                {
+                    survivorViews[survivorCursor].SetSiblingIndex(nextSiblingIndex);
+                    survivorCursor++;
+                    nextSiblingIndex++;
+                }
             }
         }
 
