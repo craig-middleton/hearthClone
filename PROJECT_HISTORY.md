@@ -22,6 +22,7 @@ Sessions are recorded here as they were documented at the time. Sessions 15–22
 - **Session 27** — playtest of session 26's fixes, the Taunt refactor, the guard backfill, and three rounds of review. Full account below.
 - **Session 28** — full audit of `PROJECT_STATUS.md` against the source, four code fixes arising from it, and the split into STATUS + HISTORY. Full account below.
 - **Session 30** — `MinionView`/`CardView` size parity fix (Live Constraint 14), and the spell-cast animation's travel-effect + target-reaction vertical slice, confirmed via playtest. Full account below.
+- **Held-minion hold/layout investigation (2026-08-31)** — the held-view sibling-index conflict: three sequential bugs (leftmost-slot position snap, draw-order-behind-siblings, then a survivor layout-reflow regression) across two fix attempts before the final two-channel fix (pinned sibling index for position, a per-view `overrideSorting` `Canvas` for draw order) landed and was playtest-confirmed. Full account below; final state recorded in STATUS as Live Constraint 23.
 
 ---
 
@@ -139,6 +140,53 @@ Heal/buff glow (the fourth reaction type in the original ask) isn't wired at all
 **Compile verification hit Live Constraint 13 directly.** After creating `SpellAnimationSequencer.cs`, `dotnet build UI.csproj` failed with `CS0246: SpellAnimationSequencer could not be found` — not a code error, but the Unity-generated `.csproj` not yet regenerated to include the new file, because Craig's Editor window wasn't focused and hadn't reimported it. Waited ~100s with no pickup; asked Craig to focus the Editor. Once focused, the `.meta` file appeared within moments and all five assemblies built clean, confirmed both via `dotnet build` and Unity's own `Editor.log` showing no `error CS` lines.
 
 **Confirmed via playtest**: Craig wired the `SpellAnimationSequencer` component (the one manual step — same pattern as every other view reference on `EffectTester`, dragged into the Inspector, no code-side wiring) and played Fireball/Arcane Bolt against the opponent's face. Travel effect and impact flash both fired correctly.
+
+---
+
+## Held-minion hold/layout investigation (2026-08-31) — three bugs, two fix attempts, then the final two-channel fix
+
+Found via the Arcane-lethal spell-burst playtest (Next Steps 18, step 3, spell VFX plan) — the same session that wired `SpellBurstFactory.CreateArcaneBurst` into `SpellAnimationSequencer`. This is the full investigative record behind Live Constraint 23 in STATUS, which now states only the final architecture.
+
+### Bug 1 — held view snapped to the board's leftmost slot
+
+A burst rendered far to the left of its target minion's actual on-screen position. Traced to `BoardDisplay.RenderBoard`: its destroy loop skips a held child (Constraint 22), so the held child keeps its *old* sibling index, but the rebuild loop `Instantiate`s fresh views for every surviving minion as *new* children appended after it — so a minion that died mid-row ends up at sibling index 0 once its still-held view is the only survivor of the old set. `BoardPanel`/`OpponentBoardPanel` both carry a `HorizontalLayoutGroup` (and `MinionView`'s prefab a `LayoutElement`), so sibling index drives horizontal position directly — the layout group snaps the held view to the leftmost slot regardless of where it actually died. `SpellAnimationSequencer`'s position tracking (`lastKnownTargetPosition`, Constraint 16) was never the bug — it re-samples `targetView.position` live and faithfully reports wherever the view *actually* is; the view itself was silently misplaced upstream.
+
+**Not Arcane-specific** — same shared `BoardDisplay`/`MinionView` code path Fire's lethal case also goes through. Re-verified specifically for this fix: Fire's lethal case against a non-leftmost minion showed the identical leftward-snap bug, confirming it went unnoticed in the original Fire playtest (Next Steps 18 step 2) only because that test's target happened to already be in the leftmost slot (sibling index 0 is a no-op for this bug) and/or because Fire's large, chaotic burst visually masked a modest offset that Arcane's tight, deliberate swirl made obvious.
+
+**Fix attempt 1**: `MinionView.BeginHold`/`EndHold` toggled `LayoutElement.ignoreLayout` (`true` on the first hold, `false` back once the hold count returns to zero, including via the TTL-expiry path) — pulling the held view out of the `HorizontalLayoutGroup`'s control entirely, freezing it exactly where it visually sat at the moment it was held, fully decoupled from whatever reflow happened to its rebuilt siblings.
+
+**Rejected alternative, considered at the time**: restoring the held view's original sibling index (`SetSiblingIndex`) instead of excluding it via `ignoreLayout`. Rejected because a `HorizontalLayoutGroup` recalculates *every* child's position on any change to the group's children, not just the moved one, so the held view's pixel position still wasn't guaranteed stable if the surviving siblings' count/spacing changed elsewhere in the row during the hold window; layout exclusion was also considered the semantically correct behavior at the time — a dying minion should die where it stood, not snap to a recalculated layout slot mid-animation. (This reasoning was later superseded — see Bug 3 below, where staying a *counted* participant turned out to be necessary after all, just combined with a pinned rather than free-floating sibling index.)
+
+**Applies wherever else the hold mechanism reaches a layout-group-controlled panel**: `CardView`/`HandDisplay` are the next intended callers of the identical `BeginHold`/`EndHold` pattern (Constraint 15, Next Steps 17, for lift/zoom and discard-off) — confirmed (this session, `TestScene.unity`) that `HandPanel`/`OpponentHandPanel` **both also carry a `HorizontalLayoutGroup`**, so this was not a hypothetical for future work.
+
+### Bug 2 — held view drew behind its rebuilt siblings
+
+Same session, after the `ignoreLayout` fix landed: position was then confirmed correct (Fire and Arcane both re-tested against a mid-row minion), but the held view started rendering *behind* its surviving siblings instead of in front of/alongside them.
+
+**Root cause**: `ignoreLayout` only excludes the held view from the `HorizontalLayoutGroup`'s **position** math — it does nothing to sibling index, and sibling index is what independently controls **draw order** in this project's setup (`MinionView`'s prefab carried no `Canvas`/`overrideSorting` of its own at this point, so it drew purely by sibling position within `GameCanvas`, a single `Screen Space - Overlay` canvas). `RenderBoard`'s destroy loop left the held view at its *old, low* sibling index (skipped, not re-added), while the rebuild loop's `Instantiate`d survivors all landed at *new, higher* indices (`Instantiate` appends as last child) — so the held view silently drew underneath them.
+
+**Fix attempt 2**: `RenderBoard` collected held children during the destroy pass and called `SetAsLastSibling()` on each *after* the rebuild loop finished, every call — not just once at `BeginHold` — since the rebuild loop re-appended survivors with fresh sibling indices on every refresh a hold spanned, so a one-time reorder wouldn't have survived the next refresh. Position (`ignoreLayout`) and draw order (`SetAsLastSibling`) were treated as independent fixes for independent mechanisms that happened to share the same root symptom (a stale sibling index) — fixing one did not fix the other, and both were needed at the time.
+
+Both fixes were playtest-confirmed correct **in isolation** — re-tested against a mid-row exactly-lethal hit for both Fire and Arcane: burst rendered at the correct position, and rendered on top of the surviving siblings, not behind them.
+
+### Bug 3 — surviving minions reflowed during the held sequence
+
+Combining the two fixes above exposed a third bug: `ignoreLayout = true` removed the held view from the `HorizontalLayoutGroup`'s participant count entirely, not just from having its own position overridden — so with one fewer child counted, the *surviving* minions visibly reflowed/shifted into the space that would otherwise still include the held view's slot, instead of staying put during the held sequence.
+
+Investigation showed this wasn't fixable by adjusting `ignoreLayout` further — the group had to keep counting the held view for the survivors' positions to stay put at all. But that created a direct conflict with the standing draw-order fix: `SetAsLastSibling` and "stay a counted participant at the correct *relative* slot" both wanted to control the same single sibling-index value for two unrelated jobs (layout order vs. draw order), and only one could win it at a time.
+
+**Root cause, in hindsight, across all three bugs**: sibling index was being used as the sole channel for two independent concerns (board position and render order) that only coincided by accident in this project's flat `HorizontalLayoutGroup` + single `Screen Space - Overlay` canvas setup — every fix attempt that left this shared-channel assumption in place just moved the collision to a different symptom.
+
+### Final fix — two independent channels, one per concern
+
+- **Position**: `MinionView.BeginHold`/`EndHold` no longer touch `LayoutElement.ignoreLayout` at all — the held view stays a normal, counted `HorizontalLayoutGroup` participant, same as any live minion. `BoardDisplay.RenderBoard` captures each held child's sibling index *before* its destroy/instantiate pass touches the hierarchy, then — after instantiating fresh survivor views (which `Instantiate` always appends as new last children) — rebuilds the full sibling order as a merge: survivors that belonged before the held view's pinned index keep their relative order first, the held view is reinserted at exactly that pinned index, then the remaining survivors follow. This works because `MinionView`'s `LayoutElement` already carries a fixed, content-independent `PreferredWidth`/`PreferredHeight` (160×220) rather than deriving size from live text/artwork, and `BoardPanel`/`OpponentBoardPanel`'s `HorizontalLayoutGroup` has `ChildForceExpand` off with `ChildControlWidth/Height` on — so with a stable participant count, stable per-child size, and the held view restored to its original relative position, the row's total preferred width and every slot's computed position are byte-identical to the pre-death arrangement; survivors don't move at all.
+- **Draw order**: sibling index no longer has any draw-order responsibility. `MinionView` now lazily adds (or reuses) a `Canvas` component on itself and toggles `overrideSorting`/`sortingOrder` in `BeginHold`/`EndHold` (mirroring the existing lazy-`GetComponent` pattern the old `LayoutElement` reference used to follow) — this renders the held view on top of its siblings via Unity's canvas-sorting system, completely independent of where it sits in the sibling list. `RenderBoard` no longer calls `SetAsLastSibling()` anywhere.
+
+**Playtest-confirmed**: 3-minion board, exactly-lethal spell on the middle minion — both survivors' `RectTransform.anchoredPosition` logged identical across every `RenderBoard` call spanning the hold (temporary debug logging, added for verification and stripped once confirmed), held minion stayed frozen in its correct middle slot, burst rendered on top, then it disappeared cleanly with no post-death reflow glitch.
+
+**Applies to the future `CardView`/`HandDisplay` hold** (Constraint 15, Next Steps 17): `HandPanel`/`OpponentHandPanel` also carry a `HorizontalLayoutGroup`, so that implementation should use this same two-channel pattern (counted participant + pinned sibling index for position, a local `overrideSorting` `Canvas` for draw order) from the start, not `ignoreLayout`/`SetAsLastSibling`.
+
+Next Steps 18 step 3 (Arcane) is now fully complete — position, draw order, and layout stability are all playtest-confirmed with no open caveats.
 
 ---
 
