@@ -68,9 +68,11 @@ namespace HearthstoneClone.Core
 
             if (!attacker.CanAttack)
             {
-                failReason = attacker.HasSummoningSickness
-                    ? $"{attacker.MinionName} has summoning sickness and cannot attack yet."
-                    : $"{attacker.MinionName} has already attacked this turn.";
+                failReason = attacker.IsFrozen
+                    ? $"{attacker.MinionName} is frozen and cannot attack."
+                    : attacker.HasSummoningSickness
+                        ? $"{attacker.MinionName} has summoning sickness and cannot attack yet."
+                        : $"{attacker.MinionName} has already attacked this turn.";
                 return false;
             }
 

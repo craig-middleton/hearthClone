@@ -13,6 +13,8 @@ namespace HearthstoneClone.Core
         public bool HasSummoningSickness = true;
         public bool HasAttackedThisTurn = false;
         public bool HasTaunt;
+        public bool IsFrozen;
+        public bool IsNewlyFrozen;
         public Sprite Artwork;
 
         public Minion(string minionName, int attack, int health, bool hasTaunt = false, Sprite artwork = null)
@@ -31,12 +33,26 @@ namespace HearthstoneClone.Core
 
         public bool IsDead => CurrentHealth <= 0;
 
-        public bool CanAttack => !IsDead && !HasSummoningSickness && !HasAttackedThisTurn;
+        public bool CanAttack => !IsDead && !HasSummoningSickness && !HasAttackedThisTurn && !IsFrozen;
+
+        public void Freeze()
+        {
+            IsFrozen = true;
+            IsNewlyFrozen = true;
+        }
 
         public void ResetForNewTurn()
         {
             HasSummoningSickness = false;
             HasAttackedThisTurn = false;
+
+            if (IsFrozen)
+            {
+                if (IsNewlyFrozen)
+                    IsNewlyFrozen = false;
+                else
+                    IsFrozen = false;
+            }
         }
     }
 }

@@ -20,6 +20,7 @@ namespace HearthstoneClone.UI
         public Color normalColor = Color.white;
         public Color selectedColor = new Color(0.6f, 0.9f, 0.6f);
         public Color cannotAttackColor = new Color(0.45f, 0.45f, 0.45f);
+        public Color frozenColor = new Color(0.6f, 0.85f, 1f);
 
         [Header("Spell Reaction")]
         public float reactionDuration = 0.25f;
@@ -204,6 +205,10 @@ namespace HearthstoneClone.UI
             if (isSelected)
             {
                 minionBackground.color = selectedColor;
+            }
+            else if (minion.IsFrozen)
+            {
+                minionBackground.color = frozenColor;
             }
             else if (showAttackEligibility && !minion.CanAttack)
             {

@@ -2931,6 +2931,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f08b9662c75b1939cb3aaea42ad8d88e, type: 2}
   - {fileID: 11400000, guid: ec9e725f97f60d512ae193dc53a3315f, type: 2}
   - {fileID: 11400000, guid: 1aeeeba4d63facb85907ae3776bc3f08, type: 2}
+  - {fileID: 11400000, guid: cb05b18538b84a6798e0a9dbe15fc553, type: 2}
   copiesPerCard: 2
   coinCard: {fileID: 11400000, guid: 7a751756f9c443c889d8b5468911f233, type: 2}
   manualControlMode: 1
