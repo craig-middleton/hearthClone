@@ -126,6 +126,68 @@ namespace HearthstoneClone.UI
             return particles;
         }
 
+        public static ParticleSystem CreateFrostBurst(Transform parent)
+        {
+            ParticleSystem particles = CreateBase("FrostBurst", parent);
+
+            var main = particles.main;
+            main.duration = 0.9f;
+            main.loop = false;
+            // Longer than Fire's 0.5s and Arcane's 0.5s - shards should visibly hang and
+            // drift rather than vanish quickly, per the "fading sparkle" finish spec.
+            main.startLifetime = new ParticleSystem.MinMaxCurve(0.6f, 0.9f);
+            main.startSpeed = new ParticleSystem.MinMaxCurve(1.2f, 2f);
+            main.startSize = new ParticleSystem.MinMaxCurve(0.12f, 0.28f);
+            // Diamond silhouette without a custom mesh/texture asset: the renderer's default
+            // quad (no Sprite assigned, same as Fire/Arcane) reads as a square at rotation 0 -
+            // locking rotation near 45 degrees turns that same quad into a diamond, staying
+            // inside the procedural-only discipline CreateBase/ApplyUnlitMaterial already
+            // established (no new asset pipeline for a custom shard mesh).
+            main.startRotation = new ParticleSystem.MinMaxCurve(30f * Mathf.Deg2Rad, 60f * Mathf.Deg2Rad);
+            // Low, positive (downward) gravity - shards hang near their burst point and settle
+            // slightly as they fade, unlike Fire's upward drift or Arcane's zero-gravity float.
+            main.gravityModifier = 0.15f;
+            main.stopAction = ParticleSystemStopAction.Destroy;
+
+            var emission = particles.emission;
+            emission.rateOverTime = 0f;
+            emission.SetBursts(new[] { new ParticleSystem.Burst(0f, new ParticleSystem.MinMaxCurve(16f, 22f)) });
+
+            // Circle shape + no directional cone = radial burst outward in every direction,
+            // distinct from Fire's narrow upward cone.
+            var shape = particles.shape;
+            shape.shapeType = ParticleSystemShapeType.Circle;
+            shape.radius = 0.1f;
+
+            var colorOverLifetime = particles.colorOverLifetime;
+            colorOverLifetime.enabled = true;
+            Gradient gradient = new Gradient();
+            gradient.SetKeys(
+                new[]
+                {
+                    new GradientColorKey(new Color(1f, 1f, 1f), 0f),
+                    new GradientColorKey(new Color(0.75f, 0.9f, 1f), 0.5f),
+                    new GradientColorKey(new Color(0.55f, 0.78f, 1f), 1f),
+                },
+                new[]
+                {
+                    new GradientAlphaKey(1f, 0f),
+                    new GradientAlphaKey(0.9f, 0.6f),
+                    new GradientAlphaKey(0f, 1f),
+                });
+            colorOverLifetime.color = gradient;
+
+            // Shrinks further and steeper than Fire/Arcane (down to 0.1x, not 0.2x/0.3x) -
+            // the "fading sparkle" finish, shards visibly dwindling rather than just dimming.
+            var sizeOverLifetime = particles.sizeOverLifetime;
+            sizeOverLifetime.enabled = true;
+            sizeOverLifetime.size = new ParticleSystem.MinMaxCurve(1f, AnimationCurve.Linear(0f, 1f, 1f, 0.1f));
+
+            ApplyUnlitMaterial(particles);
+            particles.Play();
+            return particles;
+        }
+
         private static ParticleSystem CreateBase(string name, Transform parent)
         {
             GameObject go = new GameObject(name, typeof(ParticleSystem));

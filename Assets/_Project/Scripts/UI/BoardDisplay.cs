@@ -149,5 +149,27 @@ namespace HearthstoneClone.UI
             if (minion == null) return null;
             return minionViewTransforms.TryGetValue(minion, out Transform t) ? t : null;
         }
+
+        // Screen-space bounds of this board's panel, for board-wide effects (e.g. Blizzard's
+        // sweep) that need a region rather than a single minion's Transform. GameCorners are
+        // already screen-space pixels here, same convention CardDragResolver/SpellAnimation-
+        // Sequencer rely on elsewhere - GameCanvas is Screen Space - Overlay, so a
+        // RectTransform's world position/corners never need a camera conversion.
+        public Rect GetPanelScreenBounds()
+        {
+            if (boardPanel == null) return default;
+
+            RectTransform panelRect = boardPanel as RectTransform;
+            if (panelRect == null) return default;
+
+            Vector3[] corners = new Vector3[4];
+            panelRect.GetWorldCorners(corners);
+            // corners: [0] bottom-left, [1] top-left, [2] top-right, [3] bottom-right.
+            float xMin = corners[0].x;
+            float yMin = corners[0].y;
+            float xMax = corners[2].x;
+            float yMax = corners[2].y;
+            return new Rect(xMin, yMin, xMax - xMin, yMax - yMin);
+        }
     }
 }

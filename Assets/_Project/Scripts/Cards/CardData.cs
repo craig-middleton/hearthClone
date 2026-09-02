@@ -31,6 +31,20 @@ namespace HearthstoneClone.Cards
         Nature
     }
 
+    // Which animation shape CardDragResolver.TriggerSpellAnimation dispatches to.
+    // SingleTarget is the existing point-travel + point-burst path (PlayTravelAndReaction) -
+    // every card before Blizzard uses this, and it's the default so no existing asset needs
+    // re-serializing (Constraint 12). BoardSweep is for effects with no single target to
+    // travel to (e.g. FreezeAllEffect) - dispatches to PlayBoardSweep against the caster's
+    // opponent's board region instead. A CardData field rather than checking the effect's
+    // type, matching the existing targetRequirement/spellSchool precedent of keying UI
+    // behavior off declarative data instead of the Effects-layer class.
+    public enum SpellVisualShape
+    {
+        SingleTarget,
+        BoardSweep
+    }
+
     [CreateAssetMenu(fileName = "NewCard", menuName = "Cards/Card Data")]
     public class CardData : ScriptableObject
     {
@@ -54,5 +68,6 @@ namespace HearthstoneClone.Cards
 
         [Header("Spell Visuals")]
         public SpellSchool spellSchool;
+        public SpellVisualShape visualShape;
     }
 }

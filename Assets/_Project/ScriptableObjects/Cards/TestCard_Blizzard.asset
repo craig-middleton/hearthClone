@@ -23,3 +23,4 @@ MonoBehaviour:
   onPlayEffect: {fileID: 11400000, guid: 33fc4f8def144ccf9d94b6488ae861c1, type: 2}
   targetRequirement: 1
   spellSchool: 2
+  visualShape: 1

@@ -122,8 +122,17 @@ namespace HearthstoneClone.UI
             }
         }
 
-        // Fire and Arcane are wired up (spell VFX plan steps 2-3) - Frost/Nature fall through
-        // the switch as a deliberate no-op until their factory methods exist (step 4).
+        // STUB (board-sweep VFX plan, step 2) - proves CardDragResolver's SpellVisualShape
+        // dispatch reaches here correctly for BoardSweep cards before any real rendering
+        // (ShowAtRegion, CreateFrostSweep) is built. Step 3 replaces the log with the actual
+        // stretched-burst render test; step 4 replaces that with the real sweep.
+        public void PlayBoardSweep(Rect boardScreenBounds, SpellSchool school)
+        {
+            Debug.Log($"[BoardSweepStub] PlayBoardSweep called - school={school}, bounds={boardScreenBounds}");
+        }
+
+        // Fire, Arcane, and Frost are wired up (spell VFX plan steps 2-4) - Nature falls
+        // through the switch as a deliberate no-op until its factory method exists (step 5).
         private void PlaySchoolBurst(SpellSchool school, Vector3 screenPosition)
         {
             if (burstRenderer == null) return;
@@ -142,6 +151,9 @@ namespace HearthstoneClone.UI
                     break;
                 case SpellSchool.Arcane:
                     SpellBurstFactory.CreateArcaneBurst(spawnPoint);
+                    break;
+                case SpellSchool.Frost:
+                    SpellBurstFactory.CreateFrostBurst(spawnPoint);
                     break;
             }
         }

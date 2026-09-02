@@ -189,7 +189,7 @@ namespace HearthstoneClone.UI
             bool success = hand.PlayCard(card, context, target);
             if (success)
             {
-                TriggerSpellAnimation(card, sourcePosition, targetViewTransform);
+                TriggerSpellAnimation(card, sourcePosition, targetViewTransform, enemyBoard);
                 onAfterAction?.Invoke();
             }
         }
@@ -221,10 +221,26 @@ namespace HearthstoneClone.UI
             return null;
         }
 
-        private void TriggerSpellAnimation(CardData card, Vector3 sourcePosition, Transform targetViewTransform)
+        // enemyBoard is the acting player's opponent's BoardDisplay (see ResolveCardDrag) -
+        // only used by the BoardSweep branch below; SingleTarget cards ignore it entirely.
+        private void TriggerSpellAnimation(CardData card, Vector3 sourcePosition, Transform targetViewTransform, BoardDisplay enemyBoard)
         {
             if (spellAnimationSequencer == null) return;
             if (card.onPlayEffect == null) return;
+
+            // BoardSweep has no single target Transform to travel to - ResolveViewTransform
+            // was never the right tool for it (for a Self-target card like Blizzard it
+            // resolves to the CASTER's own face, which has no relationship to the opponent's
+            // board this effect actually acts on). Dispatches on the opponent's board region
+            // instead, derived the same actingPlayer-relative way friendlyBoard/enemyBoard
+            // already are above in ResolveCardDrag - not hardcoded to either side.
+            if (card.visualShape == SpellVisualShape.BoardSweep)
+            {
+                Rect enemyBounds = enemyBoard != null ? enemyBoard.GetPanelScreenBounds() : default;
+                spellAnimationSequencer.PlayBoardSweep(enemyBounds, card.spellSchool);
+                return;
+            }
+
             if (targetViewTransform == null) return;
 
             bool isDamage = card.onPlayEffect is DealDamageEffect;
