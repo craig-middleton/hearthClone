@@ -25,7 +25,8 @@ namespace HearthstoneClone.UI
         public float dragGhostAlpha = 0.8f;
 
         private CardData card;
-        private Action<CardData> onMulliganToggled;
+        public CardData Card => card;
+        private Action<CardView> onMulliganToggled;
         private Action<CardData, CardView> onDragBegan;
         private Action<CardData, CardView, PointerEventData> onDragEnded;
         private Func<bool> canDrag;
@@ -61,7 +62,7 @@ namespace HearthstoneClone.UI
             }
         }
 
-        public void SetCardForMulligan(CardData cardData, Action<CardData> toggleCallback)
+        public void SetCardForMulligan(CardData cardData, Action<CardView> toggleCallback)
         {
             if (cardData == null)
             {
@@ -83,7 +84,9 @@ namespace HearthstoneClone.UI
                 {
                     isSelectedForMulligan = !isSelectedForMulligan;
                     UpdateMulliganVisual();
-                    onMulliganToggled?.Invoke(card);
+                    // Pass this CardView, not `card` - two duplicate-copy slots share the same
+                    // CardData reference, so a caller keying off CardData can't tell them apart.
+                    onMulliganToggled?.Invoke(this);
                 });
             }
             else

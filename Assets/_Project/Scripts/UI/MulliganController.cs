@@ -18,7 +18,12 @@ namespace HearthstoneClone.UI
         private readonly Button confirmMulliganButton;
         private readonly Action onMulliganComplete;
 
-        private readonly HashSet<CardData> mulliganSelections = new HashSet<CardData>();
+        // Keyed by CardView instance, not CardData - two duplicate-copy slots share the same
+        // CardData reference (see PROJECT_STATUS's CardData reference-identity entry), so a
+        // HashSet<CardData> can't represent "both copies selected" and a second toggle on the
+        // duplicate silently cancels the first (Constraint 17 fixed the same class of bug for
+        // the old click-to-target pending-selection state the same way).
+        private readonly HashSet<CardView> mulliganSelections = new HashSet<CardView>();
         private readonly List<GameObject> mulliganCardObjects = new List<GameObject>();
 
         public bool MulliganComplete { get; private set; } = false;
@@ -73,15 +78,15 @@ namespace HearthstoneClone.UI
             }
         }
 
-        private void OnMulliganCardToggled(CardData card)
+        private void OnMulliganCardToggled(CardView view)
         {
-            if (mulliganSelections.Contains(card))
+            if (mulliganSelections.Contains(view))
             {
-                mulliganSelections.Remove(card);
+                mulliganSelections.Remove(view);
             }
             else
             {
-                mulliganSelections.Add(card);
+                mulliganSelections.Add(view);
             }
         }
 
@@ -89,7 +94,15 @@ namespace HearthstoneClone.UI
         {
             if (MulliganComplete) return;
 
-            playerOneHand.MulliganCards(new List<CardData>(mulliganSelections));
+            // One CardData entry per selected CardView, including repeats when both copies of
+            // a duplicate card are selected - PlayerHand.MulliganCards only needs the list to
+            // have the right count per reference, it doesn't care that two entries are equal.
+            var cardsToMulligan = new List<CardData>();
+            foreach (CardView view in mulliganSelections)
+            {
+                cardsToMulligan.Add(view.Card);
+            }
+            playerOneHand.MulliganCards(cardsToMulligan);
 
             mulliganSelections.Clear();
 
