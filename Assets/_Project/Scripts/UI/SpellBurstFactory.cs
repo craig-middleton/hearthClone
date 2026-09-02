@@ -66,6 +66,69 @@ namespace HearthstoneClone.UI
             return particles;
         }
 
+        // Board-wide sweep (Blizzard) - shares CreateFrostBurst's color/diamond-rotation/
+        // shrink-to-fade identity, but the shape/emission are built for TRAVELING across a
+        // region rather than bursting outward from one point: continuous rateOverTime (not a
+        // single Burst) so a steady stream trails the whole way, and a thin vertical Box shape
+        // (not a Circle) so particles emit along a line the caller then translates left-to-right
+        // over `duration` (see SpellAnimationSequencer.BoardSweepRoutine) - the moving Box IS
+        // the sweep; this factory only builds what emits from wherever it's currently parented.
+        public static ParticleSystem CreateFrostSweep(Transform parent, float regionHeight, float duration)
+        {
+            ParticleSystem particles = CreateBase("FrostSweep", parent);
+
+            var main = particles.main;
+            main.duration = duration;
+            main.loop = false;
+            main.startLifetime = new ParticleSystem.MinMaxCurve(0.6f, 0.9f);
+            // Slower and more radial-jitter than a directed burst - the sweep's own translation
+            // (driven by the caller moving this system's transform) supplies the actual leftward-
+            // to-rightward motion, so particles themselves only need a gentle outward drift.
+            main.startSpeed = new ParticleSystem.MinMaxCurve(0.3f, 0.6f);
+            main.startSize = new ParticleSystem.MinMaxCurve(0.12f, 0.28f);
+            main.startRotation = new ParticleSystem.MinMaxCurve(30f * Mathf.Deg2Rad, 60f * Mathf.Deg2Rad);
+            main.gravityModifier = 0.15f;
+            main.stopAction = ParticleSystemStopAction.Destroy;
+
+            var emission = particles.emission;
+            // Continuous, not a Burst - a moving Burst-only emitter would leave visible gaps
+            // between spawn points as it translates; a steady rate keeps the trail unbroken.
+            emission.rateOverTime = 40f;
+
+            var shape = particles.shape;
+            shape.shapeType = ParticleSystemShapeType.Box;
+            // Thin in X (a line, not an area) and tall enough in Y to span the full captured
+            // region height regardless of board size - the caller supplies the actual height so
+            // this always covers whatever's currently in view, never clipping top/bottom rows.
+            shape.scale = new Vector3(0.05f, Mathf.Max(0.1f, regionHeight), 1f);
+
+            var colorOverLifetime = particles.colorOverLifetime;
+            colorOverLifetime.enabled = true;
+            Gradient gradient = new Gradient();
+            gradient.SetKeys(
+                new[]
+                {
+                    new GradientColorKey(new Color(1f, 1f, 1f), 0f),
+                    new GradientColorKey(new Color(0.75f, 0.9f, 1f), 0.5f),
+                    new GradientColorKey(new Color(0.55f, 0.78f, 1f), 1f),
+                },
+                new[]
+                {
+                    new GradientAlphaKey(1f, 0f),
+                    new GradientAlphaKey(0.9f, 0.6f),
+                    new GradientAlphaKey(0f, 1f),
+                });
+            colorOverLifetime.color = gradient;
+
+            var sizeOverLifetime = particles.sizeOverLifetime;
+            sizeOverLifetime.enabled = true;
+            sizeOverLifetime.size = new ParticleSystem.MinMaxCurve(1f, AnimationCurve.Linear(0f, 1f, 1f, 0.1f));
+
+            ApplyUnlitMaterial(particles);
+            particles.Play();
+            return particles;
+        }
+
         public static ParticleSystem CreateArcaneBurst(Transform parent)
         {
             ParticleSystem particles = CreateBase("ArcaneBurst", parent);

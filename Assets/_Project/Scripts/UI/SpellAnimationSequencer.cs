@@ -18,6 +18,9 @@ namespace HearthstoneClone.UI
         [Header("Spell VFX")]
         public UIParticleBurstRenderer burstRenderer;
 
+        [Header("Board Sweep")]
+        public float sweepDuration = 1.2f;
+
         // Takes a plain world position (not a Transform) for the source, since the CardView
         // that position was read from may already be destroyed by the time this coroutine
         // runs - HandDisplay.RenderHand rebuilds synchronously right after PlayCard. The
@@ -122,13 +125,48 @@ namespace HearthstoneClone.UI
             }
         }
 
-        // STUB (board-sweep VFX plan, step 2) - proves CardDragResolver's SpellVisualShape
-        // dispatch reaches here correctly for BoardSweep cards before any real rendering
-        // (ShowAtRegion, CreateFrostSweep) is built. Step 3 replaces the log with the actual
-        // stretched-burst render test; step 4 replaces that with the real sweep.
+        // Step 3 (unmodified CreateFrostBurst, confirmed the ShowAtRegion resize/reposition/
+        // camera-framing plumbing correctly reaches this far) is superseded by the real sweep
+        // below. Only Frost has a sweep factory today - other schools fall through as a no-op,
+        // same pattern PlaySchoolBurst already uses for schools without a burst method yet.
         public void PlayBoardSweep(Rect boardScreenBounds, SpellSchool school)
         {
-            Debug.Log($"[BoardSweepStub] PlayBoardSweep called - school={school}, bounds={boardScreenBounds}");
+            if (burstRenderer == null) return;
+            StartCoroutine(BoardSweepRoutine(boardScreenBounds, school));
+        }
+
+        private IEnumerator BoardSweepRoutine(Rect boardScreenBounds, SpellSchool school)
+        {
+            Transform spawnPoint = burstRenderer.ShowAtRegion(boardScreenBounds);
+            float halfWidth = burstRenderer.LastRegionWorldWidth * 0.5f;
+            float regionHeight = burstRenderer.LastRegionWorldHeight;
+
+            ParticleSystem sweep = null;
+            switch (school)
+            {
+                case SpellSchool.Frost:
+                    sweep = SpellBurstFactory.CreateFrostSweep(spawnPoint, regionHeight, sweepDuration);
+                    break;
+            }
+            if (sweep == null) yield break;
+
+            // Moves the whole emitter (a thin vertical Box shape - see CreateFrostSweep) from
+            // the region's left edge to its right edge over sweepDuration, continuously
+            // emitting the whole way - this is what makes it read as a wave crossing the board
+            // rather than a burst that merely appears spanning it. The particle system's own
+            // main.duration (set to match sweepDuration in CreateFrostSweep) stops emission
+            // automatically once this loop ends; stopAction = Destroy then cleans up the
+            // GameObject once every already-emitted particle finishes fading, exactly like the
+            // point bursts already do with no explicit Destroy call needed here.
+            Transform sweepTransform = sweep.transform;
+            float elapsed = 0f;
+            while (elapsed < sweepDuration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / sweepDuration);
+                sweepTransform.localPosition = new Vector3(Mathf.Lerp(-halfWidth, halfWidth, t), 0f, 0f);
+                yield return null;
+            }
         }
 
         // Fire, Arcane, and Frost are wired up (spell VFX plan steps 2-4) - Nature falls
