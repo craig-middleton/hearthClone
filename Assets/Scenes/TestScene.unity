@@ -2933,6 +2933,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1aeeeba4d63facb85907ae3776bc3f08, type: 2}
   - {fileID: 11400000, guid: cb05b18538b84a6798e0a9dbe15fc553, type: 2}
   - {fileID: 11400000, guid: 3839b9e268c84888ba677d729fc4584d, type: 2}
+  - {fileID: 11400000, guid: 88d508afc3964f99aa3bdbb06921c7d4, type: 2}
+  - {fileID: 11400000, guid: 3fdbcd72438640a7b322716c8da57111, type: 2}
   copiesPerCard: 2
   coinCard: {fileID: 11400000, guid: 7a751756f9c443c889d8b5468911f233, type: 2}
   manualControlMode: 1

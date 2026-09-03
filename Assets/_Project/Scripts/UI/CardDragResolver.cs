@@ -163,6 +163,35 @@ namespace HearthstoneClone.UI
                     validDrop = false;
                 }
             }
+            else if (card.targetRequirement == TargetRequirement.AnyMinion)
+            {
+                if (hitMinionView != null)
+                {
+                    target = new Target(hitMinionView.Minion);
+                    validDrop = true;
+                }
+                else
+                {
+                    validDrop = false;
+                }
+            }
+            else if (card.targetRequirement == TargetRequirement.Friendly)
+            {
+                if (hitMinionView != null && hitFriendlyBoard)
+                {
+                    target = new Target(hitMinionView.Minion);
+                    validDrop = true;
+                }
+                else if (hitFaceView != null && hitFaceView.Player == actingPlayer)
+                {
+                    target = new Target(hitFaceView.Player);
+                    validDrop = true;
+                }
+                else
+                {
+                    validDrop = false;
+                }
+            }
             else
             {
                 validDrop = hitFriendlyBoard || hitEnemyBoard || hitMinionView != null || hitFaceView != null;

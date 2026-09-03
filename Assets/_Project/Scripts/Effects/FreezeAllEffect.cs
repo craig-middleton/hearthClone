@@ -6,9 +6,8 @@ namespace HearthstoneClone.Effects
     [CreateAssetMenu(fileName = "FreezeAllEffect", menuName = "Effects/Freeze All")]
     public class FreezeAllEffect : CardEffect
     {
-        public override void Execute(GameContext context, Target target)
+        public override void Execute(GameContext context, Target target, Player caster)
         {
-            Player caster = target.TargetPlayer;
             Player opponent = context.Board.GetOpponent(caster);
 
             foreach (Minion minion in opponent.BoardMinions)

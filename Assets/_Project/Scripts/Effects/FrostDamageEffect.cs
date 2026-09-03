@@ -8,7 +8,7 @@ namespace HearthstoneClone.Effects
     {
         public int damageAmount = 1;
 
-        public override void Execute(GameContext context, Target target)
+        public override void Execute(GameContext context, Target target, Player caster)
         {
             target.TakeDamage(damageAmount);
             target.TargetMinion?.Freeze();

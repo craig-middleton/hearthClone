@@ -59,7 +59,33 @@ namespace HearthstoneClone.AI
                     Target target = null;
                     if (card.onPlayEffect != null)
                     {
-                        target = card.targetRequirement == TargetRequirement.Self ? new Target(aiPlayer) : new Target(opponent);
+                        if (card.targetRequirement == TargetRequirement.Self)
+                        {
+                            target = new Target(aiPlayer);
+                        }
+                        else if (card.targetRequirement == TargetRequirement.AnyMinion)
+                        {
+                            // No friendly minion to buff - skip this card rather than burning
+                            // mana on a play whose target ends up null (GrowthEffect no-ops
+                            // without a Minion target, same guard as a human dropping it on a
+                            // face - see GrowthEffect.Execute).
+                            if (aiPlayer.BoardMinions.Count == 0) continue;
+                            target = new Target(aiPlayer.BoardMinions[0]);
+                        }
+                        else if (card.targetRequirement == TargetRequirement.Friendly)
+                        {
+                            // A valid Friendly target always exists (the caster's own face, if
+                            // nothing else), so this never actually skips today - but prefers a
+                            // friendly minion over the AI's own face, matching AnyMinion's
+                            // preference above.
+                            target = aiPlayer.BoardMinions.Count > 0
+                                ? new Target(aiPlayer.BoardMinions[0])
+                                : new Target(aiPlayer);
+                        }
+                        else
+                        {
+                            target = new Target(opponent);
+                        }
                     }
 
                     if (aiHand.PlayCard(card, context, target))

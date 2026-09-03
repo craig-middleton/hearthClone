@@ -5,6 +5,6 @@ namespace HearthstoneClone.Effects
 {
     public abstract class CardEffect : ScriptableObject
     {
-        public abstract void Execute(GameContext context, Target target);
+        public abstract void Execute(GameContext context, Target target, Player caster);
     }
 }

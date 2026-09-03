@@ -8,7 +8,7 @@ namespace HearthstoneClone.Effects
     {
         public int manaAmount = 1;
 
-        public override void Execute(GameContext context, Target target)
+        public override void Execute(GameContext context, Target target, Player caster)
         {
             target.GainMana(manaAmount);
             Debug.Log($"Gained {manaAmount} mana.");

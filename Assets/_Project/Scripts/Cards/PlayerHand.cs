@@ -131,7 +131,7 @@ namespace HearthstoneClone.Cards
 
             if (card.onPlayEffect != null && effectTarget != null)
             {
-                card.onPlayEffect.Execute(context, effectTarget);
+                card.onPlayEffect.Execute(context, effectTarget, CorePlayer);
             }
             else if (card.onPlayEffect != null)
             {

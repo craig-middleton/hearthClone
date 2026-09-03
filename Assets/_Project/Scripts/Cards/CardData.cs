@@ -11,11 +11,19 @@ namespace HearthstoneClone.Cards
 
     // Controls how a dropped card resolves in EffectTester.ResolveCardDrag: None/Self play
     // immediately on any recognized drop zone, Any requires dropping on a MinionView/FaceView.
+    // AnyMinion requires dropping on a MinionView specifically (either side) - a FaceView drop
+    // is invalid, for effects (e.g. GrowthEffect) with no sensible behavior when cast on a face.
+    // Friendly requires a friendly-side MinionView or the caster's own FaceView - an enemy
+    // minion or the opponent's face is an invalid drop. This is a UX nicety only (e.g.
+    // HealEffect); the actual "never heal the opponent" rule is enforced in HealEffect.Execute
+    // itself, since AIController bypasses this drag-resolver path entirely.
     public enum TargetRequirement
     {
         None,
         Self,
-        Any
+        Any,
+        AnyMinion,
+        Friendly
     }
 
     // Which spell-VFX burst SpellAnimationSequencer plays on impact (SpellBurstFactory).
