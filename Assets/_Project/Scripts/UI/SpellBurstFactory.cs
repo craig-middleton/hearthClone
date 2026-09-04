@@ -251,6 +251,67 @@ namespace HearthstoneClone.UI
             return particles;
         }
 
+        public static ParticleSystem CreateNatureBurst(Transform parent)
+        {
+            ParticleSystem particles = CreateBase("NatureBurst", parent);
+
+            var main = particles.main;
+            main.duration = 0.9f;
+            main.loop = false;
+            // Longest lifetime and lowest speed of the four schools - Nature is the "softest"
+            // burst, particles should drift into place rather than fly outward.
+            main.startLifetime = new ParticleSystem.MinMaxCurve(0.7f, 1f);
+            main.startSpeed = new ParticleSystem.MinMaxCurve(0.3f, 0.6f);
+            main.startSize = new ParticleSystem.MinMaxCurve(0.15f, 0.3f);
+            main.startRotation = new ParticleSystem.MinMaxCurve(0f, 360f * Mathf.Deg2Rad);
+            // Positive gravity (unlike Fire's negative/upward or Arcane's zero) - leaves/spores
+            // settle downward, the opposite drift direction from Fire's embers.
+            main.gravityModifier = 0.25f;
+            main.stopAction = ParticleSystemStopAction.Destroy;
+
+            var emission = particles.emission;
+            emission.rateOverTime = 0f;
+            emission.SetBursts(new[] { new ParticleSystem.Burst(0f, new ParticleSystem.MinMaxCurve(14f, 20f)) });
+
+            var shape = particles.shape;
+            shape.shapeType = ParticleSystemShapeType.Circle;
+            shape.radius = 0.15f;
+
+            // Gentle sideways sway rather than Arcane's stronger curling turbulence - low
+            // strength/frequency so it reads as a light drift, not a swirl.
+            var noise = particles.noise;
+            noise.enabled = true;
+            noise.strength = 0.4f;
+            noise.frequency = 0.3f;
+            noise.scrollSpeed = 0.5f;
+
+            var colorOverLifetime = particles.colorOverLifetime;
+            colorOverLifetime.enabled = true;
+            Gradient gradient = new Gradient();
+            gradient.SetKeys(
+                new[]
+                {
+                    new GradientColorKey(new Color(0.8f, 1f, 0.5f), 0f),
+                    new GradientColorKey(new Color(0.45f, 0.8f, 0.25f), 0.5f),
+                    new GradientColorKey(new Color(0.2f, 0.5f, 0.15f), 1f),
+                },
+                new[]
+                {
+                    new GradientAlphaKey(1f, 0f),
+                    new GradientAlphaKey(0.85f, 0.6f),
+                    new GradientAlphaKey(0f, 1f),
+                });
+            colorOverLifetime.color = gradient;
+
+            var sizeOverLifetime = particles.sizeOverLifetime;
+            sizeOverLifetime.enabled = true;
+            sizeOverLifetime.size = new ParticleSystem.MinMaxCurve(1f, AnimationCurve.Linear(0f, 1f, 1f, 0.25f));
+
+            ApplyUnlitMaterial(particles);
+            particles.Play();
+            return particles;
+        }
+
         private static ParticleSystem CreateBase(string name, Transform parent)
         {
             GameObject go = new GameObject(name, typeof(ParticleSystem));

@@ -2937,7 +2937,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3fdbcd72438640a7b322716c8da57111, type: 2}
   copiesPerCard: 2
   coinCard: {fileID: 11400000, guid: 7a751756f9c443c889d8b5468911f233, type: 2}
-  manualControlMode: 1
+  manualControlMode: 0
   handDisplay: {fileID: 1075946670}
   opponentHandDisplay: {fileID: 643822025}
   boardDisplay: {fileID: 1406536911}
@@ -3112,6 +3112,7 @@ MonoBehaviour:
   projectileColor: {r: 1, g: 1, b: 1, a: 1}
   projectileSize: {x: 24, y: 24}
   burstRenderer: {fileID: 526393213}
+  sweepDuration: 1.2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
