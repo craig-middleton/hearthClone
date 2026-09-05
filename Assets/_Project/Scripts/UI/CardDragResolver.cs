@@ -74,7 +74,7 @@ namespace HearthstoneClone.UI
             this.onAfterAction = onAfterAction;
         }
 
-        public void OnCardDragBegan(CardData card, CardView cardView)
+        public void OnCardDragBegan(CardInstance card, CardView cardView)
         {
             dragInProgress = true;
         }
@@ -92,7 +92,7 @@ namespace HearthstoneClone.UI
             return !isGameOver() && isMulliganComplete() && isManualControlMode() && turnManager.CurrentPlayer == playerTwo;
         }
 
-        public void OnCardDragEnd(CardData card, CardView cardView, PointerEventData eventData)
+        public void OnCardDragEnd(CardInstance card, CardView cardView, PointerEventData eventData)
         {
             dragInProgress = false;
 
@@ -101,7 +101,7 @@ namespace HearthstoneClone.UI
             ResolveCardDrag(card, cardView, eventData, playerOne);
         }
 
-        public void OnOpponentCardDragEnd(CardData card, CardView cardView, PointerEventData eventData)
+        public void OnOpponentCardDragEnd(CardInstance card, CardView cardView, PointerEventData eventData)
         {
             dragInProgress = false;
 
@@ -118,7 +118,7 @@ namespace HearthstoneClone.UI
         // MinionView or FaceView hit; None/Self spells accept any recognized zone. Anything
         // else (empty space, the hand panel) is an invalid drop and simply does nothing - the
         // CardView itself was never touched, so there's nothing to snap back.
-        private void ResolveCardDrag(CardData card, CardView cardView, PointerEventData eventData, Player actingPlayer)
+        private void ResolveCardDrag(CardInstance card, CardView cardView, PointerEventData eventData, Player actingPlayer)
         {
             var results = new List<RaycastResult>();
             EventSystem.current.RaycastAll(eventData, results);
@@ -142,11 +142,11 @@ namespace HearthstoneClone.UI
             Target target = null;
             bool validDrop;
 
-            if (card.cardType == CardType.Minion)
+            if (card.Data.cardType == CardType.Minion)
             {
                 validDrop = hitFriendlyBoard;
             }
-            else if (card.targetRequirement == TargetRequirement.Any)
+            else if (card.Data.targetRequirement == TargetRequirement.Any)
             {
                 if (hitMinionView != null)
                 {
@@ -163,7 +163,7 @@ namespace HearthstoneClone.UI
                     validDrop = false;
                 }
             }
-            else if (card.targetRequirement == TargetRequirement.AnyMinion)
+            else if (card.Data.targetRequirement == TargetRequirement.AnyMinion)
             {
                 if (hitMinionView != null)
                 {
@@ -175,7 +175,7 @@ namespace HearthstoneClone.UI
                     validDrop = false;
                 }
             }
-            else if (card.targetRequirement == TargetRequirement.Friendly)
+            else if (card.Data.targetRequirement == TargetRequirement.Friendly)
             {
                 if (hitMinionView != null && hitFriendlyBoard)
                 {
@@ -195,7 +195,7 @@ namespace HearthstoneClone.UI
             else
             {
                 validDrop = hitFriendlyBoard || hitEnemyBoard || hitMinionView != null || hitFaceView != null;
-                if (validDrop && card.targetRequirement == TargetRequirement.Self)
+                if (validDrop && card.Data.targetRequirement == TargetRequirement.Self)
                 {
                     target = new Target(actingPlayer);
                 }
@@ -203,7 +203,7 @@ namespace HearthstoneClone.UI
 
             if (!validDrop)
             {
-                Debug.Log($"{actingPlayer.PlayerName} dropped '{card.cardName}' on an invalid zone — no action taken.");
+                Debug.Log($"{actingPlayer.PlayerName} dropped '{card.Data.cardName}' on an invalid zone — no action taken.");
                 return;
             }
 
@@ -252,10 +252,10 @@ namespace HearthstoneClone.UI
 
         // enemyBoard is the acting player's opponent's BoardDisplay (see ResolveCardDrag) -
         // only used by the BoardSweep branch below; SingleTarget cards ignore it entirely.
-        private void TriggerSpellAnimation(CardData card, Vector3 sourcePosition, Transform targetViewTransform, BoardDisplay enemyBoard)
+        private void TriggerSpellAnimation(CardInstance card, Vector3 sourcePosition, Transform targetViewTransform, BoardDisplay enemyBoard)
         {
             if (spellAnimationSequencer == null) return;
-            if (card.onPlayEffect == null) return;
+            if (card.Data.onPlayEffect == null) return;
 
             // BoardSweep has no single target Transform to travel to - ResolveViewTransform
             // was never the right tool for it (for a Self-target card like Blizzard it
@@ -263,17 +263,17 @@ namespace HearthstoneClone.UI
             // board this effect actually acts on). Dispatches on the opponent's board region
             // instead, derived the same actingPlayer-relative way friendlyBoard/enemyBoard
             // already are above in ResolveCardDrag - not hardcoded to either side.
-            if (card.visualShape == SpellVisualShape.BoardSweep)
+            if (card.Data.visualShape == SpellVisualShape.BoardSweep)
             {
                 Rect enemyBounds = enemyBoard != null ? enemyBoard.GetPanelScreenBounds() : default;
-                spellAnimationSequencer.PlayBoardSweep(enemyBounds, card.spellSchool);
+                spellAnimationSequencer.PlayBoardSweep(enemyBounds, card.Data.spellSchool);
                 return;
             }
 
             if (targetViewTransform == null) return;
 
-            bool isDamage = card.onPlayEffect is DealDamageEffect;
-            spellAnimationSequencer.PlayTravelAndReaction(sourcePosition, targetViewTransform, isDamage, card.spellSchool);
+            bool isDamage = card.Data.onPlayEffect is DealDamageEffect;
+            spellAnimationSequencer.PlayTravelAndReaction(sourcePosition, targetViewTransform, isDamage, card.Data.spellSchool);
         }
     }
 }

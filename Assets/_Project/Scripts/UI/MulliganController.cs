@@ -18,12 +18,11 @@ namespace HearthstoneClone.UI
         private readonly Button confirmMulliganButton;
         private readonly Action onMulliganComplete;
 
-        // Keyed by CardView instance, not CardData - two duplicate-copy slots share the same
-        // CardData reference (see PROJECT_STATUS's CardData reference-identity entry), so a
-        // HashSet<CardData> can't represent "both copies selected" and a second toggle on the
-        // duplicate silently cancels the first (Constraint 17 fixed the same class of bug for
-        // the old click-to-target pending-selection state the same way).
-        private readonly HashSet<CardView> mulliganSelections = new HashSet<CardView>();
+        // Keyed by CardInstance, which now has real per-copy identity (root fix for the
+        // CardData reference-identity issue - see PROJECT_STATUS). Previously this had to key
+        // off CardView instead of CardData, since two duplicate-copy slots shared the same
+        // CardData reference and a HashSet<CardData> couldn't represent "both copies selected."
+        private readonly HashSet<CardInstance> mulliganSelections = new HashSet<CardInstance>();
         private readonly List<GameObject> mulliganCardObjects = new List<GameObject>();
 
         public bool MulliganComplete { get; private set; } = false;
@@ -60,7 +59,7 @@ namespace HearthstoneClone.UI
             }
             mulliganCardObjects.Clear();
 
-            foreach (CardData card in playerOneHand.Hand)
+            foreach (CardInstance card in playerOneHand.Hand)
             {
                 if (card == null) continue;
 
@@ -78,15 +77,15 @@ namespace HearthstoneClone.UI
             }
         }
 
-        private void OnMulliganCardToggled(CardView view)
+        private void OnMulliganCardToggled(CardInstance card)
         {
-            if (mulliganSelections.Contains(view))
+            if (mulliganSelections.Contains(card))
             {
-                mulliganSelections.Remove(view);
+                mulliganSelections.Remove(card);
             }
             else
             {
-                mulliganSelections.Add(view);
+                mulliganSelections.Add(card);
             }
         }
 
@@ -94,15 +93,7 @@ namespace HearthstoneClone.UI
         {
             if (MulliganComplete) return;
 
-            // One CardData entry per selected CardView, including repeats when both copies of
-            // a duplicate card are selected - PlayerHand.MulliganCards only needs the list to
-            // have the right count per reference, it doesn't care that two entries are equal.
-            var cardsToMulligan = new List<CardData>();
-            foreach (CardView view in mulliganSelections)
-            {
-                cardsToMulligan.Add(view.Card);
-            }
-            playerOneHand.MulliganCards(cardsToMulligan);
+            playerOneHand.MulliganCards(new List<CardInstance>(mulliganSelections));
 
             mulliganSelections.Clear();
 

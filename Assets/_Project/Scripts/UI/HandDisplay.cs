@@ -11,7 +11,7 @@ namespace HearthstoneClone.UI
         public GameObject cardViewPrefab;
         public Transform handPanel;
 
-        public void RenderHand(List<CardData> hand, Action<CardData, CardView, PointerEventData> onCardDragEnded = null, Action<CardData, CardView> onCardDragBegan = null, Func<bool> canDrag = null)
+        public void RenderHand(List<CardInstance> hand, Action<CardInstance, CardView, PointerEventData> onCardDragEnded = null, Action<CardInstance, CardView> onCardDragBegan = null, Func<bool> canDrag = null)
         {
             if (handPanel == null)
             {
@@ -31,7 +31,7 @@ namespace HearthstoneClone.UI
                 return;
             }
 
-            foreach (CardData card in hand)
+            foreach (CardInstance card in hand)
             {
                 if (card == null) continue;
 

@@ -20,14 +20,14 @@ namespace HearthstoneClone.AI
 
         public void PerformMulligan(int mulliganThreshold = 4)
         {
-            var handSnapshot = new List<CardData>(aiHand.Hand);
-            var toMulligan = new List<CardData>();
+            var handSnapshot = new List<CardInstance>(aiHand.Hand);
+            var toMulligan = new List<CardInstance>();
 
             foreach (var card in handSnapshot)
             {
                 if (card == null) continue;
 
-                if (card.manaCost >= mulliganThreshold)
+                if (card.Data.manaCost >= mulliganThreshold)
                 {
                     toMulligan.Add(card);
                 }
@@ -50,20 +50,20 @@ namespace HearthstoneClone.AI
             {
                 playedSomething = false;
 
-                foreach (var card in new List<CardData>(aiHand.Hand))
+                foreach (var card in new List<CardInstance>(aiHand.Hand))
                 {
                     if (card == null) continue;
-                    if (card.manaCost > aiPlayer.CurrentMana)
+                    if (card.Data.manaCost > aiPlayer.CurrentMana)
                         continue;
 
                     Target target = null;
-                    if (card.onPlayEffect != null)
+                    if (card.Data.onPlayEffect != null)
                     {
-                        if (card.targetRequirement == TargetRequirement.Self)
+                        if (card.Data.targetRequirement == TargetRequirement.Self)
                         {
                             target = new Target(aiPlayer);
                         }
-                        else if (card.targetRequirement == TargetRequirement.AnyMinion)
+                        else if (card.Data.targetRequirement == TargetRequirement.AnyMinion)
                         {
                             // No friendly minion to buff - skip this card rather than burning
                             // mana on a play whose target ends up null (GrowthEffect no-ops
@@ -72,7 +72,7 @@ namespace HearthstoneClone.AI
                             if (aiPlayer.BoardMinions.Count == 0) continue;
                             target = new Target(aiPlayer.BoardMinions[0]);
                         }
-                        else if (card.targetRequirement == TargetRequirement.Friendly)
+                        else if (card.Data.targetRequirement == TargetRequirement.Friendly)
                         {
                             // A valid Friendly target always exists (the caster's own face, if
                             // nothing else), so this never actually skips today - but prefers a

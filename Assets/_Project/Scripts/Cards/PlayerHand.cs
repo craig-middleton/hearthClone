@@ -6,16 +6,24 @@ namespace HearthstoneClone.Cards
     public class PlayerHand
     {
         public Player CorePlayer;
-        public List<CardData> Deck = new List<CardData>();
-        public List<CardData> Hand = new List<CardData>();
+        public List<CardInstance> Deck = new List<CardInstance>();
+        public List<CardInstance> Hand = new List<CardInstance>();
 
         private const int MaxHandSize = 10;
         private const int MaxBoardSize = 7;
 
+        // startingDeck may contain the same CardData reference multiple times (BuildDeck adds
+        // a card copiesPerCard times) - wrapping each entry in its own CardInstance here is
+        // the root fix's boundary: everything past this constructor deals in CardInstance,
+        // so two "copies" of a duplicate card are two distinct objects from this point on.
         public PlayerHand(Player corePlayer, List<CardData> startingDeck)
         {
             CorePlayer = corePlayer;
-            Deck = new List<CardData>(startingDeck);
+            Deck = new List<CardInstance>();
+            foreach (CardData card in startingDeck)
+            {
+                Deck.Add(new CardInstance(card));
+            }
         }
 
         public void DrawCard()
@@ -28,17 +36,17 @@ namespace HearthstoneClone.Cards
                 return;
             }
 
-            CardData drawn = Deck[0];
+            CardInstance drawn = Deck[0];
             Deck.RemoveAt(0);
 
             if (Hand.Count >= MaxHandSize)
             {
-                UnityEngine.Debug.Log($"{CorePlayer.PlayerName}'s hand is full — {drawn.cardName} was burned.");
+                UnityEngine.Debug.Log($"{CorePlayer.PlayerName}'s hand is full — {drawn.Data.cardName} was burned.");
                 return;
             }
 
             Hand.Add(drawn);
-            UnityEngine.Debug.Log($"{CorePlayer.PlayerName} drew {drawn.cardName}. Hand size: {Hand.Count}, Deck remaining: {Deck.Count}");
+            UnityEngine.Debug.Log($"{CorePlayer.PlayerName} drew {drawn.Data.cardName}. Hand size: {Hand.Count}, Deck remaining: {Deck.Count}");
         }
 
         public void Shuffle()
@@ -66,19 +74,19 @@ namespace HearthstoneClone.Cards
                 return;
             }
 
-            Hand.Add(card);
+            Hand.Add(new CardInstance(card));
             UnityEngine.Debug.Log($"{CorePlayer.PlayerName} gained {card.cardName}. Hand size: {Hand.Count}");
         }
 
-        public void MulliganCards(List<CardData> cards)
+        public void MulliganCards(List<CardInstance> cards)
         {
-            var setAside = new List<CardData>();
+            var setAside = new List<CardInstance>();
 
-            foreach (CardData card in cards)
+            foreach (CardInstance card in cards)
             {
                 if (!Hand.Contains(card))
                 {
-                    UnityEngine.Debug.LogWarning($"{CorePlayer.PlayerName} tried to mulligan a card not in hand: {card.cardName}");
+                    UnityEngine.Debug.LogWarning($"{CorePlayer.PlayerName} tried to mulligan a card not in hand: {card.Data.cardName}");
                     continue;
                 }
 
@@ -97,45 +105,45 @@ namespace HearthstoneClone.Cards
             UnityEngine.Debug.Log($"{CorePlayer.PlayerName} mulliganed {setAside.Count} card(s).");
         }
 
-        public bool PlayCard(CardData card, GameContext context, Target effectTarget = null)
+        public bool PlayCard(CardInstance card, GameContext context, Target effectTarget = null)
         {
             if (!Hand.Contains(card))
             {
-                UnityEngine.Debug.LogWarning($"{CorePlayer.PlayerName} tried to play a card not in hand: {card.cardName}");
+                UnityEngine.Debug.LogWarning($"{CorePlayer.PlayerName} tried to play a card not in hand: {card.Data.cardName}");
                 return false;
             }
 
-            if (CorePlayer.CurrentMana < card.manaCost)
+            if (CorePlayer.CurrentMana < card.Data.manaCost)
             {
-                UnityEngine.Debug.Log($"{CorePlayer.PlayerName} cannot play {card.cardName} - not enough mana ({CorePlayer.CurrentMana}/{card.manaCost}).");
+                UnityEngine.Debug.Log($"{CorePlayer.PlayerName} cannot play {card.Data.cardName} - not enough mana ({CorePlayer.CurrentMana}/{card.Data.manaCost}).");
                 return false;
             }
 
-            if (card.cardType == CardType.Minion && CorePlayer.BoardMinions.Count >= MaxBoardSize)
+            if (card.Data.cardType == CardType.Minion && CorePlayer.BoardMinions.Count >= MaxBoardSize)
             {
-                UnityEngine.Debug.Log($"{CorePlayer.PlayerName} cannot play {card.cardName} - board is full ({MaxBoardSize}/{MaxBoardSize}).");
+                UnityEngine.Debug.Log($"{CorePlayer.PlayerName} cannot play {card.Data.cardName} - board is full ({MaxBoardSize}/{MaxBoardSize}).");
                 return false;
             }
 
-            CorePlayer.CurrentMana -= card.manaCost;
+            CorePlayer.CurrentMana -= card.Data.manaCost;
             Hand.Remove(card);
 
-            UnityEngine.Debug.Log($"{CorePlayer.PlayerName} played {card.cardName}. Mana remaining: {CorePlayer.CurrentMana}");
+            UnityEngine.Debug.Log($"{CorePlayer.PlayerName} played {card.Data.cardName}. Mana remaining: {CorePlayer.CurrentMana}");
 
-            if (card.cardType == CardType.Minion)
+            if (card.Data.cardType == CardType.Minion)
             {
-                var minion = new Minion(card.cardName, card.attack, card.health, card.hasTaunt, card.artwork);
+                var minion = new Minion(card.Data.cardName, card.Data.attack, card.Data.health, card.Data.hasTaunt, card.Data.artwork);
                 CorePlayer.BoardMinions.Add(minion);
                 UnityEngine.Debug.Log($"{minion.MinionName} summoned to {CorePlayer.PlayerName}'s board.");
             }
 
-            if (card.onPlayEffect != null && effectTarget != null)
+            if (card.Data.onPlayEffect != null && effectTarget != null)
             {
-                card.onPlayEffect.Execute(context, effectTarget, CorePlayer);
+                card.Data.onPlayEffect.Execute(context, effectTarget, CorePlayer);
             }
-            else if (card.onPlayEffect != null)
+            else if (card.Data.onPlayEffect != null)
             {
-                UnityEngine.Debug.LogWarning($"{card.cardName} has an onPlayEffect but no target was provided — effect was skipped.");
+                UnityEngine.Debug.LogWarning($"{card.Data.cardName} has an onPlayEffect but no target was provided — effect was skipped.");
             }
 
             return true;

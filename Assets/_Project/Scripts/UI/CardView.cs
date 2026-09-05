@@ -24,11 +24,11 @@ namespace HearthstoneClone.UI
         [Header("Drag Visuals")]
         public float dragGhostAlpha = 0.8f;
 
-        private CardData card;
-        public CardData Card => card;
-        private Action<CardView> onMulliganToggled;
-        private Action<CardData, CardView> onDragBegan;
-        private Action<CardData, CardView, PointerEventData> onDragEnded;
+        private CardInstance card;
+        public CardInstance Card => card;
+        private Action<CardInstance> onMulliganToggled;
+        private Action<CardInstance, CardView> onDragBegan;
+        private Action<CardInstance, CardView, PointerEventData> onDragEnded;
         private Func<bool> canDrag;
         private bool isSelectedForMulligan;
 
@@ -41,7 +41,7 @@ namespace HearthstoneClone.UI
         // canDragPredicate gates drag INITIATION (e.g. "is it this player's turn"), separate
         // from drop resolution's own eligibility check - an ineligible card shouldn't even
         // spawn a ghost when picked up.
-        public void SetCard(CardData cardData, Action<CardData, CardView, PointerEventData> dragEndedCallback = null, Action<CardData, CardView> dragBeganCallback = null, Func<bool> canDragPredicate = null)
+        public void SetCard(CardInstance cardData, Action<CardInstance, CardView, PointerEventData> dragEndedCallback = null, Action<CardInstance, CardView> dragBeganCallback = null, Func<bool> canDragPredicate = null)
         {
             if (cardData == null)
             {
@@ -62,7 +62,7 @@ namespace HearthstoneClone.UI
             }
         }
 
-        public void SetCardForMulligan(CardData cardData, Action<CardView> toggleCallback)
+        public void SetCardForMulligan(CardInstance cardData, Action<CardInstance> toggleCallback)
         {
             if (cardData == null)
             {
@@ -84,9 +84,10 @@ namespace HearthstoneClone.UI
                 {
                     isSelectedForMulligan = !isSelectedForMulligan;
                     UpdateMulliganVisual();
-                    // Pass this CardView, not `card` - two duplicate-copy slots share the same
-                    // CardData reference, so a caller keying off CardData can't tell them apart.
-                    onMulliganToggled?.Invoke(this);
+                    // Pass the CardInstance directly - it now has real per-copy identity (root
+                    // fix for the CardData reference-identity issue), so the caller no longer
+                    // needs to key off this CardView as an identity proxy.
+                    onMulliganToggled?.Invoke(card);
                 });
             }
             else
@@ -99,7 +100,7 @@ namespace HearthstoneClone.UI
         {
             if (nameText != null)
             {
-                nameText.text = card.cardName;
+                nameText.text = card.Data.cardName;
             }
             else
             {
@@ -108,7 +109,7 @@ namespace HearthstoneClone.UI
 
             if (costText != null)
             {
-                costText.text = card.manaCost.ToString();
+                costText.text = card.Data.manaCost.ToString();
             }
             else
             {
@@ -117,8 +118,8 @@ namespace HearthstoneClone.UI
 
             if (statsText != null)
             {
-                statsText.text = card.cardType == CardType.Minion
-                    ? $"{card.attack} / {card.health}"
+                statsText.text = card.Data.cardType == CardType.Minion
+                    ? $"{card.Data.attack} / {card.Data.health}"
                     : "";
             }
             else
@@ -128,9 +129,9 @@ namespace HearthstoneClone.UI
 
             if (artworkImage != null)
             {
-                if (card.artwork != null)
+                if (card.Data.artwork != null)
                 {
-                    artworkImage.sprite = card.artwork;
+                    artworkImage.sprite = card.Data.artwork;
                     artworkImage.enabled = true;
                 }
                 else
