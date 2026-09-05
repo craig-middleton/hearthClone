@@ -37,6 +37,7 @@ namespace HearthstoneClone.UI
 
         [Header("Game Over UI")]
         public TMPro.TMP_Text gameOverText;
+        public Button playAgainButton;
 
         [Header("Board Background")]
         public Image boardBackgroundImage;
@@ -68,10 +69,107 @@ namespace HearthstoneClone.UI
             SetRandomBoardBackground();
             SetRandomMusic();
 
+            // Wired exactly ONCE here, never inside BeginNewGame(). BeginNewGame() constructs a
+            // brand new GameManager/MulliganController per game (including on restart), so if
+            // these listeners were added there too, every restart would stack another listener
+            // bound to the OLD instance on top of the new one - the old instance still holds
+            // readonly references to the previous game's Board/Player/PlayerHand, so a stacked
+            // listener would silently mutate a game nobody can see anymore. Each lambda closes
+            // over the field, not a value captured at wiring time, so it always resolves against
+            // whichever instance BeginNewGame() most recently assigned - restart just changes
+            // what the trampoline delegates to, without ever adding a second listener.
+            if (heroPowerButton != null)
+            {
+                heroPowerButton.onClick.AddListener(() => gameManager.OnHeroPowerClicked());
+            }
+
+            if (endTurnButton != null)
+            {
+                endTurnButton.onClick.AddListener(() => gameManager.OnEndTurnClicked());
+            }
+
+            if (confirmMulliganButton != null)
+            {
+                confirmMulliganButton.onClick.AddListener(() => mulliganController.OnConfirmMulliganClicked());
+            }
+
+            if (playAgainButton != null)
+            {
+                playAgainButton.onClick.AddListener(OnPlayAgainClicked);
+            }
+
+            BeginNewGame();
+        }
+
+        // Composition root: builds the entire per-game object graph from scratch (players,
+        // board, hands, AI, and all four controllers) and wires the mulligan UI to start.
+        // Called once from Start() and again from OnPlayAgainClicked() on restart - reusing
+        // this exact method rather than a separate reset path guarantees game 2 starts
+        // identically to game 1, since it's the same already-playtest-confirmed code, not a
+        // second hand-written "return to fresh state" path that could drift. Must also undo
+        // every piece of UI teardown a finished game leaves behind (mulligan panel/button
+        // hidden at confirm, game-over text/button shown at end) so a restarted game starts
+        // from the same visual state Start() does, not wherever the last game left off.
+        private void BeginNewGame()
+        {
             if (cardPool == null || cardPool.Count == 0)
             {
                 Debug.LogWarning("No cards assigned to EffectTester's Card Pool.", this);
                 return;
+            }
+
+            if (gameOverText != null)
+            {
+                gameOverText.gameObject.SetActive(false);
+            }
+
+            if (playAgainButton != null)
+            {
+                playAgainButton.gameObject.SetActive(false);
+            }
+
+            if (mulliganPanel != null)
+            {
+                mulliganPanel.gameObject.SetActive(true);
+            }
+
+            if (confirmMulliganButton != null)
+            {
+                confirmMulliganButton.gameObject.SetActive(true);
+            }
+
+            // Clears both hand panels without rendering anything into them - RenderHand(null)
+            // destroys existing children first, then returns before instantiating any new ones.
+            // Needed because handDisplay/opponentHandDisplay are the SAME persistent
+            // MonoBehaviours from the previous game and only ever tear down their rendered
+            // CardViews on their own next call - the previous game's final AfterGameAction()
+            // rendered whatever each player's hand held at the moment of victory, and nothing
+            // has called RenderHand() since. Deliberately passing null rather than the new,
+            // correct hand: HandPanel shares MulliganPanel's screen position, so rendering the
+            // (correct) new hand here would just swap "stale duplicate cards" for "correct-
+            // content duplicate cards" behind the mulligan row instead of fixing the overlap.
+            if (handDisplay != null)
+            {
+                handDisplay.RenderHand(null);
+            }
+
+            if (opponentHandDisplay != null)
+            {
+                opponentHandDisplay.RenderHand(null);
+            }
+
+            // Hidden during mulligan, shown again in OnMulliganComplete() - pre-existing gap
+            // (nothing ever hid these during mulligan, in this game or any before it), fixed
+            // here rather than left as a restart-specific patch, so a fresh game gets the same
+            // correct behaviour as every restart from one code path.
+            if (endTurnButton != null)
+            {
+                endTurnButton.gameObject.SetActive(false);
+            }
+
+            if (heroPowerButton != null)
+            {
+                heroPowerButton.gameObject.SetActive(false);
             }
 
             playerOne = new Player("Player One");
@@ -116,26 +214,34 @@ namespace HearthstoneClone.UI
             gameManager = new GameManager(
                 board, turnManager, playerOne, playerTwo,
                 playerOneHand, playerTwoHand, aiController, combatInputController,
-                gameOverText,
+                gameOverText, playAgainButton,
                 () => mulliganController.MulliganComplete, () => manualControlMode,
                 RefreshAll);
 
-            if (heroPowerButton != null)
-            {
-                heroPowerButton.onClick.AddListener(gameManager.OnHeroPowerClicked);
-            }
+            // Tears down whatever MinionViews the previous game's BoardDisplay still holds and
+            // re-renders against the now-empty BoardMinions, so a restart's mulligan screen
+            // shows an empty board instead of the just-finished game's leftover minions sitting
+            // underneath it. Needed here specifically because a restart's boardDisplay/
+            // opponentBoardDisplay are the SAME persistent MonoBehaviours from the previous
+            // game - unlike every other piece of state, they aren't rebuilt fresh, only
+            // re-rendered, and nothing else re-renders them before mulligan is shown.
+            RefreshBoardDisplay();
 
-            if (endTurnButton != null)
-            {
-                endTurnButton.onClick.AddListener(gameManager.OnEndTurnClicked);
-            }
-
-            if (gameOverText != null)
-            {
-                gameOverText.gameObject.SetActive(false);
-            }
+            // Same reasoning as RefreshBoardDisplay() above, for the same reason: faceView/
+            // opponentFaceView are persistent MonoBehaviours holding the previous game's final
+            // HP/mana text until something calls SetPlayer() again.
+            RefreshFaceDisplay();
 
             mulliganController.ShowMulliganUI();
+        }
+
+        // playAgainButton's only listener (wired once in Start()). Restart is a composition-
+        // root concern - rebuilding the whole Player/Board/Hand/controller graph - not a
+        // GameManager concern, so this calls BeginNewGame() directly rather than routing
+        // through GameManager, which has no reason to know how to reconstruct a Board.
+        private void OnPlayAgainClicked()
+        {
+            BeginNewGame();
         }
 
         private void SetRandomBoardBackground()
@@ -184,6 +290,16 @@ namespace HearthstoneClone.UI
 
         private void OnMulliganComplete()
         {
+            if (endTurnButton != null)
+            {
+                endTurnButton.gameObject.SetActive(true);
+            }
+
+            if (heroPowerButton != null)
+            {
+                heroPowerButton.gameObject.SetActive(true);
+            }
+
             Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
             RefreshAll();
         }

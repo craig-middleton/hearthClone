@@ -7,9 +7,10 @@ using HearthstoneClone.Cards;
 namespace HearthstoneClone.UI
 {
     // Owns the pre-game mulligan phase: selection UI, confirm handling, and the
-    // MulliganComplete flag every other system gates on. Constructed once in
-    // EffectTester.Start() and stays alive only so MulliganComplete remains queryable -
-    // ShowMulliganUI()/OnConfirmMulliganClicked() each run exactly once per match.
+    // MulliganComplete flag every other system gates on. Constructed once per game in
+    // EffectTester.BeginNewGame() (called from Start(), and again on restart) and stays alive
+    // only so MulliganComplete remains queryable - ShowMulliganUI()/OnConfirmMulliganClicked()
+    // each run exactly once per match.
     public class MulliganController
     {
         private readonly PlayerHand playerOneHand;
@@ -27,6 +28,12 @@ namespace HearthstoneClone.UI
 
         public bool MulliganComplete { get; private set; } = false;
 
+        // confirmMulliganButton's onClick is NOT wired here - a restart (EffectTester's
+        // BeginNewGame) constructs a new MulliganController per game, and wiring the button
+        // from inside the constructor would stack a second listener bound to the OLD instance
+        // on every restart. EffectTester.Start() wires it exactly once, as a trampoline that
+        // calls through the CURRENT mulliganController field, so restart just swaps what the
+        // trampoline delegates to instead of adding another listener.
         public MulliganController(PlayerHand playerOneHand, Transform mulliganPanel, GameObject cardViewPrefab, Button confirmMulliganButton, Action onMulliganComplete)
         {
             this.playerOneHand = playerOneHand;
@@ -34,11 +41,6 @@ namespace HearthstoneClone.UI
             this.cardViewPrefab = cardViewPrefab;
             this.confirmMulliganButton = confirmMulliganButton;
             this.onMulliganComplete = onMulliganComplete;
-
-            if (confirmMulliganButton != null)
-            {
-                confirmMulliganButton.onClick.AddListener(OnConfirmMulliganClicked);
-            }
         }
 
         public void ShowMulliganUI()
@@ -75,6 +77,18 @@ namespace HearthstoneClone.UI
                 view.SetCardForMulligan(card, OnMulliganCardToggled);
                 mulliganCardObjects.Add(cardObj);
             }
+
+            // Forces mulliganPanel's HorizontalLayoutGroup to recompute immediately rather than
+            // waiting on Unity's automatic next-frame rebuild. Needed specifically on restart:
+            // EffectTester.BeginNewGame() reactivates mulliganPanel via SetActive(true) and this
+            // method populates it with fresh cards in the same call - unlike a fresh scene load,
+            // where the panel has been active (and its layout group already settled) since
+            // before Start() ever ran. Without this, restart's mulligan cards can render
+            // squashed/overlapping until something else happens to trigger a relayout.
+            if (mulliganPanel is RectTransform mulliganRect)
+            {
+                LayoutRebuilder.ForceRebuildLayoutImmediate(mulliganRect);
+            }
         }
 
         private void OnMulliganCardToggled(CardInstance card)
@@ -89,7 +103,9 @@ namespace HearthstoneClone.UI
             }
         }
 
-        private void OnConfirmMulliganClicked()
+        // Public - EffectTester.Start() wires this as the confirmMulliganButton listener
+        // exactly once (see the constructor's comment above).
+        public void OnConfirmMulliganClicked()
         {
             if (MulliganComplete) return;
 

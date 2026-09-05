@@ -23,6 +23,7 @@ namespace HearthstoneClone.UI
         private readonly AIController aiController;
         private readonly CombatInputController combatInputController;
         private readonly TMPro.TMP_Text gameOverText;
+        private readonly UnityEngine.UI.Button playAgainButton;
         private readonly Func<bool> isMulliganComplete;
         private readonly Func<bool> isManualControlMode;
         private readonly Action onRefreshAll;
@@ -35,7 +36,7 @@ namespace HearthstoneClone.UI
             Board board, TurnManager turnManager, Player playerOne, Player playerTwo,
             PlayerHand playerOneHand, PlayerHand playerTwoHand,
             AIController aiController, CombatInputController combatInputController,
-            TMPro.TMP_Text gameOverText,
+            TMPro.TMP_Text gameOverText, UnityEngine.UI.Button playAgainButton,
             Func<bool> isMulliganComplete, Func<bool> isManualControlMode,
             Action onRefreshAll)
         {
@@ -48,6 +49,7 @@ namespace HearthstoneClone.UI
             this.aiController = aiController;
             this.combatInputController = combatInputController;
             this.gameOverText = gameOverText;
+            this.playAgainButton = playAgainButton;
             this.isMulliganComplete = isMulliganComplete;
             this.isManualControlMode = isManualControlMode;
             this.onRefreshAll = onRefreshAll;
@@ -130,11 +132,35 @@ namespace HearthstoneClone.UI
         {
             if (GameOver) return;
 
-            if (playerOne.Health <= 0)
+            bool p1Dead = playerOne.Health <= 0;
+            bool p2Dead = playerTwo.Health <= 0;
+
+            // Both evaluated before branching, so a simultaneous double-KO (e.g. mutual lethal
+            // combat damage resolved in the same AfterGameAction) is caught as a draw instead
+            // of the old first-checked-wins bias always awarding Player Two.
+            if (p1Dead && p2Dead)
+            {
+                GameOver = true;
+                Debug.Log("*** Draw! ***");
+
+                if (gameOverText != null)
+                {
+                    gameOverText.gameObject.SetActive(true);
+                    gameOverText.text = "Draw!";
+                }
+
+                if (playAgainButton != null)
+                {
+                    playAgainButton.gameObject.SetActive(true);
+                }
+                return;
+            }
+
+            if (p1Dead)
             {
                 winner = playerTwo;
             }
-            else if (playerTwo.Health <= 0)
+            else if (p2Dead)
             {
                 winner = playerOne;
             }
@@ -148,6 +174,11 @@ namespace HearthstoneClone.UI
                 {
                     gameOverText.gameObject.SetActive(true);
                     gameOverText.text = $"{winner.PlayerName} wins!";
+                }
+
+                if (playAgainButton != null)
+                {
+                    playAgainButton.gameObject.SetActive(true);
                 }
             }
         }
