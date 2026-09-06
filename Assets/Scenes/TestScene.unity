@@ -3344,7 +3344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9eb3007fbba9461ca65768cf3bf0458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UI::HearthstoneClone.UI.SpellAnimationSequencer
-  travelDuration: 0.35
+  travelDuration: 3
   travelCurve:
     serializedVersion: 2
     m_Curve:
