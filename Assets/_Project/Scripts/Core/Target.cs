@@ -33,7 +33,10 @@ namespace HearthstoneClone.Core
         {
             if (TargetPlayer != null)
             {
-                TargetPlayer.CurrentMana += amount;
+                // Capped at the same absolute ceiling TurnManager refills mana up to, so a
+                // temporary boost (e.g. The Coin) can't push CurrentMana past what the game
+                // ever allows a mana crystal count to reach.
+                TargetPlayer.CurrentMana = System.Math.Min(TargetPlayer.CurrentMana + amount, TurnManager.MaxManaCap);
             }
         }
     }

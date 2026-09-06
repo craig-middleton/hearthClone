@@ -5,7 +5,7 @@ namespace HearthstoneClone.Core
         public Board Board;
         public Player CurrentPlayer;
         public int TurnNumber = 1;
-        private const int MaxManaCap = 10;
+        public const int MaxManaCap = 10;
 
         public TurnManager(Board board)
         {

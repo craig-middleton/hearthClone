@@ -10,13 +10,19 @@ namespace HearthstoneClone.Effects
 
         public override void Execute(GameContext context, Target target, Player caster)
         {
-            // Authoritative "never heal the opponent's face" enforcement. This can't be a
-            // UI-only check (CardDragResolver) because AIController builds Target objects
-            // directly and calls PlayerHand.PlayCard without going through the drag resolver
-            // at all - this Execute() guard is the one chokepoint both paths share.
+            // Authoritative "never heal the opponent" enforcement, both face and minion. This
+            // can't be a UI-only check (CardDragResolver) because AIController builds Target
+            // objects directly and calls PlayerHand.PlayCard without going through the drag
+            // resolver at all - this Execute() guard is the one chokepoint both paths share.
             if (target.TargetPlayer != null && target.TargetPlayer != caster)
             {
                 Debug.LogWarning("HealEffect: target is the opponent's face — effect skipped.");
+                return;
+            }
+
+            if (target.TargetMinion != null && context.Board.GetOwnerOf(target.TargetMinion) != caster)
+            {
+                Debug.LogWarning("HealEffect: target is an enemy minion — effect skipped.");
                 return;
             }
 
