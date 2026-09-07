@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 2855702943664590736}
   - component: {fileID: 8525898132255636522}
   - component: {fileID: 986345657593005840}
+  - component: {fileID: -4319991247765127109}
   m_Layer: 5
   m_Name: CardView
   m_TagString: Untagged
@@ -376,6 +377,7 @@ MonoBehaviour:
   artworkImage: {fileID: 3887825572297791133}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   selectedForMulliganColor: {r: 0.4, g: 0.4, b: 0.4, a: 1}
+  dragGhostAlpha: 0.8
 --- !u!114 &8525898132255636522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,7 +417,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -440,6 +442,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-4319991247765127109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734474561267406190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 235a7990f33d007a8a77daaedbca2754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UI::HearthstoneClone.UI.CardHoverFan
 --- !u!1 &777573468502703479
 GameObject:
   m_ObjectHideFlags: 0
