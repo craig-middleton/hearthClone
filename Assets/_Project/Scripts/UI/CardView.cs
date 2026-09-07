@@ -165,6 +165,20 @@ namespace HearthstoneClone.UI
             dragGhost = Instantiate(gameObject, rootCanvas.transform);
             dragGhost.name = $"{name} (DragGhost)";
 
+            // Instantiate(original, parent) keeps the source's LOCAL rotation and scale
+            // relative to the new parent, so the clone inherits whatever HandFanLayout gave the
+            // source card - once the hand fans, an untouched ghost would drag around tilted at
+            // its slot's arc angle. Harmless before the fan existed (rotation was always
+            // identity), wrong the moment it doesn't. The ghost is a free-floating cursor
+            // follower and should read as upright and unscaled no matter where in the arc it
+            // was picked up from.
+            RectTransform ghostRect = dragGhost.transform as RectTransform;
+            if (ghostRect != null)
+            {
+                ghostRect.localRotation = Quaternion.identity;
+                ghostRect.localScale = Vector3.one;
+            }
+
             // Ghost must never be a raycast target itself, or OnEndDrag's RaycastAll would
             // just hit the ghost sitting under the pointer instead of the real drop target.
             CanvasGroup ghostGroup = dragGhost.GetComponent<CanvasGroup>();
