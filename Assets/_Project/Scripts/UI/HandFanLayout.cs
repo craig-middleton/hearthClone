@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace HearthstoneClone.UI
@@ -46,6 +47,20 @@ namespace HearthstoneClone.UI
         [Tooltip("Higher settles onto the hover target faster. Framerate-independent.")]
         public float hoverAnimationSpeed = 12f;
 
+        [Header("Neighbour Spread")]
+        [Tooltip("How far the nearest neighbours of the hovered card are pushed aside to open a gap.")]
+        public float spreadAmount = 50f;
+
+        [Tooltip("How many cards on each side of the hovered card are affected. Cards farther than this keep their plain arc slot.")]
+        public float spreadRange = 2f;
+
+        [Header("Hover Exit Hysteresis")]
+        [Tooltip("Extra margin (local rect units) added around the hovered card's current on-screen rect before an exit actually clears hover. Prevents a neighbour sliding sideways under a stationary pointer from oscillating hover on/off.")]
+        public float exitHysteresisPadding = 24f;
+
+        [Tooltip("Seconds of continuous no-hover before draw order is restored to hand order. Keeps a fast sweep across the hand from popping sibling order every frame.")]
+        public float restoreSiblingOrderDelay = 0.12f;
+
         // Copied from the caller's list rather than aliased, so nothing outside can mutate what
         // Update is iterating between frames.
         private readonly List<CardView> views = new List<CardView>();
@@ -55,6 +70,12 @@ namespace HearthstoneClone.UI
         private CardView hoveredView;
 
         private bool dragActive;
+
+        // Set when hover clears and cleared again if hover resumes before the delay elapses -
+        // this is what makes the sibling-order restore lazy (fires once the fan is settled with
+        // nothing hovered) instead of popping on every exit during a fast sweep.
+        private bool pendingSiblingRestore;
+        private float pendingSiblingRestoreTimer;
 
         // Takes the freshly instantiated views as an explicit list rather than walking this
         // transform's children on purpose: Destroy() is deferred to end-of-frame, so partway
@@ -90,7 +111,7 @@ namespace HearthstoneClone.UI
             // every draw and every card played.
             for (int i = 0; i < views.Count; i++)
             {
-                ApplyToCard(views[i], i, views.Count, snap: true);
+                ApplyToCard(views[i], i, views.Count, hoveredIndex: -1, snap: true);
             }
         }
 
@@ -106,6 +127,9 @@ namespace HearthstoneClone.UI
             if (hoveredView == view) return;
             hoveredView = view;
 
+            // Hover resumed before the lazy restore fired - cancel it so draw order stays put.
+            pendingSiblingRestore = false;
+
             // Draw order only. Deliberately NOT the nested-Canvas approach from Constraint 23:
             // a Canvas re-registers its descendants' Graphics to itself (Graphic.CacheCanvas
             // resolves to the nearest enabled Canvas ancestor) and the root GraphicRaycaster
@@ -119,12 +143,49 @@ namespace HearthstoneClone.UI
         // Ignores an exit naming a card that is no longer the hovered one: moving between two
         // adjacent cards can deliver enter for the new card before exit for the old one, and an
         // unconditional clear would drop the hover that just started.
-        public void ClearHovered(CardView view)
+        //
+        // eventData is optional (and used) hysteresis input: neighbour spread widens the hover
+        // window on the horizontal axis, so a neighbour can slide out from under a stationary
+        // pointer and fire a real exit for the hovered card even though the pointer never moved.
+        // Before honouring the exit, check whether the pointer is still inside the hovered
+        // card's CURRENT on-screen rect (already lifted/scaled/spread by Update) plus a margin -
+        // only actually clear once the pointer has left that expanded rect.
+        public void ClearHovered(CardView view, PointerEventData eventData = null)
         {
             if (hoveredView != view) return;
 
+            if (eventData != null && StillWithinExpandedRect(view, eventData))
+            {
+                return;
+            }
+
             hoveredView = null;
-            RestoreSiblingOrder();
+
+            // Lazy: don't pop draw order back to hand order on every exit. A fast sweep across
+            // the hand fires exit/enter repeatedly, and restoring immediately each time was
+            // visible as a pop; instead the fan settles for a beat with nothing hovered before
+            // draw order is restored (see Update).
+            pendingSiblingRestore = true;
+            pendingSiblingRestoreTimer = 0f;
+        }
+
+        private bool StillWithinExpandedRect(CardView view, PointerEventData eventData)
+        {
+            RectTransform rect = view.transform as RectTransform;
+            if (rect == null) return false;
+
+            Vector2 localPoint;
+            if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(rect, eventData.position, eventData.pressEventCamera, out localPoint))
+            {
+                return false;
+            }
+
+            Rect r = rect.rect;
+            r.xMin -= exitHysteresisPadding;
+            r.xMax += exitHysteresisPadding;
+            r.yMin -= exitHysteresisPadding;
+            r.yMax += exitHysteresisPadding;
+            return r.Contains(localPoint);
         }
 
         public void SetDragActive(bool active)
@@ -134,6 +195,7 @@ namespace HearthstoneClone.UI
             if (active && hoveredView != null)
             {
                 hoveredView = null;
+                pendingSiblingRestore = false;
                 RestoreSiblingOrder();
             }
         }
@@ -147,13 +209,25 @@ namespace HearthstoneClone.UI
             int n = views.Count;
             if (n == 0) return;
 
+            int hoveredIndex = hoveredView != null ? views.IndexOf(hoveredView) : -1;
+
             for (int i = 0; i < n; i++)
             {
-                ApplyToCard(views[i], i, n, snap: false);
+                ApplyToCard(views[i], i, n, hoveredIndex, snap: false);
+            }
+
+            if (pendingSiblingRestore)
+            {
+                pendingSiblingRestoreTimer += Time.deltaTime;
+                if (pendingSiblingRestoreTimer >= restoreSiblingOrderDelay)
+                {
+                    pendingSiblingRestore = false;
+                    RestoreSiblingOrder();
+                }
             }
         }
 
-        private void ApplyToCard(CardView view, int i, int n, bool snap)
+        private void ApplyToCard(CardView view, int i, int n, int hoveredIndex, bool snap)
         {
             if (view == null) return;
 
@@ -177,8 +251,22 @@ namespace HearthstoneClone.UI
             float angle = -offset * 2f * maxTiltDegrees;
             float scale = 1f;
 
-            // Hovered card only - neighbours keep their plain arc slot. Neighbour spread is
-            // step 3 and is deliberately not implemented here.
+            // Neighbour spread: push the cards near the hovered one sideways to open a gap.
+            // Falloff hits zero at spreadRange, so cards farther out keep their plain arc slot.
+            if (hoveredIndex >= 0 && i != hoveredIndex)
+            {
+                int distance = i - hoveredIndex;
+                float dir = Mathf.Sign(distance);
+                float absDistance = Mathf.Abs(distance);
+                float falloff = spreadRange > 0f ? Mathf.Clamp01(1f - absDistance / spreadRange) : 0f;
+                x += dir * spreadAmount * falloff;
+            }
+
+            // spread is already capped at maxTotalWidth regardless of hand size, so this bound
+            // does not grow with n - it is a fixed safety net, not a per-hand-size scale-down.
+            float maxX = spread * 0.5f + spreadAmount;
+            x = Mathf.Clamp(x, -maxX, maxX);
+
             if (view == hoveredView)
             {
                 y += liftHeight;

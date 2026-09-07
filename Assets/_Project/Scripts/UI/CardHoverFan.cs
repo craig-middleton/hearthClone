@@ -49,7 +49,7 @@ namespace HearthstoneClone.UI
         public void OnPointerExit(PointerEventData eventData)
         {
             if (fanLayout == null) return;
-            fanLayout.ClearHovered(cardView);
+            fanLayout.ClearHovered(cardView, eventData);
         }
 
         // CardView also implements these - ExecuteEvents delivers to every component on the
