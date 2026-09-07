@@ -325,7 +325,11 @@ namespace HearthstoneClone.UI
 
             if (opponentHandDisplay != null)
             {
-                opponentHandDisplay.RenderHand(playerTwoHand.Hand, cardDragResolver.OnOpponentCardDragEnd, cardDragResolver.OnCardDragBegan, cardDragResolver.CanPlayerTwoDrag);
+                // Face-down only here - the opponent's hand is genuinely hidden except when
+                // manualControlMode lets Craig drive Player Two by hand, mirroring
+                // CanPlayerTwoDrag's own isManualControlMode() check. Not wired on the player's
+                // own handDisplay.RenderHand call above, so that hand can never be affected.
+                opponentHandDisplay.RenderHand(playerTwoHand.Hand, cardDragResolver.OnOpponentCardDragEnd, cardDragResolver.OnCardDragBegan, cardDragResolver.CanPlayerTwoDrag, () => !manualControlMode);
             }
         }
 

@@ -11,7 +11,12 @@ namespace HearthstoneClone.UI
         public GameObject cardViewPrefab;
         public Transform handPanel;
 
-        public void RenderHand(List<CardInstance> hand, Action<CardInstance, CardView, PointerEventData> onCardDragEnded = null, Action<CardInstance, CardView> onCardDragBegan = null, Func<bool> canDrag = null)
+        // faceDown defaults null (treated as "never face-down") so the player's own HandDisplay
+        // call site is unaffected - only EffectTester's opponentHandDisplay.RenderHand call
+        // passes a predicate. Same predicate-injection pattern as canDrag: evaluated once per
+        // render rather than cached, so a manualControlMode toggle takes effect on the next
+        // natural refresh with no extra plumbing.
+        public void RenderHand(List<CardInstance> hand, Action<CardInstance, CardView, PointerEventData> onCardDragEnded = null, Action<CardInstance, CardView> onCardDragBegan = null, Func<bool> canDrag = null, Func<bool> faceDown = null)
         {
             if (handPanel == null)
             {
@@ -38,6 +43,11 @@ namespace HearthstoneClone.UI
             // picture of the hand being rendered.
             List<CardView> renderedViews = new List<CardView>();
 
+            // Evaluated once for the whole hand, not per card - every card in a given hand is
+            // either all concealed or all revealed together, matching manualControlMode's
+            // all-or-nothing effect on the opponent's hand.
+            bool isFaceDown = faceDown != null && faceDown();
+
             foreach (CardInstance card in hand)
             {
                 if (card == null) continue;
@@ -51,7 +61,7 @@ namespace HearthstoneClone.UI
                     continue;
                 }
 
-                view.SetCard(card, onCardDragEnded, onCardDragBegan, canDrag);
+                view.SetCard(card, onCardDragEnded, onCardDragBegan, canDrag, isFaceDown);
                 renderedViews.Add(view);
             }
 

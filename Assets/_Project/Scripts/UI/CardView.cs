@@ -21,6 +21,9 @@ namespace HearthstoneClone.UI
         public Color normalColor = Color.white;
         public Color selectedForMulliganColor = new Color(0.4f, 0.4f, 0.4f);
 
+        [Header("Face-Down Visuals")]
+        public Color faceDownColor = new Color(0.2f, 0.2f, 0.35f);
+
         [Header("Drag Visuals")]
         public float dragGhostAlpha = 0.8f;
 
@@ -41,7 +44,10 @@ namespace HearthstoneClone.UI
         // canDragPredicate gates drag INITIATION (e.g. "is it this player's turn"), separate
         // from drop resolution's own eligibility check - an ineligible card shouldn't even
         // spawn a ghost when picked up.
-        public void SetCard(CardInstance cardData, Action<CardInstance, CardView, PointerEventData> dragEndedCallback = null, Action<CardInstance, CardView> dragBeganCallback = null, Func<bool> canDragPredicate = null)
+        // faceDown defaults false so every pre-existing call site (the player's own hand)
+        // is unaffected - only the opponent HandDisplay call passes a faceDown predicate's
+        // result through. See HandDisplay.RenderHand.
+        public void SetCard(CardInstance cardData, Action<CardInstance, CardView, PointerEventData> dragEndedCallback = null, Action<CardInstance, CardView> dragBeganCallback = null, Func<bool> canDragPredicate = null, bool faceDown = false)
         {
             if (cardData == null)
             {
@@ -54,11 +60,36 @@ namespace HearthstoneClone.UI
             onDragBegan = dragBeganCallback;
             canDrag = canDragPredicate;
 
-            WriteCardText();
+            if (faceDown)
+            {
+                ShowFaceDown();
+            }
+            else
+            {
+                WriteCardText();
+
+                if (cardBackground != null)
+                {
+                    cardBackground.color = normalColor;
+                }
+            }
+        }
+
+        // Opponent-hand concealment: hides every readable field and swaps cardBackground to a
+        // distinct color instead of writing the real card - the hand's card COUNT is still
+        // correct (one CardView per card), but nothing about which card it is is visible.
+        // Deliberately does not touch drag wiring: canDrag already governs whether a drag can
+        // start at all (CardDragResolver.CanPlayerTwoDrag), independent of what's drawn here.
+        private void ShowFaceDown()
+        {
+            if (nameText != null) nameText.text = "";
+            if (costText != null) costText.text = "";
+            if (statsText != null) statsText.text = "";
+            if (artworkImage != null) artworkImage.enabled = false;
 
             if (cardBackground != null)
             {
-                cardBackground.color = normalColor;
+                cardBackground.color = faceDownColor;
             }
         }
 
