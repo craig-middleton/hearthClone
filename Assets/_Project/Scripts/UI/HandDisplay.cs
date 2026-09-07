@@ -11,12 +11,15 @@ namespace HearthstoneClone.UI
         public GameObject cardViewPrefab;
         public Transform handPanel;
 
-        // faceDown defaults null (treated as "never face-down") so the player's own HandDisplay
-        // call site is unaffected - only EffectTester's opponentHandDisplay.RenderHand call
-        // passes a predicate. Same predicate-injection pattern as canDrag: evaluated once per
-        // render rather than cached, so a manualControlMode toggle takes effect on the next
-        // natural refresh with no extra plumbing.
-        public void RenderHand(List<CardInstance> hand, Action<CardInstance, CardView, PointerEventData> onCardDragEnded = null, Action<CardInstance, CardView> onCardDragBegan = null, Func<bool> canDrag = null, Func<bool> faceDown = null)
+        // faceDown and fanInteractive both default null (treated as "never face-down" /
+        // "always interactive") so the player's own HandDisplay call site is unaffected - only
+        // EffectTester's opponentHandDisplay.RenderHand call passes predicates. Same
+        // predicate-injection pattern as canDrag: evaluated once per render rather than cached,
+        // so a manualControlMode toggle takes effect on the next natural refresh with no extra
+        // plumbing. faceDown and fanInteractive are independent concerns (visibility vs.
+        // interactivity) even though they may end up driven by the same underlying flag at a
+        // call site - keep both wired if that flag's meaning ever changes.
+        public void RenderHand(List<CardInstance> hand, Action<CardInstance, CardView, PointerEventData> onCardDragEnded = null, Action<CardInstance, CardView> onCardDragBegan = null, Func<bool> canDrag = null, Func<bool> faceDown = null, Func<bool> fanInteractive = null)
         {
             if (handPanel == null)
             {
@@ -72,7 +75,8 @@ namespace HearthstoneClone.UI
             HandFanLayout fanLayout = handPanel.GetComponent<HandFanLayout>();
             if (fanLayout != null)
             {
-                fanLayout.ApplyLayout(renderedViews);
+                bool isInteractive = fanInteractive == null || fanInteractive();
+                fanLayout.ApplyLayout(renderedViews, isInteractive);
             }
         }
     }

@@ -37,6 +37,13 @@ namespace HearthstoneClone.UI
         [Tooltip("Tilt of the outermost cards, in degrees. Z axis only.")]
         public float maxTiltDegrees = 12f;
 
+        [Tooltip("Mirrors the arc vertically for a panel hanging off the TOP edge instead of the bottom - centre card sits lowest, outer cards rise, tilt direction flips to match. Leave off for a bottom-hung hand.")]
+        public bool invertVertical = false;
+
+        [Header("Interaction")]
+        [Tooltip("When off, hover/lift/spread never activate - the fan renders as a static arc. Used for a hand that should be visible but not interactive (e.g. the AI's hand).")]
+        public bool interactionEnabled = true;
+
         [Header("Hover")]
         [Tooltip("How far the hovered card rises above its arc slot.")]
         public float liftHeight = 60f;
@@ -82,11 +89,13 @@ namespace HearthstoneClone.UI
         // through HandDisplay.RenderHand the panel holds BOTH the previous hand's
         // pending-destroy CardViews and the new ones. Indexing off children would fan the
         // wrong count and put every card in the wrong slot for one frame.
-        public void ApplyLayout(List<CardView> renderedViews)
+        public void ApplyLayout(List<CardView> renderedViews, bool interactive = true)
         {
             if (renderedViews == null) return;
 
             WarnIfLayoutGroupEnabled();
+
+            interactionEnabled = interactive;
 
             views.Clear();
             for (int i = 0; i < renderedViews.Count; i++)
@@ -117,6 +126,7 @@ namespace HearthstoneClone.UI
 
         public void SetHovered(CardView view)
         {
+            if (!interactionEnabled) return;
             if (view == null) return;
 
             // Cards the pointer sweeps across while a drag is in flight must not pop up under
@@ -152,6 +162,7 @@ namespace HearthstoneClone.UI
         // only actually clear once the pointer has left that expanded rect.
         public void ClearHovered(CardView view, PointerEventData eventData = null)
         {
+            if (!interactionEnabled) return;
             if (hoveredView != view) return;
 
             if (eventData != null && StillWithinExpandedRect(view, eventData))
@@ -190,6 +201,7 @@ namespace HearthstoneClone.UI
 
         public void SetDragActive(bool active)
         {
+            if (!interactionEnabled) return;
             dragActive = active;
 
             if (active && hoveredView != null)
@@ -273,6 +285,17 @@ namespace HearthstoneClone.UI
                 angle = 0f;
                 scale = Mathf.Max(0.01f, hoverScale);
             }
+
+            // Mirrors the whole vertical arc (including the lift, since it's already folded
+            // into y above) for a panel hanging off the TOP edge instead of the bottom. A pure
+            // y flip alone would curve the fan the wrong way relative to its own tilt - a
+            // reflection across a horizontal axis inverts rotation sense too, so angle flips
+            // along with y to produce a true mirror image rather than a lopsided one. x
+            // (horizontal position / neighbour-spread) is untouched - left/right ordering is
+            // identical for both panels.
+            float sign = invertVertical ? -1f : 1f;
+            y *= sign;
+            angle *= sign;
 
             Vector2 targetPosition = new Vector2(x, y);
 

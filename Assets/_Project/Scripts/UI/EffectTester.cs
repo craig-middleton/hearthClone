@@ -329,7 +329,12 @@ namespace HearthstoneClone.UI
                 // manualControlMode lets Craig drive Player Two by hand, mirroring
                 // CanPlayerTwoDrag's own isManualControlMode() check. Not wired on the player's
                 // own handDisplay.RenderHand call above, so that hand can never be affected.
-                opponentHandDisplay.RenderHand(playerTwoHand.Hand, cardDragResolver.OnOpponentCardDragEnd, cardDragResolver.OnCardDragBegan, cardDragResolver.CanPlayerTwoDrag, () => !manualControlMode);
+                //
+                // fanInteractive is hardcoded false for now (board overhaul, opponent-hand
+                // fanning step A) - the opponent fan is a static mirrored arc only. Tying it to
+                // manualControlMode, so the fan goes interactive alongside the face reveal, is
+                // step B and deliberately not done yet.
+                opponentHandDisplay.RenderHand(playerTwoHand.Hand, cardDragResolver.OnOpponentCardDragEnd, cardDragResolver.OnCardDragBegan, cardDragResolver.CanPlayerTwoDrag, () => !manualControlMode, () => false);
             }
         }
 
