@@ -330,11 +330,12 @@ namespace HearthstoneClone.UI
                 // CanPlayerTwoDrag's own isManualControlMode() check. Not wired on the player's
                 // own handDisplay.RenderHand call above, so that hand can never be affected.
                 //
-                // fanInteractive is hardcoded false for now (board overhaul, opponent-hand
-                // fanning step A) - the opponent fan is a static mirrored arc only. Tying it to
-                // manualControlMode, so the fan goes interactive alongside the face reveal, is
-                // step B and deliberately not done yet.
-                opponentHandDisplay.RenderHand(playerTwoHand.Hand, cardDragResolver.OnOpponentCardDragEnd, cardDragResolver.OnCardDragBegan, cardDragResolver.CanPlayerTwoDrag, () => !manualControlMode, () => false);
+                // faceDown and fanInteractive are two independent predicates both driven by the
+                // SAME manualControlMode flag: faceDown reads !manualControlMode (hidden unless
+                // Craig is piloting Player Two), fanInteractive reads manualControlMode (fan only
+                // goes interactive when piloting). A future edit changing one must consider
+                // whether the other still needs to change too.
+                opponentHandDisplay.RenderHand(playerTwoHand.Hand, cardDragResolver.OnOpponentCardDragEnd, cardDragResolver.OnCardDragBegan, cardDragResolver.CanPlayerTwoDrag, () => !manualControlMode, () => manualControlMode);
             }
         }
 
