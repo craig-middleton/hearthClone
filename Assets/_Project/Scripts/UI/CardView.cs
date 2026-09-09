@@ -22,7 +22,7 @@ namespace HearthstoneClone.UI
         public Color selectedForMulliganColor = new Color(0.4f, 0.4f, 0.4f);
 
         [Header("Face-Down Visuals")]
-        public Color faceDownColor = new Color(0.2f, 0.2f, 0.35f);
+        [SerializeField] private Sprite cardBackSprite;
 
         [Header("Drag Visuals")]
         public float dragGhostAlpha = 0.8f;
@@ -37,6 +37,25 @@ namespace HearthstoneClone.UI
 
         private GameObject dragGhost;
         private bool dragActive;
+
+        // Captured once, before ShowFaceDown can ever run, so the face-up path can restore
+        // cardBackground's true prefab sprite (frame/background art) instead of guessing at it
+        // with a null sprite - the first regression this fixed was exactly that guess being
+        // wrong. Deliberately NOT caching/restoring the prefab's original color alongside it:
+        // the prefab bakes cardBackground's color at a = 0.392 (a leftover value that was never
+        // visible pre-feature because the old code unconditionally overwrote it to normalColor
+        // every render) - restoring that raw cached alpha was the second regression (washed-out
+        // face-up cards). normalColor (opaque) is the correct face-up restore, same as before
+        // this feature existed.
+        private Sprite originalCardBackgroundSprite;
+
+        private void Awake()
+        {
+            if (cardBackground != null)
+            {
+                originalCardBackgroundSprite = cardBackground.sprite;
+            }
+        }
 
         // Playing a card from hand is drag-only (see CardView's IBeginDrag/IDrag/IEndDrag
         // implementation below) - button stays unwired here since click-to-play no longer
@@ -68,16 +87,21 @@ namespace HearthstoneClone.UI
             {
                 WriteCardText();
 
+                // Restores the cached prefab original sprite rather than nulling it - nulling it
+                // blanked the card's frame/background art entirely (the regression this fixed).
+                // Color is reset to normalColor (opaque), not the prefab's raw cached color -
+                // see Awake's comment for why.
                 if (cardBackground != null)
                 {
+                    cardBackground.sprite = originalCardBackgroundSprite;
                     cardBackground.color = normalColor;
                 }
             }
         }
 
-        // Opponent-hand concealment: hides every readable field and swaps cardBackground to a
-        // distinct color instead of writing the real card - the hand's card COUNT is still
-        // correct (one CardView per card), but nothing about which card it is is visible.
+        // Opponent-hand concealment: hides every readable field and swaps cardBackground to the
+        // real card-back sprite instead of writing the real card - the hand's card COUNT is
+        // still correct (one CardView per card), but nothing about which card it is is visible.
         // Deliberately does not touch drag wiring: canDrag already governs whether a drag can
         // start at all (CardDragResolver.CanPlayerTwoDrag), independent of what's drawn here.
         private void ShowFaceDown()
@@ -89,7 +113,8 @@ namespace HearthstoneClone.UI
 
             if (cardBackground != null)
             {
-                cardBackground.color = faceDownColor;
+                cardBackground.sprite = cardBackSprite;
+                cardBackground.color = Color.white;
             }
         }
 
