@@ -510,7 +510,7 @@ Every scene and prefab change in this block was made by Craig in the Inspector, 
 
 ---
 
-## Board visual overhaul — phase 3, mana crystals, steps 1–2 (2026-09-10)
+## Board visual overhaul — phase 3, mana crystals, steps 1–2, then full completion (2026-09-10)
 
 Phase 3 of the board overhaul: replacing the plain-text mana readout with a Hearthstone-style crystal row. Same "Claude writes the scripts, Craig does the Inspector wiring" split as the rest of this overhaul (see the working note above) — `FaceView.cs` was authored here and compile-verified with `dotnet build UI.csproj`; the `ManaCrystal` prefab, its art import, and the scene wiring (row placement under `PlayerFaceDisplay`, the four field assignments on the player's `FaceView`) were done by Craig in the Editor.
 
@@ -522,4 +522,18 @@ Phase 3 of the board overhaul: replacing the plain-text mana readout with a Hear
 
 **Playtest-confirmed**: fresh game shows the player's portrait with a crystal row in the bottom-right corner (Hearthstone placement, `ManaCrystalRow` parented under `PlayerFaceDisplay` so it rides `SetPlayer()`'s existing refresh) showing 1 full crystal on turn 1, matching `MaxMana`/`CurrentMana`; opponent's portrait shows no row at all; HP text, portrait idle animation, hand, drag-to-play, and mulligan all unaffected.
 
-**Left open — step 3, full mana behaviour.** The row currently reflects `MaxMana`/`CurrentMana` correctly at whatever moment `SetPlayer()` last ran, but the underlying behaviours that change those values — spending mana to play a card should empty crystals live, turn-end growth+refill (`TurnManager.StartTurnFor`) should relight/grow the row, The Coin's `GainManaEffect` should reflect immediately, and the existing 10-cap clamp (Constraint from the code-refactor audit, `Target.GainMana`) should visibly cap the row at 10 crystals — have not been individually re-verified against the new visual. The model-layer logic itself is untouched and was already correct before this phase; what's unverified is only whether every code path that changes `Player.CurrentMana`/`MaxMana` also triggers a `FaceView` refresh so the row picks it up. See `PROJECT_STATUS.md` Next Steps 19 for current state.
+Step 3 (full mana behaviour) was left open at this point — see below for its completion in the same session.
+
+---
+
+### Step 3 — full mana behaviour, playtest-confirmed, and completion
+
+What remained after steps 1–2 was verification, not new code: `BuildManaCrystalRow()` reflects `MaxMana`/`CurrentMana` correctly at whatever moment `SetPlayer()` last runs, but every behaviour that *changes* those values — spending mana to play a card, turn-end growth+refill (`TurnManager.StartTurnFor`), The Coin's `GainManaEffect`, and the existing 10-cap clamp (`Target.GainMana`, from the code-refactor audit) — needed confirming against the new visual rather than the old text readout. The underlying `Player`/`TurnManager` mana model was already correct and untouched by this phase; the only open question was whether every code path that changes `Player.CurrentMana`/`MaxMana` also triggers a `FaceView` refresh so the row picks it up.
+
+Also fixed in passing: `FaceView.SetPlayer`'s guard-log warning for a missing `healthText` still said "player name, health and mana will not render" from before step 1 stripped mana out of that text — corrected to "player name and health" now that mana rendering lives entirely in the crystal row.
+
+Separately, the scene received width/placement tuning since the step 1–2 commit: `ManaCrystalRow`'s `RectTransform` widened from `100` to `500` and repositioned (anchored bottom-right, `x: 1, y: 0`, anchored position `{603, -250}`) so a full 10-crystal row lays out cleanly at full width instead of overflowing or overlapping.
+
+**Playtest-confirmed, full gate, live game at turn 45**: console showed "Player One played Boulderfist. Mana remaining: 5" with the player at Mana 10/10 (`MaxMana` fully grown) — the crystal row showed all 10 crystals, 5 full (blue) on the left and 5 empty (white/spent) on the right, exactly matching the log, confirming spending empties crystals left-to-right in real time. Across the turns leading up to that point the row was observed growing and refilling turn over turn, and never exceeded 10 crystals even as `MaxMana` growth continued past that point — the 10-cap holds visually as well as numerically. Opponent portrait showed no crystal row throughout (the four mana-crystal fields are left unassigned on its `FaceView` instance — Constraint: same presence-of-an-Inspector-wire gate `HandDisplay` uses for `OpponentHandPanel`). 0 console errors or warnings across the session.
+
+This completes the mana-crystal work in full — text-strip, prefab, row, and behaviour — and with it, `PROJECT_STATUS.md` Next Steps 19 phase 3. Only phases 2 (health gem) and 4 (deck styling) remain open in the board visual overhaul.

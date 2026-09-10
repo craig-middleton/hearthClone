@@ -61,7 +61,7 @@ namespace HearthstoneClone.UI
             }
             else
             {
-                Debug.LogWarning("FaceView: 'healthText' is not assigned in the Inspector — player name, health and mana will not render.", this);
+                Debug.LogWarning("FaceView: 'healthText' is not assigned in the Inspector — player name and health will not render.", this);
             }
 
             if (button != null)
