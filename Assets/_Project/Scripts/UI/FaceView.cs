@@ -9,9 +9,12 @@ namespace HearthstoneClone.UI
 {
     public class FaceView : MonoBehaviour
     {
-        public TMP_Text healthText;
         public Button button;
         public Image avatarImage;
+
+        [Header("Health Gem")]
+        [SerializeField] private Image healthGemImage;
+        [SerializeField] private TMP_Text healthNumberText;
 
         // Player-only mana crystal row: left unassigned on the opponent's FaceView instance,
         // which is the gate - BuildManaCrystalRow() no-ops if either is null. Same
@@ -55,13 +58,13 @@ namespace HearthstoneClone.UI
             player = playerData;
             onClicked = clickCallback;
 
-            if (healthText != null)
+            if (healthNumberText != null)
             {
-                healthText.text = $"{player.PlayerName}: {player.Health} HP";
+                healthNumberText.text = player.Health.ToString();
             }
             else
             {
-                Debug.LogWarning("FaceView: 'healthText' is not assigned in the Inspector — player name and health will not render.", this);
+                Debug.LogWarning("FaceView: 'healthNumberText' is not assigned in the Inspector — health will not render.", this);
             }
 
             if (button != null)
