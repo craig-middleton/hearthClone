@@ -13,6 +13,16 @@ namespace HearthstoneClone.UI
         public Button button;
         public Image avatarImage;
 
+        // Player-only mana crystal row: left unassigned on the opponent's FaceView instance,
+        // which is the gate - BuildManaCrystalRow() no-ops if either is null. Same
+        // presence-of-an-Inspector-wire pattern HandDisplay already uses for OpponentHandPanel
+        // (no HandFanLayout present = feature doesn't apply, no code-level flag needed).
+        [Header("Mana Crystal Row (player only)")]
+        [SerializeField] private Transform manaCrystalRow;
+        [SerializeField] private GameObject manaCrystalPrefab;
+        [SerializeField] private Sprite manaCrystalFullSprite;
+        [SerializeField] private Sprite manaCrystalEmptySprite;
+
         [Header("Idle Animation")]
         public float breathScaleAmount = 0.03f;
         public float breathSpeed = 1.2f;
@@ -47,7 +57,7 @@ namespace HearthstoneClone.UI
 
             if (healthText != null)
             {
-                healthText.text = $"{player.PlayerName}: {player.Health} HP\nMana: {player.CurrentMana}/{player.MaxMana}";
+                healthText.text = $"{player.PlayerName}: {player.Health} HP";
             }
             else
             {
@@ -70,6 +80,35 @@ namespace HearthstoneClone.UI
                 avatarBaseScale = avatarRect.localScale;
                 avatarBasePosition = avatarRect.localPosition;
                 avatarBaseColor = avatarImage.color;
+            }
+
+            BuildManaCrystalRow();
+        }
+
+        // Rebuilds the row from scratch every call, matching HandDisplay/BoardDisplay's
+        // existing destroy-and-recreate pattern - needed anyway since the crystal COUNT changes
+        // as MaxMana grows each turn, not just which crystals are lit. No-ops on the opponent's
+        // FaceView instance, where manaCrystalRow/manaCrystalPrefab are left unassigned.
+        private void BuildManaCrystalRow()
+        {
+            if (manaCrystalRow == null || manaCrystalPrefab == null) return;
+
+            foreach (Transform child in manaCrystalRow)
+            {
+                Destroy(child.gameObject);
+            }
+
+            for (int i = 0; i < player.MaxMana; i++)
+            {
+                GameObject crystalObj = Instantiate(manaCrystalPrefab, manaCrystalRow);
+                Image crystalImage = crystalObj.GetComponent<Image>();
+                if (crystalImage == null)
+                {
+                    Debug.LogWarning("FaceView: manaCrystalPrefab has no Image component.", this);
+                    continue;
+                }
+
+                crystalImage.sprite = i < player.CurrentMana ? manaCrystalFullSprite : manaCrystalEmptySprite;
             }
         }
 

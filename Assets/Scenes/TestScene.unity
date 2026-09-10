@@ -1535,6 +1535,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &652331371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 652331372}
+  - component: {fileID: 652331373}
+  m_Layer: 5
+  m_Name: ManaCrystalRow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &652331372
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652331371}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1192946949}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: -20}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &652331373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652331371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 4
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &825844114
 GameObject:
   m_ObjectHideFlags: 0
@@ -2191,6 +2253,22 @@ PrefabInstance:
       propertyPath: avatarImage
       value: 
       objectReference: {fileID: 557865252}
+    - target: {fileID: 1946394292287716123, guid: 2d8ca07250932140c8cb2cdba5bb25e1, type: 3}
+      propertyPath: manaCrystalRow
+      value: 
+      objectReference: {fileID: 652331372}
+    - target: {fileID: 1946394292287716123, guid: 2d8ca07250932140c8cb2cdba5bb25e1, type: 3}
+      propertyPath: manaCrystalPrefab
+      value: 
+      objectReference: {fileID: 5922265873736592286, guid: be4b2a0796e0585038d4132370c077d8, type: 3}
+    - target: {fileID: 1946394292287716123, guid: 2d8ca07250932140c8cb2cdba5bb25e1, type: 3}
+      propertyPath: manaCrystalFullSprite
+      value: 
+      objectReference: {fileID: -1011283872618170520, guid: 1dad2296b595a19658f71694de93eca2, type: 3}
+    - target: {fileID: 1946394292287716123, guid: 2d8ca07250932140c8cb2cdba5bb25e1, type: 3}
+      propertyPath: manaCrystalEmptySprite
+      value: 
+      objectReference: {fileID: -495481163490941918, guid: 4506fb4781678834d881d98c78bb016e, type: 3}
     - target: {fileID: 2111308224244410405, guid: 2d8ca07250932140c8cb2cdba5bb25e1, type: 3}
       propertyPath: m_Name
       value: PlayerFaceDisplay
@@ -2309,6 +2387,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3150851211010291331, guid: 2d8ca07250932140c8cb2cdba5bb25e1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 557865251}
+    - targetCorrespondingSourceObject: {fileID: 3150851211010291331, guid: 2d8ca07250932140c8cb2cdba5bb25e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 652331372}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d8ca07250932140c8cb2cdba5bb25e1, type: 3}
 --- !u!114 &1192946945 stripped
