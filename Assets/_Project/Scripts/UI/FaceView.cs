@@ -26,6 +26,16 @@ namespace HearthstoneClone.UI
         [SerializeField] private Sprite manaCrystalFullSprite;
         [SerializeField] private Sprite manaCrystalEmptySprite;
 
+        // Player-only deck pile: same presence-of-an-Inspector-wire gate as the mana
+        // crystal row above - left unassigned on the opponent's FaceView instance, so
+        // UpdateDeckPile() no-ops there. Layers are a fixed set (not one-per-card) whose
+        // visibility steps down as a RATIO of startingDeckSize, so the pile "shrinks"
+        // without instantiating/destroying N card objects per draw.
+        [Header("Deck Pile (player only)")]
+        [SerializeField] private GameObject[] deckPileLayers;
+        [SerializeField] private TMP_Text deckCountText;
+        [SerializeField] private int startingDeckSize = 30;
+
         [Header("Idle Animation")]
         public float breathScaleAmount = 0.03f;
         public float breathSpeed = 1.2f;
@@ -47,7 +57,7 @@ namespace HearthstoneClone.UI
         private Color avatarBaseColor = Color.white;
         private Coroutine reactionRoutine;
 
-        public void SetPlayer(Player playerData, Action<Player> clickCallback)
+        public void SetPlayer(Player playerData, Action<Player> clickCallback, int deckRemaining = 0)
         {
             if (playerData == null)
             {
@@ -86,6 +96,7 @@ namespace HearthstoneClone.UI
             }
 
             BuildManaCrystalRow();
+            UpdateDeckPile(deckRemaining);
         }
 
         // Rebuilds the row from scratch every call, matching HandDisplay/BoardDisplay's
@@ -112,6 +123,28 @@ namespace HearthstoneClone.UI
                 }
 
                 crystalImage.sprite = i < player.CurrentMana ? manaCrystalFullSprite : manaCrystalEmptySprite;
+            }
+        }
+
+        // Steps deckPileLayers down as remaining crosses ratio thresholds of startingDeckSize
+        // (layer i visible while remaining > startingDeckSize * i / layerCount), so the pile
+        // reads as shrinking for any deck size without hardcoded card counts. No-ops on the
+        // opponent's FaceView instance, where deckPileLayers/deckCountText are left unassigned.
+        private void UpdateDeckPile(int remaining)
+        {
+            if (deckPileLayers == null || deckPileLayers.Length == 0 || deckCountText == null) return;
+
+            deckCountText.text = remaining.ToString();
+
+            int layerCount = deckPileLayers.Length;
+            for (int i = 0; i < layerCount; i++)
+            {
+                float threshold = startingDeckSize * (float)i / layerCount;
+                bool visible = remaining > threshold;
+                if (deckPileLayers[i] != null)
+                {
+                    deckPileLayers[i].SetActive(visible);
+                }
             }
         }
 

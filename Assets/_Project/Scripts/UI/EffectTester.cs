@@ -364,7 +364,7 @@ namespace HearthstoneClone.UI
         {
             if (faceView != null)
             {
-                faceView.SetPlayer(playerOne, combatInputController.OnFaceClicked);
+                faceView.SetPlayer(playerOne, combatInputController.OnFaceClicked, playerOneHand.Deck.Count);
             }
 
             if (opponentFaceView != null)
