@@ -34,7 +34,8 @@ namespace HearthstoneClone.UI
         [Header("Deck Pile (player only)")]
         [SerializeField] private GameObject[] deckPileLayers;
         [SerializeField] private TMP_Text deckCountText;
-        [SerializeField] private int startingDeckSize = 30;
+        // Not serialized: supplied by the owner via SetPlayer() from the real deck size at game start.
+        private int startingDeckSize = 30;
 
         [Header("Idle Animation")]
         public float breathScaleAmount = 0.03f;
@@ -57,8 +58,10 @@ namespace HearthstoneClone.UI
         private Color avatarBaseColor = Color.white;
         private Coroutine reactionRoutine;
 
-        public void SetPlayer(Player playerData, Action<Player> clickCallback, int deckRemaining = 0)
+        public void SetPlayer(Player playerData, Action<Player> clickCallback, int deckRemaining = 0, int startingDeckSize = 0)
         {
+            if (startingDeckSize > 0) this.startingDeckSize = startingDeckSize;
+
             if (playerData == null)
             {
                 Debug.LogWarning("FaceView.SetPlayer called with a null Player — skipping.", this);

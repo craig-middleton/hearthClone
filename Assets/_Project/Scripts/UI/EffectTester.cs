@@ -24,6 +24,7 @@ namespace HearthstoneClone.UI
         public Button heroPowerButton;
 
         [Header("Face UI")]
+        private int playerOneStartingDeckSize;
         public FaceView faceView;
         public FaceView opponentFaceView;
 
@@ -180,7 +181,10 @@ namespace HearthstoneClone.UI
             turnManager = new TurnManager(board);
             turnManager.StartGame();
 
-            playerOneHand = new PlayerHand(playerOne, BuildDeck(cardPool));
+            var playerOneDeck = BuildDeck(cardPool);
+            // Captured before the opening draw so the deck pile's thresholds use the true starting size.
+            playerOneStartingDeckSize = playerOneDeck.Count;
+            playerOneHand = new PlayerHand(playerOne, playerOneDeck);
             playerOneHand.Shuffle();
             playerOneHand.DrawOpeningHand(3);
 
@@ -364,7 +368,7 @@ namespace HearthstoneClone.UI
         {
             if (faceView != null)
             {
-                faceView.SetPlayer(playerOne, combatInputController.OnFaceClicked, playerOneHand.Deck.Count);
+                faceView.SetPlayer(playerOne, combatInputController.OnFaceClicked, playerOneHand.Deck.Count, playerOneStartingDeckSize);
             }
 
             if (opponentFaceView != null)
