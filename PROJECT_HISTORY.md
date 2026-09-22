@@ -30,6 +30,7 @@ Sessions are recorded here as they were documented at the time. Sessions 15–22
 - **`CardInstance` root fix and the restart/new-game feature (2026-09-06)** — `CardInstance` gives duplicate-card copies real per-instance identity, fixing the `CardData` reference-identity bug at its root instead of patching another symptom; `EffectTester.BeginNewGame()` + `playAgainButton` rebuild the full game across four build-plan steps (five stale-display bugs found and fixed — Constraint 27 — plus draw-game handling, listener-stacking safety, and in-flight-animation safety). Full account below.
 - **Post-overhaul audit — two latent bugs fixed (2026-09-23)** — the AI could spend a spell on an already-dead minion; a `TargetRequirement.None` card lost its effect for a human. `PlayerHand.PlayCard` dead-target guard + shared `CardTargeting.DefaultTarget`. Full account below.
 - **Opening rule change — Player One draws on turn 1 (2026-09-23)** — `GameManager.BeginFirstTurn()`, after both mulligans. Full account below.
+- **Post-overhaul doc pass (2026-09-23)** — STATUS corrected against the source per the audit's accuracy findings; networking inventory saved as `NETWORKING_PREP.md`. Docs only. Full account below.
 
 ---
 
@@ -609,4 +610,10 @@ A game-rule change, committed separately from the audit bug fixes so it can be r
 **Open, noted for networking**: Player Two gets The Coin *before* mulliganing, whereas Hearthstone gives it after. Harmless against the AI (its `manaCost >= 4` threshold never returns the 0-cost Coin, so the final counts match), but a human Player Two in networked play would see The Coin on their mulligan screen — needs moving after the mulligan then.
 
 **Playtest-confirmed** (38-card decks): Player One had 4 cards and 34 in the deck at the start of turn 1, with the deck pile reading 34 and all 5 layers showing; Player Two had 6 cards (including The Coin) and 33 in the deck on its first turn; Player One had 5 and 33 on turn 2 (having played nothing on turn 1). The same numbers held after Play Again.
+
+## Post-overhaul doc pass (2026-09-23)
+
+Docs only, no code change. This closes the audit's "PROJECT_STATUS.md accuracy" area. Every item was re-checked against the source (and, for the hand panels and card assets, against the scene and asset YAML) before editing, since the code had moved on since the audit (two bug fixes and the turn-1 draw rule landed in between). Corrected: the `FaceView`/`EffectTester` rows (`SetPlayer`'s fourth parameter, `startingDeckSize` fed from `playerOneStartingDeckSize` — commit `06be71a` had never been documented); the `MulliganController` row, which described the confirm-button wiring backwards (the listener-stacking trap the restart feature fixed); the `HandDisplay` row (`fanInteractive` is `() => manualControlMode`); Constraints 8, 9, 12, 18, 22, 23 and 29, plus Next Steps 14 and 17 — notably Constraints 22/23 and Next Steps 17, whose advice to copy `MinionView`'s nested-`Canvas` draw-order channel for a future hand-card hold would have broken input on interactive cards (Constraint 28); the Card Pool's Nature VFX status and its "nothing relies on a default fallback" claim (the minion assets omit `targetRequirement`); `MulliganCards`' parameter type; the avatar-anchor Known Issue; the scene path; the Verification Status closed list; and the `EffectTester` line count (dropped rather than updated, since it goes stale).
+
+The audit's networking-prep inventory (Area 3) was re-checked against the current `CardDragResolver`/`AIController`/`GameManager`/`EffectTester` and saved as `NETWORKING_PREP.md` at the repo root, with a pointer from STATUS's "How to use these files" section. It lives in its own file so STATUS doesn't grow.
 
