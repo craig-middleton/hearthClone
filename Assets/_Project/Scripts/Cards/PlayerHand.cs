@@ -125,6 +125,16 @@ namespace HearthstoneClone.Cards
                 return false;
             }
 
+            // Rejected here, before any mana is spent or the card leaves the hand - the same
+            // "validate before mutating" shape as Combat.TryAttack's dead-attacker/dead-target
+            // guards. This is the one chokepoint both the human-drag and AI paths share, so no
+            // caller can spend a card on a corpse however it built its Target.
+            if (effectTarget != null && effectTarget.TargetMinion != null && effectTarget.TargetMinion.IsDead)
+            {
+                UnityEngine.Debug.Log($"{CorePlayer.PlayerName} cannot play {card.Data.cardName} - target {effectTarget.TargetMinion.MinionName} is already dead.");
+                return false;
+            }
+
             CorePlayer.CurrentMana -= card.Data.manaCost;
             Hand.Remove(card);
 

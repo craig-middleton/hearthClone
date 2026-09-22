@@ -145,6 +145,9 @@ namespace HearthstoneClone.UI
             if (card.Data.cardType == CardType.Minion)
             {
                 validDrop = hitFriendlyBoard;
+                // A minion's onPlayEffect has no drag-chosen target (the drop only picks the
+                // board), so it gets the same shared default the AI uses.
+                if (validDrop) target = CardTargeting.DefaultTarget(card.Data, actingPlayer);
             }
             else if (card.Data.targetRequirement == TargetRequirement.Any)
             {
@@ -194,10 +197,12 @@ namespace HearthstoneClone.UI
             }
             else
             {
+                // None/Self: no chosen target, so the shared default (the caster) - the same
+                // value AIController.SelectEffectTarget uses for these requirements.
                 validDrop = hitFriendlyBoard || hitEnemyBoard || hitMinionView != null || hitFaceView != null;
-                if (validDrop && card.Data.targetRequirement == TargetRequirement.Self)
+                if (validDrop)
                 {
-                    target = new Target(actingPlayer);
+                    target = CardTargeting.DefaultTarget(card.Data, actingPlayer);
                 }
             }
 

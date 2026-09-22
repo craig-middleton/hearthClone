@@ -87,9 +87,11 @@ namespace HearthstoneClone.AI
         // both places.
         private Target SelectEffectTarget(CardData cardData, Player aiPlayer, Player opponent)
         {
-            if (cardData.targetRequirement == TargetRequirement.Self)
+            // None/Self: no chosen target - the shared default (the caster), identical to what
+            // CardDragResolver gives a human for the same card.
+            if (!CardTargeting.RequiresChosenTarget(cardData))
             {
-                return new Target(aiPlayer);
+                return CardTargeting.DefaultTarget(cardData, aiPlayer);
             }
             else if (cardData.targetRequirement == TargetRequirement.AnyMinion)
             {
@@ -97,16 +99,17 @@ namespace HearthstoneClone.AI
                 // than burning mana on a play whose target ends up null (GrowthEffect no-ops
                 // without a Minion target, same guard as a human dropping it on a face - see
                 // GrowthEffect.Execute).
-                if (aiPlayer.BoardMinions.Count == 0) return null;
-                return new Target(aiPlayer.BoardMinions[0]);
+                Minion buffTarget = FirstLivingMinion(aiPlayer);
+                return buffTarget != null ? new Target(buffTarget) : null;
             }
             else if (cardData.targetRequirement == TargetRequirement.Friendly)
             {
                 // A valid Friendly target always exists (the caster's own face, if nothing
                 // else), so this never actually skips today - but prefers a friendly minion
                 // over the AI's own face, matching AnyMinion's preference above.
-                return aiPlayer.BoardMinions.Count > 0
-                    ? new Target(aiPlayer.BoardMinions[0])
+                Minion healTarget = FirstLivingMinion(aiPlayer);
+                return healTarget != null
+                    ? new Target(healTarget)
                     : new Target(aiPlayer);
             }
             else if (cardData.targetRequirement == TargetRequirement.Any)
@@ -142,11 +145,21 @@ namespace HearthstoneClone.AI
 
             foreach (var enemyMinion in opponent.BoardMinions)
             {
-                if (enemyMinion == null) continue;
+                // A corpse (CurrentHealth <= 0) trivially satisfies the damage check below.
+                // TakeTurn only sweeps the board after its whole card loop, so a minion an
+                // earlier spell killed this turn is still in BoardMinions here.
+                if (enemyMinion == null || enemyMinion.IsDead) continue;
                 if (damageAmount >= enemyMinion.CurrentHealth) return enemyMinion;
             }
 
             return null;
+        }
+
+        // First living minion on the player's board, or null. Used by the AnyMinion/Friendly
+        // spell-targeting branches, for the same reason FindLethalDamageTarget skips corpses.
+        private static Minion FirstLivingMinion(Player player)
+        {
+            return player.BoardMinions.Find(m => m != null && !m.IsDead);
         }
 
         private void AttackPhase(Player aiPlayer, Player opponent)

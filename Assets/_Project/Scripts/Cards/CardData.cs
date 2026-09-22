@@ -1,4 +1,5 @@
 using UnityEngine;
+using HearthstoneClone.Core;
 using HearthstoneClone.Effects;
 
 namespace HearthstoneClone.Cards
@@ -9,8 +10,9 @@ namespace HearthstoneClone.Cards
         Spell
     }
 
-    // Controls how a dropped card resolves in EffectTester.ResolveCardDrag: None/Self play
-    // immediately on any recognized drop zone, Any requires dropping on a MinionView/FaceView.
+    // Controls how a dropped card resolves in CardDragResolver.ResolveCardDrag: None/Self play
+    // immediately on any recognized drop zone, with the caster as the effect's Target (see
+    // CardTargeting below). Any requires dropping on a MinionView/FaceView.
     // AnyMinion requires dropping on a MinionView specifically (either side) - a FaceView drop
     // is invalid, for effects (e.g. GrowthEffect) with no sensible behavior when cast on a face.
     // Friendly requires a friendly-side MinionView or the caster's own FaceView - an enemy
@@ -24,6 +26,33 @@ namespace HearthstoneClone.Cards
         Any,
         AnyMinion,
         Friendly
+    }
+
+    // The single source of truth for "which Target does an effect get when the player never
+    // chooses one" - shared by CardDragResolver (human) and AIController (AI) so the two paths
+    // can't drift apart again. Before this existed, a None card got a null Target from the
+    // resolver (PlayCard then spent the card and skipped the effect) but Target(opponent) from
+    // the AI.
+    //
+    // The default is the caster: an effect that acts on someone else (e.g. FreezeAllEffect)
+    // derives that from the caster itself via context.Board.GetOpponent(caster), and an effect
+    // that ignores its Target (draw a card, most battlecries) is unaffected either way. Applies
+    // to minion onPlayEffects too, whose requirement is None unless an asset says otherwise.
+    public static class CardTargeting
+    {
+        // Any/AnyMinion/Friendly need a target the player (or AI) picks - there is no sensible
+        // default for them, so DefaultTarget returns null and the caller must supply one.
+        public static bool RequiresChosenTarget(CardData card)
+        {
+            return card.targetRequirement == TargetRequirement.Any
+                || card.targetRequirement == TargetRequirement.AnyMinion
+                || card.targetRequirement == TargetRequirement.Friendly;
+        }
+
+        public static Target DefaultTarget(CardData card, Player caster)
+        {
+            return RequiresChosenTarget(card) ? null : new Target(caster);
+        }
     }
 
     // Which spell-VFX burst SpellAnimationSequencer plays on impact (SpellBurstFactory).
