@@ -116,6 +116,24 @@ namespace HearthstoneClone.UI
             AfterGameAction();
         }
 
+        // RULE CHANGE (turn-1 draw), self-contained so it can be reverted on its own: the first
+        // player draws at the start of turn 1, as in Hearthstone. Every other turn's draw still
+        // happens in OnEndTurnClicked right after turnManager.EndTurn() - this is only the one
+        // turn that has no preceding EndTurn to hang the draw off. Called once per game from
+        // EffectTester.OnMulliganComplete, i.e. after BOTH mulligans (the AI's runs inside
+        // BeginNewGame, before the mulligan UI is even shown), so the drawn card can't be
+        // mulliganed. Same draw -> log -> win-check sequence as OnEndTurnClicked's draws, via the
+        // same DrawForCurrentPlayer/PlayerHand.DrawCard path (hand-size burn, fatigue). The
+        // caller refreshes the UI afterwards.
+        public void BeginFirstTurn()
+        {
+            if (GameOver) return;
+
+            DrawForCurrentPlayer();
+            Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
+            CheckWinCondition();
+        }
+
         private void DrawForCurrentPlayer()
         {
             if (turnManager.CurrentPlayer == playerOne)

@@ -304,7 +304,10 @@ namespace HearthstoneClone.UI
                 heroPowerButton.gameObject.SetActive(true);
             }
 
-            Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
+            // RULE CHANGE (turn-1 draw): draws Player One's turn-1 card and logs the turn line.
+            // To revert, replace this call with the turn log line it absorbed:
+            // Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
+            gameManager.BeginFirstTurn();
             RefreshAll();
         }
 
