@@ -4,9 +4,11 @@ using HearthstoneClone.Core;
 namespace HearthstoneClone.Effects
 {
     [CreateAssetMenu(fileName = "DealDamageEffect", menuName = "Effects/Deal Damage")]
-    public class DealDamageEffect : CardEffect
+    public class DealDamageEffect : CardEffect, IDamageEffect
     {
         public int damageAmount = 1;
+
+        public int DamageAmount => damageAmount;
 
         public override void Execute(GameContext context, Target target, Player caster)
         {

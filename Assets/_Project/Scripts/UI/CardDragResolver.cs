@@ -277,7 +277,10 @@ namespace HearthstoneClone.UI
 
             if (targetViewTransform == null) return;
 
-            bool isDamage = card.Data.onPlayEffect is DealDamageEffect;
+            // IDamageEffect, not a concrete type - drives both the damage flash and the
+            // lethal-hit view hold in SpellAnimationSequencer, and matches what
+            // AIController.FindLethalDamageTarget treats as damage.
+            bool isDamage = card.Data.onPlayEffect is IDamageEffect;
             spellAnimationSequencer.PlayTravelAndReaction(sourcePosition, targetViewTransform, isDamage, card.Data.spellSchool);
         }
     }

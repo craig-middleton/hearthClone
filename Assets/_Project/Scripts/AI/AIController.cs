@@ -129,19 +129,14 @@ namespace HearthstoneClone.AI
             }
         }
 
-        // Returns an enemy minion that a damage-dealing onPlayEffect (DealDamageEffect or
-        // FrostDamageEffect) would kill outright, or null if none exists or the effect isn't a
-        // recognized damage type. Reads the effect's damageAmount field directly rather than
-        // simulating Execute, since both damage effect types expose the same public field name.
+        // Returns an enemy minion that a damage-dealing onPlayEffect would kill outright, or
+        // null if none exists or the effect isn't a damage effect. Classified via IDamageEffect
+        // - the same check CardDragResolver uses for the flash/hold - and reads its
+        // DamageAmount rather than simulating Execute.
         private Minion FindLethalDamageTarget(CardData cardData, Player opponent)
         {
-            int damageAmount;
-            if (cardData.onPlayEffect is DealDamageEffect dealDamage)
-                damageAmount = dealDamage.damageAmount;
-            else if (cardData.onPlayEffect is FrostDamageEffect frostDamage)
-                damageAmount = frostDamage.damageAmount;
-            else
-                return null;
+            if (!(cardData.onPlayEffect is IDamageEffect damageEffect)) return null;
+            int damageAmount = damageEffect.DamageAmount;
 
             foreach (var enemyMinion in opponent.BoardMinions)
             {

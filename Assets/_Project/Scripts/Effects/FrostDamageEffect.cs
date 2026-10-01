@@ -4,9 +4,11 @@ using HearthstoneClone.Core;
 namespace HearthstoneClone.Effects
 {
     [CreateAssetMenu(fileName = "FrostDamageEffect", menuName = "Effects/Frost Damage")]
-    public class FrostDamageEffect : CardEffect
+    public class FrostDamageEffect : CardEffect, IDamageEffect
     {
         public int damageAmount = 1;
+
+        public int DamageAmount => damageAmount;
 
         public override void Execute(GameContext context, Target target, Player caster)
         {
