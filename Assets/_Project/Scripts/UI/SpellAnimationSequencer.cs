@@ -120,6 +120,10 @@ namespace HearthstoneClone.UI
             // kill.
             if (heldMinionView != null)
             {
+                // PlayDamageReaction's flash is a coroutine hosted on this very view, so
+                // destroying the view in the same frame killed it before it rendered.
+                // Wait out the flash first - the hold's TTL already budgets reactionDuration.
+                yield return new WaitForSeconds(heldMinionView.reactionDuration);
                 heldMinionView.EndHold();
                 Destroy(heldMinionView.gameObject);
             }
