@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-12 — Unity 6.6 (`6000.6.9f1`) is installed, Craig has confirmed a Personal license in Hub, GitHub authentication/write access is verified, and system Git LFS 3.8.1 is initialized with `git lfs fsck` passing. Work continues directly on `main`; the merged development branch was deleted. The project still records `6000.5.2f1`; Editor migration and the visual overhaul are pending. Existing gameplay and its verification record below are unchanged. See HISTORY and `SETUP_UBUNTU.md` for setup details._
+_Last updated: 2026-11-12 — Project migrated in Unity Editor to 6.6 (`6000.6.9f1`), with package and URP settings updated by Unity. The Editor log contains no C# compiler errors; Craig reports the existing game works in the Editor. Legacy TextMesh Pro sample-asset serialization warnings remain. Git LFS 3.8.1 and GitHub access are verified; work continues directly on `main`. The visual overhaul is next. See HISTORY for verification details._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.
@@ -20,7 +20,7 @@ _Last updated: 2026-11-12 — Unity 6.6 (`6000.6.9f1`) is installed, Craig has c
 ## Project Goal
 Hearthstone-style card game in Unity, single-player vs AI, C# with data-driven cards/effects (ScriptableObjects). Ubuntu, Unity + VS Code, Git/GitHub with LFS for art/audio. Repo: `github.com/craig-middleton/hearthClone`.
 
-**Target Editor: Unity 6.6 (`6000.6.9f1`), installed. Project metadata still records `6000.5.2f1`; upgrade has not been run.** TextMeshPro for all UI text, never legacy `UnityEngine.UI.Text`.
+**Unity 6.6 (`6000.6.9f1`), migrated in the Editor.** TextMeshPro for all UI text, never legacy `UnityEngine.UI.Text`.
 
 ## Architecture
 - Folders under `Assets/_Project/`: Scripts, ScriptableObjects, Prefabs, Art (plus an empty `Scenes/`). The one game scene lives outside it, at `Assets/Scenes/TestScene.unity`. Cards are data-driven — they reference reusable `CardEffect` assets.

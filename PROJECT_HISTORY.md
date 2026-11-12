@@ -664,3 +664,10 @@ Found by the playtest of the `IDamageEffect` change (previous entry): a human-ca
 Craig requested that the setup commits be on `main`. The five published commits through `f39831c` were fast-forwarded onto `main`, and the now-identical `codex/hearthstone-build` branch was deleted locally and on GitHub after both tips were checked. Future significant updates go directly to `main`, as requested.
 
 Craig installed Git LFS system-wide. `git lfs version` reports 3.8.1; `git lfs install --local` initialized the working repository's hooks, and `git lfs fsck` passed. GitHub CLI remains authenticated and the working copy was clean before this documentation checkpoint. The setup guide now names `main` consistently. No gameplay, scene migration or visual changes are claimed by this checkpoint. Next: register the existing working folder in Hub and handle the Unity 6.6 upgrade with the installed Editor.
+
+
+### Unity 6.6 migration checkpoint (2026-11-12)
+
+Craig opened the working copy in Unity `6000.6.9f1`, accepted the Editor's upgrade prompt, opened `TestScene`, and reported that the existing game works in the Editor. Unity updated ProjectVersion, the manifest and package lock, URP global settings, and created ProjectAuditorSettings. The migration files are committed together without gameplay edits. JSON parsing and `git diff --check` pass.
+
+Verification: the live Editor log contains zero `error CS` messages and no `Compilation failed` message; Core, Effects, Cards, AI and UI DLLs exist in Library/ScriptAssemblies. This is source/import verification plus Craig's gameplay smoke-test report, not an independent full regression. The import log records 26 legacy serialization warnings for bundled TextMesh Pro examples/font assets; these have not been fixed by this checkpoint. No new visual-overhaul scene has been built yet.
