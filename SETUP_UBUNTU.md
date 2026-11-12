@@ -6,7 +6,7 @@ Craig will install Unity and GitHub tools himself. Target the latest stable prod
 
 1. **Install Unity yourself using the official download.**
 
-   Use [Unity's downloads](https://unity.com/download) or the [6000.6.9f1 release page](https://unity.com/releases/editor/whats-new/6000.6.9f1). Craig is handling this installation. The previously downloaded portable Hub under `outputs/UnitySetup` is optional and has not been launched or installed by this chat.
+   Use [Unity's downloads](https://unity.com/download) or the [6000.6.9f1 release page](https://unity.com/releases/editor/whats-new/6000.6.9f1). Craig is handling this installation. The previously downloaded portable Hub and its extracted files were deleted at Craig's request. Use your own Unity installation.
 
 2. **Sign in and activate your Unity license.**
 
@@ -34,7 +34,7 @@ Craig will install Unity and GitHub tools himself. Target the latest stable prod
    git lfs version
    ```
 
-   Each command should print a version. Portable copies previously prepared under `outputs/DevTools/bin` are optional temporary tools used by this chat. They have not replaced system installations and do not need to be added to your PATH. They were used to retrieve and verify the repository's LFS assets while system tools were unavailable.
+   Each command should print a version. The portable GitHub CLI and Git LFS copies, their archives, and their extracted files were deleted at Craig's request. They had not replaced system installations. The game's already-retrieved LFS assets remain in the working project; use your normal tool installations for future Git operations.
 
 6. **Authenticate GitHub for pushes.**
 
