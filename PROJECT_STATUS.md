@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-10-01 (**A lethal hit on a minion now actually shows the damage flash: `TravelAndReactRoutine` waits `reactionDuration` before releasing and destroying the held view.** The earlier "flash-on-lethal is playtest-confirmed" claim in Constraints 16 and 22 is corrected — the flash was called but destroyed unrendered, same frame. Follows the same day's `IDamageEffect`/`GainManaEffect` change (Constraint 32). See HISTORY.)_
+_Last updated: 2026-11-12 — Unity 6.6 (`6000.6.9f1`) is installed, Craig has confirmed a Personal license in Hub, and GitHub authentication/write access is verified. The project still records `6000.5.2f1`; migration and the visual overhaul are pending. Existing gameplay and its verification record below are unchanged. See HISTORY and `SETUP_UBUNTU.md` for setup details._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.
@@ -20,7 +20,7 @@ _Last updated: 2026-10-01 (**A lethal hit on a minion now actually shows the dam
 ## Project Goal
 Hearthstone-style card game in Unity, single-player vs AI, C# with data-driven cards/effects (ScriptableObjects). Ubuntu, Unity + VS Code, Git/GitHub with LFS for art/audio. Repo: `github.com/craig-middleton/hearthClone`.
 
-**Unity 6.5 (60000.5.2f1).** TextMeshPro for all UI text, never legacy `UnityEngine.UI.Text`.
+**Target Editor: Unity 6.6 (`6000.6.9f1`), installed. Project metadata still records `6000.5.2f1`; upgrade has not been run.** TextMeshPro for all UI text, never legacy `UnityEngine.UI.Text`.
 
 ## Architecture
 - Folders under `Assets/_Project/`: Scripts, ScriptableObjects, Prefabs, Art (plus an empty `Scenes/`). The one game scene lives outside it, at `Assets/Scenes/TestScene.unity`. Cards are data-driven — they reference reusable `CardEffect` assets.

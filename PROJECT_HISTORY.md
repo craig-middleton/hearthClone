@@ -644,3 +644,16 @@ Found by the playtest of the `IDamageEffect` change (previous entry): a human-ca
 **Playtest-confirmed.** Lethal Arcane Bolt on a Murloc and lethal Frostbolt on a Wisp: each minion held until the projectile landed, flashed red once, then died; Frostbolt's freeze did not override the red flash. Frostbolt at Player Two's face still flashes the portrait; a Frostbolt on a tougher minion froze it with no crash or duplicate view; Blizzard, The Coin and the AI turns were unaffected. **Restart-mid-kill was not tested**, deliberately: Play Again only appears at game over and a minion kill cannot end the game, so the new wait can never be running during a restart.
 
 **Still open.** A *non*-lethal hit on a minion still never flashes — a different cause (the cast frame's board refresh destroys the targeted view before the projectile lands). First Known Issue and Next Steps 20.
+
+
+## Visual-overhaul setup checkpoint (2026-11-12)
+
+**Scope agreed with Craig:** continue from the existing game and card pool, using the supplied Desktop assets to make the presentation resemble Hearthstone. Preserve the existing Claude session logs. Significant work is to be committed and pushed to GitHub in focused checkpoints. Current priorities are the board, card frames and artwork, minion presentation, portraits, mana, buttons, targeting feedback and spell visuals. No new gameplay systems have been implemented during this setup phase.
+
+**Environment:** Craig installed Unity Hub and Unity Editor `6000.6.9f1` himself. The Editor executable was located at `/home/craig-middleton/Unity/Hub/Editor/6000.6.9f1/Editor/Unity`. Craig confirmed a Personal license in Hub. The source project still records `6000.5.2f1`: no Editor migration, compilation or playtest of the revised game has been performed.
+
+**Repository and assets:** a working copy was prepared on branch `codex/hearthstone-build`. The `.gitattributes` font rules gained uppercase `*.TTF` matching after Linux skipped the TextMesh Pro sample font. Existing repository LFS assets were retrieved and `git lfs fsck` passed while temporary tools were available. At Craig's request, the temporary Unity installer, portable GitHub CLI/Git LFS tools, their archives and extracted copies were deleted; the game and its retrieved assets were retained. The setup guide records user-managed installations.
+
+**GitHub:** Craig installed GitHub CLI and completed browser sign-in. `gh auth status` verified the active `craig-middleton` account, and the repository API confirmed write access. Git LFS is not currently installed on PATH. This checkpoint contains text changes only and can be published with GitHub's Git data API; there are no new LFS objects to upload.
+
+**Verification:** documentation checked against the installed paths, user-confirmed license and authenticated GitHub response; `git diff --check` passes. This is an environment/documentation checkpoint, not a claim that the visuals or gameplay have been upgraded. Next: prepare the visual changes and perform the Editor migration and scene verification with the installed version.
