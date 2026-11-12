@@ -2,53 +2,39 @@
 
 This setup supports a visual overhaul of the existing game and card pool using the supplied Desktop assets. Work happens in the local Unity project, with significant changes committed and pushed to GitHub. The Unity plugin is not required for this workflow.
 
-Unity 6.5 officially lists Ubuntu 22.04 and 24.04. Ubuntu 26.10 is outside that list, so launching the Editor successfully is an important setup check. The existing project records Editor **6000.5.2f1**, revision `eb73d3b415a1`.
+Craig will install Unity and GitHub tools himself. Target the latest stable production Editor: **Unity 6.6, 6000.6.9f1**, released 12 November 2026 and verified against Unity's release API. The existing project still records **6000.5.2f1**; its working copy will need an Editor-managed upgrade, followed by package and scene checks. Do not change ProjectVersion.txt by hand to claim that migration has happened. Unity 6.6 officially lists Ubuntu 22.04 and 24.04; test the Editor on Ubuntu 26.10.
 
-1. **Launch the downloaded Unity Hub.**
+1. **Install Unity yourself using the official download.**
 
-   Open Ubuntu Terminal with Ctrl+Alt+T and run:
-
-   ```bash
-   cd "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/outputs/UnitySetup"
-   ./UnityHubSetup-x86_64.AppImage
-   ```
-
-   The official AppImage has already been downloaded and made executable. It is portable; keep it in this folder so the command remains valid. Run it as your normal user.
-
-   If the error specifically mentions FUSE or fusermount, use Unity's documented extraction mode:
-
-   ```bash
-   ./UnityHubSetup-x86_64.AppImage --appimage-extract-and-run
-   ```
-
-   For other errors, retain the exact terminal output so we can diagnose the actual failure.
+   Use [Unity's downloads](https://unity.com/download) or the [6000.6.9f1 release page](https://unity.com/releases/editor/whats-new/6000.6.9f1). Craig is handling this installation. The previously downloaded portable Hub under `outputs/UnitySetup` is optional and has not been launched or installed by this chat.
 
 2. **Sign in and activate your Unity license.**
 
    Sign in to your Unity account in Hub. Under the Settings gear, open Licenses and check for an active license. Personal licenses normally activate on sign-in. If no license appears and you qualify for Personal under Unity's terms, use Licenses > Add license > Get a free personal license. Read and accept the terms yourself. Keep the license active in Hub before opening the Editor.
 
-3. **Install Editor 6000.5.2f1.**
+3. **Select the latest stable Editor.**
 
-   Open Installs > Install Editor. Find the exact version. If it is absent, open [its official release page](https://unity.com/releases/editor/whats-new/6000.5.2f1) in your browser and use the Hub installation option, allowing the browser to open Unity Hub. Avoid upgrading the project to another Editor version during setup.
+   In Hub, open Installs > Install Editor and select **6000.6.9f1** (Unity 6.6). If Hub's list has not refreshed, use [the official release page](https://unity.com/releases/editor/whats-new/6000.6.9f1). This is the latest production release verified on 12 November 2026; alpha and beta releases are separate streams.
 
-   Keep the default installation directory, or record the directory you choose. The conventional location is `/home/craig-middleton/Unity/Hub/Editor`, but Hub's selected directory is authoritative. Wait until Hub shows the installation as complete.
+   Record your installation directory and wait for installation to complete. The working project will be migrated from its recorded 6000.5.2f1 version after the new Editor is available. Preserve that migration in its own Git checkpoint and check packages, compilation and scene appearance afterward.
 
 4. **Keep the module selection small.**
 
    Install the Linux Editor. For this project's initial Linux desktop workflow, its native Mono support is sufficient. Linux IL2CPP, Android, iOS, Web and Windows build modules can wait until those platforms are needed. Correction to the earlier chat: Linux Build Support (Mono) need not appear as a separate checkbox on the Linux installer.
 
-5. **Put the prepared development tools on this terminal's PATH.**
+5. **Install your normal GitHub tools.**
 
-   Git is already available. Portable GitHub CLI 2.104.0 and Git LFS 3.8.1 have been downloaded from their official GitHub releases, checked against the release API's SHA-256 digests, and tested with their version commands. In the terminal you will use for the remaining commands, run:
+   Craig is handling these installations. The command-line workflow uses Git, [GitHub CLI (`gh`)](https://cli.github.com/), and [Git LFS](https://git-lfs.com/). GitHub CLI handles account authentication and GitHub operations; Git LFS handles artwork and audio stored outside ordinary Git blobs. A desktop GitHub application is optional.
+
+   Verify your installations in a normal terminal:
 
    ```bash
-   export PATH="/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/outputs/DevTools/bin:$PATH"
    git --version
    gh --version
    git lfs version
    ```
 
-   All three commands should print a version. The PATH change lasts for this terminal session; repeat the export when using these portable tools from a new terminal. No system-wide GitHub CLI or Git LFS installation is required.
+   Each command should print a version. Portable copies previously prepared under `outputs/DevTools/bin` are optional temporary tools used by this chat. They have not replaced system installations and do not need to be added to your PATH. They were used to retrieve and verify the repository's LFS assets while system tools were unavailable.
 
 6. **Authenticate GitHub for pushes.**
 
@@ -112,7 +98,7 @@ Unity 6.5 officially lists Ubuntu 22.04 and 24.04. Ubuntu 26.10 is outside that 
 
 9. **Register the project in Unity Hub.**
 
-   In Hub's Projects view, choose Add / Add project from disk and select the `HearthClone` folder above. Select the folder containing `Assets`, `Packages`, and `ProjectSettings`. Associate it with **6000.5.2f1**. You can leave the game closed while the revised visuals are being prepared.
+   In Hub's Projects view, choose Add / Add project from disk and select the `HearthClone` folder above. Select the folder containing `Assets`, `Packages`, and `ProjectSettings`. Associate it with **6000.6.9f1**. You can leave the game closed while the revised visuals are being prepared.
 
    For an installation-only check without opening the existing game, create a separate empty 2D project named `UnityInstallCheck` under:
 
@@ -130,6 +116,6 @@ Unity 6.5 officially lists Ubuntu 22.04 and 24.04. Ubuntu 26.10 is outside that 
 
     Significant changes will receive focused commits on `codex/hearthstone-build`, with pushes to GitHub once authentication works. Validation notes will distinguish source checks from Editor and playtest results. A commit is a local checkpoint; it is only backed up to GitHub after a successful push. Editor caches, logs, generated project files, credentials and the entire uncurated Desktop export do not belong in those commits.
 
-Setup is ready when Hub opens, a license is active, Editor 6000.5.2f1 launches, GitHub authentication succeeds, and the repository's LFS assets are present. Tell me which step you reach or the exact error that stops you, and we can continue from there.
+Setup is ready when Hub opens, a license is active, Editor 6000.6.9f1 launches, GitHub authentication succeeds, and the repository's LFS assets are present. Tell me which step you reach or the exact error that stops you, and we can continue from there.
 
-Sources: [Unity Linux installation](https://docs.unity.com/en-us/hub/install-hub-linux), [Unity 6.5 requirements](https://docs.unity.com/en-us/engine/6000.5/manual/get-started/install-and-upgrade/getting-started-installing-unity/system-requirements), [Unity licenses](https://docs.unity.com/en-us/hub/manage-license), [Editor installation](https://docs.unity.com/en-us/hub/add-editor), [GitHub CLI authentication](https://cli.github.com/manual/gh_auth_login), [Git credential setup](https://cli.github.com/manual/gh_auth_setup-git), [Git LFS](https://git-lfs.com/).
+Sources: [Unity Linux installation](https://docs.unity.com/en-us/hub/install-hub-linux), [Unity 6.6 requirements](https://docs.unity.com/en-us/engine/6000.6/manual/get-started/install-and-upgrade/getting-started-installing-unity/system-requirements), [Unity licenses](https://docs.unity.com/en-us/hub/manage-license), [Editor installation](https://docs.unity.com/en-us/hub/add-editor), [GitHub CLI authentication](https://cli.github.com/manual/gh_auth_login), [Git credential setup](https://cli.github.com/manual/gh_auth_setup-git), [Git LFS](https://git-lfs.com/).
