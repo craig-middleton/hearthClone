@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-12 — Unity 6.6 (`6000.6.9f1`) is installed, Craig has confirmed a Personal license in Hub, and GitHub authentication/write access is verified. The project still records `6000.5.2f1`; migration and the visual overhaul are pending. Existing gameplay and its verification record below are unchanged. See HISTORY and `SETUP_UBUNTU.md` for setup details._
+_Last updated: 2026-11-12 — Unity 6.6 (`6000.6.9f1`) is installed, Craig has confirmed a Personal license in Hub, GitHub authentication/write access is verified, and system Git LFS 3.8.1 is initialized with `git lfs fsck` passing. Work continues directly on `main`; the merged development branch was deleted. The project still records `6000.5.2f1`; Editor migration and the visual overhaul are pending. Existing gameplay and its verification record below are unchanged. See HISTORY and `SETUP_UBUNTU.md` for setup details._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.

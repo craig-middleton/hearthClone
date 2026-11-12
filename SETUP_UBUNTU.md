@@ -63,7 +63,7 @@ Craig will install Unity and GitHub tools himself. Target the latest stable prod
    /home/craig-middleton/Documents/Codex/2026-11-12/if-x20/outputs/HearthClone
    ```
 
-   Its remote is `https://github.com/craig-middleton/hearthClone.git`, and its working branch is `codex/hearthstone-build`. Use that copy consistently so the Editor and this chat operate on the same files. Do not create a new template project over this folder.
+   Its remote is `https://github.com/craig-middleton/hearthClone.git`, and its working branch is `main`. Use that copy consistently so the Editor and this chat operate on the same files. Do not create a new template project over this folder.
 
    In the same terminal, run these idempotent checks:
 
@@ -87,7 +87,7 @@ Craig will install Unity and GitHub tools himself. Target the latest stable prod
    git config user.email
    ```
 
-   The setup-document commit uses the same author identity as the previous project commit. You can change this repository's identity if you prefer a different commit email, including your GitHub-provided private commit address:
+   Commits use the same author identity as the previous project commits. You can change this repository's identity if you prefer a different commit email, including your GitHub-provided private commit address:
 
    ```bash
    git config --local user.name "Craig Middleton"
@@ -114,7 +114,7 @@ Craig will install Unity and GitHub tools himself. Target the latest stable prod
 
     Once the revised scene is ready, open the working project with the matching Editor, allow package import and script compilation to complete, and follow the provided Editor-tool instructions. Import-time compilation is Unity's normal preparation; there is no need to export a standalone build of the original game. Save relevant scene and prefab edits before each checkpoint. Avoid externally editing scene YAML while Unity has an unsaved in-memory copy of that scene.
 
-    Significant changes will receive focused commits on `codex/hearthstone-build`, with pushes to GitHub once authentication works. Validation notes will distinguish source checks from Editor and playtest results. A commit is a local checkpoint; it is only backed up to GitHub after a successful push. Editor caches, logs, generated project files, credentials and the entire uncurated Desktop export do not belong in those commits.
+    Significant changes will receive focused commits on `main`, with pushes to GitHub once authentication works. Validation notes will distinguish source checks from Editor and playtest results. A commit is a local checkpoint; it is only backed up to GitHub after a successful push. Editor caches, logs, generated project files, credentials and the entire uncurated Desktop export do not belong in those commits.
 
 Setup is ready when Hub opens, a license is active, Editor 6000.6.9f1 launches, GitHub authentication succeeds, and the repository's LFS assets are present. Tell me which step you reach or the exact error that stops you, and we can continue from there.
 

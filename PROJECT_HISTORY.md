@@ -657,3 +657,10 @@ Found by the playtest of the `IDamageEffect` change (previous entry): a human-ca
 **GitHub:** Craig installed GitHub CLI and completed browser sign-in. `gh auth status` verified the active `craig-middleton` account, and the repository API confirmed write access. Git LFS is not currently installed on PATH. This checkpoint contains text changes only and can be published with GitHub's Git data API; there are no new LFS objects to upload.
 
 **Verification:** documentation checked against the installed paths, user-confirmed license and authenticated GitHub response; `git diff --check` passes. This is an environment/documentation checkpoint, not a claim that the visuals or gameplay have been upgraded. Next: prepare the visual changes and perform the Editor migration and scene verification with the installed version.
+
+
+### Setup completion and main-branch workflow (2026-11-12)
+
+Craig requested that the setup commits be on `main`. The five published commits through `f39831c` were fast-forwarded onto `main`, and the now-identical `codex/hearthstone-build` branch was deleted locally and on GitHub after both tips were checked. Future significant updates go directly to `main`, as requested.
+
+Craig installed Git LFS system-wide. `git lfs version` reports 3.8.1; `git lfs install --local` initialized the working repository's hooks, and `git lfs fsck` passed. GitHub CLI remains authenticated and the working copy was clean before this documentation checkpoint. The setup guide now names `main` consistently. No gameplay, scene migration or visual changes are claimed by this checkpoint. Next: register the existing working folder in Hub and handle the Unity 6.6 upgrade with the installed Editor.
