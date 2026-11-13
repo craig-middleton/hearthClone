@@ -63,3 +63,14 @@ Reusable checks: `VerifyMageSpells.cs`, `VerifyBoardsAndCharge.cs`, and `VerifyS
 The deck check must run in a fresh Play-mode match. It also restarts the game. Other rule checks construct separate model fixtures. Native-resolution Editor captures are in `Docs/Previews`. These are Editor smoke checks, not a claim of complete match/balance/platform regression or a standalone build.
 
 Next polish: replace provisional card art as exact mappings are identified, improve individual card-frame crops and targeting/attack animation, and balance the expanded pool.
+
+
+## Portrait refinement review
+
+The current portrait pass is visual-only and awaits Craig's review. See `Previews/Portrait-Review.png` and the three `Portraits-*.png` captures. The existing Desktop paintings are retained: Garrosh is the classic painting; Jaina is the supplied Death Knight skin. No new hero or mechanics were introduced.
+
+The upper socket uses a ~172×179 canvas-unit pointed mask, and the lower ~180×188, measured against the actual plates. Health badges use the existing painted texture with a spatial teardrop stencil rather than global colour removal. Digits remain unclipped. Targeting and health-value bindings were checked.
+
+After a full base-scene regeneration, run `Tools/RefineHeroPortraits.cs` with `script run` after the other installers. Incremental board-installer reruns preserve an existing reviewed outline.
+
+Visual references: Craig's Screenshot From 2026-11-13 13-25-59.png and [Blizzard's official classic gameplay screenshot/article](https://hearthstone.blizzard.com/en-us/news/11347305). Online imagery is reference only; the game artwork used in this portrait pass comes from the supplied Desktop assets.

@@ -45,7 +45,7 @@ public static class InstallBoardPlates
         {
             var serialized=new SerializedObject(face);
             var health=(Image)serialized.FindProperty("healthGemImage").objectReferenceValue;
-            if(health!=null)health.transform.SetParent(healthLayer,true);
+            if(health!=null&&health.transform.parent.GetComponent<PortraitSilhouette>()==null)health.transform.SetParent(healthLayer,true);
         }
         var deck=surface.Find("DeckPile");if(deck!=null){var dr=(RectTransform)deck;dr.anchoredPosition=new Vector2(820,-215);dr.localScale=Vector3.one*.8f;}
         // The earlier raw-UV prototype is no longer referenced. Its source export is untouched.
@@ -57,6 +57,8 @@ public static class InstallBoardPlates
     }
     static void FitHero(FaceView face,float y)
     {
+        var currentMask=face.avatarImage.transform.parent.GetComponent<PortraitSilhouette>();
+        if(currentMask!=null&&currentMask.outline!=null&&currentMask.outline.Length>=3)return; // Preserve the reviewed pointed-seat fit.
         face.transform.localScale=Vector3.one;((RectTransform)face.transform).anchoredPosition=new Vector2(-5,y);
         var rim=face.transform.Find("HeroArch");if(rim!=null)rim.gameObject.SetActive(false);
         var mask=face.avatarImage.transform.parent as RectTransform;if(mask!=null)mask.sizeDelta=new Vector2(158,190);

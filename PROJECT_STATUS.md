@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-13 — HearthstoneTable now uses reference-based classic, winter and harvest boards, chosen randomly on each new match without immediate repeats. The pool contains 26 cards plus the separate Coin asset, including three new Mage spells and four new Taunt/Charge minions; the existing Charging Rhino also has Charge. Each player starts with exactly 30 cards across deck and hand, counting the second player's Coin. Rule, AI, restart, deck-size and board-selection checks pass in Unity 6.6. Significant updates continue directly on `main`. See `Docs/VISUAL_OVERHAUL.md` for current scene, tools and verification details._
+_Last updated: 2026-11-13 — Visual-only refinement underway. First checkpoint fits the existing hero portraits and health badges to the measured board sockets, with pointed masks and separate upper/lower sizes. Captures across all three boards, hero/health targeting, and health display updates pass with no console errors/warnings. This portrait checkpoint awaits Craig's visual feedback. Hero powers, mana crystals, and cards remain the next visual parts; no new content is authorized. Existing 26-card pool and 30-card starting totals are unchanged._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.
@@ -13,6 +13,7 @@ _Last updated: 2026-11-13 — HearthstoneTable now uses reference-based classic,
 - **`NETWORKING_PREP.md`** — checklist for the networked 2-player phase: prerequisites and every place UI/input mutates game state today. Read it before starting networking work.
 
 ## Working Preferences
+- Current scope: visually refine the existing game only; no new cards/mechanics. Finish one visual part, present it, and wait for Craig's visual feedback before moving to the next. Keep using his reference screenshot, official Hearthstone imagery, and the supplied Desktop assets.
 - Give brief progress updates explaining what is being changed and why, so Craig can follow the work. Stop at meaningful visual/gameplay checkpoints for Craig to review before adding more features.
 - A 2-paragraph explanation after each new/updated code block: what it does and why.
 - **Chat sessions only: full rewritten class/file, not a diff** — Craig pastes whole files and partial merges cause errors. **Not for Claude Code sessions**, which edit on disk: there a whole-file rewrite is overhead and an unreadable diff. Make targeted edits.

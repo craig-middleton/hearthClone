@@ -10,11 +10,22 @@ namespace HearthstoneClone.UI
     {
         public bool arch;
         public bool rectangle;
+        [Tooltip("Optional convex outline in normalized 0..1 coordinates. Leaves existing oval/arch masks unchanged when empty.")]
+        public Vector2[] outline;
 
         protected override void OnPopulateMesh(VertexHelper vh)
         {
             vh.Clear();
             Rect r = GetPixelAdjustedRect();
+            if (outline != null && outline.Length >= 3)
+            {
+                vh.AddVert(r.center, color, Vector2.zero);
+                foreach (Vector2 p in outline)
+                    vh.AddVert(new Vector2(r.xMin + p.x * r.width, r.yMin + p.y * r.height), color, Vector2.zero);
+                for (int i = 1; i <= outline.Length; i++)
+                    vh.AddTriangle(0, i, i == outline.Length ? 1 : i + 1);
+                return;
+            }
             if (rectangle)
             {
                 vh.AddVert(new Vector2(r.xMin,r.yMin),color,Vector2.zero);
