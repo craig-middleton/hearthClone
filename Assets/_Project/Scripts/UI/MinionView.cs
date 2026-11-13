@@ -15,6 +15,11 @@ namespace HearthstoneClone.UI
         public Button button;
         public Image minionBackground;
         public Image artworkImage;
+        public TMP_Text attackText;
+        public TMP_Text healthText;
+        public GameObject tauntVisual;
+        public GameObject frozenVisual;
+        public GameObject readyGlow;
 
         [Header("Visuals")]
         public Color normalColor = Color.white;
@@ -121,6 +126,16 @@ namespace HearthstoneClone.UI
 
             minion = minionData;
             onClicked = clickCallback;
+            if (tauntVisual != null) tauntVisual.SetActive(minion.HasTaunt);
+            if (frozenVisual != null) frozenVisual.SetActive(minion.IsFrozen);
+            if (readyGlow != null) readyGlow.SetActive(isSelected || (showAttackEligibility && minion.CanAttack));
+            if (attackText != null) attackText.text = minion.CurrentAttack.ToString();
+            if (healthText != null)
+            {
+                healthText.text = minion.CurrentHealth.ToString();
+                healthText.color = minion.CurrentHealth < minion.MaxHealth
+                    ? new Color(1f, 0.3f, 0.25f) : Color.white;
+            }
 
             if (nameText != null)
             {

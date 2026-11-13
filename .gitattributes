@@ -170,3 +170,6 @@ Packages/packages-lock.json linguist-generated
 
 # Exceptions for .asset files such as lightning pre-baking
 LightingData.asset     binary
+
+# Generated TMP atlas with embedded texture data
+Assets/_Project/Art/HearthstoneTable/TableSerif.asset lfs

@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-12 — Project migrated in Unity Editor to 6.6 (`6000.6.9f1`), with package and URP settings updated by Unity. The Editor log contains no C# compiler errors; Craig reports the existing game works in the Editor. Legacy TextMesh Pro sample-asset serialization warnings remain. Git LFS 3.8.1 and GitHub access are verified; work continues directly on `main`. The visual overhaul is next. See HISTORY for verification details._
+_Last updated: 2026-11-13 — The first Hearthstone visual scene is built and saved through the running Unity 6.6 Editor. Open `Assets/Scenes/HearthstoneTable.unity`; the original `TestScene` is retained. Craig playtested it successfully. Automated Editor checks covered mulligan input, concealed opponent cards, minion drag handlers, correct mana spending, and an advancing Play loop with zero console errors/warnings. All 20 styled card assets preserve their original rules and have artwork. This is a visual foundation; some art mappings and frame crops remain provisional. Significant updates continue on `main`._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.
@@ -23,7 +23,7 @@ Hearthstone-style card game in Unity, single-player vs AI, C# with data-driven c
 **Unity 6.6 (`6000.6.9f1`), migrated in the Editor.** TextMeshPro for all UI text, never legacy `UnityEngine.UI.Text`.
 
 ## Architecture
-- Folders under `Assets/_Project/`: Scripts, ScriptableObjects, Prefabs, Art (plus an empty `Scenes/`). The one game scene lives outside it, at `Assets/Scenes/TestScene.unity`. Cards are data-driven — they reference reusable `CardEffect` assets.
+- Folders under `Assets/_Project/`: Scripts, ScriptableObjects, Prefabs, Art (plus an empty `Scenes/`). The original game scene is `Assets/Scenes/TestScene.unity`; the styled scene is `Assets/Scenes/HearthstoneTable.unity`, enabled as the first build scene. Cards are data-driven — they reference reusable `CardEffect` assets.
 - **Assembly Definitions** enforce one-way flow: `Core` (no deps) ← `Effects` (Core) ← `Cards` (Core, Effects) ← `AI` (Core, Cards, Effects) ← `UI` (Core, Cards, Effects, **AI**, TMP). `Effects` must NOT reference `Cards`; `UI` references `AI` because `EffectTester` constructs `AIController`.
 - **Keep `Core` generic and unaware of `CardData`.** AI-ness isn't a flag on `Player`.
 

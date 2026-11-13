@@ -17,6 +17,15 @@ namespace HearthstoneClone.UI
         public Image cardBackground;
         public Image artworkImage;
 
+        [Header("Optional styled card face")]
+        public GameObject faceUpDetails;
+        public Sprite styledMinionFrame;
+        public Sprite styledSpellFrame;
+        public PortraitSilhouette portraitMask;
+        public TMP_Text descriptionText;
+        public TMP_Text attackText;
+        public TMP_Text healthText;
+
         [Header("Mulligan Visuals")]
         public Color normalColor = Color.white;
         public Color selectedForMulliganColor = new Color(0.4f, 0.4f, 0.4f);
@@ -93,7 +102,7 @@ namespace HearthstoneClone.UI
                 // see Awake's comment for why.
                 if (cardBackground != null)
                 {
-                    cardBackground.sprite = originalCardBackgroundSprite;
+                    cardBackground.sprite = FaceSprite();
                     cardBackground.color = normalColor;
                 }
             }
@@ -106,6 +115,7 @@ namespace HearthstoneClone.UI
         // start at all (CardDragResolver.CanPlayerTwoDrag), independent of what's drawn here.
         private void ShowFaceDown()
         {
+            if (faceUpDetails != null) faceUpDetails.SetActive(false);
             if (nameText != null) nameText.text = "";
             if (costText != null) costText.text = "";
             if (statsText != null) statsText.text = "";
@@ -154,6 +164,25 @@ namespace HearthstoneClone.UI
 
         private void WriteCardText()
         {
+            if (faceUpDetails != null) faceUpDetails.SetActive(true);
+            if (cardBackground != null) cardBackground.sprite = FaceSprite();
+            if (portraitMask != null)
+            {
+                portraitMask.rectangle = card.Data.cardType == CardType.Spell;
+                portraitMask.SetVerticesDirty();
+            }
+            if (descriptionText != null) descriptionText.text = card.Data.description;
+            bool isMinion = card.Data.cardType == CardType.Minion;
+            if (attackText != null)
+            {
+                attackText.transform.parent.gameObject.SetActive(isMinion);
+                attackText.text = card.Data.attack.ToString();
+            }
+            if (healthText != null)
+            {
+                healthText.transform.parent.gameObject.SetActive(isMinion);
+                healthText.text = card.Data.health.ToString();
+            }
             if (nameText != null)
             {
                 nameText.text = card.Data.cardName;
@@ -195,6 +224,12 @@ namespace HearthstoneClone.UI
                     artworkImage.enabled = false;
                 }
             }
+        }
+
+        private Sprite FaceSprite()
+        {
+            Sprite styled = card.Data.cardType == CardType.Minion ? styledMinionFrame : styledSpellFrame;
+            return styled != null ? styled : originalCardBackgroundSprite;
         }
 
         private void UpdateMulliganVisual()

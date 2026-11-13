@@ -2,7 +2,7 @@
 
 This setup supports a visual overhaul of the existing game and card pool using the supplied Desktop assets. Work happens in the local Unity project, with significant changes committed and pushed to GitHub. The Unity plugin is not required for this workflow.
 
-Craig will install Unity and GitHub tools himself. Target the latest stable production Editor: **Unity 6.6, 6000.6.9f1**, released 12 November 2026 and verified against Unity's release API. The existing project still records **6000.5.2f1**; its working copy will need an Editor-managed upgrade, followed by package and scene checks. Do not change ProjectVersion.txt by hand to claim that migration has happened. Unity 6.6 officially lists Ubuntu 22.04 and 24.04; test the Editor on Ubuntu 26.10.
+Craig will install Unity and GitHub tools himself. Target the latest stable production Editor: **Unity 6.6, 6000.6.9f1**, released 12 November 2026 and verified against Unity's release API. The working copy has been upgraded in the Editor from **6000.5.2f1** to **6000.6.9f1**, and the styled scene has been playtested. Do not change ProjectVersion.txt by hand to claim that migration has happened. Unity 6.6 officially lists Ubuntu 22.04 and 24.04; test the Editor on Ubuntu 26.10.
 
 1. **Install Unity yourself using the official download.**
 
@@ -119,3 +119,10 @@ Craig will install Unity and GitHub tools himself. Target the latest stable prod
 Setup is ready when Hub opens, a license is active, Editor 6000.6.9f1 launches, GitHub authentication succeeds, and the repository's LFS assets are present. Tell me which step you reach or the exact error that stops you, and we can continue from there.
 
 Sources: [Unity Linux installation](https://docs.unity.com/en-us/hub/install-hub-linux), [Unity 6.6 requirements](https://docs.unity.com/en-us/engine/6000.6/manual/get-started/install-and-upgrade/getting-started-installing-unity/system-requirements), [Unity licenses](https://docs.unity.com/en-us/hub/manage-license), [Editor installation](https://docs.unity.com/en-us/hub/add-editor), [GitHub CLI authentication](https://cli.github.com/manual/gh_auth_login), [Git credential setup](https://cli.github.com/manual/gh_auth_setup-git), [Git LFS](https://git-lfs.com/).
+
+
+## Running Editor workflow (13 November 2026)
+
+Keep this project open in Unity. `com.unity.pipeline` 1.0.0 provides the authenticated local Editor API; this is a project package, not the declined Codex plugin. The installed CLI can fail discovery when the sandbox cannot see the Editor PID. `Tools/editor_api.py` uses the documented loopback API and the project descriptor instead. It reads the token from ignored `Library/` at request time. Do not copy that descriptor or its token into Git.
+
+See `Docs/VISUAL_OVERHAUL.md` for scene paths, the rebuild command, asset provenance, verification, and remaining polish. Future scene changes should go through the running Editor API.
