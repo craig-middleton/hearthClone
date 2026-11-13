@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Cards::HearthstoneClone.Cards.CardData
   cardName: Stormwind Rider
   description: <b>Charge</b>
-  artwork: {fileID: 21300000, guid: 5d36a438f47fbf4828ab0399ea3beae7, type: 3}
+  artwork: {fileID: 21300000, guid: e7cefa2f4d1cab9faa6e30e929bff7a5, type: 2}
   manaCost: 5
   cardType: 0
   attack: 5

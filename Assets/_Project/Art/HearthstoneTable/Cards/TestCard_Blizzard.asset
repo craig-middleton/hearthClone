@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Cards::HearthstoneClone.Cards.CardData
   cardName: Blizzard
   description: Freeze all enemy minions.
-  artwork: {fileID: 21300000, guid: 1dfb5c44e61b2921a8b68d7cc16bda29, type: 3}
+  artwork: {fileID: 21300000, guid: 05e4dd13d0ec16ae383c2f88061894e4, type: 2}
   manaCost: 4
   cardType: 1
   attack: 0
   health: 0
   hasTaunt: 0
+  hasCharge: 0
   onPlayEffect: {fileID: 11400000, guid: 33fc4f8def144ccf9d94b6488ae861c1, type: 2}
   targetRequirement: 1
   spellSchool: 2

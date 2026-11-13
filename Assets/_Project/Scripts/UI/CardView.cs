@@ -25,6 +25,15 @@ namespace HearthstoneClone.UI
         public TMP_Text descriptionText;
         public TMP_Text attackText;
         public TMP_Text healthText;
+        public AtlasContour frameContour;
+        public Vector2[] minionOutline;
+        public Vector2[] spellOutline;
+        public Vector2[] backOutline;
+        public Vector2 minionPortraitSize;
+        public Vector2 spellPortraitSize;
+        public Vector2 minionPortraitPosition;
+        public Vector2 spellPortraitPosition;
+        public Vector2[] spellPortraitOutline;
 
         [Header("Mulligan Visuals")]
         public Color normalColor = Color.white;
@@ -126,6 +135,7 @@ namespace HearthstoneClone.UI
                 cardBackground.sprite = cardBackSprite;
                 cardBackground.color = Color.white;
             }
+            SetOutline(backOutline);
         }
 
         public void SetCardForMulligan(CardInstance cardData, Action<CardInstance> toggleCallback)
@@ -162,13 +172,29 @@ namespace HearthstoneClone.UI
             }
         }
 
+        private void SetOutline(Vector2[] points)
+        {
+            if (frameContour == null) return;
+            frameContour.outline = points;
+            if (cardBackground != null) cardBackground.SetVerticesDirty();
+        }
+
         private void WriteCardText()
         {
             if (faceUpDetails != null) faceUpDetails.SetActive(true);
             if (cardBackground != null) cardBackground.sprite = FaceSprite();
+            SetOutline(card.Data.cardType == CardType.Minion ? minionOutline : spellOutline);
             if (portraitMask != null)
             {
-                portraitMask.rectangle = card.Data.cardType == CardType.Spell;
+                bool spell = card.Data.cardType == CardType.Spell;
+                portraitMask.rectangle = spell;
+                portraitMask.outline = spell ? spellPortraitOutline : null;
+                Vector2 size = spell ? spellPortraitSize : minionPortraitSize;
+                if (size.x > 0 && size.y > 0)
+                {
+                    portraitMask.rectTransform.sizeDelta = size;
+                    portraitMask.rectTransform.anchoredPosition = spell ? spellPortraitPosition : minionPortraitPosition;
+                }
                 portraitMask.SetVerticesDirty();
             }
             if (descriptionText != null) descriptionText.text = card.Data.description;
@@ -218,6 +244,8 @@ namespace HearthstoneClone.UI
                 {
                     artworkImage.sprite = card.Data.artwork;
                     artworkImage.enabled = true;
+                    var fit = artworkImage.GetComponent<UnityEngine.UI.AspectRatioFitter>();
+                    if (fit != null) fit.aspectRatio = card.Data.artwork.rect.width / card.Data.artwork.rect.height;
                 }
                 else
                 {

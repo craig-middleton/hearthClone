@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Cards::HearthstoneClone.Cards.CardData
   cardName: Arcane Explosion
   description: Deal 1 damage to all enemy minions.
-  artwork: {fileID: 21300000, guid: a076a3d153f6bbf60b11893e8a16523a, type: 3}
+  artwork: {fileID: 21300000, guid: bf0fc3a86384bbd3291fe7f6a78bdd4d, type: 2}
   manaCost: 2
   cardType: 1
   attack: 0

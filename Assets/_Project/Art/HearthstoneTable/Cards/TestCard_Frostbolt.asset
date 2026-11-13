@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Cards::HearthstoneClone.Cards.CardData
   cardName: Frostbolt
   description: Deal 1 damage. <b>Freeze</b> a minion hit.
-  artwork: {fileID: 21300000, guid: cdc6342e6e7c6b5b2b3e42db0d7d41f0, type: 3}
+  artwork: {fileID: 21300000, guid: 3272684a39b5b914586d94ee49f9dc26, type: 2}
   manaCost: 2
   cardType: 1
   attack: 0
   health: 0
   hasTaunt: 0
+  hasCharge: 0
   onPlayEffect: {fileID: 11400000, guid: db4a536a6efc4c0582fff95944f44b13, type: 2}
   targetRequirement: 2
   spellSchool: 2

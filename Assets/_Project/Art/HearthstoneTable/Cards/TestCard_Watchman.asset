@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Cards::HearthstoneClone.Cards.CardData
   cardName: Watchman
   description: 
-  artwork: {fileID: 21300000, guid: 47d5035781da5600bbe859d7ce1daac8, type: 3}
+  artwork: {fileID: 21300000, guid: 35f248f69012ca7b38b5e50d234a6c20, type: 2}
   manaCost: 2
   cardType: 0
   attack: 3
   health: 1
   hasTaunt: 0
+  hasCharge: 0
   onPlayEffect: {fileID: 0}
   targetRequirement: 0
   spellSchool: 0

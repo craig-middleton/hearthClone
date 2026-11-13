@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-13 — Visual-only refinement underway. First checkpoint fits the existing hero portraits and health badges to the measured board sockets, with pointed masks and separate upper/lower sizes. Captures across all three boards, hero/health targeting, and health display updates pass with no console errors/warnings. This portrait checkpoint awaits Craig's visual feedback. Hero powers, mana crystals, and cards remain the next visual parts; no new content is authorized. Existing 26-card pool and 30-card starting totals are unchanged._
+_Last updated: 2026-11-13 — Visual-only iteration now covers the fitted hero portraits, bronze hero power, faceted mana tray, card faces/art crops, minion spacing, soft attack halos and frozen rims. No new cards or rules. Continue autonomously with brief updates; Craig explicitly removed per-part approval stops. Current styled pool: 26 cards; starting deck plus hand: exactly 30 for each player including Coin. See Docs/VISUAL_OVERHAUL.md for the current scene, tools, provenance and verification._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.
@@ -13,8 +13,8 @@ _Last updated: 2026-11-13 — Visual-only refinement underway. First checkpoint 
 - **`NETWORKING_PREP.md`** — checklist for the networked 2-player phase: prerequisites and every place UI/input mutates game state today. Read it before starting networking work.
 
 ## Working Preferences
-- Current scope: visually refine the existing game only; no new cards/mechanics. Finish one visual part, present it, and wait for Craig's visual feedback before moving to the next. Keep using his reference screenshot, official Hearthstone imagery, and the supplied Desktop assets.
-- Give brief progress updates explaining what is being changed and why, so Craig can follow the work. Stop at meaningful visual/gameplay checkpoints for Craig to review before adding more features.
+- Current scope: visually refine the existing game only; no new cards/mechanics. Continue iterating without asking for per-part approval (Craig's latest instruction). Keep using his reference screenshot, official Hearthstone imagery, and the supplied Desktop assets.
+- Give brief progress updates explaining what is being changed and why. Save meaningful visual checkpoints with commits and pushes to `main`; continue within the visual-only scope without approval stops.
 - A 2-paragraph explanation after each new/updated code block: what it does and why.
 - **Chat sessions only: full rewritten class/file, not a diff** — Craig pastes whole files and partial merges cause errors. **Not for Claude Code sessions**, which edit on disk: there a whole-file rewrite is overhead and an unreadable diff. Make targeted edits.
 - **Avoid singletons** — explicit constructor/field/parameter-passed references over global static instances. Targets *global static state*, not parameters: passing `Board` into a method is the preferred style.
@@ -116,28 +116,32 @@ Constraint notes live above; these rows say what each file does.
 | `HandFanLayout.cs` | `Scripts/UI/` | Now sits on **both** `HandPanel` and `OpponentHandPanel`, each its own component instance with its own values; owns every hand-card position, replacing the panel's `HorizontalLayoutGroup` (disabled, not deleted — Constraint 29) on each. Parabolic arc + hover-lift + neighbour-spread + exit hysteresis (Constraint 30) — full build history in HISTORY. `invertVertical` (bool, default `false`) mirrors the whole vertical arc — `y` and `angle` are both multiplied by `-1` at the end of `ApplyToCard`, after the lift is folded in, so a lift flips correctly too; `x` is untouched, since left/right ordering is identical for both panels. `OpponentHandPanel`'s instance sets `invertVertical = true` for its upward-arcing mirror of the player's downward fan. `interactionEnabled` (bool, default `true`, set by `ApplyLayout`'s `interactive` parameter every render) gates `SetHovered`/`ClearHovered`/`SetDragActive` with an early return when `false` — since `hoveredView` then never gets set, the existing `hoveredIndex == -1` code path already **is** the static-arc rendering, so no separate static-mode logic exists. `CardHoverFan` needed no changes for any of this. Serialized knobs (per instance): `perCardStep` 110, `maxTotalWidth` 900, `arcDrop` 40, `maxTiltDegrees` 12, `liftHeight` 60, `hoverScale` 1.15, `hoverAnimationSpeed` 12, `spreadAmount` 50, `spreadRange` 2, `exitHysteresisPadding` 24, `restoreSiblingOrderDelay` 0.12s — `OpponentHandPanel`'s instance currently mirrors `HandPanel`'s values exactly except `invertVertical`. |
 | `CardHoverFan.cs` | `Scripts/UI/` | On the `CardView` prefab. Pure reporter: forwards pointer enter/exit and drag begin/end to the parent `HandFanLayout`, no layout maths of its own. Self-disables (`OnEnable`) when its parent has no `HandFanLayout` — keeps mulligan cards and the drag ghost unaffected. `OnPointerExit` passes its `PointerEventData` through for the exit-hysteresis check (Constraint 30). |
 | `BoardDisplay.cs` | `Scripts/UI/` | `RenderBoard()`, generic, two instances (`boardPanel`/`opponentBoardPanel`). Builds a `Dictionary<Minion, Transform>` each render, exposed via `GetViewTransform(Minion)`. `Awake()` adds an invisible raycast-catching `Image` on the panel itself (Constraint 18). Constraints 8, 10. |
-| `FaceView.cs` | `Scripts/UI/` | Health gem (both portraits, Next Steps 19 phase 2, DONE) + player-only mana crystal row (phase 3, DONE) + player-only deck pile (phase 4, DONE), doubling as the face attack target. `SetPlayer(Player, Action<Player>, int deckRemaining = 0, int startingDeckSize = 0)` writes `healthNumberText.text = player.Health.ToString()`, calls `BuildManaCrystalRow()`, and calls `UpdateDeckPile(deckRemaining)`; idle sine scale/sway animation in `Update()`. The old `healthText` field (`"{PlayerName}: {Health} HP"`) is gone entirely — `healthGemImage` (static gem sprite) and `healthNumberText` (the HP number) are siblings of `avatarImage` at the `FaceView` root, wired symmetrically on both the player's and opponent's instance (no gating, unlike the crystal row/deck pile). `BuildManaCrystalRow()` destroys/rebuilds `manaCrystalRow`'s children each call (needed since crystal *count* changes as `MaxMana` grows, not just which are lit), instantiating `manaCrystalPrefab` `MaxMana` times, sprited full/empty by `CurrentMana` — no-ops if `manaCrystalRow`/`manaCrystalPrefab` unassigned (the opponent's instance, deliberately left unwired — the gate). `UpdateDeckPile(int remaining)` sets `deckCountText.text` and toggles each of `deckPileLayers`' `SetActive` by a ratio threshold of `startingDeckSize` — a private, non-serialized field (placeholder initializer 30) overwritten whenever `SetPlayer` gets a positive value, i.e. from `EffectTester.playerOneStartingDeckSize` (commit `06be71a`; it was a serialized 30 before, not matching the 38-card deck) — (layer `i` visible while `remaining > startingDeckSize * i / layerCount`) — reads as a physically shrinking pile from a fixed 5-`GameObject` set rather than one card-back per remaining card, and scales to any deck size since the thresholds are ratios, not hardcoded counts; no-ops if `deckPileLayers`/`deckCountText` unassigned (same gating pattern, opponent's instance left unwired). `PlayDamageReaction()` flashes color only. Never destroyed by a refresh (Constraint 16). Exposes `public Player Player => player;`. Constraint 9. |
+| `FaceView.cs` | `Scripts/UI/` | Binds live hero health, player-only mana row and shrinking deck pile. Health digits turn red below MaxHealth. Optional full/spent materials let the styled row use one hex silhouette with lit/desaturated paint; missing materials retain the original view behavior. Health badges are spatially clipped on a separate overlay in HearthstoneTable. Existing button targeting and idle/damage reactions remain. |
 | `SpellAnimationSequencer.cs` | `Scripts/UI/` | Spell-cast animation: travel + impact reaction (lift/zoom and discard-off not built — Constraint 15, Next Steps 17). `PlayTravelAndReaction(...)` re-samples the live target position every frame, tolerating a target destroyed mid-travel (Constraint 16). `PlaySchoolBurst` dispatches to `SpellBurstFactory`'s per-school particle bursts. On a lethal minion hit it holds the target's `MinionView` (Constraint 22), flashes it, then waits `reactionDuration` before `EndHold()` + `Destroy` so the flash can render (Constraint 16). |
 | `AIController.cs` | `Scripts/AI/` | `PerformMulligan()` (batched) and `TakeTurn()` — split into `SelectEffectTarget`/`AttackPhase`/`SelectAttackTarget`. Attack phase order: Taunt first, then lethal-override (bypasses trade evaluation when total unblocked damage is lethal — see Verification Status for confirmation status), then `AICombatEvaluator.IsFavorableTrade`, then face fallback. `SelectEffectTarget`'s `Any` branch checks `FindLethalDamageTarget` (classifies via `IDamageEffect`, Constraint 32) before defaulting to face; `None`/`Self` return `CardTargeting.DefaultTarget` (the caster — `None` used to target the opponent, now matches the human path). Spell targeting never picks a dead minion: `FindLethalDamageTarget` skips `IsDead` minions (a corpse trivially passes its damage check, and `TakeTurn` only sweeps the board after its whole card loop), and the `AnyMinion`/`Friendly` branches use `FirstLivingMinion` instead of `BoardMinions[0]`. All targeting reads go through `CardInstance.Data`. |
 | `AICombatEvaluator.cs` | `Scripts/AI/` | Static, stateless, mirrors `Combat.cs`'s pattern. `IsFavorableTrade`/`IsUnfavorableTrade(Minion attacker, Minion target)`, mutually exclusive, null-guarded. Pure evaluation only — no board/Taunt awareness (that's `AIController`'s job). `IsUnfavorableTrade`'s safety-net guard is currently unreachable dead code by design, kept as insurance for AI plan step 5. |
 
 ## Card Pool
-19 `CardData` assets in `EffectTester.cardPool` × `copiesPerCard = 2` = a 38-card deck: 12 Minions and 7 Spells. The Coin sits outside the pool.
+The styled scene has **26 `CardData` assets: 16 minions and 10 spells**. A shuffled selection takes at most two copies of each. Player One starts with 30 selected cards; Player Two starts with 29 plus Coin. Deck plus hand totals 30 on each side, including turn-one draws. The original TestScene/source assets retain their historical setup.
 
 | Minion | Cost | A/H | Note |
 |---|---|---|---|
 | Murloc | 1 | 1/1 | |
-| Goblin | 2 | 2/2 | only card with artwork |
+| Goblin | 2 | 2/2 | |
 | Watchman | 2 | 3/1 | |
 | Wisp | 2 | 1/1 | |
 | River Crocodile | 3 | 2/3 | |
-| Shieldbearer | 3 | 1/5 | **only Taunt** (`hasTaunt: 1`) |
+| Shieldbearer | 3 | 1/5 | Taunt |
 | Warhorse | 3 | 3/3 | |
 | Bear | 4 | 3/6 | |
 | Boulderfist | 5 | 4/4 | |
-| Charging Rhino | 6 | 5/5 | |
+| Charging Rhino | 6 | 5/5 | Charge |
 | Stone Guardian | 6 | 4/8 | |
 | Ancient Colossus | 7 | 7/7 | |
+| Ironfur Grizzly | 3 | 3/3 | Taunt |
+| Shielded Guardian | 4 | 3/5 | Taunt |
+| Wolf Rider | 3 | 3/1 | Charge |
+| Stormwind Rider | 5 | 5/2 | Charge |
 
 Spells:
 
@@ -150,6 +154,9 @@ Spells:
 | Blizzard | 4 | `Effect_FreezeAll1` | Self |
 | Verdant Growth | 3 | `Effect_Growth1` | AnyMinion |
 | Rebirth's Touch | 3 | `Effect_Heal1` | Friendly |
+| Flamestrike | 7 | EnemyBoardDamageEffect: 4 to all enemy minions | None |
+| Arcane Explosion | 2 | EnemyBoardDamageEffect: 1 to all enemy minions | None |
+| Cone of Cold | 4 | ConeOfColdEffect: 1 + Freeze to target and living neighbours | AnyMinion |
 | The Coin | 0 | `Effect_GainMana1` | Self — **not in the pool**, granted via `EffectTester.coinCard` |
 
 `Effect_Deal3Damage` is a `DealDamageEffect` (damage 3); `Effect_GainMana1` a `GainManaEffect` (mana 1); `Effect_FrostDamage1` a `FrostDamageEffect` (damage 1, also calls `Freeze()` on a minion target — see `Minion.cs` and Constraint 24); `Effect_FreezeAll1` a `FreezeAllEffect` (zero damage, freezes every minion on the caster's opponent's board — see `FreezeAllEffect.cs` row); `Effect_Growth1` a `GrowthEffect` (+3/+3 permanently, minion only, either side); `Effect_Heal1` a `HealEffect` (heals 6, clamped at `MaxHealth`, friendly minion or caster's own face only — see Constraint 26). Verdant Growth and Rebirth's Touch are both `SpellSchool.Nature` — Nature's two cards; their VFX (`SpellBurstFactory.CreateNatureBurst`) is built and wired into `SpellAnimationSequencer.PlaySchoolBurst`.
@@ -157,6 +164,7 @@ Spells:
 **`targetsSelf: bool` → `TargetRequirement` enum (session 31).** Not a Constraint-12-style silent flip: the field was renamed, not just added, so Unity doesn't fall back to a C# initializer for existing assets — it just drops the old serialized `targetsSelf` key. All four spell assets (plus every other `CardData` asset that still had a stray `targetsSelf: 0` from Constraint 12's re-serialization hazard) were hand-edited in this session to carry the new `targetRequirement` key directly in their YAML, so no *spell* relies on a default fallback — the 12 minion assets still omit `targetRequirement` and read `None` (see Constraint 12).
 
 ## Verification Status
+- ✅ **2026-11-13 visual pass, running Unity Editor**: clean C# and shader compilation; three theme captures; shaped hero/health targeting; hidden opponent faces; actual power pointer click preserves 2-mana/1-damage/once-per-turn behavior and updates its spent back; full/spent mana counts match the model; human Cone of Cold drag succeeds; rule, keyword, board-selection and exact 30-card start/restart checks pass. Captures are disposable mid-game fixtures, not saved gameplay.
 - ✅ **Playtest-confirmed and closed (per-session detail in HISTORY)**: rendering both sides, decks/shuffle/draw, opening hands + Coin, mulligan both sides (including the batching fix and the `CardView`-instance selection fix), background/music; Hero Power under manual control, Taunt rejection and the wider attack path, visual render check; the spell-cast animation vertical slice; the targeting system (session 31) and its supersession by drag-and-drop (session 32); the `EffectTester` decomposition into 4 components (`MulliganController`/`CombatInputController`/`CardDragResolver`/`GameManager`); AI trade evaluation steps 1–3 (favorable/unfavorable trade, Taunt pre-filter regression); the particle-based spell VFX plan across all four schools (Fire, Arcane, Frost, Nature — game logic, cards, and distinct VFX bursts) plus the `MinionView` hold mechanism and the held-view position/draw-order/reflow fixes; the `CardInstance` reference-identity root fix; the restart/new-game feature (all 4 build-plan steps, including draw-game handling and the listener-stacking/in-flight-animation safety checks); and the full board overhaul — phase 1 (layout), the fanning hand (steps 1–3), the opponent hand (face-down card backs with the real `CardBack.png` sprite, mirrored static fan, interactive under `manualControlMode`), phase 2 (health gem, both portraits), phase 3 (mana crystal row), and phase 4 (End Turn button styling, deck pile + live count); the post-overhaul audit's two bug fixes (AI dead-minion targeting, shared `CardTargeting` default) and the turn-1 draw rule.
 - ✅ **Playtest-confirmed (2026-10-01), `IDamageEffect` + `GainManaEffect`**: Frostbolt at Player Two's face flashes the portrait (the human path now classifies it as damage); Frostbolt on a surviving minion freezes it with no crash and no duplicate view (no flash — see the Known Issue below); The Coin as Player Two gives exactly +1 mana; Blizzard still freezes the enemy board; AI turns run with a clean console.
 - ✅ **Playtest-confirmed (2026-10-01), lethal-minion flash**: Arcane Bolt on a Murloc and Frostbolt on a Wisp — each minion held until the projectile landed, flashed red once, then died; Frostbolt's freeze tint did not override the red flash. (Fireball shares `DealDamageEffect` with Arcane Bolt and was not cast separately.) **Not tested**: restart during a lethal-minion cast — Play Again only appears at game over, and a minion kill cannot end the game, so the new wait cannot overlap a restart.
@@ -193,6 +201,8 @@ Spells:
 - **Cosmetic**: `BoardPanel`/`OpponentBoardPanel` text clipping (minion name cut off at the left edge); board panel vertical spacing needs more separation; `MulliganPanel` shares `HandPanel`'s screen position (fine, hidden after confirm).
 
 ## Next Steps (in order)
+**Current priority supersedes the older feature roadmap below:** continue graphical refinement of existing content only, without per-part approval stops. Current implementation details are in `Docs/VISUAL_OVERHAUL.md`; older phase descriptions refer to the original TestScene.
+
 1. ✅ **Playtest (1a–1d) — DONE, see HISTORY.** One open remainder: **the own-side attack rejection has never been reachable from the UI** — own-minion clicks route to selection, own-face clicks are blocked in `OnFaceClicked`. Reaching it needs a change to `OnMinionClicked`/`OnFaceClicked`/`Combat.TryAttack` itself, not another card-play feature layered on top.
 2. ✅ **Targeting system — DONE, superseded by drag-and-drop (Next Steps 4). See HISTORY (Session 31).**
 3. ✅ **AoE, buff, and heal spells — DONE.** `FreezeAllEffect`/`GrowthEffect`/`HealEffect`, all playtest-confirmed. **Open remainder: Draw still needs a new `CardEffect` subclass, not yet scoped.**
@@ -221,5 +231,6 @@ Spells:
 20. **Surviving-minion damage flash** — the first Known Issue above: re-resolve the target's current `MinionView` at impact so a non-lethal hit flashes it.
 
 ## Git Habits
+- Work directly on `main`, committing and pushing significant visual updates.
 - `git add .` / `git commit -m "short summary"` / `git push`, pushed regularly to `github.com/craig-middleton/hearthClone`.
 - `.gitignore` excludes `Library/`, `Temp/`, `.sln`/`.slnx`, `.csproj`.

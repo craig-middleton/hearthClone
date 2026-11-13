@@ -161,6 +161,8 @@ namespace HearthstoneClone.UI
                 {
                     artworkImage.sprite = minion.Artwork;
                     artworkImage.enabled = true;
+                    var fit = artworkImage.GetComponent<UnityEngine.UI.AspectRatioFitter>();
+                    if (fit != null) fit.aspectRatio = minion.Artwork.rect.width / minion.Artwork.rect.height;
                 }
                 else
                 {

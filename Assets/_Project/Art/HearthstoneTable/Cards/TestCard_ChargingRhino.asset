@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Cards::HearthstoneClone.Cards.CardData
   cardName: Charging Rhino
   description: <b>Charge</b>
-  artwork: {fileID: 21300000, guid: 9a9f2637027083691bfc2e3c8c5ae002, type: 3}
+  artwork: {fileID: 21300000, guid: a5d8a0083a95b3feb8672de934998606, type: 2}
   manaCost: 6
   cardType: 0
   attack: 5

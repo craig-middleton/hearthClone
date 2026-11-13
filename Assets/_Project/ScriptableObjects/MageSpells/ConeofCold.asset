@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Cards::HearthstoneClone.Cards.CardData
   cardName: Cone of Cold
   description: Deal 1 damage to a minion and the minions next to it, and <b>Freeze</b> them.
-  artwork: {fileID: 21300000, guid: cdc6342e6e7c6b5b2b3e42db0d7d41f0, type: 3}
+  artwork: {fileID: 21300000, guid: 3272684a39b5b914586d94ee49f9dc26, type: 2}
   manaCost: 4
   cardType: 1
   attack: 0

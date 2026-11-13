@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -78}
-  m_SizeDelta: {x: 146, y: 76}
+  m_AnchoredPosition: {x: 0, y: -79}
+  m_SizeDelta: {x: 140, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8924109532570872025
 CanvasRenderer:
@@ -58,14 +58,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.96, b: 0.87, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 537d407b3fd9126e5990f38dcaba17e0, type: 2}
+  m_Sprite: {fileID: 21300000, guid: ad9e052cb8d06b6048c73183c1628dae, type: 2}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -110,7 +110,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -27}
-  m_SizeDelta: {x: 160, y: 40}
+  m_SizeDelta: {x: 162, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &480948954563582958
 CanvasRenderer:
@@ -143,14 +143,14 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c42147160577ef84f8f4e095ea8ba2a2, type: 2}
-  m_sharedMaterial: {fileID: 5597307782517436494, guid: c42147160577ef84f8f4e095ea8ba2a2, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 340f543f23dc7a0829fabf8232548fba, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0.18, g: 0.12, b: 0.08, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -167,24 +167,24 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17
+  m_fontSize: 16.5
   m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 10
-  m_fontSizeMax: 17
+  m_fontSizeMax: 16.5
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -2
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 2805447355466453284}
   - component: {fileID: 833259020904425586}
   - component: {fileID: 8918926427776512057}
+  - component: {fileID: 4582675730279016222}
   m_Layer: 0
   m_Name: AttackGem
   m_TagString: Untagged
@@ -337,8 +338,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -72, y: -113}
-  m_SizeDelta: {x: 55, y: 55}
+  m_AnchoredPosition: {x: -70, y: -111}
+  m_SizeDelta: {x: 53, y: 53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &833259020904425586
 CanvasRenderer:
@@ -360,7 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 2100000, guid: ccf88d8ee87a8c8e8a7e34d38788cfd7, type: 2}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -378,6 +379,45 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4582675730279016222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406045805233500483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9c991950fd2a2bf9d8afe42957fc7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UI::HearthstoneClone.UI.AtlasContour
+  outline:
+  - {x: 0.140625, y: 0.9921875}
+  - {x: 0.2109375, y: 1}
+  - {x: 0.3046875, y: 0.90625}
+  - {x: 0.2734375, y: 0.828125}
+  - {x: 0.3671875, y: 0.7421875}
+  - {x: 0.4296875, y: 0.765625}
+  - {x: 0.53125, y: 0.7734375}
+  - {x: 0.6875, y: 0.734375}
+  - {x: 0.8203125, y: 0.6328125}
+  - {x: 0.90625, y: 0.4765625}
+  - {x: 0.9140625, y: 0.3359375}
+  - {x: 0.875, y: 0.2265625}
+  - {x: 0.953125, y: 0.0703125}
+  - {x: 0.765625, y: 0.1015625}
+  - {x: 0.625, y: 0.046875}
+  - {x: 0.4609375, y: 0.0703125}
+  - {x: 0.3359375, y: 0.1484375}
+  - {x: 0.25, y: 0.265625}
+  - {x: 0.21875, y: 0.421875}
+  - {x: 0.2421875, y: 0.578125}
+  - {x: 0.171875, y: 0.625}
+  - {x: 0.140625, y: 0.578125}
+  - {x: 0.0546875, y: 0.6640625}
+  - {x: 0.0625, y: 0.75}
+  - {x: 0.109375, y: 0.7890625}
+  - {x: 0.0234375, y: 0.8671875}
 --- !u!1 &2306097152347890705
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,8 +591,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 49}
-  m_SizeDelta: {x: 113, y: 149}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 111, y: 147}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4285962738084965833
 CanvasRenderer:
@@ -584,6 +624,7 @@ MonoBehaviour:
       m_Calls: []
   arch: 0
   rectangle: 0
+  outline: []
 --- !u!114 &8306009016481992869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -631,8 +672,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: 0, y: -1}
+  m_SizeDelta: {x: 52, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4980116893055413434
 CanvasRenderer:
@@ -689,8 +730,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33
-  m_fontSizeBase: 33
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -699,7 +740,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -2
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -789,6 +830,7 @@ GameObject:
   - component: {fileID: 3860238222599508440}
   - component: {fileID: 6720923101885619324}
   - component: {fileID: 7295591681560468373}
+  - component: {fileID: 107524516674942600}
   m_Layer: 0
   m_Name: HealthGem
   m_TagString: Untagged
@@ -813,8 +855,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 73, y: -113}
-  m_SizeDelta: {x: 43, y: 57}
+  m_AnchoredPosition: {x: 71, y: -111}
+  m_SizeDelta: {x: 42, y: 57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6720923101885619324
 CanvasRenderer:
@@ -836,7 +878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 2100000, guid: 745469279ee687ec297baecadfcafb02, type: 2}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -854,6 +896,31 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &107524516674942600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3728164412702885170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9c991950fd2a2bf9d8afe42957fc7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UI::HearthstoneClone.UI.AtlasContour
+  outline:
+  - {x: 0.5232558, y: 0.9508197}
+  - {x: 0.7209302, y: 0.72131145}
+  - {x: 0.88372093, y: 0.48360655}
+  - {x: 0.95348835, y: 0.31967214}
+  - {x: 0.89534885, y: 0.1557377}
+  - {x: 0.7209302, y: 0.04918033}
+  - {x: 0.5116279, y: 0.008196721}
+  - {x: 0.27906978, y: 0.057377048}
+  - {x: 0.11627907, y: 0.16393442}
+  - {x: 0.058139537, y: 0.29508197}
+  - {x: 0.11627907, y: 0.45901638}
+  - {x: 0.27906978, y: 0.6803279}
 --- !u!1 &4116472132783787449
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,8 +955,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -78}
-  m_SizeDelta: {x: 143, y: 70}
+  m_AnchoredPosition: {x: 0, y: -80}
+  m_SizeDelta: {x: 135, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2758577840273411099
 CanvasRenderer:
@@ -946,12 +1013,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
+  m_fontSize: 14.5
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 10
-  m_fontSizeMax: 14
+  m_fontSizeMin: 10.5
+  m_fontSizeMax: 14.5
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -959,7 +1026,7 @@ MonoBehaviour:
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -3
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1002,6 +1069,7 @@ GameObject:
   - component: {fileID: 1542318620685245812}
   - component: {fileID: 7015659931215990785}
   - component: {fileID: 6849886231089813524}
+  - component: {fileID: 5891847153521758839}
   m_Layer: 0
   m_Name: ManaGem
   m_TagString: Untagged
@@ -1026,8 +1094,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -76, y: 103}
-  m_SizeDelta: {x: 56, y: 56}
+  m_AnchoredPosition: {x: -74, y: 103}
+  m_SizeDelta: {x: 53, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7015659931215990785
 CanvasRenderer:
@@ -1049,7 +1117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 2100000, guid: 2c66f289e150becbaae8ffa1ee4b9da6, type: 2}
+  m_Material: {fileID: 2100000, guid: 466f99039721aac9faa21af4145748a4, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1067,6 +1135,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5891847153521758839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4606710394231513920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9c991950fd2a2bf9d8afe42957fc7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UI::HearthstoneClone.UI.AtlasContour
+  outline:
+  - {x: 0.2781457, y: 0.9423077}
+  - {x: 0.70198673, y: 0.9423077}
+  - {x: 0.9933775, y: 0.47435898}
+  - {x: 0.7086093, y: 0.012820513}
+  - {x: 0.2781457, y: 0.012820513}
+  - {x: 0.0066225166, y: 0.4679487}
 --- !u!1 &6488595325007004314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,6 +1165,7 @@ GameObject:
   - component: {fileID: 5966380694104113098}
   - component: {fileID: 8078495757390811357}
   - component: {fileID: 5080659592496790350}
+  - component: {fileID: 4000066641121465771}
   m_Layer: 0
   m_Name: NameScroll
   m_TagString: Untagged
@@ -1101,8 +1189,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -28}
-  m_SizeDelta: {x: 34, y: 174}
+  m_AnchoredPosition: {x: 0, y: -27}
+  m_SizeDelta: {x: 34, y: 176}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8078495757390811357
 CanvasRenderer:
@@ -1124,7 +1212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 2100000, guid: 298bb9c7d97dac8c88054911764cfc42, type: 2}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1142,6 +1230,32 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4000066641121465771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6488595325007004314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9c991950fd2a2bf9d8afe42957fc7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UI::HearthstoneClone.UI.AtlasContour
+  outline:
+  - {x: 0.13846155, y: 0.99292034}
+  - {x: 0.53846157, y: 1}
+  - {x: 0.5923077, y: 0.9557522}
+  - {x: 0.84615386, y: 0.94690263}
+  - {x: 0.99230766, y: 0.9026549}
+  - {x: 1, y: 0.051327433}
+  - {x: 0.8384615, y: 0.021238938}
+  - {x: 0.50769234, y: 0.015929203}
+  - {x: 0.33846155, y: 0}
+  - {x: 0.115384616, y: 0.017699115}
+  - {x: 0.06923077, y: 0.08495575}
+  - {x: 0, y: 0.12035398}
+  - {x: 0.0076923077, y: 0.91858405}
 --- !u!1 &7550950776226025130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,7 +1291,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 4, y: -3}
-  m_SizeDelta: {x: 45, y: 45}
+  m_SizeDelta: {x: 46, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5583711946248593333
 CanvasRenderer:
@@ -1234,8 +1348,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31
-  m_fontSizeBase: 31
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1244,7 +1358,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -2
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1294,6 +1408,7 @@ GameObject:
   - component: {fileID: 9000273546770300191}
   - component: {fileID: 295600776054135639}
   - component: {fileID: 2566138909897900042}
+  - component: {fileID: 7598038579369349507}
   m_Layer: 0
   m_Name: TableCard
   m_TagString: Untagged
@@ -1341,7 +1456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 2100000, guid: 298bb9c7d97dac8c88054911764cfc42, type: 2}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1349,7 +1464,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8667cbcdd7c3627a7ac9ffefb0a32d1c, type: 2}
+  m_Sprite: {fileID: 21300000, guid: 54291e6124b34b0b2afcbb63962d27d6, type: 2}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1422,16 +1537,77 @@ MonoBehaviour:
   cardBackground: {fileID: 2682464134109107895}
   artworkImage: {fileID: 3913994794126709782}
   faceUpDetails: {fileID: 3711317360926134867}
-  styledMinionFrame: {fileID: 21300000, guid: 8667cbcdd7c3627a7ac9ffefb0a32d1c, type: 2}
+  styledMinionFrame: {fileID: 21300000, guid: 54291e6124b34b0b2afcbb63962d27d6, type: 2}
   styledSpellFrame: {fileID: 21300000, guid: d9a57a41a9269f354994b5dff9d4a06f, type: 2}
   portraitMask: {fileID: 7489169185983710235}
   descriptionText: {fileID: 50760860628181252}
   attackText: {fileID: 7246661996903719189}
   healthText: {fileID: 3173357133150511338}
+  frameContour: {fileID: 7598038579369349507}
+  minionOutline:
+  - {x: 0.5, y: 0.9921875}
+  - {x: 0.5852941, y: 0.9824219}
+  - {x: 0.6691176, y: 0.953125}
+  - {x: 0.70735294, y: 0.9316406}
+  - {x: 0.8926471, y: 0.9316406}
+  - {x: 0.95735294, y: 0.9248047}
+  - {x: 0.98382354, y: 0.9013672}
+  - {x: 0.9867647, y: 0.044921875}
+  - {x: 0.9602941, y: 0.0234375}
+  - {x: 0.9191176, y: 0.013671875}
+  - {x: 0.066176474, y: 0.013671875}
+  - {x: 0.025, y: 0.028320312}
+  - {x: 0.011764706, y: 0.052734375}
+  - {x: 0.013235294, y: 0.85253906}
+  - {x: 0.014705882, y: 0.89160156}
+  - {x: 0.038235296, y: 0.9189453}
+  - {x: 0.0882353, y: 0.93066406}
+  - {x: 0.3, y: 0.93066406}
+  - {x: 0.3647059, y: 0.96191406}
+  - {x: 0.43970588, y: 0.98535156}
+  spellOutline:
+  - {x: 0.08235294, y: 0.9894737}
+  - {x: 0.9147059, y: 0.9894737}
+  - {x: 0.9617647, y: 0.9768421}
+  - {x: 0.98382354, y: 0.9494737}
+  - {x: 0.98382354, y: 0.043157894}
+  - {x: 0.95735294, y: 0.015789473}
+  - {x: 0.9102941, y: 0.002105263}
+  - {x: 0.080882356, y: 0.002105263}
+  - {x: 0.032352943, y: 0.015789473}
+  - {x: 0.010294118, y: 0.042105265}
+  - {x: 0.010294118, y: 0.9494737}
+  - {x: 0.030882353, y: 0.9757895}
+  backOutline:
+  - {x: 0.06, y: 0.01}
+  - {x: 0.94, y: 0.01}
+  - {x: 0.99, y: 0.04}
+  - {x: 0.99, y: 0.96}
+  - {x: 0.94, y: 0.99}
+  - {x: 0.06, y: 0.99}
+  - {x: 0.01, y: 0.96}
+  - {x: 0.01, y: 0.04}
+  minionPortraitSize: {x: 111, y: 147}
+  spellPortraitSize: {x: 142, y: 119}
+  minionPortraitPosition: {x: 0, y: 50}
+  spellPortraitPosition: {x: 0, y: 58}
+  spellPortraitOutline:
+  - {x: 0, y: 0.1}
+  - {x: 0, y: 0.83}
+  - {x: 0.15, y: 0.94}
+  - {x: 0.34, y: 0.99}
+  - {x: 0.5, y: 1}
+  - {x: 0.7, y: 0.97}
+  - {x: 0.88, y: 0.9}
+  - {x: 1, y: 0.82}
+  - {x: 1, y: 0.1}
+  - {x: 0.82, y: 0.025}
+  - {x: 0.5, y: 0}
+  - {x: 0.18, y: 0.025}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   selectedForMulliganColor: {r: 0.4, g: 0.4, b: 0.4, a: 1}
   cardBackSprite: {fileID: 21300000, guid: bedb386857f0e0aa59781e6ccf2ff925, type: 2}
-  dragGhostAlpha: 0.8
+  dragGhostAlpha: 1
 --- !u!114 &295600776054135639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1466,6 +1642,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235a7990f33d007a8a77daaedbca2754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UI::HearthstoneClone.UI.CardHoverFan
+--- !u!114 &7598038579369349507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8601999749945349656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9c991950fd2a2bf9d8afe42957fc7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UI::HearthstoneClone.UI.AtlasContour
+  outline:
+  - {x: 0.5, y: 0.9921875}
+  - {x: 0.5852941, y: 0.9824219}
+  - {x: 0.6691176, y: 0.953125}
+  - {x: 0.70735294, y: 0.9316406}
+  - {x: 0.8926471, y: 0.9316406}
+  - {x: 0.95735294, y: 0.9248047}
+  - {x: 0.98382354, y: 0.9013672}
+  - {x: 0.9867647, y: 0.044921875}
+  - {x: 0.9602941, y: 0.0234375}
+  - {x: 0.9191176, y: 0.013671875}
+  - {x: 0.066176474, y: 0.013671875}
+  - {x: 0.025, y: 0.028320312}
+  - {x: 0.011764706, y: 0.052734375}
+  - {x: 0.013235294, y: 0.85253906}
+  - {x: 0.014705882, y: 0.89160156}
+  - {x: 0.038235296, y: 0.9189453}
+  - {x: 0.0882353, y: 0.93066406}
+  - {x: 0.3, y: 0.93066406}
+  - {x: 0.3647059, y: 0.96191406}
+  - {x: 0.43970588, y: 0.98535156}
 --- !u!1 &8980067479807840280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,7 +1710,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -5}
-  m_SizeDelta: {x: 46, y: 45}
+  m_SizeDelta: {x: 50, y: 47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6302151711585782897
 CanvasRenderer:
@@ -1558,8 +1767,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31
-  m_fontSizeBase: 31
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1568,7 +1777,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -2
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0

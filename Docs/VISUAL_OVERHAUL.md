@@ -62,15 +62,31 @@ Reusable checks: `VerifyMageSpells.cs`, `VerifyBoardsAndCharge.cs`, and `VerifyS
 
 The deck check must run in a fresh Play-mode match. It also restarts the game. Other rule checks construct separate model fixtures. Native-resolution Editor captures are in `Docs/Previews`. These are Editor smoke checks, not a claim of complete match/balance/platform regression or a standalone build.
 
-Next polish: replace provisional card art as exact mappings are identified, improve individual card-frame crops and targeting/attack animation, and balance the expanded pool.
+Current scope remains graphical refinement of existing content. Several thematic art assignments still need verified canonical mappings; no balance or new-feature work is authorized by this visual pass.
 
 
-## Portrait refinement review
+## Portrait refinement
 
-The current portrait pass is visual-only and awaits Craig's review. See `Previews/Portrait-Review.png` and the three `Portraits-*.png` captures. The existing Desktop paintings are retained: Garrosh is the classic painting; Jaina is the supplied Death Knight skin. No new hero or mechanics were introduced.
+The portrait pass is visual-only. Craig subsequently requested autonomous iteration without per-part review stops. See `Previews/Portrait-Review.png` and the three `Portraits-*.png` captures. The existing Desktop paintings are retained: Garrosh is the classic painting; Jaina is the supplied Death Knight skin. No new hero or mechanics were introduced.
 
 The upper socket uses a ~172×179 canvas-unit pointed mask, and the lower ~180×188, measured against the actual plates. Health badges use the existing painted texture with a spatial teardrop stencil rather than global colour removal. Digits remain unclipped. Targeting and health-value bindings were checked.
 
 After a full base-scene regeneration, run `Tools/RefineHeroPortraits.cs` with `script run` after the other installers. Incremental board-installer reruns preserve an existing reviewed outline.
 
 Visual references: Craig's Screenshot From 2026-11-13 13-25-59.png and [Blizzard's official classic gameplay screenshot/article](https://hearthstone.blizzard.com/en-us/news/11347305). Online imagery is reference only; the game artwork used in this portrait pass comes from the supplied Desktop assets.
+
+
+## Interface refinement (visual-only)
+
+`Tools/RefineTableInterface.cs` runs after `RefineHeroPortraits.cs` outside Play mode. It updates the current styled scene/prefabs without rebuilding TestScene. It is safe to rerun; source exports remain read-only. Run it last after a full regeneration, because the older base and keyword installers restore their original visual defaults.
+
+- `AtlasContour` cuts opaque exported sprites with normalized mesh outlines. Card frames, name scrolls and attack/health/mana gems retain their painted highlights instead of losing pixels to a global colour key. CardView switches its contour for minion, spell and concealed back. Optional fields leave the original scene compatible.
+- Existing neutral creatures use a grey stone frame adapted from the supplied Rogue atlas; the description parchment covers the class emblem. Names are white with a dark outline, descriptions use a clean interior parchment crop, and spell paintings use their own wider shaped window. Costs/stats and drag input retain their original bindings.
+- Art sprites crop export borders without changing source pixels. Supplied animation/material alpha is ignored for the full paintings. The bear uses its matching complete HS12-223_S illustration; the horse now retains its full background. Views respect the cropped sprite aspect ratio. Assignments remain thematic where no exact canonical mapping is known.
+- The supplied bronze Hero_Power_Frame replaces the Coin_Mana placeholder. A foreground crop of the supplied Mage_power2_D art depicts one fireball; it does not give the upgraded power's damage. The cost gem sits above the disk. `HeroPowerPresentation` reads the acting player supplied by the existing refresh, so manual Player Two control is preserved. An available power has a light halo; using it reveals the supplied spiral back. The existing rule remains 2 mana, 1 enemy-face damage, once per turn.
+- The native ManaTray is sliced from the correct edge of its atlas and rotated into a narrow horizontal well. Full and spent crystals use the same isolated hexagon. `Atlas Paint` supplies brighter blue lighting or a dim desaturated finish. The legacy view has material fallbacks.
+- Minions are slightly smaller with layout scaling enabled, leaving more space between rows. Native Taunt/frozen rims exclude unrelated UV scraps. `Atlas Glow` composites the supplied monochrome halos as soft emitted light instead of opaque green paint. Damaged hero health numbers turn red.
+
+Verification in the running Editor: source and both new shaders compile cleanly; all three themes were inspected; `VerifyTableInterface.cs` checks hero/health targeting, opponent-hand concealment, actual power pointer clicks and once-per-turn behavior, its used-state display, and lit/spent mana counts. `PreviewMageSpell.cs` casts Cone of Cold through the real drag/raycast path with correct mana spending. Existing model/keyword/board checks and fresh starting-deck/restart checks pass. Console errors/warnings are zero. No standalone build or full-match regression is claimed.
+
+`PreviewTableInterface.cs` is a disposable Play-mode composition for viewing 4 minions per side, 6 existing cards, damaged portraits and 7/10 mana. It must never be saved as a match. `VerifyTableInterface.cs` runs after it and spends the real power. Stop Play mode to discard both fixtures. Native captures: `Previews/Interface-{Orgrimmar,Winterveil,HarvestTavern}.png`, `Interface-Power-Spent.png` and `Interface-Card-Detail.png`.

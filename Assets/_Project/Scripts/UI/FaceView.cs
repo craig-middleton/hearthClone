@@ -25,6 +25,8 @@ namespace HearthstoneClone.UI
         [SerializeField] private GameObject manaCrystalPrefab;
         [SerializeField] private Sprite manaCrystalFullSprite;
         [SerializeField] private Sprite manaCrystalEmptySprite;
+        [SerializeField] private Material manaCrystalFullMaterial;
+        [SerializeField] private Material manaCrystalEmptyMaterial;
 
         // Player-only deck pile: same presence-of-an-Inspector-wire gate as the mana
         // crystal row above - left unassigned on the opponent's FaceView instance, so
@@ -74,6 +76,8 @@ namespace HearthstoneClone.UI
             if (healthNumberText != null)
             {
                 healthNumberText.text = player.Health.ToString();
+                healthNumberText.color = player.Health < player.MaxHealth
+                    ? new Color(1f, .2f, .15f) : Color.white;
             }
             else
             {
@@ -126,7 +130,13 @@ namespace HearthstoneClone.UI
                 }
 
                 crystalImage.sprite = i < player.CurrentMana ? manaCrystalFullSprite : manaCrystalEmptySprite;
-                crystalImage.color = i < player.CurrentMana ? Color.white : new Color(.35f, .4f, .55f);
+                Material paint = i < player.CurrentMana ? manaCrystalFullMaterial : manaCrystalEmptyMaterial;
+                if (paint != null)
+                {
+                    crystalImage.material = paint;
+                    crystalImage.color = Color.white;
+                }
+                else crystalImage.color = i < player.CurrentMana ? Color.white : new Color(.35f, .4f, .55f);
             }
         }
 

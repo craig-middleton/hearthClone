@@ -392,6 +392,11 @@ namespace HearthstoneClone.UI
 
         private void RefreshFaceDisplay()
         {
+            if (heroPowerButton != null)
+            {
+                var presentation = heroPowerButton.GetComponent<HeroPowerPresentation>();
+                if (presentation != null) presentation.SetPlayer(turnManager.CurrentPlayer);
+            }
             if (faceView != null)
             {
                 faceView.SetPlayer(playerOne, combatInputController.OnFaceClicked, playerOneHand.Deck.Count, playerOneStartingDeckSize);
