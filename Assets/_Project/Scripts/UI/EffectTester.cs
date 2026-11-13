@@ -9,6 +9,7 @@ namespace HearthstoneClone.UI
 {
     public class EffectTester : MonoBehaviour
     {
+        public const int StartingCardCount = 30;
         public List<CardData> cardPool;
         public int copiesPerCard = 2;
         public CardData coinCard;
@@ -30,6 +31,7 @@ namespace HearthstoneClone.UI
 
         [Header("Spell Animation")]
         public SpellAnimationSequencer spellAnimationSequencer;
+        public AreaSpellAnimator areaSpellAnimator;
 
         [Header("Mulligan UI")]
         public Transform mulliganPanel;
@@ -43,6 +45,7 @@ namespace HearthstoneClone.UI
         [Header("Board Background")]
         public Image boardBackgroundImage;
         public List<Sprite> boardBackgrounds;
+        public RandomBoardTheme boardThemes;
 
         [Header("Music")]
         public AudioSource musicSource;
@@ -67,7 +70,6 @@ namespace HearthstoneClone.UI
         {
             Random.InitState(System.DateTime.Now.Millisecond + System.Environment.TickCount);
 
-            SetRandomBoardBackground();
             SetRandomMusic();
 
             // Wired exactly ONCE here, never inside BeginNewGame(). BeginNewGame() constructs a
@@ -118,6 +120,9 @@ namespace HearthstoneClone.UI
                 Debug.LogWarning("No cards assigned to EffectTester's Card Pool.", this);
                 return;
             }
+
+            if (boardThemes != null) boardThemes.ChooseNextBoard();
+            else SetRandomBoardBackground();
 
             if (gameOverText != null)
             {
@@ -181,14 +186,16 @@ namespace HearthstoneClone.UI
             turnManager = new TurnManager(board);
             turnManager.StartGame();
 
-            var playerOneDeck = BuildDeck(cardPool);
+            var playerOneDeck = BuildDeck(cardPool, StartingCardCount);
             // Captured before the opening draw so the deck pile's thresholds use the true starting size.
             playerOneStartingDeckSize = playerOneDeck.Count;
             playerOneHand = new PlayerHand(playerOne, playerOneDeck);
             playerOneHand.Shuffle();
             playerOneHand.DrawOpeningHand(3);
 
-            playerTwoHand = new PlayerHand(playerTwo, BuildDeck(cardPool));
+            // Craig's limit includes cards already in hand and the second player's Coin.
+            int playerTwoDeckCount = StartingCardCount - (coinCard != null ? 1 : 0);
+            playerTwoHand = new PlayerHand(playerTwo, BuildDeck(cardPool, playerTwoDeckCount));
             playerTwoHand.Shuffle();
             playerTwoHand.DrawOpeningHand(4);
             if (coinCard != null)
@@ -221,6 +228,13 @@ namespace HearthstoneClone.UI
                 gameOverText, playAgainButton,
                 () => mulliganController.MulliganComplete, () => manualControlMode,
                 RefreshAll);
+
+            if (areaSpellAnimator != null)
+            {
+                areaSpellAnimator.Bind(board, boardDisplay, opponentBoardDisplay, faceView, opponentFaceView);
+                playerOneHand.CardPlayed += (card, affected) => areaSpellAnimator.PlayCast(card.Data, playerOne, affected);
+                playerTwoHand.CardPlayed += (card, affected) => areaSpellAnimator.PlayCast(card.Data, playerTwo, affected);
+            }
 
             // Tears down whatever MinionViews the previous game's BoardDisplay still holds and
             // re-renders against the now-empty BoardMinions, so a restart's mulligan screen
@@ -277,7 +291,7 @@ namespace HearthstoneClone.UI
             Debug.Log($"Music track selected: index {index} ({musicTracks[index].name})");
         }
 
-        private List<CardData> BuildDeck(List<CardData> pool)
+        private List<CardData> BuildDeck(List<CardData> pool, int cardCount)
         {
             var deck = new List<CardData>();
             foreach (var card in pool)
@@ -289,7 +303,16 @@ namespace HearthstoneClone.UI
                     deck.Add(card);
                 }
             }
-            return deck;
+            if (deck.Count < cardCount)
+                throw new System.InvalidOperationException($"The card pool supplies {deck.Count} cards, but {cardCount} are needed. Add cards or increase Copies Per Card.");
+            // Choose from the full available pool without exceeding its per-card copy limit.
+            // Drawing and mulligan move these same instances; they never enlarge the deck.
+            for (int i = deck.Count - 1; i > 0; i--)
+            {
+                int swap = Random.Range(0, i + 1);
+                CardData value = deck[i]; deck[i] = deck[swap]; deck[swap] = value;
+            }
+            return deck.GetRange(0, cardCount);
         }
 
         private void OnMulliganComplete()

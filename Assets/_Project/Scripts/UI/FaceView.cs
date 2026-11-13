@@ -126,6 +126,7 @@ namespace HearthstoneClone.UI
                 }
 
                 crystalImage.sprite = i < player.CurrentMana ? manaCrystalFullSprite : manaCrystalEmptySprite;
+                crystalImage.color = i < player.CurrentMana ? Color.white : new Color(.35f, .4f, .55f);
             }
         }
 

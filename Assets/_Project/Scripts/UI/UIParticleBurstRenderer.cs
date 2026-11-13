@@ -54,6 +54,7 @@ namespace HearthstoneClone.UI
             }
 
             displayRect = displayImage.rectTransform;
+            displayImage.enabled = true;
             canvasRect = displayRect.parent as RectTransform;
 
             originalDisplaySizeDelta = displayRect.sizeDelta;

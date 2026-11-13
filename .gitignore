@@ -107,3 +107,6 @@ InitTestScene*.unity*
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 *.slnx
 _Recovery/
+
+# Python Editor helper cache
+__pycache__/

@@ -5,6 +5,9 @@ namespace HearthstoneClone.Cards
 {
     public class PlayerHand
     {
+        // Presentation observes a successful cast after rules resolve and before callers
+        // refresh the board. The list was captured before damage, retaining lethal targets.
+        public event System.Action<CardInstance, IReadOnlyList<Minion>> CardPlayed;
         public Player CorePlayer;
         public List<CardInstance> Deck = new List<CardInstance>();
         public List<CardInstance> Hand = new List<CardInstance>();
@@ -135,6 +138,9 @@ namespace HearthstoneClone.Cards
                 return false;
             }
 
+            var areaEffect = card.Data.onPlayEffect as HearthstoneClone.Effects.IAreaDamageEffect;
+            var affectedMinions = areaEffect?.GetAffectedMinions(context, effectTarget, CorePlayer);
+
             CorePlayer.CurrentMana -= card.Data.manaCost;
             Hand.Remove(card);
 
@@ -142,7 +148,7 @@ namespace HearthstoneClone.Cards
 
             if (card.Data.cardType == CardType.Minion)
             {
-                var minion = new Minion(card.Data.cardName, card.Data.attack, card.Data.health, card.Data.hasTaunt, card.Data.artwork);
+                var minion = new Minion(card.Data.cardName, card.Data.attack, card.Data.health, card.Data.hasTaunt, card.Data.artwork, card.Data.hasCharge);
                 CorePlayer.BoardMinions.Add(minion);
                 UnityEngine.Debug.Log($"{minion.MinionName} summoned to {CorePlayer.PlayerName}'s board.");
             }
@@ -156,6 +162,7 @@ namespace HearthstoneClone.Cards
                 UnityEngine.Debug.LogWarning($"{card.Data.cardName} has an onPlayEffect but no target was provided — effect was skipped.");
             }
 
+            CardPlayed?.Invoke(card, affectedMinions);
             return true;
         }
     }

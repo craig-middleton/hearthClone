@@ -98,6 +98,7 @@ namespace HearthstoneClone.Cards
         public int attack;
         public int health;
         public bool hasTaunt;
+        public bool hasCharge;
 
         [Header("Behavior")]
         public CardEffect onPlayEffect;

@@ -1,0 +1,18 @@
+{
+  "tool": "Built-in image_gen",
+  "reference": "Craig's Screenshot From 2026-11-13 13-25-59.png and supplied ORG_Combined.png",
+  "prompts": [
+    {
+      "name": "Orgrimmar",
+      "prompt": "Use case: precise-object-edit. Asset type: 16:9 Unity game board background, same resolution and framing as this image. Preserve the exact entire board layout, perspective, four solid corner props, carved frame, empty arched hero recesses, empty right-side button recess, and central clear arena. IMPORTANT: remove ALL blue-and-gold card backs from the top center edge, and remove BOTH vertical gold-and-blue card stacks on the right edge. Replace those card areas with matching wooden rim or blue cloth. There must be absolutely NO playing cards, card backs, deck stacks, characters, portraits, minions, icons, numbers, mana gems, text or labels anywhere. Keep both empty hero recesses and the empty button recess. Do not add UI. Change only the removal of those baked-in cards; keep the warm classic Orgrimmar board otherwise identical."
+    },
+    {
+      "name": "Winterveil",
+      "prompt": "Use case: precise-object-edit. Asset type: 16:9 Unity game board background, same resolution and framing as this image. Preserve the exact entire board layout, perspective, four solid corner props, carved frame, empty arched hero recesses, empty right-side button recess, and central clear arena. IMPORTANT: remove ALL blue-and-gold card backs from the top center edge, and remove BOTH vertical gold-and-blue card stacks on the right edge. Replace those card areas with matching wooden rim or blue cloth. There must be absolutely NO playing cards, card backs, deck stacks, characters, portraits, minions, icons, numbers, mana gems, text or labels anywhere. Keep both empty hero recesses and the empty button recess. Do not add UI. Make a winter seasonal version of this same exact Orgrimmar board: snow rests naturally on rock pillar ledges, zeppelin, fortress roofs, cannon and catapult; subtle icicles and frosted carved edges; cool winter shadows with warm golden central parchment. Keep the same four corner objects and exact positions. Central playable arena must remain clear and readable, no snow piles on arena. Preserve a polished Hearthstone hand-painted 3D appearance. No baked-in playing cards or decks."
+    },
+    {
+      "name": "HarvestTavern",
+      "prompt": "Use case: precise-object-edit. Asset type: 16:9 Unity game board background, same resolution and framing as this image. Preserve the exact entire board layout, perspective, four solid corner props, carved frame, empty arched hero recesses, empty right-side button recess, and central clear arena. IMPORTANT: remove ALL blue-and-gold card backs from the top center edge, and remove BOTH vertical gold-and-blue card stacks on the right edge. Replace those card areas with matching wooden rim or blue cloth. There must be absolutely NO playing cards, card backs, deck stacks, characters, portraits, minions, icons, numbers, mana gems, text or labels anywhere. Keep both empty hero recesses and the empty button recess. Do not add UI. Make a polished autumn/Hallow's End seasonal version of this same exact board. Add small pumpkins, warm lanterns and a few copper autumn leaves among the corner props, amber glow and warm dusk lighting, violet-blue cloth. Keep all four large Orgrimmar corner objects in the same exact positions, unchanged board outline and empty hero/button recesses. Golden parchment arena remains bright and clear, with no objects in playable space. Match Hearthstone's cohesive painted 3D game-board finish. No baked-in playing cards or decks."
+    }
+  ]
+}

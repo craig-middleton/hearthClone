@@ -63,6 +63,9 @@ namespace HearthstoneClone.AI
                         target = SelectEffectTarget(card.Data, aiPlayer, opponent);
                         if (target == null && card.Data.targetRequirement == TargetRequirement.AnyMinion)
                             continue;
+                        if (card.Data.onPlayEffect is IAreaDamageEffect area &&
+                            area.GetAffectedMinions(context, target, aiPlayer).Count == 0)
+                            continue;
                     }
 
                     if (aiHand.PlayCard(card, context, target))
@@ -95,6 +98,11 @@ namespace HearthstoneClone.AI
             }
             else if (cardData.targetRequirement == TargetRequirement.AnyMinion)
             {
+                if (cardData.onPlayEffect is IDamageEffect)
+                {
+                    Minion enemy = FindLethalDamageTarget(cardData, opponent) ?? FirstLivingMinion(opponent);
+                    return enemy != null ? new Target(enemy) : null;
+                }
                 // No friendly minion to buff - return null so the caller skips this card rather
                 // than burning mana on a play whose target ends up null (GrowthEffect no-ops
                 // without a Minion target, same guard as a human dropping it on a face - see

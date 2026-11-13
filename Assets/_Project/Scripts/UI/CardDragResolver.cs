@@ -261,6 +261,8 @@ namespace HearthstoneClone.UI
         {
             if (spellAnimationSequencer == null) return;
             if (card.Data.onPlayEffect == null) return;
+            // These casts are presented through PlayerHand.CardPlayed for both human and AI.
+            if (card.Data.onPlayEffect is IAreaDamageEffect) return;
 
             // BoardSweep has no single target Transform to travel to - ResolveViewTransform
             // was never the right tool for it (for a Self-target card like Blizzard it

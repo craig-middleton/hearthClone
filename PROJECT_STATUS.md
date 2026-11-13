@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-13 — The first Hearthstone visual scene is built and saved through the running Unity 6.6 Editor. Open `Assets/Scenes/HearthstoneTable.unity`; the original `TestScene` is retained. Craig playtested it successfully. Automated Editor checks covered mulligan input, concealed opponent cards, minion drag handlers, correct mana spending, and an advancing Play loop with zero console errors/warnings. All 20 styled card assets preserve their original rules and have artwork. This is a visual foundation; some art mappings and frame crops remain provisional. Significant updates continue on `main`._
+_Last updated: 2026-11-13 — HearthstoneTable now uses reference-based classic, winter and harvest boards, chosen randomly on each new match without immediate repeats. The pool contains 26 cards plus the separate Coin asset, including three new Mage spells and four new Taunt/Charge minions; the existing Charging Rhino also has Charge. Each player starts with exactly 30 cards across deck and hand, counting the second player's Coin. Rule, AI, restart, deck-size and board-selection checks pass in Unity 6.6. Significant updates continue directly on `main`. See `Docs/VISUAL_OVERHAUL.md` for current scene, tools and verification details._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.
@@ -13,6 +13,7 @@ _Last updated: 2026-11-13 — The first Hearthstone visual scene is built and sa
 - **`NETWORKING_PREP.md`** — checklist for the networked 2-player phase: prerequisites and every place UI/input mutates game state today. Read it before starting networking work.
 
 ## Working Preferences
+- Give brief progress updates explaining what is being changed and why, so Craig can follow the work. Stop at meaningful visual/gameplay checkpoints for Craig to review before adding more features.
 - A 2-paragraph explanation after each new/updated code block: what it does and why.
 - **Chat sessions only: full rewritten class/file, not a diff** — Craig pastes whole files and partial merges cause errors. **Not for Claude Code sessions**, which edit on disk: there a whole-file rewrite is overhead and an unreadable diff. Make targeted edits.
 - **Avoid singletons** — explicit constructor/field/parameter-passed references over global static instances. Targets *global static state*, not parameters: passing `Board` into a method is the preferred style.
@@ -23,7 +24,7 @@ Hearthstone-style card game in Unity, single-player vs AI, C# with data-driven c
 **Unity 6.6 (`6000.6.9f1`), migrated in the Editor.** TextMeshPro for all UI text, never legacy `UnityEngine.UI.Text`.
 
 ## Architecture
-- Folders under `Assets/_Project/`: Scripts, ScriptableObjects, Prefabs, Art (plus an empty `Scenes/`). The original game scene is `Assets/Scenes/TestScene.unity`; the styled scene is `Assets/Scenes/HearthstoneTable.unity`, enabled as the first build scene. Cards are data-driven — they reference reusable `CardEffect` assets.
+- Folders under `Assets/_Project/`: Scripts, ScriptableObjects, Prefabs, Art (plus an empty `Scenes/`). The original game scene is `Assets/Scenes/TestScene.unity`; the styled scene is `Assets/Scenes/HearthstoneTable.unity`, enabled as the first build scene. New spell/keyword card assets are under `ScriptableObjects/MageSpells` and `ScriptableObjects/KeywordMinions`; final board plates are under `Art/Boards`. Cards are data-driven — they reference reusable `CardEffect` assets.
 - **Assembly Definitions** enforce one-way flow: `Core` (no deps) ← `Effects` (Core) ← `Cards` (Core, Effects) ← `AI` (Core, Cards, Effects) ← `UI` (Core, Cards, Effects, **AI**, TMP). `Effects` must NOT reference `Cards`; `UI` references `AI` because `EffectTester` constructs `AIController`.
 - **Keep `Core` generic and unaware of `CardData`.** AI-ness isn't a flag on `Player`.
 
