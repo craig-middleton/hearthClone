@@ -42,6 +42,8 @@ public static class RefineTableInterface
         // A shorter fan leaves the hero and the right-side controls readable.
         var fan = e.handDisplay.handPanel.GetComponent<HandFanLayout>();
         fan.perCardStep = 112; fan.maxTotalWidth = 790; fan.maxTiltDegrees = 12;
+        ((RectTransform)e.handDisplay.handPanel).anchoredPosition = P(-30,-505);
+        ((RectTransform)e.opponentHandDisplay.handPanel).anchoredPosition = P(0,575);
         foreach(var display in new[]{e.boardDisplay,e.opponentBoardDisplay})
         {
             var layout = display.boardPanel.GetComponent<HorizontalLayoutGroup>();

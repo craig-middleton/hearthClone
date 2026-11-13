@@ -9,7 +9,9 @@ namespace HearthstoneClone.UI
 {
     public class EffectTester : MonoBehaviour
     {
-        public const int StartingCardCount = 30;
+        public const int StartingCardCount = DeckSelection.DeckSize;
+        public FrontEndController frontEnd;
+        private List<CardData> selectedDeck;
         public List<CardData> cardPool;
         public int copiesPerCard = 2;
         public CardData coinCard;
@@ -101,8 +103,17 @@ namespace HearthstoneClone.UI
                 playAgainButton.onClick.AddListener(OnPlayAgainClicked);
             }
 
-            BeginNewGame();
+            if(frontEnd!=null)frontEnd.Initialize(this);
+            else BeginNewGame();
         }
+
+        public bool StartNewGame(IReadOnlyList<CardData> deck = null)
+        {
+            if(deck!=null&&!DeckSelection.IsValid(deck,cardPool,copiesPerCard))return false;
+            selectedDeck=deck==null?null:new List<CardData>(deck);
+            BeginNewGame();return true;
+        }
+        public void CancelPendingInput() { combatInputController?.ClearSelection(); }
 
         // Composition root: builds the entire per-game object graph from scratch (players,
         // board, hands, AI, and all four controllers) and wires the mulligan UI to start.
@@ -186,7 +197,7 @@ namespace HearthstoneClone.UI
             turnManager = new TurnManager(board);
             turnManager.StartGame();
 
-            var playerOneDeck = BuildDeck(cardPool, StartingCardCount);
+            var playerOneDeck = selectedDeck==null?BuildDeck(cardPool, StartingCardCount):new List<CardData>(selectedDeck);
             // Captured before the opening draw so the deck pile's thresholds use the true starting size.
             playerOneStartingDeckSize = playerOneDeck.Count;
             playerOneHand = new PlayerHand(playerOne, playerOneDeck);

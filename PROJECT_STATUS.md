@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-13 — Visual-only iteration now covers the fitted hero portraits, bronze hero power, faceted mana tray, card faces/art crops, minion spacing, soft attack halos and frozen rims. No new cards or rules. Continue autonomously with brief updates; Craig explicitly removed per-part approval stops. Current styled pool: 26 cards; starting deck plus hand: exactly 30 for each player including Coin. See Docs/VISUAL_OVERHAUL.md for the current scene, tools, provenance and verification._
+_Last updated: 2026-11-13 — Visual-only iteration now covers the fitted hero portraits, bronze hero power, faceted mana tray, card faces/art crops, minion spacing, soft attack halos and frozen rims. Craig subsequently authorized a main menu, a 30-card deck picker, hand-position correction, attack/spell graphics, hero-power targeting and a visible opponent power. The menu/deck picker and hand correction are implemented; action/power work is next. Finish these items, commit/push, then stop for Craig's playtest. Current styled pool: 26 cards; starting deck plus hand: exactly 30 for each player including Coin. See Docs/VISUAL_OVERHAUL.md for the current scene, tools, provenance and verification._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.
@@ -13,8 +13,8 @@ _Last updated: 2026-11-13 — Visual-only iteration now covers the fitted hero p
 - **`NETWORKING_PREP.md`** — checklist for the networked 2-player phase: prerequisites and every place UI/input mutates game state today. Read it before starting networking work.
 
 ## Working Preferences
-- Current scope: visually refine the existing game only; no new cards/mechanics. Continue iterating without asking for per-part approval (Craig's latest instruction). Keep using his reference screenshot, official Hearthstone imagery, and the supplied Desktop assets.
-- Give brief progress updates explaining what is being changed and why. Save meaningful visual checkpoints with commits and pushes to `main`; continue within the visual-only scope without approval stops.
+- Current scope: refine the existing graphics and finish the explicitly requested menu/deck picker, clearer hand placement, attack/spell effects, targeting arrow and opponent power. Continue iterating without asking for per-part approval (Craig's latest instruction). Keep using his reference screenshot, official Hearthstone imagery, and the supplied Desktop assets.
+- Give brief progress updates explaining what is being changed and why. Save meaningful visual checkpoints with commits and pushes to `main`; continue within the agreed scope without approval stops, then stop for the requested playtest.
 - A 2-paragraph explanation after each new/updated code block: what it does and why.
 - **Chat sessions only: full rewritten class/file, not a diff** — Craig pastes whole files and partial merges cause errors. **Not for Claude Code sessions**, which edit on disk: there a whole-file rewrite is overhead and an unreadable diff. Make targeted edits.
 - **Avoid singletons** — explicit constructor/field/parameter-passed references over global static instances. Targets *global static state*, not parameters: passing `Board` into a method is the preferred style.
@@ -234,3 +234,8 @@ Spells:
 - Work directly on `main`, committing and pushing significant visual updates.
 - `git add .` / `git commit -m "short summary"` / `git push`, pushed regularly to `github.com/craig-middleton/hearthClone`.
 - `.gitignore` excludes `Library/`, `Temp/`, `.sln`/`.slnx`, `.csproj`.
+
+
+## Menu and chosen deck
+
+HearthstoneTable opens at a native-asset main menu. Play Game creates a new match; Choose Deck opens an eight-card-per-page collection and removable deck list. Save requires exactly 30 cards, at most two copies of each, from the existing pool. Selection persists in PlayerPrefs by stable asset name and is revalidated on load and at match start. Without a saved deck, Play retains the random 30-card selection. The opponent still receives 29 plus Coin. Menu can be reached from the board, and Play Again retains the chosen composition. `DeckSelection` centralizes validation; `FrontEndController` owns screen/persistence concerns. `VerifyFrontEnd.cs` exercises actual clicks, limits, save/start composition and fresh restarts while restoring any prior saved preference. Resting hands are at y=-505 and y=575, clearing both hero paintings.
