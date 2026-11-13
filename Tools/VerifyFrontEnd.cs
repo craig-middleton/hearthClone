@@ -31,6 +31,10 @@ public static class VerifyFrontEnd
             Check(ui.Draft.Count==30&&ui.saveButton.interactable,"Valid 30-card deck is not saveable");
             ui.AddCard(e.cardPool.Last());Check(ui.Draft.Count==30,"31st card accepted");
             var chosen=ui.Draft.Copy();Click(ui.saveButton);Check(ui.mainMenu.activeInHierarchy&&ui.HasCustomDeck,"Save did not return to menu");
+            var privateFields=BindingFlags.Instance|BindingFlags.NonPublic;
+            typeof(FrontEndController).GetField("savedDeck",privateFields).SetValue(ui,null);
+            typeof(FrontEndController).GetMethod("LoadDeck",privateFields).Invoke(ui,null);
+            Check(ui.SavedDeck!=null&&ui.SavedDeck.Count==30&&chosen.All(c=>ui.SavedDeck.Count(x=>x==c)==chosen.Count(x=>x==c)),"Saved deck did not reload with its exact composition");
             Check(!e.StartNewGame(chosen.Take(29).ToList()),"Match accepts 29-card custom deck");
             Click(ui.playButton);await Frame();
             Check(!ui.gameObject.activeSelf&&ui.tableSurface.activeSelf&&e.mulliganPanel.gameObject.activeInHierarchy,"Play does not open a fresh mulligan");

@@ -16,6 +16,8 @@ public static class PreviewMageSpell
     {
         if(!EditorApplication.isPlaying)throw new InvalidOperationException("Enter Play mode first; this fixture must not edit the saved scene.");
         var e=UnityEngine.Object.FindAnyObjectByType<EffectTester>();
+        e.CancelPendingInput();e.ResetPresentation();
+        if(e.frontEnd!=null&&e.frontEnd.gameObject.activeSelf)e.frontEnd.Play();
         if(e.mulliganPanel.gameObject.activeSelf)e.confirmMulliganButton.onClick.Invoke();
         var flags=BindingFlags.Instance|BindingFlags.NonPublic;
         var p1=e.faceView.Player;var p2=e.opponentFaceView.Player;
@@ -44,7 +46,7 @@ public static class PreviewMageSpell
             var view=e.handDisplay.handPanel.GetComponentsInChildren<CardView>().Last(v=>v.Card!=null && v.Card.Data==card);
             var pointer=new PointerEventData(EventSystem.current){position=view.transform.position,button=PointerEventData.InputButton.Left};
             ExecuteEvents.Execute(view.gameObject,pointer,ExecuteEvents.beginDragHandler);
-            pointer.position=card.targetRequirement==TargetRequirement.AnyMinion?display.GetViewTransform(targetPlayer.BoardMinions[1]).position:display.boardPanel.position;
+            pointer.position=card.targetRequirement==TargetRequirement.AnyMinion?display.GetViewTransform(targetPlayer.BoardMinions[1]).position:card.targetRequirement==TargetRequirement.Any?e.opponentFaceView.transform.position:display.boardPanel.position;
             ExecuteEvents.Execute(view.gameObject,pointer,ExecuteEvents.dragHandler);
             ExecuteEvents.Execute(view.gameObject,pointer,ExecuteEvents.endDragHandler);
         }

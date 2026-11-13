@@ -15,6 +15,8 @@ namespace HearthstoneClone.UI
         [Header("Health Gem")]
         [SerializeField] private Image healthGemImage;
         [SerializeField] private TMP_Text healthNumberText;
+        [SerializeField] private GameObject armorDisplay;
+        [SerializeField] private TMP_Text armorNumberText;
 
         // Player-only mana crystal row: left unassigned on the opponent's FaceView instance,
         // which is the gate - BuildManaCrystalRow() no-ops if either is null. Same
@@ -72,6 +74,8 @@ namespace HearthstoneClone.UI
 
             player = playerData;
             onClicked = clickCallback;
+            if(armorDisplay!=null)armorDisplay.SetActive(player.Armor>0);
+            if(armorNumberText!=null)armorNumberText.text=player.Armor.ToString();
 
             if (healthNumberText != null)
             {

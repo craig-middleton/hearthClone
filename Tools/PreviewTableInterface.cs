@@ -15,6 +15,8 @@ public static class PreviewTableInterface
     {
         if (!EditorApplication.isPlaying) throw new InvalidOperationException("This preview is Play mode only.");
         var e = UnityEngine.Object.FindAnyObjectByType<EffectTester>();
+        e.CancelPendingInput();e.ResetPresentation();
+        if(e.frontEnd!=null&&e.frontEnd.gameObject.activeSelf)e.frontEnd.Play();
         if (e.mulliganPanel.gameObject.activeSelf) e.confirmMulliganButton.onClick.Invoke();
         e.boardThemes.ShowBoard(theme);
         var player = e.faceView.Player; var opponent = e.opponentFaceView.Player;

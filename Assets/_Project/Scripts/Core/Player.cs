@@ -7,6 +7,7 @@ namespace HearthstoneClone.Core
         public string PlayerName;
         public int Health;
         public int MaxHealth;
+        public int Armor;
         public int CurrentMana;
         public int MaxMana;
         public List<Minion> BoardMinions = new List<Minion>();
@@ -22,7 +23,9 @@ namespace HearthstoneClone.Core
 
         public void TakeDamage(int amount)
         {
-            Health -= amount;
+            if(amount<=0)return;
+            int absorbed=System.Math.Min(Armor,amount);
+            Armor-=absorbed;Health-=amount-absorbed;
         }
     }
 }

@@ -29,6 +29,7 @@ namespace HearthstoneClone.UI
 
             foreach (Transform child in handPanel)
             {
+                child.gameObject.SetActive(false);
                 Destroy(child.gameObject);
             }
 

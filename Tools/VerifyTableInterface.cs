@@ -45,6 +45,7 @@ public static class VerifyTableInterface
         int mana=player.CurrentMana,healthBefore=opponent.Health;
         var pointer=new PointerEventData(EventSystem.current){button=PointerEventData.InputButton.Left,position=e.heroPowerButton.transform.position};
         ExecuteEvents.Execute(e.heroPowerButton.gameObject,pointer,ExecuteEvents.pointerClickHandler);
+        if(e.targetingRibbon!=null)ExecuteEvents.Execute(e.opponentFaceView.gameObject,pointer,ExecuteEvents.pointerClickHandler);
         Check(player.CurrentMana==mana-2&&opponent.Health==healthBefore-1,"Power button changed the existing cost/damage behavior");
         ExecuteEvents.Execute(e.heroPowerButton.gameObject,pointer,ExecuteEvents.pointerClickHandler);
         Check(player.CurrentMana==mana-2&&opponent.Health==healthBefore-1,"Power could be used twice this turn");

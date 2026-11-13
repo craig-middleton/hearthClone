@@ -260,6 +260,7 @@ namespace HearthstoneClone.UI
         private void TriggerSpellAnimation(CardInstance card, Vector3 sourcePosition, Transform targetViewTransform, BoardDisplay enemyBoard)
         {
             if (spellAnimationSequencer == null) return;
+            if (spellAnimationSequencer.nativeEffects != null) return; // Both players are observed through CardResolved.
             if (card.Data.onPlayEffect == null) return;
             // These casts are presented through PlayerHand.CardPlayed for both human and AI.
             if (card.Data.onPlayEffect is IAreaDamageEffect) return;

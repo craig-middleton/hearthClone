@@ -12,7 +12,7 @@ namespace HearthstoneClone.UI
     // calls back into after resolving their own action.
     public class GameManager
     {
-        private const int HeroPowerCost = 2;
+        private const int HeroPowerCost = HeroPower.Cost;
 
         private readonly Board board;
         private readonly TurnManager turnManager;
@@ -27,6 +27,8 @@ namespace HearthstoneClone.UI
         private readonly Func<bool> isMulliganComplete;
         private readonly Func<bool> isManualControlMode;
         private readonly Action onRefreshAll;
+        public Func<bool> IsPresentationBusy;
+        public event Action<Player,HeroPowerKind,Target> HeroPowerUsed;
 
         private Player winner = null;
 
@@ -57,26 +59,20 @@ namespace HearthstoneClone.UI
 
         public void OnHeroPowerClicked()
         {
-            if (GameOver) return;
-            if (!isMulliganComplete()) return;
-            if (!isManualControlMode() && turnManager.CurrentPlayer == playerTwo) return;
+            var actor=turnManager.CurrentPlayer;
+            TryUseHeroPower(actor,new Target(actor==playerTwo?actor:board.GetOpponent(actor)));
+        }
 
-            // Everything below resolves through whoever is actually taking the turn,
-            // so the single Hero Power button works for Player Two under manual
-            // control mode instead of silently charging Player One.
-            Player actingPlayer = turnManager.CurrentPlayer;
-            Player opposingPlayer = board.GetOpponent(actingPlayer);
+        public bool CanUseHeroPower(Player owner,bool ai=false)
+            => owner!=null&&!GameOver&&isMulliganComplete()&&owner==turnManager.CurrentPlayer&&owner.Health>0&&owner.CurrentMana>=HeroPowerCost&&!owner.HasUsedHeroPowerThisTurn
+                &&(ai||owner!=playerTwo||isManualControlMode())&&(ai||IsPresentationBusy==null||!IsPresentationBusy());
 
-            if (actingPlayer.HasUsedHeroPowerThisTurn) return;
-            if (actingPlayer.CurrentMana < HeroPowerCost) return;
-
-            actingPlayer.CurrentMana -= HeroPowerCost;
-            actingPlayer.HasUsedHeroPowerThisTurn = true;
-            opposingPlayer.TakeDamage(1);
-
-            Debug.Log($"{actingPlayer.PlayerName} used Hero Power. Dealt 1 damage to {opposingPlayer.PlayerName}.");
-
-            AfterGameAction();
+        public bool TryUseHeroPower(Player owner,Target target,bool ai=false)
+        {
+            if(!CanUseHeroPower(owner,ai))return false;
+            var kind=owner==playerTwo?HeroPowerKind.ArmorUp:HeroPowerKind.Fireblast;
+            if(!HeroPower.TryUse(owner,kind,target,board))return false;
+            HeroPowerUsed?.Invoke(owner,kind,target);AfterGameAction();return true;
         }
 
         public void AfterGameAction()
@@ -91,6 +87,7 @@ namespace HearthstoneClone.UI
         public void OnEndTurnClicked()
         {
             if (GameOver) return;
+            if(IsPresentationBusy!=null&&IsPresentationBusy())return;
             if (!isMulliganComplete()) return;
 
             combatInputController.ClearSelection();
@@ -102,6 +99,7 @@ namespace HearthstoneClone.UI
             if (!GameOver && !isManualControlMode() && turnManager.CurrentPlayer == playerTwo)
             {
                 aiController.TakeTurn();
+                if(!GameOver&&CanUseHeroPower(playerTwo,true))TryUseHeroPower(playerTwo,new Target(playerTwo),true);
                 CheckWinCondition();
 
                 if (!GameOver)

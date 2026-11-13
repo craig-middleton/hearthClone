@@ -22,6 +22,7 @@ public static class VerifyStartingDecks
     {
         if(!EditorApplication.isPlaying)throw new InvalidOperationException("Run this in a fresh Play-mode match.");
         var e=UnityEngine.Object.FindAnyObjectByType<EffectTester>();
+        if(e.frontEnd!=null&&e.frontEnd.gameObject.activeSelf)e.frontEnd.Play();
         if(e.mulliganPanel.gameObject.activeSelf)e.confirmMulliganButton.onClick.Invoke();
         string turnOne=Counts(e);Check(e.faceView.Player.MaxMana==1,"Fixture must start on turn one");
         int previous=e.boardThemes.CurrentIndex;

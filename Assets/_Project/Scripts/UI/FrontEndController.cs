@@ -48,7 +48,7 @@ namespace HearthstoneClone.UI
         }
         public void ShowMenu()
         {
-            tableSurface.SetActive(false); game.CancelPendingInput();
+            tableSurface.SetActive(false); game.CancelPendingInput();game.ResetPresentation();
             gameObject.SetActive(true);mainMenu.SetActive(true);deckScreen.SetActive(false);
             menuDeckLabel.text=savedDeck==null?"Random deck - 30 cards":"Your chosen deck - 30 cards";
         }

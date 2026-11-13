@@ -8,6 +8,7 @@ namespace HearthstoneClone.Cards
         // Presentation observes a successful cast after rules resolve and before callers
         // refresh the board. The list was captured before damage, retaining lethal targets.
         public event System.Action<CardInstance, IReadOnlyList<Minion>> CardPlayed;
+        public event System.Action<CardInstance, Target> CardResolved;
         public Player CorePlayer;
         public List<CardInstance> Deck = new List<CardInstance>();
         public List<CardInstance> Hand = new List<CardInstance>();
@@ -162,6 +163,7 @@ namespace HearthstoneClone.Cards
                 UnityEngine.Debug.LogWarning($"{card.Data.cardName} has an onPlayEffect but no target was provided — effect was skipped.");
             }
 
+            CardResolved?.Invoke(card, effectTarget);
             CardPlayed?.Invoke(card, affectedMinions);
             return true;
         }

@@ -22,6 +22,8 @@ namespace HearthstoneClone.UI
         public AudioClip fireSound;
         public AudioClip arcaneSound;
         public AudioClip frostSound;
+        public Texture2D suppliedGlow;
+        public Texture2D suppliedShard;
         [Range(0, 1)] public float soundVolume = .65f;
 
         private Board board;
@@ -55,12 +57,11 @@ namespace HearthstoneClone.UI
 
         public void Bind(Board model, BoardDisplay friendly, BoardDisplay enemy, FaceView friendlyFace, FaceView enemyFace)
         {
-            StopAllCoroutines();
-            foreach (var stage in stages) Release(stage);
-            stages.Clear();
+            ClearEffects();
             board = model; playerBoard = friendly; opponentBoard = enemy;
             playerFace = friendlyFace; opponentFace = enemyFace;
         }
+        public void ClearEffects(){StopAllCoroutines();foreach(var stage in stages)Release(stage);stages.Clear();if(audioSource!=null)audioSource.Stop();}
 
         public void PlayCast(CardData card, Player caster, IReadOnlyList<Minion> affected)
         {
@@ -278,7 +279,7 @@ namespace HearthstoneClone.UI
         private void EnsureMaterials()
         {
             if (glowMaterial != null) return;
-            glowTexture = MakeTexture(false); shardTexture = MakeTexture(true);
+            glowTexture = suppliedGlow!=null?suppliedGlow:MakeTexture(false); shardTexture = suppliedShard!=null?suppliedShard:MakeTexture(true);
             glowMaterial = MakeMaterial(glowTexture); shardMaterial = MakeMaterial(shardTexture);
         }
         private static Texture2D MakeTexture(bool shard)
@@ -318,7 +319,7 @@ namespace HearthstoneClone.UI
         {
             foreach(var stage in stages)Release(stage);
             if(glowMaterial!=null)Destroy(glowMaterial);if(shardMaterial!=null)Destroy(shardMaterial);
-            if(glowTexture!=null)Destroy(glowTexture);if(shardTexture!=null)Destroy(shardTexture);
+            if(glowTexture!=null&&suppliedGlow==null)Destroy(glowTexture);if(shardTexture!=null&&suppliedShard==null)Destroy(shardTexture);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace HearthstoneClone.UI
         public Image usedBack;
         public GameObject readyGlow;
         private Player player;
+        private bool available = true;
 
         public void SetPlayer(Player actingPlayer) => player = actingPlayer;
+        public void SetPlayer(Player owner,bool canUse) {player=owner;available=canUse;}
 
         void LateUpdate()
         {
@@ -24,7 +26,7 @@ namespace HearthstoneClone.UI
                 artwork.color = player.CurrentMana >= 2 ? Color.white : new Color(.7f, .7f, .7f);
             }
             if (usedBack != null) usedBack.enabled = used;
-            if (readyGlow != null) readyGlow.SetActive(!used && player.CurrentMana >= 2);
+            if (readyGlow != null) readyGlow.SetActive(available && !used && player.CurrentMana >= 2);
         }
     }
 }

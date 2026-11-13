@@ -16,6 +16,7 @@ namespace HearthstoneClone.UI
     // moving the code to a new class doesn't change what's reachable from the UI either way.
     public class CombatInputController
     {
+        public event Action<Minion,Target> AttackResolved;
         private readonly Board board;
         private readonly TurnManager turnManager;
         private readonly Player playerOne;
@@ -88,6 +89,7 @@ namespace HearthstoneClone.UI
             bool success = Combat.TryAttack(attacker, target, board, out string failReason);
             if (success)
             {
+                AttackResolved?.Invoke(attacker,target);
                 Debug.Log($"{attacker.MinionName} attacked.");
                 selectedAttacker = null;
             }

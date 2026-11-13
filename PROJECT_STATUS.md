@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-13 — Visual-only iteration now covers the fitted hero portraits, bronze hero power, faceted mana tray, card faces/art crops, minion spacing, soft attack halos and frozen rims. Craig subsequently authorized a main menu, a 30-card deck picker, hand-position correction, attack/spell graphics, hero-power targeting and a visible opponent power. The menu/deck picker and hand correction are implemented; action/power work is next. Finish these items, commit/push, then stop for Craig's playtest. Current styled pool: 26 cards; starting deck plus hand: exactly 30 for each player including Coin. See Docs/VISUAL_OVERHAUL.md for the current scene, tools, provenance and verification._
+_Last updated: 2026-11-13 — Ready for Craig's playtest after the agreed batch. Native-asset menu and saved 30-card deck picker; corrected resting hands; fitted portraits, mana and cards; both hero powers; aimed Fireblast; Armor Up; native spell/projectile and attack-impact presentation. Existing pool remains 26 cards, and both starting deck-plus-hand totals remain exactly 30 including Coin. Significant updates are committed/pushed to main. Stop implementation here for Craig's playtest._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.
@@ -13,8 +13,8 @@ _Last updated: 2026-11-13 — Visual-only iteration now covers the fitted hero p
 - **`NETWORKING_PREP.md`** — checklist for the networked 2-player phase: prerequisites and every place UI/input mutates game state today. Read it before starting networking work.
 
 ## Working Preferences
-- Current scope: refine the existing graphics and finish the explicitly requested menu/deck picker, clearer hand placement, attack/spell effects, targeting arrow and opponent power. Continue iterating without asking for per-part approval (Craig's latest instruction). Keep using his reference screenshot, official Hearthstone imagery, and the supplied Desktop assets.
-- Give brief progress updates explaining what is being changed and why. Save meaningful visual checkpoints with commits and pushes to `main`; continue within the agreed scope without approval stops, then stop for the requested playtest.
+- Current scope: the explicitly requested menu/deck picker, hand placement, attack/spell effects, targeting arrow and opponent power are complete. Stop for Craig's playtest before further implementation. Continue iterating without asking for per-part approval (Craig's latest instruction). Keep using his reference screenshot, official Hearthstone imagery, and the supplied Desktop assets.
+- Give brief progress updates explaining what is being changed and why. Save meaningful visual checkpoints with commits and pushes to `main`; the agreed batch is complete; stop for the requested playtest.
 - A 2-paragraph explanation after each new/updated code block: what it does and why.
 - **Chat sessions only: full rewritten class/file, not a diff** — Craig pastes whole files and partial merges cause errors. **Not for Claude Code sessions**, which edit on disk: there a whole-file rewrite is overhead and an unreadable diff. Make targeted edits.
 - **Avoid singletons** — explicit constructor/field/parameter-passed references over global static instances. Targets *global static state*, not parameters: passing `Board` into a method is the preferred style.
@@ -26,7 +26,7 @@ Hearthstone-style card game in Unity, single-player vs AI, C# with data-driven c
 
 ## Architecture
 - Folders under `Assets/_Project/`: Scripts, ScriptableObjects, Prefabs, Art (plus an empty `Scenes/`). The original game scene is `Assets/Scenes/TestScene.unity`; the styled scene is `Assets/Scenes/HearthstoneTable.unity`, enabled as the first build scene. New spell/keyword card assets are under `ScriptableObjects/MageSpells` and `ScriptableObjects/KeywordMinions`; final board plates are under `Art/Boards`. Cards are data-driven — they reference reusable `CardEffect` assets.
-- **Assembly Definitions** enforce one-way flow: `Core` (no deps) ← `Effects` (Core) ← `Cards` (Core, Effects) ← `AI` (Core, Cards, Effects) ← `UI` (Core, Cards, Effects, **AI**, TMP). `Effects` must NOT reference `Cards`; `UI` references `AI` because `EffectTester` constructs `AIController`.
+- **Assembly Definitions** enforce one-way flow: `Core` (no deps) ← `Effects` (Core) ← `Cards` (Core, Effects) ← `AI` (Core, Cards, Effects) ← `UI` (Core, Cards, Effects, **AI**, TMP, Input System). `Effects` must NOT reference `Cards`; `UI` references `AI` because `EffectTester` constructs `AIController`.
 - **Keep `Core` generic and unaware of `CardData`.** AI-ness isn't a flag on `Player`.
 
 ### Design principles in force
@@ -201,7 +201,7 @@ Spells:
 - **Cosmetic**: `BoardPanel`/`OpponentBoardPanel` text clipping (minion name cut off at the left edge); board panel vertical spacing needs more separation; `MulliganPanel` shares `HandPanel`'s screen position (fine, hidden after confirm).
 
 ## Next Steps (in order)
-**Current priority supersedes the older feature roadmap below:** continue graphical refinement of existing content only, without per-part approval stops. Current implementation details are in `Docs/VISUAL_OVERHAUL.md`; older phase descriptions refer to the original TestScene.
+**Current priority supersedes the older feature roadmap below:** stop for Craig's playtest of the completed agreed batch. Current implementation details are in `Docs/VISUAL_OVERHAUL.md`; older phase descriptions refer to the original TestScene.
 
 1. ✅ **Playtest (1a–1d) — DONE, see HISTORY.** One open remainder: **the own-side attack rejection has never been reachable from the UI** — own-minion clicks route to selection, own-face clicks are blocked in `OnFaceClicked`. Reaching it needs a change to `OnMinionClicked`/`OnFaceClicked`/`Combat.TryAttack` itself, not another card-play feature layered on top.
 2. ✅ **Targeting system — DONE, superseded by drag-and-drop (Next Steps 4). See HISTORY (Session 31).**
@@ -239,3 +239,12 @@ Spells:
 ## Menu and chosen deck
 
 HearthstoneTable opens at a native-asset main menu. Play Game creates a new match; Choose Deck opens an eight-card-per-page collection and removable deck list. Save requires exactly 30 cards, at most two copies of each, from the existing pool. Selection persists in PlayerPrefs by stable asset name and is revalidated on load and at match start. Without a saved deck, Play retains the random 30-card selection. The opponent still receives 29 plus Coin. Menu can be reached from the board, and Play Again retains the chosen composition. `DeckSelection` centralizes validation; `FrontEndController` owns screen/persistence concerns. `VerifyFrontEnd.cs` exercises actual clicks, limits, save/start composition and fresh restarts while restoring any prior saved preference. Resting hands are at y=-505 and y=575, clearing both hero paintings.
+
+
+## Hero powers and action presentation
+
+Jaina's Fireblast costs 2 mana and deals 1 to a chosen living hero or board minion, including friendly targets and ignoring Taunt. Click the power, then a target; right-click/Esc cancels without spending. Garrosh's visible Armor Up costs 2 mana and gives 2 armor. The AI uses it with spare mana; its button is human-controlled only during manual Player Two turns. Armor absorbs damage before health, including spells and fatigue. `Core/HeroPower` validates the rule; GameManager validates turn/mulligan/game-over/input eligibility. UI only presents it.
+
+`BattleEffects` observes successful attacks and `PlayerHand.CardResolved` for both sides. Native textures provide travelling school effects, impact bursts, floating damage and minion lunges. Lethal views use separate non-interactive snapshots; surviving views are re-resolved. The queue blocks other match actions until it completes. Menu/new match clears pending aiming, snapshots, particles and effect audio. Area spells retain their isolated stages, now with supplied particle textures. Both hero-power buttons show their own ready/spent state. Targeting uses Input System events and a curved native red strip/reticle; UI references the Input System assembly.
+
+Live checks cover selection/cancel, face/minion Fireblast, lethal hits and retaliation, temporary-object cleanup, AI Armor Up, 30-card start/restart, deck save/reload and actual spell drag paths. Final C#/shader compilation and current Unity console are clean. `Tools/PreviewBattlePresentation.cs` pauses disposable fixtures for captures; never save one. Final Editor state is the normal main menu, with fixtures discarded.

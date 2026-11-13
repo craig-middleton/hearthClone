@@ -9,6 +9,7 @@ namespace HearthstoneClone.UI
     // Card lift/zoom and discard-off are separate, later pieces - see PROJECT_STATUS.
     public class SpellAnimationSequencer : MonoBehaviour
     {
+        public BattleEffects nativeEffects;
         [Header("Travel")]
         public float travelDuration = 0.35f;
         public AnimationCurve travelCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);

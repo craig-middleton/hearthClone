@@ -8,6 +8,7 @@ namespace HearthstoneClone.AI
 {
     public class AIController
     {
+        public event System.Action<Minion,Target> AttackResolved;
         private readonly PlayerHand aiHand;
         private readonly GameContext context;
         private readonly Board board;
@@ -176,7 +177,7 @@ namespace HearthstoneClone.AI
                     if (minion == null || !minion.CanAttack) continue;
                     unblockedDamage += minion.CurrentAttack;
                 }
-                lethalAvailable = unblockedDamage >= opponent.Health;
+                lethalAvailable = unblockedDamage >= opponent.Health + opponent.Armor;
             }
 
             foreach (var minion in new List<Minion>(aiPlayer.BoardMinions))
@@ -190,6 +191,7 @@ namespace HearthstoneClone.AI
                 {
                     Debug.Log($"{aiPlayer.PlayerName} (AI) attack failed: {failReason}");
                 }
+                else AttackResolved?.Invoke(minion,attackTarget);
                 board.RemoveDeadMinions();
             }
         }

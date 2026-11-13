@@ -25,6 +25,11 @@ namespace HearthstoneClone.UI
         public BoardDisplay opponentBoardDisplay;
         public Button endTurnButton;
         public Button heroPowerButton;
+        public Button opponentHeroPowerButton;
+        public TargetingRibbon targetingRibbon;
+        public BattleEffects battleEffects;
+        private bool powerPending;
+        private bool PresentationBusy => battleEffects!=null&&battleEffects.IsBusy;
 
         [Header("Face UI")]
         private int playerOneStartingDeckSize;
@@ -85,12 +90,15 @@ namespace HearthstoneClone.UI
             // what the trampoline delegates to, without ever adding a second listener.
             if (heroPowerButton != null)
             {
-                heroPowerButton.onClick.AddListener(() => gameManager.OnHeroPowerClicked());
+                heroPowerButton.onClick.AddListener(() => OnPowerPressed(false));
             }
+            if(opponentHeroPowerButton!=null)opponentHeroPowerButton.onClick.AddListener(()=>OnPowerPressed(true));
+            if(targetingRibbon!=null)targetingRibbon.CancelRequested=CancelPendingInput;
+            if(battleEffects!=null)battleEffects.Completed+=()=>{if(gameManager!=null&&(frontEnd==null||frontEnd.tableSurface.activeSelf))RefreshAll();};
 
             if (endTurnButton != null)
             {
-                endTurnButton.onClick.AddListener(() => gameManager.OnEndTurnClicked());
+                endTurnButton.onClick.AddListener(() => {CancelPendingInput();gameManager.OnEndTurnClicked();});
             }
 
             if (confirmMulliganButton != null)
@@ -113,7 +121,22 @@ namespace HearthstoneClone.UI
             selectedDeck=deck==null?null:new List<CardData>(deck);
             BeginNewGame();return true;
         }
-        public void CancelPendingInput() { combatInputController?.ClearSelection(); }
+        public void CancelPendingInput() {powerPending=false;targetingRibbon?.Hide();combatInputController?.ClearSelection();}
+        public void ResetPresentation(){battleEffects?.ResetEffects();areaSpellAnimator?.ClearEffects();}
+        private void OnPowerPressed(bool opponent)
+        {
+            var owner=opponent?playerTwo:playerOne;
+            if(gameManager==null||!gameManager.CanUseHeroPower(owner))return;
+            if(opponent){gameManager.TryUseHeroPower(owner,new Target(owner));return;}
+            if(targetingRibbon==null){gameManager.OnHeroPowerClicked();return;}
+            if(powerPending){CancelPendingInput();return;}
+            combatInputController.ClearSelection();powerPending=true;targetingRibbon.Show(heroPowerButton.transform);RefreshBoardDisplay();
+        }
+        private void OnFaceTarget(Player owner)
+        {if(powerPending){if(gameManager.TryUseHeroPower(playerOne,new Target(owner)))CancelPendingInput();return;}combatInputController.OnFaceClicked(owner);}
+        private void OnMinionTarget(Minion minion,Player owner)
+        {if(powerPending){if(gameManager.TryUseHeroPower(playerOne,new Target(minion)))CancelPendingInput();return;}combatInputController.OnMinionClicked(minion,owner);}
+        private void OnDragBegan(CardInstance card,CardView view){CancelPendingInput();cardDragResolver.OnCardDragBegan(card,view);}
 
         // Composition root: builds the entire per-game object graph from scratch (players,
         // board, hands, AI, and all four controllers) and wires the mulligan UI to start.
@@ -126,6 +149,7 @@ namespace HearthstoneClone.UI
         // from the same visual state Start() does, not wherever the last game left off.
         private void BeginNewGame()
         {
+            CancelPendingInput();ResetPresentation();
             if (cardPool == null || cardPool.Count == 0)
             {
                 Debug.LogWarning("No cards assigned to EffectTester's Card Pool.", this);
@@ -188,6 +212,7 @@ namespace HearthstoneClone.UI
             {
                 heroPowerButton.gameObject.SetActive(false);
             }
+            if(opponentHeroPowerButton!=null)opponentHeroPowerButton.gameObject.SetActive(false);
 
             playerOne = new Player("Player One");
             playerTwo = new Player("Player Two");
@@ -222,7 +247,7 @@ namespace HearthstoneClone.UI
 
             combatInputController = new CombatInputController(
                 board, turnManager, playerOne, playerTwo,
-                () => gameManager.GameOver, () => mulliganController.MulliganComplete, () => manualControlMode,
+                () => gameManager.GameOver||PresentationBusy, () => mulliganController.MulliganComplete, () => manualControlMode,
                 RefreshBoardDisplay, () => gameManager.AfterGameAction());
 
             cardDragResolver = new CardDragResolver(
@@ -230,7 +255,7 @@ namespace HearthstoneClone.UI
                 playerOneHand, playerTwoHand, turnManager,
                 boardDisplay, opponentBoardDisplay,
                 faceView, opponentFaceView, spellAnimationSequencer,
-                () => gameManager.GameOver, () => mulliganController.MulliganComplete, () => manualControlMode,
+                () => gameManager.GameOver||PresentationBusy, () => mulliganController.MulliganComplete, () => manualControlMode,
                 () => gameManager.AfterGameAction());
 
             gameManager = new GameManager(
@@ -239,6 +264,16 @@ namespace HearthstoneClone.UI
                 gameOverText, playAgainButton,
                 () => mulliganController.MulliganComplete, () => manualControlMode,
                 RefreshAll);
+            gameManager.IsPresentationBusy=()=>PresentationBusy;
+            if(battleEffects!=null)
+            {
+                battleEffects.Bind(board,boardDisplay,opponentBoardDisplay,faceView,opponentFaceView);
+                combatInputController.AttackResolved+=battleEffects.PlayAttack;
+                aiController.AttackResolved+=(attacker,target)=>{battleEffects.PlayAttack(attacker,target);RefreshBoardDisplay();Canvas.ForceUpdateCanvases();};
+                gameManager.HeroPowerUsed+=(caster,kind,target)=>battleEffects.PlayPower(caster,kind,target,caster==playerOne?heroPowerButton.transform:opponentHeroPowerButton.transform);
+                playerOneHand.CardResolved+=(card,target)=>battleEffects.PlaySpell(card.Data,playerOne,target);
+                playerTwoHand.CardResolved+=(card,target)=>{battleEffects.PlaySpell(card.Data,playerTwo,target);RefreshBoardDisplay();Canvas.ForceUpdateCanvases();};
+            }
 
             if (areaSpellAnimator != null)
             {
@@ -337,6 +372,7 @@ namespace HearthstoneClone.UI
             {
                 heroPowerButton.gameObject.SetActive(true);
             }
+            if(opponentHeroPowerButton!=null)opponentHeroPowerButton.gameObject.SetActive(true);
 
             // RULE CHANGE (turn-1 draw): draws Player One's turn-1 card and logs the turn line.
             // To revert, replace this call with the turn log line it absorbed:
@@ -361,7 +397,7 @@ namespace HearthstoneClone.UI
 
             if (handDisplay != null)
             {
-                handDisplay.RenderHand(playerOneHand.Hand, cardDragResolver.OnCardDragEnd, cardDragResolver.OnCardDragBegan, cardDragResolver.CanPlayerOneDrag);
+                handDisplay.RenderHand(playerOneHand.Hand, cardDragResolver.OnCardDragEnd, OnDragBegan, cardDragResolver.CanPlayerOneDrag);
             }
 
             if (opponentHandDisplay != null)
@@ -376,7 +412,7 @@ namespace HearthstoneClone.UI
                 // Craig is piloting Player Two), fanInteractive reads manualControlMode (fan only
                 // goes interactive when piloting). A future edit changing one must consider
                 // whether the other still needs to change too.
-                opponentHandDisplay.RenderHand(playerTwoHand.Hand, cardDragResolver.OnOpponentCardDragEnd, cardDragResolver.OnCardDragBegan, cardDragResolver.CanPlayerTwoDrag, () => !manualControlMode, () => manualControlMode);
+                opponentHandDisplay.RenderHand(playerTwoHand.Hand, cardDragResolver.OnOpponentCardDragEnd, OnDragBegan, cardDragResolver.CanPlayerTwoDrag, () => !manualControlMode, () => manualControlMode);
             }
         }
 
@@ -386,7 +422,7 @@ namespace HearthstoneClone.UI
             {
                 boardDisplay.RenderBoard(
                     playerOne.BoardMinions,
-                    m => combatInputController.OnMinionClicked(m, playerOne),
+                    m => OnMinionTarget(m, playerOne),
                     combatInputController.SelectedAttacker,
                     showAttackEligibility: turnManager.CurrentPlayer == playerOne);
             }
@@ -395,7 +431,7 @@ namespace HearthstoneClone.UI
             {
                 opponentBoardDisplay.RenderBoard(
                     playerTwo.BoardMinions,
-                    m => combatInputController.OnMinionClicked(m, playerTwo),
+                    m => OnMinionTarget(m, playerTwo),
                     combatInputController.SelectedAttacker,
                     showAttackEligibility: turnManager.CurrentPlayer == playerTwo && manualControlMode);
             }
@@ -403,19 +439,27 @@ namespace HearthstoneClone.UI
 
         private void RefreshFaceDisplay()
         {
+            if(endTurnButton!=null)endTurnButton.interactable=!gameManager.GameOver&&!PresentationBusy&&mulliganController.MulliganComplete;
             if (heroPowerButton != null)
             {
                 var presentation = heroPowerButton.GetComponent<HeroPowerPresentation>();
-                if (presentation != null) presentation.SetPlayer(turnManager.CurrentPlayer);
+                if (presentation != null) presentation.SetPlayer(playerOne,gameManager.CanUseHeroPower(playerOne));
+                heroPowerButton.interactable=gameManager.CanUseHeroPower(playerOne);
+            }
+            if(opponentHeroPowerButton!=null)
+            {
+                var presentation=opponentHeroPowerButton.GetComponent<HeroPowerPresentation>();
+                if(presentation!=null)presentation.SetPlayer(playerTwo,gameManager.CanUseHeroPower(playerTwo));
+                opponentHeroPowerButton.interactable=gameManager.CanUseHeroPower(playerTwo);
             }
             if (faceView != null)
             {
-                faceView.SetPlayer(playerOne, combatInputController.OnFaceClicked, playerOneHand.Deck.Count, playerOneStartingDeckSize);
+                faceView.SetPlayer(playerOne, OnFaceTarget, playerOneHand.Deck.Count, playerOneStartingDeckSize);
             }
 
             if (opponentFaceView != null)
             {
-                opponentFaceView.SetPlayer(playerTwo, combatInputController.OnFaceClicked);
+                opponentFaceView.SetPlayer(playerTwo, OnFaceTarget);
             }
         }
     }
