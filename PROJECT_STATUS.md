@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-14 — Craig resumed the visual pass and approved matching the reference, including two right-edge recessed decks. All 144,235 files in the three named Desktop folders are catalogued and hashed; no model/material/shader/font exports are present. Ten randomly selected native music tracks now change on every new game without immediate repetition. Both native-texture deck pockets have independent live counts/stacks. Music, draw/empty-pocket and 30-card restart checks pass. The broader near-identical visual pass is still in progress; the missing original geometry limits direct reconstruction. See Docs/AssetAudit/README.md and Docs/VISUAL_OVERHAUL.md._
+_Last updated: 2026-11-14 — The first native mesh board study was rejected visually by Craig and the playable HearthstoneTable was restored. The study is isolated in NativeBoardStudy (not a build scene); its authoring tool refuses to replace the playable scene. Exact red/purple hero-tray and board source textures are verified. See Docs/BOARD_RECONSTRUCTION.md for reference coverage, failures and next steps. Existing 30-card starts/restarts still pass. The visual reconstruction remains unfinished._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.

@@ -127,3 +127,8 @@ Ten songs were sampled once with SystemRandom from the 101 in-game playlist entr
 InstallDeckPockets.cs adds upper-right/opponent and lower-right/player recesses, using native ORG_GroundCorners rim/lip crops, a native dark interior crop and classic card backs. It disables the old floating pile and wires both FaceViews to independent counts and shrinking stacks. VerifyDeckPockets.cs checks both counts against their models, a draw on each side and zero-deck stack removal. Fresh starting/restart totals remain P1 26+4 and P2 25+5. Deck-Pockets.png is a disposable mid-game preview, never saved as a match. The pockets are a first visual checkpoint within the broader ongoing pass.
 
 After the previous installers, run InstallMatchMusic and InstallDeckPockets outside Play mode. Native-source files on Desktop remain untouched.
+
+
+## Rejected first native mesh study
+
+The first native mesh board reconstruction was rejected visually by Craig and rolled back from the playable scene. NativeBoardStudy.unity is an isolated experiment excluded from builds. RebuildNativeBoard.cs now refuses to run against HearthstoneTable. The playable scene still uses the three previous plates. Exact native hero-tray and board art has been identified, but the reconstruction remains unfinished; see BOARD_RECONSTRUCTION.md for evidence, limitations and the rejected captures. Missing original geometry prevents direct recovery, not custom reconstruction.

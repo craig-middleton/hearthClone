@@ -1,0 +1,32 @@
+[
+  {
+    "asset": "Assets/_Project/Art/NativeBoard/Board_HeroTray.png",
+    "source": "/home/craig-middleton/Desktop/Hearthstone Export/Texture2D/Board_HeroTray.png",
+    "sha256": "2887ba50c2f521921d9550a8b60f51eabd71909a0ef6cfe67d4a8c821f05929b"
+  },
+  {
+    "asset": "Assets/_Project/Art/NativeBoard/HeroFrame_Silver.png",
+    "source": "/home/craig-middleton/Desktop/Hearthstone Export/Texture2D/HeroFrame_Silver.png",
+    "sha256": "27bdb036a9f17328aa7d322f3995cdac363d3a1666950b2c175fac44cdc43cf3"
+  },
+  {
+    "asset": "Assets/_Project/Art/NativeBoard/ORG_Combined.png",
+    "source": "/home/craig-middleton/Desktop/Hearthstone Export/Texture2D/ORG_Combined.png",
+    "sha256": "46cd747f6e1f97d566994882dea6bbc04c8142aaff735c424210eb6f8f6ab2f4"
+  },
+  {
+    "asset": "Assets/_Project/Art/NativeBoard/ORG_GroundCorners.png",
+    "source": "/home/craig-middleton/Desktop/Hearthstone Export/Texture2D/ORG_GroundCorners.png",
+    "sha256": "8dc7310165c18e5086d3c69ccc7a07d4fbea797de2e099f947bc49e2f5b304e0"
+  },
+  {
+    "asset": "Assets/_Project/Art/NativeBoard/STW_Table.png",
+    "source": "/home/craig-middleton/Desktop/Hearthstone Export/Texture2D/STW_Table.png",
+    "sha256": "7991094cc4d31b842800f014bf26e569a845885a445d4aa36bca95c06aea2d54"
+  },
+  {
+    "asset": "Assets/_Project/Art/NativeBoard/VarianLL_Playspace.png",
+    "source": "/home/craig-middleton/Desktop/Hearthstone Export/Texture2D/VarianLL_Playspace.png",
+    "sha256": "043d63a0af3195a322220bb030aacd185bc1f382900cf71eece25af12bc2c666"
+  }
+]
