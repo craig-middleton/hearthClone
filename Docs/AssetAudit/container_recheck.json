@@ -1,0 +1,50 @@
+{
+  "regular_file_count": 144235,
+  "header_counts": {
+    "other": 268,
+    "PNG": 71795,
+    "RIFF/WAVE": 72172
+  },
+  "extensions": {
+    ".m3u8": 7,
+    ".png": 71795,
+    ".cur": 6,
+    "[none]": 3,
+    ".txt": 241,
+    ".wav": 72172,
+    ".csv": 6,
+    ".json": 1,
+    ".ps1": 4
+  },
+  "top_level_file_counts": {
+    "Hearthstone Export/[root files]": 7,
+    "Hearthstone Export/Texture2D": 70693,
+    "Hearthstone Export/Cursors": 6,
+    "Hearthstone Export/Startup assets": 124,
+    "Hearthstone Export/Sprite": 984,
+    "Hearthstone Export/AudioClip": 72172,
+    "Hearthstone Card Database/[root files]": 6,
+    "Hearthstone Card Database/All tables (raw)": 235,
+    "Hearthstone Card Database/Decks": 3,
+    "Hearthstone Extraction/[root files]": 5
+  },
+  "symlinks": [],
+  "hidden_paths": [],
+  "walk_errors": [],
+  "signature_exceptions": [],
+  "png_wav_extension_mismatches": [],
+  "date": "2026-11-14",
+  "scope": [
+    "/home/craig-middleton/Desktop/Hearthstone Export",
+    "/home/craig-middleton/Desktop/Hearthstone Card Database",
+    "/home/craig-middleton/Desktop/Hearthstone Extraction"
+  ],
+  "method": "Independent recursive walk including hidden names; first128-byte signatures of all regular files; full read of the remaining non-PNG/WAV files, including checks for archive/bundle and serialized geometry markers. Source files unchanged.",
+  "non_png_wav_files": 268,
+  "non_png_wav_full_bytes": 577760182,
+  "non_png_wav_types": {
+    "text_data_scripts_playlists": 262,
+    "CUR": 6
+  },
+  "conclusion": "No identifiable original Unity bundles, archives, or standalone model data in these three folders. This does not establish what was originally downloaded or inspect unrelated locations."
+}

@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-14 — The first native mesh board study was rejected visually by Craig and the playable HearthstoneTable was restored. The study is isolated in NativeBoardStudy (not a build scene); its authoring tool refuses to replace the playable scene. Exact red/purple hero-tray and board source textures are verified. See Docs/BOARD_RECONSTRUCTION.md for reference coverage, failures and next steps. Existing 30-card starts/restarts still pass. The visual reconstruction remains unfinished._
+_Last updated: 2026-11-14 — Craig requires the whole board to be assembled from individual Unity assets/geometry, with no complete-board background plate. The failed native study and subsequent pocket-overlay preview were rejected; the playable baseline is restored, and no pocket-preview changes were saved. Independent signature recheck confirms no identifiable models/bundles in the three Desktop exports. Original game files are on another Windows PC. Windows is for asset inspection/export only; Unity remains on Ubuntu. Next: prove one original board model export using Docs/WINDOWS_BOARD_RECOVERY.md before any further board replacement._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.

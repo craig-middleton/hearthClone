@@ -1,5 +1,7 @@
 # Board reconstruction reference and rejected first study
 
+**Latest direction:** the entire board must be assembled from individual assets/geometry. Further overlays on the complete-board plate were explicitly rejected. Original game files are on another Windows PC; Windows is for extraction only, with Unity remaining on Ubuntu. Continue with WINDOWS_BOARD_RECOVERY.md.
+
 14 November 2026. The playable HearthstoneTable scene remains at the previous visual baseline. Craig rejected the first mesh reconstruction as visually worse; it was restored immediately. NativeBoardStudy.unity is an isolated, disabled-from-build experiment, not a finished replacement. RebuildNativeBoard.cs explicitly refuses to run against the playable scene.
 
 ## Reference coverage
