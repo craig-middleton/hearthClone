@@ -58,6 +58,7 @@ namespace HearthstoneClone.UI
         public AudioSource musicSource;
         public List<AudioClip> musicTracks;
         [Range(0f, 1f)] public float musicVolume = 0.5f;
+        private AudioClip previousMusicTrack;
 
         private PlayerHand playerOneHand;
         private PlayerHand playerTwoHand;
@@ -158,6 +159,7 @@ namespace HearthstoneClone.UI
 
             if (boardThemes != null) boardThemes.ChooseNextBoard();
             else SetRandomBoardBackground();
+            SetRandomMusic();
 
             if (gameOverText != null)
             {
@@ -328,13 +330,17 @@ namespace HearthstoneClone.UI
                 return;
             }
 
-            int index = Random.Range(0, musicTracks.Count);
-            musicSource.clip = musicTracks[index];
+            var choices = musicTracks.FindAll(track => track != null && track != previousMusicTrack);
+            if (choices.Count == 0) choices = musicTracks.FindAll(track => track != null);
+            if (choices.Count == 0) return;
+            var selected = choices[Random.Range(0, choices.Count)];
+            previousMusicTrack = selected;
+            musicSource.clip = selected;
             musicSource.volume = musicVolume;
             musicSource.loop = true;
             musicSource.Play();
 
-            Debug.Log($"Music track selected: index {index} ({musicTracks[index].name})");
+            Debug.Log($"Music track selected: {selected.name}");
         }
 
         private List<CardData> BuildDeck(List<CardData> pool, int cardCount)
@@ -459,7 +465,7 @@ namespace HearthstoneClone.UI
 
             if (opponentFaceView != null)
             {
-                opponentFaceView.SetPlayer(playerTwo, OnFaceTarget);
+                opponentFaceView.SetPlayer(playerTwo, OnFaceTarget, playerTwoHand.Deck.Count, StartingCardCount-(coinCard!=null?1:0));
             }
         }
     }

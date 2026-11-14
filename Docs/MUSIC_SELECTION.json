@@ -1,0 +1,92 @@
+[
+  {
+    "source": "/home/craig-middleton/Desktop/Hearthstone Export/AudioClip/MOTLK_Fall_Of_Silvermoon.wav",
+    "name": "MOTLK_Fall_Of_Silvermoon",
+    "bytes": 35918972,
+    "seconds": 187.08,
+    "asset": "Assets/_Project/Audio/MatchMusic/MOTLK_Fall_Of_Silvermoon.ogg",
+    "source_sha256": "3fc5b0012becfce602530f0caee51dfb7fecaa0e524561c69a57a0ad65e6fb77",
+    "asset_bytes": 4304085
+  },
+  {
+    "source": "/home/craig-middleton/Desktop/Hearthstone Export/AudioClip/K&C_Kobolds_Gather.wav",
+    "name": "K&C_Kobolds_Gather",
+    "bytes": 34900188,
+    "seconds": 181.77,
+    "asset": "Assets/_Project/Audio/MatchMusic/K&C_Kobolds_Gather.ogg",
+    "source_sha256": "f6b1866301098713ec6caf9ec8174793c90fb73ff27f99bc590852e93457208e",
+    "asset_bytes": 4507219
+  },
+  {
+    "source": "/home/craig-middleton/Desktop/Hearthstone Export/AudioClip/TTN_Titans.wav",
+    "name": "TTN_Titans",
+    "bytes": 35667804,
+    "seconds": 185.77,
+    "asset": "Assets/_Project/Audio/MatchMusic/TTN_Titans.ogg",
+    "source_sha256": "085ccb78f9873649c0a1f393aeba87a01574a4ba552844f7da9f9dd304405936",
+    "asset_bytes": 4351658
+  },
+  {
+    "source": "/home/craig-middleton/Desktop/Hearthstone Export/AudioClip/TRL_We_Who_Are_About_To_Die.wav",
+    "name": "TRL_We_Who_Are_About_To_Die",
+    "bytes": 35499176,
+    "seconds": 184.89,
+    "asset": "Assets/_Project/Audio/MatchMusic/TRL_We_Who_Are_About_To_Die.ogg",
+    "source_sha256": "372bb52fe9e376155b7700e367428fa8e829f514fb6c99e2b93d0d820b5b6298",
+    "asset_bytes": 4465402
+  },
+  {
+    "source": "/home/craig-middleton/Desktop/Hearthstone Export/AudioClip/BOT_Wind_Em_Up.wav",
+    "name": "BOT_Wind_Em_Up",
+    "bytes": 35910312,
+    "seconds": 187.03,
+    "asset": "Assets/_Project/Audio/MatchMusic/BOT_Wind_Em_Up.ogg",
+    "source_sha256": "aa1808267fba1e249feb7b680bf8950c95533ee74621d2b4d81e016ab4c544ec",
+    "asset_bytes": 4524397
+  },
+  {
+    "source": "/home/craig-middleton/Desktop/Hearthstone Export/AudioClip/ULD_The_Grand_Gate.wav",
+    "name": "ULD_The_Grand_Gate",
+    "bytes": 35528840,
+    "seconds": 185.05,
+    "asset": "Assets/_Project/Audio/MatchMusic/ULD_The_Grand_Gate.ogg",
+    "source_sha256": "e035dcc16cb97e60f49f9dc3d715000f4dac6090606bad70960a05450acfc2a4",
+    "asset_bytes": 4768927
+  },
+  {
+    "source": "/home/craig-middleton/Desktop/Hearthstone Export/AudioClip/DRG_Descent_Of_Dragons.wav",
+    "name": "DRG_Descent_Of_Dragons",
+    "bytes": 35192876,
+    "seconds": 183.3,
+    "asset": "Assets/_Project/Audio/MatchMusic/DRG_Descent_Of_Dragons.ogg",
+    "source_sha256": "2526b5ace533198cb6158af1657b6f92afa1f1b885709753714b0590340b30bf",
+    "asset_bytes": 4513591
+  },
+  {
+    "source": "/home/craig-middleton/Desktop/Hearthstone Export/AudioClip/BRM_Bad_Down_to_the_Molten_Core.wav",
+    "name": "BRM_Bad_Down_to_the_Molten_Core",
+    "bytes": 45564264,
+    "seconds": 237.31,
+    "asset": "Assets/_Project/Audio/MatchMusic/BRM_Bad_Down_to_the_Molten_Core.ogg",
+    "source_sha256": "03b044b629b878359be19d14589fb5fe35496e336639201a04cc9c11393f094d",
+    "asset_bytes": 5792102
+  },
+  {
+    "source": "/home/craig-middleton/Desktop/Hearthstone Export/AudioClip/Kara_BallroomSlink.wav",
+    "name": "Kara_BallroomSlink",
+    "bytes": 49565408,
+    "seconds": 258.15,
+    "asset": "Assets/_Project/Audio/MatchMusic/Kara_BallroomSlink.ogg",
+    "source_sha256": "5df80f498b50a5bc6544da5b6d824ac8b947deb133bf4dd93a4733d2ec197e87",
+    "asset_bytes": 6905827
+  },
+  {
+    "source": "/home/craig-middleton/Desktop/Hearthstone Export/AudioClip/Don't Let Your Guard Down.wav",
+    "name": "Don't Let Your Guard Down",
+    "bytes": 37628444,
+    "seconds": 195.98,
+    "asset": "Assets/_Project/Audio/MatchMusic/Don't Let Your Guard Down.ogg",
+    "source_sha256": "68a82e755723321ddb73516b33206ebbaf827a96c8541728a6deb5270952ec2f",
+    "asset_bytes": 4450110
+  }
+]

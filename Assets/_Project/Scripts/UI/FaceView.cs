@@ -30,12 +30,9 @@ namespace HearthstoneClone.UI
         [SerializeField] private Material manaCrystalFullMaterial;
         [SerializeField] private Material manaCrystalEmptyMaterial;
 
-        // Player-only deck pile: same presence-of-an-Inspector-wire gate as the mana
-        // crystal row above - left unassigned on the opponent's FaceView instance, so
-        // UpdateDeckPile() no-ops there. Layers are a fixed set (not one-per-card) whose
-        // visibility steps down as a RATIO of startingDeckSize, so the pile "shrinks"
-        // without instantiating/destroying N card objects per draw.
-        [Header("Deck Pile (player only)")]
+        // Optional per-hero deck widgets. HearthstoneTable wires both players' pockets;
+        // scenes without these references keep the existing no-widget fallback.
+        [Header("Deck Pile")]
         [SerializeField] private GameObject[] deckPileLayers;
         [SerializeField] private TMP_Text deckCountText;
         // Not serialized: supplied by the owner via SetPlayer() from the real deck size at game start.

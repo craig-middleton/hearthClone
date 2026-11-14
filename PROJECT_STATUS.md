@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-13 — Ready for Craig's playtest after the agreed batch. Native-asset menu and saved 30-card deck picker; corrected resting hands; fitted portraits, mana and cards; both hero powers; aimed Fireblast; Armor Up; native spell/projectile and attack-impact presentation. Existing pool remains 26 cards, and both starting deck-plus-hand totals remain exactly 30 including Coin. Significant updates are committed/pushed to main. Stop implementation here for Craig's playtest._
+_Last updated: 2026-11-14 — Craig resumed the visual pass and approved matching the reference, including two right-edge recessed decks. All 144,235 files in the three named Desktop folders are catalogued and hashed; no model/material/shader/font exports are present. Ten randomly selected native music tracks now change on every new game without immediate repetition. Both native-texture deck pockets have independent live counts/stacks. Music, draw/empty-pocket and 30-card restart checks pass. The broader near-identical visual pass is still in progress; the missing original geometry limits direct reconstruction. See Docs/AssetAudit/README.md and Docs/VISUAL_OVERHAUL.md._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.
@@ -13,7 +13,7 @@ _Last updated: 2026-11-13 — Ready for Craig's playtest after the agreed batch.
 - **`NETWORKING_PREP.md`** — checklist for the networked 2-player phase: prerequisites and every place UI/input mutates game state today. Read it before starting networking work.
 
 ## Working Preferences
-- Current scope: the explicitly requested menu/deck picker, hand placement, attack/spell effects, targeting arrow and opponent power are complete. Stop for Craig's playtest before further implementation. Continue iterating without asking for per-part approval (Craig's latest instruction). Keep using his reference screenshot, official Hearthstone imagery, and the supplied Desktop assets.
+- Current scope: resumed graphical matching against the reference using Desktop exports, including both recessed decks. Mechanics were confirmed working by Craig. Full three-folder audit and ten-song random-per-new-match music are complete. Continue iterating without asking for per-part approval (Craig's latest instruction). Keep using his reference screenshot, official Hearthstone imagery, and the supplied Desktop assets.
 - Give brief progress updates explaining what is being changed and why. Save meaningful visual checkpoints with commits and pushes to `main`; the agreed batch is complete; stop for the requested playtest.
 - A 2-paragraph explanation after each new/updated code block: what it does and why.
 - **Chat sessions only: full rewritten class/file, not a diff** — Craig pastes whole files and partial merges cause errors. **Not for Claude Code sessions**, which edit on disk: there a whole-file rewrite is overhead and an unreadable diff. Make targeted edits.
@@ -248,3 +248,11 @@ Jaina's Fireblast costs 2 mana and deals 1 to a chosen living hero or board mini
 `BattleEffects` observes successful attacks and `PlayerHand.CardResolved` for both sides. Native textures provide travelling school effects, impact bursts, floating damage and minion lunges. Lethal views use separate non-interactive snapshots; surviving views are re-resolved. The queue blocks other match actions until it completes. Menu/new match clears pending aiming, snapshots, particles and effect audio. Area spells retain their isolated stages, now with supplied particle textures. Both hero-power buttons show their own ready/spent state. Targeting uses Input System events and a curved native red strip/reticle; UI references the Input System assembly.
 
 Live checks cover selection/cancel, face/minion Fireblast, lethal hits and retaliation, temporary-object cleanup, AI Armor Up, 30-card start/restart, deck save/reload and actual spell drag paths. Final C#/shader compilation and current Unity console are clean. `Tools/PreviewBattlePresentation.cs` pauses disposable fixtures for captures; never save one. Final Editor state is the normal main menu, with fixtures discarded.
+
+## Complete source catalogue and match music
+
+Docs/AssetAudit contains the full read-only SHA-256/format inventory of Hearthstone Card Database, Hearthstone Export and Hearthstone Extraction. Tools/FindDesktopAssets.py searches all 144,235 entries. No source files were modified or scripts executed. No exported geometry/fonts are present. Duplicate files were indexed, not deleted.
+
+Ten source songs selected randomly from the in-game playlists are encoded as streaming Vorbis copies under Audio/MatchMusic. Docs/MUSIC_SELECTION.json preserves originals, hashes, durations and asset paths. SetRandomMusic is called by BeginNewGame, covering Menu Play and Play Again, excludes the previous clip, and loops the chosen song within a game. The existing startup menu selection also remains.
+
+InstallDeckPockets.cs authors both right-edge pockets from native ORG texture regions and existing classic backs. Opponent FaceView now receives its actual deck size/count. Original floating DeckPile is disabled. Deck-count text and six shrinking layers are bound independently; no card identities are exposed.
