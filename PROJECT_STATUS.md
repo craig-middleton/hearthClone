@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-14 — Craig requires the whole board to be assembled from individual Unity assets/geometry, with no complete-board background plate. The failed native study and subsequent pocket-overlay preview were rejected; the playable baseline is restored, and no pocket-preview changes were saved. Independent signature recheck confirms no identifiable models/bundles in the three Desktop exports. Original game files are on another Windows PC. Windows is for asset inspection/export only; Unity remains on Ubuntu. Next: prove one original board model export using Docs/WINDOWS_BOARD_RECOVERY.md before any further board replacement._
+_Last updated: 2026-11-15 — The new Ubuntu/Proton Hearthstone installation supplied the ORIGINAL Orgrimmar board hierarchy, 35 meshes and 14 clips. A visual-only 121-transform prefab is imported under Assets/_Project/RecoveredOrgrimmar; RecoveredOrgrimmarProof is a separate non-build scene using the recovered camera. Native paint and a first URP shadow pass render through a dedicated 3D renderer, with the existing 2D renderer remaining default. Mesh/UV/reference checks and existing front-end/30-card checks pass. The playable game scene is unchanged; live UI/game integration and final visual matching remain unfinished. See Docs/Recovery/README.md._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.

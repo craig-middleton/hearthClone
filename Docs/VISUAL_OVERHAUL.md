@@ -1,5 +1,7 @@
 # HearthstoneTable — current project guide
 
+**Active reconstruction:** RecoveredOrgrimmarProof is now a separate scene built from the original board meshes and native camera. It has no complete-board plate or Canvas. Existing HearthstoneTable remains the playable baseline described below, awaiting integration. See [Recovery/README.md](Recovery/README.md).
+
 Open `Assets/Scenes/HearthstoneTable.unity` in Unity 6000.6.9f1. The original `TestScene.unity` is retained. The styled scene is the enabled build scene. Development and smoke tests use the running Editor through Unity Pipeline.
 
 ## Board and live UI

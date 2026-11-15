@@ -1,0 +1,686 @@
+[
+  {
+    "name": "ORG_Combined",
+    "bundle": "essential_base_global-material-0.unity3d",
+    "path_id": 4522414703670296952,
+    "saved_properties": {
+      "m_TexEnvs": [
+        {
+          "first": "_MainTex",
+          "second": {
+            "m_Texture": {
+              "m_FileID": 5,
+              "m_PathID": -8866968303948746594
+            },
+            "m_Scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "m_Offset": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        }
+      ],
+      "m_Ints": [],
+      "m_Floats": [],
+      "m_Colors": [
+        {
+          "first": "_Color",
+          "second": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "shader": {
+      "m_FileID": 4,
+      "m_PathID": -7169178443548575909
+    },
+    "keywords": []
+  },
+  {
+    "name": "GameplayArea_D",
+    "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+    "path_id": 7540454713150839835,
+    "saved_properties": {
+      "m_TexEnvs": [
+        {
+          "first": "_EnemyMaskTex",
+          "second": {
+            "m_Texture": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "m_Offset": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        },
+        {
+          "first": "_EnemyTex",
+          "second": {
+            "m_Texture": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "m_Offset": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        },
+        {
+          "first": "_FriendlyMaskTex",
+          "second": {
+            "m_Texture": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "m_Offset": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        },
+        {
+          "first": "_FriendlyTex",
+          "second": {
+            "m_Texture": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "m_Offset": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        },
+        {
+          "first": "_MainTex",
+          "second": {
+            "m_Texture": {
+              "m_FileID": 0,
+              "m_PathID": -6635202518755270215
+            },
+            "m_Scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "m_Offset": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        }
+      ],
+      "m_Ints": [],
+      "m_Floats": [
+        {
+          "first": "_BlendWidthValue",
+          "second": 2.0
+        },
+        {
+          "first": "_EmissionLM",
+          "second": 0.0
+        },
+        {
+          "first": "_MiddleValue",
+          "second": 5.0
+        },
+        {
+          "first": "_ReceiveShadows",
+          "second": 1.0
+        },
+        {
+          "first": "_Shininess",
+          "second": 0.16029854118824005
+        }
+      ],
+      "m_Colors": [
+        {
+          "first": "_Color",
+          "second": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        },
+        {
+          "first": "_SpecColor",
+          "second": {
+            "r": 0.20392157137393951,
+            "g": 0.20392157137393951,
+            "b": 0.20392157137393951,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "shader": {
+      "m_FileID": 4,
+      "m_PathID": -7481985651085188220
+    },
+    "keywords": []
+  },
+  {
+    "name": "Board_STW-mat_EnemyTray",
+    "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+    "path_id": 4058162567926058472,
+    "saved_properties": {
+      "m_TexEnvs": [
+        {
+          "first": "_MainTex",
+          "second": {
+            "m_Texture": {
+              "m_FileID": 7,
+              "m_PathID": 964964484528981499
+            },
+            "m_Scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "m_Offset": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        }
+      ],
+      "m_Ints": [],
+      "m_Floats": [
+        {
+          "first": "_Shininess",
+          "second": 0.078125
+        }
+      ],
+      "m_Colors": [
+        {
+          "first": "_Color",
+          "second": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        },
+        {
+          "first": "_SpecColor",
+          "second": {
+            "r": 0.9626865386962891,
+            "g": 0.7236457467079163,
+            "b": 0.23469854891300201,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "shader": {
+      "m_FileID": 4,
+      "m_PathID": -7169178443548575909
+    },
+    "keywords": []
+  },
+  {
+    "name": "ORG_GroundCorners",
+    "bundle": "essential_base_global-material-0.unity3d",
+    "path_id": -4699302717618816017,
+    "saved_properties": {
+      "m_TexEnvs": [
+        {
+          "first": "_MainTex",
+          "second": {
+            "m_Texture": {
+              "m_FileID": 2,
+              "m_PathID": -67963320798725395
+            },
+            "m_Scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "m_Offset": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        }
+      ],
+      "m_Ints": [],
+      "m_Floats": [],
+      "m_Colors": [
+        {
+          "first": "_Color",
+          "second": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "shader": {
+      "m_FileID": 4,
+      "m_PathID": -7169178443548575909
+    },
+    "keywords": []
+  },
+  {
+    "name": "FRAME",
+    "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+    "path_id": 1224595672025980119,
+    "saved_properties": {
+      "m_TexEnvs": [
+        {
+          "first": "_BotTex",
+          "second": {
+            "m_Texture": {
+              "m_FileID": 0,
+              "m_PathID": 7332743183332182750
+            },
+            "m_Scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "m_Offset": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        },
+        {
+          "first": "_TopTex",
+          "second": {
+            "m_Texture": {
+              "m_FileID": 0,
+              "m_PathID": 7332743183332182750
+            },
+            "m_Scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "m_Offset": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        }
+      ],
+      "m_Ints": [],
+      "m_Floats": [
+        {
+          "first": "_BlendWidthValue",
+          "second": 1.2000000476837158
+        },
+        {
+          "first": "_MiddleValue",
+          "second": 5.5
+        },
+        {
+          "first": "_ReceiveShadows",
+          "second": 1.0
+        }
+      ],
+      "m_Colors": [
+        {
+          "first": "_Color",
+          "second": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "shader": {
+      "m_FileID": 4,
+      "m_PathID": 5687300710666823099
+    },
+    "keywords": []
+  },
+  {
+    "name": "HeroBackplateB",
+    "bundle": "essential_base_global-material-0.unity3d",
+    "path_id": 876111910866844753,
+    "saved_properties": {
+      "m_TexEnvs": [
+        {
+          "first": "_MainTex",
+          "second": {
+            "m_Texture": {
+              "m_FileID": 2,
+              "m_PathID": 3226854830307943609
+            },
+            "m_Scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "m_Offset": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        }
+      ],
+      "m_Ints": [],
+      "m_Floats": [
+        {
+          "first": "_EmissionLM",
+          "second": 0.0
+        }
+      ],
+      "m_Colors": [
+        {
+          "first": "_Color",
+          "second": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "shader": {
+      "m_FileID": 4,
+      "m_PathID": -7169178443548575909
+    },
+    "keywords": []
+  },
+  {
+    "name": "ORG_ZeppNetting",
+    "bundle": "initial_base_global-b6b43e63-material-0.unity3d",
+    "path_id": -7638691872970414593,
+    "saved_properties": {
+      "m_TexEnvs": [
+        {
+          "first": "_MainTex",
+          "second": {
+            "m_Texture": {
+              "m_FileID": 2,
+              "m_PathID": 7231330569607050805
+            },
+            "m_Scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "m_Offset": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        }
+      ],
+      "m_Ints": [],
+      "m_Floats": [],
+      "m_Colors": [
+        {
+          "first": "_Color",
+          "second": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "shader": {
+      "m_FileID": 1,
+      "m_PathID": 5202922422864527443
+    },
+    "keywords": []
+  },
+  {
+    "name": "TableTop-mat_STW_TableTop",
+    "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+    "path_id": -5554236140476995750,
+    "saved_properties": {
+      "m_TexEnvs": [
+        {
+          "first": "_BotTex",
+          "second": {
+            "m_Texture": {
+              "m_FileID": 0,
+              "m_PathID": 957376376696571636
+            },
+            "m_Scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "m_Offset": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        },
+        {
+          "first": "_TopTex",
+          "second": {
+            "m_Texture": {
+              "m_FileID": 0,
+              "m_PathID": 957376376696571636
+            },
+            "m_Scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "m_Offset": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        }
+      ],
+      "m_Ints": [],
+      "m_Floats": [
+        {
+          "first": "_BlendWidthValue",
+          "second": 1.2000000476837158
+        },
+        {
+          "first": "_MiddleValue",
+          "second": -2.0
+        },
+        {
+          "first": "_ReceiveShadows",
+          "second": 1.0
+        }
+      ],
+      "m_Colors": [
+        {
+          "first": "_Color",
+          "second": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "shader": {
+      "m_FileID": 4,
+      "m_PathID": 5687300710666823099
+    },
+    "keywords": []
+  },
+  {
+    "name": "Board_STW-mat_HeroTray",
+    "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+    "path_id": 8565521579979875298,
+    "saved_properties": {
+      "m_TexEnvs": [
+        {
+          "first": "_MainTex",
+          "second": {
+            "m_Texture": {
+              "m_FileID": 7,
+              "m_PathID": 964964484528981499
+            },
+            "m_Scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "m_Offset": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        }
+      ],
+      "m_Ints": [],
+      "m_Floats": [
+        {
+          "first": "_EmissionLM",
+          "second": 0.0
+        },
+        {
+          "first": "_Shininess",
+          "second": 0.1667817085981369
+        }
+      ],
+      "m_Colors": [
+        {
+          "first": "_Color",
+          "second": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        },
+        {
+          "first": "_SpecColor",
+          "second": {
+            "r": 0.9701492786407471,
+            "g": 0.6507410407066345,
+            "b": 0.11413520574569702,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "shader": {
+      "m_FileID": 4,
+      "m_PathID": -5812771937585292081
+    },
+    "keywords": []
+  },
+  {
+    "name": "Default-Diffuse",
+    "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+    "path_id": 2479980352079597388,
+    "saved_properties": {
+      "m_TexEnvs": [
+        {
+          "first": "_MainTex",
+          "second": {
+            "m_Texture": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "m_Offset": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        }
+      ],
+      "m_Ints": [],
+      "m_Floats": [],
+      "m_Colors": [
+        {
+          "first": "_Color",
+          "second": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 0.5
+          }
+        }
+      ]
+    },
+    "shader": {
+      "m_FileID": 0,
+      "m_PathID": -5858093835050610868
+    },
+    "keywords": []
+  },
+  {
+    "name": "HeroBackplateA",
+    "bundle": "essential_base_global-material-0.unity3d",
+    "path_id": -9021969742693862686,
+    "saved_properties": {
+      "m_TexEnvs": [
+        {
+          "first": "_MainTex",
+          "second": {
+            "m_Texture": {
+              "m_FileID": 2,
+              "m_PathID": -3135311640894255522
+            },
+            "m_Scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "m_Offset": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        }
+      ],
+      "m_Ints": [],
+      "m_Floats": [
+        {
+          "first": "_EmissionLM",
+          "second": 0.0
+        }
+      ],
+      "m_Colors": [
+        {
+          "first": "_Color",
+          "second": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        }
+      ]
+    },
+    "shader": {
+      "m_FileID": 4,
+      "m_PathID": -7169178443548575909
+    },
+    "keywords": []
+  }
+]

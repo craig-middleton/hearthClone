@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-15",
+  "tool": {
+    "name": "AssetRipper",
+    "version": "2.0.0",
+    "official_archive": "https://github.com/AssetRipper/AssetRipper/releases/download/2.0.0/AssetRipper_linux_x64.tar.xz",
+    "sha256": "6f5d4352d36795b944243eb3ec790ec37dbca6d6756e52605bc8616e042d384e"
+  },
+  "unity_source_version": "6000.3.11f1",
+  "source_prefab_guid": "f1880bb09582d6a429a79214401dfb5c",
+  "exported_prefab_guid": "e8f50915756b2c24092ff6b15f741224",
+  "camera": {
+    "source_export_asset": "Assets/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/BoardCameras.prefab",
+    "source_export_sha256": "2a224fef3e56cb1f4d379f8a889cbe8d4582fbb658e59eba238f9544e77e5923",
+    "position": [
+      -7.795346,
+      19.597504,
+      -5.965445
+    ],
+    "rotation_xyzw": [
+      0.68707883,
+      0,
+      0,
+      0.7265829
+    ],
+    "vertical_fov": 34.870445,
+    "near_far": [
+      1,
+      30
+    ]
+  },
+  "validation": {
+    "transforms": 121,
+    "mesh_filters": 35,
+    "skinned_renderers": 2,
+    "distinct_meshes": 35,
+    "all_vertex_uv_index_checks": "pass",
+    "legacy_animation_clips": 14,
+    "rendered_material_texture_bindings": "pass",
+    "original_game_code_imported": false,
+    "canvas_on_board": false,
+    "original_playable_scene_unchanged": true,
+    "build_scene_configuration_unchanged": true,
+    "default_2d_renderer_retained": true,
+    "proof_3d_renderer_index": 1,
+    "front_end_real_input_checks": "pass",
+    "30_card_start_restart_unique_instance_checks": "pass",
+    "13_source_bundle_hashes_after_recovery": "unchanged"
+  },
+  "remaining": "Material/lighting fidelity and integration with live cards, heroes, controls and gameplay are unfinished."
+}

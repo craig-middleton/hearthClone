@@ -1,5 +1,7 @@
 # Windows asset recovery; Unity development stays on Ubuntu
 
+**Superseded15November2026:** the game is now installed locally on Ubuntu through Proton. OriginalORG models have been recovered directly here. Continue with [Recovery/README.md](Recovery/README.md); no Windows switch is needed. The older workflow below is retained for context.
+
 ## Agreed outcome
 
 Craig requires the complete game board to be assembled from individual Unity objects: playing surface, borders, corner scenery, hero trays/sockets, deck recesses and props. A complete-board image with added overlays does not satisfy this. Texture images mapped onto appropriate individual geometry are expected.

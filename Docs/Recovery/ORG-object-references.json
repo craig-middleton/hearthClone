@@ -1,0 +1,2379 @@
+{
+  "root_bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+  "renderers_and_filters": [
+    {
+      "class_id": 111,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -4803943702422948917,
+        "class_id": 1,
+        "name": "ORG_Hut_Fence"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 111,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 2987551894048404427,
+        "class_id": 1,
+        "name": "TableTop"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 2725379780910576587,
+        "class_id": 1,
+        "name": "PlaySurface5"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+        "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+        "path_id": 5000499861996262268,
+        "class_id": 43,
+        "name": "PlaySurface5"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 8105398443947783115,
+        "class_id": 1,
+        "name": "Ground_TR"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+        "bundle": "essential_base_global-mesh-0.unity3d",
+        "path_id": -9143387311288255468,
+        "class_id": 43,
+        "name": "Ground_TR_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 111,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -3283886702142688309,
+        "class_id": 1,
+        "name": "STW_PlaySurfaceProjected"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -1610806579718655029,
+        "class_id": 1,
+        "name": "GateTowers_Gate_mesh"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+        "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+        "path_id": -9200215646011552809,
+        "class_id": 43,
+        "name": "GateTowers_Gate_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -4050164049447029813,
+        "class_id": 1,
+        "name": "GateTowers_Rocks_mesh"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": 4522414703670296952,
+          "class_id": 21,
+          "name": "ORG_Combined"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 111,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -6329590183502089269,
+        "class_id": 1,
+        "name": "ORG_GateTowerThornsSkinned"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": [
+        {
+          "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+          "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+          "path_id": -3138444289641025160,
+          "class_id": 74,
+          "name": "ORG_ThornsClicked1"
+        },
+        {
+          "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+          "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+          "path_id": -1794395548323958099,
+          "class_id": 74,
+          "name": "ORG_ThornsClickedClose"
+        }
+      ]
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 4886761274656617419,
+        "class_id": 1,
+        "name": "STW_Frame"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+        "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+        "path_id": 4330114722246425541,
+        "class_id": 43,
+        "name": "STW_Frame_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -1482520634177424437,
+        "class_id": 1,
+        "name": "Sphere"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": 4522414703670296952,
+          "class_id": 21,
+          "name": "ORG_Combined"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -6059421491765382197,
+        "class_id": 1,
+        "name": "PlaySurface_Combined"
+      },
+      "materials": [
+        {
+          "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+          "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+          "path_id": 7540454713150839835,
+          "class_id": 21,
+          "name": "GameplayArea_D"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 2634876586332648395,
+        "class_id": 1,
+        "name": "GateTowers_mesh"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": 4522414703670296952,
+          "class_id": 21,
+          "name": "ORG_Combined"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -6059421491765382197,
+        "class_id": 1,
+        "name": "PlaySurface_Combined"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+        "bundle": "essential_base_global-mesh-0.unity3d",
+        "path_id": -5520585729207992118,
+        "class_id": 43,
+        "name": "PlaySurface_Combined"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 7077628484966872011,
+        "class_id": 1,
+        "name": "PlaySurface7"
+      },
+      "materials": [
+        {
+          "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+          "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+          "path_id": 7540454713150839835,
+          "class_id": 21,
+          "name": "GameplayArea_D"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 111,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 1092018734758360011,
+        "class_id": 1,
+        "name": "STW_Board_Frame"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -2183341716648299573,
+        "class_id": 1,
+        "name": "PlaySurface2"
+      },
+      "materials": [
+        {
+          "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+          "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+          "path_id": 7540454713150839835,
+          "class_id": 21,
+          "name": "GameplayArea_D"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -2218426075858078773,
+        "class_id": 1,
+        "name": "GateTowers_Thorns_mesh"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 6448208168488530891,
+        "class_id": 1,
+        "name": "PlaySurface8"
+      },
+      "materials": [
+        {
+          "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+          "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+          "path_id": 7540454713150839835,
+          "class_id": 21,
+          "name": "GameplayArea_D"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -5537582509888375861,
+        "class_id": 1,
+        "name": "RockSpireTopRock_mesh"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+        "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+        "path_id": -2837358942785713172,
+        "class_id": 43,
+        "name": "RockSpireTopRock_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -8178459000941448245,
+        "class_id": 1,
+        "name": "EnemyTray"
+      },
+      "materials": [
+        {
+          "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+          "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+          "path_id": 4058162567926058472,
+          "class_id": 21,
+          "name": "Board_STW-mat_EnemyTray"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 111,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 1279940623155196875,
+        "class_id": 1,
+        "name": "STW_InnProjected"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -2218426075858078773,
+        "class_id": 1,
+        "name": "GateTowers_Thorns_mesh"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+        "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+        "path_id": -1021404381207163945,
+        "class_id": 43,
+        "name": "GateTowers_Thorns_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -4050164049447029813,
+        "class_id": 1,
+        "name": "GateTowers_Rocks_mesh"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+        "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+        "path_id": 3195270453854899159,
+        "class_id": 43,
+        "name": "GateTowers_Rocks_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 111,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 7839008166791148491,
+        "class_id": 1,
+        "name": "ORG_Catapult"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": [
+        {
+          "cab": "CAB-864f9a45b92c6e114e2e569badb557ad",
+          "bundle": "initial_base_global-1fbc9c0f-prefab-8.unity3d",
+          "path_id": 1727320580028075882,
+          "class_id": 74,
+          "name": "ORG_CattapultLaunch"
+        },
+        {
+          "cab": "CAB-864f9a45b92c6e114e2e569badb557ad",
+          "bundle": "initial_base_global-1fbc9c0f-prefab-8.unity3d",
+          "path_id": -790353974722634695,
+          "class_id": 74,
+          "name": "ORG_CattapultRockFall"
+        }
+      ]
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 8726231800403194827,
+        "class_id": 1,
+        "name": "RockPickup"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": 4522414703670296952,
+          "class_id": 21,
+          "name": "ORG_Combined"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -7227662219451960373,
+        "class_id": 1,
+        "name": "ORG_Spire"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+        "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+        "path_id": 8542862890669034476,
+        "class_id": 43,
+        "name": "RockSpire"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 8105398443947783115,
+        "class_id": 1,
+        "name": "Ground_TR"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": -4699302717618816017,
+          "class_id": 21,
+          "name": "ORG_GroundCorners"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 111,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -3657907015518915637,
+        "class_id": 1,
+        "name": "STW_ClockTowerProjected"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -2183341716648299573,
+        "class_id": 1,
+        "name": "PlaySurface2"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+        "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+        "path_id": 6577350478504219516,
+        "class_id": 43,
+        "name": "PlaySurface2"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 137,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -2236160950200437813,
+        "class_id": 1,
+        "name": "HutFlag_joint1"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": 4522414703670296952,
+          "class_id": 21,
+          "name": "ORG_Combined"
+        }
+      ],
+      "mesh": {
+        "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+        "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+        "path_id": -6824584379448089255,
+        "class_id": 43,
+        "name": "HutFlag_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -6623650619310935093,
+        "class_id": 1,
+        "name": "Ground_TL"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+        "bundle": "essential_base_global-mesh-0.unity3d",
+        "path_id": 162171087482223636,
+        "class_id": 43,
+        "name": "Ground_TL_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 4886761274656617419,
+        "class_id": 1,
+        "name": "STW_Frame"
+      },
+      "materials": [
+        {
+          "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+          "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+          "path_id": 1224595672025980119,
+          "class_id": 21,
+          "name": "FRAME"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -6884811555479620661,
+        "class_id": 1,
+        "name": "ORG_Zepp"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+        "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+        "path_id": 8513303839450870037,
+        "class_id": 43,
+        "name": "Zepplin"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -4891152195913780277,
+        "class_id": 1,
+        "name": "Ground_BL"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+        "bundle": "essential_base_global-mesh-0.unity3d",
+        "path_id": -3121052735590728684,
+        "class_id": 43,
+        "name": "Ground_BL_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -8600314020804693045,
+        "class_id": 1,
+        "name": "HeroBackPlate_opponent"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+        "bundle": "essential_base_global-mesh-0.unity3d",
+        "path_id": -6152514748593941231,
+        "class_id": 43,
+        "name": "HeroBackPlate_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -5913985873152117813,
+        "class_id": 1,
+        "name": "PlaySurface6"
+      },
+      "materials": [
+        {
+          "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+          "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+          "path_id": 7540454713150839835,
+          "class_id": 21,
+          "name": "GameplayArea_D"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 113619802057536459,
+        "class_id": 1,
+        "name": "DragPlane"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-8254f5ae47ff4f5277d4ff75099b64c7",
+        "bundle": "initial_base_global-4059ef3d-mesh-0.unity3d",
+        "path_id": 9162807908355859654,
+        "class_id": 43,
+        "name": "DragPlane"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 7732977062969013195,
+        "class_id": 1,
+        "name": "ORG_CatapultRockPile"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+        "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+        "path_id": -8371940428760762480,
+        "class_id": 43,
+        "name": "CatapultRockPile_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 8726231800403194827,
+        "class_id": 1,
+        "name": "RockPickup"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+        "bundle": "essential_base_global-mesh-0.unity3d",
+        "path_id": 6724787629696915003,
+        "class_id": 43,
+        "name": "CatapultRockSingle_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 111,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 4886761274656617419,
+        "class_id": 1,
+        "name": "STW_Frame"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 7875834941850055627,
+        "class_id": 1,
+        "name": "polySurface68"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+        "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+        "path_id": -2028076896088331133,
+        "class_id": 43,
+        "name": "polySurface68"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 2362404879388701643,
+        "class_id": 1,
+        "name": "PlaySurface1"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+        "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+        "path_id": 7105265532015498108,
+        "class_id": 43,
+        "name": "PlaySurface1"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -7227662219451960373,
+        "class_id": 1,
+        "name": "ORG_Spire"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": 4522414703670296952,
+          "class_id": 21,
+          "name": "ORG_Combined"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -8600314020804693045,
+        "class_id": 1,
+        "name": "HeroBackPlate_opponent"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": 876111910866844753,
+          "class_id": 21,
+          "name": "HeroBackplateB"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 7519098169136182219,
+        "class_id": 1,
+        "name": "ORG_Hut_Flag"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+        "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+        "path_id": -5171895061477393552,
+        "class_id": 43,
+        "name": "hut_flag"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 2725379780910576587,
+        "class_id": 1,
+        "name": "PlaySurface5"
+      },
+      "materials": [
+        {
+          "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+          "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+          "path_id": 7540454713150839835,
+          "class_id": 21,
+          "name": "GameplayArea_D"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 111,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -7227662219451960373,
+        "class_id": 1,
+        "name": "ORG_Spire"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": [
+        {
+          "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+          "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+          "path_id": 8244224324849701444,
+          "class_id": 74,
+          "name": "ORG_SpireRockRocking"
+        },
+        {
+          "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+          "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+          "path_id": 373312820255084137,
+          "class_id": 74,
+          "name": "ORG_SpireRockClicked1"
+        }
+      ]
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -5537582509888375861,
+        "class_id": 1,
+        "name": "RockSpireTopRock_mesh"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": 4522414703670296952,
+          "class_id": 21,
+          "name": "ORG_Combined"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 111,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -6079090607903804469,
+        "class_id": 1,
+        "name": "GateTowers_GateRoot_mesh"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": [
+        {
+          "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+          "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+          "path_id": -3839798692611417521,
+          "class_id": 74,
+          "name": "ORG_GateWiggle"
+        },
+        {
+          "cab": "CAB-864f9a45b92c6e114e2e569badb557ad",
+          "bundle": "initial_base_global-1fbc9c0f-prefab-8.unity3d",
+          "path_id": -4935533110729638667,
+          "class_id": 74,
+          "name": "ORG_GateClose"
+        },
+        {
+          "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+          "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+          "path_id": -2714601732329741403,
+          "class_id": 74,
+          "name": "ORG_GateOpen"
+        }
+      ]
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 7519098169136182219,
+        "class_id": 1,
+        "name": "ORG_Hut_Flag"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": 4522414703670296952,
+          "class_id": 21,
+          "name": "ORG_Combined"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -8178459000941448245,
+        "class_id": 1,
+        "name": "EnemyTray"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+        "bundle": "essential_base_global-mesh-0.unity3d",
+        "path_id": 1505440188540084196,
+        "class_id": 43,
+        "name": "EnemyTray"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 137,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 455663691945079755,
+        "class_id": 1,
+        "name": "Thorns_jointRoot"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": 4522414703670296952,
+          "class_id": 21,
+          "name": "ORG_Combined"
+        }
+      ],
+      "mesh": {
+        "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+        "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+        "path_id": 2873711287808364482,
+        "class_id": 43,
+        "name": "GateTowers_Thorns_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -8310880140594580533,
+        "class_id": 1,
+        "name": "Catapult_Base"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": 4522414703670296952,
+          "class_id": 21,
+          "name": "ORG_Combined"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -6884811555479620661,
+        "class_id": 1,
+        "name": "ORG_Zepp"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": 4522414703670296952,
+          "class_id": 21,
+          "name": "ORG_Combined"
+        },
+        {
+          "cab": "CAB-a6108c20f72d6c4ee80cf0e95f3d917f",
+          "bundle": "initial_base_global-b6b43e63-material-0.unity3d",
+          "path_id": -7638691872970414593,
+          "class_id": 21,
+          "name": "ORG_ZeppNetting"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -2836890482883300405,
+        "class_id": 1,
+        "name": "PlaySurface4"
+      },
+      "materials": [
+        {
+          "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+          "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+          "path_id": 7540454713150839835,
+          "class_id": 21,
+          "name": "GameplayArea_D"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 111,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 7519098169136182219,
+        "class_id": 1,
+        "name": "ORG_Hut_Flag"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": [
+        {
+          "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+          "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+          "path_id": -6060336568388270885,
+          "class_id": 74,
+          "name": "ORG_HutFlagIdle"
+        },
+        {
+          "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+          "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+          "path_id": -4170733354966018198,
+          "class_id": 74,
+          "name": "ORG_HutFlagClicked1"
+        }
+      ]
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -1482520634177424437,
+        "class_id": 1,
+        "name": "Sphere"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+        "bundle": "essential_base_global-mesh-0.unity3d",
+        "path_id": 6724787629696915003,
+        "class_id": 43,
+        "name": "CatapultRockSingle_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 2362404879388701643,
+        "class_id": 1,
+        "name": "PlaySurface1"
+      },
+      "materials": [
+        {
+          "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+          "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+          "path_id": 7540454713150839835,
+          "class_id": 21,
+          "name": "GameplayArea_D"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -6623650619310935093,
+        "class_id": 1,
+        "name": "Ground_TL"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": -4699302717618816017,
+          "class_id": 21,
+          "name": "ORG_GroundCorners"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -1567820660034964533,
+        "class_id": 1,
+        "name": "ORG_Hut"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-2f2947d5a4c7f812668b75c950ccfcdf",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-mesh-0.unity3d",
+        "path_id": 5732041212704583759,
+        "class_id": 43,
+        "name": "Hut"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 7077628484966872011,
+        "class_id": 1,
+        "name": "PlaySurface7"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+        "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+        "path_id": -4908859208366140548,
+        "class_id": 43,
+        "name": "PlaySurface7"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 2987551894048404427,
+        "class_id": 1,
+        "name": "TableTop"
+      },
+      "materials": [
+        {
+          "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+          "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+          "path_id": -5554236140476995750,
+          "class_id": 21,
+          "name": "TableTop-mat_STW_TableTop"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -4803943702422948917,
+        "class_id": 1,
+        "name": "ORG_Hut_Fence"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": 4522414703670296952,
+          "class_id": 21,
+          "name": "ORG_Combined"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 3845208823268373451,
+        "class_id": 1,
+        "name": "HeroTray"
+      },
+      "materials": [
+        {
+          "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+          "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+          "path_id": 8565521579979875298,
+          "class_id": 21,
+          "name": "Board_STW-mat_HeroTray"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -4803943702422948917,
+        "class_id": 1,
+        "name": "ORG_Hut_Fence"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+        "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+        "path_id": 1540795353655784891,
+        "class_id": 43,
+        "name": "polySurface61"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -5913985873152117813,
+        "class_id": 1,
+        "name": "PlaySurface6"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+        "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+        "path_id": 1124033841768321916,
+        "class_id": 43,
+        "name": "PlaySurface6"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 111,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -884294515260722229,
+        "class_id": 1,
+        "name": "Board_ORG"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -8310880140594580533,
+        "class_id": 1,
+        "name": "Catapult_Base"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+        "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+        "path_id": -4927724690473653117,
+        "class_id": 43,
+        "name": "CatapultBase_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 111,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -1567820660034964533,
+        "class_id": 1,
+        "name": "ORG_Hut"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 2987551894048404427,
+        "class_id": 1,
+        "name": "TableTop"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+        "bundle": "essential_base_global-mesh-0.unity3d",
+        "path_id": 3504672545271017697,
+        "class_id": 43,
+        "name": "STW_TableTop_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -1183129154871561269,
+        "class_id": 1,
+        "name": "Ground_BR"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": -4699302717618816017,
+          "class_id": 21,
+          "name": "ORG_GroundCorners"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 7732977062969013195,
+        "class_id": 1,
+        "name": "ORG_CatapultRockPile"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": 4522414703670296952,
+          "class_id": 21,
+          "name": "ORG_Combined"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -4891152195913780277,
+        "class_id": 1,
+        "name": "Ground_BL"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": -4699302717618816017,
+          "class_id": 21,
+          "name": "ORG_GroundCorners"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 7875834941850055627,
+        "class_id": 1,
+        "name": "polySurface68"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": 4522414703670296952,
+          "class_id": 21,
+          "name": "ORG_Combined"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 6448208168488530891,
+        "class_id": 1,
+        "name": "PlaySurface8"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+        "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+        "path_id": -2712082058569165956,
+        "class_id": 43,
+        "name": "PlaySurface8"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 5527968359189836747,
+        "class_id": 1,
+        "name": "PlaySurface3"
+      },
+      "materials": [
+        {
+          "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+          "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+          "path_id": 7540454713150839835,
+          "class_id": 21,
+          "name": "GameplayArea_D"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 111,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -5914891900995177525,
+        "class_id": 1,
+        "name": "ORG_HutFlag_Skinned"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 5527968359189836747,
+        "class_id": 1,
+        "name": "PlaySurface3"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+        "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+        "path_id": 8803773532913292156,
+        "class_id": 43,
+        "name": "PlaySurface3"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 2634876586332648395,
+        "class_id": 1,
+        "name": "GateTowers_mesh"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+        "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+        "path_id": -2202200306790200361,
+        "class_id": 43,
+        "name": "GateTowers_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 111,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -6884811555479620661,
+        "class_id": 1,
+        "name": "ORG_Zepp"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": [
+        {
+          "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+          "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+          "path_id": -5614007441162451217,
+          "class_id": 74,
+          "name": "ORG_ZepIdle"
+        },
+        {
+          "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+          "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+          "path_id": -1221053473568334980,
+          "class_id": 74,
+          "name": "ORG_ZepClicked1"
+        },
+        {
+          "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+          "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+          "path_id": -119582183316204952,
+          "class_id": 74,
+          "name": "ORG_ZepClickedClosed"
+        }
+      ]
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -1183129154871561269,
+        "class_id": 1,
+        "name": "Ground_BR"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+        "bundle": "essential_base_global-mesh-0.unity3d",
+        "path_id": 6199950273328086036,
+        "class_id": 43,
+        "name": "Ground_BR_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 3845208823268373451,
+        "class_id": 1,
+        "name": "HeroTray"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+        "bundle": "essential_base_global-mesh-0.unity3d",
+        "path_id": 3003454134443610057,
+        "class_id": 43,
+        "name": "HeroTray"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 113619802057536459,
+        "class_id": 1,
+        "name": "DragPlane"
+      },
+      "materials": [
+        {
+          "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+          "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+          "path_id": 2479980352079597388,
+          "class_id": 21,
+          "name": "Default-Diffuse"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 111,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 903160519280948171,
+        "class_id": 1,
+        "name": "STW_ChurchProjected"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -2836890482883300405,
+        "class_id": 1,
+        "name": "PlaySurface4"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+        "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+        "path_id": -1819590752371453060,
+        "class_id": 43,
+        "name": "PlaySurface4"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 33,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 1360509283857986507,
+        "class_id": 1,
+        "name": "HeroBackPlate_player"
+      },
+      "materials": [],
+      "mesh": {
+        "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+        "bundle": "essential_base_global-mesh-0.unity3d",
+        "path_id": -6152514748593941231,
+        "class_id": 43,
+        "name": "HeroBackPlate_mesh"
+      },
+      "animations": []
+    },
+    {
+      "class_id": 111,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -4554490602688613429,
+        "class_id": 1,
+        "name": "STW_GryphonTowerProjected"
+      },
+      "materials": [],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": 1360509283857986507,
+        "class_id": 1,
+        "name": "HeroBackPlate_player"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": -9021969742693862686,
+          "class_id": 21,
+          "name": "HeroBackplateA"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -1567820660034964533,
+        "class_id": 1,
+        "name": "ORG_Hut"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": 4522414703670296952,
+          "class_id": 21,
+          "name": "ORG_Combined"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    },
+    {
+      "class_id": 23,
+      "game_object": {
+        "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+        "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+        "path_id": -1610806579718655029,
+        "class_id": 1,
+        "name": "GateTowers_Gate_mesh"
+      },
+      "materials": [
+        {
+          "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+          "bundle": "essential_base_global-material-0.unity3d",
+          "path_id": 4522414703670296952,
+          "class_id": 21,
+          "name": "ORG_Combined"
+        }
+      ],
+      "mesh": null,
+      "animations": []
+    }
+  ],
+  "materials": [
+    {
+      "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+      "bundle": "essential_base_global-material-0.unity3d",
+      "path_id": 4522414703670296952,
+      "class_id": 21,
+      "name": "ORG_Combined",
+      "textures": [
+        {
+          "property": "_MainTex",
+          "texture": {
+            "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+            "bundle": "essential_base_global-texture-2.unity3d",
+            "path_id": -8866968303948746594,
+            "class_id": 28,
+            "name": "ORG_Combined"
+          }
+        }
+      ]
+    },
+    {
+      "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+      "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+      "path_id": 7540454713150839835,
+      "class_id": 21,
+      "name": "GameplayArea_D",
+      "textures": [
+        {
+          "property": "_MainTex",
+          "texture": {
+            "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+            "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+            "path_id": -6635202518755270215,
+            "class_id": 28,
+            "name": "GameplayArea_D"
+          }
+        }
+      ]
+    },
+    {
+      "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+      "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+      "path_id": 4058162567926058472,
+      "class_id": 21,
+      "name": "Board_STW-mat_EnemyTray",
+      "textures": [
+        {
+          "property": "_MainTex",
+          "texture": {
+            "cab": "CAB-cfdc5301ac0b17c5a76ad477fba38b57",
+            "bundle": "essential_base_global-texture-0.unity3d",
+            "path_id": 964964484528981499,
+            "class_id": 28,
+            "name": "Board_HeroTray"
+          }
+        }
+      ]
+    },
+    {
+      "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+      "bundle": "essential_base_global-material-0.unity3d",
+      "path_id": -4699302717618816017,
+      "class_id": 21,
+      "name": "ORG_GroundCorners",
+      "textures": [
+        {
+          "property": "_MainTex",
+          "texture": {
+            "cab": "CAB-cfdc5301ac0b17c5a76ad477fba38b57",
+            "bundle": "essential_base_global-texture-0.unity3d",
+            "path_id": -67963320798725395,
+            "class_id": 28,
+            "name": "ORG_GroundCorners"
+          }
+        }
+      ]
+    },
+    {
+      "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+      "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+      "path_id": 1224595672025980119,
+      "class_id": 21,
+      "name": "FRAME",
+      "textures": [
+        {
+          "property": "_BotTex",
+          "texture": {
+            "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+            "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+            "path_id": 7332743183332182750,
+            "class_id": 28,
+            "name": "FRAME"
+          }
+        },
+        {
+          "property": "_TopTex",
+          "texture": {
+            "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+            "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+            "path_id": 7332743183332182750,
+            "class_id": 28,
+            "name": "FRAME"
+          }
+        }
+      ]
+    },
+    {
+      "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+      "bundle": "essential_base_global-material-0.unity3d",
+      "path_id": 876111910866844753,
+      "class_id": 21,
+      "name": "HeroBackplateB",
+      "textures": [
+        {
+          "property": "_MainTex",
+          "texture": {
+            "cab": "CAB-cfdc5301ac0b17c5a76ad477fba38b57",
+            "bundle": "essential_base_global-texture-0.unity3d",
+            "path_id": 3226854830307943609,
+            "class_id": 28,
+            "name": "HeroBackplateB"
+          }
+        }
+      ]
+    },
+    {
+      "cab": "CAB-a6108c20f72d6c4ee80cf0e95f3d917f",
+      "bundle": "initial_base_global-b6b43e63-material-0.unity3d",
+      "path_id": -7638691872970414593,
+      "class_id": 21,
+      "name": "ORG_ZeppNetting",
+      "textures": [
+        {
+          "property": "_MainTex",
+          "texture": {
+            "cab": "CAB-588f781fcafe15f7eb60d2b70d9c2203",
+            "bundle": "initial_base_global-b6b43e63-texture-0.unity3d",
+            "path_id": 7231330569607050805,
+            "class_id": 28,
+            "name": "ORG_ZeppNetting"
+          }
+        }
+      ]
+    },
+    {
+      "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+      "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+      "path_id": -5554236140476995750,
+      "class_id": 21,
+      "name": "TableTop-mat_STW_TableTop",
+      "textures": [
+        {
+          "property": "_BotTex",
+          "texture": {
+            "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+            "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+            "path_id": 957376376696571636,
+            "class_id": 28,
+            "name": "STW_Table"
+          }
+        },
+        {
+          "property": "_TopTex",
+          "texture": {
+            "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+            "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+            "path_id": 957376376696571636,
+            "class_id": 28,
+            "name": "STW_Table"
+          }
+        }
+      ]
+    },
+    {
+      "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+      "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+      "path_id": 8565521579979875298,
+      "class_id": 21,
+      "name": "Board_STW-mat_HeroTray",
+      "textures": [
+        {
+          "property": "_MainTex",
+          "texture": {
+            "cab": "CAB-cfdc5301ac0b17c5a76ad477fba38b57",
+            "bundle": "essential_base_global-texture-0.unity3d",
+            "path_id": 964964484528981499,
+            "class_id": 28,
+            "name": "Board_HeroTray"
+          }
+        }
+      ]
+    },
+    {
+      "cab": "CAB-13854ef28ebed67ef96b03c4ea6c7999",
+      "bundle": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+      "path_id": 2479980352079597388,
+      "class_id": 21,
+      "name": "Default-Diffuse",
+      "textures": []
+    },
+    {
+      "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+      "bundle": "essential_base_global-material-0.unity3d",
+      "path_id": -9021969742693862686,
+      "class_id": 21,
+      "name": "HeroBackplateA",
+      "textures": [
+        {
+          "property": "_MainTex",
+          "texture": {
+            "cab": "CAB-cfdc5301ac0b17c5a76ad477fba38b57",
+            "bundle": "essential_base_global-texture-0.unity3d",
+            "path_id": -3135311640894255522,
+            "class_id": 28,
+            "name": "HeroBackplateA"
+          }
+        }
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+      "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+      "path_id": 5000499861996262268,
+      "class_id": 43,
+      "name": "PlaySurface5"
+    },
+    {
+      "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+      "bundle": "essential_base_global-mesh-0.unity3d",
+      "path_id": -9143387311288255468,
+      "class_id": 43,
+      "name": "Ground_TR_mesh"
+    },
+    {
+      "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+      "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+      "path_id": -9200215646011552809,
+      "class_id": 43,
+      "name": "GateTowers_Gate_mesh"
+    },
+    {
+      "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+      "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+      "path_id": 4330114722246425541,
+      "class_id": 43,
+      "name": "STW_Frame_mesh"
+    },
+    {
+      "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+      "bundle": "essential_base_global-mesh-0.unity3d",
+      "path_id": -5520585729207992118,
+      "class_id": 43,
+      "name": "PlaySurface_Combined"
+    },
+    {
+      "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+      "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+      "path_id": -2837358942785713172,
+      "class_id": 43,
+      "name": "RockSpireTopRock_mesh"
+    },
+    {
+      "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+      "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+      "path_id": -1021404381207163945,
+      "class_id": 43,
+      "name": "GateTowers_Thorns_mesh"
+    },
+    {
+      "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+      "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+      "path_id": 3195270453854899159,
+      "class_id": 43,
+      "name": "GateTowers_Rocks_mesh"
+    },
+    {
+      "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+      "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+      "path_id": 8542862890669034476,
+      "class_id": 43,
+      "name": "RockSpire"
+    },
+    {
+      "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+      "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+      "path_id": 6577350478504219516,
+      "class_id": 43,
+      "name": "PlaySurface2"
+    },
+    {
+      "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+      "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+      "path_id": -6824584379448089255,
+      "class_id": 43,
+      "name": "HutFlag_mesh"
+    },
+    {
+      "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+      "bundle": "essential_base_global-mesh-0.unity3d",
+      "path_id": 162171087482223636,
+      "class_id": 43,
+      "name": "Ground_TL_mesh"
+    },
+    {
+      "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+      "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+      "path_id": 8513303839450870037,
+      "class_id": 43,
+      "name": "Zepplin"
+    },
+    {
+      "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+      "bundle": "essential_base_global-mesh-0.unity3d",
+      "path_id": -3121052735590728684,
+      "class_id": 43,
+      "name": "Ground_BL_mesh"
+    },
+    {
+      "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+      "bundle": "essential_base_global-mesh-0.unity3d",
+      "path_id": -6152514748593941231,
+      "class_id": 43,
+      "name": "HeroBackPlate_mesh"
+    },
+    {
+      "cab": "CAB-8254f5ae47ff4f5277d4ff75099b64c7",
+      "bundle": "initial_base_global-4059ef3d-mesh-0.unity3d",
+      "path_id": 9162807908355859654,
+      "class_id": 43,
+      "name": "DragPlane"
+    },
+    {
+      "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+      "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+      "path_id": -8371940428760762480,
+      "class_id": 43,
+      "name": "CatapultRockPile_mesh"
+    },
+    {
+      "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+      "bundle": "essential_base_global-mesh-0.unity3d",
+      "path_id": 6724787629696915003,
+      "class_id": 43,
+      "name": "CatapultRockSingle_mesh"
+    },
+    {
+      "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+      "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+      "path_id": -2028076896088331133,
+      "class_id": 43,
+      "name": "polySurface68"
+    },
+    {
+      "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+      "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+      "path_id": 7105265532015498108,
+      "class_id": 43,
+      "name": "PlaySurface1"
+    },
+    {
+      "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+      "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+      "path_id": -5171895061477393552,
+      "class_id": 43,
+      "name": "hut_flag"
+    },
+    {
+      "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+      "bundle": "essential_base_global-mesh-0.unity3d",
+      "path_id": 1505440188540084196,
+      "class_id": 43,
+      "name": "EnemyTray"
+    },
+    {
+      "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+      "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+      "path_id": 2873711287808364482,
+      "class_id": 43,
+      "name": "GateTowers_Thorns_mesh"
+    },
+    {
+      "cab": "CAB-2f2947d5a4c7f812668b75c950ccfcdf",
+      "bundle": "initial_base_qualityhigh_global-b6b43e63-mesh-0.unity3d",
+      "path_id": 5732041212704583759,
+      "class_id": 43,
+      "name": "Hut"
+    },
+    {
+      "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+      "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+      "path_id": -4908859208366140548,
+      "class_id": 43,
+      "name": "PlaySurface7"
+    },
+    {
+      "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+      "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+      "path_id": 1540795353655784891,
+      "class_id": 43,
+      "name": "polySurface61"
+    },
+    {
+      "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+      "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+      "path_id": 1124033841768321916,
+      "class_id": 43,
+      "name": "PlaySurface6"
+    },
+    {
+      "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+      "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+      "path_id": -4927724690473653117,
+      "class_id": 43,
+      "name": "CatapultBase_mesh"
+    },
+    {
+      "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+      "bundle": "essential_base_global-mesh-0.unity3d",
+      "path_id": 3504672545271017697,
+      "class_id": 43,
+      "name": "STW_TableTop_mesh"
+    },
+    {
+      "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+      "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+      "path_id": -2712082058569165956,
+      "class_id": 43,
+      "name": "PlaySurface8"
+    },
+    {
+      "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+      "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+      "path_id": 8803773532913292156,
+      "class_id": 43,
+      "name": "PlaySurface3"
+    },
+    {
+      "cab": "CAB-cf614c295e5700c1f1527a346208b25b",
+      "bundle": "initial_base_global-b6b43e63-mesh-0.unity3d",
+      "path_id": -2202200306790200361,
+      "class_id": 43,
+      "name": "GateTowers_mesh"
+    },
+    {
+      "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+      "bundle": "essential_base_global-mesh-0.unity3d",
+      "path_id": 6199950273328086036,
+      "class_id": 43,
+      "name": "Ground_BR_mesh"
+    },
+    {
+      "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+      "bundle": "essential_base_global-mesh-0.unity3d",
+      "path_id": 3003454134443610057,
+      "class_id": 43,
+      "name": "HeroTray"
+    },
+    {
+      "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+      "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+      "path_id": -1819590752371453060,
+      "class_id": 43,
+      "name": "PlaySurface4"
+    }
+  ],
+  "animations": [
+    {
+      "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+      "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+      "path_id": -3138444289641025160,
+      "class_id": 74,
+      "name": "ORG_ThornsClicked1"
+    },
+    {
+      "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+      "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+      "path_id": -1794395548323958099,
+      "class_id": 74,
+      "name": "ORG_ThornsClickedClose"
+    },
+    {
+      "cab": "CAB-864f9a45b92c6e114e2e569badb557ad",
+      "bundle": "initial_base_global-1fbc9c0f-prefab-8.unity3d",
+      "path_id": 1727320580028075882,
+      "class_id": 74,
+      "name": "ORG_CattapultLaunch"
+    },
+    {
+      "cab": "CAB-864f9a45b92c6e114e2e569badb557ad",
+      "bundle": "initial_base_global-1fbc9c0f-prefab-8.unity3d",
+      "path_id": -790353974722634695,
+      "class_id": 74,
+      "name": "ORG_CattapultRockFall"
+    },
+    {
+      "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+      "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+      "path_id": 8244224324849701444,
+      "class_id": 74,
+      "name": "ORG_SpireRockRocking"
+    },
+    {
+      "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+      "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+      "path_id": 373312820255084137,
+      "class_id": 74,
+      "name": "ORG_SpireRockClicked1"
+    },
+    {
+      "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+      "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+      "path_id": -3839798692611417521,
+      "class_id": 74,
+      "name": "ORG_GateWiggle"
+    },
+    {
+      "cab": "CAB-864f9a45b92c6e114e2e569badb557ad",
+      "bundle": "initial_base_global-1fbc9c0f-prefab-8.unity3d",
+      "path_id": -4935533110729638667,
+      "class_id": 74,
+      "name": "ORG_GateClose"
+    },
+    {
+      "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+      "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+      "path_id": -2714601732329741403,
+      "class_id": 74,
+      "name": "ORG_GateOpen"
+    },
+    {
+      "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+      "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+      "path_id": -6060336568388270885,
+      "class_id": 74,
+      "name": "ORG_HutFlagIdle"
+    },
+    {
+      "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+      "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+      "path_id": -4170733354966018198,
+      "class_id": 74,
+      "name": "ORG_HutFlagClicked1"
+    },
+    {
+      "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+      "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+      "path_id": -5614007441162451217,
+      "class_id": 74,
+      "name": "ORG_ZepIdle"
+    },
+    {
+      "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+      "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+      "path_id": -1221053473568334980,
+      "class_id": 74,
+      "name": "ORG_ZepClicked1"
+    },
+    {
+      "cab": "CAB-5b5356fb8cd840984c65872df8e514e1",
+      "bundle": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+      "path_id": -119582183316204952,
+      "class_id": 74,
+      "name": "ORG_ZepClickedClosed"
+    }
+  ],
+  "geometry_material_bundles": [
+    "essential_base_global-material-0.unity3d",
+    "essential_base_global-mesh-0.unity3d",
+    "essential_base_qualityhigh_global-content-0.unity3d",
+    "initial_base_global-4059ef3d-mesh-0.unity3d",
+    "initial_base_global-b6b43e63-material-0.unity3d",
+    "initial_base_global-b6b43e63-mesh-0.unity3d",
+    "initial_base_qualityhigh_global-b6b43e63-mesh-0.unity3d",
+    "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d"
+  ],
+  "texture_bundles": [
+    "essential_base_global-texture-0.unity3d",
+    "essential_base_global-texture-2.unity3d",
+    "essential_base_qualityhigh_global-content-0.unity3d",
+    "initial_base_global-b6b43e63-texture-0.unity3d"
+  ]
+}

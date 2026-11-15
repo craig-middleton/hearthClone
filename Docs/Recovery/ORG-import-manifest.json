@@ -1,0 +1,364 @@
+{
+  "root": "AssetBundles/initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d/ORG.prefab",
+  "visual_files": 69,
+  "removed_component_classes": {
+    "114": 23,
+    "82": 8,
+    "64": 1,
+    "108": 1,
+    "198": 16,
+    "199": 16,
+    "65": 3,
+    "135": 9
+  },
+  "unresolved_shader_guids": [
+    "0000000deadbeef15deadf00d0000000"
+  ],
+  "files": [
+    {
+      "source": "AssetBundles/initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d/ORG.prefab",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d/ORG.prefab",
+      "source_sha256": "3255213293519bda2764c314a49d40150174d5f66ace62d2a0a58894136540e8"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_ThornsClickedClose.anim",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_ThornsClickedClose.anim",
+      "source_sha256": "feb4920537eac0838d8c4cd09cb5d93af9ee26de39fa1121dd075c7175ffb1c0"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_HutFlagClicked1.anim",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_HutFlagClicked1.anim",
+      "source_sha256": "746b8a9be0e976b01785db91b2bac91bc75895f555fcdbeb971c8375de05c5d0"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/CatapultRockPile_mesh.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/CatapultRockPile_mesh.asset",
+      "source_sha256": "1178de43bb4ec6ee2e74fb364420a2fcecb076fb8532325533b82a2617686a93"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Ground_BR_mesh.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-mesh-0.unity3d/Ground_BR_mesh.asset",
+      "source_sha256": "40971408eba56c56f6c2d9a3fe93291f17e9e723cc31c4a55e44eb5f1c2cdb97"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_GateWiggle.anim",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_GateWiggle.anim",
+      "source_sha256": "9b84dbc336cb7f90cd2ce486ce8e3194c43f058a7b511a077bd1b23583b1e048"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/PlaySurface7.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/PlaySurface7.asset",
+      "source_sha256": "1572d917fda548cfc607e3a96811364d5d8d3a368b4928a74792b47b52018462"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Ground_TL_mesh.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-mesh-0.unity3d/Ground_TL_mesh.asset",
+      "source_sha256": "0bbc7a4d72fbb9159a59ebd86ee8af76009d36340ceeedfe02434e0125bc92b5"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-4059ef3d-mesh-0.unity3d/DragPlane.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-4059ef3d-mesh-0.unity3d/DragPlane.asset",
+      "source_sha256": "d778a7d1d7e71f80eec89c8c9ebaac3287a4edcdcf416792de7b68c8b7775876"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/CatapultRockSingle_mesh.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-mesh-0.unity3d/CatapultRockSingle_mesh.asset",
+      "source_sha256": "f8ebaa92670a10cd419f26b89ee6a9f0cc08f4bb25e3c177121904d7225ba5f9"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_ZepClicked1.anim",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_ZepClicked1.anim",
+      "source_sha256": "812258f86091060c1c60925b8973a942f2ef6f81027c13f082278b5d59a0db76"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/STW_TableTop_mesh.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-mesh-0.unity3d/STW_TableTop_mesh.asset",
+      "source_sha256": "8f29c8a7b1a2b7cb4b59c6a4a94e5ef0213c89f05c75decff83d7794d4055add"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/CatapultBase_mesh.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/CatapultBase_mesh.asset",
+      "source_sha256": "74411bbeadfb8af0024a16b2096b1c01d492b6a1347adad369ce6b50ccdd2214"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/hut_flag.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/hut_flag.asset",
+      "source_sha256": "3572d1c609d83750eff96fbc29f77f769f9af723006e4a63ec6477849766514a"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/GateTowers_Rocks_mesh.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/GateTowers_Rocks_mesh.asset",
+      "source_sha256": "2d3a8b2fa612f8a0a0cc427011be16563bad06bb81c25e46ceb28b22cd654284"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-1fbc9c0f-prefab-8.unity3d/ORG_GateClose.anim",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-1fbc9c0f-prefab-8.unity3d/ORG_GateClose.anim",
+      "source_sha256": "28f1bc5887bf3865d669bffd1522bed0f736ad9e0d32e81eb338bf81f1e461f8"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/PlaySurface5.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/PlaySurface5.asset",
+      "source_sha256": "22c32d002fdbe800b9d5e183bf412ca75eba9513d5f144a08c422705d77c8a8f"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_HutFlagIdle.anim",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_HutFlagIdle.anim",
+      "source_sha256": "71b3e0401dabccb91cfdc44f234309503196f0c651a6e08e7674a219e1daeff1"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/PlaySurface3.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/PlaySurface3.asset",
+      "source_sha256": "89339f98e36813d6ff19dfc33714bdc07936c8ba29a95c7a6b5841e17297a7f2"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/PlaySurface2.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/PlaySurface2.asset",
+      "source_sha256": "94decd7452faa740a050cc6bc2295fcd348851d43bc29a208801b279a287068f"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/HutFlag_mesh.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/HutFlag_mesh.asset",
+      "source_sha256": "9fa1cff79f14adf2652247f636975d0e936824c1be4ca72e0657dbce8a2211c1"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/HeroBackplateA.mat",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-material-0.unity3d/HeroBackplateA.mat",
+      "source_sha256": "0d76a0e4eeb256da96a40bb47b5202014891b81ee1387a7b9f2bbd91f7b7f412"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/PlaySurface8.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/PlaySurface8.asset",
+      "source_sha256": "08d022c3ca3e64422469cfe371368b2f38399b9846fb20c4c7200c0fa1fd1412"
+    },
+    {
+      "source": "AssetBundles/initial_base_qualityhigh_global-b6b43e63-mesh-0.unity3d/Hut.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_qualityhigh_global-b6b43e63-mesh-0.unity3d/Hut.asset",
+      "source_sha256": "fdd8d0c9c33ba924a952943a57e243ac006022842f416583f33d8e6387ef8009"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/polySurface61.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/polySurface61.asset",
+      "source_sha256": "befab0ad55ab80ab76d3e9584d8b57e59338fbaa2b9ebc40964f875450ad6c73"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/EnemyTray_0.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-mesh-0.unity3d/EnemyTray_0.asset",
+      "source_sha256": "d16368ea87da9692c47aa18db7a18fa239bb25d8ed65eaf7c202e0946fc2b503"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/GateTowers_Gate_mesh.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/GateTowers_Gate_mesh.asset",
+      "source_sha256": "aa145f79830de43926829b50a1274cee9788d59ea22494fd00d4f21e395fdbb9"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/Board_STW-mat_EnemyTray.mat",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/Board_STW-mat_EnemyTray.mat",
+      "source_sha256": "733eeef546bee2ff55615fd528477f07a96996e56337101da61fcf4c8109b2d0"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/HeroBackPlate_mesh.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-mesh-0.unity3d/HeroBackPlate_mesh.asset",
+      "source_sha256": "e026eb3985ceb269ee1b40ee26538788bebc330c773a0d42b75c249d5c6e4053"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/polySurface68.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/polySurface68.asset",
+      "source_sha256": "98b63de1555ed14cf3b495aec3efe741d32ea47310876e82d2531894cf023f93"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/ORG_Combined.mat",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-material-0.unity3d/ORG_Combined.mat",
+      "source_sha256": "a631d57099172d7f491f8f5ad8df24f3d896fd3c12ed18ea5760a30ad566d7d0"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_ThornsClicked1.anim",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_ThornsClicked1.anim",
+      "source_sha256": "06e0ba6dc5991e090734c8725d69fb3f8955d3e7bd36e3eb963de7c9a0cc4eac"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_ZepClickedClosed.anim",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_ZepClickedClosed.anim",
+      "source_sha256": "816365bd4de4592b020630790cab589c26b8f2feb4a903bb898bb75fbd388a62"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/Zepplin_0.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/Zepplin_0.asset",
+      "source_sha256": "617284a905a4930e874f50c8fef493cc5707f11006b335285b76374262374c78"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/PlaySurface4.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/PlaySurface4.asset",
+      "source_sha256": "4f58034ba1c9031b281886291530abe53ff01fb47c1d825570fd38f7ba309b07"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/HeroTray_0.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-mesh-0.unity3d/HeroTray_0.asset",
+      "source_sha256": "1b6217ed2469eeffb24e7fb01b9406719a0f2358096b4be1f0a317e4e6b06527"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_SpireRockRocking.anim",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_SpireRockRocking.anim",
+      "source_sha256": "644781b7b27eb7133423e586a425898cc6aa8335ec9cfbb2cb8791bf63884b6f"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/RockSpire.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/RockSpire.asset",
+      "source_sha256": "da061041a520178c7a779c22f97143d29fdc885d939932f8e6aa35506f6b9c8f"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/RockSpireTopRock_mesh.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/RockSpireTopRock_mesh.asset",
+      "source_sha256": "700ae48da514c417bb3e416fd30cb634f812e5e91c4e51da503effa60d330e26"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/PlaySurface_Combined.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-mesh-0.unity3d/PlaySurface_Combined.asset",
+      "source_sha256": "219eb4a1b4fa398e097e647a486394e2a75aabee31ca240a2378556679d04a79"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_GateOpen.anim",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_GateOpen.anim",
+      "source_sha256": "07f53b2f07ad74318f91891bd2423e76f1631c3dad5afd4b2915e70168efec54"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/Board_STW-mat_HeroTray.mat",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/Board_STW-mat_HeroTray.mat",
+      "source_sha256": "17e85c2e9c588afb80f69e44bfe18b66681f08b0a40cc3687fdfbd5d06145d77"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/GateTowers_Thorns_mesh.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/GateTowers_Thorns_mesh.asset",
+      "source_sha256": "e950f46a6361fa183a205dc2abf93ee1ad7018ffa5012b5bb7ce3bb29b31b7db"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Ground_TR_mesh.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-mesh-0.unity3d/Ground_TR_mesh.asset",
+      "source_sha256": "eafef1b581686d53505b10c6ea6d3b55a6a0d487cfa818183419f894619f54d3"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/HeroBackplateB.mat",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-material-0.unity3d/HeroBackplateB.mat",
+      "source_sha256": "2ff62b8b09d9b00b4f0a977d60d6a13ee5f60461a368b289193c1e1c5158fc0a"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/GateTowers_Thorns_mesh_0.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/GateTowers_Thorns_mesh_0.asset",
+      "source_sha256": "50bc87cec6d0ab0c085f15e8ca8a554a09862d6fdfc16c8410285a0518c0b623"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/TableTop-mat_STW_TableTop.mat",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/TableTop-mat_STW_TableTop.mat",
+      "source_sha256": "db6a424572c55b417012815e026e6f32ed11f7424ba3ca0aa8e7a5c6bc684059"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-1fbc9c0f-prefab-8.unity3d/ORG_CattapultRockFall.anim",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-1fbc9c0f-prefab-8.unity3d/ORG_CattapultRockFall.anim",
+      "source_sha256": "c27824927c3abddefc35e4b7393cdb2139b87db4a7d9ba32d2d5e153892acfe8"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-1fbc9c0f-prefab-8.unity3d/ORG_CattapultLaunch.anim",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-1fbc9c0f-prefab-8.unity3d/ORG_CattapultLaunch.anim",
+      "source_sha256": "78ab11f772c09e9d217b1ac4be3c85d81b00dd75bc9059cc7e31b251507fa000"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/GateTowers_mesh.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-b6b43e63-mesh-0.unity3d/GateTowers_mesh.asset",
+      "source_sha256": "46eb86314693164943aa69de34e1a68c3c688b1d964d592cc8779808f676f5a0"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/FRAME.mat",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/FRAME.mat",
+      "source_sha256": "dc758561f5cd88b617ccbb6bd4315a35bc27a23e0a473df710244be72c2734a6"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Ground_BL_mesh.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-mesh-0.unity3d/Ground_BL_mesh.asset",
+      "source_sha256": "d2241881895583b781d85f1345290d167a17eb8af2c305462dd5885b78b8de08"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/GameplayArea_D.mat",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/GameplayArea_D.mat",
+      "source_sha256": "6a84809717e76cfa12f86d20256cbdde1be10f2eadcaf37501a148ff1aae4d4d"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/PlaySurface1.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/PlaySurface1.asset",
+      "source_sha256": "53d58810a8cbe312188c55efd0b4eaf9965ec889ae4510f916f15c938e93e855"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/STW_Frame_mesh.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/STW_Frame_mesh.asset",
+      "source_sha256": "c7571b808719ba7186d5f8dc199dc5ab77cee90a7a4bb4051a2d0d09000ae618"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_ZepIdle.anim",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_ZepIdle.anim",
+      "source_sha256": "ecf06f7382b0fe7be0caf47c8b1fed1ea3584d7167362a6810d90145ae6a4ae8"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/ORG_GroundCorners.mat",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-material-0.unity3d/ORG_GroundCorners.mat",
+      "source_sha256": "57f115d018fe0c2d84092eb6e8588e5cabaaa3147454c08885542c938878da9c"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_SpireRockClicked1.anim",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-1fbc9c0f-prefab-9.unity3d/ORG_SpireRockClicked1.anim",
+      "source_sha256": "ad3e22edf199f6eac6cab8fed0ce8f14d43f06f06a2146623c2918f07bb9ee8b"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/PlaySurface6.asset",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/PlaySurface6.asset",
+      "source_sha256": "ff444dd12fa54f89f06c6c96c9f17b9b8106abc67f9b97e306eabac043f5ae77"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-b6b43e63-material-0.unity3d/ORG_ZeppNetting.mat",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-b6b43e63-material-0.unity3d/ORG_ZeppNetting.mat",
+      "source_sha256": "0b6987a1ee3e0af67fc22b46f33cb77258e36de678b959c0c99309d6b66a2283"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/HeroBackplateA.png",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-texture-0.unity3d/HeroBackplateA.png",
+      "source_sha256": "5112205199611407ff54945b0cf05a4980eb86777e441ad5d22f16951e3ecf3f"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/Board_HeroTray.png",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-texture-0.unity3d/Board_HeroTray.png",
+      "source_sha256": "79b37c3063ddd3fbcc78c046b8a8fe3ef39d3c67ac15eebe1ab70f43c985df69"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/ORG_Combined.png",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-texture-2.unity3d/ORG_Combined.png",
+      "source_sha256": "99d4aaf38ca0a7bb046a694a97f7f133181122378876aa1705d650d8befe8c96"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/HeroBackplateB.png",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-texture-0.unity3d/HeroBackplateB.png",
+      "source_sha256": "c72e1308d4aeeb652b56061f44d9c203a40d7956966929cbc19c1d990b8c9a1e"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/STW_Table.png",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/STW_Table.png",
+      "source_sha256": "32339405402f1fc48e77128eeeebd73543c702c788a32399e037c87c62039485"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/FRAME.png",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/FRAME.png",
+      "source_sha256": "64fcd45906d6ccddfcf7ce7a6fc81bcacc663905fd37ce72fe8c57934fc7c67a"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/GameplayArea_D.png",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/GameplayArea_D.png",
+      "source_sha256": "93a17107dc2e2e2b73e7171b79732f78665cb76b33e858b3fbe387a2811c8bee"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/ORG_GroundCorners.png",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/essential_base_global-texture-0.unity3d/ORG_GroundCorners.png",
+      "source_sha256": "abf3f5eb831f844687098886b2d74a6c8b425a0734d1ddd2c2fc7eb1f4d08fdc"
+    },
+    {
+      "source": "AssetBundles/initial_base_global-b6b43e63-texture-0.unity3d/ORG_ZeppNetting.png",
+      "destination": "Assets/_Project/RecoveredOrgrimmar/AssetBundles/initial_base_global-b6b43e63-texture-0.unity3d/ORG_ZeppNetting.png",
+      "source_sha256": "500fb4c9be8b1dcc556014b9c737ad1b679ddad34052f1ccefec1ce52e27483f"
+    }
+  ]
+}
