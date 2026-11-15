@@ -1,6 +1,6 @@
 # Original card, targeting and End Turn sources — 15 November 2026
 
-The source investigation and first native-mesh proof are complete. **These visuals are not connected to the live game yet.** HearthstoneTable remains the playable native Orgrimmar checkpoint from175a69a. Craig requested stopping at effort-setting changes: the next visual refinement/connection pass should begin after he switches to High and says continue. Reassess Ultra if shader/recovery problems require deeper work.
+The source investigation and first native-mesh proof are complete. **Targeting and animated End Turn are now connected to the live game; native cards remain in the proof.** HearthstoneTable remains the playable native Orgrimmar checkpoint from175a69a. Craig requested stopping at effort-setting changes: the next visual refinement/connection pass should begin after he switches to High and says continue. Reassess Ultra if shader/recovery problems require deeper work.
 
 Open Assets/Scenes/RecoveredInterfaceProof.unity. The left two objects use full original minion/spell actors with existing Wolf Rider/Fireball data and artwork. The right shows the original arrow meshes and End Turn button. Play the proof to cycle original button clips. The proof is excluded from builds and contains no game bootstrapper. Docs/Previews/Recovered-Interface-Proof.png records the first refined render.
 
@@ -27,3 +27,8 @@ Tools/AddRecoveredControlsProof.cs appends source targeting geometry and End Tur
 VerifyRecoveredInterfaceProof ran through the live Editor API in Play mode: five sanitized assemblies contain no client scripts/cameras/audio; all31 clips have empty client-event lists; active card mesh materials/textures resolve; source curved-name meshes and Franklin text are present; native flip exceeds140 degrees, press lowers more than0.1 units, green atlas/highlight state appears, both turn phases are reached; nine original targeting mesh instances are present. Current console is clear. This is visual-proof validation, not live input integration.
 
 The working game scene, card data, decks, rules, random music and build-scene list remain unchanged. Next: refine source-material behavior and proportions, connect the recovered card presentation to existing CardView/fan/drag events, replace the actual TargetingRibbon presentation while retaining its targeting/cancellation rules, and bind the native End Turn assembly/clips to existing turn/input state. Preserve30-card inclusive starts and all existing regression checks.
+
+
+## Live controls checkpoint
+
+Tools/InstallNativeMatchControls.cs is idempotent and saves the playable scene. Source arrow meshes are projected into UI Graphics with original UVs and top-facing triangles; all parts are non-raycastable. End Turn is actual world geometry, aligned to its existing transparent Button; NativeTurnButtonPresentation maps accepted turn changes and pointer events to source clips. AI remains synchronous, with the flip returning after its existing visual queue. The green state is conservative: affordable target-dependent cards can keep the button yellow even when no target exists. No turn/input rules change. Four live regression tools pass; card rendering integration remains pending.

@@ -14,6 +14,7 @@ namespace HearthstoneClone.UI
         public Image cursor;
         public Transform source;
         public GameObject hint;
+        public NativeTargetingPresentation nativePresentation;
         public Action CancelRequested;
         public override Texture mainTexture => ribbon==null?base.mainTexture:ribbon.texture;
         public bool Visible => enabled;
@@ -31,10 +32,10 @@ namespace HearthstoneClone.UI
             }
             cancelAction.Enable();
         }
-        protected override void OnDisable(){if(cancelAction!=null)cancelAction.Disable();base.OnDisable();}
+        protected override void OnDisable(){if(cancelAction!=null)cancelAction.Disable();if(nativePresentation!=null)nativePresentation.Clear();base.OnDisable();}
         protected override void OnDestroy(){if(cancelAction!=null)cancelAction.Dispose();base.OnDestroy();}
-        public void Show(Transform origin){source=origin;enabled=true;if(cursor!=null)cursor.enabled=true;if(hint!=null)hint.SetActive(true);SetVerticesDirty();}
-        public void Hide(){enabled=false;source=null;PreviewPointer=null;if(cursor!=null)cursor.enabled=false;if(hint!=null)hint.SetActive(false);}
+        public void Show(Transform origin){source=origin;enabled=true;if(cursor!=null)cursor.enabled=nativePresentation==null;if(hint!=null)hint.SetActive(true);SetVerticesDirty();}
+        public void Hide(){enabled=false;source=null;PreviewPointer=null;if(nativePresentation!=null)nativePresentation.Clear();if(cursor!=null)cursor.enabled=false;if(hint!=null)hint.SetActive(false);}
         void Update()
         {
             if(!enabled||source==null)return;
@@ -42,11 +43,12 @@ namespace HearthstoneClone.UI
             RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform,source.position,null,out start);
             RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform,pointer,null,out end);
             if(cursor!=null)cursor.rectTransform.position=pointer;
+            if(nativePresentation!=null)nativePresentation.Draw(start,end);
             SetVerticesDirty();
         }
         protected override void OnPopulateMesh(VertexHelper vh)
         {
-            vh.Clear();if(source==null||ribbon==null)return;
+            vh.Clear();if(nativePresentation!=null||source==null||ribbon==null)return;
             Vector2 delta=end-start;if(delta.sqrMagnitude<400)return;
             Vector2 normal=new Vector2(-delta.y,delta.x).normalized;
             Vector2 control=(start+end)*.5f+normal*Mathf.Min(80,delta.magnitude*.15f);

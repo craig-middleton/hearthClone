@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-15 — Native Orgrimmar remains playable at the prior checkpoint. Original card actors, exact neutral/Mage frames, Belwe/Franklin fonts, targeting head/dashes/ring and full animated End Turn assembly are now recovered and demonstrated in the separate non-build RecoveredInterfaceProof scene. These new interface visuals are not connected to HearthstoneTable yet. Native flip/press/state and visual-source checks pass. Craig requested pausing for effort changes; source/proof checkpoint is complete, next pass awaits switching to High and “continue”. See Docs/Recovery/INTERFACE_RECOVERY.md._
+_Last updated: 2026-11-15 — Native targeting head/dashes/ring and animated End Turn are now connected to HearthstoneTable. Live aim/cancel, press/flip/return, menu/mulligan visibility, targeting/combat and 30-card restart checks pass. Native card actors/fonts remain in RecoveredInterfaceProof; card presentation is not connected yet. High controls pass is complete; pause for Craig to switch to Ultra before the card fan/hover/drag rendering integration._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.
@@ -271,3 +271,8 @@ Validation: real menu/deck clicks and selected-deck composition, 60 distinct car
 ## Recovered interface proof
 
 Original card actors/fonts/class-frame mappings, targeting meshes and the full End Turn assembly are under RecoveredInterface. RecoveredInterfaceProof is isolated, excluded from builds; its button plays the original flip/press/turn clips through our proof-only driver. Current playable card/targeting/End Turn UI is still the old implementation. Exact source IDs, rendering limits, tools, validation and next-step constraints are in Docs/Recovery/INTERFACE_RECOVERY.md. Main game/card data/build list were not changed in this pass.
+
+
+## Live native controls
+
+InstallNativeMatchControls authors source-geometry targeting Graphics (original projected vertices/UVs/top-facing triangles, pooled dashes, no input interception) and a separate world-space native End Turn model controlled by the existing invisible UI Button. NativeTurnButtonPresentation plays source hover/press/flip clips after accepted turn changes, waits for existing action effects before returning to ready, and follows menu/mulligan visibility. Conservative green hint checks affordable cards/eligible attackers/power; target-dependent cards may keep yellow when no legal target exists. Rules and synchronous AI remain unchanged. Card meshes/fonts still await integration. Use VerifyNativeMatchControls, VerifyPowersAndBattle, VerifyNativeBoardGameplay and VerifyStartingDecks for regressions.

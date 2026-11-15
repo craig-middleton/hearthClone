@@ -30,6 +30,11 @@ namespace HearthstoneClone.UI
         public BattleEffects battleEffects;
         private bool powerPending;
         private bool PresentationBusy => battleEffects!=null&&battleEffects.IsBusy;
+        public bool ActionEffectsBusy => PresentationBusy;
+        public bool IsOpponentTurn => turnManager!=null&&turnManager.CurrentPlayer==playerTwo;
+        // Conservative visual hint: affordable cards may still require a valid target.
+        public bool HasVisibleActions => playerOne!=null&&(playerOne.BoardMinions.Exists(m=>m.CanAttack)||
+            playerOneHand.Hand.Exists(c=>c.Data.manaCost<=playerOne.CurrentMana)||gameManager.CanUseHeroPower(playerOne));
 
         [Header("Face UI")]
         private int playerOneStartingDeckSize;
@@ -99,7 +104,7 @@ namespace HearthstoneClone.UI
 
             if (endTurnButton != null)
             {
-                endTurnButton.onClick.AddListener(() => {CancelPendingInput();gameManager.OnEndTurnClicked();});
+                endTurnButton.onClick.AddListener(() => {CancelPendingInput();int before=turnManager.TurnNumber;gameManager.OnEndTurnClicked();if(turnManager.TurnNumber!=before)endTurnButton.GetComponent<NativeTurnButtonPresentation>()?.TurnEnded();});
             }
 
             if (confirmMulliganButton != null)
