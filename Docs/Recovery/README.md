@@ -1,10 +1,10 @@
 # Original Orgrimmar board recovery — 15 November 2026
 
-The new local Hearthstone installation supplied the original board geometry. This supersedes the plan to move extraction work to Windows. The complete-board image/overlay approach is rejected; the proof scene is built from separate original mesh objects.
+The new local Hearthstone installation supplied the original board geometry. This supersedes the plan to move extraction work to Windows. The complete-board image/overlay approach is rejected. Both the proof and the playable board use separate original mesh objects.
 
 ## Current result
 
-Open `Assets/Scenes/RecoveredOrgrimmarProof.unity` in Unity 6000.6.9f1. It is intentionally excluded from build scenes and is not connected to the playable match yet.
+Open `Assets/Scenes/HearthstoneTable.unity` in Unity 6000.6.9f1, enter Play mode, and select Play Game. Every new match now uses the original Orgrimmar board. `RecoveredOrgrimmarProof.unity` remains an isolated non-build inspection scene.
 
 - Original 121-object hierarchy and local transforms retained.
 - 35 distinct native meshes,35 MeshFilters and2 SkinnedMeshRenderers, with original UVs and bone references.
@@ -13,7 +13,7 @@ Open `Assets/Scenes/RecoveredOrgrimmarProof.unity` in Unity 6000.6.9f1. It is in
 - No Canvas or complete-board background plate. The wood/cloth table is a textured native mesh, as are the field, frame, ground, hero trays and corner props.
 - Game MonoBehaviours, audio, particles, colliders and original light components were removed from this visual-only copy. No client scripts/assemblies were imported or executed in HearthClone. Original legacy clips are retained; game-specific interactions are not recreated.
 
-`../Previews/Recovered-ORG-Unlit.png` and `../Previews/Recovered-ORG-Lit.png` show the first material pass and the subsequent depth-shadow pass. Craig judged the geometry proof the best result so far, while stating that it is still short of the real game's appearance. This is a recovery/lighting checkpoint, not completed visual acceptance or game integration.
+`../Previews/Recovered-ORG-Unlit.png` and `../Previews/Recovered-ORG-Lit.png` show the first material pass and the subsequent depth-shadow pass. Craig judged the geometry proof the best result so far, while stating that it is still short of the real game's appearance. `../Previews/Native-ORG-Playable.png` now shows a disposable mid-game preview of the integrated board; `../Previews/Native-ORG-Flamestrike.png` shows the actual drag-cast area effect. Integration is complete for the first playtest; visual acceptance is pending.
 
 ## Locations
 
@@ -39,9 +39,9 @@ The selected 69 visual assets are copied into `Assets/_Project/RecoveredOrgrimma
 
 Compiled original shaders did not recover as usable shader source. `CreateRecoveredBoardProof.cs` binds opaque native RGB textures and genuine netting alpha. This preserves original UVs; atlas backdrop colour keying is not used.
 
-The project uses UniversalRP through its quality settings, with Renderer2D as default index 0. `RefineRecoveredBoardLighting.cs` adds a dedicated 3D UniversalRenderer at index 1 and selects it only on the proof camera. The existing default 2D renderer remains intact. Soft-shadow support is enabled in the shared pipeline asset. No gameplay scene or build-scene configuration changes are made.
+The project uses UniversalRP through its quality settings, with Renderer2D as default index 0. `RefineRecoveredBoardLighting.cs` adds a dedicated 3D UniversalRenderer at index 1 and selects it on the proof and playable native-board cameras. The existing default 2D renderer remains intact. Soft-shadow support is enabled in the shared pipeline asset. The playable scene now copies that camera setup; the build-scene list remains unchanged.
 
-`RecoveredBoardPaint.shader` preserves native painted colour and applies a reconstructed, warm depth-shadow treatment. The light uses the recovered light transform, source shadow tint and original shadow-strength value as starting points. This is an approximation of material behaviour, not a claim that the original shaders, highlights, ambient treatment or visual identity have been recovered. Lighting, framing and materials still need comparison against the reference. Live heroes, cards, deck stacks, turn controls and effects still require integration with the new board.
+`RecoveredBoardPaint.shader` preserves native painted colour and applies a reconstructed, warm depth-shadow treatment. The light uses the recovered light transform, source shadow tint and original shadow-strength value as starting points. This is an approximation of material behaviour, not a claim that the original shaders, highlights, ambient treatment or visual identity have been recovered. Lighting, framing and materials still need comparison against the reference. Live heroes, cards, deck stacks, turn controls and effects are now integrated. Existing UI and spell graphics remain HearthClone presentation, not recovered original client behavior. Native corner interactions and exact original material/animation behavior are still unfinished.
 
 ## Reproduce and validate
 
@@ -53,4 +53,13 @@ Run `Tools/PrepareRecoveredOrgrimmar.py EXPORTED_PROJECT_ASSETS_PATH` to copy th
 
 Outside Play mode, run `Tools/CreateRecoveredBoardProof.cs`, followed by `Tools/RefineRecoveredBoardLighting.cs`, through `Tools/editor_api.py`. The first tool creates only the isolated proof scene; the second sets its 3D renderer and material/shadow pass. Do not run these while another scene has unsaved work. `Tools/VerifyRecoveredBoard.cs` checks original hierarchy size, all mesh/UV/index data, skins/bones, 14 clips, active material/texture references, native camera and renderer separation.
 
-`ORG-recovery-validation.json` records the checkpoint evidence. Existing `VerifyFrontEnd.cs` real-input checks and `VerifyStartingDecks.cs` start/restart checks pass with the added renderer. The playable scene and build configuration match the previous commit. No standalone build or completed full-match/native-board integration is claimed.
+`ORG-recovery-validation.json` records the checkpoint evidence. Existing `VerifyFrontEnd.cs` real-input checks and `VerifyStartingDecks.cs` start/restart checks pass with the added renderer. The build configuration is unchanged. No standalone build or complete automated match is claimed; the first native-board integration is ready for Craig’s playtest.
+
+
+## Playable integration
+
+Run `Tools/InstallNativePlayableBoard.cs` through the live Editor API outside Play mode, with no unsaved scene edits. It copies the verified proof hierarchy/camera/light settings into HearthstoneTable and saves that scene only. `NativeBoardPresentation` keeps the model in world space and follows menu/match visibility through a single Orgrimmar theme proxy. No complete-board Image or RawImage is present under BoardThemes; background fallback sprites are cleared.
+
+Both hero paintings use a stencil measured from the source backplate vertices. Health/armor, both power disks, End Turn and mana are moved to their native positions. Deck cards are live classic backs clipped inside the real frame wells; fake stone rims/interiors are disabled. The surrounding TableTop alone is widened 30% around its mesh center for wide windows. The hand fan clears the mana counter. Camera FOV follows CanvasScaler Expand at narrow aspects, retaining source vertical FOV at 16:9 and wider. Source mesh files and the isolated proof remain unchanged.
+
+`VerifyNativeBoardGameplay.cs` checks geometry, no plate fallback, renderer/audio separation, real Menu Play/mulligan/Menu/new-game transitions, current-aspect socket alignment and the first input raycast target for heroes/health/power/End Turn. `VerifyFrontEnd`, `VerifyStartingDecks`, `VerifyDeckPockets`, `VerifyBoardsAndCharge`, `VerifyTableInterface`, `VerifyPowersAndBattle` and `VerifyMatchMusic` also pass. A real Flamestrike drag cast renders visible area particles/damage over the recovered board while retaining the original 2D effect camera. Disposable test fixtures are never saved.

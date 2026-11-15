@@ -36,15 +36,15 @@ public static class VerifyBoardsAndCharge
         var e=UnityEngine.Object.FindAnyObjectByType<EffectTester>();
         Check(e.cardPool.Count==26&&e.cardPool.Count(c=>c.hasTaunt)>=3&&e.cardPool.Count(c=>c.hasCharge)>=3,"Keyword cards missing from pool");
         Check(e.cardPool.All(c=>c.artwork!=null),"Missing artwork in expanded card pool");
-        var themes=e.boardThemes;int old=themes.CurrentIndex;var random=UnityEngine.Random.state;var seen=new HashSet<int>();int last=-1;
+        var themes=e.boardThemes;Check(themes.boards.Count>0,"No board variants available");int old=themes.CurrentIndex;var random=UnityEngine.Random.state;var seen=new HashSet<int>();int last=-1;
         for(int i=0;i<100;i++)
         {
-            themes.ChooseNextBoard();Check(themes.CurrentIndex!=last,"Immediate board repeat");
+            themes.ChooseNextBoard();if(themes.boards.Count>1)Check(themes.CurrentIndex!=last,"Immediate board repeat");
             Check(themes.boards.Count(b=>b.activeSelf)==1,"More than one board visible");seen.Add(themes.CurrentIndex);last=themes.CurrentIndex;
         }
         themes.ShowBoard(old>=0?old:0);UnityEngine.Random.state=random;
-        Check(seen.Count==3,"Random selection did not cover all board variants");
-        results.Add("Boards: all 3 variants selected across 100 picks, one visible at a time, without immediate repeats");
+        Check(seen.Count==themes.boards.Count,"Random selection did not cover all board variants");
+        results.Add($"Boards: all {themes.boards.Count} variants selected across 100 picks, one visible at a time; multiple variants do not immediately repeat");
         return results.ToArray();
     }
 }

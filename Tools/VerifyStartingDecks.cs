@@ -27,8 +27,11 @@ public static class VerifyStartingDecks
         string turnOne=Counts(e);Check(e.faceView.Player.MaxMana==1,"Fixture must start on turn one");
         int previous=e.boardThemes.CurrentIndex;
         e.playAgainButton.onClick.Invoke();Check(e.mulliganPanel.gameObject.activeSelf,"Restart skipped mulligan");
-        string opening=Counts(e);Check(e.boardThemes.CurrentIndex!=previous,"Restart did not choose a different board");
+        string opening=Counts(e);
+        Check(e.boardThemes.CurrentIndex>=0&&e.boardThemes.CurrentIndex<e.boardThemes.boards.Count,"Restart did not choose a valid board");
+        Check(e.boardThemes.boards.Count(b=>b!=null&&b.activeSelf)==1,"Restart must show exactly one board");
+        if(e.boardThemes.boards.Count>1)Check(e.boardThemes.CurrentIndex!=previous,"Restart did not choose a different board");
         e.confirmMulliganButton.onClick.Invoke();string restarted=Counts(e);
-        return new[]{"Turn one: "+turnOne,"Restart opening: "+opening,"Restart turn one: "+restarted,"All 60 card instances distinct; copy limits preserved; restart changes board"};
+        return new[]{"Turn one: "+turnOne,"Restart opening: "+opening,"Restart turn one: "+restarted,"All 60 card instances distinct; copy limits preserved; restart selects a valid board"};
     }
 }

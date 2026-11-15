@@ -18,7 +18,12 @@ public static class VerifyDeckPockets
    var hand=(PlayerHand)typeof(EffectTester).GetField(pair.Item2,flags).GetValue(e);
    var so=new SerializedObject(pair.Item1);var number=(TMP_Text)so.FindProperty("deckCountText").objectReferenceValue;
    if(number.text!=hand.Deck.Count.ToString())throw new Exception("Deck count mismatch");
-   var pocket=number.transform.parent;if(((RectTransform)pocket).anchoredPosition.x<700)throw new Exception("Deck is not on right edge");
+   var pocket=number.transform.parent;
+   var field=(RectTransform)e.boardDisplay.boardPanel;
+   if(((RectTransform)pocket).anchoredPosition.x<=field.anchoredPosition.x+field.rect.xMax)throw new Exception("Deck is not to the right of the playing field");
+   if(e.boardThemes.GetComponentInChildren<NativeBoardPresentation>()!=null)
+    foreach(string name in new[]{"StoneRim","Recess","InnerLip"})
+     if(pocket.Find(name).gameObject.activeSelf)throw new Exception("A flat pocket overlay hides the native recess");
    var count=hand.Deck.Count;hand.DrawCard();refresh.Invoke(e,null);if(number.text!=(count-1).ToString())throw new Exception("Draw did not update pocket");
    var saved=hand.Deck.ToList();hand.Deck.Clear();refresh.Invoke(e,null);
    var array=so.FindProperty("deckPileLayers");for(int i=0;i<array.arraySize;i++)if(((GameObject)array.GetArrayElementAtIndex(i).objectReferenceValue).activeSelf)throw new Exception("Empty deck still shows cards");

@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-15 — The new Ubuntu/Proton Hearthstone installation supplied the ORIGINAL Orgrimmar board hierarchy, 35 meshes and 14 clips. A visual-only 121-transform prefab is imported under Assets/_Project/RecoveredOrgrimmar; RecoveredOrgrimmarProof is a separate non-build scene using the recovered camera. Native paint and a first URP shadow pass render through a dedicated 3D renderer, with the existing 2D renderer remaining default. Mesh/UV/reference checks and existing front-end/30-card checks pass. The playable game scene is unchanged; live UI/game integration and final visual matching remain unfinished. See Docs/Recovery/README.md._
+_Last updated: 2026-11-15 — The original recovered Orgrimmar board is now integrated into HearthstoneTable for Craig’s first native-board playtest. Every new match uses this mesh-built board; the three flat board plates are disconnected. Heroes, health/armor, both powers, mana, End Turn and both live decks are fitted to its native geometry. Menu/deck selection, exact 30-card starts/restarts, targeting, combat, area effects and random music checks pass. Reconstructed materials and existing card/UI presentation still need visual refinement; full visual acceptance and Craig’s playtest are pending. See Docs/Recovery/README.md._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.
@@ -25,7 +25,7 @@ Hearthstone-style card game in Unity, single-player vs AI, C# with data-driven c
 **Unity 6.6 (`6000.6.9f1`), migrated in the Editor.** TextMeshPro for all UI text, never legacy `UnityEngine.UI.Text`.
 
 ## Architecture
-- Folders under `Assets/_Project/`: Scripts, ScriptableObjects, Prefabs, Art (plus an empty `Scenes/`). The original game scene is `Assets/Scenes/TestScene.unity`; the styled scene is `Assets/Scenes/HearthstoneTable.unity`, enabled as the first build scene. New spell/keyword card assets are under `ScriptableObjects/MageSpells` and `ScriptableObjects/KeywordMinions`; final board plates are under `Art/Boards`. Cards are data-driven — they reference reusable `CardEffect` assets.
+- Folders under `Assets/_Project/`: Scripts, ScriptableObjects, Prefabs, Art (plus an empty `Scenes/`). The original game scene is `Assets/Scenes/TestScene.unity`; the styled scene is `Assets/Scenes/HearthstoneTable.unity`, enabled as the first build scene. New spell/keyword card assets are under `ScriptableObjects/MageSpells` and `ScriptableObjects/KeywordMinions`. The playable native board is under `RecoveredOrgrimmar`; old image plates under `Art/Boards` remain unused. Cards are data-driven — they reference reusable `CardEffect` assets.
 - **Assembly Definitions** enforce one-way flow: `Core` (no deps) ← `Effects` (Core) ← `Cards` (Core, Effects) ← `AI` (Core, Cards, Effects) ← `UI` (Core, Cards, Effects, **AI**, TMP, Input System). `Effects` must NOT reference `Cards`; `UI` references `AI` because `EffectTester` constructs `AIController`.
 - **Keep `Core` generic and unaware of `CardData`.** AI-ness isn't a flag on `Player`.
 
@@ -255,4 +255,13 @@ Docs/AssetAudit contains the full read-only SHA-256/format inventory of Hearthst
 
 Ten source songs selected randomly from the in-game playlists are encoded as streaming Vorbis copies under Audio/MatchMusic. Docs/MUSIC_SELECTION.json preserves originals, hashes, durations and asset paths. SetRandomMusic is called by BeginNewGame, covering Menu Play and Play Again, excludes the previous clip, and loops the chosen song within a game. The existing startup menu selection also remains.
 
-InstallDeckPockets.cs authors both right-edge pockets from native ORG texture regions and existing classic backs. Opponent FaceView now receives its actual deck size/count. Original floating DeckPile is disabled. Deck-count text and six shrinking layers are bound independently; no card identities are exposed.
+Both right-edge decks now sit in the recovered frame’s actual mesh recesses. The former StoneRim/Recess/InnerLip image overlays and floating DeckPile are disabled. Existing classic backs, deck-count text and six shrinking layers remain independently bound to each player’s actual deck; no card identities are exposed. `Tools/InstallNativePlayableBoard.cs` authors their current positions.
+
+
+## First playable native board
+
+`NativeBoardPresentation` bridges the existing match UI to a separate world-space board root. Menu/deck selection hides the mesh hierarchy; Menu Play and Play Again activate the singleton Orgrimmar proxy. The native camera stays active with one AudioListener and dedicated URP 3D renderer index 1. The default 2D renderer remains index 0 for existing particle captures. Original field/frame/scenery geometry is unchanged; only the surrounding TableTop is widened 30% about its mesh center to fill wide windows. Camera FOV fits the same Expand policy as the CanvasScaler. Hero stencil outlines are measured from the actual projected source mesh. The hand fan is shifted left and narrowed so it clears the native mana socket.
+
+`Tools/InstallNativePlayableBoard.cs` copies settings from the isolated proof scene without saving that proof. It replaces the playable scene’s old plates/camera and saves only HearthstoneTable. It is an authoring tool, not a startup requirement. Preserve the native world root outside the Canvas. The old plate importers/build authoring tools describe historical setups and should not be rerun over this scene.
+
+Validation: real menu/deck clicks and selected-deck composition, 60 distinct card instances / 30 cards per player at turn one and restart, both deck draw/empty states, native board visibility through repeated Menu Play, first raycast targets for heroes/health/power/End Turn, live camera/socket alignment, Charge/Taunt/Freeze and AI, targeted power and lethal combat cleanup, ten-track random playback. Flamestrike was cast through the real drag path and its rendered particles inspected over the native board. No standalone build or complete automated match is claimed. Saved scene starts at the menu; final live Editor state is a fresh normal mulligan for Craig.
