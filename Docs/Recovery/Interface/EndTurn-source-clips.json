@@ -1,0 +1,1887 @@
+[
+  {
+    "name": "ENDTURN_NO_MORE_PLAYS_MOUSE_OVER",
+    "path_id": -8091663509966770855,
+    "duration": 0.1666666716337204,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "bindings": [
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "m_Enabled"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Intensity"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Color.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Color.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_HiColor.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_HiColor.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_HiColor.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Colorize.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Colorize.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Colorize.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_ColorIntensity"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteIntensity"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_VmoteSpeed"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_UmoteScale"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_VmoteScale"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareIntensity"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_VflareSpeed"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_UflareScale"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_VflareScale"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Seed"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Color.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Color.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_HiColor.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Colorize.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_ST.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_ST.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_TexelSize.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_TexelSize.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_TexelSize.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_TexelSize.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_ST.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_ST.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_TexelSize.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_TexelSize.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_TexelSize.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_TexelSize.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_ST.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_ST.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_TexelSize.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_TexelSize.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_TexelSize.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_TexelSize.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex.scale.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex.scale.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex.scale.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex.scale.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex.scale.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex.scale.y"
+      }
+    ],
+    "events": []
+  },
+  {
+    "name": "ENDTURN_YT_MOUSE_OVER_2_YT",
+    "path_id": -7099034821582898367,
+    "duration": 0.1666666716337204,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "bindings": [
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_NormTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "m_Enabled"
+      }
+    ],
+    "events": []
+  },
+  {
+    "name": "ENDTURN_YOUR_TURN_MOUSE_OVER",
+    "path_id": -4728022676703068008,
+    "duration": 0.01666666753590107,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "bindings": [
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "m_Enabled"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Color.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Color.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Color.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_HiColor.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_HiColor.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Colorize.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Colorize.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteIntensity"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Intensity"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_HiColor.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Colorize.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_ColorIntensity"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_VmoteSpeed"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_UmoteScale"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_VmoteScale"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareIntensity"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_VflareSpeed"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_UflareScale"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_VflareScale"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Seed"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Color.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_HiColor.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Colorize.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_ST.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_ST.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_TexelSize.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_TexelSize.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_TexelSize.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_TexelSize.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_ST.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_ST.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_TexelSize.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_TexelSize.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_TexelSize.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_TexelSize.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_ST.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_ST.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_TexelSize.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_TexelSize.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_TexelSize.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_TexelSize.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex.scale.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex.scale.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex.scale.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex.scale.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex.scale.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex.scale.y"
+      }
+    ],
+    "events": []
+  },
+  {
+    "name": "ENDTURN_WAITING_2_NMP",
+    "path_id": -4599850019049545807,
+    "duration": 0.5833333134651184,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "bindings": [
+      {
+        "group": "m_RotationCurves",
+        "path": "",
+        "attribute": null
+      },
+      {
+        "group": "m_PositionCurves",
+        "path": "",
+        "attribute": null
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "m_Enabled"
+      }
+    ],
+    "events": []
+  },
+  {
+    "name": "ENDTURN_NMP_2_WAITING",
+    "path_id": -3157746835577591102,
+    "duration": 0.5833333134651184,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "bindings": [
+      {
+        "group": "m_RotationCurves",
+        "path": "",
+        "attribute": null
+      },
+      {
+        "group": "m_PositionCurves",
+        "path": "",
+        "attribute": null
+      }
+    ],
+    "events": []
+  },
+  {
+    "name": "ENDTURN_PRESSED_UP",
+    "path_id": -2990439347017841127,
+    "duration": 0.03333333507180214,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "bindings": [
+      {
+        "group": "m_PositionCurves",
+        "path": "",
+        "attribute": null
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "m_Enabled"
+      }
+    ],
+    "events": []
+  },
+  {
+    "name": "ENDTURN_PRESSED",
+    "path_id": -2247707629800212864,
+    "duration": 0.11666666716337204,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "bindings": [
+      {
+        "group": "m_PositionCurves",
+        "path": "",
+        "attribute": null
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "m_Enabled"
+      }
+    ],
+    "events": []
+  },
+  {
+    "name": "ENDTURN_YOUR_TURN_sound",
+    "path_id": -2015027319562924382,
+    "duration": 0.01666666753590107,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "bindings": [
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "m_Enabled"
+      }
+    ],
+    "events": [
+      {
+        "time": 0.0,
+        "functionName": "PlaySound",
+        "data": "",
+        "objectReferenceParameter": {
+          "m_FileID": 0,
+          "m_PathID": 2686050025299740681
+        },
+        "floatParameter": 0.0,
+        "intParameter": 0,
+        "messageOptions": 0
+      }
+    ]
+  },
+  {
+    "name": "ENDTURN_WAITING",
+    "path_id": -1455078728422267560,
+    "duration": 0.5833333134651184,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "bindings": [
+      {
+        "group": "m_RotationCurves",
+        "path": "",
+        "attribute": null
+      },
+      {
+        "group": "m_PositionCurves",
+        "path": "",
+        "attribute": null
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "m_Enabled"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex_ST.b"
+      }
+    ],
+    "events": []
+  },
+  {
+    "name": "ENDTURN_NEXT_TURN",
+    "path_id": -787451561820097624,
+    "duration": 0.699999988079071,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "bindings": [
+      {
+        "group": "m_RotationCurves",
+        "path": "",
+        "attribute": null
+      },
+      {
+        "group": "m_PositionCurves",
+        "path": "",
+        "attribute": null
+      }
+    ],
+    "events": []
+  },
+  {
+    "name": "ENDTURN_YOUR_TIMER_DONE",
+    "path_id": 1625465080754622734,
+    "duration": 0.8500000238418579,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "bindings": [
+      {
+        "group": "m_RotationCurves",
+        "path": "",
+        "attribute": null
+      },
+      {
+        "group": "m_PositionCurves",
+        "path": "",
+        "attribute": null
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_BumpMap.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_BumpMap_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "m_Enabled"
+      }
+    ],
+    "events": []
+  },
+  {
+    "name": "ENDTURN_NMP_MOUSE_OVER_2_NMP",
+    "path_id": 1646776668571919440,
+    "duration": 0.1666666716337204,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "bindings": [
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "m_Enabled"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Intensity"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Color.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Color.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_HiColor.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_HiColor.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Colorize.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Colorize.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Colorize.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_ColorIntensity"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteIntensity"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_VmoteSpeed"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_UmoteScale"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_VmoteScale"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareIntensity"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_VflareSpeed"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_UflareScale"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_VflareScale"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Seed"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Color.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Color.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_HiColor.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_HiColor.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Colorize.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_ST.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_ST.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_TexelSize.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_TexelSize.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_TexelSize.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_TexelSize.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_ST.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_ST.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_TexelSize.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_TexelSize.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_TexelSize.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_TexelSize.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_ST.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_ST.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_TexelSize.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_TexelSize.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_TexelSize.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_TexelSize.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex.scale.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex.scale.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex.scale.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex.scale.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex.scale.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex.scale.y"
+      }
+    ],
+    "events": []
+  },
+  {
+    "name": "ENDTURN_CollisionDisable",
+    "path_id": 3041283623532419900,
+    "duration": 0.8333333134651184,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "bindings": [
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "m_Enabled"
+      }
+    ],
+    "events": []
+  },
+  {
+    "name": "ENDTURN_TIMER_RELEASE",
+    "path_id": 3293482956305375136,
+    "duration": 0.46666666865348816,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "bindings": [
+      {
+        "group": "m_RotationCurves",
+        "path": "",
+        "attribute": null
+      },
+      {
+        "group": "m_PositionCurves",
+        "path": "",
+        "attribute": null
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "m_Enabled"
+      }
+    ],
+    "events": []
+  },
+  {
+    "name": "ENDTURN_NO_MORE_PLAYS",
+    "path_id": 4518350029548857871,
+    "duration": 1.0,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 8,
+    "bindings": [
+      {
+        "group": "m_RotationCurves",
+        "path": "",
+        "attribute": null
+      },
+      {
+        "group": "m_PositionCurves",
+        "path": "",
+        "attribute": null
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "m_Enabled"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Intensity"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_ColorIntensity"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteIntensity"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_VmoteSpeed"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_UmoteScale"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_VmoteScale"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareIntensity"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_VflareSpeed"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_UflareScale"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_VflareScale"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Seed"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Color.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Color.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Color.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Color.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_HiColor.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_HiColor.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_HiColor.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_HiColor.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Colorize.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Colorize.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Colorize.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_Colorize.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_ST.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_ST.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_TexelSize.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_TexelSize.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_TexelSize.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex_TexelSize.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_ST.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_ST.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_TexelSize.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_TexelSize.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_TexelSize.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex_TexelSize.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_ST.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_ST.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_TexelSize.r"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_TexelSize.g"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_TexelSize.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex_TexelSize.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex.scale.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MainTex.scale.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex.scale.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_MoteTex.scale.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex.scale.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "_FlareTex.scale.y"
+      }
+    ],
+    "events": []
+  },
+  {
+    "name": "ENDTURN_YOUR_TURN",
+    "path_id": 5508100314535807130,
+    "duration": 0.5,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "bindings": [
+      {
+        "group": "m_RotationCurves",
+        "path": "",
+        "attribute": null
+      },
+      {
+        "group": "m_PositionCurves",
+        "path": "",
+        "attribute": null
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex_ST.a"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_EmisTex_ST.b"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "m_Enabled"
+      }
+    ],
+    "events": []
+  },
+  {
+    "name": "ENDTURN_RED",
+    "path_id": 6149372857957571803,
+    "duration": 0.01666666753590107,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "bindings": [
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex.offset.x"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "",
+        "attribute": "_MainTex.offset.y"
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "m_Enabled"
+      }
+    ],
+    "events": []
+  },
+  {
+    "name": "ENDTURN_PRESSED_DOWN",
+    "path_id": 7156919352994214614,
+    "duration": 0.0833333358168602,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "bindings": [
+      {
+        "group": "m_PositionCurves",
+        "path": "",
+        "attribute": null
+      },
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "m_Enabled"
+      }
+    ],
+    "events": []
+  },
+  {
+    "name": "ENDTURN_WAITING_sound",
+    "path_id": 8568900949155141838,
+    "duration": 0.01666666753590107,
+    "legacy": true,
+    "sample_rate": 60.0,
+    "wrap_mode": 0,
+    "bindings": [
+      {
+        "group": "m_FloatCurves",
+        "path": "Highlight_Plane",
+        "attribute": "m_Enabled"
+      }
+    ],
+    "events": [
+      {
+        "time": 0.0,
+        "functionName": "PlaySound",
+        "data": "",
+        "objectReferenceParameter": {
+          "m_FileID": 0,
+          "m_PathID": -7729392948635092512
+        },
+        "floatParameter": 0.0,
+        "intParameter": 0,
+        "messageOptions": 0
+      }
+    ]
+  }
+]

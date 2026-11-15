@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-15 — The original recovered Orgrimmar board is now integrated into HearthstoneTable for Craig’s first native-board playtest. Every new match uses this mesh-built board; the three flat board plates are disconnected. Heroes, health/armor, both powers, mana, End Turn and both live decks are fitted to its native geometry. Menu/deck selection, exact 30-card starts/restarts, targeting, combat, area effects and random music checks pass. Reconstructed materials and existing card/UI presentation still need visual refinement; full visual acceptance and Craig’s playtest are pending. See Docs/Recovery/README.md._
+_Last updated: 2026-11-15 — Native Orgrimmar remains playable at the prior checkpoint. Original card actors, exact neutral/Mage frames, Belwe/Franklin fonts, targeting head/dashes/ring and full animated End Turn assembly are now recovered and demonstrated in the separate non-build RecoveredInterfaceProof scene. These new interface visuals are not connected to HearthstoneTable yet. Native flip/press/state and visual-source checks pass. Craig requested pausing for effort changes; source/proof checkpoint is complete, next pass awaits switching to High and “continue”. See Docs/Recovery/INTERFACE_RECOVERY.md._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.
@@ -13,6 +13,7 @@ _Last updated: 2026-11-15 — The original recovered Orgrimmar board is now inte
 - **`NETWORKING_PREP.md`** — checklist for the networked 2-player phase: prerequisites and every place UI/input mutates game state today. Read it before starting networking work.
 
 ## Working Preferences
+- Craig controls effort settings: stop at a clean checkpoint when a switch is appropriate, explain which setting/why, and wait for him to switch and say continue. Current source/proof pass used Ultra; next refinement/connection pass awaits High.
 - Current scope: resumed graphical matching against the reference using Desktop exports, including both recessed decks. Mechanics were confirmed working by Craig. Full three-folder audit and ten-song random-per-new-match music are complete. Continue iterating without asking for per-part approval (Craig's latest instruction). Keep using his reference screenshot, official Hearthstone imagery, and the supplied Desktop assets.
 - Give brief progress updates explaining what is being changed and why. Save meaningful visual checkpoints with commits and pushes to `main`; the agreed batch is complete; stop for the requested playtest.
 - A 2-paragraph explanation after each new/updated code block: what it does and why.
@@ -265,3 +266,8 @@ Both right-edge decks now sit in the recovered frame’s actual mesh recesses. T
 `Tools/InstallNativePlayableBoard.cs` copies settings from the isolated proof scene without saving that proof. It replaces the playable scene’s old plates/camera and saves only HearthstoneTable. It is an authoring tool, not a startup requirement. Preserve the native world root outside the Canvas. The old plate importers/build authoring tools describe historical setups and should not be rerun over this scene.
 
 Validation: real menu/deck clicks and selected-deck composition, 60 distinct card instances / 30 cards per player at turn one and restart, both deck draw/empty states, native board visibility through repeated Menu Play, first raycast targets for heroes/health/power/End Turn, live camera/socket alignment, Charge/Taunt/Freeze and AI, targeted power and lethal combat cleanup, ten-track random playback. Flamestrike was cast through the real drag path and its rendered particles inspected over the native board. No standalone build or complete automated match is claimed. Saved scene starts at the menu; final live Editor state is a fresh normal mulligan for Craig.
+
+
+## Recovered interface proof
+
+Original card actors/fonts/class-frame mappings, targeting meshes and the full End Turn assembly are under RecoveredInterface. RecoveredInterfaceProof is isolated, excluded from builds; its button plays the original flip/press/turn clips through our proof-only driver. Current playable card/targeting/End Turn UI is still the old implementation. Exact source IDs, rendering limits, tools, validation and next-step constraints are in Docs/Recovery/INTERFACE_RECOVERY.md. Main game/card data/build list were not changed in this pass.

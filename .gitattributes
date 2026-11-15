@@ -173,3 +173,5 @@ LightingData.asset     binary
 
 # Generated TMP atlas with embedded texture data
 Assets/_Project/Art/HearthstoneTable/TableSerif.asset lfs
+Assets/_Project/RecoveredInterface/Proof/Belwe.asset lfs
+Assets/_Project/RecoveredInterface/Proof/FranklinGothic.asset lfs

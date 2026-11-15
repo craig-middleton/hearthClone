@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: 09ef2b2e34f64d344951f5dbeebb0bcf
+timeCreated: 1794772457
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  externalObjects: {}
+  fontSize: 24
+  forceTextureCase: -2
+  characterSpacing: 1
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Belwe Bd BT
+  - BlizzardGlobal
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 37478251db7f0ce46935a061a7d1ac17, type: 3}
+  - {fileID: 12800000, guid: 0a1b1588a1eed1641a961c70d546e14a, type: 3}
+  customCharacters:
+  fontRenderingMode: 0
+  output:
+    hasEmptyFontData: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 1
+  shouldRoundAdvanceValue: 1
+  userData:
+  assetBundleName:
+  assetBundleVariant:

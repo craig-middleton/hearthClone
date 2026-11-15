@@ -1,0 +1,90 @@
+{
+  "source": "/home/craig-middleton/.local/share/Steam/steamapps/compatdata/2505554610/pfx/drive_c/Program Files (x86)/Hearthstone/Data/Win",
+  "files": [
+    {
+      "name": "essential_base_global-material-0.unity3d",
+      "bytes": 498177,
+      "sha256": "1c6d1785bdcb892b79c19526a5a45353ac961b4f9c00aa0d2f224478edb36010"
+    },
+    {
+      "name": "essential_base_global-mesh-0.unity3d",
+      "bytes": 6793482,
+      "sha256": "ba4cc91d7b18917308178d2ecf3000f8366cb6ef2eaa166a8a20d66bf7df88b9"
+    },
+    {
+      "name": "essential_base_global-texture-0.unity3d",
+      "bytes": 21628787,
+      "sha256": "5be997f0ea4739ea346c8cbef6d5a3696298181846425280772e94a39f492a7e"
+    },
+    {
+      "name": "essential_base_global-texture-2.unity3d",
+      "bytes": 26047733,
+      "sha256": "5078390f69f86775e51a2c84d770c0e025c927e55d2c8e077b76d6b892f9f5dc"
+    },
+    {
+      "name": "essential_base_qualityhigh_global-content-0.unity3d",
+      "bytes": 5027429,
+      "sha256": "12bfeb90183780d3292c60587089daeba0f2ccc9e0a67edd31a43a81a6a4191a"
+    },
+    {
+      "name": "initial_base_global-1fbc9c0f-prefab-8.unity3d",
+      "bytes": 188192,
+      "sha256": "148f3dff4489c2f3596c8c55d0e96a74b70e3d2c8577ed916d6d6386c2e1406b"
+    },
+    {
+      "name": "initial_base_global-1fbc9c0f-prefab-9.unity3d",
+      "bytes": 608398,
+      "sha256": "9213aa54122661afb4689eab6c9a29838faaa1d531f9c2fe271c82bc2f7ebbe0"
+    },
+    {
+      "name": "initial_base_global-4059ef3d-mesh-0.unity3d",
+      "bytes": 615623,
+      "sha256": "625cc4b99554e600dba8903d6a01873ac8195934e0a6d2024c80b12095c344df"
+    },
+    {
+      "name": "initial_base_global-b6b43e63-material-0.unity3d",
+      "bytes": 46498,
+      "sha256": "298fabc78c105a70150c8485ffab37684fd14331307b35140c786b6b254dc3b9"
+    },
+    {
+      "name": "initial_base_global-b6b43e63-mesh-0.unity3d",
+      "bytes": 595138,
+      "sha256": "7b4701a0f92c98a069ff5a82936a872020e1a362fa2de59d4274dcf6bf393d80"
+    },
+    {
+      "name": "initial_base_global-b6b43e63-texture-0.unity3d",
+      "bytes": 590813,
+      "sha256": "4d23a26e91ea8fdc109c40f90223e2386a4bc7c51e75c0aadc5641466a97ecd0"
+    },
+    {
+      "name": "initial_base_qualityhigh_global-b6b43e63-mesh-0.unity3d",
+      "bytes": 110210,
+      "sha256": "86a3ed678783ad4988c54f217d4f9c243ec3e03835a3d99967a8f8b52eb52fa6"
+    },
+    {
+      "name": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+      "bytes": 112925,
+      "sha256": "72ca03bc0f4242e4cc747d40b174d7b30757aae7f8f746d2cae9ca0c52832cb1"
+    },
+    {
+      "name": "essential_base_global-prefab-0.unity3d",
+      "bytes": 3914913,
+      "sha256": "564d2f936d5298d302123050a253a75c998b96f1a34fa90731f7245e779d0324"
+    },
+    {
+      "name": "essential_base_global-prefab-1.unity3d",
+      "bytes": 83617,
+      "sha256": "4c817221e02324001556fe4a444858805f9c083c0e32e5ea6a142290b1b5c525"
+    },
+    {
+      "name": "essential_base_global-content-0.unity3d",
+      "bytes": 4786198,
+      "sha256": "2a440b4f00276f30f4b1c1603ac43ad95883b14630970989043c03b72dd1ebe5"
+    },
+    {
+      "name": "essential_base_global-texture-1.unity3d",
+      "bytes": 18348993,
+      "sha256": "eee8a813d5683900205137886d382dfb433d3c3d9af616968f308b6dd3a81050"
+    }
+  ]
+}

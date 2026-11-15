@@ -1,0 +1,944 @@
+{
+  "roots": [
+    "Card_Hand_Ally",
+    "Card_Hand_Ability",
+    "EndTurnButton",
+    "Target_Arrow_Bullseye",
+    "Target_Arrow_Link"
+  ],
+  "visual_files": 184,
+  "removed_component_classes": {
+    "114": 143,
+    "20": 2,
+    "198": 2,
+    "199": 2,
+    "64": 3,
+    "65": 6,
+    "135": 1,
+    "82": 2
+  },
+  "client_animation_events_removed": true,
+  "reused_existing_assets": [],
+  "files": [
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/Card_Hand_Ally.prefab",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/Card_Hand_Ally.prefab",
+      "source_sha256": "7043edd9097bbfdc7445498c97f8979066115eb68d245feccba4016a9e28c60a"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/Card_Hand_Ability.prefab",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/Card_Hand_Ability.prefab",
+      "source_sha256": "ebf555568c2d4ca0870bd06e2eef4119784ba64afc19da09b9f84ec7fb48c1c6"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/EndTurnButton.prefab",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/EndTurnButton.prefab",
+      "source_sha256": "783e81c5745ebf1d5ec7acb95e2bf0092af4749b614c6cd01e9f8b405d2c5fec"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/Target_Arrow_Bullseye.prefab",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/Target_Arrow_Bullseye.prefab",
+      "source_sha256": "c5918509dec38c254f048c6ef309cd5c72c573589ded6a59804dbcaed29960a8"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/Target_Arrow_Link.prefab",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/Target_Arrow_Link.prefab",
+      "source_sha256": "aad1dfb62d6c3b3402a98ccc0ae8be0796bbd90457094602e38e5e30df6b7d8c"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-content-0.unity3d/Belwe.ttf",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-content-0.unity3d/Belwe.ttf",
+      "source_sha256": "54be6d157e5c96d2162abaaac8fbbf515da8ff4a4cb76444beb34914b20819fb"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-content-0.unity3d/BelweNumbers.ttf",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-content-0.unity3d/BelweNumbers.ttf",
+      "source_sha256": "ce1dd5c78925f72e27e629af65c343aec324edd739c06eb2d83b047c07bb2776"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-content-0.unity3d/FranklinGothic.ttf",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-content-0.unity3d/FranklinGothic.ttf",
+      "source_sha256": "4ff6e90c205833e4514d41a05bcb1cdfa10f55201a11e00b2fb2fc53a318bad9"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/Card_Inhand_Ability_Mage.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-0.unity3d/Card_Inhand_Ability_Mage.png",
+      "source_sha256": "346d6ce9b87c07a97f31bdcbab10a44e45ac5119270974782360812e0bf45f71"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Multiclass_Ribbon_Signature_shadow.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Multiclass_Ribbon_Signature_shadow.mat",
+      "source_sha256": "3a947327974040d15335d62fb9890d1f404320f1a354468e6056501426776636"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Faction_Explorers.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Faction_Explorers.asset",
+      "source_sha256": "fe8fb55fcadfaec7bb1d79cd3b0a4e1948df878271cad77156925dc7dc04b28f"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/AllyInHandScaleDown.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/AllyInHandScaleDown.anim",
+      "source_sha256": "c04c337386ae6a5b356e8961304bd04b70496c8c7ce852eae55c3589b6309fdf"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/CardShadow_AllyUnique.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/CardShadow_AllyUnique.mat",
+      "source_sha256": "b1f88837fa2e2c3cee7f4f38b452ad39d6774e863f010fe79ee21c8b22fb18a2"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Multitribe_Nameplates_HSBG_Normal.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Multitribe_Nameplates_HSBG_Normal.mat",
+      "source_sha256": "b5d3c1e94927179c772c3043b4421f8c649b65898ded595b2a2cea1c3d609cbd"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Card_InHand_BannerAtlasMod2x.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Card_InHand_BannerAtlasMod2x.mat",
+      "source_sha256": "201b820c5f545eae5261eb1579db342c6c95490a50b4bc18a0aa76643275e305"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/AllyInHandBirthFast.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/AllyInHandBirthFast.anim",
+      "source_sha256": "0ab049ae63771e63868a27409a1c91c35ecc68dc41be71378e5d5c120858d265"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_Card_Back_Default_D.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/GenFX_Card_Back_Default_D.mat",
+      "source_sha256": "e063bd8c060a3299e6912e359220c098752ad2d1176463828a1dd6cb33a1db24"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/RuneHolder_Shadow_Mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/RuneHolder_Shadow_Mesh.asset",
+      "source_sha256": "152febc35bd6a6c7a5676b7be0ad4de5ba8355d99d5d202515bcf72c3969142c"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/polySurface6.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/polySurface6.asset",
+      "source_sha256": "7a482d8d5fd1dba8279b7cdca784ae5a43c892e08cd239b11d73c7e139bcbfbf"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/ManaGem.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/ManaGem.asset",
+      "source_sha256": "6d775b0333c54ca1bf54b7ed294ef39b9a6d6a4e5c06f5127e18d269837c75ca"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/RuneBanner_Card.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/RuneBanner_Card.mat",
+      "source_sha256": "7f89c2864dccc2e9bcca0f77de4de1dce3b4d1253d47d02cc479ed226bea34ee"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/SpeedWing.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/SpeedWing.asset",
+      "source_sha256": "2430b651dc09b59d19c0b577a4ba389b9eeb96baedfc58656c32cd488bb683c2"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_HighlightGreen.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/GenFX_HighlightGreen.mat",
+      "source_sha256": "7d1976444b691cd2f61aadbe5dd4a0c9902fcac2ee17eef4bc34fc7dcd39f710"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Faction_Symbols.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Faction_Symbols.mat",
+      "source_sha256": "c982b7265e306108f968aada7f32730aef2fd27c21348ad53d43912b71e540cf"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Faction_Horde.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Faction_Horde.asset",
+      "source_sha256": "0bef2002ddef025929c120d4e4f62bfdce97492f285b8bf27954376e1af8fe5a"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/WeldSparkQuad.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/WeldSparkQuad.asset",
+      "source_sha256": "c2ab4a8a466315d9e56bcde4a63e30c4ac89836117b8fd631dd4ef48051b3964"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_Card_InHand_BannerAtlas.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/GenFX_Card_InHand_BannerAtlas.mat",
+      "source_sha256": "e2aca5f71242a6ed45884c7d97582d851ec38cf677286ef7779669db47631174"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Faction_Pirate.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Faction_Pirate.asset",
+      "source_sha256": "d479e5cb8e616b9c8909feccdf0238999b69d27d08bc739ccf1a5058f437e8fb"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/QuestInfoCardGlowBack_Evolution.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/QuestInfoCardGlowBack_Evolution.mat",
+      "source_sha256": "48f3846ad4767fa372dcbb3c3cfa18412232b2b0232ee95c5a2efab9096912df"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Faction_Empire.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Faction_Empire.asset",
+      "source_sha256": "27a7b0e7f9f89a00e8a420daa0427d8febfc00b7d89f9af09fc7b4091ea34037"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ally_RarityGemFrame_mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ally_RarityGemFrame_mesh.asset",
+      "source_sha256": "e9e84e73b3328a276efab2a82216a28727fad7bd045694bcd5647722a6d937d5"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Card_Inhand_RarityGem_Legendary.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Card_Inhand_RarityGem_Legendary.mat",
+      "source_sha256": "c9440473516ccc1feb53c8453338f5eb9cfbf5b84e5896c1be037d856a9c45ca"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/AllyInHandBirth.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/AllyInHandBirth.anim",
+      "source_sha256": "ed45be4a324db91479ac3085ac65b7f27d16b095434cb659063067af85a8c860"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/AllyInHandBloom.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/AllyInHandBloom.anim",
+      "source_sha256": "5775e93a15f2134dc97a8dd0e90fcddd3588a1c2d3be880cd41902ea63065882"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/AllyInHand_NameBanner_mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/AllyInHand_NameBanner_mesh.asset",
+      "source_sha256": "a4b4111161512cd6ac8666584a380b7ebdf16ea35a8308d24cb693b84695dad4"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Card_InHand_Ally-Card_InPlay_AllyPortrait.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Card_InHand_Ally-Card_InPlay_AllyPortrait.mat",
+      "source_sha256": "c71482a87a99b98f264f48db12786a3a06e2b3f49daa5b52263f289334990985"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/FX_GhostCardInHand_Ally_Scroll.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/FX_GhostCardInHand_Ally_Scroll.mat",
+      "source_sha256": "28158047d815cfdbb0359dc96a9228370cf7a339c1db82c1067a9b1f8d0f4751"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Faction_Legion.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Faction_Legion.asset",
+      "source_sha256": "274c548ef66584da2a5f0b337be8b24356491f93d68817f1346395f8d9761649"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Faction_Shadow.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Faction_Shadow.asset",
+      "source_sha256": "4a05e6bc41022746e4f1dbb6a7556ce2ccfe9cb3de0aec6c30a7f54327f6b136"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/CardAllyCurvedText.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/CardAllyCurvedText.asset",
+      "source_sha256": "d099bc72c2e9417458d3e3afec800d8fe898f0de5489741ac27f39ae786c5b68"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Multiclass_Ribbon_shadow.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Multiclass_Ribbon_shadow.mat",
+      "source_sha256": "1f803f844884eab1e6595ad9cb55effe9e65ff54778f3f6890058b291a54c2a0"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Card_Inhand_Warlock_transparent.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Card_Inhand_Warlock_transparent.mat",
+      "source_sha256": "6df90bab86db261b501a481c8f26c6ba3b39a4e60cdb4afb23e7528812581b4e"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/pPlane2.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/pPlane2.asset",
+      "source_sha256": "ca53d9a3844429d71250b3432810bf8559052484e365efe16e433faaf8e3769d"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/mesh_Gem_Health.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/mesh_Gem_Health.asset",
+      "source_sha256": "1bd72aa47e8539486f462ceeb635b8fdf0d21fbaecd28ad0dea2ba1d186c0da9"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Ally_In_Play_Unique_Dragon_mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Ally_In_Play_Unique_Dragon_mesh.asset",
+      "source_sha256": "652756c60a31e2405777dc291270466bfd56f35166a8652c3e23d5d427a0731c"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/AllyInHand_Burn.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/AllyInHand_Burn.anim",
+      "source_sha256": "50c689fdacea436071f5089cd516a6db1c2c2f1fd7cd0a1df4777e06b7257420"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Faction_Scourge.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Faction_Scourge.asset",
+      "source_sha256": "89146161ae97aa0d289d89f066afe8ee2e32960f3d2e3e959913395c914d3281"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ally_Base_mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ally_Base_mesh.asset",
+      "source_sha256": "dcb7634dad981c005a86a051c9277910a188fec2a8da1a3cb0f2918e5dfe535d"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/AllyInHand_DualTribePlate_mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/AllyInHand_DualTribePlate_mesh.asset",
+      "source_sha256": "922fdc05005a033bf2c5932ab735f3ef8ce5b00b8855b9ef8a695ea2f2b4cfd2"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Gem_Mana_Blue.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Gem_Mana_Blue.mat",
+      "source_sha256": "615289221da06a7b9caaa2ce430f481e028db8e19967c55e2bdafc6b653de362"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ally_Discrption_mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ally_Discrption_mesh.asset",
+      "source_sha256": "470f421d9eaa1e5073cf181925514c51d90d80c8d46f05ba42efeec367c7020c"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/AllyInHandDeathFast.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/AllyInHandDeathFast.anim",
+      "source_sha256": "4be3b194cab74241fc4f775b9d8be9f4b944e68c8da0c41620f95dddedee8851"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Glow_Warm.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Glow_Warm.mat",
+      "source_sha256": "bea517da8d1156ca0f4ef3e8fb1eaad2b6bb3848a7d02a478f0e4332afea62ad"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/RuneBanner_Card_Shadow_Mat.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/RuneBanner_Card_Shadow_Mat.mat",
+      "source_sha256": "e36ac6e3e145eca5a6382d12191b39edd24e70c849772e36e05aa9288fa8317d"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Gem_Health_Gem InHand.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Gem_Health_Gem InHand.mat",
+      "source_sha256": "b34b9e0cc8a1396233a773831b2c918a049c8787e421562ca6c7122b3400e3ab"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Rune_Blood.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Rune_Blood.mat",
+      "source_sha256": "1f86f8facab21a2b86efde5d315c35fb5989749c16ab55d807d9d6716222dfe9"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/CardShadow_Ally.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/CardShadow_Ally.mat",
+      "source_sha256": "fea1ca507b1bcedb8ddc5ab0a90a3ff65539982d637261fe41122a1379ce1460"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/OrangeFillCard_BG_Buddy.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/OrangeFillCard_BG_Buddy.mat",
+      "source_sha256": "6b20d0ad4a56e19ee0a4378a69acd76838d85bf2b52f57c52d91d786124ff7e1"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Lettuce_SpeedWing.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Lettuce_SpeedWing.mat",
+      "source_sha256": "3f6b55d95b76329378c281164de34edd7613dc7a4f36ca8be72e6006243e2405"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/UIQuad.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/UIQuad.asset",
+      "source_sha256": "18f7dff20604f96c8b3e885246bfad65cbadaaea1b93425bbdb3907364fb60aa"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/AllyInHand_RacePlate_mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/AllyInHand_RacePlate_mesh.asset",
+      "source_sha256": "ebb9ece22590f829c88abd95b8b5251805f191483280aba4a06b88924ee7e0f9"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/QuestInfoCardGlowBack_BG_Buddy.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/QuestInfoCardGlowBack_BG_Buddy.mat",
+      "source_sha256": "d9f9fc1f0e4358c962d3378ad1bf6ccb69e2deafe9a618a45ee46701330b8de0"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Multiclass_Ribbon.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Multiclass_Ribbon.mat",
+      "source_sha256": "1fdfe150caae71a97450a2bd632a358edea9a95655e64a856fce36e5406ebbf1"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/AllyInHand_FlipOver.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/AllyInHand_FlipOver.anim",
+      "source_sha256": "caa4330025d9c2aeca19215bc0734a50073307decd63d01cb695aef4febe9bd9"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/AllyInHandDeath.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/AllyInHandDeath.anim",
+      "source_sha256": "e06ec19a3dd7c2e2049c72b8bbdabe00e7d3cf0a38b3c317b294b8358bab055f"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Faction_Alliance.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Faction_Alliance.asset",
+      "source_sha256": "b7ad7ed03d2f634f1c9195a0dd9fbc3ca6ec05c67721284af9cd5b184c1033be"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/CardShadowPlane.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/CardShadowPlane.asset",
+      "source_sha256": "95d49764881b9b9629115a69673db7782b250b626d83c4283865939421a6738f"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_Card_Inhand_Warlock.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/GenFX_Card_Inhand_Warlock.mat",
+      "source_sha256": "c8c1add946fa36871d731259c2d748b1cd40b9aefd3cbd528a980d8a489fcd91"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Deathknight_Card_Hand_RuneHolder_BlueGlow.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Deathknight_Card_Hand_RuneHolder_BlueGlow.mat",
+      "source_sha256": "78c6636a3b372fd74293acfdb2dbbb0b9648b306694f35a183c858c5f184d40f"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ally_Portrait_mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ally_Portrait_mesh.asset",
+      "source_sha256": "5e2c24784002c1b077cd5f4822d1192daac8b59f9bf16203f64455c0763c3ba4"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/RarityGem_mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/RarityGem_mesh.asset",
+      "source_sha256": "83f0175cf401b4adf0d4a96eeb31d6b587b21f0606c00f5b0b90485e409ce57c"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/multiclassBanner_Bottom.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/multiclassBanner_Bottom.asset",
+      "source_sha256": "bffa3be81ba49506ce451f1edca024d442c157101891983459e5b4e6840f4e89"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/RubeHolder_Mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/RubeHolder_Mesh.asset",
+      "source_sha256": "ca3319ee24ece17eed7aa1b34d69aa3302d4cbd09b104c5bb5bd55b698467d69"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Gem_Attack_Gem InHand.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Gem_Attack_Gem InHand.mat",
+      "source_sha256": "8fc6b5a8f97f9bc7b036606dc4a8a9fded74209f1e9ff6558a2b770120e034b9"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/AllyInHand_Construction.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/AllyInHand_Construction.anim",
+      "source_sha256": "d324a6cf2d08e082173f437dbd9f9159b35e1381e06d2cbac5b3a66cfa5fb6a0"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/multiclassBanner_Side.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/multiclassBanner_Side.asset",
+      "source_sha256": "456e51a20f7124be9b667dce2df7792d7dee7cf944337f6355f19451676fff48"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Card_InHand_Ability_BannerAtlasMod2x.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Card_InHand_Ability_BannerAtlasMod2x.mat",
+      "source_sha256": "9bf84292ddbd3b5133285e5787f6ea36adf66c18d6c0dba08b0a2ec6f5c0a8a6"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Trinket_Hand_Frame_Mat.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Trinket_Hand_Frame_Mat.mat",
+      "source_sha256": "a049ff1ead5f898ae0276819bef66b6b24b2eab95fcee049402b1fdbf34ddb72"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_Dragon_mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_Dragon_mesh.asset",
+      "source_sha256": "c3c707f1d6e82302c9c02407bd5350c4b5c9bb0b0fcd7ad28fb192db1fe72370"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Ability_Description_Mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Ability_Description_Mesh.asset",
+      "source_sha256": "90cc5c7fd64048311dc432eb0c6ff951245a3c380329c0bdf416bef68e3d16a0"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/FX_GhostCardInHand_Ability_Scroll.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/FX_GhostCardInHand_Ability_Scroll.mat",
+      "source_sha256": "3a21e0fd6ade5952821a491b52ffcafc444cbef3cf9f2b0650a410cf438c0c13"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_Hand_BG_Quest_Text_Tray_Mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_Hand_BG_Quest_Text_Tray_Mesh.asset",
+      "source_sha256": "6fdacbb89877ada592ddf34300d49c1441db25244bf86345294317f19e0dcb70"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Card_Hand_BG_Tray_Glow_Mesh_Mat.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Card_Hand_BG_Tray_Glow_Mesh_Mat.mat",
+      "source_sha256": "e0046786ddacbd74a5e755cfbf96ea1265f72ee5bb9027d44311ba3d95985edb"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Card_InHand_Ability-portrait.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Card_InHand_Ability-portrait.mat",
+      "source_sha256": "29d09654853ecc9936d3848d987a2136e54e1fe18d0d7758719e21d479948d5d"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Battlegrounds_Trinket_Frame.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Battlegrounds_Trinket_Frame.mat",
+      "source_sha256": "ed61214d11ec2b7131f532464ae9596d40162de1c54315c490698033e5588325"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Ability_FrameTribeSpell_Combined_Mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Ability_FrameTribeSpell_Combined_Mesh.asset",
+      "source_sha256": "042a8ed2154a5063c3d166bf31065662210bac512fcd5c23aa34a0252bea2b27"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Ability_Frame_Mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Ability_Frame_Mesh.asset",
+      "source_sha256": "b798b134cb22b73cbf94990640aba67e8db6653ad338b3b1a9e1045fc5732c95"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/ArmorShield_0.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/ArmorShield_0.anim",
+      "source_sha256": "344fa903e2fc6c5ac425049a14bf1037a0ec4ac0ba752291049612268e807996"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/CardShadow_Ability.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/CardShadow_Ability.mat",
+      "source_sha256": "88137606c14fd016f906c28adf253e82229cfba2946b2e64e3bc6efd1b96cdf6"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/AbilityCardCurvedText_0.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/AbilityCardCurvedText_0.asset",
+      "source_sha256": "2a439f4be09be846956b329761b2c0731031b87dbf6430bf8c2f229c9445fcb6"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/OrangeFillCard_BG_Reward.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/OrangeFillCard_BG_Reward.mat",
+      "source_sha256": "0c36d4de93ace1287a536fa508f7ab9f2aee527023e615799f5604e8d30184cd"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/CardTypeBanner.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/CardTypeBanner.mat",
+      "source_sha256": "7effb9e7bc52906cc8b0d8da1e6eec6397017d4421f0bbd0489c343984174c4c"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/CardTypeBanner1.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/CardTypeBanner1.asset",
+      "source_sha256": "59215bdc464adf24967ba04e2a262152e813b8fab71761380f8127155319dd3f"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Lettuce_Ability_Frame_Mat.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Lettuce_Ability_Frame_Mat.mat",
+      "source_sha256": "b38cb1e0854e9a15cf98b6da75a68ba4f8689b83232a9fd8924758241417750c"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/quest_button_mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/quest_button_mesh.asset",
+      "source_sha256": "1d8c081df346f839773c333d3a17a704cdb78cdf116167890d03cbcc09798b98"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/AbilityActor_Reappear_AnimEvents.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/AbilityActor_Reappear_AnimEvents.anim",
+      "source_sha256": "f441f4f74e375a9f47c4f4543270cefc101d708fd6446a79954936d62187d97c"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_Description_Neutral_mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_Description_Neutral_mesh.asset",
+      "source_sha256": "f868285597ff75550ff42adb3805f2a7e69ae4c6335d9f9f6cd97f509df04422"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Card_Inhand_Ability_Warlock_Shadow.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Card_Inhand_Ability_Warlock_Shadow.mat",
+      "source_sha256": "a6305f99b93c8278db051f44455c35341e9412e680368a78b5b4f13de651c328"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_mesh.asset",
+      "source_sha256": "7db9837dc96e5fe8bcfa4d2e1ce02ca99514ec397873b71b7117479e7914f229"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_RarityFrame_Mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_RarityFrame_Mesh.asset",
+      "source_sha256": "196c9f772c44a52968df45a1b04e753fc8fac9e95f86acdfe78d70293c9abeea"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_Dragon_Shadow_mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_Dragon_Shadow_mesh.asset",
+      "source_sha256": "f5490110d016707e082ab1622335716e1727776b9f43143d8d4ac9b16da64814"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_NameBanner_mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_NameBanner_mesh.asset",
+      "source_sha256": "05e3b2bcf43166b7dc0315bd9a66a455854a5dca9b987dcaf6a21d21905c7eed"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_Portrait_mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_Portrait_mesh.asset",
+      "source_sha256": "6892a279ce63279a1c9d54f5a66f48cfd9155123edab776e5b2b1a99458f7b08"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/CardShadow_AbilityUnique.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/CardShadow_AbilityUnique.mat",
+      "source_sha256": "4ba0ec0f49153a31d60d15ed6030c5a3416b8ea55a5a7d0f672d7270f809fae1"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/bacon_ques_button.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/bacon_ques_button.mat",
+      "source_sha256": "59ffd03f6cafbb6adea9f14ffefdbf4d4bf6ff49337bb97cf1c96b17240d707e"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/QuestInfoCardGlowBack_BG_Reward.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/QuestInfoCardGlowBack_BG_Reward.mat",
+      "source_sha256": "e9321cf7433e994392a428d7c5e0d3c1ec919a2c6a024356e4b3f1830e04992d"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Spells_Ring_Mesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Lettuce_Spells_Ring_Mesh.asset",
+      "source_sha256": "2bc31c51707f2b1379df134a9b328521de65d9ae1bcf46e62c13366c51848369"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Lettuce_MercMinionAbility_InPlay_FramePortrait_Mat.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Lettuce_MercMinionAbility_InPlay_FramePortrait_Mat.mat",
+      "source_sha256": "9162715123d1758a98c96e3ed88a47149f1f1bc68c9dcbcbda5b780f585d8ea3"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Card_Hand_BG_Quest_Text_Tray_Mat.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Card_Hand_BG_Quest_Text_Tray_Mat.mat",
+      "source_sha256": "19d1108837a967ca2ef21761d010bece2a314520129eb095e2f8f74d79734b39"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/AbilityActor_Disappear_AnimEvents.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/AbilityActor_Disappear_AnimEvents.anim",
+      "source_sha256": "5bc97992c287308c22e030dc3e90f002df7b404a7baed7f212871b3dbd722a18"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Card_Inhand_Ability_Warlock.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Card_Inhand_Ability_Warlock.mat",
+      "source_sha256": "3cc1609e528ca55bbae7a8ed5657251caa559d06c9b50055d3768ecebad3841f"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_PRESSED_DOWN.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_PRESSED_DOWN.anim",
+      "source_sha256": "44514139fcc014d0f18b0deef3ccf2cac7caa6abfa1469c18fd5140d3ba319c5"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_NMP_MOUSE_OVER_2_NMP.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_NMP_MOUSE_OVER_2_NMP.anim",
+      "source_sha256": "0af5d017e099cb20de19c94ce0d85f89c4d42a415b50d7919a45529ebb14fe31"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_PRESSED_UP.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_PRESSED_UP.anim",
+      "source_sha256": "557dc84dedce36261340c2a0d31d294473b8cb2ab45bc8bb276e09ba2bd570bb"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Button_EndTurn.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Button_EndTurn.mat",
+      "source_sha256": "c213cbee677ff9a85c9078fe69ce227a76ec05da48e64969e03cc86740d6e9a4"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_RED.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_RED.anim",
+      "source_sha256": "83de6b8887174aad63314f4e5fff50963cd5bb516270364af82860aab878f711"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_NO_MORE_PLAYS_MOUSE_OVER.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_NO_MORE_PLAYS_MOUSE_OVER.anim",
+      "source_sha256": "547892bb4b3b5516f437d93b5bc758fe99de0ae53004be83741a798a217fefcf"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_TIMER_RELEASE.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_TIMER_RELEASE.anim",
+      "source_sha256": "a6fd485d841a8d9b3908805a5d6cec1ec9f647437636b7005634f57e462b9539"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_WAITING_2_NMP.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_WAITING_2_NMP.anim",
+      "source_sha256": "b1da12312222ffbc41a0796211d61ee3f03a062d2da52069db20edc2326f037e"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_NEXT_TURN.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_NEXT_TURN.anim",
+      "source_sha256": "799448ca77c822a96614841e3491c455d9855629a907855bbb2a14a7c0b933ae"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/HighlightGreenForEndTurnButton.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/HighlightGreenForEndTurnButton.mat",
+      "source_sha256": "91616886de9d30a97247f9abd361f25197789f85c005ae19e7e4a26965dcaefd"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_YOUR_TURN.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_YOUR_TURN.anim",
+      "source_sha256": "e3dd60b63454ec0c9eac58c5e003fa4bcbc77d39280fea472455e5255e78504a"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/HighlightWhiteForEndTurnButton.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/HighlightWhiteForEndTurnButton.mat",
+      "source_sha256": "86adfb15b56eff36523a6825f6c3dce6020ac76a16e7ca5e05b77bb5a21307fe"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_CollisionDisable.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_CollisionDisable.anim",
+      "source_sha256": "235577df81f97f635b5d7f36f1659baf2a2fa8f49cd41a2d7931838ca8cb9c7b"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_WAITING.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_WAITING.anim",
+      "source_sha256": "6fbb3d21dca5e99c7819bea45cff9c211f418bfb235cf6dfe75635fae80b3856"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_NMP_2_WAITING.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_NMP_2_WAITING.anim",
+      "source_sha256": "83d77b50f1500fb95e03de0ee5fa0cabfb52f1dadf0dbc22de0e742e1c4ec4af"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Button_EndTurn.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Button_EndTurn.asset",
+      "source_sha256": "fb24b439cdcc2c2fba80d0f7f8ee0cd93de8b6e310a2fcf1132009840b34dff1"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_YOUR_TIMER_DONE.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_YOUR_TIMER_DONE.anim",
+      "source_sha256": "27b6703456c4bfe762ca178756580f0f6ebd160cc9e8d81b711fb373ed7f3405"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_NO_MORE_PLAYS.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_NO_MORE_PLAYS.anim",
+      "source_sha256": "7275f1d8b39c70977585d5af3211345a3639ccec48157986b2d442e9407f1493"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_PRESSED.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_PRESSED.anim",
+      "source_sha256": "28ed8d8a81e8816c868cda2ca698b92ee1a8ff6a7573a6f863c12b5af64ca549"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_YT_MOUSE_OVER_2_YT.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_YT_MOUSE_OVER_2_YT.anim",
+      "source_sha256": "507fbbbefcea4bc1fe259992bb18863c32dc91dbb1245cb11a84c1f0b71689ce"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_YOUR_TURN_MOUSE_OVER.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_YOUR_TURN_MOUSE_OVER.anim",
+      "source_sha256": "c67dceffd95e0914d010196b63ad16e9a072e30229183832df0ac9b4065fe234"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_YOUR_TURN_sound.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_YOUR_TURN_sound.anim",
+      "source_sha256": "1a91764aee3163e2f4f9cca53b1496b55868abd349d5131f7a04e24cd69573c6"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/HighlightRenderPlane360.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/HighlightRenderPlane360.asset",
+      "source_sha256": "d12bec342170cdd720da68ea995e4b8999f3cd188752d19b9103d633adac9cf6"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_WAITING_sound.anim",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-prefab-0.unity3d/ENDTURN_WAITING_sound.anim",
+      "source_sha256": "b85fc650fd494984d67362be50654fba690bb780afe99e90abca1e5efb4308b3"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/TargetArrow_ArrowMesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/TargetArrow_ArrowMesh.asset",
+      "source_sha256": "6bc090a0d5d843dff5f74a800131f52d2bb9dc9a870bf72303271442a31c5592"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/TargetingArrow-ArrowDashes.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/TargetingArrow-ArrowDashes.mat",
+      "source_sha256": "1568966e0c7c7d2d4d9842446f7dab85130a9664f5799a5ea128fd34caedfea7"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/TargetArrow_TargetMesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/TargetArrow_TargetMesh.asset",
+      "source_sha256": "a402a51696e02a56eef923a2356045c159fd81561b704be2a2e2e924a32dc62d"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/TargetingArrow-ArrowTarget.mat",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/TargetingArrow-ArrowTarget.mat",
+      "source_sha256": "ab6898b5cf0aaa80763db16d6563815ab81ac902f4dce5d9c66f179471509088"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/TargetArrow_DashMesh.asset",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/TargetArrow_DashMesh.asset",
+      "source_sha256": "cd8bfb173482e9080adf1f81d30be09c0cbd4de0f76c072502a7179bca2af000"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/Card_Hand_Ally_Unique_Shadow.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-0.unity3d/Card_Hand_Ally_Unique_Shadow.png",
+      "source_sha256": "88de0382a57a3a744beb1094e9ceba142d8620d55f78839a28d329bf888c07dd"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/Multitribe_HSBG_Nameplates.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-1.unity3d/Multitribe_HSBG_Nameplates.png",
+      "source_sha256": "3d9f1c4870d23942f0bd55af8224d10baea520d404b36617cbeb8e25e4edc5c7"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Set1_Icon.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Set1_Icon.png",
+      "source_sha256": "00182759a046cca7e4565cd1b8b93a3b1df7535e96c46e42c5cde2b853600818"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_InHand_BannerAtlas.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_InHand_BannerAtlas.png",
+      "source_sha256": "34451c087230cc5126d7fd6b5792ce0693a033e87f9954f4ba35e4921d82a6fc"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_Back_Default_D.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_Back_Default_D.png",
+      "source_sha256": "891be2ee3cfe1f1ea3288070062b8117929a6e36229a01facf0c58c5b0613cc2"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/Deathknight_Card_Hand_RuneHolder.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-1.unity3d/Deathknight_Card_Hand_RuneHolder.png",
+      "source_sha256": "cc5d3eff07c0eb40f478d5bc844e6c1cbf9072171e928af1026a0ea2b590fd80"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Black32x32.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Black32x32.png",
+      "source_sha256": "fd803990a0bfe40f3946a5046f408ddbfe9670c1cccd260df3a8a90648133bb8"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Lines.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Lines.png",
+      "source_sha256": "c2161da516d7297e940f1288d866d1ac820055fe2a9acbb86447d00da52f2460"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/FactionBanner_Icons.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-0.unity3d/FactionBanner_Icons.png",
+      "source_sha256": "4ce1d9c0d7c664ad818a9990f157d249f9556fb83e770ac3f5c599ba588976b6"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_CardGlow_Generic1.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_CardGlow_Generic1.png",
+      "source_sha256": "fdc06d0345b355a5519ab1d10d38be43c6db06c4146a55a218cdedcf968a3c75"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_noise1.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_noise1.png",
+      "source_sha256": "fd26f4338f330fd91562ba10c270d9880c95beac1ced1b5417d6cb36dfaa7cb8"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_RarityGems.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_RarityGems.png",
+      "source_sha256": "cc389fb8939503ff565856ac9b8aae1397bbd96ada1e19fdb0f17282475fa032"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_clouds03.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_clouds03.png",
+      "source_sha256": "0a5906ebcd6b1c9685da343007d0e2a21aa25739165085c2ce1e75cfbfa516ac"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_white32x32.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_white32x32.png",
+      "source_sha256": "bf2b1172168b87765f2e3beefb3ec29fb040c98bd3f822f9f7b41d023bd63302"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/AllyInHandGhostCard_Unique.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-1.unity3d/AllyInHandGhostCard_Unique.png",
+      "source_sha256": "3588afeeb6444fcfe74bb0db867a820482d7246af3ad353e2db13b6cd7b9bd57"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_clouds04.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_clouds04.png",
+      "source_sha256": "79d2790bb01eda1ed1770cd33e843ac35a2afab962619e8d5be554bb426da3f8"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/Card_Inhand_Minion_Warlock.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/Card_Inhand_Minion_Warlock.png",
+      "source_sha256": "a5e49dd4a04455dcecbfd0feb578a27436d1c7fcd03fd1dd8804b704cb1ef650"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Gem_Mana_D.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Gem_Mana_D.png",
+      "source_sha256": "6b1c9b112bc536242341325246958808fc05b08a82aee79b24963757e44312dd"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_GlowSoft1.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_GlowSoft1.png",
+      "source_sha256": "3a069dbb254b601dc65b024f0d75f9610a702aedef7c728ea52d93c8ef3836ee"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Gem_Health_D.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Gem_Health_D.png",
+      "source_sha256": "879e24a4a7e5d0f1f123bc84c8e0b5cfe64502190440f4bc17092483084fde3d"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/CardRunes_DeathKnight.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-1.unity3d/CardRunes_DeathKnight.png",
+      "source_sha256": "b05851e3f62ef686ac6d2561a33afed2665a4ea95ad84ad193b70f2169a8db03"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/Card_Hand_Ally_SHadow.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-0.unity3d/Card_Hand_Ally_SHadow.png",
+      "source_sha256": "26ae0c32a291c2735afbe77d7aeeeef042fa764486f730f24f12b375cc31b356"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/AllyColorFill.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-1.unity3d/AllyColorFill.png",
+      "source_sha256": "260fb7868816ab74ef0e71cebf9469279404a3ecf02016de7e879e9f181b5d82"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/Lettuce_CardWingDings.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-1.unity3d/Lettuce_CardWingDings.png",
+      "source_sha256": "acb22324bf5f1a254c022779b35c77e14627cb70edafcad3df6c078ad2aaa506"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/LinesBig.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-1.unity3d/LinesBig.png",
+      "source_sha256": "b1db051b312c0a764a0be7ee4e80b1085b977820874a6db2022b74133c05fb9b"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/Deathknight_Card_Hand_RuneHolder_Glow.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-1.unity3d/Deathknight_Card_Hand_RuneHolder_Glow.png",
+      "source_sha256": "afd8ea89a513c4e47e7e89975ff59895e83cb05b5cb73a42df9f5ef2d36818fd"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Gem_Attack_D.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Gem_Attack_D.png",
+      "source_sha256": "0be78f2c6cf24fda6e6e5d732b46c7180f511bfea7c3c732fe40a85331e956d6"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/Card_Inhand_Ability_Warlock.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-0.unity3d/Card_Inhand_Ability_Warlock.png",
+      "source_sha256": "8a5d149d8fd23b4f37739cf618d2ebaad6ed66b2b5631a0e4af959afd4b56f1f"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/AbilityInHandGhostCard.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-1.unity3d/AbilityInHandGhostCard.png",
+      "source_sha256": "c0dece7d41d5c42d50b53f54e707b77226aa531fc64b88fc80bc74c631bd77f1"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/Card_Hand_BG_Quest_Text_Tray_Glow.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-0.unity3d/Card_Hand_BG_Quest_Text_Tray_Glow.png",
+      "source_sha256": "2051b35abf8f04d4d394938ce2b6854f9c4215ff63c34386125489d432eba6ef"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/Battlegrounds_InPlay_Trinket.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/Battlegrounds_InPlay_Trinket.png",
+      "source_sha256": "ce8fd71dc068cbdef8f3bd16e2a403ff06a3b40155cfaefee1c8ed21cea37765"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/Card_Hand_Ability_Shadow.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-0.unity3d/Card_Hand_Ability_Shadow.png",
+      "source_sha256": "94c666ecadd4ee79ce4467477f8debe6cd16bf069b51dcbbc63460f06e288b1a"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/SpellColorFill.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-1.unity3d/SpellColorFill.png",
+      "source_sha256": "dabb029d7a7b44667e26ff9dfdc5933dff511cc20d6a365925b4555849e7133a"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/CardTypeBanner.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-0.unity3d/CardTypeBanner.png",
+      "source_sha256": "fd130dd088e6f48aa5ff8f4e4063a8ce2447e62ba06702d9b84887d4a6b962f1"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/Lettuce_Ability_SpellCaster_Frame.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/Lettuce_Ability_SpellCaster_Frame.png",
+      "source_sha256": "03c27cbff5dd122f6d54f01c415448b70fb3f17581dcdc456c16862d66ba9377"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/Card_Hand_Ability_Unique_Shadow.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-0.unity3d/Card_Hand_Ability_Unique_Shadow.png",
+      "source_sha256": "b9c42a6376df782566968b98d4beee123a7ad96d84e490a41e75b25b4c82c5b8"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/bacon_quest_button.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-0.unity3d/bacon_quest_button.png",
+      "source_sha256": "0ad7fa7a3686b306263d4b8046010c9cfa1778db640a7b4e2cec0d87b70bb196"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/Lettuce_MercMinionAbility_InPlayFramePortait.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/Lettuce_MercMinionAbility_InPlayFramePortait.png",
+      "source_sha256": "c8ce798e50dc840f1a9b7a34a50c28254f9272515c290fa52ed98e14875adc34"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/Card_Hand_BG_Quest_Text_Tray.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-0.unity3d/Card_Hand_BG_Quest_Text_Tray.png",
+      "source_sha256": "dc58ed1963af2e397469107306283694c87bfca6f40c5714d6843c81ede2d367"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/Board_EndTurnButton.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-0.unity3d/Board_EndTurnButton.png",
+      "source_sha256": "9600cedf2c89f108c02c7259a603ad69e371b1df010b96683a793a3a966c42ac"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/EndTurnHighlightMask.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-1.unity3d/EndTurnHighlightMask.png",
+      "source_sha256": "2f1cbe55e7d2abbdb4a8d44616ad612cb00f216907b08de8cf897ad71808d3b3"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/ArrowTail_D.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/ArrowTail_D.png",
+      "source_sha256": "0ae611e6f4a0d88e29f722f3cb313a671eef2ce63d3e5d167b60b6bcb8a5c0e9"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/ArrowTargetA_D.png",
+      "destination": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/ArrowTargetA_D.png",
+      "source_sha256": "88a072dc24f9f17086b8fa1cf80f133764212b42fd38186ddc9706982477f186"
+    },
+    {
+      "source": "/home/craig-middleton/Desktop/Hearthstone Export/Texture2D/Card_Inhand_Generic.png",
+      "destination": "Assets/_Project/RecoveredInterface/SourcePaint/Card_Inhand_Generic.png",
+      "source_sha256": "1c530c4ca2f0bedc24b4f259f328a2022880b8512979d6dc11ea10c132e04fcc"
+    }
+  ]
+}

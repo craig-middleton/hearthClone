@@ -1,0 +1,2704 @@
+{
+  "actors": [
+    {
+      "name": "Card_Hand_Ally",
+      "source": {
+        "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+        "bundle": "essential_base_global-prefab-0.unity3d",
+        "path_id": -2189759849338270441,
+        "class_id": 1,
+        "name": "Card_Hand_Ally"
+      },
+      "bindings": {
+        "m_cardMesh": {
+          "path": null,
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": -588361756091118313
+          }
+        },
+        "m_cardFrontMatIdx": 0,
+        "m_cardBackMatIdx": 1,
+        "m_portraitMesh": {
+          "path": null,
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": 6528442935647440151
+          }
+        },
+        "m_portraitFrameMatIdx": 1,
+        "m_portraitMatIdx": 0,
+        "m_nameBannerMesh": {
+          "path": null,
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": -4444558223176725225
+          }
+        },
+        "m_descriptionMesh": {
+          "path": null,
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": 5226516710514330903
+          }
+        },
+        "m_racePlateMesh": {
+          "path": null,
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          }
+        },
+        "m_spellDescriptionMeshNeutral": {
+          "path": null,
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          }
+        },
+        "m_spellDescriptionMeshSchool": {
+          "path": null,
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          }
+        },
+        "m_costTextMesh": {
+          "path": "RootObject/CostObject/CostUberText",
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": -4333896118708105961
+          }
+        },
+        "m_attackTextMesh": {
+          "path": "RootObject/AttackObject/AttackUberText",
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": 6327802639297580311
+          }
+        },
+        "m_healthTextMesh": {
+          "path": "RootObject/HealthObject/HealthUberText",
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": -4188728204743635689
+          }
+        },
+        "m_nameTextMesh": {
+          "path": "RootObject/Mesh/NameBanner_mesh/NameUberText",
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": -4547369247096074985
+          }
+        },
+        "m_powersTextMesh": {
+          "path": "RootObject/Mesh/Description_mesh/PowersUberText",
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": 7968649797362748695
+          }
+        },
+        "m_raceTextMesh": {
+          "path": "RootObject/RacePlate_mesh/RaceUberText",
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": 7295669266596269335
+          }
+        }
+      },
+      "core_hierarchy": [
+        {
+          "path": "Card_Hand_Ally",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": -15.907493591308594,
+              "y": 1.5,
+              "z": -9.899999618530273
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          }
+        },
+        {
+          "path": "RootObject",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          }
+        },
+        {
+          "path": "RootObject/AttackObject",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": -0.795863151550293,
+              "y": 0.0012782812118530273,
+              "z": -1.1907105445861816
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.06111123040318489,
+              "z": 0.0,
+              "w": 0.9981309771537781
+            },
+            "m_LocalScale": {
+              "x": 1.3799999952316284,
+              "y": 1.3799999952316284,
+              "z": 1.3799999952316284
+            }
+          }
+        },
+        {
+          "path": "RootObject/AttackObject/AttackUberText",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": -0.007203985471278429,
+              "y": 0.05000000074505806,
+              "z": 0.015020458027720451
+            },
+            "m_LocalRotation": {
+              "x": 0.7061834931373596,
+              "y": -0.0361233726143837,
+              "z": 0.0361233688890934,
+              "w": 0.7061834335327148
+            },
+            "m_LocalScale": {
+              "x": 0.8400000333786011,
+              "y": 0.8400000333786011,
+              "z": 0.8400000333786011
+            }
+          },
+          "text": {
+            "m_Text": "",
+            "m_GameStringLookup": 0,
+            "m_UseEditorText": 0,
+            "m_Width": 0.44999998807907104,
+            "m_Height": 0.3499999940395355,
+            "m_LineSpacing": 1.0,
+            "m_Font": {
+              "m_FileID": 3,
+              "m_PathID": 4766376857981636630
+            },
+            "m_FontSize": 65,
+            "m_MinFontSize": 10,
+            "m_CharacterSize": 6.5,
+            "m_MinCharacterSize": 1.0,
+            "m_RichText": 0,
+            "m_TextColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_BoldSize": 1.0800000429153442,
+            "m_WordWrap": 0,
+            "m_ForceWrapLargeWords": 0,
+            "m_IndentBulletPoints": 0,
+            "m_ResizeToFit": 0,
+            "m_ResizeToFitAndGrow": 0,
+            "m_ResizeToGrowStep": 0.05000000074505806,
+            "m_Underwear": 0,
+            "m_UnderwearFlip": 0,
+            "m_UnderwearWidth": 0.20000000298023224,
+            "m_UnderwearHeight": 0.20000000298023224,
+            "m_Alignment": 1,
+            "m_Anchor": 1,
+            "m_RenderToTexture": 0,
+            "m_RenderOnObject": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Resolution": 65,
+            "m_Outline": 1,
+            "m_OutlineSize": 2.5,
+            "m_OutlineColor": {
+              "r": 0.0784313753247261,
+              "g": 0.06781621277332306,
+              "b": 0.013840829953551292,
+              "a": 1.0
+            },
+            "m_AntiAlias": 1,
+            "m_AntiAliasAmount": 0.4000000059604645,
+            "m_AntiAliasEdge": 0.6000000238418579,
+            "m_Shadow": 0,
+            "m_ShadowOffset": 1.0,
+            "m_ShadowDepthOffset": 0.0,
+            "m_ShadowColor": {
+              "r": 0.5,
+              "g": 0.5,
+              "b": 0.5,
+              "a": 1.0
+            },
+            "m_ShadowBlur": 0.5,
+            "m_ShadowRenderQueueOffset": -1,
+            "m_RenderQueue": 51,
+            "m_AmbientLightBlend": 0.0,
+            "m_AdditionalMaterials": [],
+            "m_GradientUpperColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_GradientLowerColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_Cache": 1
+          }
+        },
+        {
+          "path": "RootObject/AttackObject/Gem_Attack",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": -0.0003598399634938687,
+              "y": 0.0,
+              "z": 0.0029276208952069283
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": -1.0,
+              "z": 0.0,
+              "w": -4.371138828673793e-08
+            },
+            "m_LocalScale": {
+              "x": 0.7391999959945679,
+              "y": 0.25228172540664673,
+              "z": 0.7391999959945679
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": -4466295414099309289,
+            "mesh": {
+              "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+              "bundle": "essential_base_global-mesh-0.unity3d",
+              "path_id": 8810989475294215232,
+              "class_id": 43,
+              "name": "polySurface6"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": -6562649931712656105,
+            "enabled": true,
+            "materials": [
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": 2314186381475765690,
+                "class_id": 21,
+                "name": "Gem_Attack_Gem InHand"
+              }
+            ]
+          }
+        },
+        {
+          "path": "RootObject/CostObject",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": -0.8481521606445312,
+              "y": 0.12999999523162842,
+              "z": 1.201578140258789
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          }
+        },
+        {
+          "path": "RootObject/CostObject/CostUberText",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.011519432067871094,
+              "y": 0.06105434149503708,
+              "z": 0.061018943786621094
+            },
+            "m_LocalRotation": {
+              "x": 0.7071068286895752,
+              "y": -0.0,
+              "z": -0.0,
+              "w": 0.7071068286895752
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          },
+          "text": {
+            "m_Text": "",
+            "m_GameStringLookup": 0,
+            "m_UseEditorText": 0,
+            "m_Width": 0.6899999976158142,
+            "m_Height": 0.6700000166893005,
+            "m_LineSpacing": 1.0,
+            "m_Font": {
+              "m_FileID": 3,
+              "m_PathID": 4766376857981636630
+            },
+            "m_FontSize": 65,
+            "m_MinFontSize": 10,
+            "m_CharacterSize": 8.0,
+            "m_MinCharacterSize": 1.0,
+            "m_RichText": 1,
+            "m_TextColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_BoldSize": 1.0800000429153442,
+            "m_WordWrap": 0,
+            "m_ForceWrapLargeWords": 0,
+            "m_IndentBulletPoints": 0,
+            "m_ResizeToFit": 0,
+            "m_ResizeToFitAndGrow": 0,
+            "m_ResizeToGrowStep": 0.05000000074505806,
+            "m_Underwear": 0,
+            "m_UnderwearFlip": 0,
+            "m_UnderwearWidth": 0.20000000298023224,
+            "m_UnderwearHeight": 0.20000000298023224,
+            "m_Alignment": 1,
+            "m_Anchor": 1,
+            "m_RenderToTexture": 0,
+            "m_RenderOnObject": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Resolution": 95,
+            "m_Outline": 1,
+            "m_OutlineSize": 2.5,
+            "m_OutlineColor": {
+              "r": 0.013840829953551292,
+              "g": 0.045506399124860764,
+              "b": 0.0784313753247261,
+              "a": 1.0
+            },
+            "m_AntiAlias": 1,
+            "m_AntiAliasAmount": 0.4000000059604645,
+            "m_AntiAliasEdge": 0.6000000238418579,
+            "m_Shadow": 0,
+            "m_ShadowOffset": 1.0,
+            "m_ShadowDepthOffset": 0.0,
+            "m_ShadowColor": {
+              "r": 0.5,
+              "g": 0.5,
+              "b": 0.5,
+              "a": 1.0
+            },
+            "m_ShadowBlur": 0.5,
+            "m_ShadowRenderQueueOffset": -1,
+            "m_RenderQueue": 51,
+            "m_AmbientLightBlend": 0.0,
+            "m_AdditionalMaterials": [],
+            "m_GradientUpperColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_GradientLowerColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_Cache": 1
+          }
+        },
+        {
+          "path": "RootObject/CostObject/Gem_Mana",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.4359999895095825,
+              "y": 0.3499999940395355,
+              "z": 1.4359999895095825
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": -6101271801930347241,
+            "mesh": {
+              "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+              "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+              "path_id": -3398686949607182099,
+              "class_id": 43,
+              "name": "ManaGem"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": 5624274526125985047,
+            "enabled": true,
+            "materials": [
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": 2348069032301363176,
+                "class_id": 21,
+                "name": "Gem_Mana_Blue"
+              }
+            ]
+          }
+        },
+        {
+          "path": "RootObject/HealthObject",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.82289719581604,
+              "y": 0.023746371269226074,
+              "z": -1.1534209251403809
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.3539410829544067,
+              "y": 1.3539410829544067,
+              "z": 1.3539410829544067
+            }
+          }
+        },
+        {
+          "path": "RootObject/HealthObject/HealthUberText",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": -0.007821050472557545,
+              "y": 0.05000000074505806,
+              "z": -0.019745932891964912
+            },
+            "m_LocalRotation": {
+              "x": 0.7071068286895752,
+              "y": -0.0,
+              "z": -0.0,
+              "w": 0.7071068286895752
+            },
+            "m_LocalScale": {
+              "x": 0.8317157626152039,
+              "y": 0.8317157626152039,
+              "z": 0.8317157626152039
+            }
+          },
+          "text": {
+            "m_Text": "",
+            "m_GameStringLookup": 0,
+            "m_UseEditorText": 0,
+            "m_Width": 0.44999998807907104,
+            "m_Height": 0.3499999940395355,
+            "m_LineSpacing": 1.0,
+            "m_Font": {
+              "m_FileID": 3,
+              "m_PathID": 4766376857981636630
+            },
+            "m_FontSize": 65,
+            "m_MinFontSize": 10,
+            "m_CharacterSize": 6.5,
+            "m_MinCharacterSize": 1.0,
+            "m_RichText": 0,
+            "m_TextColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_BoldSize": 1.0800000429153442,
+            "m_WordWrap": 0,
+            "m_ForceWrapLargeWords": 0,
+            "m_IndentBulletPoints": 0,
+            "m_ResizeToFit": 0,
+            "m_ResizeToFitAndGrow": 0,
+            "m_ResizeToGrowStep": 0.05000000074505806,
+            "m_Underwear": 0,
+            "m_UnderwearFlip": 0,
+            "m_UnderwearWidth": 0.20000000298023224,
+            "m_UnderwearHeight": 0.20000000298023224,
+            "m_Alignment": 1,
+            "m_Anchor": 1,
+            "m_RenderToTexture": 0,
+            "m_RenderOnObject": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Resolution": 65,
+            "m_Outline": 1,
+            "m_OutlineSize": 2.5,
+            "m_OutlineColor": {
+              "r": 0.0784313753247261,
+              "g": 0.013840829953551292,
+              "b": 0.013840829953551292,
+              "a": 1.0
+            },
+            "m_AntiAlias": 1,
+            "m_AntiAliasAmount": 0.4000000059604645,
+            "m_AntiAliasEdge": 0.6000000238418579,
+            "m_Shadow": 0,
+            "m_ShadowOffset": 1.0,
+            "m_ShadowDepthOffset": 0.0,
+            "m_ShadowColor": {
+              "r": 0.5,
+              "g": 0.5,
+              "b": 0.5,
+              "a": 1.0
+            },
+            "m_ShadowBlur": 0.5,
+            "m_ShadowRenderQueueOffset": -1,
+            "m_RenderQueue": 51,
+            "m_AmbientLightBlend": 0.0,
+            "m_AdditionalMaterials": [],
+            "m_GradientUpperColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_GradientLowerColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_Cache": 1
+          }
+        },
+        {
+          "path": "RootObject/HealthObject/Gem_Health",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": -0.014069685712456703,
+              "z": 0.0
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": -1.0,
+              "z": 0.0,
+              "w": -4.371138828673793e-08
+            },
+            "m_LocalScale": {
+              "x": 0.7468999624252319,
+              "y": 0.298330157995224,
+              "z": 0.7468999624252319
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": 2119833524292652311,
+            "mesh": {
+              "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+              "bundle": "essential_base_global-mesh-0.unity3d",
+              "path_id": 6614800755050759490,
+              "class_id": 43,
+              "name": "mesh_Gem_Health"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": 167984487157501207,
+            "enabled": true,
+            "materials": [
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": -3059571318297379748,
+                "class_id": 21,
+                "name": "Gem_Health_Gem InHand"
+              }
+            ]
+          }
+        },
+        {
+          "path": "RootObject/Mesh",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": -0.03158736228942871,
+              "z": -0.01141214370727539
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 1.0,
+              "z": 0.0,
+              "w": -4.371138828673793e-08
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": 8682589113948212503,
+            "mesh": {
+              "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+              "bundle": "essential_base_global-mesh-0.unity3d",
+              "path_id": 6925256218609672089,
+              "class_id": 43,
+              "name": "Card_InHand_Ally_Base_mesh"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": -8600964322889200361,
+            "enabled": true,
+            "materials": [
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": 7688142088913455439,
+                "class_id": 21,
+                "name": "GenFX_Card_Inhand_Warlock"
+              },
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": 1718863763965875126,
+                "class_id": 21,
+                "name": "GenFX_Card_Back_Default_D"
+              }
+            ]
+          }
+        },
+        {
+          "path": "RootObject/Mesh/NameBanner_mesh",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.004688256420195103,
+              "y": 0.1096571683883667,
+              "z": 0.07677555084228516
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 0.8122082352638245,
+              "z": 1.0
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": -5392064260005720809,
+            "mesh": {
+              "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+              "bundle": "essential_base_global-mesh-0.unity3d",
+              "path_id": -8195230862926651495,
+              "class_id": 43,
+              "name": "AllyInHand_NameBanner_mesh"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": 7508437996091182359,
+            "enabled": true,
+            "materials": [
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": -3969520693805149181,
+                "class_id": 21,
+                "name": "GenFX_Card_InHand_BannerAtlas"
+              }
+            ]
+          }
+        },
+        {
+          "path": "RootObject/Mesh/NameBanner_mesh/Card_InHand_Ally_CurvedText",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 8.381903171539307e-09,
+              "y": 0.027873877435922623,
+              "z": -0.09973382949829102
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": -0.0,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": -5360672572682957545,
+            "mesh": {
+              "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+              "bundle": "essential_base_global-mesh-0.unity3d",
+              "path_id": 8694985930566816389,
+              "class_id": 43,
+              "name": "CardAllyCurvedText"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": -7003983238192591593,
+            "enabled": false,
+            "materials": [
+              null
+            ]
+          }
+        },
+        {
+          "path": "RootObject/Mesh/NameBanner_mesh/NameUberText",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.009175306186079979,
+              "y": 0.01616537570953369,
+              "z": -0.06456422805786133
+            },
+            "m_LocalRotation": {
+              "x": -3.0908619663705394e-08,
+              "y": -0.7071068286895752,
+              "z": 0.7071068286895752,
+              "w": -3.0908619663705394e-08
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          },
+          "text": {
+            "m_Text": "",
+            "m_GameStringLookup": 0,
+            "m_UseEditorText": 0,
+            "m_Width": 1.899999976158142,
+            "m_Height": 0.30000001192092896,
+            "m_LineSpacing": 1.0,
+            "m_Font": {
+              "m_FileID": 3,
+              "m_PathID": 4766376857981636630
+            },
+            "m_FontSize": 40,
+            "m_MinFontSize": 20,
+            "m_CharacterSize": 5.0,
+            "m_MinCharacterSize": 1.0,
+            "m_RichText": 1,
+            "m_TextColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_BoldSize": 0.0,
+            "m_WordWrap": 0,
+            "m_ForceWrapLargeWords": 0,
+            "m_IndentBulletPoints": 0,
+            "m_ResizeToFit": 1,
+            "m_ResizeToFitAndGrow": 0,
+            "m_ResizeToGrowStep": 0.05000000074505806,
+            "m_Underwear": 0,
+            "m_UnderwearFlip": 0,
+            "m_UnderwearWidth": 0.20000000298023224,
+            "m_UnderwearHeight": 0.20000000298023224,
+            "m_Alignment": 1,
+            "m_Anchor": 1,
+            "m_RenderToTexture": 1,
+            "m_RenderOnObject": {
+              "m_FileID": 0,
+              "m_PathID": -3331166760336192233
+            },
+            "m_Resolution": 300,
+            "m_Outline": 1,
+            "m_OutlineSize": 3.0,
+            "m_OutlineColor": {
+              "r": 0.03921568766236305,
+              "g": 0.0303975660353899,
+              "b": 0.021530181169509888,
+              "a": 1.0
+            },
+            "m_AntiAlias": 1,
+            "m_AntiAliasAmount": 0.5,
+            "m_AntiAliasEdge": 0.5,
+            "m_Shadow": 0,
+            "m_ShadowOffset": 1.0,
+            "m_ShadowDepthOffset": 0.0,
+            "m_ShadowColor": {
+              "r": 0.5,
+              "g": 0.5,
+              "b": 0.5,
+              "a": 1.0
+            },
+            "m_ShadowBlur": 0.5,
+            "m_ShadowRenderQueueOffset": -1,
+            "m_RenderQueue": 0,
+            "m_AmbientLightBlend": 0.0,
+            "m_AdditionalMaterials": [],
+            "m_GradientUpperColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_GradientLowerColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_Cache": 1
+          }
+        },
+        {
+          "path": "RootObject/Mesh/Description_mesh",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.012365272268652916,
+              "y": 0.05000000074505806,
+              "z": 0.7870397567749023
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": -4.371138828673793e-08,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": 9125377581608897815,
+            "mesh": {
+              "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+              "bundle": "essential_base_global-mesh-0.unity3d",
+              "path_id": -6344688305671544935,
+              "class_id": 43,
+              "name": "Card_InHand_Ally_Discrption_mesh"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": 4381561717812006167,
+            "enabled": true,
+            "materials": [
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": -6286772062322055216,
+                "class_id": 21,
+                "name": "Card_InHand_BannerAtlasMod2x"
+              }
+            ]
+          }
+        },
+        {
+          "path": "RootObject/Mesh/Description_mesh/PowersUberText",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": -0.0020000000949949026,
+              "y": 0.03400000184774399,
+              "z": -0.019999999552965164
+            },
+            "m_LocalRotation": {
+              "x": 4.7124922275543213e-07,
+              "y": -0.7071122527122498,
+              "z": 0.7071014046669006,
+              "w": -2.1513551473617554e-06
+            },
+            "m_LocalScale": {
+              "x": 0.7999998331069946,
+              "y": 0.800000011920929,
+              "z": 0.800000011920929
+            }
+          },
+          "text": {
+            "m_Text": "",
+            "m_GameStringLookup": 0,
+            "m_UseEditorText": 0,
+            "m_Width": 1.9500000476837158,
+            "m_Height": 0.8700000047683716,
+            "m_LineSpacing": 0.75,
+            "m_Font": {
+              "m_FileID": 3,
+              "m_PathID": -3530185850595028133
+            },
+            "m_FontSize": 40,
+            "m_MinFontSize": 20,
+            "m_CharacterSize": 5.0,
+            "m_MinCharacterSize": 1.0,
+            "m_RichText": 1,
+            "m_TextColor": {
+              "r": 0.11764705926179886,
+              "g": 0.09119269251823425,
+              "b": 0.06459054350852966,
+              "a": 1.0
+            },
+            "m_BoldSize": 1.25,
+            "m_WordWrap": 1,
+            "m_ForceWrapLargeWords": 0,
+            "m_IndentBulletPoints": 0,
+            "m_ResizeToFit": 1,
+            "m_ResizeToFitAndGrow": 0,
+            "m_ResizeToGrowStep": 0.05000000074505806,
+            "m_Underwear": 1,
+            "m_UnderwearFlip": 0,
+            "m_UnderwearWidth": 0.25,
+            "m_UnderwearHeight": 0.17000000178813934,
+            "m_Alignment": 1,
+            "m_Anchor": 1,
+            "m_RenderToTexture": 0,
+            "m_RenderOnObject": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Resolution": 300,
+            "m_Outline": 0,
+            "m_OutlineSize": 4.0,
+            "m_OutlineColor": {
+              "r": 0.0,
+              "g": 0.0,
+              "b": 0.0,
+              "a": 1.0
+            },
+            "m_AntiAlias": 1,
+            "m_AntiAliasAmount": 0.4000000059604645,
+            "m_AntiAliasEdge": 0.6000000238418579,
+            "m_Shadow": 0,
+            "m_ShadowOffset": 1.0,
+            "m_ShadowDepthOffset": 0.0,
+            "m_ShadowColor": {
+              "r": 0.5,
+              "g": 0.5,
+              "b": 0.5,
+              "a": 1.0
+            },
+            "m_ShadowBlur": 0.5,
+            "m_ShadowRenderQueueOffset": -1,
+            "m_RenderQueue": 0,
+            "m_AmbientLightBlend": 0.0,
+            "m_AdditionalMaterials": [],
+            "m_GradientUpperColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_GradientLowerColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_Cache": 1
+          }
+        },
+        {
+          "path": "RootObject/Mesh/PortraitFrame_mesh",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.010265407152473927,
+              "y": 0.06210261583328247,
+              "z": -0.646904468536377
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": -4.371138828673793e-08,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": -2137169384234316521,
+            "mesh": {
+              "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+              "bundle": "essential_base_global-mesh-0.unity3d",
+              "path_id": 5431709943585267609,
+              "class_id": 43,
+              "name": "Card_InHand_Ally_Portrait_mesh"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": -4079537947248325353,
+            "enabled": true,
+            "materials": [
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": -2270729164992468254,
+                "class_id": 21,
+                "name": "Card_InHand_Ally-Card_InPlay_AllyPortrait"
+              },
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": 7688142088913455439,
+                "class_id": 21,
+                "name": "GenFX_Card_Inhand_Warlock"
+              }
+            ]
+          }
+        },
+        {
+          "path": "RootObject/Mesh/PortraitFrame_mesh/RarityGemFrame",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": -0.003767013782635331,
+              "y": 0.005466431379318237,
+              "z": 0.08740568161010742
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 4.371138828673793e-08,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 0.9024000763893127,
+              "y": 0.9024000763893127,
+              "z": 0.9024000763893127
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": 4403528906666380567,
+            "mesh": {
+              "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+              "bundle": "essential_base_global-mesh-0.unity3d",
+              "path_id": -1596284003704152167,
+              "class_id": 43,
+              "name": "Card_InHand_Ally_RarityGemFrame_mesh"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": -7417797726449464041,
+            "enabled": true,
+            "materials": [
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": 4456149407965610703,
+                "class_id": 21,
+                "name": "Card_Inhand_Warlock_transparent"
+              }
+            ]
+          }
+        },
+        {
+          "path": "RootObject/Mesh/PortraitFrame_mesh/RarityGemFrame/RarityGem",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": -0.02157294750213623,
+              "y": 0.032471269369125366,
+              "z": 0.941213846206665
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.090000033378601,
+              "y": 0.6499999761581421,
+              "z": 1.090000033378601
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": -940553570936517353,
+            "mesh": {
+              "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+              "bundle": "essential_base_global-mesh-0.unity3d",
+              "path_id": -1062552055272284263,
+              "class_id": 43,
+              "name": "RarityGem_mesh"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": 3936098404549627159,
+            "enabled": true,
+            "materials": [
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": 6977783140861467241,
+                "class_id": 21,
+                "name": "Card_Inhand_RarityGem_Legendary"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Card_Hand_Ability",
+      "source": {
+        "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+        "bundle": "essential_base_global-prefab-0.unity3d",
+        "path_id": -2690728072414629242,
+        "class_id": 1,
+        "name": "Card_Hand_Ability"
+      },
+      "bindings": {
+        "m_cardMesh": {
+          "path": null,
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": 3807802336216085126
+          }
+        },
+        "m_cardFrontMatIdx": 0,
+        "m_cardBackMatIdx": 1,
+        "m_portraitMesh": {
+          "path": null,
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": 467724817657098886
+          }
+        },
+        "m_portraitFrameMatIdx": 0,
+        "m_portraitMatIdx": 1,
+        "m_nameBannerMesh": {
+          "path": null,
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": -5331847705805786490
+          }
+        },
+        "m_descriptionMesh": {
+          "path": null,
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": -4160781473786695034
+          }
+        },
+        "m_racePlateMesh": {
+          "path": null,
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          }
+        },
+        "m_spellDescriptionMeshNeutral": {
+          "path": null,
+          "source_pointer": {
+            "m_FileID": 1,
+            "m_PathID": 573831583156379144
+          }
+        },
+        "m_spellDescriptionMeshSchool": {
+          "path": null,
+          "source_pointer": {
+            "m_FileID": 1,
+            "m_PathID": -4781603292133679608
+          }
+        },
+        "m_costTextMesh": {
+          "path": "RootObject/NonQuestObjects/CostObject/CostUberText",
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": 3637219156593734278
+          }
+        },
+        "m_attackTextMesh": {
+          "path": null,
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          }
+        },
+        "m_healthTextMesh": {
+          "path": null,
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          }
+        },
+        "m_nameTextMesh": {
+          "path": "RootObject/NonQuestObjects/Mesh/NameBanner_mesh/NameUberText",
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": -8201203154676682106
+          }
+        },
+        "m_powersTextMesh": {
+          "path": "RootObject/NonQuestObjects/Mesh/Description_mesh/PowersUberText",
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": 8380202808946389638
+          }
+        },
+        "m_raceTextMesh": {
+          "path": "RootObject/NonQuestObjects/Mesh/Description_mesh/RaceUberText",
+          "source_pointer": {
+            "m_FileID": 0,
+            "m_PathID": 6577903410012811910
+          }
+        }
+      },
+      "core_hierarchy": [
+        {
+          "path": "Card_Hand_Ability",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          }
+        },
+        {
+          "path": "RootObject",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          }
+        },
+        {
+          "path": "RootObject/NonQuestObjects",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          }
+        },
+        {
+          "path": "RootObject/NonQuestObjects/CostObject",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": -0.8318843841552734,
+              "y": 0.15000000596046448,
+              "z": 1.2105646133422852
+            },
+            "m_LocalRotation": {
+              "x": -0.0,
+              "y": -0.0,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          }
+        },
+        {
+          "path": "RootObject/NonQuestObjects/CostObject/CostUberText",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.004986763000488281,
+              "y": 0.029999999329447746,
+              "z": 0.07154464721679688
+            },
+            "m_LocalRotation": {
+              "x": 0.7071068286895752,
+              "y": -0.0,
+              "z": -0.0,
+              "w": 0.7071068286895752
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          },
+          "text": {
+            "m_Text": "",
+            "m_GameStringLookup": 0,
+            "m_UseEditorText": 0,
+            "m_Width": 0.6899999976158142,
+            "m_Height": 0.6700000166893005,
+            "m_LineSpacing": 1.0,
+            "m_Font": {
+              "m_FileID": 3,
+              "m_PathID": 4766376857981636630
+            },
+            "m_FontSize": 65,
+            "m_MinFontSize": 10,
+            "m_CharacterSize": 8.0,
+            "m_MinCharacterSize": 1.0,
+            "m_RichText": 1,
+            "m_TextColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_BoldSize": 1.0800000429153442,
+            "m_WordWrap": 0,
+            "m_ForceWrapLargeWords": 0,
+            "m_IndentBulletPoints": 0,
+            "m_ResizeToFit": 0,
+            "m_ResizeToFitAndGrow": 0,
+            "m_ResizeToGrowStep": 0.05000000074505806,
+            "m_Underwear": 0,
+            "m_UnderwearFlip": 0,
+            "m_UnderwearWidth": 0.20000000298023224,
+            "m_UnderwearHeight": 0.20000000298023224,
+            "m_Alignment": 1,
+            "m_Anchor": 1,
+            "m_RenderToTexture": 0,
+            "m_RenderOnObject": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Resolution": 95,
+            "m_Outline": 1,
+            "m_OutlineSize": 2.5,
+            "m_OutlineColor": {
+              "r": 0.013840829953551292,
+              "g": 0.045506399124860764,
+              "b": 0.0784313753247261,
+              "a": 1.0
+            },
+            "m_AntiAlias": 1,
+            "m_AntiAliasAmount": 0.4000000059604645,
+            "m_AntiAliasEdge": 0.6000000238418579,
+            "m_Shadow": 0,
+            "m_ShadowOffset": 1.0,
+            "m_ShadowDepthOffset": 0.0,
+            "m_ShadowColor": {
+              "r": 0.5,
+              "g": 0.5,
+              "b": 0.5,
+              "a": 1.0
+            },
+            "m_ShadowBlur": 0.5,
+            "m_ShadowRenderQueueOffset": -1,
+            "m_RenderQueue": 51,
+            "m_AmbientLightBlend": 0.0,
+            "m_AdditionalMaterials": [],
+            "m_GradientUpperColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_GradientLowerColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_Cache": 1
+          }
+        },
+        {
+          "path": "RootObject/NonQuestObjects/CostObject/Gem_Mana",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": -0.028999999165534973,
+              "z": 0.0
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.4359999895095825,
+              "y": 0.3499999940395355,
+              "z": 1.4359999895095825
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": 1263288125741068934,
+            "mesh": {
+              "cab": "CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+              "bundle": "essential_base_qualityhigh_global-content-0.unity3d",
+              "path_id": -3398686949607182099,
+              "class_id": 43,
+              "name": "ManaGem"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": 7537954304697299590,
+            "enabled": true,
+            "materials": [
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": 2348069032301363176,
+                "class_id": 21,
+                "name": "Gem_Mana_Blue"
+              }
+            ]
+          }
+        },
+        {
+          "path": "RootObject/NonQuestObjects/Mesh",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.035999998450279236
+            },
+            "m_LocalRotation": {
+              "x": -0.0,
+              "y": 1.0,
+              "z": -0.0,
+              "w": -4.371138828673793e-08
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": 3125985429801661062,
+            "mesh": {
+              "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+              "bundle": "essential_base_global-mesh-0.unity3d",
+              "path_id": -5133800765486752248,
+              "class_id": 43,
+              "name": "Card_InHand_Ability_mesh"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": -5746911661941329274,
+            "enabled": true,
+            "materials": [
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": 2072495077498255439,
+                "class_id": 21,
+                "name": "Card_Inhand_Ability_Warlock"
+              },
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": 1718863763965875126,
+                "class_id": 21,
+                "name": "GenFX_Card_Back_Default_D"
+              }
+            ]
+          }
+        },
+        {
+          "path": "RootObject/NonQuestObjects/Mesh/Description_mesh",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": -4.371138828673793e-08,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": -2923638528827133306,
+            "mesh": {
+              "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+              "bundle": "essential_base_global-mesh-0.unity3d",
+              "path_id": 573831583156379144,
+              "class_id": 43,
+              "name": "Card_InHand_Ability_Description_Neutral_mesh"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": 838603813590790790,
+            "enabled": true,
+            "materials": [
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": -2777972641253720241,
+                "class_id": 21,
+                "name": "Card_InHand_Ability_BannerAtlasMod2x"
+              },
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": 2072495077498255439,
+                "class_id": 21,
+                "name": "Card_Inhand_Ability_Warlock"
+              }
+            ]
+          }
+        },
+        {
+          "path": "RootObject/NonQuestObjects/Mesh/Description_mesh/RaceUberText",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.013000000268220901,
+              "y": 0.050999999046325684,
+              "z": 1.2000000476837158
+            },
+            "m_LocalRotation": {
+              "x": 1.3767878215276141e-07,
+              "y": 0.7071068286895752,
+              "z": -0.7071068286895752,
+              "w": 1.3767878215276141e-07
+            },
+            "m_LocalScale": {
+              "x": 1.0608004331588745,
+              "y": 1.0608004331588745,
+              "z": 1.0608004331588745
+            }
+          },
+          "text": {
+            "m_Text": "",
+            "m_GameStringLookup": 0,
+            "m_UseEditorText": 0,
+            "m_Width": 0.8500000238418579,
+            "m_Height": 0.17000000178813934,
+            "m_LineSpacing": 1.0,
+            "m_Font": {
+              "m_FileID": 3,
+              "m_PathID": 4766376857981636630
+            },
+            "m_FontSize": 40,
+            "m_MinFontSize": 10,
+            "m_CharacterSize": 3.5,
+            "m_MinCharacterSize": 1.0,
+            "m_RichText": 1,
+            "m_TextColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_BoldSize": 1.0800000429153442,
+            "m_WordWrap": 0,
+            "m_ForceWrapLargeWords": 0,
+            "m_IndentBulletPoints": 0,
+            "m_ResizeToFit": 1,
+            "m_ResizeToFitAndGrow": 1,
+            "m_ResizeToGrowStep": 0.05000000074505806,
+            "m_Underwear": 0,
+            "m_UnderwearFlip": 0,
+            "m_UnderwearWidth": 0.20000000298023224,
+            "m_UnderwearHeight": 0.20000000298023224,
+            "m_Alignment": 1,
+            "m_Anchor": 1,
+            "m_RenderToTexture": 0,
+            "m_RenderOnObject": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Resolution": 300,
+            "m_Outline": 1,
+            "m_OutlineSize": 3.0,
+            "m_OutlineColor": {
+              "r": 0.0784313753247261,
+              "g": 0.0607951320707798,
+              "b": 0.043060362339019775,
+              "a": 1.0
+            },
+            "m_AntiAlias": 1,
+            "m_AntiAliasAmount": 0.4000000059604645,
+            "m_AntiAliasEdge": 0.6000000238418579,
+            "m_Shadow": 0,
+            "m_ShadowOffset": 1.0,
+            "m_ShadowDepthOffset": 0.0,
+            "m_ShadowColor": {
+              "r": 0.5,
+              "g": 0.5,
+              "b": 0.5,
+              "a": 1.0
+            },
+            "m_ShadowBlur": 0.5,
+            "m_ShadowRenderQueueOffset": -1,
+            "m_RenderQueue": 0,
+            "m_AmbientLightBlend": 0.0,
+            "m_AdditionalMaterials": [],
+            "m_GradientUpperColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_GradientLowerColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_Cache": 1
+          }
+        },
+        {
+          "path": "RootObject/NonQuestObjects/Mesh/Description_mesh/PowersUberText",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.028999999165534973,
+              "y": 0.04100000113248825,
+              "z": 0.7630000114440918
+            },
+            "m_LocalRotation": {
+              "x": -3.090862321641907e-08,
+              "y": 0.7071068286895752,
+              "z": -0.7071068286895752,
+              "w": -3.090862321641907e-08
+            },
+            "m_LocalScale": {
+              "x": 0.7999998331069946,
+              "y": 0.800000011920929,
+              "z": 0.800000011920929
+            }
+          },
+          "text": {
+            "m_Text": "",
+            "m_GameStringLookup": 0,
+            "m_UseEditorText": 0,
+            "m_Width": 1.7000000476837158,
+            "m_Height": 0.8199999928474426,
+            "m_LineSpacing": 0.75,
+            "m_Font": {
+              "m_FileID": 3,
+              "m_PathID": -3530185850595028133
+            },
+            "m_FontSize": 40,
+            "m_MinFontSize": 20,
+            "m_CharacterSize": 5.0,
+            "m_MinCharacterSize": 1.0,
+            "m_RichText": 1,
+            "m_TextColor": {
+              "r": 0.11764705926179886,
+              "g": 0.09119269251823425,
+              "b": 0.06459054350852966,
+              "a": 1.0
+            },
+            "m_BoldSize": 1.25,
+            "m_WordWrap": 1,
+            "m_ForceWrapLargeWords": 0,
+            "m_IndentBulletPoints": 0,
+            "m_ResizeToFit": 1,
+            "m_ResizeToFitAndGrow": 0,
+            "m_ResizeToGrowStep": 0.05000000074505806,
+            "m_Underwear": 1,
+            "m_UnderwearFlip": 1,
+            "m_UnderwearWidth": 0.25999999046325684,
+            "m_UnderwearHeight": 0.1599999964237213,
+            "m_Alignment": 1,
+            "m_Anchor": 1,
+            "m_RenderToTexture": 0,
+            "m_RenderOnObject": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Resolution": 300,
+            "m_Outline": 0,
+            "m_OutlineSize": 4.0,
+            "m_OutlineColor": {
+              "r": 0.0,
+              "g": 0.0,
+              "b": 0.0,
+              "a": 1.0
+            },
+            "m_AntiAlias": 1,
+            "m_AntiAliasAmount": 0.4000000059604645,
+            "m_AntiAliasEdge": 0.6000000238418579,
+            "m_Shadow": 0,
+            "m_ShadowOffset": 1.0,
+            "m_ShadowDepthOffset": 0.0,
+            "m_ShadowColor": {
+              "r": 0.5,
+              "g": 0.5,
+              "b": 0.5,
+              "a": 1.0
+            },
+            "m_ShadowBlur": 0.5,
+            "m_ShadowRenderQueueOffset": -1,
+            "m_RenderQueue": 0,
+            "m_AmbientLightBlend": 0.0,
+            "m_AdditionalMaterials": [],
+            "m_GradientUpperColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_GradientLowerColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_Cache": 1
+          }
+        },
+        {
+          "path": "RootObject/NonQuestObjects/Mesh/Description_mesh/RarityFrame_mesh",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": 5844804511807697542,
+            "mesh": {
+              "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+              "bundle": "essential_base_global-mesh-0.unity3d",
+              "path_id": 8944615232765206024,
+              "class_id": 43,
+              "name": "Card_InHand_Ability_RarityFrame_Mesh"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": -3680773999185956218,
+            "enabled": true,
+            "materials": [
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": 2072495077498255439,
+                "class_id": 21,
+                "name": "Card_Inhand_Ability_Warlock"
+              }
+            ]
+          }
+        },
+        {
+          "path": "RootObject/NonQuestObjects/Mesh/Description_mesh/RarityFrame_mesh/RarityGem",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.014000000432133675,
+              "y": 0.125,
+              "z": 0.296999990940094
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0237590074539185,
+              "y": 0.7719305157661438,
+              "z": 1.0237590074539185
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": -5321976398940736890,
+            "mesh": {
+              "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+              "bundle": "essential_base_global-mesh-0.unity3d",
+              "path_id": -1062552055272284263,
+              "class_id": 43,
+              "name": "RarityGem_mesh"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": -35002256426929530,
+            "enabled": true,
+            "materials": [
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": 6977783140861467241,
+                "class_id": 21,
+                "name": "Card_Inhand_RarityGem_Legendary"
+              }
+            ]
+          }
+        },
+        {
+          "path": "RootObject/NonQuestObjects/Mesh/NameBanner_mesh",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": 5741762040384844422,
+            "mesh": {
+              "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+              "bundle": "essential_base_global-mesh-0.unity3d",
+              "path_id": -2134389656778465784,
+              "class_id": 43,
+              "name": "Card_InHand_Ability_NameBanner_mesh"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": -7618190858556476794,
+            "enabled": true,
+            "materials": [
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": 2072495077498255439,
+                "class_id": 21,
+                "name": "Card_Inhand_Ability_Warlock"
+              }
+            ]
+          }
+        },
+        {
+          "path": "RootObject/NonQuestObjects/Mesh/NameBanner_mesh/Card_InHand_Ally_CurvedText",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": -0.03999999910593033,
+              "y": -0.07199999690055847,
+              "z": -0.05000000074505806
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": -0.0,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0399999618530273,
+              "y": 1.0399999618530273,
+              "z": 1.0399999618530273
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": -7114965231466188154,
+            "mesh": {
+              "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+              "bundle": "essential_base_global-mesh-0.unity3d",
+              "path_id": 8902536718298385945,
+              "class_id": 43,
+              "name": "AbilityCardCurvedText"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": -8904210496317623674,
+            "enabled": false,
+            "materials": [
+              null
+            ]
+          }
+        },
+        {
+          "path": "RootObject/NonQuestObjects/Mesh/NameBanner_mesh/NameUberText",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.13900001347064972,
+              "z": 0.0
+            },
+            "m_LocalRotation": {
+              "x": -3.0908619663705394e-08,
+              "y": 0.7071068286895752,
+              "z": -0.7071068286895752,
+              "w": -3.0908619663705394e-08
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          },
+          "text": {
+            "m_Text": "",
+            "m_GameStringLookup": 0,
+            "m_UseEditorText": 0,
+            "m_Width": 1.899999976158142,
+            "m_Height": 0.2800000011920929,
+            "m_LineSpacing": 1.0,
+            "m_Font": {
+              "m_FileID": 3,
+              "m_PathID": 4766376857981636630
+            },
+            "m_FontSize": 40,
+            "m_MinFontSize": 30,
+            "m_CharacterSize": 5.0,
+            "m_MinCharacterSize": 1.0,
+            "m_RichText": 1,
+            "m_TextColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_BoldSize": 0.0,
+            "m_WordWrap": 0,
+            "m_ForceWrapLargeWords": 0,
+            "m_IndentBulletPoints": 0,
+            "m_ResizeToFit": 1,
+            "m_ResizeToFitAndGrow": 0,
+            "m_ResizeToGrowStep": 0.05000000074505806,
+            "m_Underwear": 0,
+            "m_UnderwearFlip": 0,
+            "m_UnderwearWidth": 0.20000000298023224,
+            "m_UnderwearHeight": 0.20000000298023224,
+            "m_Alignment": 1,
+            "m_Anchor": 1,
+            "m_RenderToTexture": 1,
+            "m_RenderOnObject": {
+              "m_FileID": 0,
+              "m_PathID": 1668453833425154694
+            },
+            "m_Resolution": 300,
+            "m_Outline": 1,
+            "m_OutlineSize": 3.0,
+            "m_OutlineColor": {
+              "r": 0.03921568766236305,
+              "g": 0.0303975660353899,
+              "b": 0.021530181169509888,
+              "a": 1.0
+            },
+            "m_AntiAlias": 1,
+            "m_AntiAliasAmount": 0.5,
+            "m_AntiAliasEdge": 0.5,
+            "m_Shadow": 0,
+            "m_ShadowOffset": 1.0,
+            "m_ShadowDepthOffset": 0.0,
+            "m_ShadowColor": {
+              "r": 0.5,
+              "g": 0.5,
+              "b": 0.5,
+              "a": 1.0
+            },
+            "m_ShadowBlur": 0.5,
+            "m_ShadowRenderQueueOffset": -1,
+            "m_RenderQueue": 0,
+            "m_AmbientLightBlend": 0.0,
+            "m_AdditionalMaterials": [],
+            "m_GradientUpperColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_GradientLowerColor": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "m_Cache": 1
+          }
+        },
+        {
+          "path": "RootObject/NonQuestObjects/Mesh/PortraitFrame_mesh",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": -4.371138828673793e-08,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 0.6832072138786316,
+              "z": 1.0
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": 6462311744779973254,
+            "mesh": {
+              "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+              "bundle": "essential_base_global-mesh-0.unity3d",
+              "path_id": 7657364330721484296,
+              "class_id": 43,
+              "name": "Card_InHand_Ability_Portrait_mesh"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": -6018142972142292346,
+            "enabled": true,
+            "materials": [
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": 2072495077498255439,
+                "class_id": 21,
+                "name": "Card_Inhand_Ability_Warlock"
+              },
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": 187033940052215505,
+                "class_id": 21,
+                "name": "Card_InHand_Ability-portrait"
+              }
+            ]
+          }
+        },
+        {
+          "path": "RootObject/NonQuestObjects/Mesh/InHand_Ability_Unique_Dragon",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": 7219399958589272710,
+            "mesh": {
+              "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+              "bundle": "essential_base_global-mesh-0.unity3d",
+              "path_id": 2125096721336278536,
+              "class_id": 43,
+              "name": "Card_InHand_Ability_Dragon_mesh"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": 209481526916084358,
+            "enabled": true,
+            "materials": [
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": 2072495077498255439,
+                "class_id": 21,
+                "name": "Card_Inhand_Ability_Warlock"
+              }
+            ]
+          }
+        },
+        {
+          "path": "RootObject/NonQuestObjects/Mesh/InHand_Ability_Unique_Dragon/InHand_Ability_Unique_Dragon_shadow",
+          "active": true,
+          "transform": {
+            "m_LocalPosition": {
+              "x": -0.0,
+              "y": 0.0,
+              "z": -0.0
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            }
+          },
+          "33": {
+            "class": 33,
+            "id": 2052209788561584774,
+            "mesh": {
+              "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+              "bundle": "essential_base_global-mesh-0.unity3d",
+              "path_id": -8046500073782600184,
+              "class_id": 43,
+              "name": "Card_InHand_Ability_Dragon_Shadow_mesh"
+            }
+          },
+          "23": {
+            "class": 23,
+            "id": 5548832981252633222,
+            "enabled": false,
+            "materials": [
+              {
+                "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+                "bundle": "essential_base_global-material-0.unity3d",
+                "path_id": 4663171085166585188,
+                "class_id": 21,
+                "name": "Card_Inhand_Ability_Warlock_Shadow"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "fonts": [
+    {
+      "name": "Belwe",
+      "path": "/tmp/native-Belwe.ttf",
+      "source_bundle": "essential_base_global-content-0.unity3d",
+      "source_cab": "CAB-705da26e9aa366bdb912f703068dc208",
+      "source_path_id": 1530043098455470824,
+      "source_guid": "9103517c18c60ef4aa9cdfa373669647",
+      "bytes": 54324,
+      "sha256": "54be6d157e5c96d2162abaaac8fbbf515da8ff4a4cb76444beb34914b20819fb"
+    },
+    {
+      "name": "FranklinGothic",
+      "path": "/tmp/native-FranklinGothic.ttf",
+      "source_bundle": "essential_base_global-content-0.unity3d",
+      "source_cab": "CAB-705da26e9aa366bdb912f703068dc208",
+      "source_path_id": -3530185850595028133,
+      "source_guid": "d95142b8aab6d4c9aabdae77d17def8c",
+      "bytes": 154600,
+      "sha256": "4ff6e90c205833e4514d41a05bcb1cdfa10f55201a11e00b2fb2fc53a318bad9"
+    },
+    {
+      "name": "BelweNumbers",
+      "path": "/tmp/native-BelweNumbers.ttf",
+      "source_bundle": "essential_base_global-content-0.unity3d",
+      "source_cab": "CAB-705da26e9aa366bdb912f703068dc208",
+      "source_path_id": 5345836296918725855,
+      "source_guid": "86deda76073bcf341b169b57e63f9ac0",
+      "bytes": 4212,
+      "sha256": "ce1dd5c78925f72e27e629af65c343aec324edd739c06eb2d83b047c07bb2776"
+    }
+  ],
+  "materials": {
+    "bundles": [
+      "essential_base_global-material-0.unity3d",
+      "essential_base_global-texture-0.unity3d",
+      "essential_base_global-texture-2.unity3d"
+    ],
+    "materials": [
+      {
+        "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "bundle": "essential_base_global-material-0.unity3d",
+        "path_id": 2314186381475765690,
+        "class_id": 21,
+        "name": "Gem_Attack_Gem InHand",
+        "textures": [
+          {
+            "property": "_MainTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": -5545765706323899500,
+              "class_id": 28,
+              "name": "GenFX_Gem_Attack_D"
+            }
+          },
+          {
+            "property": "_ScrollingTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": 2539550298164889408,
+              "class_id": 28,
+              "name": "GenFX_clouds03"
+            }
+          }
+        ]
+      },
+      {
+        "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "bundle": "essential_base_global-material-0.unity3d",
+        "path_id": 2348069032301363176,
+        "class_id": 21,
+        "name": "Gem_Mana_Blue",
+        "textures": [
+          {
+            "property": "_MainTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": 8316986825969224176,
+              "class_id": 28,
+              "name": "GenFX_Gem_Mana_D"
+            }
+          },
+          {
+            "property": "_ScrollingTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": 2539550298164889408,
+              "class_id": 28,
+              "name": "GenFX_clouds03"
+            }
+          }
+        ]
+      },
+      {
+        "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "bundle": "essential_base_global-material-0.unity3d",
+        "path_id": -3059571318297379748,
+        "class_id": 21,
+        "name": "Gem_Health_Gem InHand",
+        "textures": [
+          {
+            "property": "_MainTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": -1630012428546301708,
+              "class_id": 28,
+              "name": "GenFX_Gem_Health_D"
+            }
+          },
+          {
+            "property": "_ScrollingTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": 2539550298164889408,
+              "class_id": 28,
+              "name": "GenFX_clouds03"
+            }
+          }
+        ]
+      },
+      {
+        "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "bundle": "essential_base_global-material-0.unity3d",
+        "path_id": 7688142088913455439,
+        "class_id": 21,
+        "name": "GenFX_Card_Inhand_Warlock",
+        "textures": [
+          {
+            "property": "_MainTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": 5474081822157654569,
+              "class_id": 28,
+              "name": "Card_Inhand_Minion_Warlock"
+            }
+          }
+        ]
+      },
+      {
+        "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "bundle": "essential_base_global-material-0.unity3d",
+        "path_id": 1718863763965875126,
+        "class_id": 21,
+        "name": "GenFX_Card_Back_Default_D",
+        "textures": [
+          {
+            "property": "_MainTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": 2050936170184355078,
+              "class_id": 28,
+              "name": "GenFX_Card_Back_Default_D"
+            }
+          }
+        ]
+      },
+      {
+        "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "bundle": "essential_base_global-material-0.unity3d",
+        "path_id": -3969520693805149181,
+        "class_id": 21,
+        "name": "GenFX_Card_InHand_BannerAtlas",
+        "textures": [
+          {
+            "property": "_MainTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": -3034482519384879705,
+              "class_id": 28,
+              "name": "GenFX_Card_InHand_BannerAtlas"
+            }
+          }
+        ]
+      },
+      {
+        "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "bundle": "essential_base_global-material-0.unity3d",
+        "path_id": -6286772062322055216,
+        "class_id": 21,
+        "name": "Card_InHand_BannerAtlasMod2x",
+        "textures": [
+          {
+            "property": "_MainTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": -3034482519384879705,
+              "class_id": 28,
+              "name": "GenFX_Card_InHand_BannerAtlas"
+            }
+          },
+          {
+            "property": "_SecondTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": 1746783104831757442,
+              "class_id": 28,
+              "name": "GenFX_Set1_Icon"
+            }
+          }
+        ]
+      },
+      {
+        "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "bundle": "essential_base_global-material-0.unity3d",
+        "path_id": -2270729164992468254,
+        "class_id": 21,
+        "name": "Card_InHand_Ally-Card_InPlay_AllyPortrait",
+        "textures": [
+          {
+            "property": "_MainTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": -1179172249994696049,
+              "class_id": 28,
+              "name": "GenFX_white32x32"
+            }
+          },
+          {
+            "property": "_SecondTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": -3034482519384879705,
+              "class_id": 28,
+              "name": "GenFX_Card_InHand_BannerAtlas"
+            }
+          }
+        ]
+      },
+      {
+        "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "bundle": "essential_base_global-material-0.unity3d",
+        "path_id": 4456149407965610703,
+        "class_id": 21,
+        "name": "Card_Inhand_Warlock_transparent",
+        "textures": [
+          {
+            "property": "_MainTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": 5474081822157654569,
+              "class_id": 28,
+              "name": "Card_Inhand_Minion_Warlock"
+            }
+          }
+        ]
+      },
+      {
+        "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "bundle": "essential_base_global-material-0.unity3d",
+        "path_id": 6977783140861467241,
+        "class_id": 21,
+        "name": "Card_Inhand_RarityGem_Legendary",
+        "textures": [
+          {
+            "property": "_MainTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": 1967163853540929514,
+              "class_id": 28,
+              "name": "GenFX_RarityGems"
+            }
+          },
+          {
+            "property": "_ScrollingTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": 2539550298164889408,
+              "class_id": 28,
+              "name": "GenFX_clouds03"
+            }
+          }
+        ]
+      },
+      {
+        "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "bundle": "essential_base_global-material-0.unity3d",
+        "path_id": 2072495077498255439,
+        "class_id": 21,
+        "name": "Card_Inhand_Ability_Warlock",
+        "textures": [
+          {
+            "property": "_MainTex",
+            "texture": {
+              "cab": "CAB-cfdc5301ac0b17c5a76ad477fba38b57",
+              "bundle": "essential_base_global-texture-0.unity3d",
+              "path_id": 3778172286624364081,
+              "class_id": 28,
+              "name": "Card_Inhand_Ability_Warlock"
+            }
+          }
+        ]
+      },
+      {
+        "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "bundle": "essential_base_global-material-0.unity3d",
+        "path_id": -2777972641253720241,
+        "class_id": 21,
+        "name": "Card_InHand_Ability_BannerAtlasMod2x",
+        "textures": [
+          {
+            "property": "_MainTex",
+            "texture": {
+              "cab": "CAB-cfdc5301ac0b17c5a76ad477fba38b57",
+              "bundle": "essential_base_global-texture-0.unity3d",
+              "path_id": 3778172286624364081,
+              "class_id": 28,
+              "name": "Card_Inhand_Ability_Warlock"
+            }
+          },
+          {
+            "property": "_SecondTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": 1746783104831757442,
+              "class_id": 28,
+              "name": "GenFX_Set1_Icon"
+            }
+          }
+        ]
+      },
+      {
+        "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "bundle": "essential_base_global-material-0.unity3d",
+        "path_id": 187033940052215505,
+        "class_id": 21,
+        "name": "Card_InHand_Ability-portrait",
+        "textures": [
+          {
+            "property": "_MainTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": -1179172249994696049,
+              "class_id": 28,
+              "name": "GenFX_white32x32"
+            }
+          },
+          {
+            "property": "_SecondTex",
+            "texture": {
+              "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+              "bundle": "essential_base_global-texture-2.unity3d",
+              "path_id": -3034482519384879705,
+              "class_id": 28,
+              "name": "GenFX_Card_InHand_BannerAtlas"
+            }
+          }
+        ]
+      },
+      {
+        "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "bundle": "essential_base_global-material-0.unity3d",
+        "path_id": 4663171085166585188,
+        "class_id": 21,
+        "name": "Card_Inhand_Ability_Warlock_Shadow",
+        "textures": [
+          {
+            "property": "_MainTex",
+            "texture": {
+              "cab": "CAB-cfdc5301ac0b17c5a76ad477fba38b57",
+              "bundle": "essential_base_global-texture-0.unity3d",
+              "path_id": 3778172286624364081,
+              "class_id": 28,
+              "name": "Card_Inhand_Ability_Warlock"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "dynamic_frame_assignments": {
+    "source": "CardColorSwitcher MonoBehaviour in essential_base_global-prefab-0.unity3d",
+    "source_root_guid": "b30c8322821f1524d9e08a59e78e2c85",
+    "neutral_minion": {
+      "property": "minionCardTextures[0]",
+      "value": "Card_Inhand_Generic.tif:8ec60e9cd2501ba4aa19980bade1163a",
+      "source_bundle": "essential_base_global-texture-3.unity3d",
+      "source_path_id": 4604725608518819955,
+      "desktop_file": "/home/craig-middleton/Desktop/Hearthstone Export/Texture2D/Card_Inhand_Generic.png",
+      "desktop_sha256": "1c530c4ca2f0bedc24b4f259f328a2022880b8512979d6dc11ea10c132e04fcc"
+    },
+    "mage_spell": {
+      "property": "spellCardTextures[5]",
+      "value": "Card_Inhand_Ability_Mage.tif:6cf6332645dc19c41b038c238d905f7b"
+    }
+  }
+}

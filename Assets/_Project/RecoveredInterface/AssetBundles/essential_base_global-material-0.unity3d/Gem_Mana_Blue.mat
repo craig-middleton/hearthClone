@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Gem_Mana_Blue
+  m_Shader: {fileID: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties:
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _MainTex:
+        m_Texture: {fileID: 2800000, guid: b22c27333d4246341a0ca6eab0b97433, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _ScrollingTex:
+        m_Texture: {fileID: 2800000, guid: 3b2578bf3eb0af24c9172ddd37c32921, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: {}
+    m_Floats:
+      _Blend: 0.5
+      _EmissionLM: 0
+      _Intensity: 1
+      _LRMRimIntensity: 0.16417909
+      _LRMRimPower: 0.9471641
+      _LightingBlend: 0
+      _Parallax: 0.03875
+      _Power: 2
+      _ReflToRefr: 0.5769231
+      _ScaleX: 1
+      _ScaleY: 1
+      _Shininess: 0.1458209
+      _XSpeed: 5
+      _YSpeed: 0.2
+    m_Colors:
+      _Color: {r: 0.62745094, g: 1, b: 0.9844338, a: 1}
+      _ColorEmissive: {r: 1, g: 1, b: 1, a: 1}
+      _Fade: {r: 1, g: 1, b: 1, a: 1}
+      _ReflectColor: {r: 1, g: 1, b: 1, a: 0.89411765}
+      _SpecColor: {r: 1, g: 1, b: 1, a: 1}
+      _TintColor: {r: 1, g: 1, b: 1, a: 1}
+      _tint: {r: 0.109803915, g: 0.41232172, b: 1, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 0

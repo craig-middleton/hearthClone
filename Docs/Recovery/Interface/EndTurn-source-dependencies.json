@@ -1,0 +1,1047 @@
+{
+  "root_guid": "313ebd8bcb770a944be3633ad928096b",
+  "root_bundle": "essential_base_global-prefab-0.unity3d",
+  "hierarchy_objects": 18,
+  "visual_dependencies": [
+    {
+      "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+      "bundle": "essential_base_global-mesh-0.unity3d",
+      "path_id": -5618430085840305839,
+      "class_id": 43,
+      "name": "Button_EndTurn"
+    },
+    {
+      "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+      "bundle": "essential_base_global-material-0.unity3d",
+      "path_id": -5505537606632238051,
+      "class_id": 21,
+      "name": "Button_EndTurn"
+    },
+    {
+      "cab": "CAB-66e7137de3b79380e05eb711ae004556",
+      "bundle": "essential_base_global-mesh-0.unity3d",
+      "path_id": 7971688849340315873,
+      "class_id": 43,
+      "name": "HighlightRenderPlane360"
+    },
+    {
+      "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+      "bundle": "essential_base_global-material-0.unity3d",
+      "path_id": -5754060652391334834,
+      "class_id": 21,
+      "name": "HighlightGreenForEndTurnButton"
+    },
+    {
+      "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+      "bundle": "essential_base_global-material-0.unity3d",
+      "path_id": -836530664780916222,
+      "class_id": 21,
+      "name": "HighlightWhiteForEndTurnButton"
+    },
+    {
+      "cab": "CAB-cfdc5301ac0b17c5a76ad477fba38b57",
+      "bundle": "essential_base_global-texture-0.unity3d",
+      "path_id": -2803162062817682347,
+      "class_id": 28,
+      "name": "Board_EndTurnButton"
+    },
+    {
+      "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+      "bundle": "essential_base_global-texture-2.unity3d",
+      "path_id": 575926003976946273,
+      "class_id": 28,
+      "name": "GenFX_Lines"
+    },
+    {
+      "cab": "CAB-e02b69b1bbe893a6736884865127e637",
+      "bundle": "essential_base_global-texture-1.unity3d",
+      "path_id": -7621130465623644678,
+      "class_id": 28,
+      "name": "EndTurnHighlightMask"
+    }
+  ],
+  "materials": [
+    {
+      "material": {
+        "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "bundle": "essential_base_global-material-0.unity3d",
+        "path_id": -5505537606632238051,
+        "class_id": 21,
+        "name": "Button_EndTurn"
+      },
+      "properties": {
+        "m_TexEnvs": [
+          {
+            "first": "_MainTex",
+            "second": {
+              "m_Texture": {
+                "m_FileID": 2,
+                "m_PathID": -2803162062817682347
+              },
+              "m_Scale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "m_Offset": {
+                "x": 0.0,
+                "y": 0.0
+              }
+            }
+          }
+        ],
+        "m_Ints": [],
+        "m_Floats": [
+          {
+            "first": "_Shininess",
+            "second": 0.078125
+          }
+        ],
+        "m_Colors": [
+          {
+            "first": "_Color",
+            "second": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            }
+          },
+          {
+            "first": "_SpecColor",
+            "second": {
+              "r": 0.5,
+              "g": 0.5,
+              "b": 0.5,
+              "a": 1.0
+            }
+          }
+        ]
+      },
+      "textures": [
+        {
+          "property": "_MainTex",
+          "texture": {
+            "cab": "CAB-cfdc5301ac0b17c5a76ad477fba38b57",
+            "bundle": "essential_base_global-texture-0.unity3d",
+            "path_id": -2803162062817682347,
+            "class_id": 28,
+            "name": "Board_EndTurnButton"
+          }
+        }
+      ]
+    },
+    {
+      "material": {
+        "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "bundle": "essential_base_global-material-0.unity3d",
+        "path_id": -5754060652391334834,
+        "class_id": 21,
+        "name": "HighlightGreenForEndTurnButton"
+      },
+      "properties": {
+        "m_TexEnvs": [
+          {
+            "first": "_FlareTex",
+            "second": {
+              "m_Texture": {
+                "m_FileID": 5,
+                "m_PathID": 575926003976946273
+              },
+              "m_Scale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "m_Offset": {
+                "x": 0.0,
+                "y": 0.0
+              }
+            }
+          },
+          {
+            "first": "_MainTex",
+            "second": {
+              "m_Texture": {
+                "m_FileID": 1,
+                "m_PathID": -7621130465623644678
+              },
+              "m_Scale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "m_Offset": {
+                "x": 0.0,
+                "y": 0.0
+              }
+            }
+          }
+        ],
+        "m_Ints": [],
+        "m_Floats": [
+          {
+            "first": "_ColorAlphaWeight",
+            "second": 1.0
+          },
+          {
+            "first": "_ColorIntensity",
+            "second": 1.7999999523162842
+          },
+          {
+            "first": "_FlareIntensity",
+            "second": 0.7200000286102295
+          },
+          {
+            "first": "_Intensity",
+            "second": 1.0
+          },
+          {
+            "first": "_MoteIntensity",
+            "second": 1.600000023841858
+          },
+          {
+            "first": "_Seed",
+            "second": 0.0
+          },
+          {
+            "first": "_TexCoordTwoWeight",
+            "second": 1.0
+          },
+          {
+            "first": "_UflareScale",
+            "second": 0.4000000059604645
+          },
+          {
+            "first": "_Umote2Scale",
+            "second": 3.0
+          },
+          {
+            "first": "_UmoteScale",
+            "second": 10.0
+          },
+          {
+            "first": "_Uscale",
+            "second": 1.8700000047683716
+          },
+          {
+            "first": "_VflareScale",
+            "second": 0.4000000059604645
+          },
+          {
+            "first": "_VflareSpeed",
+            "second": 4.670000076293945
+          },
+          {
+            "first": "_Vmote2Scale",
+            "second": 0.4000000059604645
+          },
+          {
+            "first": "_Vmote2Speed",
+            "second": 1.5
+          },
+          {
+            "first": "_VmoteScale",
+            "second": 1.0
+          },
+          {
+            "first": "_VmoteSpeed",
+            "second": 8.0
+          },
+          {
+            "first": "_Vscale",
+            "second": 0.6000000238418579
+          },
+          {
+            "first": "_Vshift",
+            "second": 0.0
+          },
+          {
+            "first": "_Vspeed",
+            "second": 4.0
+          }
+        ],
+        "m_Colors": [
+          {
+            "first": "_Color",
+            "second": {
+              "r": 0.05098039284348488,
+              "g": 0.8117647171020508,
+              "b": 0.0,
+              "a": 1.0
+            }
+          },
+          {
+            "first": "_Colorize",
+            "second": {
+              "r": 0.25882354378700256,
+              "g": 0.729411780834198,
+              "b": 0.1882352977991104,
+              "a": 1.0
+            }
+          },
+          {
+            "first": "_HiColor",
+            "second": {
+              "r": 0.37254902720451355,
+              "g": 0.729411780834198,
+              "b": 0.3294117748737335,
+              "a": 1.0
+            }
+          }
+        ]
+      },
+      "textures": [
+        {
+          "property": "_FlareTex",
+          "texture": {
+            "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+            "bundle": "essential_base_global-texture-2.unity3d",
+            "path_id": 575926003976946273,
+            "class_id": 28,
+            "name": "GenFX_Lines"
+          }
+        },
+        {
+          "property": "_MainTex",
+          "texture": {
+            "cab": "CAB-e02b69b1bbe893a6736884865127e637",
+            "bundle": "essential_base_global-texture-1.unity3d",
+            "path_id": -7621130465623644678,
+            "class_id": 28,
+            "name": "EndTurnHighlightMask"
+          }
+        }
+      ]
+    },
+    {
+      "material": {
+        "cab": "CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "bundle": "essential_base_global-material-0.unity3d",
+        "path_id": -836530664780916222,
+        "class_id": 21,
+        "name": "HighlightWhiteForEndTurnButton"
+      },
+      "properties": {
+        "m_TexEnvs": [
+          {
+            "first": "_FlareTex",
+            "second": {
+              "m_Texture": {
+                "m_FileID": 5,
+                "m_PathID": 575926003976946273
+              },
+              "m_Scale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "m_Offset": {
+                "x": 0.0,
+                "y": 0.0
+              }
+            }
+          },
+          {
+            "first": "_MainTex",
+            "second": {
+              "m_Texture": {
+                "m_FileID": 1,
+                "m_PathID": -7621130465623644678
+              },
+              "m_Scale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "m_Offset": {
+                "x": 0.0,
+                "y": 0.0
+              }
+            }
+          }
+        ],
+        "m_Ints": [],
+        "m_Floats": [
+          {
+            "first": "_ColorAlphaWeight",
+            "second": 1.0
+          },
+          {
+            "first": "_ColorIntensity",
+            "second": 1.5
+          },
+          {
+            "first": "_FlareIntensity",
+            "second": 0.4000000059604645
+          },
+          {
+            "first": "_Intensity",
+            "second": 1.2999999523162842
+          },
+          {
+            "first": "_MoteIntensity",
+            "second": 1.0
+          },
+          {
+            "first": "_Seed",
+            "second": 0.0
+          },
+          {
+            "first": "_TexCoordTwoWeight",
+            "second": 1.0
+          },
+          {
+            "first": "_UflareScale",
+            "second": 0.10000000149011612
+          },
+          {
+            "first": "_Umote2Scale",
+            "second": 3.0
+          },
+          {
+            "first": "_UmoteScale",
+            "second": 5.550000190734863
+          },
+          {
+            "first": "_Uscale",
+            "second": 1.8700000047683716
+          },
+          {
+            "first": "_VflareScale",
+            "second": 0.14000000059604645
+          },
+          {
+            "first": "_VflareSpeed",
+            "second": 2.700000047683716
+          },
+          {
+            "first": "_Vmote2Scale",
+            "second": 0.4000000059604645
+          },
+          {
+            "first": "_Vmote2Speed",
+            "second": 1.5
+          },
+          {
+            "first": "_VmoteScale",
+            "second": 0.4000000059604645
+          },
+          {
+            "first": "_VmoteSpeed",
+            "second": 1.4500000476837158
+          },
+          {
+            "first": "_Vscale",
+            "second": 0.6000000238418579
+          },
+          {
+            "first": "_Vshift",
+            "second": 0.0
+          },
+          {
+            "first": "_Vspeed",
+            "second": 4.0
+          }
+        ],
+        "m_Colors": [
+          {
+            "first": "_Color",
+            "second": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            }
+          },
+          {
+            "first": "_Colorize",
+            "second": {
+              "r": 0.9921568632125854,
+              "g": 0.9921568632125854,
+              "b": 0.9921568632125854,
+              "a": 1.0
+            }
+          },
+          {
+            "first": "_HiColor",
+            "second": {
+              "r": 0.9960784316062927,
+              "g": 0.9960784316062927,
+              "b": 0.9960784316062927,
+              "a": 1.0
+            }
+          }
+        ]
+      },
+      "textures": [
+        {
+          "property": "_FlareTex",
+          "texture": {
+            "cab": "CAB-572cbaceb2612afe464bd92ebbf0736a",
+            "bundle": "essential_base_global-texture-2.unity3d",
+            "path_id": 575926003976946273,
+            "class_id": 28,
+            "name": "GenFX_Lines"
+          }
+        },
+        {
+          "property": "_MainTex",
+          "texture": {
+            "cab": "CAB-e02b69b1bbe893a6736884865127e637",
+            "bundle": "essential_base_global-texture-1.unity3d",
+            "path_id": -7621130465623644678,
+            "class_id": 28,
+            "name": "EndTurnHighlightMask"
+          }
+        }
+      ]
+    }
+  ],
+  "animation_states": [
+    {
+      "name": "ENDTURN_NO_MORE_PLAYS",
+      "type": 13,
+      "animations": [
+        {
+          "object": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -1658026854451039644,
+            "class_id": 1,
+            "name": "ButtonMesh"
+          },
+          "clip": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": 4518350029548857871,
+            "class_id": 74,
+            "name": "ENDTURN_NO_MORE_PLAYS"
+          },
+          "layer": 0
+        }
+      ]
+    },
+    {
+      "name": "ENDTURN_NMP_2_WAITING",
+      "type": 20,
+      "animations": [
+        {
+          "object": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -1658026854451039644,
+            "class_id": 1,
+            "name": "ButtonMesh"
+          },
+          "clip": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -3157746835577591102,
+            "class_id": 74,
+            "name": "ENDTURN_NMP_2_WAITING"
+          },
+          "layer": 0
+        },
+        {
+          "object": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -1658026854451039644,
+            "class_id": 1,
+            "name": "ButtonMesh"
+          },
+          "clip": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": 8568900949155141838,
+            "class_id": 74,
+            "name": "ENDTURN_WAITING_sound"
+          },
+          "layer": 1
+        }
+      ]
+    },
+    {
+      "name": "ENDTURN_WAITING_TIMER",
+      "type": 23,
+      "animations": [
+        {
+          "object": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -1658026854451039644,
+            "class_id": 1,
+            "name": "ButtonMesh"
+          },
+          "clip": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": 1625465080754622734,
+            "class_id": 74,
+            "name": "ENDTURN_YOUR_TIMER_DONE"
+          },
+          "layer": 0
+        },
+        {
+          "object": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -7841752709053336988,
+            "class_id": 1,
+            "name": "EndTurnButton"
+          },
+          "clip": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": 3041283623532419900,
+            "class_id": 74,
+            "name": "ENDTURN_CollisionDisable"
+          },
+          "layer": 0
+        }
+      ]
+    },
+    {
+      "name": "ENDTURN_YOUR_TURN",
+      "type": 14,
+      "animations": [
+        {
+          "object": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -1658026854451039644,
+            "class_id": 1,
+            "name": "ButtonMesh"
+          },
+          "clip": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": 5508100314535807130,
+            "class_id": 74,
+            "name": "ENDTURN_YOUR_TURN"
+          },
+          "layer": 0
+        },
+        {
+          "object": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -1658026854451039644,
+            "class_id": 1,
+            "name": "ButtonMesh"
+          },
+          "clip": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -2015027319562924382,
+            "class_id": 74,
+            "name": "ENDTURN_YOUR_TURN_sound"
+          },
+          "layer": 1
+        }
+      ]
+    },
+    {
+      "name": "ENDTURN_WAITING",
+      "type": 15,
+      "animations": [
+        {
+          "object": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -1658026854451039644,
+            "class_id": 1,
+            "name": "ButtonMesh"
+          },
+          "clip": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -1455078728422267560,
+            "class_id": 74,
+            "name": "ENDTURN_WAITING"
+          },
+          "layer": 0
+        },
+        {
+          "object": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -1658026854451039644,
+            "class_id": 1,
+            "name": "ButtonMesh"
+          },
+          "clip": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": 8568900949155141838,
+            "class_id": 74,
+            "name": "ENDTURN_WAITING_sound"
+          },
+          "layer": 1
+        }
+      ]
+    },
+    {
+      "name": "ENDTURN_YOUR_TURN_EXPLODE_FX",
+      "type": 37,
+      "animations": [
+        {
+          "object": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -3077616787339791772,
+            "class_id": 1,
+            "name": "ButtonContainer"
+          },
+          "clip": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": 1625465080754622734,
+            "class_id": 74,
+            "name": "ENDTURN_YOUR_TIMER_DONE"
+          },
+          "layer": 0
+        }
+      ]
+    },
+    {
+      "name": "EXTRATURN_YOUR_TURN",
+      "type": 41,
+      "animations": [
+        {
+          "object": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -1658026854451039644,
+            "class_id": 1,
+            "name": "ButtonMesh"
+          },
+          "clip": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -2015027319562924382,
+            "class_id": 74,
+            "name": "ENDTURN_YOUR_TURN_sound"
+          },
+          "layer": 1
+        }
+      ]
+    },
+    {
+      "name": "EXTRATURN_NO_MORE_PLAYS",
+      "type": 40,
+      "animations": [
+        {
+          "object": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -1658026854451039644,
+            "class_id": 1,
+            "name": "ButtonMesh"
+          },
+          "clip": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": 4518350029548857871,
+            "class_id": 74,
+            "name": "ENDTURN_NO_MORE_PLAYS"
+          },
+          "layer": 0
+        }
+      ]
+    },
+    {
+      "name": "WAITING_TO_EXTRATURN",
+      "type": 42,
+      "animations": [
+        {
+          "object": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -1658026854451039644,
+            "class_id": 1,
+            "name": "ButtonMesh"
+          },
+          "clip": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": 5508100314535807130,
+            "class_id": 74,
+            "name": "ENDTURN_YOUR_TURN"
+          },
+          "layer": 0
+        },
+        {
+          "object": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -1658026854451039644,
+            "class_id": 1,
+            "name": "ButtonMesh"
+          },
+          "clip": {
+            "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+            "bundle": "essential_base_global-prefab-0.unity3d",
+            "path_id": -2015027319562924382,
+            "class_id": 74,
+            "name": "ENDTURN_YOUR_TURN_sound"
+          },
+          "layer": 1
+        }
+      ]
+    }
+  ],
+  "clips": [
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": 3041283623532419900,
+      "class_id": 74,
+      "name": "ENDTURN_CollisionDisable",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    },
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": 7156919352994214614,
+      "class_id": 74,
+      "name": "ENDTURN_PRESSED_DOWN",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    },
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": -2990439347017841127,
+      "class_id": 74,
+      "name": "ENDTURN_PRESSED_UP",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    },
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": 3293482956305375136,
+      "class_id": 74,
+      "name": "ENDTURN_TIMER_RELEASE",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    },
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": 5508100314535807130,
+      "class_id": 74,
+      "name": "ENDTURN_YOUR_TURN",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    },
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": -3157746835577591102,
+      "class_id": 74,
+      "name": "ENDTURN_NMP_2_WAITING",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    },
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": 6149372857957571803,
+      "class_id": 74,
+      "name": "ENDTURN_RED",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    },
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": 4518350029548857871,
+      "class_id": 74,
+      "name": "ENDTURN_NO_MORE_PLAYS",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    },
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": -1455078728422267560,
+      "class_id": 74,
+      "name": "ENDTURN_WAITING",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    },
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": -2247707629800212864,
+      "class_id": 74,
+      "name": "ENDTURN_PRESSED",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    },
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": -4728022676703068008,
+      "class_id": 74,
+      "name": "ENDTURN_YOUR_TURN_MOUSE_OVER",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    },
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": -8091663509966770855,
+      "class_id": 74,
+      "name": "ENDTURN_NO_MORE_PLAYS_MOUSE_OVER",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    },
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": -7099034821582898367,
+      "class_id": 74,
+      "name": "ENDTURN_YT_MOUSE_OVER_2_YT",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    },
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": 1646776668571919440,
+      "class_id": 74,
+      "name": "ENDTURN_NMP_MOUSE_OVER_2_NMP",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    },
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": -2015027319562924382,
+      "class_id": 74,
+      "name": "ENDTURN_YOUR_TURN_sound",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    },
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": -4599850019049545807,
+      "class_id": 74,
+      "name": "ENDTURN_WAITING_2_NMP",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    },
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": 8568900949155141838,
+      "class_id": 74,
+      "name": "ENDTURN_WAITING_sound",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    },
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": 1625465080754622734,
+      "class_id": 74,
+      "name": "ENDTURN_YOUR_TIMER_DONE",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    },
+    {
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "bundle": "essential_base_global-prefab-0.unity3d",
+      "path_id": -787451561820097624,
+      "class_id": 74,
+      "name": "ENDTURN_NEXT_TURN",
+      "length": null,
+      "events": [],
+      "curves": [],
+      "clip_data_keys": [
+        "m_Name"
+      ]
+    }
+  ],
+  "bundles": [
+    "essential_base_global-material-0.unity3d",
+    "essential_base_global-mesh-0.unity3d",
+    "essential_base_global-prefab-0.unity3d",
+    "essential_base_global-texture-0.unity3d",
+    "essential_base_global-texture-1.unity3d",
+    "essential_base_global-texture-2.unity3d"
+  ]
+}

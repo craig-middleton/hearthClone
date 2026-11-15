@@ -1,0 +1,1515 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AllyInHand_Construction
+  m_Legacy: 1
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.35135496, y: 0.61363643, z: -0.61363643, w: -0.35135496}
+        inSlope: {x: -3.602135, y: -1.772375, z: 4.4221687, w: -5.621087}
+        outSlope: {x: -3.602135, y: -1.772375, z: 4.4221687, w: -5.621087}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.016666668
+        value: {x: -0.41139054, y: 0.58409685, z: -0.5399336, w: -0.44503975}
+        inSlope: {x: -3.1916854, y: -2.2264657, z: 4.587825, w: -5.5378494}
+        outSlope: {x: -3.1916854, y: -2.2264657, z: 4.587825, w: -5.5378494}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.1
+        value: {x: -0.50435376, y: 0.22274642, z: -0.13649918, w: -0.82303053}
+        inSlope: {x: 0.85245883, y: -6.1306477, z: 4.472411, w: -2.9233434}
+        outSlope: {x: 0.85245883, y: -6.1306477, z: 4.472411, w: -2.9233434}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.18333334
+        value: {x: -0.3199838, y: -0.35763094, z: 0.13193701, w: -0.8673541}
+        inSlope: {x: 3.0594869, y: -7.1048756, z: 1.6722493, w: 2.0551784}
+        outSlope: {x: 3.0594869, y: -7.1048756, z: 1.6722493, w: 2.0551784}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.26666668
+        value: {x: -0.078314364, y: -0.8550088, z: 0.13542005, w: -0.49445754}
+        inSlope: {x: 2.2159245, y: -4.1909213, z: -1.383085, w: 6.5171175}
+        outSlope: {x: 2.2159245, y: -4.1909213, z: -1.383085, w: 6.5171175}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.31666672
+        value: {x: -0.0051313834, y: -0.9906571, z: 0.03892289, w: -0.13060287}
+        inSlope: {x: 0.61001545, y: -1.1143291, z: -2.2733507, w: 7.7509894}
+        outSlope: {x: 0.61001545, y: -1.1143291, z: -2.2733507, w: 7.7509894}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.33333334
+        value: {x: -0, y: -1, z: -0, w: -3.1391647E-07}
+        inSlope: {x: 0.30788386, y: -0.5605761, z: -2.3353798, w: 7.8361745}
+        outSlope: {x: 0.30788386, y: -0.5605761, z: -2.3353798, w: 7.8361745}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/Gem_Mana
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: RootObject
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.33333334
+        value: {x: -0.5622075, y: 0.19242905, z: 0.26024812, w: 0.76102865}
+        inSlope: {x: 2.6418414, y: -2.0345771, z: -0.88060963, w: 2.5649621}
+        outSlope: {x: 2.6418414, y: -2.0345771, z: -0.88060963, w: 2.5649621}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.3666667
+        value: {x: -0.47046095, y: 0.12715788, z: 0.22746935, w: 0.8430629}
+        inSlope: {x: 2.9639082, y: -1.7954836, z: -1.1800761, w: 2.243187}
+        outSlope: {x: 2.9639082, y: -1.7954836, z: -1.1800761, w: 2.243187}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.48333347
+        value: {x: -0.06355111, y: 0.00213705, z: 0.03284742, w: 0.99743557}
+        inSlope: {x: 3.7991095, y: -0.25312465, z: -1.9579954, w: 0.30708832}
+        outSlope: {x: 3.7991095, y: -0.25312465, z: -1.9579954, w: 0.30708832}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.5
+        value: {x: 0, y: 0, z: 0, w: 1}
+        inSlope: {x: 3.8130977, y: -0.12822405, z: -1.9708612, w: 0.15386707}
+        outSlope: {x: 3.8130977, y: -0.12822405, z: -1.9708612, w: 0.15386707}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/CardHand_Ally_Discription_mesh
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.46666667
+        value: {x: -0.39614806, y: 0.2219834, z: -0.063397326, w: 0.8886905}
+        inSlope: {x: 3.3084073, y: -1.0242927, z: -0.5312142, w: 1.5549432}
+        outSlope: {x: 3.3084073, y: -1.0242927, z: -0.5312142, w: 1.5549432}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.51666665
+        value: {x: -0.22616753, y: 0.15502968, z: -0.07172317, w: 0.9589942}
+        inSlope: {x: 3.4810944, y: -1.7970297, z: 0.3802994, w: 1.1359076}
+        outSlope: {x: 3.4810944, y: -1.7970297, z: 0.3802994, w: 1.1359076}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.5666666
+        value: {x: -0.05424326, y: 0.044660207, z: -0.026212055, w: 0.9971841}
+        inSlope: {x: 3.3147645, y: -2.5712008, z: 1.4133021, w: 0.32840252}
+        outSlope: {x: 3.3147645, y: -2.5712008, z: 1.4133021, w: 0.32840252}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.5833333
+        value: {x: 0, y: 0, z: 0, w: 1}
+        inSlope: {x: 3.254587, y: -2.6796055, z: 1.5727192, w: 0.16895369}
+        outSlope: {x: 3.254587, y: -2.6796055, z: 1.5727192, w: 0.16895369}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/Gem_Attack
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.6
+        value: {x: -0.4682353, y: -0.4155732, z: 0.16109374, w: 0.762957}
+        inSlope: {x: 3.2767525, y: 1.1022942, z: 0.8234041, w: 2.2445498}
+        outSlope: {x: 3.2767525, y: 1.1022942, z: 0.8234041, w: 2.2445498}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.6333333
+        value: {x: -0.35670447, y: -0.3716849, z: 0.18071418, w: 0.8378273}
+        inSlope: {x: 3.4470057, y: 1.7517836, z: 0.10895232, w: 2.2133627}
+        outSlope: {x: 3.4470057, y: 1.7517836, z: 0.10895232, w: 2.2133627}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.73333323
+        value: {x: -0.037863716, y: -0.07044229, z: 0.047031287, w: 0.9956868}
+        inSlope: {x: 2.4597716, y: 4.0912447, z: -2.642683, w: 0.5003871}
+        outSlope: {x: 2.4597716, y: 4.0912447, z: -2.642683, w: 0.5003871}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.75
+        value: {x: 0, y: 0, z: 0, w: 1}
+        inSlope: {x: 2.2718089, y: 4.226511, z: -2.8218598, w: 0.25878865}
+        outSlope: {x: 2.2718089, y: 4.226511, z: -2.8218598, w: 0.25878865}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/Gem_Health
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.8333333
+        value: {x: 0.30305615, y: -0.033531558, z: -0.16953184, w: 0.9371721}
+        inSlope: {x: -1.9944389, y: -0.18965381, z: 0.8448734, w: 0.74403834}
+        outSlope: {x: -1.9944389, y: -0.18965381, z: 0.8448734, w: 0.74403834}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.9666665
+        value: {x: 0.033040885, y: -0.010376896, z: -0.022903807, w: 0.9991377}
+        inSlope: {x: -1.9949174, y: 0.5752288, z: 1.349456, w: 0.10236901}
+        outSlope: {x: -1.9949174, y: 0.5752288, z: 1.349456, w: 0.10236901}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.98333335
+        value: {x: 0, y: 0, z: 0, w: 1}
+        inSlope: {x: -1.9824337, y: 0.62260765, z: 1.374215, w: 0.051737517}
+        outSlope: {x: -1.9824337, y: 0.62260765, z: 1.374215, w: 0.051737517}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/CardHand_Ally_Portrait_mesh
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1.0833334
+        value: {x: 0, y: 0, z: 0.46803018, w: 0.8837125}
+        inSlope: {x: 0, y: 0, z: -2.6148112, w: 1.3043344}
+        outSlope: {x: 0, y: 0, z: -2.6148112, w: 1.3043344}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.1666666
+        value: {x: 0, y: 0, z: 0.24113032, w: 0.9704927}
+        inSlope: {x: 0, y: 0, z: -2.835011, w: 0.70439166}
+        outSlope: {x: 0, y: 0, z: -2.835011, w: 0.70439166}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.25
+        value: {x: 0, y: 0, z: 0, w: 1}
+        inSlope: {x: 0, y: 0, z: -2.9212077, w: 0.0711532}
+        outSlope: {x: 0, y: 0, z: -2.9212077, w: 0.0711532}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/CardHand_Ally_NameBanner_mesh
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1.4
+        value: {x: -0.4552424, y: -0.13496837, z: 0.072923265, w: 0.87705195}
+        inSlope: {x: 2.3199933, y: 0.074989274, z: 0.3144294, w: 1.1254452}
+        outSlope: {x: 2.3199933, y: 0.074989274, z: 0.3144294, w: 1.1254452}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.5166665
+        value: {x: -0.16724828, y: -0.07810667, z: 0.058672633, w: 0.9810631}
+        inSlope: {x: 2.5498319, y: 0.9463335, z: -0.6210992, w: 0.54616624}
+        outSlope: {x: 2.5498319, y: 0.9463335, z: -0.6210992, w: 0.54616624}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.5833334
+        value: {x: 0, y: 0, z: 0, w: 1}
+        inSlope: {x: 2.4589908, y: 1.3287805, z: -1.0648563, w: 0.0745966}
+        outSlope: {x: 2.4589908, y: 1.3287805, z: -1.0648563, w: 0.0745966}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/Card_InHand_Ally_RarityGem_mesh
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.33333334
+        value: {x: 0, y: 0, z: 0, w: 1}
+        inSlope: {x: 0.86216587, y: 0.10197056, z: 0.96387213, w: -0.014022577}
+        outSlope: {x: 0.86216587, y: 0.10197056, z: 0.96387213, w: -0.014022577}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.4500001
+        value: {x: 0.0885689, y: 0.0020410363, z: 0.08152109, w: 0.99272645}
+        inSlope: {x: 0.35432777, y: -0.039144393, z: 0.01665248, w: -0.031084988}
+        outSlope: {x: 0.35432777, y: -0.039144393, z: 0.01665248, w: -0.031084988}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.48333347
+        value: {x: 0.0708621, y: 0.0039801346, z: 0.07455947, w: 0.99468774}
+        inSlope: {x: -2.5308752, y: 0.24309075, z: -0.5999047, w: 0.16124193}
+        outSlope: {x: -2.5308752, y: 0.24309075, z: -0.5999047, w: 0.16124193}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.5000001
+        value: {x: 0.0052264826, y: 0.010000225, z: 0.059967116, w: 0.9981366}
+        inSlope: {x: -3.9081771, y: 0.28822002, z: -0.9156858, w: 0.07444746}
+        outSlope: {x: -3.9081771, y: 0.28822002, z: -0.9156858, w: 0.07444746}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.51666677
+        value: {x: -0.059410352, y: 0.013587459, z: 0.04403664, w: 0.9971693}
+        inSlope: {x: -2.0503213, y: 0.112219594, z: -0.89737767, w: -0.020332951}
+        outSlope: {x: -2.0503213, y: 0.112219594, z: -0.89737767, w: -0.020332951}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.5500001
+        value: {x: -0.043195188, y: 0.0130408425, z: 0.019626943, w: 0.9987887}
+        inSlope: {x: 0.6183241, y: -0.12315461, z: 0.014024317, w: 0.033736855}
+        outSlope: {x: 0.6183241, y: -0.12315461, z: 0.014024317, w: 0.033736855}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.5666667
+        value: {x: -0.042506713, y: 0.009635725, z: 0.030522032, w: 0.9985834}
+        inSlope: {x: -1.5621796, y: -0.2866855, z: 2.0736685, w: -0.21921894}
+        outSlope: {x: -1.5621796, y: -0.2866855, z: 2.0736685, w: -0.21921894}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.5833334
+        value: {x: -0.09526779, y: 0.0034846682, z: 0.08874916, w: 0.9914814}
+        inSlope: {x: -1.6672577, y: -0.2446617, z: 2.1249273, w: -0.25742078}
+        outSlope: {x: -1.6672577, y: -0.2446617, z: 2.1249273, w: -0.25742078}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.6166667
+        value: {x: -0.08035735, y: -0.00045553196, z: 0.09646118, w: 0.99208754}
+        inSlope: {x: 1.4413903, y: -0.087798856, z: -0.6351781, w: 0.16560152}
+        outSlope: {x: 1.4413903, y: -0.087798856, z: -0.6351781, w: 0.16560152}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.6666666
+        value: {x: 0.015907085, y: 0.001553313, z: 0.03850844, w: 0.9991305}
+        inSlope: {x: 1.5153706, y: 0.11719677, z: -0.9594569, w: 0.025616908}
+        outSlope: {x: 1.5153706, y: 0.11719677, z: -0.9594569, w: 0.025616908}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.6999999
+        value: {x: 0.043812618, y: 0.0033437386, z: 0.03001694, w: 0.99858314}
+        inSlope: {x: 0.293804, y: -0.010288314, z: 0.3067189, w: -0.02155604}
+        outSlope: {x: 0.293804, y: -0.010288314, z: 0.3067189, w: -0.02155604}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.73333323
+        value: {x: 0.035291754, y: 0.0032716398, z: 0.02667966, w: 0.99901557}
+        inSlope: {x: -1.1261685, y: 0.023418851, z: -1.610708, w: 0.045799658}
+        outSlope: {x: -1.1261685, y: 0.023418851, z: -1.610708, w: 0.045799658}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.76666653
+        value: {x: -0.032972906, y: 1.5011852E-05, z: -0.08061812, w: 0.9961995}
+        inSlope: {x: -2.380112, y: -0.37276486, z: -3.7484198, w: -0.37692225}
+        outSlope: {x: -2.380112, y: -0.37276486, z: -3.7484198, w: -0.37692225}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.79999983
+        value: {x: -0.09536141, y: -0.016934674, z: -0.1778384, w: 0.9792819}
+        inSlope: {x: -0.89187133, y: -0.34371674, z: -1.2801266, w: -0.29623774}
+        outSlope: {x: -0.89187133, y: -0.34371674, z: -1.2801266, w: -0.29623774}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.8833331
+        value: {x: -0.060913652, y: -0.013736721, z: -0.09650549, w: 0.9933718}
+        inSlope: {x: 0.79943496, y: 0.091638036, z: 1.6169511, w: 0.21171054}
+        outSlope: {x: 0.79943496, y: 0.091638036, z: 1.6169511, w: 0.21171054}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.9166664
+        value: {x: -0.041271083, y: -0.012504651, z: -0.056205004, w: 0.9974875}
+        inSlope: {x: 0.028024644, y: 0.0015875059, z: 0.46690688, w: 0.031267434}
+        outSlope: {x: 0.028024644, y: 0.0015875059, z: 0.46690688, w: 0.031267434}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.9499997
+        value: {x: -0.056630347, y: -0.012730002, z: -0.0617235, w: 0.9964041}
+        inSlope: {x: 0.19185749, y: 0.0037858859, z: -0.005130619, w: 0.008314855}
+        outSlope: {x: 0.19185749, y: 0.0037858859, z: -0.005130619, w: 0.008314855}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.96666634
+        value: {x: -0.04127168, y: -0.0125046605, z: -0.056205153, w: 0.9974875}
+        inSlope: {x: 2.925259, y: -0.05202817, z: 1.2055826, w: 0.072695084}
+        outSlope: {x: 2.925259, y: -0.05202817, z: 1.2055826, w: 0.072695084}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.983333
+        value: {x: 0.040878195, y: -0.014464273, z: -0.021537455, w: 0.9988273}
+        inSlope: {x: 4.3664894, y: -0.26115105, z: 2.0810728, w: -0.097575285}
+        outSlope: {x: 4.3664894, y: -0.26115105, z: 2.0810728, w: -0.097575285}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.99999964
+        value: {x: 0.10427782, y: -0.021209687, z: 0.013163866, w: 0.994235}
+        inSlope: {x: 1.8390163, y: -0.26942712, z: 1.419071, w: -0.14014019}
+        outSlope: {x: 1.8390163, y: -0.26942712, z: 1.419071, w: -0.14014019}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.0166663
+        value: {x: 0.10217868, y: -0.023445169, z: 0.025764866, w: 0.99415594}
+        inSlope: {x: -0.21551079, y: -0.07477078, z: 0.57007754, w: 0.007136471}
+        outSlope: {x: -0.21551079, y: -0.07477078, z: 0.57007754, w: 0.007136471}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.1666662
+        value: {x: 0.027743703, y: -0.0036152133, z: -0.0037045141, w: 0.99960166}
+        inSlope: {x: -0.15139604, y: 0.054372516, z: -0.08919849, w: 0.004600887}
+        outSlope: {x: -0.15139604, y: 0.054372516, z: -0.08919849, w: 0.004600887}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.2499994
+        value: {x: 0.006517249, y: -0.0037349167, z: -0.0036543633, w: 0.9999651}
+        inSlope: {x: -1.571171, y: -0.008648135, z: 0.0035462538, w: 0.0024300832}
+        outSlope: {x: -1.571171, y: -0.008648135, z: 0.0035462538, w: 0.0024300832}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.2999994
+        value: {x: -0.07386358, y: -0.0039733173, z: -0.0033195764, w: 0.9972549}
+        inSlope: {x: -0.7790639, y: 0.00648373, z: 0.0113496035, w: -0.05301659}
+        outSlope: {x: -0.7790639, y: 0.00648373, z: 0.0113496035, w: -0.05301659}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.4333326
+        value: {x: -0.038673304, y: -0.0014353504, z: -0.0010986235, w: 0.9992503}
+        inSlope: {x: 0.67838037, y: 0.023214955, z: 0.017637849, w: 0.026307132}
+        outSlope: {x: 0.67838037, y: 0.023214955, z: 0.017637849, w: 0.026307132}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.5
+        value: {x: 0, y: 0, z: 0, w: 1}
+        inSlope: {x: 0.44208425, y: 0.01964264, z: 0.015542615, w: 0.0016342791}
+        outSlope: {x: 0.44208425, y: 0.01964264, z: 0.015542615, w: 0.0016342791}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path:
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.8930663, y: 10.895386, z: 0.6432312}
+        inSlope: {x: -0.08290905, y: -32.496666, z: -5.499872}
+        outSlope: {x: -0.08290905, y: -32.496666, z: -5.499872}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.33333334
+        value: {x: 0.86542994, y: 0.06316373, z: -1.1900595}
+        inSlope: {x: -0.08290905, y: -32.496666, z: -5.499872}
+        outSlope: {x: -0.08290905, y: -32.496666, z: -5.499872}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/Gem_Mana
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: RootObject
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.33333334
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0.1515635, y: 0.23541738, z: -0.0965049}
+        outSlope: {x: 0.1515635, y: 0.23541738, z: -0.0965049}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.41666666
+        value: {x: 0.0126302885, y: 0.01961811, z: -0.008042073}
+        inSlope: {x: 0.08274576, y: 0.12598523, z: -0.05166444}
+        outSlope: {x: 0.08274576, y: 0.12598523, z: -0.05166444}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.48333332
+        value: {x: 0.013558824, y: 0.02072165, z: -0.008497005}
+        inSlope: {x: -0.06280786, y: -4.2401175, z: 0.2896678}
+        outSlope: {x: -0.06280786, y: -4.2401175, z: 0.2896678}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.51666665
+        value: {x: 0.008907366, y: -0.2625046, z: 0.011041647}
+        inSlope: {x: -0.08442741, y: -1.734808, z: 0.26267275}
+        outSlope: {x: -0.08442741, y: -1.734808, z: 0.26267275}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.56666666
+        value: {x: 0.0074418117, y: -0.011145937, z: 0.008000942}
+        inSlope: {x: 0.44614288, y: 2.1294072, z: 0.1955829}
+        outSlope: {x: 0.44614288, y: 2.1294072, z: 0.1955829}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.5833333
+        value: {x: 0.022801744, y: -0.023951886, z: 0.0155339325}
+        inSlope: {x: 0.38454476, y: -0.21230848, z: 0.12690908}
+        outSlope: {x: 0.38454476, y: -0.21230848, z: 0.12690908}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.68333334
+        value: {x: 0.00755101, y: 0.010422194, z: -0.0042822445}
+        inSlope: {x: -0.076253645, y: 0.17187037, z: -0.09908086}
+        outSlope: {x: -0.076253645, y: 0.17187037, z: -0.09908086}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.73333335
+        value: {x: 0.00755101, y: 0.010422194, z: -0.0042822445}
+        inSlope: {x: -0.24455936, y: -0.20808391, z: 0.16472438}
+        outSlope: {x: -0.24455936, y: -0.20808391, z: 0.16472438}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.8
+        value: {x: -0.025056904, y: -0.017322326, z: 0.017681006}
+        inSlope: {x: -0.17162234, y: 1.0101058, z: 0.12896688}
+        outSlope: {x: -0.17162234, y: 1.0101058, z: 0.12896688}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.9166667
+        value: {x: -0.008038263, y: 0.26692197, z: 0.009337589}
+        inSlope: {x: 0.072937034, y: 1.2181897, z: -0.0357575}
+        outSlope: {x: 0.072937034, y: 1.2181897, z: -0.0357575}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.96666664
+        value: {x: -0.008038263, y: 0.26692197, z: 0.009337589}
+        inSlope: {x: 0.20356275, y: 1.4880271, z: -0.33366978}
+        outSlope: {x: 0.20356275, y: 1.4880271, z: -0.33366978}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1
+        value: {x: 0.0055325995, y: 0.36612386, z: -0.012907082}
+        inSlope: {x: 0.17900868, y: 1.2625, z: -0.27698702}
+        outSlope: {x: 0.17900868, y: 1.2625, z: -0.27698702}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.1666666
+        value: {x: -0.002652089, y: 0.29094818, z: 0.005987173}
+        inSlope: {x: -0.02455407, y: -0.22552708, z: 0.05668278}
+        outSlope: {x: -0.02455407, y: -0.22552708, z: 0.05668278}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.2333333
+        value: {x: -0.002652089, y: 0.29094818, z: 0.005987173}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.33333334
+        value: {x: 0.164581, y: 12.965874, z: 0.7730764}
+        inSlope: {x: -15.517364, y: -80.27567, z: 9.467549}
+        outSlope: {x: -15.517364, y: -80.27567, z: 9.467549}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.4
+        value: {x: -0.86990976, y: 7.6141624, z: 1.4042463}
+        inSlope: {x: -3.409132, y: -77.39656, z: -2.287458}
+        outSlope: {x: -3.409132, y: -77.39656, z: -2.287458}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.5
+        value: {x: 9.8746874E-08, y: 0.16241755, z: -9.2280125E-08}
+        inSlope: {x: 8.6991, y: -74.517456, z: -14.042465}
+        outSlope: {x: 8.6991, y: -74.517456, z: -14.042465}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/CardHand_Ally_Discription_mesh
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.46666667
+        value: {x: -0.8897784, y: 10.001999, z: 3.0293589}
+        inSlope: {x: 18.517746, y: -89.775734, z: -54.587833}
+        outSlope: {x: 18.517746, y: -89.775734, z: -54.587833}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.51666665
+        value: {x: 0.036108576, y: 5.5132136, z: 0.29996815}
+        inSlope: {x: 17.15743, y: -84.991684, z: -17.910156}
+        outSlope: {x: 17.15743, y: -84.991684, z: -17.910156}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.55
+        value: {x: 0.56267947, y: 2.8396237, z: 0.9255528}
+        inSlope: {x: 11.151335, y: -80.507126, z: 12.002607}
+        outSlope: {x: 11.151335, y: -80.507126, z: 12.002607}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.5833333
+        value: {x: 0.77953106, y: 0.14607237, z: 1.1001424}
+        inSlope: {x: 6.505554, y: -80.80662, z: 5.2376924}
+        outSlope: {x: 6.505554, y: -80.80662, z: 5.2376924}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/Gem_Attack
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.6
+        value: {x: -2.794778, y: 8.1196785, z: -0.84514767}
+        inSlope: {x: 24.294973, y: -53.152103, z: 28.203573}
+        outSlope: {x: 24.294973, y: -53.152103, z: 28.203573}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.6666667
+        value: {x: -1.1751133, y: 4.5762053, z: 1.0350904}
+        inSlope: {x: 14.408241, y: -53.10769, z: 14.461512}
+        outSlope: {x: 14.408241, y: -53.10769, z: 14.461512}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.75
+        value: {x: -0.79832107, y: 0.15426649, z: 1.0950446}
+        inSlope: {x: 4.521508, y: -53.06328, z: 0.7194502}
+        outSlope: {x: 4.521508, y: -53.06328, z: 0.7194502}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/Gem_Health
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.8333333
+        value: {x: 2.3663557, y: 6.215806, z: -2.9748297}
+        inSlope: {x: -22.03339, y: -40.72586, z: 19.960115}
+        outSlope: {x: -22.03339, y: -40.72586, z: 19.960115}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.93333334
+        value: {x: 0.16301617, y: 2.1432192, z: -0.97881764}
+        inSlope: {x: -12.646856, y: -40.11132, z: 19.76823}
+        outSlope: {x: -12.646856, y: -40.11132, z: 19.76823}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.98333335
+        value: {x: -4.467201E-08, y: 0.16837974, z: -1.7461156E-07}
+        inSlope: {x: -3.2603235, y: -39.49678, z: 19.576345}
+        outSlope: {x: -3.2603235, y: -39.49678, z: 19.576345}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/CardHand_Ally_Portrait_mesh
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1.0833334
+        value: {x: -3.5525246, y: 7.110984, z: 3.2357898}
+        inSlope: {x: 20.965775, y: -39.197403, z: -49.1791}
+        outSlope: {x: 20.965775, y: -39.197403, z: -49.1791}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.15
+        value: {x: -2.1548076, y: 4.497826, z: -0.04281372}
+        inSlope: {x: 21.261902, y: -41.004536, z: -24.366682}
+        outSlope: {x: 21.261902, y: -41.004536, z: -24.366682}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.25
+        value: {x: 0.0009956177, y: 0.216658, z: 0.0017598615}
+        inSlope: {x: 21.558027, y: -42.81167, z: 0.4457357}
+        outSlope: {x: 21.558027, y: -42.81167, z: 0.4457357}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/CardHand_Ally_NameBanner_mesh
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: SpellTable/Construct
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1.4
+        value: {x: -0.49877167, y: 13.1152, z: -0.6846327}
+        inSlope: {x: 4.191134, y: -81.41254, z: 13.501401}
+        outSlope: {x: 4.191134, y: -81.41254, z: 13.501401}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.4666667
+        value: {x: -0.21936251, y: 7.687693, z: 0.21546142}
+        inSlope: {x: 3.0047653, y: -72.412865, z: 7.0415545}
+        outSlope: {x: 3.0047653, y: -72.412865, z: 7.0415545}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.5833334
+        value: {x: -0.007216233, y: 0.28948733, z: 0.28332737}
+        inSlope: {x: 1.8183966, y: -63.41319, z: 0.58170813}
+        outSlope: {x: 1.8183966, y: -63.41319, z: 0.58170813}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/Card_InHand_Ally_RarityGem_mesh
+  m_ScaleCurves: []
+  m_FloatCurves:
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.75
+        value: 1.84
+        inSlope: -1.4399999
+        outSlope: -1.4399999
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.3333334
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: _Intensity
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/Gem_Health
+    classID: 21
+    script: {fileID: 0}
+    flags: 16
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.75
+        value: 1
+        inSlope: -1.2857141
+        outSlope: -1.2857141
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.3333334
+        value: 0.25
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: _Desaturate
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/Gem_Health
+    classID: 21
+    script: {fileID: 0}
+    flags: 16
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.6666667
+        value: 1.84
+        inSlope: -1.008
+        outSlope: -1.008
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.5
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: _Intensity
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/Gem_Attack
+    classID: 21
+    script: {fileID: 0}
+    flags: 16
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.6666667
+        value: 1
+        inSlope: -0.90000004
+        outSlope: -0.90000004
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.5
+        value: 0.25
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: _Desaturate
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/Gem_Attack
+    classID: 21
+    script: {fileID: 0}
+    flags: 16
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.3333333
+        value: 1
+        inSlope: -59.99995
+        outSlope: -59.99995
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.35
+        value: 0
+        inSlope: -59.99995
+        outSlope: -59.99995
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: EmissionModule.enabled
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/Gem_Mana/FX_GlowTrail
+    classID: 198
+    script: {fileID: 0}
+    flags: 16
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: SpellTable/GhostMode/FX_AllyGhost_Quad
+    classID: 23
+    script: {fileID: 0}
+    flags: 16
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.5
+        value: 1
+        inSlope: -60.000057
+        outSlope: -60.000057
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.51666665
+        value: 0
+        inSlope: -60.000057
+        outSlope: -60.000057
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: EmissionModule.enabled
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/CardHand_Ally_Discription_mesh/FX_GlowTrail
+    classID: 198
+    script: {fileID: 0}
+    flags: 16
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.4
+        value: 1.85
+        inSlope: -2.9999993
+        outSlope: -2.9999993
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5166667
+        value: 1.5
+        inSlope: -0.26420337
+        outSlope: -0.26420337
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.5
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: _Intensity
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/CardHand_Ally_Discription_mesh
+    classID: 21
+    script: {fileID: 0}
+    flags: 16
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.5
+        value: 1
+        inSlope: -0.75
+        outSlope: -0.75
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.5
+        value: 0.25
+        inSlope: -0.75
+        outSlope: -0.75
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: _Desaturate
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/CardHand_Ally_Discription_mesh
+    classID: 21
+    script: {fileID: 0}
+    flags: 16
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1.15
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.5
+        value: 0.25
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: _Desaturate
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/CardHand_Ally_NameBanner_mesh
+    classID: 21
+    script: {fileID: 0}
+    flags: 16
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1.15
+        value: 1.84
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.5
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: _Intensity
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/CardHand_Ally_NameBanner_mesh
+    classID: 21
+    script: {fileID: 0}
+    flags: 16
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.9166667
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.5
+        value: 0.25
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: '[1]._Desaturate'
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/CardHand_Ally_Portrait_mesh
+    classID: 21
+    script: {fileID: 0}
+    flags: 16
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.9166667
+        value: 1.84
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.5
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: '[1]._Intensity'
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/CardHand_Ally_Portrait_mesh
+    classID: 21
+    script: {fileID: 0}
+    flags: 16
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.9166667
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.5
+        value: 0.25
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: _Desaturate
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/CardHand_Ally_Portrait_mesh
+    classID: 21
+    script: {fileID: 0}
+    flags: 16
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.9166667
+        value: 1.84
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.5
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: _Intensity
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/CardHand_Ally_Portrait_mesh
+    classID: 21
+    script: {fileID: 0}
+    flags: 16
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.8333333
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.5
+        value: 0.25
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: _Desaturate
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/CardHand_Ally_Portrait_mesh/RarityGemFrame_mesh
+    classID: 21
+    script: {fileID: 0}
+    flags: 16
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.8333333
+        value: 1.84
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.5
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: _Intensity
+    path: SpellTable/Construct/Card_InHand_Ally_v2_parts/CardHand_Ally_Portrait_mesh/RarityGemFrame_mesh
+    classID: 21
+    script: {fileID: 0}
+    flags: 16
+  m_PPtrCurves: []
+  m_SampleRate: 60
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings: []
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 1
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events: []
