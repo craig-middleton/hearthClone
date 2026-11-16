@@ -30,3 +30,10 @@ Inspected previews: Native-Cards-First-Live.png, Native-Cards-Hover.png and Nati
 ## Remaining visual work
 
 Core integration is complete. Pause for Craig to switch to High before routine visual tuning. Hover clearance near the screen bottom, title/body spacing, material richness/reflections and a fully school-less spell-description variant remain candidates for refinement against the reference. In-play minion frames, board lighting and other existing effects are outside this card-face integration pass. No pixel-identical appearance is claimed.
+
+
+## Layout refinement and next animation step
+
+Titles now use more of their original curved-name mesh height. Spell body text reserves a distinct school-label strip. Hover lift is230 for the player and340 for the mirrored manual opponent hand; VerifyNativeCardLayout checks first/middle/last full card rectangles in ten-card hands against screen bounds and verifies separate text boxes. NativeCard/NativeMatchControls checks still pass. A new-game ready-pose reset prevents the End Turn mesh remaining frozen midway through a previous native flip.
+
+Craig explicitly requires original game animations for the added card motions. The reconstructed gem-shimmer experiment was removed. No authored draw/pickup/play tweens were added. Next, on Ultra, inspect recovered AllyInHandBirth/BirthFast/ScaleDown/FlipOver and related source clips, choose appropriate original motion and retarget needed channels while preserving source curves/timing. Existing projected UI does not automatically support every original3D/material channel; do not promise a clip works until tested.

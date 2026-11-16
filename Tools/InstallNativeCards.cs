@@ -60,7 +60,11 @@ public static class InstallNativeCards
             PrefabUtility.SaveAsPrefabAsset(prefab,Table);
         }
         finally{PrefabUtility.UnloadPrefabContents(prefab);}
-        AssetDatabase.SaveAssets();EditorSceneManager.OpenScene("Assets/Scenes/HearthstoneTable.unity");
+        AssetDatabase.SaveAssets();var match=EditorSceneManager.OpenScene("Assets/Scenes/HearthstoneTable.unity");
+        var game=UnityEngine.Object.FindAnyObjectByType<EffectTester>();
+        game.handDisplay.handPanel.GetComponent<HandFanLayout>().liftHeight=230;
+        game.opponentHandDisplay.handPanel.GetComponent<HandFanLayout>().liftHeight=340;
+        EditorSceneManager.MarkSceneDirty(match);EditorSceneManager.SaveScene(match);
         return "Installed native mesh-layer card faces and source typography on TableCard. Existing hand/drag/mulligan/collection code and face-down backs retained. Names="+library.names.Length;
     }
     static Vector2 Point(GameObject actor,Vector3 world)
@@ -127,6 +131,8 @@ public static class InstallNativeCards
             float sx=new Vector2(x.x,x.z).magnitude,sy=new Vector2(y.x,y.z).magnitude;
             var size=Vector2.Scale(original.rectTransform.rect.size,new Vector2(sx,sy))*Scale;
             var rect=Rect(role.ToString(),root,Point(actor,original.transform.position),size);
+            if(spell&&role==NativeCardRole.Description)
+            {rect.anchoredPosition+=Vector2.up*6;rect.sizeDelta-=new Vector2(0,12);}
             var text=rect.gameObject.AddComponent<TextMeshProUGUI>();
             text.font=original.font;text.fontSharedMaterial=original.fontSharedMaterial;text.color=original.color;
             text.alignment=TextAlignmentOptions.Center;text.richText=true;text.raycastTarget=false;

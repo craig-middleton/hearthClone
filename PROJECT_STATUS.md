@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-16 — Recovered card geometry/UVs and Belwe/Franklin typography are now connected to the live TableCard prefab, covering hands, mulligan, collection and drag ghosts. Native targeting/animated End Turn and original Orgrimmar remain live. Native card interaction/concealment/rebinding, real deck builder, 30-card totals, spell drag, powers/combat and controls checks pass. Core Ultra card integration is complete; pause for Craig to switch to High before visual tuning. See Docs/Recovery/NATIVE_CARD_INTEGRATION.md._
+_Last updated: 2026-11-16 — Native cards are live and now have larger title lettering, separated spell-description/school text and higher hover positions that keep ten-card hand edges onscreen. New-match End Turn pose resets correctly after interrupted flips. Native card/layout/control checks pass. Craig requests added card animations from the original game only. No custom card tweens or reconstructed gem shimmer were added. Save this High checkpoint and pause for Ultra before inspecting/retargeting recovered card clips._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.
@@ -13,6 +13,7 @@ _Last updated: 2026-11-16 — Recovered card geometry/UVs and Belwe/Franklin typ
 - **`NETWORKING_PREP.md`** — checklist for the networked 2-player phase: prerequisites and every place UI/input mutates game state today. Read it before starting networking work.
 
 ## Working Preferences
+- Added card animations must use recovered original Hearthstone clips/curves/timing. Do not invent replacement tweens or animated shimmer; missing motions require source investigation.
 - Craig controls effort settings: stop at a clean checkpoint when a switch is appropriate, explain which setting/why, and wait for him to switch and say continue. Current native-card integration pass used Ultra; visual tuning awaits High.
 - Current scope: resumed graphical matching against the reference using Desktop exports, including both recessed decks. Mechanics were confirmed working by Craig. Full three-folder audit and ten-song random-per-new-match music are complete. Continue iterating without asking for per-part approval (Craig's latest instruction). Keep using his reference screenshot, official Hearthstone imagery, and the supplied Desktop assets.
 - Give brief progress updates explaining what is being changed and why. Save meaningful visual checkpoints with commits and pushes to `main`; the agreed batch is complete; stop for the requested playtest.

@@ -14,7 +14,13 @@ namespace HearthstoneClone.UI
         Material paint,glow;
         bool flipping,green,hover;
         void Awake(){paint=paintRenderer.material;glow=greenHighlight.material;}
-        void OnEnable(){model.SetActive(true);}
+        void OnEnable()
+        {
+            // A menu/mulligan can hide the button halfway through its native flip.
+            // A fresh match must restore the ready pose rather than freeze that frame.
+            animator.Stop();animator.transform.localPosition=Vector3.zero;animator.transform.localRotation=Quaternion.identity;
+            green=false;hover=false;paint.mainTextureOffset=Vector2.zero;greenHighlight.enabled=false;model.SetActive(true);
+        }
         void OnDisable(){StopAllCoroutines();flipping=false;hover=false;if(model!=null)model.SetActive(false);}
         void OnDestroy(){if(paint!=null)Destroy(paint);if(glow!=null)Destroy(glow);}
         void LateUpdate()

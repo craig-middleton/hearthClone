@@ -2463,7 +2463,7 @@ MonoBehaviour:
   maxTiltDegrees: 10
   invertVertical: 1
   interactionEnabled: 1
-  liftHeight: 135
+  liftHeight: 340
   hoverScale: 1.5
   hoverAnimationSpeed: 12
   spreadAmount: 50
@@ -6207,7 +6207,7 @@ MonoBehaviour:
   maxTiltDegrees: 12
   invertVertical: 0
   interactionEnabled: 1
-  liftHeight: 135
+  liftHeight: 230
   hoverScale: 1.5
   hoverAnimationSpeed: 12
   spreadAmount: 50

@@ -17,7 +17,7 @@ public static class NativeCardTextBaker
             var textObject = new GameObject("Name", typeof(RectTransform), typeof(TextMeshPro));
             textObject.transform.SetParent(stage.transform, false);
             var text = textObject.GetComponent<TextMeshPro>(); text.font = font; text.text = value; text.color = color;
-            text.rectTransform.sizeDelta = new Vector2(5.15f, .82f);
+            text.rectTransform.sizeDelta = new Vector2(5.15f, .94f);
             text.alignment = TextAlignmentOptions.Center; text.enableAutoSizing = true; text.fontSizeMin = 1; text.fontSizeMax = 40;
             text.textWrappingMode = TextWrappingModes.NoWrap; text.overflowMode = TextOverflowModes.Overflow;
             text.fontMaterial.SetFloat("_OutlineWidth", outline ? .25f : 0);
