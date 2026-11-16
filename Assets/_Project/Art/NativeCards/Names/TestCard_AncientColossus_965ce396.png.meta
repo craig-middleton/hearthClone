@@ -1,0 +1,444 @@
+fileFormatVersion: 2
+guid: 7ba14cfb94fbd76499c4d3a1c996faa1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6161869608244278890
+    second: TestCard_AncientColossus_965ce396_0
+  - first:
+      213: -4140384964582955530
+    second: TestCard_AncientColossus_965ce396_1
+  - first:
+      213: -1190148742972711822
+    second: TestCard_AncientColossus_965ce396_2
+  - first:
+      213: -7968527403083526248
+    second: TestCard_AncientColossus_965ce396_3
+  - first:
+      213: -2585069885518609274
+    second: TestCard_AncientColossus_965ce396_4
+  - first:
+      213: -1951934001968921413
+    second: TestCard_AncientColossus_965ce396_5
+  - first:
+      213: 2804730523182468895
+    second: TestCard_AncientColossus_965ce396_6
+  - first:
+      213: -4514285896913492618
+    second: TestCard_AncientColossus_965ce396_7
+  - first:
+      213: 8964837705512861530
+    second: TestCard_AncientColossus_965ce396_8
+  - first:
+      213: 3402106805965002122
+    second: TestCard_AncientColossus_965ce396_9
+  - first:
+      213: -1001735752713112612
+    second: TestCard_AncientColossus_965ce396_10
+  - first:
+      213: -4321877312796628032
+    second: TestCard_AncientColossus_965ce396_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TestCard_AncientColossus_965ce396_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 47
+        width: 89
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a66fcaff2cb538550800000000000000
+      internalID: 6161869608244278890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_AncientColossus_965ce396_1
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 47
+        width: 76
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f52aa8bfc56a86c0800000000000000
+      internalID: -4140384964582955530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_AncientColossus_965ce396_2
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 46
+        width: 62
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27cdb31260ebb7fe0800000000000000
+      internalID: -1190148742972711822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_AncientColossus_965ce396_3
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 47
+        width: 37
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89f8d34cb8a1a6190800000000000000
+      internalID: -7968527403083526248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_AncientColossus_965ce396_4
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 46
+        width: 66
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6848a1aa2acff1cd0800000000000000
+      internalID: -2585069885518609274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_AncientColossus_965ce396_5
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 47
+        width: 76
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb4c2a3fd5659e4e0800000000000000
+      internalID: -1951934001968921413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_AncientColossus_965ce396_6
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 46
+        width: 48
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1f8cfcfc876ce620800000000000000
+      internalID: 2804730523182468895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_AncientColossus_965ce396_7
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 46
+        width: 150
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6756aebf4e80a51c0800000000000000
+      internalID: -4514285896913492618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_AncientColossus_965ce396_8
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 47
+        width: 37
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5f3f1a3560896c70800000000000000
+      internalID: 8964837705512861530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_AncientColossus_965ce396_9
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 46
+        width: 74
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a859b796d16b63f20800000000000000
+      internalID: 3402106805965002122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_AncientColossus_965ce396_10
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 46
+        width: 111
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd3f9bce3ae1912f0800000000000000
+      internalID: -1001735752713112612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_AncientColossus_965ce396_11
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 46
+        width: 130
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cbefe77b7b9504c0800000000000000
+      internalID: -4321877312796628032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TestCard_AncientColossus_965ce396_0: 6161869608244278890
+      TestCard_AncientColossus_965ce396_1: -4140384964582955530
+      TestCard_AncientColossus_965ce396_10: -1001735752713112612
+      TestCard_AncientColossus_965ce396_11: -4321877312796628032
+      TestCard_AncientColossus_965ce396_2: -1190148742972711822
+      TestCard_AncientColossus_965ce396_3: -7968527403083526248
+      TestCard_AncientColossus_965ce396_4: -2585069885518609274
+      TestCard_AncientColossus_965ce396_5: -1951934001968921413
+      TestCard_AncientColossus_965ce396_6: 2804730523182468895
+      TestCard_AncientColossus_965ce396_7: -4514285896913492618
+      TestCard_AncientColossus_965ce396_8: 8964837705512861530
+      TestCard_AncientColossus_965ce396_9: 3402106805965002122
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

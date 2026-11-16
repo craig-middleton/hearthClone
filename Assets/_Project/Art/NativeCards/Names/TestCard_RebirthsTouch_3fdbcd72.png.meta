@@ -1,0 +1,470 @@
+fileFormatVersion: 2
+guid: dc5f671d76dc1bc2297879a315f1f916
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4231182855346071755
+    second: TestCard_RebirthsTouch_3fdbcd72_0
+  - first:
+      213: 7529187415909054162
+    second: TestCard_RebirthsTouch_3fdbcd72_1
+  - first:
+      213: 6565052142940922241
+    second: TestCard_RebirthsTouch_3fdbcd72_2
+  - first:
+      213: 3028060845406995228
+    second: TestCard_RebirthsTouch_3fdbcd72_3
+  - first:
+      213: -3084275141762362512
+    second: TestCard_RebirthsTouch_3fdbcd72_4
+  - first:
+      213: -23557452656277264
+    second: TestCard_RebirthsTouch_3fdbcd72_5
+  - first:
+      213: 4371589134067116263
+    second: TestCard_RebirthsTouch_3fdbcd72_6
+  - first:
+      213: -3337518465692827262
+    second: TestCard_RebirthsTouch_3fdbcd72_7
+  - first:
+      213: -9128031078629857249
+    second: TestCard_RebirthsTouch_3fdbcd72_8
+  - first:
+      213: 514261530073848346
+    second: TestCard_RebirthsTouch_3fdbcd72_9
+  - first:
+      213: 4999801589556718199
+    second: TestCard_RebirthsTouch_3fdbcd72_10
+  - first:
+      213: 4473333115045082165
+    second: TestCard_RebirthsTouch_3fdbcd72_11
+  - first:
+      213: -7583903059568706527
+    second: TestCard_RebirthsTouch_3fdbcd72_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TestCard_RebirthsTouch_3fdbcd72_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 43
+        width: 89
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc820a0a36e28ba30800000000000000
+      internalID: 4231182855346071755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RebirthsTouch_3fdbcd72_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 42
+        width: 71
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d6b99c301c0d7860800000000000000
+      internalID: 7529187415909054162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RebirthsTouch_3fdbcd72_2
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 42
+        width: 76
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18129ef0420cb1b50800000000000000
+      internalID: 6565052142940922241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RebirthsTouch_3fdbcd72_3
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 43
+        width: 40
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c13c0c8ab45d50a20800000000000000
+      internalID: 3028060845406995228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RebirthsTouch_3fdbcd72_4
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 42
+        width: 114
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 073dfa989147235d0800000000000000
+      internalID: -3084275141762362512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RebirthsTouch_3fdbcd72_5
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 43
+        width: 82
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f80c922f9e4caff0800000000000000
+      internalID: -23557452656277264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RebirthsTouch_3fdbcd72_6
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 97
+        width: 22
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e82700e7210bac30800000000000000
+      internalID: 4371589134067116263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RebirthsTouch_3fdbcd72_7
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 42
+        width: 63
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281821d63a0cea1d0800000000000000
+      internalID: -3337518465692827262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RebirthsTouch_3fdbcd72_8
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 43
+        width: 80
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f18aa8ba818b25180800000000000000
+      internalID: -9128031078629857249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RebirthsTouch_3fdbcd72_9
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 42
+        width: 81
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1a53bd0326032700800000000000000
+      internalID: 514261530073848346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RebirthsTouch_3fdbcd72_10
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 42
+        width: 80
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77a26fc3e0dd26540800000000000000
+      internalID: 4999801589556718199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RebirthsTouch_3fdbcd72_11
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 42
+        width: 66
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 534f04474c8741e30800000000000000
+      internalID: 4473333115045082165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RebirthsTouch_3fdbcd72_12
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 43
+        width: 82
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12cb86b395090c690800000000000000
+      internalID: -7583903059568706527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TestCard_RebirthsTouch_3fdbcd72_0: 4231182855346071755
+      TestCard_RebirthsTouch_3fdbcd72_1: 7529187415909054162
+      TestCard_RebirthsTouch_3fdbcd72_10: 4999801589556718199
+      TestCard_RebirthsTouch_3fdbcd72_11: 4473333115045082165
+      TestCard_RebirthsTouch_3fdbcd72_12: -7583903059568706527
+      TestCard_RebirthsTouch_3fdbcd72_2: 6565052142940922241
+      TestCard_RebirthsTouch_3fdbcd72_3: 3028060845406995228
+      TestCard_RebirthsTouch_3fdbcd72_4: -3084275141762362512
+      TestCard_RebirthsTouch_3fdbcd72_5: -23557452656277264
+      TestCard_RebirthsTouch_3fdbcd72_6: 4371589134067116263
+      TestCard_RebirthsTouch_3fdbcd72_7: -3337518465692827262
+      TestCard_RebirthsTouch_3fdbcd72_8: -9128031078629857249
+      TestCard_RebirthsTouch_3fdbcd72_9: 514261530073848346
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

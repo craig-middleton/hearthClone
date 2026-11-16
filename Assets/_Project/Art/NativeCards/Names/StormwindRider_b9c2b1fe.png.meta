@@ -1,0 +1,496 @@
+fileFormatVersion: 2
+guid: 6139d29da74b2d87ab57baf3747946cd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6960810889403387843
+    second: StormwindRider_b9c2b1fe_0
+  - first:
+      213: -2814667990236081682
+    second: StormwindRider_b9c2b1fe_1
+  - first:
+      213: 4791394235570466315
+    second: StormwindRider_b9c2b1fe_2
+  - first:
+      213: 3146612446998976829
+    second: StormwindRider_b9c2b1fe_3
+  - first:
+      213: 3084796497645203357
+    second: StormwindRider_b9c2b1fe_4
+  - first:
+      213: 5909036741297821939
+    second: StormwindRider_b9c2b1fe_5
+  - first:
+      213: -6120861588562460785
+    second: StormwindRider_b9c2b1fe_6
+  - first:
+      213: -7930672446860484425
+    second: StormwindRider_b9c2b1fe_7
+  - first:
+      213: -104488272006399548
+    second: StormwindRider_b9c2b1fe_8
+  - first:
+      213: 3383828262651233177
+    second: StormwindRider_b9c2b1fe_9
+  - first:
+      213: -6964584877791567946
+    second: StormwindRider_b9c2b1fe_10
+  - first:
+      213: 4533257258682970687
+    second: StormwindRider_b9c2b1fe_11
+  - first:
+      213: 7951059647268831758
+    second: StormwindRider_b9c2b1fe_12
+  - first:
+      213: -7559299177967383526
+    second: StormwindRider_b9c2b1fe_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: StormwindRider_b9c2b1fe_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 47
+        width: 76
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d30b074406b366f90800000000000000
+      internalID: -6960810889403387843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StormwindRider_b9c2b1fe_1
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 47
+        width: 48
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee1d059206a40f8d0800000000000000
+      internalID: -2814667990236081682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StormwindRider_b9c2b1fe_2
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 47
+        width: 73
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0e280edba37e7240800000000000000
+      internalID: 4791394235570466315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StormwindRider_b9c2b1fe_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 48
+        width: 60
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d39523d59530bab20800000000000000
+      internalID: 3146612446998976829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StormwindRider_b9c2b1fe_4
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 48
+        width: 108
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9fe28612166fca20800000000000000
+      internalID: 3084796497645203357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StormwindRider_b9c2b1fe_5
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 48
+        width: 101
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f8d9c9db9d110250800000000000000
+      internalID: 5909036741297821939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StormwindRider_b9c2b1fe_6
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 48
+        width: 36
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8fb66e90d45e0ba0800000000000000
+      internalID: -6120861588562460785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StormwindRider_b9c2b1fe_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 48
+        width: 74
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b027e69d6790f190800000000000000
+      internalID: -7930672446860484425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StormwindRider_b9c2b1fe_8
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 47
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c93ddf5878cc8ef0800000000000000
+      internalID: -104488272006399548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StormwindRider_b9c2b1fe_9
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 48
+        width: 81
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 993014860e5c5fe20800000000000000
+      internalID: 3383828262651233177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StormwindRider_b9c2b1fe_10
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 48
+        width: 36
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bf1d2f14f2d85f90800000000000000
+      internalID: -6964584877791567946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StormwindRider_b9c2b1fe_11
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 47
+        width: 71
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f327243657d59ee30800000000000000
+      internalID: 4533257258682970687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StormwindRider_b9c2b1fe_12
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 47
+        width: 64
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e02c6676f96d75e60800000000000000
+      internalID: 7951059647268831758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StormwindRider_b9c2b1fe_13
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 48
+        width: 61
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c0a52d279f71790800000000000000
+      internalID: -7559299177967383526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      StormwindRider_b9c2b1fe_0: -6960810889403387843
+      StormwindRider_b9c2b1fe_1: -2814667990236081682
+      StormwindRider_b9c2b1fe_10: -6964584877791567946
+      StormwindRider_b9c2b1fe_11: 4533257258682970687
+      StormwindRider_b9c2b1fe_12: 7951059647268831758
+      StormwindRider_b9c2b1fe_13: -7559299177967383526
+      StormwindRider_b9c2b1fe_2: 4791394235570466315
+      StormwindRider_b9c2b1fe_3: 3146612446998976829
+      StormwindRider_b9c2b1fe_4: 3084796497645203357
+      StormwindRider_b9c2b1fe_5: 5909036741297821939
+      StormwindRider_b9c2b1fe_6: -6120861588562460785
+      StormwindRider_b9c2b1fe_7: -7930672446860484425
+      StormwindRider_b9c2b1fe_8: -104488272006399548
+      StormwindRider_b9c2b1fe_9: 3383828262651233177
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

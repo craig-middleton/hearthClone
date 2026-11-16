@@ -1,0 +1,444 @@
+fileFormatVersion: 2
+guid: a5c150fc9f805e243aa3277064556335
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4643499040663006650
+    second: TestCard_Shieldbearer_bc678929_0
+  - first:
+      213: 180774871225058607
+    second: TestCard_Shieldbearer_bc678929_1
+  - first:
+      213: -3920885216482672499
+    second: TestCard_Shieldbearer_bc678929_2
+  - first:
+      213: 4887760782780742410
+    second: TestCard_Shieldbearer_bc678929_3
+  - first:
+      213: 4391163373337231694
+    second: TestCard_Shieldbearer_bc678929_4
+  - first:
+      213: 4949941787899061606
+    second: TestCard_Shieldbearer_bc678929_5
+  - first:
+      213: -1305219038515169560
+    second: TestCard_Shieldbearer_bc678929_6
+  - first:
+      213: 3834620326702869411
+    second: TestCard_Shieldbearer_bc678929_7
+  - first:
+      213: 854087521122725697
+    second: TestCard_Shieldbearer_bc678929_8
+  - first:
+      213: -7835312933833304083
+    second: TestCard_Shieldbearer_bc678929_9
+  - first:
+      213: 5212955563373243811
+    second: TestCard_Shieldbearer_bc678929_10
+  - first:
+      213: -6458930079063327219
+    second: TestCard_Shieldbearer_bc678929_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TestCard_Shieldbearer_bc678929_0
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 42
+        width: 84
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6421a6e893afe8fb0800000000000000
+      internalID: -4643499040663006650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_Shieldbearer_bc678929_1
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 43
+        width: 82
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f25cfaf99cd328200800000000000000
+      internalID: 180774871225058607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_Shieldbearer_bc678929_2
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 43
+        width: 39
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d80487a5ba73699c0800000000000000
+      internalID: -3920885216482672499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_Shieldbearer_bc678929_3
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 42
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0b3bb41980d4d340800000000000000
+      internalID: 4887760782780742410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_Shieldbearer_bc678929_4
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 43
+        width: 40
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e41c87a92db80fc30800000000000000
+      internalID: 4391163373337231694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_Shieldbearer_bc678929_5
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 42
+        width: 78
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 665e59684d9b1b440800000000000000
+      internalID: 4949941787899061606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_Shieldbearer_bc678929_6
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 42
+        width: 76
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e6f937233ee2ede0800000000000000
+      internalID: -1305219038515169560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_Shieldbearer_bc678929_7
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 42
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3abed95dede473530800000000000000
+      internalID: 3834620326702869411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_Shieldbearer_bc678929_8
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 42
+        width: 74
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f2d9743145adb00800000000000000
+      internalID: 854087521122725697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_Shieldbearer_bc678929_9
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 43
+        width: 66
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de797d26660634390800000000000000
+      internalID: -7835312933833304083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_Shieldbearer_bc678929_10
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 42
+        width: 71
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ad22c82773285840800000000000000
+      internalID: 5212955563373243811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_Shieldbearer_bc678929_11
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 43
+        width: 67
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0e385060554d56a0800000000000000
+      internalID: -6458930079063327219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TestCard_Shieldbearer_bc678929_0: -4643499040663006650
+      TestCard_Shieldbearer_bc678929_1: 180774871225058607
+      TestCard_Shieldbearer_bc678929_10: 5212955563373243811
+      TestCard_Shieldbearer_bc678929_11: -6458930079063327219
+      TestCard_Shieldbearer_bc678929_2: -3920885216482672499
+      TestCard_Shieldbearer_bc678929_3: 4887760782780742410
+      TestCard_Shieldbearer_bc678929_4: 4391163373337231694
+      TestCard_Shieldbearer_bc678929_5: 4949941787899061606
+      TestCard_Shieldbearer_bc678929_6: -1305219038515169560
+      TestCard_Shieldbearer_bc678929_7: 3834620326702869411
+      TestCard_Shieldbearer_bc678929_8: 854087521122725697
+      TestCard_Shieldbearer_bc678929_9: -7835312933833304083
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

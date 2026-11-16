@@ -1,0 +1,470 @@
+fileFormatVersion: 2
+guid: 97d4a320e7a04ea30952b190449c1ba4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4086986029285749976
+    second: TestCard_ChargingRhino_88b035f4_0
+  - first:
+      213: -1632851894790499101
+    second: TestCard_ChargingRhino_88b035f4_1
+  - first:
+      213: 1191499371289436448
+    second: TestCard_ChargingRhino_88b035f4_2
+  - first:
+      213: -5786512915976177682
+    second: TestCard_ChargingRhino_88b035f4_3
+  - first:
+      213: 4118692792078774867
+    second: TestCard_ChargingRhino_88b035f4_4
+  - first:
+      213: 8868101004953051260
+    second: TestCard_ChargingRhino_88b035f4_5
+  - first:
+      213: -6621403188508430460
+    second: TestCard_ChargingRhino_88b035f4_6
+  - first:
+      213: -7807602250875742939
+    second: TestCard_ChargingRhino_88b035f4_7
+  - first:
+      213: -5601885246929800474
+    second: TestCard_ChargingRhino_88b035f4_8
+  - first:
+      213: -7525793548619327959
+    second: TestCard_ChargingRhino_88b035f4_9
+  - first:
+      213: 2597750640081878221
+    second: TestCard_ChargingRhino_88b035f4_10
+  - first:
+      213: -2128277813855713299
+    second: TestCard_ChargingRhino_88b035f4_11
+  - first:
+      213: 7804764534978037709
+    second: TestCard_ChargingRhino_88b035f4_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TestCard_ChargingRhino_88b035f4_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 43
+        width: 85
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82b40723cdb1847c0800000000000000
+      internalID: -4086986029285749976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ChargingRhino_88b035f4_1
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 44
+        width: 80
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e450385ad1f659e0800000000000000
+      internalID: -1632851894790499101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ChargingRhino_88b035f4_2
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 43
+        width: 73
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 021eec78d5e098010800000000000000
+      internalID: 1191499371289436448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ChargingRhino_88b035f4_3
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 44
+        width: 66
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee7b703492d22bfa0800000000000000
+      internalID: -5786512915976177682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ChargingRhino_88b035f4_4
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 21
+        width: 70
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35231dac549882930800000000000000
+      internalID: 4118692792078774867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ChargingRhino_88b035f4_5
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 44
+        width: 39
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c70e288f0e2d11b70800000000000000
+      internalID: 8868101004953051260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ChargingRhino_88b035f4_6
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 44
+        width: 81
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48fe05ab1ec0c14a0800000000000000
+      internalID: -6621403188508430460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ChargingRhino_88b035f4_7
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 21
+        width: 70
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 525d2098e13d5a390800000000000000
+      internalID: -7807602250875742939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ChargingRhino_88b035f4_8
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 44
+        width: 87
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e27f384c0b1242b0800000000000000
+      internalID: -5601885246929800474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ChargingRhino_88b035f4_9
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 44
+        width: 81
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9265e9114a20f8790800000000000000
+      internalID: -7525793548619327959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ChargingRhino_88b035f4_10
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 44
+        width: 39
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dccbf1591701d0420800000000000000
+      internalID: 2597750640081878221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ChargingRhino_88b035f4_11
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 44
+        width: 81
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de709c9ba96d672e0800000000000000
+      internalID: -2128277813855713299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ChargingRhino_88b035f4_12
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 43
+        width: 79
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc7ceee3ef7105c60800000000000000
+      internalID: 7804764534978037709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TestCard_ChargingRhino_88b035f4_0: -4086986029285749976
+      TestCard_ChargingRhino_88b035f4_1: -1632851894790499101
+      TestCard_ChargingRhino_88b035f4_10: 2597750640081878221
+      TestCard_ChargingRhino_88b035f4_11: -2128277813855713299
+      TestCard_ChargingRhino_88b035f4_12: 7804764534978037709
+      TestCard_ChargingRhino_88b035f4_2: 1191499371289436448
+      TestCard_ChargingRhino_88b035f4_3: -5786512915976177682
+      TestCard_ChargingRhino_88b035f4_4: 4118692792078774867
+      TestCard_ChargingRhino_88b035f4_5: 8868101004953051260
+      TestCard_ChargingRhino_88b035f4_6: -6621403188508430460
+      TestCard_ChargingRhino_88b035f4_7: -7807602250875742939
+      TestCard_ChargingRhino_88b035f4_8: -5601885246929800474
+      TestCard_ChargingRhino_88b035f4_9: -7525793548619327959
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

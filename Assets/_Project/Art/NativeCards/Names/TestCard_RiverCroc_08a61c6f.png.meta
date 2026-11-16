@@ -1,0 +1,496 @@
+fileFormatVersion: 2
+guid: 3a2e6279450e9ccc9bc21beca11ef269
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3890445827704416488
+    second: TestCard_RiverCroc_08a61c6f_0
+  - first:
+      213: -921047013096476928
+    second: TestCard_RiverCroc_08a61c6f_1
+  - first:
+      213: -2524948139525152339
+    second: TestCard_RiverCroc_08a61c6f_2
+  - first:
+      213: -152345674096086764
+    second: TestCard_RiverCroc_08a61c6f_3
+  - first:
+      213: 8619538037201822812
+    second: TestCard_RiverCroc_08a61c6f_4
+  - first:
+      213: 874013249846452644
+    second: TestCard_RiverCroc_08a61c6f_5
+  - first:
+      213: -2899753259440408850
+    second: TestCard_RiverCroc_08a61c6f_6
+  - first:
+      213: -8927057335333551217
+    second: TestCard_RiverCroc_08a61c6f_7
+  - first:
+      213: -4922182557948588280
+    second: TestCard_RiverCroc_08a61c6f_8
+  - first:
+      213: 5855302397855007254
+    second: TestCard_RiverCroc_08a61c6f_9
+  - first:
+      213: -238295948014031887
+    second: TestCard_RiverCroc_08a61c6f_10
+  - first:
+      213: -4299587754211955982
+    second: TestCard_RiverCroc_08a61c6f_11
+  - first:
+      213: 5090336385338596863
+    second: TestCard_RiverCroc_08a61c6f_12
+  - first:
+      213: 8852456652754972357
+    second: TestCard_RiverCroc_08a61c6f_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TestCard_RiverCroc_08a61c6f_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 43
+        width: 88
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e8e83a2ed3adf530800000000000000
+      internalID: 3890445827704416488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RiverCroc_08a61c6f_1
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 43
+        width: 40
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00f23fa1f98c733f0800000000000000
+      internalID: -921047013096476928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RiverCroc_08a61c6f_2
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 43
+        width: 76
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da1e15b7b0595fcd0800000000000000
+      internalID: -2524948139525152339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RiverCroc_08a61c6f_3
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 42
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4117f64aa62c2edf0800000000000000
+      internalID: -152345674096086764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RiverCroc_08a61c6f_4
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 43
+        width: 66
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c54e1633d20ce9770800000000000000
+      internalID: 8619538037201822812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RiverCroc_08a61c6f_5
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 42
+        width: 87
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a125168b6e112c00800000000000000
+      internalID: 874013249846452644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RiverCroc_08a61c6f_6
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 43
+        width: 67
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee6f5ca26c102c7d0800000000000000
+      internalID: -2899753259440408850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RiverCroc_08a61c6f_7
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 42
+        width: 80
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8306eda6a8bc1480800000000000000
+      internalID: -8927057335333551217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RiverCroc_08a61c6f_8
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 42
+        width: 66
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80fc9d9da05e0bbb0800000000000000
+      internalID: -4922182557948588280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RiverCroc_08a61c6f_9
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 42
+        width: 80
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61204a41286324150800000000000000
+      internalID: 5855302397855007254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RiverCroc_08a61c6f_10
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 42
+        width: 78
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fb653b091761bcf0800000000000000
+      internalID: -238295948014031887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RiverCroc_08a61c6f_11
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 43
+        width: 40
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2faa39db7bbc454c0800000000000000
+      internalID: -4299587754211955982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RiverCroc_08a61c6f_12
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 43
+        width: 41
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffd5a5309f184a640800000000000000
+      internalID: 5090336385338596863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_RiverCroc_08a61c6f_13
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 42
+        width: 71
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cee0016c6e3ada70800000000000000
+      internalID: 8852456652754972357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TestCard_RiverCroc_08a61c6f_0: 3890445827704416488
+      TestCard_RiverCroc_08a61c6f_1: -921047013096476928
+      TestCard_RiverCroc_08a61c6f_10: -238295948014031887
+      TestCard_RiverCroc_08a61c6f_11: -4299587754211955982
+      TestCard_RiverCroc_08a61c6f_12: 5090336385338596863
+      TestCard_RiverCroc_08a61c6f_13: 8852456652754972357
+      TestCard_RiverCroc_08a61c6f_2: -2524948139525152339
+      TestCard_RiverCroc_08a61c6f_3: -152345674096086764
+      TestCard_RiverCroc_08a61c6f_4: 8619538037201822812
+      TestCard_RiverCroc_08a61c6f_5: 874013249846452644
+      TestCard_RiverCroc_08a61c6f_6: -2899753259440408850
+      TestCard_RiverCroc_08a61c6f_7: -8927057335333551217
+      TestCard_RiverCroc_08a61c6f_8: -4922182557948588280
+      TestCard_RiverCroc_08a61c6f_9: 5855302397855007254
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

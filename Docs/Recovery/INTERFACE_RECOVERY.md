@@ -1,6 +1,6 @@
 # Original card, targeting and End Turn sources — 15 November 2026
 
-The source investigation and first native-mesh proof are complete. **Targeting and animated End Turn are now connected to the live game; native cards remain in the proof.** HearthstoneTable remains the playable native Orgrimmar checkpoint from175a69a. Craig requested stopping at effort-setting changes: the next visual refinement/connection pass should begin after he switches to High and says continue. Reassess Ultra if shader/recovery problems require deeper work.
+The source investigation and first native-mesh proof are complete. **Targeting and animated End Turn are now connected to the live game; native cards are now integrated through the TableCard UI prefab.** HearthstoneTable remains the playable native Orgrimmar checkpoint from175a69a. Craig requested stopping at effort-setting changes: the next visual refinement/connection pass should begin after he switches to High and says continue. Reassess Ultra if shader/recovery problems require deeper work.
 
 Open Assets/Scenes/RecoveredInterfaceProof.unity. The left two objects use full original minion/spell actors with existing Wolf Rider/Fireball data and artwork. The right shows the original arrow meshes and End Turn button. Play the proof to cycle original button clips. The proof is excluded from builds and contains no game bootstrapper. Docs/Previews/Recovered-Interface-Proof.png records the first refined render.
 
@@ -32,3 +32,8 @@ The working game scene, card data, decks, rules, random music and build-scene li
 ## Live controls checkpoint
 
 Tools/InstallNativeMatchControls.cs is idempotent and saves the playable scene. Source arrow meshes are projected into UI Graphics with original UVs and top-facing triangles; all parts are non-raycastable. End Turn is actual world geometry, aligned to its existing transparent Button; NativeTurnButtonPresentation maps accepted turn changes and pointer events to source clips. AI remains synchronous, with the flip returning after its existing visual queue. The green state is conservative: affordable target-dependent cards can keep the button yellow even when no target exists. No turn/input rules change. Four live regression tools pass; card rendering integration remains pending.
+
+
+## Live cards update — 16 November
+
+NativeCardFace/NativeCardLayer now connect original card shape/UV data and source typography to hands, mulligan, collection and drag ghosts. See NATIVE_CARD_INTEGRATION.md for exact design, assets, tests and remaining limits. This supersedes the earlier pending-card notes above; the old isolated proof remains a source comparison scene.

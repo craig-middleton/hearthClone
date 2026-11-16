@@ -34,6 +34,7 @@ namespace HearthstoneClone.UI
         public Vector2 minionPortraitPosition;
         public Vector2 spellPortraitPosition;
         public Vector2[] spellPortraitOutline;
+        public NativeCardFace nativeFace;
 
         [Header("Mulligan Visuals")]
         public Color normalColor = Color.white;
@@ -115,6 +116,7 @@ namespace HearthstoneClone.UI
                     cardBackground.color = normalColor;
                 }
             }
+            if(nativeFace!=null)nativeFace.Bind(card.Data,faceDown,normalColor);
         }
 
         // Opponent-hand concealment: hides every readable field and swaps cardBackground to the
@@ -152,6 +154,7 @@ namespace HearthstoneClone.UI
 
             WriteCardText();
             UpdateMulliganVisual();
+            if(nativeFace!=null)nativeFace.Bind(card.Data,false,normalColor);
 
             if (button != null)
             {
@@ -265,6 +268,11 @@ namespace HearthstoneClone.UI
             if (cardBackground != null)
             {
                 cardBackground.color = isSelectedForMulligan ? selectedForMulliganColor : normalColor;
+            }
+            if(nativeFace!=null)
+            {
+                nativeFace.SetTint(isSelectedForMulligan?selectedForMulliganColor:normalColor);
+                if(cardBackground!=null)cardBackground.color=Color.clear;
             }
         }
 

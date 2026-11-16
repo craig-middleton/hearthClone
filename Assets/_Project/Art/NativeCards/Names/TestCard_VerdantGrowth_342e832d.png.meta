@@ -1,0 +1,418 @@
+fileFormatVersion: 2
+guid: d360629426a46dafa84c78ac9f09a0d6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4067704615422002266
+    second: TestCard_VerdantGrowth_342e832d_0
+  - first:
+      213: 2483731784698715445
+    second: TestCard_VerdantGrowth_342e832d_1
+  - first:
+      213: -5594090981218172590
+    second: TestCard_VerdantGrowth_342e832d_2
+  - first:
+      213: 3458729350764354865
+    second: TestCard_VerdantGrowth_342e832d_3
+  - first:
+      213: -2167786160695919085
+    second: TestCard_VerdantGrowth_342e832d_4
+  - first:
+      213: -6864432032817978912
+    second: TestCard_VerdantGrowth_342e832d_5
+  - first:
+      213: 747094863995659036
+    second: TestCard_VerdantGrowth_342e832d_6
+  - first:
+      213: 7661591570340208266
+    second: TestCard_VerdantGrowth_342e832d_7
+  - first:
+      213: -2242549721328042515
+    second: TestCard_VerdantGrowth_342e832d_8
+  - first:
+      213: 7168181206245075830
+    second: TestCard_VerdantGrowth_342e832d_9
+  - first:
+      213: -4031177738596598301
+    second: TestCard_VerdantGrowth_342e832d_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TestCard_VerdantGrowth_342e832d_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 44
+        width: 91
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6abfd82343c9c87c0800000000000000
+      internalID: -4067704615422002266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_VerdantGrowth_342e832d_1
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 43
+        width: 69
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53d505816ecf77220800000000000000
+      internalID: 2483731784698715445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_VerdantGrowth_342e832d_2
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 44
+        width: 65
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 251464f24ebcd52b0800000000000000
+      internalID: -5594090981218172590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_VerdantGrowth_342e832d_3
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 43
+        width: 76
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13dd686f400efff20800000000000000
+      internalID: 3458729350764354865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_VerdantGrowth_342e832d_4
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 43
+        width: 73
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31e36b6e8f97ae1e0800000000000000
+      internalID: -2167786160695919085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_VerdantGrowth_342e832d_5
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 44
+        width: 80
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e1621b7f63acb0a0800000000000000
+      internalID: -6864432032817978912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_VerdantGrowth_342e832d_6
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 43
+        width: 51
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c13eafd02d63e5a00800000000000000
+      internalID: 747094863995659036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_VerdantGrowth_342e832d_7
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 43
+        width: 91
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8e514cb0f0735a60800000000000000
+      internalID: 7661591570340208266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_VerdantGrowth_342e832d_8
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 44
+        width: 65
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ded3715f8ecd0e0e0800000000000000
+      internalID: -2242549721328042515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_VerdantGrowth_342e832d_9
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 43
+        width: 230
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67b6ed314de7a7360800000000000000
+      internalID: 7168181206245075830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_VerdantGrowth_342e832d_10
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 44
+        width: 80
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3edbc7074316e08c0800000000000000
+      internalID: -4031177738596598301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TestCard_VerdantGrowth_342e832d_0: -4067704615422002266
+      TestCard_VerdantGrowth_342e832d_1: 2483731784698715445
+      TestCard_VerdantGrowth_342e832d_10: -4031177738596598301
+      TestCard_VerdantGrowth_342e832d_2: -5594090981218172590
+      TestCard_VerdantGrowth_342e832d_3: 3458729350764354865
+      TestCard_VerdantGrowth_342e832d_4: -2167786160695919085
+      TestCard_VerdantGrowth_342e832d_5: -6864432032817978912
+      TestCard_VerdantGrowth_342e832d_6: 747094863995659036
+      TestCard_VerdantGrowth_342e832d_7: 7661591570340208266
+      TestCard_VerdantGrowth_342e832d_8: -2242549721328042515
+      TestCard_VerdantGrowth_342e832d_9: 7168181206245075830
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

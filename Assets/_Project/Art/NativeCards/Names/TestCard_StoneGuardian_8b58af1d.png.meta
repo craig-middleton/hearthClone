@@ -1,0 +1,470 @@
+fileFormatVersion: 2
+guid: c39334d3d5fae524592e7e58ec229f52
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -517936054833144481
+    second: TestCard_StoneGuardian_8b58af1d_0
+  - first:
+      213: -6424732046430594200
+    second: TestCard_StoneGuardian_8b58af1d_1
+  - first:
+      213: -6368923502969138915
+    second: TestCard_StoneGuardian_8b58af1d_2
+  - first:
+      213: -5236194011811078512
+    second: TestCard_StoneGuardian_8b58af1d_3
+  - first:
+      213: 7671821197704941794
+    second: TestCard_StoneGuardian_8b58af1d_4
+  - first:
+      213: 6695515093199502027
+    second: TestCard_StoneGuardian_8b58af1d_5
+  - first:
+      213: 4648790827613171498
+    second: TestCard_StoneGuardian_8b58af1d_6
+  - first:
+      213: -4291320040174017458
+    second: TestCard_StoneGuardian_8b58af1d_7
+  - first:
+      213: -77117797274477485
+    second: TestCard_StoneGuardian_8b58af1d_8
+  - first:
+      213: 3684171024546320997
+    second: TestCard_StoneGuardian_8b58af1d_9
+  - first:
+      213: -1993918937695355809
+    second: TestCard_StoneGuardian_8b58af1d_10
+  - first:
+      213: 1982913257954820541
+    second: TestCard_StoneGuardian_8b58af1d_11
+  - first:
+      213: -4873236571439065546
+    second: TestCard_StoneGuardian_8b58af1d_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TestCard_StoneGuardian_8b58af1d_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 43
+        width: 83
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5d9d4bf6ebefc8f0800000000000000
+      internalID: -517936054833144481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_StoneGuardian_8b58af1d_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 43
+        width: 51
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86b9f635e34c6d6a0800000000000000
+      internalID: -6424732046430594200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_StoneGuardian_8b58af1d_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 43
+        width: 80
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1153eb61d90d97a0800000000000000
+      internalID: -6368923502969138915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_StoneGuardian_8b58af1d_3
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 44
+        width: 81
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09e19fee94d4557b0800000000000000
+      internalID: -5236194011811078512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_StoneGuardian_8b58af1d_4
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 43
+        width: 69
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e0d3857bb8c77a60800000000000000
+      internalID: 7671821197704941794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_StoneGuardian_8b58af1d_5
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 43
+        width: 91
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bca3c6eb08f3bec50800000000000000
+      internalID: 6695515093199502027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_StoneGuardian_8b58af1d_6
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 43
+        width: 79
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2f2afa90a2d38040800000000000000
+      internalID: 4648790827613171498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_StoneGuardian_8b58af1d_7
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 43
+        width: 73
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e44a9ebe82b2274c0800000000000000
+      internalID: -4291320040174017458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_StoneGuardian_8b58af1d_8
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 44
+        width: 66
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35c189f95c50eeef0800000000000000
+      internalID: -77117797274477485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_StoneGuardian_8b58af1d_9
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 43
+        width: 77
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 562ded9f60ec02330800000000000000
+      internalID: 3684171024546320997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_StoneGuardian_8b58af1d_10
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 44
+        width: 40
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5c7eb75a4d2454e0800000000000000
+      internalID: -1993918937695355809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_StoneGuardian_8b58af1d_11
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 43
+        width: 73
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db14fc82a19b48b10800000000000000
+      internalID: 1982913257954820541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_StoneGuardian_8b58af1d_12
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 44
+        width: 81
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6369ee46829ce5cb0800000000000000
+      internalID: -4873236571439065546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TestCard_StoneGuardian_8b58af1d_0: -517936054833144481
+      TestCard_StoneGuardian_8b58af1d_1: -6424732046430594200
+      TestCard_StoneGuardian_8b58af1d_10: -1993918937695355809
+      TestCard_StoneGuardian_8b58af1d_11: 1982913257954820541
+      TestCard_StoneGuardian_8b58af1d_12: -4873236571439065546
+      TestCard_StoneGuardian_8b58af1d_2: -6368923502969138915
+      TestCard_StoneGuardian_8b58af1d_3: -5236194011811078512
+      TestCard_StoneGuardian_8b58af1d_4: 7671821197704941794
+      TestCard_StoneGuardian_8b58af1d_5: 6695515093199502027
+      TestCard_StoneGuardian_8b58af1d_6: 4648790827613171498
+      TestCard_StoneGuardian_8b58af1d_7: -4291320040174017458
+      TestCard_StoneGuardian_8b58af1d_8: -77117797274477485
+      TestCard_StoneGuardian_8b58af1d_9: 3684171024546320997
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

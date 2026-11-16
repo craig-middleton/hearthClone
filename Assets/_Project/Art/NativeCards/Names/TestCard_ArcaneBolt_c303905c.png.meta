@@ -1,0 +1,366 @@
+fileFormatVersion: 2
+guid: 75abd08e198c27e9aac9aaecfab05ea8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5347327032941427487
+    second: TestCard_ArcaneBolt_c303905c_0
+  - first:
+      213: -1736072238228732799
+    second: TestCard_ArcaneBolt_c303905c_1
+  - first:
+      213: -2076337664546432554
+    second: TestCard_ArcaneBolt_c303905c_2
+  - first:
+      213: 7953691823987331754
+    second: TestCard_ArcaneBolt_c303905c_3
+  - first:
+      213: 620656248443189416
+    second: TestCard_ArcaneBolt_c303905c_4
+  - first:
+      213: 7438672376511895983
+    second: TestCard_ArcaneBolt_c303905c_5
+  - first:
+      213: -8048630400214882399
+    second: TestCard_ArcaneBolt_c303905c_6
+  - first:
+      213: -1217697305687427334
+    second: TestCard_ArcaneBolt_c303905c_7
+  - first:
+      213: 8522765960380555786
+    second: TestCard_ArcaneBolt_c303905c_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TestCard_ArcaneBolt_c303905c_0
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 43
+        width: 95
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e4cea7156a7ac5b0800000000000000
+      internalID: -5347327032941427487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ArcaneBolt_c303905c_1
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 43
+        width: 66
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18485f75f7b38e7e0800000000000000
+      internalID: -1736072238228732799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ArcaneBolt_c303905c_2
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 42
+        width: 139
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d912fe15ed5f23e0800000000000000
+      internalID: -2076337664546432554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ArcaneBolt_c303905c_3
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 43
+        width: 82
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa291bdc290316e60800000000000000
+      internalID: 7953691823987331754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ArcaneBolt_c303905c_4
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 42
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a83510d1930d9800800000000000000
+      internalID: 620656248443189416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ArcaneBolt_c303905c_5
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 43
+        width: 86
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa9908a5d197b3760800000000000000
+      internalID: 7438672376511895983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ArcaneBolt_c303905c_6
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 42
+        width: 80
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a728c26b458d4090800000000000000
+      internalID: -8048630400214882399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ArcaneBolt_c303905c_7
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 43
+        width: 40
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af6fc8a80ced91fe0800000000000000
+      internalID: -1217697305687427334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestCard_ArcaneBolt_c303905c_8
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 42
+        width: 52
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0226444c72f64670800000000000000
+      internalID: 8522765960380555786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TestCard_ArcaneBolt_c303905c_0: -5347327032941427487
+      TestCard_ArcaneBolt_c303905c_1: -1736072238228732799
+      TestCard_ArcaneBolt_c303905c_2: -2076337664546432554
+      TestCard_ArcaneBolt_c303905c_3: 7953691823987331754
+      TestCard_ArcaneBolt_c303905c_4: 620656248443189416
+      TestCard_ArcaneBolt_c303905c_5: 7438672376511895983
+      TestCard_ArcaneBolt_c303905c_6: -8048630400214882399
+      TestCard_ArcaneBolt_c303905c_7: -1217697305687427334
+      TestCard_ArcaneBolt_c303905c_8: 8522765960380555786
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

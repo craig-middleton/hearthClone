@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-15 — Native targeting head/dashes/ring and animated End Turn are now connected to HearthstoneTable. Live aim/cancel, press/flip/return, menu/mulligan visibility, targeting/combat and 30-card restart checks pass. Native card actors/fonts remain in RecoveredInterfaceProof; card presentation is not connected yet. High controls pass is complete; pause for Craig to switch to Ultra before the card fan/hover/drag rendering integration._
+_Last updated: 2026-11-16 — Recovered card geometry/UVs and Belwe/Franklin typography are now connected to the live TableCard prefab, covering hands, mulligan, collection and drag ghosts. Native targeting/animated End Turn and original Orgrimmar remain live. Native card interaction/concealment/rebinding, real deck builder, 30-card totals, spell drag, powers/combat and controls checks pass. Core Ultra card integration is complete; pause for Craig to switch to High before visual tuning. See Docs/Recovery/NATIVE_CARD_INTEGRATION.md._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.
@@ -13,7 +13,7 @@ _Last updated: 2026-11-15 — Native targeting head/dashes/ring and animated End
 - **`NETWORKING_PREP.md`** — checklist for the networked 2-player phase: prerequisites and every place UI/input mutates game state today. Read it before starting networking work.
 
 ## Working Preferences
-- Craig controls effort settings: stop at a clean checkpoint when a switch is appropriate, explain which setting/why, and wait for him to switch and say continue. Current source/proof pass used Ultra; next refinement/connection pass awaits High.
+- Craig controls effort settings: stop at a clean checkpoint when a switch is appropriate, explain which setting/why, and wait for him to switch and say continue. Current native-card integration pass used Ultra; visual tuning awaits High.
 - Current scope: resumed graphical matching against the reference using Desktop exports, including both recessed decks. Mechanics were confirmed working by Craig. Full three-folder audit and ten-song random-per-new-match music are complete. Continue iterating without asking for per-part approval (Craig's latest instruction). Keep using his reference screenshot, official Hearthstone imagery, and the supplied Desktop assets.
 - Give brief progress updates explaining what is being changed and why. Save meaningful visual checkpoints with commits and pushes to `main`; the agreed batch is complete; stop for the requested playtest.
 - A 2-paragraph explanation after each new/updated code block: what it does and why.
@@ -275,4 +275,11 @@ Original card actors/fonts/class-frame mappings, targeting meshes and the full E
 
 ## Live native controls
 
-InstallNativeMatchControls authors source-geometry targeting Graphics (original projected vertices/UVs/top-facing triangles, pooled dashes, no input interception) and a separate world-space native End Turn model controlled by the existing invisible UI Button. NativeTurnButtonPresentation plays source hover/press/flip clips after accepted turn changes, waits for existing action effects before returning to ready, and follows menu/mulligan visibility. Conservative green hint checks affordable cards/eligible attackers/power; target-dependent cards may keep yellow when no legal target exists. Rules and synchronous AI remain unchanged. Card meshes/fonts still await integration. Use VerifyNativeMatchControls, VerifyPowersAndBattle, VerifyNativeBoardGameplay and VerifyStartingDecks for regressions.
+InstallNativeMatchControls authors source-geometry targeting Graphics (original projected vertices/UVs/top-facing triangles, pooled dashes, no input interception) and a separate world-space native End Turn model controlled by the existing invisible UI Button. NativeTurnButtonPresentation plays source hover/press/flip clips after accepted turn changes, waits for existing action effects before returning to ready, and follows menu/mulligan visibility. Conservative green hint checks affordable cards/eligible attackers/power; target-dependent cards may keep yellow when no legal target exists. Rules and synchronous AI remain unchanged. Card meshes/fonts are now integrated through NativeCardFace and the shared TableCard prefab. Use VerifyNativeMatchControls, VerifyPowersAndBattle, VerifyNativeBoardGameplay and VerifyStartingDecks for regressions.
+
+
+## Live native card faces
+
+TableCard keeps its original root RectTransform/Button/fan/drag machinery. Optional NativeCardFace binds source-derived mesh-layer Graphics and source fonts after legacy field writes; old fields retain their values for fallback/debugging, while their visible Graphics are suppressed. Face-down cards keep the existing classic backs and hide every front layer. Original source shapes share one native reference rectangle; geometric upward winding and depth order preserve the gems. NativeCardPaint ignores source paint alpha (a reflection mask) while retaining UI tint, clipping and stencil behavior. Card names use editor-baked source-font textures on original curved-name geometry; frames/portraits remain individual meshes and data-bound artwork. No runtime per-card camera or RenderTexture.
+
+NativeCardLibrary holds mesh recipes and name textures for47 existing CardData assets (including historical assets); the playable pool remains26. New unbaked CardData names have a flat native-font fallback until rerunning Tools/InstallNativeCards.cs. Editor-only NativeCardTextBaker is shared by the old proof tool. Tools/VerifyNativeCards covers native values, type changes, concealment, selection tint, raycasts, hover, ghost cloning/cleanup, collection and manual reveal. The prefab is saved with all17 native CanvasRenderers present. Remaining visual tuning includes hover clearance, font metrics/material richness and the school-less spell description variant; no pixel-identical/full3D card-lighting claim.
