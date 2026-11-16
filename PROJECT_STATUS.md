@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-16 — Native cards are live and now have larger title lettering, separated spell-description/school text and higher hover positions that keep ten-card hand edges onscreen. New-match End Turn pose resets correctly after interrupted flips. Native card/layout/control checks pass. Craig requests added card animations from the original game only. No custom card tweens or reconstructed gem shimmer were added. Save this High checkpoint and pause for Ultra before inspecting/retargeting recovered card clips._
+_Last updated: 2026-11-16 — Original code-driven card draws are integrated with source paths/easing/timing and native camera perspective. Original five-stage 3D deck models replace flat UI stacks. Hand panels now render above hero health. Draws block only their own card input; End Turn remains usable during a draw. See Docs/Recovery/ORIGINAL_CARD_MOTION.md for fidelity limits. Original desktop mana geometry/paint replace the phone gem contour. End Turn hover cannot interrupt its return flip. Current pass is High._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.

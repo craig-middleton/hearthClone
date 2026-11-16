@@ -9,6 +9,7 @@ namespace HearthstoneClone.Cards
         // refresh the board. The list was captured before damage, retaining lethal targets.
         public event System.Action<CardInstance, IReadOnlyList<Minion>> CardPlayed;
         public event System.Action<CardInstance, Target> CardResolved;
+        public event System.Action<CardInstance, int> CardDrawn;
         public Player CorePlayer;
         public List<CardInstance> Deck = new List<CardInstance>();
         public List<CardInstance> Hand = new List<CardInstance>();
@@ -50,6 +51,7 @@ namespace HearthstoneClone.Cards
             }
 
             Hand.Add(drawn);
+            CardDrawn?.Invoke(drawn, Deck.Count);
             UnityEngine.Debug.Log($"{CorePlayer.PlayerName} drew {drawn.Data.cardName}. Hand size: {Hand.Count}, Deck remaining: {Deck.Count}");
         }
 

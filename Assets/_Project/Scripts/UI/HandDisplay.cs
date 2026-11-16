@@ -10,6 +10,7 @@ namespace HearthstoneClone.UI
     {
         public GameObject cardViewPrefab;
         public Transform handPanel;
+        public NativeCardDrawPresentation drawPresentation;
 
         // faceDown and fanInteractive both default null (treated as "never face-down" /
         // "always interactive") so the player's own HandDisplay call site is unaffected - only
@@ -33,7 +34,7 @@ namespace HearthstoneClone.UI
                 Destroy(child.gameObject);
             }
 
-            if (hand == null) return;
+            if (hand == null) { drawPresentation?.ResetDraws(); return; }
             if (cardViewPrefab == null)
             {
                 Debug.LogWarning("HandDisplay.RenderHand has no cardViewPrefab assigned.", this);
@@ -79,6 +80,7 @@ namespace HearthstoneClone.UI
                 bool isInteractive = fanInteractive == null || fanInteractive();
                 fanLayout.ApplyLayout(renderedViews, isInteractive);
             }
+            drawPresentation?.Bind(renderedViews, isFaceDown);
         }
     }
 }

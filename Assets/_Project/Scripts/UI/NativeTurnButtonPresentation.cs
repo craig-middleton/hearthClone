@@ -13,6 +13,7 @@ namespace HearthstoneClone.UI
         public Renderer paintRenderer,greenHighlight;
         Material paint,glow;
         bool flipping,green,hover;
+        public bool IsTransitioning => flipping;
         void Awake(){paint=paintRenderer.material;glow=greenHighlight.material;}
         void OnEnable()
         {
@@ -30,13 +31,23 @@ namespace HearthstoneClone.UI
             if(next!=green){green=next;Play(green?"ENDTURN_NO_MORE_PLAYS":"ENDTURN_YOUR_TURN");paint.mainTextureOffset=green?new Vector2(0,.5f):Vector2.zero;}
             greenHighlight.enabled=green||hover;
         }
-        public void TurnEnded(){StopAllCoroutines();hover=false;if(game.manualControlMode&&!game.IsOpponentTurn){flipping=false;Play("ENDTURN_YOUR_TURN");}else StartCoroutine(Flip());}
+        public void TurnEnded(){StopAllCoroutines();hover=false;StartCoroutine(Flip());}
         IEnumerator Flip()
         {
             flipping=true;green=false;greenHighlight.enabled=false;paint.mainTextureOffset=Vector2.zero;
-            Play("ENDTURN_WAITING");yield return new WaitForSeconds(.65f);
-            while(game.ActionEffectsBusy)yield return null;
-            if(!game.IsOpponentTurn)Play("ENDTURN_YOUR_TURN");
+            if(!game.manualControlMode||game.IsOpponentTurn)
+            {
+                Play("ENDTURN_WAITING");yield return new WaitForSeconds(.65f);
+                while(game.ActionEffectsBusy)yield return null;
+            }
+            if(!game.IsOpponentTurn)
+            {
+                Play("ENDTURN_YOUR_TURN");
+                // Hover/green clips have no root flip channel. Letting them stop this
+                // return clip can strand its last sampled root pose halfway side-on.
+                var returning=animator["ENDTURN_YOUR_TURN"];
+                if(returning!=null)yield return new WaitForSeconds(returning.length);
+            }
             flipping=false;
         }
         void Play(string clip){var state=animator[clip];if(state==null)return;state.wrapMode=WrapMode.ClampForever;animator.Play(clip,PlayMode.StopAll);}

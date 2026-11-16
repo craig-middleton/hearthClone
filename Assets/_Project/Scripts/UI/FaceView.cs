@@ -135,7 +135,7 @@ namespace HearthstoneClone.UI
                 if (paint != null)
                 {
                     crystalImage.material = paint;
-                    crystalImage.color = Color.white;
+                    crystalImage.color = crystalImage is NativeManaCrystal && i >= player.CurrentMana ? new Color(.35f,.4f,.55f) : Color.white;
                 }
                 else crystalImage.color = i < player.CurrentMana ? Color.white : new Color(.35f, .4f, .55f);
             }
@@ -145,8 +145,10 @@ namespace HearthstoneClone.UI
         // (layer i visible while remaining > startingDeckSize * i / layerCount), so the pile
         // reads as shrinking for any deck size without hardcoded card counts. No-ops on the
         // opponent's FaceView instance, where deckPileLayers/deckCountText are left unassigned.
+        public NativeDeckPile nativeDeck;
         private void UpdateDeckPile(int remaining)
         {
+            if(nativeDeck!=null)nativeDeck.SetRemaining(remaining);
             if (deckPileLayers == null || deckPileLayers.Length == 0 || deckCountText == null) return;
 
             deckCountText.text = remaining.ToString();

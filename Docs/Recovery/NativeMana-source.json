@@ -1,0 +1,11 @@
+{
+  "source_mesh": "../../recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/ManaGem.asset",
+  "sha256": "6d775b0333c54ca1bf54b7ed294ef39b9a6d6a4e5c06f5127e18d269837c75ca",
+  "destination": "Assets/_Project/RecoveredDecks/ManaGem.asset",
+  "adaptations": [
+    "m_IsReadable enabled for UI vertex access",
+    "Top-facing source triangles projected from XZ to UI XY",
+    "Original paint GenFX_Gem_Mana_D.png reused",
+    "Spent crystals use existing UI darkening; no new animation or reconstructed shader effects"
+  ]
+}

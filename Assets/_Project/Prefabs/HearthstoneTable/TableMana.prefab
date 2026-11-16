@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7973396778742062680}
   - component: {fileID: 4969145965281356868}
-  - component: {fileID: 6217281283921949740}
-  - component: {fileID: 2400628907984830903}
+  - component: {fileID: 1603190022765069193}
   m_Layer: 0
   m_Name: TableMana
   m_TagString: Untagged
@@ -36,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 34, y: 36}
+  m_SizeDelta: {x: 31, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4969145965281356868
 CanvasRenderer:
@@ -46,7 +45,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637365362270836457}
   m_CullTransparentMesh: 1
---- !u!114 &6217281283921949740
+--- !u!114 &1603190022765069193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,9 +54,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1637365362270836457}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 94039f4a23def391ea744519c1ac2fd9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_EditorClassIdentifier: UI::HearthstoneClone.UI.NativeManaCrystal
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
@@ -66,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 36c406b2df3ea1ba5942597aed7dba2d, type: 2}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -76,22 +75,5 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2400628907984830903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637365362270836457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9c991950fd2a2bf9d8afe42957fc7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UI::HearthstoneClone.UI.AtlasContour
-  outline:
-  - {x: 0.2781457, y: 0.9423077}
-  - {x: 0.70198673, y: 0.9423077}
-  - {x: 0.9933775, y: 0.47435898}
-  - {x: 0.7086093, y: 0.012820513}
-  - {x: 0.2781457, y: 0.012820513}
-  - {x: 0.0066225166, y: 0.4679487}
+  sourceMesh: {fileID: 4300000, guid: bcf36f306520965f1b2c0fe0d2d53461, type: 2}
+  paint: {fileID: 2800000, guid: b22c27333d4246341a0ca6eab0b97433, type: 3}

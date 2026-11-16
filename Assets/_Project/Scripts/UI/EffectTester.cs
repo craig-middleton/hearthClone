@@ -29,6 +29,8 @@ namespace HearthstoneClone.UI
         public TargetingRibbon targetingRibbon;
         public BattleEffects battleEffects;
         private bool powerPending;
+        // Draws hide/block only their own live card. They must not lock End Turn,
+        // powers or other hand cards; combat effects retain their existing action lock.
         private bool PresentationBusy => battleEffects!=null&&battleEffects.IsBusy;
         public bool ActionEffectsBusy => PresentationBusy;
         public bool IsOpponentTurn => turnManager!=null&&turnManager.CurrentPlayer==playerTwo;
@@ -101,10 +103,11 @@ namespace HearthstoneClone.UI
             if(opponentHeroPowerButton!=null)opponentHeroPowerButton.onClick.AddListener(()=>OnPowerPressed(true));
             if(targetingRibbon!=null)targetingRibbon.CancelRequested=CancelPendingInput;
             if(battleEffects!=null)battleEffects.Completed+=()=>{if(gameManager!=null&&(frontEnd==null||frontEnd.tableSurface.activeSelf))RefreshAll();};
+            if(handDisplay!=null&&handDisplay.drawPresentation!=null)handDisplay.drawPresentation.Completed+=()=>{if(gameManager!=null&&(frontEnd==null||frontEnd.tableSurface.activeSelf))RefreshAll();};
 
             if (endTurnButton != null)
             {
-                endTurnButton.onClick.AddListener(() => {CancelPendingInput();int before=turnManager.TurnNumber;gameManager.OnEndTurnClicked();if(turnManager.TurnNumber!=before)endTurnButton.GetComponent<NativeTurnButtonPresentation>()?.TurnEnded();});
+                endTurnButton.onClick.AddListener(() => {var native=endTurnButton.GetComponent<NativeTurnButtonPresentation>();if(native!=null&&native.IsTransitioning)return;CancelPendingInput();int before=turnManager.TurnNumber;gameManager.OnEndTurnClicked();if(turnManager.TurnNumber!=before)native?.TurnEnded();});
             }
 
             if (confirmMulliganButton != null)
@@ -128,7 +131,7 @@ namespace HearthstoneClone.UI
             BeginNewGame();return true;
         }
         public void CancelPendingInput() {powerPending=false;targetingRibbon?.Hide();combatInputController?.ClearSelection();}
-        public void ResetPresentation(){battleEffects?.ResetEffects();areaSpellAnimator?.ClearEffects();}
+        public void ResetPresentation(){battleEffects?.ResetEffects();areaSpellAnimator?.ClearEffects();handDisplay?.drawPresentation?.ResetDraws();opponentHandDisplay?.drawPresentation?.ResetDraws();}
         private void OnPowerPressed(bool opponent)
         {
             var owner=opponent?playerTwo:playerOne;
@@ -251,6 +254,8 @@ namespace HearthstoneClone.UI
             aiController.PerformMulligan();
 
             mulliganController = new MulliganController(playerOneHand, mulliganPanel, cardViewPrefab, confirmMulliganButton, OnMulliganComplete);
+            playerOneHand.CardDrawn+=(card,remaining)=>{if(mulliganController.MulliganComplete)handDisplay?.drawPresentation?.Queue(card,remaining);};
+            playerTwoHand.CardDrawn+=(card,remaining)=>{if(mulliganController.MulliganComplete)opponentHandDisplay?.drawPresentation?.Queue(card,remaining);};
 
             combatInputController = new CombatInputController(
                 board, turnManager, playerOne, playerTwo,

@@ -1,0 +1,1271 @@
+{
+  "rows": [
+    {
+      "zone": "Zone_Friendly_Deck",
+      "chain": [
+        {
+          "name": "ZoneMgr",
+          "position": {
+            "x": -8,
+            "y": -0.34758997,
+            "z": -4.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Zone_Friendly_Deck",
+          "position": {
+            "x": 7.608504,
+            "y": -0.20631361,
+            "z": -1.5364208
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 2.75,
+            "y": 2.75,
+            "z": 2.75
+          }
+        },
+        {
+          "name": "DeckStates",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Deck_25",
+          "position": {
+            "x": 0,
+            "y": 0.16000001,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0.7071068,
+            "z": 0,
+            "w": 0.7071068
+          },
+          "scale": {
+            "x": 0.32,
+            "y": 0.32000002,
+            "z": 0.32
+          }
+        },
+        {
+          "name": "RootObject",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Mesh",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      ],
+      "mesh": "Assets/_Project/RecoveredDecks/Deck_25_mesh.asset",
+      "materials": [
+        "AssetBundles/essential_base_global-material-0.unity3d/Deck_25-card_back.mat"
+      ],
+      "texture": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_Back_Default_D.png"
+    },
+    {
+      "zone": "Zone_Friendly_Deck",
+      "chain": [
+        {
+          "name": "ZoneMgr",
+          "position": {
+            "x": -8,
+            "y": -0.34758997,
+            "z": -4.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Zone_Friendly_Deck",
+          "position": {
+            "x": 7.608504,
+            "y": -0.20631361,
+            "z": -1.5364208
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 2.75,
+            "y": 2.75,
+            "z": 2.75
+          }
+        },
+        {
+          "name": "DeckStates",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Deck_50",
+          "position": {
+            "x": 0,
+            "y": 0.16000001,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0.7071068,
+            "z": 0,
+            "w": 0.7071068
+          },
+          "scale": {
+            "x": 0.32,
+            "y": 0.32000002,
+            "z": 0.32
+          }
+        },
+        {
+          "name": "RootObject",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Mesh",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      ],
+      "mesh": "Assets/_Project/RecoveredDecks/Deck_50_mesh.asset",
+      "materials": [
+        "AssetBundles/essential_base_global-material-0.unity3d/Deck_50-card_back.mat"
+      ],
+      "texture": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_Back_Default_D.png"
+    },
+    {
+      "zone": "Zone_Friendly_Deck",
+      "chain": [
+        {
+          "name": "ZoneMgr",
+          "position": {
+            "x": -8,
+            "y": -0.34758997,
+            "z": -4.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Zone_Friendly_Deck",
+          "position": {
+            "x": 7.608504,
+            "y": -0.20631361,
+            "z": -1.5364208
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 2.75,
+            "y": 2.75,
+            "z": 2.75
+          }
+        },
+        {
+          "name": "DeckStates",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Deck_75",
+          "position": {
+            "x": 0,
+            "y": 0.16000001,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0.7071068,
+            "z": 0,
+            "w": 0.7071068
+          },
+          "scale": {
+            "x": 0.32,
+            "y": 0.32000002,
+            "z": 0.32
+          }
+        },
+        {
+          "name": "RootObject",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Mesh",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      ],
+      "mesh": "Assets/_Project/RecoveredDecks/Deck_75_mesh.asset",
+      "materials": [
+        "AssetBundles/essential_base_global-material-0.unity3d/Deck_75-card_back.mat"
+      ],
+      "texture": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_Back_Default_D.png"
+    },
+    {
+      "zone": "Zone_Friendly_Deck",
+      "chain": [
+        {
+          "name": "ZoneMgr",
+          "position": {
+            "x": -8,
+            "y": -0.34758997,
+            "z": -4.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Zone_Friendly_Deck",
+          "position": {
+            "x": 7.608504,
+            "y": -0.20631361,
+            "z": -1.5364208
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 2.75,
+            "y": 2.75,
+            "z": 2.75
+          }
+        },
+        {
+          "name": "DeckStates",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Deck_Full",
+          "position": {
+            "x": 0,
+            "y": 0.16000001,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0.7071068,
+            "z": 0,
+            "w": 0.7071068
+          },
+          "scale": {
+            "x": 0.32,
+            "y": 0.32000002,
+            "z": 0.32
+          }
+        },
+        {
+          "name": "RootObject",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Mesh",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      ],
+      "mesh": "Assets/_Project/RecoveredDecks/Deck_Full_mesh.asset",
+      "materials": [
+        "AssetBundles/essential_base_global-material-0.unity3d/GenFX_Deck_Full-card_back.mat"
+      ],
+      "texture": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_Back_Default_D.png"
+    },
+    {
+      "zone": "Zone_Friendly_Deck",
+      "chain": [
+        {
+          "name": "ZoneMgr",
+          "position": {
+            "x": -8,
+            "y": -0.34758997,
+            "z": -4.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Zone_Friendly_Deck",
+          "position": {
+            "x": 7.608504,
+            "y": -0.20631361,
+            "z": -1.5364208
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 2.75,
+            "y": 2.75,
+            "z": 2.75
+          }
+        },
+        {
+          "name": "DeckStates",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Friendly_Deck_1",
+          "position": {
+            "x": 0,
+            "y": 0.16000001,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0.7071068,
+            "z": 0,
+            "w": 0.7071068
+          },
+          "scale": {
+            "x": 0.32,
+            "y": 0.32000002,
+            "z": 0.32
+          }
+        },
+        {
+          "name": "RootObject",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Mesh",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      ],
+      "mesh": "Assets/_Project/RecoveredDecks/Deck_1_mesh.asset",
+      "materials": [
+        "AssetBundles/essential_base_global-material-0.unity3d/Deck_1-card_back.mat"
+      ],
+      "texture": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_Back_Default_D.png"
+    },
+    {
+      "zone": "Zone_Opposing_Deck",
+      "chain": [
+        {
+          "name": "ZoneMgr",
+          "position": {
+            "x": -8,
+            "y": -0.34758997,
+            "z": -4.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Zone_Opposing_Deck",
+          "position": {
+            "x": 7.608504,
+            "y": -0.20631361,
+            "z": 1.7998819
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 2.75,
+            "y": 2.75,
+            "z": 2.75
+          }
+        },
+        {
+          "name": "DeckStates",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Deck_25",
+          "position": {
+            "x": 0.0017625636,
+            "y": 0.16000003,
+            "z": 0.018693231
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0.7071069,
+            "z": 0,
+            "w": 0.70710677
+          },
+          "scale": {
+            "x": 0.32000008,
+            "y": 0.32000002,
+            "z": 0.32000008
+          }
+        },
+        {
+          "name": "RootObject",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Mesh",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      ],
+      "mesh": "Assets/_Project/RecoveredDecks/Deck_25_mesh.asset",
+      "materials": [
+        "AssetBundles/essential_base_global-material-0.unity3d/Deck_25-card_back.mat"
+      ],
+      "texture": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_Back_Default_D.png"
+    },
+    {
+      "zone": "Zone_Opposing_Deck",
+      "chain": [
+        {
+          "name": "ZoneMgr",
+          "position": {
+            "x": -8,
+            "y": -0.34758997,
+            "z": -4.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Zone_Opposing_Deck",
+          "position": {
+            "x": 7.608504,
+            "y": -0.20631361,
+            "z": 1.7998819
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 2.75,
+            "y": 2.75,
+            "z": 2.75
+          }
+        },
+        {
+          "name": "DeckStates",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Deck_50",
+          "position": {
+            "x": 0.0017625636,
+            "y": 0.16000003,
+            "z": 0.018693231
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0.7071069,
+            "z": 0,
+            "w": 0.70710677
+          },
+          "scale": {
+            "x": 0.32000008,
+            "y": 0.32000002,
+            "z": 0.32000008
+          }
+        },
+        {
+          "name": "RootObject",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Mesh",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      ],
+      "mesh": "Assets/_Project/RecoveredDecks/Deck_50_mesh.asset",
+      "materials": [
+        "AssetBundles/essential_base_global-material-0.unity3d/Deck_50-card_back.mat"
+      ],
+      "texture": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_Back_Default_D.png"
+    },
+    {
+      "zone": "Zone_Opposing_Deck",
+      "chain": [
+        {
+          "name": "ZoneMgr",
+          "position": {
+            "x": -8,
+            "y": -0.34758997,
+            "z": -4.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Zone_Opposing_Deck",
+          "position": {
+            "x": 7.608504,
+            "y": -0.20631361,
+            "z": 1.7998819
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 2.75,
+            "y": 2.75,
+            "z": 2.75
+          }
+        },
+        {
+          "name": "DeckStates",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Deck_75",
+          "position": {
+            "x": 0.0017625636,
+            "y": 0.16000003,
+            "z": 0.018693231
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0.7071069,
+            "z": 0,
+            "w": 0.70710677
+          },
+          "scale": {
+            "x": 0.32000008,
+            "y": 0.32000002,
+            "z": 0.32000008
+          }
+        },
+        {
+          "name": "RootObject",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Mesh",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      ],
+      "mesh": "Assets/_Project/RecoveredDecks/Deck_75_mesh.asset",
+      "materials": [
+        "AssetBundles/essential_base_global-material-0.unity3d/Deck_75-card_back.mat"
+      ],
+      "texture": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_Back_Default_D.png"
+    },
+    {
+      "zone": "Zone_Opposing_Deck",
+      "chain": [
+        {
+          "name": "ZoneMgr",
+          "position": {
+            "x": -8,
+            "y": -0.34758997,
+            "z": -4.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Zone_Opposing_Deck",
+          "position": {
+            "x": 7.608504,
+            "y": -0.20631361,
+            "z": 1.7998819
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 2.75,
+            "y": 2.75,
+            "z": 2.75
+          }
+        },
+        {
+          "name": "DeckStates",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Deck_Full",
+          "position": {
+            "x": 0.0017625636,
+            "y": 0.16000003,
+            "z": 0.018693231
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0.7071068,
+            "z": 0,
+            "w": 0.7071067
+          },
+          "scale": {
+            "x": 0.32000008,
+            "y": 0.32000002,
+            "z": 0.32000008
+          }
+        },
+        {
+          "name": "RootObject",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Mesh",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      ],
+      "mesh": "Assets/_Project/RecoveredDecks/Deck_Full_mesh.asset",
+      "materials": [
+        "AssetBundles/essential_base_global-material-0.unity3d/GenFX_Deck_Full-card_back.mat"
+      ],
+      "texture": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_Back_Default_D.png"
+    },
+    {
+      "zone": "Zone_Opposing_Deck",
+      "chain": [
+        {
+          "name": "ZoneMgr",
+          "position": {
+            "x": -8,
+            "y": -0.34758997,
+            "z": -4.5
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Zone_Opposing_Deck",
+          "position": {
+            "x": 7.608504,
+            "y": -0.20631361,
+            "z": 1.7998819
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 2.75,
+            "y": 2.75,
+            "z": 2.75
+          }
+        },
+        {
+          "name": "DeckStates",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Opposing_Deck_1",
+          "position": {
+            "x": 0.0017625636,
+            "y": 0.16000003,
+            "z": 0.018693231
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0.7071069,
+            "z": 0,
+            "w": 0.70710677
+          },
+          "scale": {
+            "x": 0.32000008,
+            "y": 0.32000002,
+            "z": 0.32000008
+          }
+        },
+        {
+          "name": "RootObject",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "name": "Mesh",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      ],
+      "mesh": "Assets/_Project/RecoveredDecks/Deck_1_mesh.asset",
+      "materials": [
+        "AssetBundles/essential_base_global-material-0.unity3d/Deck_1-card_back.mat"
+      ],
+      "texture": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_Back_Default_D.png"
+    }
+  ],
+  "files": [
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Deck_25_mesh.asset",
+      "destination": "Assets/_Project/RecoveredDecks/Deck_25_mesh.asset",
+      "sha256": "13ab0dda1c961bb67016af6fcb2d413ff5e8cb40acbb3fd97a8626464b19959f"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Deck_50_mesh.asset",
+      "destination": "Assets/_Project/RecoveredDecks/Deck_50_mesh.asset",
+      "sha256": "c2d89e50e726a7efd2f6a206532c7c5f8b47e3b5471dd9be1eb8c623c11bae6f"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Deck_75_mesh.asset",
+      "destination": "Assets/_Project/RecoveredDecks/Deck_75_mesh.asset",
+      "sha256": "c8b67efa6ae5aef661b9fcab72ae43fb413c21141dfc4cf7dd9f6edf07bb4c3c"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Deck_Full_mesh.asset",
+      "destination": "Assets/_Project/RecoveredDecks/Deck_Full_mesh.asset",
+      "sha256": "0db18b3132393d980bcfb08f5e6580d691f4dbaad5d20f2e5a83975befcc86f7"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Deck_1_mesh.asset",
+      "destination": "Assets/_Project/RecoveredDecks/Deck_1_mesh.asset",
+      "sha256": "da446fb24b43b7916230e46bc77238fa7bdbaaa1dc7df83b7b22f8fb9cafec46"
+    }
+  ]
+}

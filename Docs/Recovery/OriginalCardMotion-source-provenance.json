@@ -1,0 +1,27 @@
+{
+  "audit_date": "2026-11-16",
+  "method": "Mono.Cecil static metadata/IL read only; no original assembly execution",
+  "files": [
+    {
+      "path": "/home/craig-middleton/.local/share/Steam/steamapps/compatdata/2505554610/pfx/drive_c/Program Files (x86)/Hearthstone/Hearthstone_Data/Managed/Assembly-CSharp.dll",
+      "size_bytes": 23115264,
+      "sha256": "2408c5eae3d5ab083b8b290a7278147159e79a3c6e72e1d922ef44028ed16afb"
+    },
+    {
+      "path": "/home/craig-middleton/.local/share/Steam/steamapps/compatdata/2505554610/pfx/drive_c/Program Files (x86)/Hearthstone/Hearthstone_Data/Managed/Blizzard.T5.iTween.dll",
+      "size_bytes": 68096,
+      "sha256": "04f0721435ac1cd14e68ffebd373db46205818cdbd4408d39ad72ee20021e1b3"
+    },
+    {
+      "path": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-prefab-0.unity3d/BoardStandardGame.prefab",
+      "size_bytes": 7992586,
+      "sha256": "6686571e356cb8f05474b5dc237678c29d56e5dffc14b13d1e3a53be8a2861d5"
+    },
+    {
+      "path": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/BoardCameras.prefab",
+      "size_bytes": 30235,
+      "sha256": "2a224fef3e56cb1f4d379f8a889cbe8d4582fbb658e59eba238f9544e77e5923"
+    }
+  ],
+  "runtime_implementation": "Assets/_Project/Scripts/UI/NativeCardDrawPresentation.cs and NativeCardMotionMath.cs; independently implemented from static source evidence, with the final hand pose retargeted to the existing UI."
+}
