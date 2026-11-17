@@ -113,6 +113,7 @@ namespace HearthstoneClone.UI
         // FaceView instance, where manaCrystalRow/manaCrystalPrefab are left unassigned.
         private void BuildManaCrystalRow()
         {
+            if(nativeManaRack!=null){nativeManaRack.SetMana(player);return;}
             if (manaCrystalRow == null || manaCrystalPrefab == null) return;
 
             foreach (Transform child in manaCrystalRow)
@@ -146,6 +147,7 @@ namespace HearthstoneClone.UI
         // reads as shrinking for any deck size without hardcoded card counts. No-ops on the
         // opponent's FaceView instance, where deckPileLayers/deckCountText are left unassigned.
         public NativeDeckPile nativeDeck;
+        public NativeManaRack nativeManaRack;
         private void UpdateDeckPile(int remaining)
         {
             if(nativeDeck!=null)nativeDeck.SetRemaining(remaining);

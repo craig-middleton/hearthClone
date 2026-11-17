@@ -3421,6 +3421,54 @@ Transform:
   - {fileID: 877413086}
   m_Father: {fileID: 848483599}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &407864144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 407864145}
+  - component: {fileID: 407864146}
+  m_Layer: 0
+  m_Name: Native mana crystals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &407864145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407864144}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 957132551}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &407864146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407864144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f72498c49738047f7821f779c8b88182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UI::HearthstoneClone.UI.NativeManaRack
+  boardRoot: {fileID: 191192530}
+  sourceMesh: {fileID: 4300000, guid: e8305d52bec20c8479ff8a82f8d86350, type: 2}
+  crystalMaterial: {fileID: 2100000, guid: d8d9366ff121e8a1c8f00e00704de340, type: 2}
+  library: {fileID: 11400000, guid: e0acbdf2536c3b736822c93fd9933bb6, type: 2}
 --- !u!1 &409631231
 GameObject:
   m_ObjectHideFlags: 0
@@ -7278,7 +7326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &652331372
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9689,6 +9737,7 @@ RectTransform:
   - {fileID: 668285542}
   - {fileID: 461540680}
   - {fileID: 1756235895}
+  - {fileID: 407864145}
   - {fileID: 634714544}
   - {fileID: 300327754}
   m_Father: {fileID: 1119497695}
@@ -12631,6 +12680,10 @@ PrefabInstance:
       propertyPath: manaCrystalRow
       value: 
       objectReference: {fileID: 652331372}
+    - target: {fileID: 1946394292287716123, guid: 2d8ca07250932140c8cb2cdba5bb25e1, type: 3}
+      propertyPath: nativeManaRack
+      value: 
+      objectReference: {fileID: 407864146}
     - target: {fileID: 1946394292287716123, guid: 2d8ca07250932140c8cb2cdba5bb25e1, type: 3}
       propertyPath: armorNumberText
       value: 
@@ -18869,7 +18922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1774302220
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18886,8 +18939,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 530, y: -458}
-  m_SizeDelta: {x: 51, y: 422}
+  m_AnchoredPosition: {x: 500, y: -458}
+  m_SizeDelta: {x: 51, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1774302221
 MonoBehaviour:

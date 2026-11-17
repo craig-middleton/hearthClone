@@ -1,11 +1,46 @@
 {
-  "source_mesh": "../../recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/ManaGem.asset",
-  "sha256": "6d775b0333c54ca1bf54b7ed294ef39b9a6d6a4e5c06f5127e18d269837c75ca",
-  "destination": "Assets/_Project/RecoveredDecks/ManaGem.asset",
-  "adaptations": [
-    "m_IsReadable enabled for UI vertex access",
-    "Top-facing source triangles projected from XZ to UI XY",
-    "Original paint GenFX_Gem_Mana_D.png reused",
-    "Spent crystals use existing UI darkening; no new animation or reconstructed shader effects"
-  ]
+  "source_files": [
+    {
+      "path": "../../recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-prefab-0.unity3d/Resource.prefab",
+      "sha256": "59494a521e67b1e3f0632d49dda52064e5549566b08e0c6dba7ea54e900eed75"
+    },
+    {
+      "path": "../../recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-prefab-0.unity3d/ManaGemBirth.anim",
+      "sha256": "032969ea64ea8df017aa7c4799128fb4e76442956f7f4e1352a4442982cc4228"
+    },
+    {
+      "path": "../../recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-prefab-0.unity3d/ManaGemUsed.anim",
+      "sha256": "0c9ffc2c2c7b8207cd06ba2fadfb406f27134fd99c794c0a51f78e2f5b3f7895"
+    },
+    {
+      "path": "../../recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-prefab-0.unity3d/ManaGem_Restore.anim",
+      "sha256": "fa61dcc5fca4268202d9cc25e6240562dfb86504650d51a9cdc1b1082c0675af"
+    },
+    {
+      "path": "../../recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-material-0.unity3d/Gem_Mana_Blue.mat",
+      "sha256": "615289221da06a7b9caaa2ce430f481e028db8e19967c55e2bdafc6b653de362"
+    }
+  ],
+  "source_origin": [
+    -3.674102,
+    0.06766415,
+    -10.03144
+  ],
+  "resource_scale": 0.8152721,
+  "gem_scale": 1.2,
+  "spacing": "Original renderer world width; no extra padding",
+  "source_paint": "GenFX_Gem_Mana_D.png",
+  "source_reflection": "GenFX_clouds03.png",
+  "shader": "Authorized compatibility reconstruction of unsupported Hero/Diffuse/DiffuseAlphaMaskScroller, not original shader source",
+  "original_shader_observation": "Original Shader.isSupported=false on OpenGLCore; Unity: none of subshaders/fallbacks suitable. Exact backend/version cause not proven.",
+  "presentation_adaptations": [
+    "Crystals are real MeshRenderers parented to the recovered board, seen by its existing camera",
+    "Original frame recess is reused unchanged; separate ManaTray image and flat UI crystal row disabled",
+    "No mana overlay, render target, capture camera, UV crop or UI fitting",
+    "Original source resource scale, mesh UVs/normals, crystal spacing and animation curves preserved",
+    "Original curve keys/tangents copied through Editor AnimationUtility; executable callbacks excluded",
+    "Original renderer enable curve respected",
+    "Authorized compatibility shader reconstruction with static source reflection map; exact scrolling math, Resource particles and sounds remain outside this pass"
+  ],
+  "approved_native_frame_proof": "Craig approved the direct native-frame rendering on 2026-11-17. Frame mesh and local position/rotation/scale match source prefab."
 }
