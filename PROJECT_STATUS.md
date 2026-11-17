@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-17 — Craig approved the mana fix: original resource meshes render directly in the original board-frame recess. Separate tray image, flat crystal row and rejected render-texture overlay are disabled/removed. Original frame geometry/placement remains unchanged. Compatibility crystal shader authorized; original mesh/paint/reflection and Birth/Used/Restore curves retained. High pass; see NativeMana-source.json._
+_Last updated: 2026-11-17 — Native mana recess fix approved/pushed. Chimney interaction and hero-centred player hand implemented: original smoke/ember particles, alternating source .2s click gate and three blacksmith sounds. Audio distance falloff corrected for elevated listener. Chimney/hand checks pass. Craig switched to Ultra and authorized the next pass: original-style mulligan screen and remaining animations/interactions across all four corners._
 
 ## How to use these files
 - **`PROJECT_STATUS.md` (this file)** — give it to a new Claude chat at the start. Current truth, stands alone: enough to start the next feature.

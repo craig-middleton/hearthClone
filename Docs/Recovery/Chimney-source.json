@@ -1,0 +1,53 @@
+{
+  "prefab_source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/ORG-native-source/ExportedProject/Assets/AssetBundles/initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d/ORG.prefab",
+  "sha256": "3255213293519bda2764c314a49d40150174d5f66ace62d2a0a58894136540e8",
+  "kept_game_objects": 8,
+  "particle_systems": 3,
+  "original_ember_material": null,
+  "ember_compatibility_texture": "GenFX_Embers01.png",
+  "original_click_cooldown": 0.2,
+  "files": [
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Embers01.png",
+      "sha256": "661d553b737dc670d6169f8e4de6b6c4fa829a8eb1b166f4e9980fbc24fe6d3c"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_DustH2.mat",
+      "sha256": "cce11028a13c8faabd9acbc1195e8e1cb6ef909154f1964a83c7b1d52b54dc31"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_DustF.png",
+      "sha256": "b9fb91f9e015c9c4227e0056bb1744031c83dcf884536708591697d95891224b"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/FX_DustH.mat",
+      "sha256": "b87a4f1b83cf89c24882b1976dec7be576cdfd6a9d9537bcff6bb50238581f18"
+    },
+    {
+      "source": "/home/craig-middleton/Desktop/Hearthstone Export/AudioClip/Orgrimmar_Clickable_Blacksmith_01.wav",
+      "sha256": "3aadaaf89edc699b50a4a42bdc989369231a551955051c1155c81b4ea3d54a53"
+    },
+    {
+      "source": "/home/craig-middleton/Desktop/Hearthstone Export/AudioClip/Orgrimmar_Clickable_Blacksmith_02.wav",
+      "sha256": "7205700be419a7f2dd1bbbf9fb08c4aaead9d7dbae2660065c330480b9fcf9ce"
+    },
+    {
+      "source": "/home/craig-middleton/Desktop/Hearthstone Export/AudioClip/Orgrimmar_Clickable_Blacksmith_03.wav",
+      "sha256": "bbae7591819f7aef80f3491d80827b5f78406ebcbc9af182d84d8eccca6328cc"
+    }
+  ],
+  "source_state_sequence": {
+    "State 1": "wait for source Smoke_Collision click",
+    "State 2": "play FX_SmokePuff including FX_Embers; stop FX_SmokeStack emission; sound pitch 1..1.2; wait .2s",
+    "State 4": "wait for next click",
+    "State 3": "play FX_SmokePuff including FX_Embers; play FX_SmokeStack; sound pitch .8..1.1; wait .2s"
+  },
+  "compatibility_notes": [
+    "Source particle modules/transforms and sphere collider retained verbatim; all client behaviours excluded",
+    "Original smoke material textures and tints rebound to URP particle compatibility shader",
+    "FX_Embers renderer material is null in both exported and original loaded prefab; GenFX_Embers01 is recovered game artwork used as a documented compatibility fallback, not a proven original material assignment",
+    "Original three blacksmith waveforms copied unchanged",
+    "3D audio full-volume radius fitted to camera-listener distance; default one-unit radius attenuated clips at ~17 units",
+    "Other corner interactions remain separate pending work"
+  ]
+}
