@@ -12,6 +12,7 @@ namespace HearthstoneClone.UI
         public TMP_Text opponentMana;
         public GameObject mulliganPanel;
         public GameObject mulliganHeading;
+        public RectTransform mulliganShade;
 
         private void LateUpdate()
         {
@@ -21,6 +22,8 @@ namespace HearthstoneClone.UI
                 opponentMana.text = $"{opponentFace.Player.CurrentMana}/{opponentFace.Player.MaxMana}";
             if (mulliganHeading != null && mulliganPanel != null)
                 mulliganHeading.SetActive(mulliganPanel.activeSelf);
+            if(mulliganShade!=null&&mulliganShade.gameObject.activeInHierarchy)
+                mulliganShade.sizeDelta=((RectTransform)mulliganShade.GetComponentInParent<Canvas>().rootCanvas.transform).rect.size;
         }
     }
 }

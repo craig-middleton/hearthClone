@@ -1,0 +1,104 @@
+{
+  "files": [
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/BannerMulligan.prefab",
+      "sha256": "024889baf7463366bcb7187f20e4a148dc305cb9e5a0a61a522fd995f09d4c59",
+      "destination": "Assets/_Project/Art/NativeMulligan/BannerMulligan.prefab"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/Mulligan_Button_Keep.prefab",
+      "sha256": "745812aa102edb651fc57ac42eb57a15c56c93d920759b567a7364971594dfd5",
+      "destination": "Assets/_Project/Art/NativeMulligan/Mulligan_Button_Keep.prefab"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/Mulligan_Button_Replace.prefab",
+      "sha256": "f39743c27beebb9b965522cc86a780cb22d952d9552ca5a257ad9daebc5bf278",
+      "destination": "Assets/_Project/Art/NativeMulligan/Mulligan_Button_Replace.prefab"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/Mulligan_X_Mark.prefab",
+      "sha256": "078a1c4e2c7a39cb93c473307c5c2c8f5720e09186ecc7d38eb5f0c4f20f76e9",
+      "destination": "Assets/_Project/Art/NativeMulligan/Mulligan_X_Mark.prefab"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/MulliganManager.prefab",
+      "sha256": "cb870f66f270fc71b2af8ebcfc561409c7d49a3b2436d1f2c0d6373dfd2b2fc2",
+      "destination": "Assets/_Project/Art/NativeMulligan/OriginalConfirm.prefab"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/ButtonFloaty2.asset",
+      "sha256": "6833b6fbfb3e629a505a30957d6e0f8ca0cee0f28251b17df2023843f5c5f640",
+      "destination": "Assets/_Project/Art/NativeMulligan/ButtonFloaty2.asset"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Button_Floaty2.mat",
+      "sha256": "224e9043cd40c1e4aa5c117b798425756057aaae9a3bb03ea2fad9da1a5750bd",
+      "destination": "Assets/_Project/Art/NativeMulligan/Button_Floaty2.mat"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/Button_Floaty2.png",
+      "sha256": "0dff15c94d92db9345ce57b4737117bfdc15ffdc4ff098a98646011992367a82",
+      "destination": "Assets/_Project/Art/NativeMulligan/Button_Floaty2.png"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/ButtonFloaty2_GlowQuad_mesh.asset",
+      "sha256": "a81d91ae75343b6096bb7254293e01dc60f47a10ed8ae1bfb929b98ded72b70a",
+      "destination": "Assets/_Project/Art/NativeMulligan/ButtonFloaty2_GlowQuad_mesh.asset"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/ButtonFloaty_Glow.mat",
+      "sha256": "1264f02848e25bc20260123fe0b3919f8123117afa51c2c00bd37f3580eea26f",
+      "destination": "Assets/_Project/Art/NativeMulligan/ButtonFloaty_Glow.mat"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/UI_Mulligan_X.mat",
+      "sha256": "ca98cffe14e6f6a34422618e38a464cde40d696178f0b20bb7e332bc644f12e6",
+      "destination": "Assets/_Project/Art/NativeMulligan/UI_Mulligan_X.mat"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/Mulligan_X.png",
+      "sha256": "2d484cfae0c52fc848c87653d26efd2c6598cbc504fd8944a4a6701bd6feb2d5",
+      "destination": "Assets/_Project/Art/NativeMulligan/Mulligan_X.png"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/UI_Mulligan_Button_Replace.mat",
+      "sha256": "cc9bf5f4216ceb58b9d580b10a4a374ebd9cd20df94cbf9174cd742096366495",
+      "destination": "Assets/_Project/Art/NativeMulligan/UI_Mulligan_Button_Replace.mat"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/Mulligan_ReplaceKeep.png",
+      "sha256": "e549433fdb9ef5a599a74d53b55b26b73c9e6c04825edd8bc596b4a1d981cebb",
+      "destination": "Assets/_Project/Art/NativeMulligan/Mulligan_ReplaceKeep.png"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Quad_2x1_mesh.asset",
+      "sha256": "826177cddf26ed320983a7d735672940632250a6f11da9a11e85c3c0c4d44958",
+      "destination": "Assets/_Project/Art/NativeMulligan/Quad_2x1_mesh.asset"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/UI_Mulligan_Button_Keep.mat",
+      "sha256": "d3d99d002ab9652f260d2043899fbbabc57373d1d7bf0c8eed532cf2a87bcad4",
+      "destination": "Assets/_Project/Art/NativeMulligan/UI_Mulligan_Button_Keep.mat"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/BannerMulliganGlow_mesh.asset",
+      "sha256": "4ad626cb4610ae979a071f63babbab0069efbe13ecb14502abe97c7f62c2663e",
+      "destination": "Assets/_Project/Art/NativeMulligan/BannerMulliganGlow_mesh.asset"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/BannerMulligan_mesh.asset",
+      "sha256": "0b76c81809e56b1ab83a8a71804141c13e73888e4b4b9b6b392a3a63ba1a8692",
+      "destination": "Assets/_Project/Art/NativeMulligan/BannerMulligan_mesh.asset"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Mulligan_Banner.mat",
+      "sha256": "01c4c2ae14c26911e025e4454347628645f332b6659cd1c72180600af4339ef1",
+      "destination": "Assets/_Project/Art/NativeMulligan/Mulligan_Banner.mat"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/Mulligan_Banner.png",
+      "sha256": "5ed7c598c3612dbb500ac0ba96aa8fddaf852d56f871b9487fa29bf9b20f9d78",
+      "destination": "Assets/_Project/Art/NativeMulligan/Mulligan_Banner.png"
+    }
+  ]
+}

@@ -151,6 +151,7 @@ namespace HearthstoneClone.UI
             card = cardData;
             onMulliganToggled = toggleCallback;
             isSelectedForMulligan = false;
+            canDrag = () => false;
 
             WriteCardText();
             UpdateMulliganVisual();
@@ -265,6 +266,7 @@ namespace HearthstoneClone.UI
 
         private void UpdateMulliganVisual()
         {
+            GetComponent<NativeMulliganCard>()?.SetSelected(isSelectedForMulligan);
             if (cardBackground != null)
             {
                 cardBackground.color = isSelectedForMulligan ? selectedForMulliganColor : normalColor;

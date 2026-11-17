@@ -57,10 +57,12 @@ namespace HearthstoneClone.UI
 
             foreach (Transform child in mulliganPanel)
             {
+                child.gameObject.SetActive(false);
                 UnityEngine.Object.Destroy(child.gameObject);
             }
             mulliganCardObjects.Clear();
 
+            var presentation=mulliganPanel.GetComponent<NativeMulliganPresentation>();
             foreach (CardInstance card in playerOneHand.Hand)
             {
                 if (card == null) continue;
@@ -74,7 +76,9 @@ namespace HearthstoneClone.UI
                     continue;
                 }
 
+                if(presentation!=null)presentation.PrepareCard((RectTransform)cardObj.transform);
                 view.SetCardForMulligan(card, OnMulliganCardToggled);
+                if(presentation!=null)presentation.Decorate(view);
                 mulliganCardObjects.Add(cardObj);
             }
 
