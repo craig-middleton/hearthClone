@@ -1,0 +1,337 @@
+{
+  "source_prefab": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d/ORG.prefab",
+  "source_sha256": "ffd69278985a28c96fde9d4b59eda3b946e9215f88e69f80f7b1dd726709ff8d",
+  "narrow_export_verified": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/ORG-native-source/ExportedProject/Assets/AssetBundles/initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d/ORG.prefab",
+  "equivalence": "All GO/Transform/collider/ParticleSystem/renderer component IDs and values match the narrow ORG export after AssetRipper GUID normalization.",
+  "template": "Assets/_Project/Art/NativeCorners/CornerEffects.prefab",
+  "merge": "Match source paths relative to ORG to the existing native board. Copy colliders, ParticleSystem and ParticleSystemRenderer components; do not duplicate geometry or ancestry transforms.",
+  "excluded": [
+    "Existing chimney branch and smoke stack",
+    "ORG/FX/FX_Dust1..5: unreferenced by corner FSMs, source renderer material unresolved"
+  ],
+  "compatibility": "Original material data and textures retained; original compiled shaders are unavailable in the Ubuntu URP renderer. Assign Source Board Particles compatibility shader and source blending values.",
+  "transforms": 26,
+  "particle_systems": 8,
+  "colliders": 11,
+  "components": [
+    {
+      "file_id": 65504506843557392,
+      "class_id": 65,
+      "path": "ORG/Catapult_Root",
+      "game_object_id": 1855482821919830,
+      "layer": 22
+    },
+    {
+      "file_id": 65947810564538834,
+      "class_id": 65,
+      "path": "ORG/Clickables/Catapult",
+      "game_object_id": 1320256170494724,
+      "layer": 0
+    },
+    {
+      "file_id": 65998495239010246,
+      "class_id": 65,
+      "path": "ORG/Clickables/Hut_Flag",
+      "game_object_id": 1808113985169905,
+      "layer": 0
+    },
+    {
+      "file_id": 135075864462779534,
+      "class_id": 135,
+      "path": "ORG/Catapult_Root/ORG_Catapult/CatapultArmRoot_mesh/polySurface68/Basket_Collision",
+      "game_object_id": 1533803739292891,
+      "layer": 22
+    },
+    {
+      "file_id": 135081920422494107,
+      "class_id": 135,
+      "path": "ORG/ORG_Zepp",
+      "game_object_id": 1770005084341472,
+      "layer": 22
+    },
+    {
+      "file_id": 135129116114662800,
+      "class_id": 135,
+      "path": "ORG/Clickables/Catapult/RockPickup",
+      "game_object_id": 1089843903986396,
+      "layer": 0
+    },
+    {
+      "file_id": 135260713349338959,
+      "class_id": 135,
+      "path": "ORG/Clickables/RockSpire",
+      "game_object_id": 1632746491512912,
+      "layer": 22
+    },
+    {
+      "file_id": 135403529848822963,
+      "class_id": 135,
+      "path": "ORG/Clickables/Thorns",
+      "game_object_id": 1801075752484240,
+      "layer": 22
+    },
+    {
+      "file_id": 135428560594236482,
+      "class_id": 135,
+      "path": "ORG/ORG_Spire/RockSpireTopRock_mesh",
+      "game_object_id": 1354824845356902,
+      "layer": 0
+    },
+    {
+      "file_id": 135573076885614623,
+      "class_id": 135,
+      "path": "ORG/Clickables/TowerGate/Gate_Collision",
+      "game_object_id": 1841364053301648,
+      "layer": 22
+    },
+    {
+      "file_id": 135989434536655964,
+      "class_id": 135,
+      "path": "ORG/Clickables/Catapult/Rockpile_Collision",
+      "game_object_id": 1217368724061974,
+      "layer": 22
+    },
+    {
+      "file_id": 198246887588868771,
+      "class_id": 198,
+      "path": "ORG/Clickables/Thorns/FX_WoodChip1",
+      "game_object_id": 1000955326284023,
+      "layer": 0
+    },
+    {
+      "file_id": 198401429660297866,
+      "class_id": 198,
+      "path": "ORG/Clickables/Catapult/RockPickup/FX_Dust1",
+      "game_object_id": 1672306508523268,
+      "layer": 0
+    },
+    {
+      "file_id": 198463579974499585,
+      "class_id": 198,
+      "path": "ORG/Clickables/TowerGate/FX_Dust1/FX_Pebbles2",
+      "game_object_id": 1833703512093738,
+      "layer": 0
+    },
+    {
+      "file_id": 198505682267929073,
+      "class_id": 198,
+      "path": "ORG/Clickables/TowerGate/FX_Dust1/FX_Dust2",
+      "game_object_id": 1919942235722503,
+      "layer": 0
+    },
+    {
+      "file_id": 198580109562975512,
+      "class_id": 198,
+      "path": "ORG/Clickables/RockSpire/FX_Dust1",
+      "game_object_id": 1719342369648492,
+      "layer": 0
+    },
+    {
+      "file_id": 198632179142322292,
+      "class_id": 198,
+      "path": "ORG/Clickables/TowerGate/FX_Dust1/FX_Pebbles1",
+      "game_object_id": 1107629493147155,
+      "layer": 0
+    },
+    {
+      "file_id": 198696792502030561,
+      "class_id": 198,
+      "path": "ORG/Clickables/RockSpire/FX_Pebbles1",
+      "game_object_id": 1726790013014859,
+      "layer": 0
+    },
+    {
+      "file_id": 198934287144746640,
+      "class_id": 198,
+      "path": "ORG/Clickables/TowerGate/FX_Dust1",
+      "game_object_id": 1344419225485095,
+      "layer": 0
+    },
+    {
+      "file_id": 199000342987746139,
+      "class_id": 199,
+      "path": "ORG/Clickables/Catapult/RockPickup/FX_Dust1",
+      "game_object_id": 1672306508523268,
+      "layer": 0,
+      "original_materials": [
+        {
+          "fileID": "2100000",
+          "guid": "f40b958354ae8354cbfe13999f48a9cf",
+          "type": "2"
+        },
+        {
+          "fileID": "0"
+        }
+      ]
+    },
+    {
+      "file_id": 199036828218548272,
+      "class_id": 199,
+      "path": "ORG/Clickables/TowerGate/FX_Dust1/FX_Pebbles1",
+      "game_object_id": 1107629493147155,
+      "layer": 0,
+      "original_materials": [
+        {
+          "fileID": "2100000",
+          "guid": "d295851554cce4c43b548f1834a1aff4",
+          "type": "2"
+        },
+        {
+          "fileID": "0"
+        }
+      ]
+    },
+    {
+      "file_id": 199173334745350128,
+      "class_id": 199,
+      "path": "ORG/Clickables/RockSpire/FX_Dust1",
+      "game_object_id": 1719342369648492,
+      "layer": 0,
+      "original_materials": [
+        {
+          "fileID": "2100000",
+          "guid": "f40b958354ae8354cbfe13999f48a9cf",
+          "type": "2"
+        },
+        {
+          "fileID": "0"
+        }
+      ]
+    },
+    {
+      "file_id": 199291547872775986,
+      "class_id": 199,
+      "path": "ORG/Clickables/TowerGate/FX_Dust1/FX_Dust2",
+      "game_object_id": 1919942235722503,
+      "layer": 0,
+      "original_materials": [
+        {
+          "fileID": "2100000",
+          "guid": "ef09b1fc21f80494ab73b54ffd58f125",
+          "type": "2"
+        },
+        {
+          "fileID": "0"
+        }
+      ]
+    },
+    {
+      "file_id": 199387228018655110,
+      "class_id": 199,
+      "path": "ORG/Clickables/TowerGate/FX_Dust1/FX_Pebbles2",
+      "game_object_id": 1833703512093738,
+      "layer": 0,
+      "original_materials": [
+        {
+          "fileID": "2100000",
+          "guid": "d295851554cce4c43b548f1834a1aff4",
+          "type": "2"
+        },
+        {
+          "fileID": "0"
+        }
+      ]
+    },
+    {
+      "file_id": 199500050402096248,
+      "class_id": 199,
+      "path": "ORG/Clickables/RockSpire/FX_Pebbles1",
+      "game_object_id": 1726790013014859,
+      "layer": 0,
+      "original_materials": [
+        {
+          "fileID": "2100000",
+          "guid": "d295851554cce4c43b548f1834a1aff4",
+          "type": "2"
+        },
+        {
+          "fileID": "0"
+        }
+      ]
+    },
+    {
+      "file_id": 199510800835404288,
+      "class_id": 199,
+      "path": "ORG/Clickables/Thorns/FX_WoodChip1",
+      "game_object_id": 1000955326284023,
+      "layer": 0,
+      "original_materials": [
+        {
+          "fileID": "2100000",
+          "guid": "dee69d76508c6d441ac70a88d560b7a4",
+          "type": "2"
+        },
+        {
+          "fileID": "0"
+        }
+      ]
+    },
+    {
+      "file_id": 199616761771223058,
+      "class_id": 199,
+      "path": "ORG/Clickables/TowerGate/FX_Dust1",
+      "game_object_id": 1344419225485095,
+      "layer": 0,
+      "original_materials": [
+        {
+          "fileID": "2100000",
+          "guid": "ef09b1fc21f80494ab73b54ffd58f125",
+          "type": "2"
+        },
+        {
+          "fileID": "0"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "guid": "d295851554cce4c43b548f1834a1aff4",
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-material-0.unity3d/GenFX_Rock1.mat",
+      "sha256": "794819334d59cda2463dc5b1cd975c029f06526b0679a0afe94266d1c4efe76f",
+      "asset": "Assets/_Project/Art/NativeCorners/GenFX_Rock1.mat"
+    },
+    {
+      "guid": "f6c82dd40f260d8478d27e48874958ab",
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Rock_Single1.png",
+      "sha256": "18a6f9dd6e6ea248f2b956c47164f71569471a6102e56ae51733571b88bab764",
+      "asset": "Assets/_Project/Art/NativeCorners/GenFX_Rock_Single1.png"
+    },
+    {
+      "guid": "ef09b1fc21f80494ab73b54ffd58f125",
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-material-0.unity3d/GenFX_DustC.mat",
+      "sha256": "823646f27b0921680324f9b90c25e88eb20e053600e024edcbad5fe4b21e9e87",
+      "asset": "Assets/_Project/Art/NativeCorners/GenFX_DustC.mat"
+    },
+    {
+      "guid": "2cfc78d66a3fe164d99fb55a26619680",
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_DustC.png",
+      "sha256": "63565957e10807898226af3cbede774ddd8c72182f234755545a5aae8c3983e0",
+      "asset": "Assets/_Project/Art/NativeCorners/GenFX_DustC.png"
+    },
+    {
+      "guid": "f40b958354ae8354cbfe13999f48a9cf",
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-material-0.unity3d/GenFX_DustA.mat",
+      "sha256": "4063c41ca9b5c5490de0d4855050cff08a3fc458ebcda5200f76c2ddabb221fb",
+      "asset": "Assets/_Project/Art/NativeCorners/GenFX_DustA.mat"
+    },
+    {
+      "guid": "621b7a78651bdb048aa91635a86fe9c0",
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_DustA.png",
+      "sha256": "88f28348e3b0a57e755f560288cf5ab0b4eb6336f71cd177f543552bd37f8250",
+      "asset": "Assets/_Project/Art/NativeCorners/GenFX_DustA.png"
+    },
+    {
+      "guid": "dee69d76508c6d441ac70a88d560b7a4",
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-material-0.unity3d/FX_Splinter1.mat",
+      "sha256": "47978cd911354f2dc20f99b4b1c3b526a4a4a46d1df0615261ec384ef86e6de9",
+      "asset": "Assets/_Project/Art/NativeCorners/FX_Splinter1.mat"
+    },
+    {
+      "guid": "9d7f89bd20de6404c90f4ceed261a936",
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-texture-1.unity3d/Splinter1.png",
+      "sha256": "3e95b34f71726ca76fd6220d6dd583bc54baceeec1cd90080474eef9b8a06326",
+      "asset": "Assets/_Project/Art/NativeCorners/Splinter1.png"
+    }
+  ]
+}

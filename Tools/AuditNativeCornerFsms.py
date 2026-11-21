@@ -17,7 +17,7 @@ for _,(cl,f) in objs.items():
  if cl!=114 or 'fsm' not in f:continue
  owner=path(f['m_GameObject']['fileID']);states=[]
  for s in f['fsm']['states']:
-  a=s['actionData'];n=len(a['paramName']);types=ints(a['paramDataType'],n);positions=ints(a['paramDataPos'],n);starts=ints(a['actionStartIndex'],len(a['actionNames']));blob=bytes.fromhex(a['byteData'].zfill((len(a['byteData'])+1)//2*2));actions=[]
+  a=s['actionData'];n=len(a['paramName']);types=ints(a['paramDataType'],n);positions=ints(a['paramDataPos'],n);starts=ints(a['actionStartIndex'],len(a['actionNames']));blob=bytes.fromhex(a['byteData'].zfill((len(a['byteData'])+1)//2*2));enabled=bytes.fromhex(a.get('actionEnabled','').zfill(len(a['actionNames'])*2));actions=[]
   for j,name in enumerate(a['actionNames']):
    params=[]
    for k in range(starts[j],starts[j+1] if j+1<len(starts) else n):
@@ -31,7 +31,7 @@ for _,(cl,f) in objs.items():
     elif ty==12:value={'count':ints(a['arrayParamSizes'],len(a['arrayParamTypes']))[pos],'elementType':a['arrayParamTypes'][pos]}
     else:value={'unknownType':ty,'position':pos}
     params.append({'name':a['paramName'][k],'type':ty,'value':value})
-   actions.append({'type':name.split('.')[-1],'params':params})
+   actions.append({'type':name.split('.')[-1],'enabled':bool(enabled[j]),'params':params})
   states.append({'name':s['name'],'actions':actions,'transitions':s['transitions']})
  result.append({'path':owner,'start':f['fsm']['startState'],'states':states,'variables':f['fsm'].get('variables',{})})
 out=P.parent.parent/'recovery/corner-source-normalized.json';out.write_text(json.dumps({'objectPaths':{str(g):path(g) for g in gos},'machines':result},indent=2)+'\n')

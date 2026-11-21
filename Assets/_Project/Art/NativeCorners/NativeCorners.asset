@@ -1,0 +1,5165 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91585b1072027112bcaa721a87a293e, type: 3}
+  m_Name: NativeCorners
+  m_EditorClassIdentifier: UI::HearthstoneClone.UI.NativeCornerLibrary
+  machines:
+  - path: ORG/Clickables/Catapult
+    start: State 1
+    states:
+    - name: State 1
+      actions:
+      - type: SetPosition
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/Catapult/RockPickup
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: vector
+          text: 
+          variable: 
+          path: 
+          none: 1
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: x
+          text: -1.26
+          variable: 
+          path: 
+          none: 0
+          number: -1.26
+          vector: {x: 0, y: 0, z: 0}
+        - name: y
+          text: -1.11
+          variable: 
+          path: 
+          none: 0
+          number: -1.11
+          vector: {x: 0, y: 0, z: 0}
+        - name: z
+          text: -0.41
+          variable: 
+          path: 
+          none: 0
+          number: -0.41
+          vector: {x: 0, y: 0, z: 0}
+        - name: space
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: lateUpdate
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: MousePickRandomAction
+        parameters:
+        - name: GameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/Catapult/Rockpile_Collision
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMin
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMax
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: ResetOnOpen
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateOpen
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateClosed
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOver
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseUp
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOff
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: checkFirstFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: oneShot
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: ClickCount
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: SetVisibility
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/Catapult_Root/ORG_Catapult/CatapultArmRoot_mesh/Sphere
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: toggle
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: visible
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: resetOnExit
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      transitions:
+      - eventName: FINISHED
+        toState: State 2
+    - name: State 2
+      actions:
+      - type: GetMouseX
+        parameters:
+        - name: storeResult
+          text: 
+          variable: MouseX
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: normalize
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: GetMouseY
+        parameters:
+        - name: storeResult
+          text: 
+          variable: MouseY
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: normalize
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: ScreenToWorldPoint
+        parameters:
+        - name: screenVector
+          text: 
+          variable: 
+          path: 
+          none: 1
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: screenX
+          text: 
+          variable: MouseX
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: screenY
+          text: 
+          variable: MouseY
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: screenZ
+          text: 18
+          variable: 
+          path: 
+          none: 0
+          number: 18
+          vector: {x: 0, y: 0, z: 0}
+        - name: normalized
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: storeWorldVector
+          text: 
+          variable: WorldVector
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: storeWorldX
+          text: 
+          variable: WorldX
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: storeWorldY
+          text: 
+          variable: WorldY
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: storeWorldZ
+          text: 
+          variable: WorldZ
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: SetPosition
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/Catapult/RockPickup
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: vector
+          text: 
+          variable: 
+          path: 
+          none: 1
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: x
+          text: 
+          variable: WorldX
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: y
+          text: 
+          variable: WorldY
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: z
+          text: 
+          variable: WorldZ
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: space
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: lateUpdate
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: SetProperty
+        parameters:
+        - name: collider
+          text: 
+          variable: 
+          path: ORG/Catapult_Root/ORG_Catapult/CatapultArmRoot_mesh/polySurface68/Basket_Collision
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: enabled
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: MousePickRandomAction
+        parameters:
+        - name: GameObject
+          text: 
+          variable: 
+          path: ORG/Catapult_Root/ORG_Catapult/CatapultArmRoot_mesh/polySurface68/Basket_Collision
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMin
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMax
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: ResetOnOpen
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateOpen
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateClosed
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOver
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseUp
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOff
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: checkFirstFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: oneShot
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: ClickCount
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: AudioPlayRandomClipAction
+        parameters:
+        - name: m_ParentObject
+          text: 
+          variable: 
+          path: ORG/Clickables/Catapult/RockPickup
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinPitch
+          text: 0.85
+          variable: 
+          path: 
+          none: 0
+          number: 0.85
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxPitch
+          text: 1.05
+          variable: 
+          path: 
+          none: 0
+          number: 1.05
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_SpatialBlend
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Category
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Delay
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_TemplateSource
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimited
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitedDuration
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitMaximum
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_LimitMaxOutOption
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths:
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_BoulderPickup_01.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_BoulderPickup_02.wav
+        sounds:
+        - {fileID: 8300000, guid: e8a242638f5b68c1cbabd8cba699d1e2, type: 3}
+        - {fileID: 8300000, guid: d76ba793fddea7016bde3f1cbaae7e30, type: 3}
+        weights:
+        - 1
+        - 1
+      - type: SetVisibility
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/Catapult/RockPickup
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: toggle
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: visible
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: resetOnExit
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: GetMainCamera
+        parameters:
+        - name: storeGameObject
+          text: 
+          variable: MainCam
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: ScreenPick
+        parameters:
+        - name: screenVector
+          text: 
+          variable: 
+          path: 
+          none: 1
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: screenX
+          text: 
+          variable: MouseX
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: screenY
+          text: 
+          variable: MouseY
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: normalized
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: rayDistance
+          text: 55
+          variable: 
+          path: 
+          none: 0
+          number: 55
+          vector: {x: 0, y: 0, z: 0}
+        - name: storeDidPickObject
+          text: 
+          variable: 
+          path: 
+          none: 1
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: storeGameObject
+          text: 
+          variable: bounds
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: storePoint
+          text: 
+          variable: 
+          path: 
+          none: 1
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: storeNormal
+          text: 
+          variable: 
+          path: 
+          none: 1
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: storeDistance
+          text: 
+          variable: 
+          path: 
+          none: 1
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: invertMask
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: GameObjectCompare
+        parameters:
+        - name: gameObjectVariable
+          text: 
+          variable: 
+          path: $owner
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: compareTo
+          text: 
+          variable: bounds
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: equalEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: notEqualEvent
+          text: gotOut
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: storeResult
+          text: 
+          variable: 
+          path: 
+          none: 1
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      transitions:
+      - eventName: FINISHED
+        toState: State 3
+      - eventName: gotOut
+        toState: State 9
+    - name: State 3
+      actions:
+      - type: SetVisibility
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/Catapult/RockPickup
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: toggle
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: visible
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: resetOnExit
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: SetVisibility
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/Catapult_Root/ORG_Catapult/CatapultArmRoot_mesh/Sphere
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: toggle
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: visible
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: resetOnExit
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: SetProperty
+        parameters:
+        - name: collider
+          text: 
+          variable: 
+          path: ORG/Catapult_Root
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: enabled
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: SetProperty
+        parameters:
+        - name: collider
+          text: 
+          variable: 
+          path: ORG/Catapult_Root/ORG_Catapult/CatapultArmRoot_mesh/polySurface68/Basket_Collision
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: enabled
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      transitions:
+      - eventName: FINISHED
+        toState: State 4
+    - name: State 4
+      actions:
+      - type: PlayAnimation
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/Catapult_Root/ORG_Catapult
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: animName
+          text: ORG_CattapultRockFall
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: playMode
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 4
+          vector: {x: 0, y: 0, z: 0}
+        - name: blendTime
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: finishEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: loopEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: stopOnExit
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: AudioPlayRandomClipAction
+        parameters:
+        - name: m_ParentObject
+          text: 
+          variable: 
+          path: $owner
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_SpatialBlend
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Category
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Delay
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_TemplateSource
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimited
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitedDuration
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitMaximum
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_LimitMaxOutOption
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths:
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultBoulderPlace_01.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultBoulderPlace_02.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultBoulderPlace_03.wav
+        sounds:
+        - {fileID: 8300000, guid: 4fd72cfe6c161182fa3a5d67c6dab5a4, type: 3}
+        - {fileID: 8300000, guid: e045a86b84c06351a9d152ecff9f2895, type: 3}
+        - {fileID: 8300000, guid: 5ecfc4db843fdb81884f29ef427a190b, type: 3}
+        weights:
+        - 1
+        - 1
+        - 1
+      transitions:
+      - eventName: FINISHED
+        toState: State 5
+    - name: State 5
+      actions:
+      - type: MousePickRandomAction
+        parameters:
+        - name: GameObject
+          text: 
+          variable: 
+          path: ORG/Catapult_Root
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMin
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMax
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: ResetOnOpen
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateOpen
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateClosed
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOver
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseUp
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOff
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: checkFirstFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: oneShot
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: ClickCount
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      transitions:
+      - eventName: FINISHED
+        toState: State 6
+    - name: State 6
+      actions:
+      - type: AnimationPlaythroughAction
+        parameters:
+        - name: m_GameObject
+          text: 
+          variable: 
+          path: ORG/Catapult_Root/ORG_Catapult
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_AnimName
+          text: ORG_CattapultLaunch
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_PhoneAnimName
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_PlayMode
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_CrossFadeSec
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: AudioPlayRandomClipAction
+        parameters:
+        - name: m_ParentObject
+          text: 
+          variable: 
+          path: ORG/Clickables/Catapult/Catapult Launch Sound
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_SpatialBlend
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Category
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Delay
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_TemplateSource
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimited
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitedDuration
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitMaximum
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_LimitMaxOutOption
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths:
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultLaunch_01.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultLaunch_02.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultLaunch_03.wav
+        sounds:
+        - {fileID: 8300000, guid: 048d41ba08ed7e70d8b73ae6af2b9bd5, type: 3}
+        - {fileID: 8300000, guid: 5d7b2605780784960b5164c10aa58fc8, type: 3}
+        - {fileID: 8300000, guid: 5f88169c6151783e387704fc15913218, type: 3}
+        weights:
+        - 1
+        - 1
+        - 1
+      - type: AudioPlayRandomClipAction
+        parameters:
+        - name: m_ParentObject
+          text: 
+          variable: 
+          path: ORG/Clickables/Catapult/Catapult Rock Flight Sound
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_SpatialBlend
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Category
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Delay
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_TemplateSource
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimited
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitedDuration
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitMaximum
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_LimitMaxOutOption
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths:
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactBuilding_01.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactWorg_01.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactDirt_02.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactDirt_03.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactGoblin_01.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactMurloc_01.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactThud_01.wav
+        sounds:
+        - {fileID: 8300000, guid: 70ec0ea60a7503d9ab2cb64f493fef9c, type: 3}
+        - {fileID: 8300000, guid: 54b1dacceec38bd69b04a2b3ecd97cf0, type: 3}
+        - {fileID: 8300000, guid: a5c8205ad02409ab7b93440183a081e2, type: 3}
+        - {fileID: 8300000, guid: df339cf932a8177abb49bc690950c687, type: 3}
+        - {fileID: 8300000, guid: bb78ceea7d027e58c92134f416edb175, type: 3}
+        - {fileID: 8300000, guid: 66a500d99803d512c811dd670a12cbff, type: 3}
+        - {fileID: 8300000, guid: b5780f064ba21e8a59d1c26315b83882, type: 3}
+        weights:
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+      - type: Wait
+        parameters:
+        - name: time
+          text: 0.5
+          variable: 
+          path: 
+          none: 0
+          number: 0.5
+          vector: {x: 0, y: 0, z: 0}
+        - name: finishEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: realTime
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      transitions:
+      - eventName: FINISHED
+        toState: State 7
+    - name: State 7
+      actions:
+      - type: MousePickRandomAction
+        parameters:
+        - name: GameObject
+          text: 
+          variable: 
+          path: ORG/Catapult_Root
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMin
+          text: 7
+          variable: 
+          path: 
+          none: 0
+          number: 7
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMax
+          text: 7
+          variable: 
+          path: 
+          none: 0
+          number: 7
+          vector: {x: 0, y: 0, z: 0}
+        - name: ResetOnOpen
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateOpen
+          text: open
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateClosed
+          text: close
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOver
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseUp
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOff
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: checkFirstFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: oneShot
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: ClickCount
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: SetVisibility
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/Catapult_Root/ORG_Catapult/CatapultArmRoot_mesh/Sphere
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: toggle
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: visible
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: resetOnExit
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      transitions:
+      - eventName: close
+        toState: State 8
+      - eventName: open
+        toState: State 10
+    - name: State 8
+      actions:
+      - type: iTweenRotateAdd
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/Catapult_Root/ORG_Catapult/CatapultArmRoot_mesh
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: id
+          text: 
+          variable: 
+          path: 
+          none: 1
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: vector
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 6.25, y: 0, z: 0}
+        - name: time
+          text: 0.25
+          variable: 
+          path: 
+          none: 0
+          number: 0.25
+          vector: {x: 0, y: 0, z: 0}
+        - name: delay
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: speed
+          text: 
+          variable: 
+          path: 
+          none: 1
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: easeType
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 24
+          vector: {x: 0, y: 0, z: 0}
+        - name: loopType
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: space
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: startEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: finishEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: realTime
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: stopOnExit
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: loopDontFinish
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: AudioPlayRandomClipAction
+        parameters:
+        - name: m_ParentObject
+          text: 
+          variable: 
+          path: $owner
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinVolume
+          text: 0.5
+          variable: 
+          path: 
+          none: 0
+          number: 0.5
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxVolume
+          text: 0.5
+          variable: 
+          path: 
+          none: 0
+          number: 0.5
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinPitch
+          text: 0.8
+          variable: 
+          path: 
+          none: 0
+          number: 0.8
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxPitch
+          text: 1.1
+          variable: 
+          path: 
+          none: 0
+          number: 1.1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_SpatialBlend
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Category
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Delay
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_TemplateSource
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimited
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitedDuration
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitMaximum
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_LimitMaxOutOption
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths:
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultWinch_01.wav
+        sounds:
+        - {fileID: 8300000, guid: 002db8e8f8e48e5b0b303f6fe31d71fa, type: 3}
+        weights:
+        - 1
+      transitions:
+      - eventName: FINISHED
+        toState: State 7
+    - name: State 9
+      actions:
+      - type: SetVisibilityRecursiveAction
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/Catapult/RockPickup
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: visible
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: resetOnExit
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: includeChildren
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: Wait
+        parameters:
+        - name: time
+          text: 0.2
+          variable: 
+          path: 
+          none: 0
+          number: 0.2
+          vector: {x: 0, y: 0, z: 0}
+        - name: finishEvent
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: realTime
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: ParticlePlayAction
+        parameters:
+        - name: m_GameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/Catapult/RockPickup/FX_Dust1
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_IncludeChildren
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: AudioPlayRandomClipAction
+        parameters:
+        - name: m_ParentObject
+          text: 
+          variable: 
+          path: $owner
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_SpatialBlend
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Category
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Delay
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_TemplateSource
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimited
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitedDuration
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitMaximum
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_LimitMaxOutOption
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths:
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_BoulderDropGround_01.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_BoulderDropGround_02.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_BoulderDropGround_03.wav
+        sounds:
+        - {fileID: 8300000, guid: a102bc565b711ff1d8610b283776c9c3, type: 3}
+        - {fileID: 8300000, guid: a0b5b600d08a0b79880c6b5923a8eca4, type: 3}
+        - {fileID: 8300000, guid: a6b372013a905c203bf3051217eb1ff1, type: 3}
+        weights:
+        - 1
+        - 1
+        - 1
+      transitions:
+      - eventName: FINISHED
+        toState: State 1
+    - name: State 10
+      actions:
+      - type: AudioPlayClipAction
+        parameters:
+        - name: m_ParentObject
+          text: 
+          variable: 
+          path: $owner
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Sound
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Volume
+          text: 0.9
+          variable: 
+          path: 
+          none: 0
+          number: 0.9
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Pitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_SpatialBlend
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Category
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Delay
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_TemplateSource
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_IsMinionSummonVO
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_IsKeywordVO
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimited
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitedDuration
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitMaximum
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_LimitMaxOutOption
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths:
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultLock_01.wav
+        sounds:
+        - {fileID: 8300000, guid: 0af00c44b8d843f918b020351e9727ac, type: 3}
+        weights:
+        - 1
+      transitions:
+      - eventName: FINISHED
+        toState: State 1
+  - path: ORG/Clickables/Hut_Flag
+    start: State 1
+    states:
+    - name: State 1
+      actions:
+      - type: MousePickRandomAction
+        parameters:
+        - name: GameObject
+          text: 
+          variable: 
+          path: $owner
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMin
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMax
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: ResetOnOpen
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateOpen
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateClosed
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOver
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseUp
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOff
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: checkFirstFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: oneShot
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: ClickCount
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: PlayAnimation
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/ORG_Hut_Flag
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: animName
+          text: ORG_HutFlagIdle
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: playMode
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 4
+          vector: {x: 0, y: 0, z: 0}
+        - name: blendTime
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: finishEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: loopEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: stopOnExit
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      transitions:
+      - eventName: FINISHED
+        toState: State 2
+    - name: State 2
+      actions:
+      - type: PlayAnimation
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/ORG_Hut_Flag
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: animName
+          text: ORG_HutFlagClicked1
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: playMode
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 4
+          vector: {x: 0, y: 0, z: 0}
+        - name: blendTime
+          text: 0.3
+          variable: 
+          path: 
+          none: 0
+          number: 0.3
+          vector: {x: 0, y: 0, z: 0}
+        - name: finishEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: loopEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: stopOnExit
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: AudioPlayRandomClipAction
+        parameters:
+        - name: m_ParentObject
+          text: 
+          variable: 
+          path: $owner
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinVolume
+          text: 0.5
+          variable: 
+          path: 
+          none: 0
+          number: 0.5
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxVolume
+          text: 0.5
+          variable: 
+          path: 
+          none: 0
+          number: 0.5
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_SpatialBlend
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Category
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Delay
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_TemplateSource
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimited
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitedDuration
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitMaximum
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_LimitMaxOutOption
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths:
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_OrcBanner_01.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_OrcBanner_02.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_OrcBanner_03.wav
+        sounds:
+        - {fileID: 8300000, guid: ed0e894ec2a59b1d6a0446fb39036bd5, type: 3}
+        - {fileID: 8300000, guid: be5bb0e7c38e8756587f688fe2278541, type: 3}
+        - {fileID: 8300000, guid: 3a93fd73c6e04459e9df5ba546d3bad8, type: 3}
+        weights:
+        - 1
+        - 1
+        - 1
+      transitions:
+      - eventName: FINISHED
+        toState: State 1
+  - path: ORG/Clickables/TowerGate
+    start: State 1
+    states:
+    - name: State 1
+      actions:
+      - type: MousePickRandomAction
+        parameters:
+        - name: GameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/TowerGate/Gate_Collision
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMin
+          text: 5
+          variable: 
+          path: 
+          none: 0
+          number: 5
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMax
+          text: 10
+          variable: 
+          path: 
+          none: 0
+          number: 10
+          vector: {x: 0, y: 0, z: 0}
+        - name: ResetOnOpen
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateOpen
+          text: open
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateClosed
+          text: close
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOver
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseUp
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOff
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: checkFirstFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: oneShot
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: ClickCount
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      transitions:
+      - eventName: close
+        toState: State 2
+      - eventName: open
+        toState: State 3
+    - name: State 2
+      actions:
+      - type: PlayAnimation
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/TowerGate/GateTowers_GateRoot_mesh
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: animName
+          text: ORG_GateWiggle
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: playMode
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 4
+          vector: {x: 0, y: 0, z: 0}
+        - name: blendTime
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: finishEvent
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: loopEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: stopOnExit
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: AudioPlayRandomClipAction
+        parameters:
+        - name: m_ParentObject
+          text: 
+          variable: 
+          path: $owner
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinVolume
+          text: 0.8
+          variable: 
+          path: 
+          none: 0
+          number: 0.8
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxVolume
+          text: 0.8
+          variable: 
+          path: 
+          none: 0
+          number: 0.8
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinPitch
+          text: 0.9
+          variable: 
+          path: 
+          none: 0
+          number: 0.9
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxPitch
+          text: 1.2
+          variable: 
+          path: 
+          none: 0
+          number: 1.2
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_SpatialBlend
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Category
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Delay
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_TemplateSource
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimited
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitedDuration
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitMaximum
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_LimitMaxOutOption
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths:
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisPoke_01.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisPoke_02.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisPoke_03.wav
+        sounds:
+        - {fileID: 8300000, guid: 51a72dc5f99c10448beeea91354bf1a9, type: 3}
+        - {fileID: 8300000, guid: 7d772d553c105df1fa3f4617c7c6eb61, type: 3}
+        - {fileID: 8300000, guid: 3bdc410db65187760af63d13ae83be4d, type: 3}
+        weights:
+        - 1
+        - 1
+        - 1
+      transitions:
+      - eventName: FINISHED
+        toState: State 1
+    - name: State 3
+      actions:
+      - type: PlayAnimation
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/TowerGate/GateTowers_GateRoot_mesh
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: animName
+          text: ORG_GateClose
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: playMode
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 4
+          vector: {x: 0, y: 0, z: 0}
+        - name: blendTime
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: finishEvent
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: loopEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: stopOnExit
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: AudioPlayRandomClipAction
+        parameters:
+        - name: m_ParentObject
+          text: 
+          variable: 
+          path: $owner
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_SpatialBlend
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Category
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Delay
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_TemplateSource
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimited
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitedDuration
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitMaximum
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_LimitMaxOutOption
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths:
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisFall_01.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisFall_02.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisFall_03.wav
+        sounds:
+        - {fileID: 8300000, guid: 35f17734f3e45f6f2b00d5300ed59c7d, type: 3}
+        - {fileID: 8300000, guid: dcd4fbc23da77607dbeb6db9a76dd660, type: 3}
+        - {fileID: 8300000, guid: f522a60d36b609b9abd0d95b533cb2dd, type: 3}
+        weights:
+        - 1
+        - 1
+        - 1
+      - type: ParticlePlayAction
+        parameters:
+        - name: m_GameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/TowerGate/FX_Dust1
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_IncludeChildren
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      transitions:
+      - eventName: FINISHED
+        toState: State 4
+    - name: State 4
+      actions:
+      - type: MousePickRandomAction
+        parameters:
+        - name: GameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/TowerGate/Gate_Collision
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMin
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMax
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: ResetOnOpen
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateOpen
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateClosed
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOver
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseUp
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOff
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: checkFirstFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: oneShot
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: ClickCount
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      transitions:
+      - eventName: FINISHED
+        toState: State 5
+    - name: State 5
+      actions:
+      - type: PlayAnimation
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/TowerGate/GateTowers_GateRoot_mesh
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: animName
+          text: ORG_GateOpen
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: playMode
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 4
+          vector: {x: 0, y: 0, z: 0}
+        - name: blendTime
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: finishEvent
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: loopEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: stopOnExit
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: AudioPlayRandomClipAction
+        parameters:
+        - name: m_ParentObject
+          text: 
+          variable: 
+          path: $owner
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinPitch
+          text: 0.85
+          variable: 
+          path: 
+          none: 0
+          number: 0.85
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_SpatialBlend
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Category
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Delay
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_TemplateSource
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimited
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitedDuration
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitMaximum
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_LimitMaxOutOption
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths:
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisRise_02.wav
+        sounds:
+        - {fileID: 8300000, guid: 19e04e2abe480950691409fa66011322, type: 3}
+        weights:
+        - 1
+      transitions:
+      - eventName: FINISHED
+        toState: State 1
+  - path: ORG/Clickables/RockSpire
+    start: State 1
+    states:
+    - name: State 1
+      actions:
+      - type: MousePickRandomAction
+        parameters:
+        - name: GameObject
+          text: 
+          variable: 
+          path: $owner
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMin
+          text: 5
+          variable: 
+          path: 
+          none: 0
+          number: 5
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMax
+          text: 10
+          variable: 
+          path: 
+          none: 0
+          number: 10
+          vector: {x: 0, y: 0, z: 0}
+        - name: ResetOnOpen
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateOpen
+          text: open
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateClosed
+          text: close
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOver
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseUp
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOff
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: checkFirstFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: oneShot
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: ClickCount
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      transitions:
+      - eventName: close
+        toState: Close State
+      - eventName: open
+        toState: Open State
+    - name: Open State
+      actions:
+      - type: PlayAnimation
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/ORG_Spire
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: animName
+          text: ORG_SpireRockRocking
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: playMode
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 4
+          vector: {x: 0, y: 0, z: 0}
+        - name: blendTime
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: finishEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: loopEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: stopOnExit
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: ParticlePlayAction
+        parameters:
+        - name: m_GameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/RockSpire/FX_Dust1
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_IncludeChildren
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: ParticlePlayAction
+        parameters:
+        - name: m_GameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/RockSpire/FX_Pebbles1
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_IncludeChildren
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: AudioPlayRandomClipAction
+        parameters:
+        - name: m_ParentObject
+          text: 
+          variable: 
+          path: $owner
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_SpatialBlend
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Category
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Delay
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_TemplateSource
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimited
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitedDuration
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitMaximum
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_LimitMaxOutOption
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths:
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_GiantBoulderReact_01_KMW.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_GiantBoulderReact_02_KMW.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_GiantBoulderReact_03_KMW.wav
+        sounds:
+        - {fileID: 8300000, guid: f45af250cb3bcd5cf8f07ba053ccc531, type: 3}
+        - {fileID: 8300000, guid: cc6112b6749004b479abf39f16cf7fc0, type: 3}
+        - {fileID: 8300000, guid: 54c130f63da22442e83c9a02ec72e039, type: 3}
+        weights:
+        - 1
+        - 1
+        - 1
+      - type: Wait
+        parameters:
+        - name: time
+          text: 0.1
+          variable: 
+          path: 
+          none: 0
+          number: 0.1
+          vector: {x: 0, y: 0, z: 0}
+        - name: finishEvent
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: realTime
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      transitions:
+      - eventName: FINISHED
+        toState: State 1
+    - name: Close State
+      actions:
+      - type: PlayAnimation
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/ORG_Spire
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: animName
+          text: ORG_SpireRockClicked1
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: playMode
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 4
+          vector: {x: 0, y: 0, z: 0}
+        - name: blendTime
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: finishEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: loopEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: stopOnExit
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: AudioPlayRandomClipAction
+        parameters:
+        - name: m_ParentObject
+          text: 
+          variable: 
+          path: $owner
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinVolume
+          text: 0.5
+          variable: 
+          path: 
+          none: 0
+          number: 0.5
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxVolume
+          text: 0.6
+          variable: 
+          path: 
+          none: 0
+          number: 0.6
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinPitch
+          text: 0.9
+          variable: 
+          path: 
+          none: 0
+          number: 0.9
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxPitch
+          text: 1.1
+          variable: 
+          path: 
+          none: 0
+          number: 1.1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_SpatialBlend
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Category
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Delay
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_TemplateSource
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimited
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitedDuration
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitMaximum
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_LimitMaxOutOption
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths:
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_GiantBoulderPoke_01_KMW.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_GiantBoulderPoke_02_KMW.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_GiantBoulderPoke_03_KMW.wav
+        sounds:
+        - {fileID: 8300000, guid: e0d0cdf7c48a7b889a2d136e0717eb7f, type: 3}
+        - {fileID: 8300000, guid: 4f6a5986266955d5bb3a99539c168a13, type: 3}
+        - {fileID: 8300000, guid: e03cfc4f37db8d5088046adfc10d27f8, type: 3}
+        weights:
+        - 1
+        - 1
+        - 1
+      - type: ParticlePlayAction
+        parameters:
+        - name: m_GameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/RockSpire/FX_Dust1
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_IncludeChildren
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: Wait
+        parameters:
+        - name: time
+          text: 0.1
+          variable: 
+          path: 
+          none: 0
+          number: 0.1
+          vector: {x: 0, y: 0, z: 0}
+        - name: finishEvent
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: realTime
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      transitions:
+      - eventName: FINISHED
+        toState: State 1
+  - path: ORG/Clickables/Zepp
+    start: State 1
+    states:
+    - name: State 1
+      actions:
+      - type: AnimationPlaythroughAction
+        parameters:
+        - name: m_GameObject
+          text: 
+          variable: 
+          path: ORG/ORG_Zepp
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_AnimName
+          text: ORG_ZepIdle
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_PhoneAnimName
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_PlayMode
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 4
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_CrossFadeSec
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: MousePickRandomAction
+        parameters:
+        - name: GameObject
+          text: 
+          variable: 
+          path: ORG/ORG_Zepp
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMin
+          text: 6
+          variable: 
+          path: 
+          none: 0
+          number: 6
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMax
+          text: 12
+          variable: 
+          path: 
+          none: 0
+          number: 12
+          vector: {x: 0, y: 0, z: 0}
+        - name: ResetOnOpen
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateOpen
+          text: open
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateClosed
+          text: close
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOver
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseUp
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOff
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: checkFirstFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: oneShot
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: ClickCount
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      transitions:
+      - eventName: close
+        toState: State 3
+      - eventName: open
+        toState: State 2
+    - name: State 2
+      actions:
+      - type: PlayAnimation
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/ORG_Zepp
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: animName
+          text: ORG_ZepClicked1
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: playMode
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 4
+          vector: {x: 0, y: 0, z: 0}
+        - name: blendTime
+          text: 0.5
+          variable: 
+          path: 
+          none: 0
+          number: 0.5
+          vector: {x: 0, y: 0, z: 0}
+        - name: finishEvent
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: loopEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: stopOnExit
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: AudioPlayRandomClipAction
+        parameters:
+        - name: m_ParentObject
+          text: 
+          variable: 
+          path: ORG/Clickables/Zepp/Zeppelin Sound
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinVolume
+          text: 0.7
+          variable: 
+          path: 
+          none: 0
+          number: 0.7
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxVolume
+          text: 0.7
+          variable: 
+          path: 
+          none: 0
+          number: 0.7
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_SpatialBlend
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Category
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Delay
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_TemplateSource
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimited
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitedDuration
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitMaximum
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_LimitMaxOutOption
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths:
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_Zeppelin_Pilot_React_Vox_1.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_Zeppelin_Pilot_React_Vox_2.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_Zeppelin_Pilot_React_Vox_3.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_Zeppelin_Pilot_React_Vox_4.wav
+        sounds:
+        - {fileID: 8300000, guid: 03a8d120c228c2012819a233ff194799, type: 3}
+        - {fileID: 8300000, guid: be4c6d77fd51f930fa63a546238ac995, type: 3}
+        - {fileID: 8300000, guid: 67ecca8915106636c98a836d197595a6, type: 3}
+        - {fileID: 8300000, guid: 2dbf874958c0747c9b62e24d2b60b647, type: 3}
+        weights:
+        - 1
+        - 1
+        - 1
+        - 1
+      - type: AudioPlayRandomClipAction
+        parameters:
+        - name: m_ParentObject
+          text: 
+          variable: 
+          path: ORG/Clickables/Zepp/Zeppelin Sound
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_SpatialBlend
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Category
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Delay
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_TemplateSource
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimited
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitedDuration
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitMaximum
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_LimitMaxOutOption
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths:
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ZeppelinReact_03.wav
+        sounds:
+        - {fileID: 8300000, guid: 9ee96d8e5c98be3a8a7be8f389411750, type: 3}
+        weights:
+        - 1
+      transitions:
+      - eventName: FINISHED
+        toState: State 5
+    - name: State 3
+      actions:
+      - type: AnimationPlaythroughAction
+        parameters:
+        - name: m_GameObject
+          text: 
+          variable: 
+          path: ORG/ORG_Zepp
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_AnimName
+          text: ORG_ZepClickedClosed
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_PhoneAnimName
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_PlayMode
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 4
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_CrossFadeSec
+          text: 0.1
+          variable: 
+          path: 
+          none: 0
+          number: 0.1
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: Wait
+        parameters:
+        - name: time
+          text: 2
+          variable: 
+          path: 
+          none: 0
+          number: 2
+          vector: {x: 0, y: 0, z: 0}
+        - name: finishEvent
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: realTime
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: AudioPlayRandomClipAction
+        parameters:
+        - name: m_ParentObject
+          text: 
+          variable: 
+          path: ORG/Clickables/Zepp/Zeppelin Sound
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxVolume
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinPitch
+          text: 0.9
+          variable: 
+          path: 
+          none: 0
+          number: 0.9
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxPitch
+          text: 1.1
+          variable: 
+          path: 
+          none: 0
+          number: 1.1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_SpatialBlend
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Category
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Delay
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_TemplateSource
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimited
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitedDuration
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitMaximum
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_LimitMaxOutOption
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths:
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ZeppelinPoke_01.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ZeppelinPoke_02.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ZeppelinPoke_03.wav
+        sounds:
+        - {fileID: 8300000, guid: 685ce9724d6c248db8e2afd70d9e8815, type: 3}
+        - {fileID: 8300000, guid: 294abe08d36a15e4a815572ed32e5a4f, type: 3}
+        - {fileID: 8300000, guid: f0707b92a4c241ae38bc7a2a0a168c97, type: 3}
+        weights:
+        - 1
+        - 1
+        - 1
+      transitions:
+      - eventName: FINISHED
+        toState: State 4
+    - name: State 4
+      actions: []
+      transitions:
+      - eventName: FINISHED
+        toState: State 1
+    - name: State 5
+      actions: []
+      transitions:
+      - eventName: FINISHED
+        toState: State 1
+  - path: ORG/Clickables/Thorns
+    start: State 1
+    states:
+    - name: State 1
+      actions:
+      - type: MousePickRandomAction
+        parameters:
+        - name: GameObject
+          text: 
+          variable: 
+          path: $owner
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMin
+          text: 5
+          variable: 
+          path: 
+          none: 0
+          number: 5
+          vector: {x: 0, y: 0, z: 0}
+        - name: RandomGateClicksMax
+          text: 10
+          variable: 
+          path: 
+          none: 0
+          number: 10
+          vector: {x: 0, y: 0, z: 0}
+        - name: ResetOnOpen
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateOpen
+          text: open
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseDownGateClosed
+          text: close
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOver
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseUp
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: mouseOff
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: checkFirstFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: oneShot
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: ClickCount
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      transitions:
+      - eventName: close
+        toState: State 3
+      - eventName: open
+        toState: State 2
+    - name: State 2
+      actions:
+      - type: GetMouseX
+        parameters:
+        - name: storeResult
+          text: 
+          variable: MouseX
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: normalize
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: GetMouseY
+        parameters:
+        - name: storeResult
+          text: 
+          variable: MouseY
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: normalize
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: ScreenToWorldPoint
+        parameters:
+        - name: screenVector
+          text: 
+          variable: 
+          path: 
+          none: 1
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: screenX
+          text: 
+          variable: MouseX
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: screenY
+          text: 
+          variable: MouseY
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: screenZ
+          text: 18
+          variable: 
+          path: 
+          none: 0
+          number: 18
+          vector: {x: 0, y: 0, z: 0}
+        - name: normalized
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: storeWorldVector
+          text: 
+          variable: 
+          path: 
+          none: 1
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: storeWorldX
+          text: 
+          variable: WorldX
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: storeWorldY
+          text: 
+          variable: WorldY
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: storeWorldZ
+          text: 
+          variable: WorldZ
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: SetPosition
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/Thorns/FX_WoodChip1
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: vector
+          text: 
+          variable: 
+          path: 
+          none: 1
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: x
+          text: 
+          variable: WorldX
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: y
+          text: 
+          variable: WorldY
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: z
+          text: 
+          variable: WorldZ
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: space
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: lateUpdate
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: ParticlePlayAction
+        parameters:
+        - name: m_GameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/Thorns/FX_WoodChip1
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_IncludeChildren
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: PlayAnimation
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/ORG_GateTower/ORG_GateTowerThornsSkinned
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: animName
+          text: ORG_ThornsClicked1
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: playMode
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 4
+          vector: {x: 0, y: 0, z: 0}
+        - name: blendTime
+          text: 0.3
+          variable: 
+          path: 
+          none: 0
+          number: 0.3
+          vector: {x: 0, y: 0, z: 0}
+        - name: finishEvent
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: loopEvent
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: stopOnExit
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: AudioPlayRandomClipAction
+        parameters:
+        - name: m_ParentObject
+          text: 
+          variable: 
+          path: $owner
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinVolume
+          text: 0.8
+          variable: 
+          path: 
+          none: 0
+          number: 0.8
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxVolume
+          text: 0.8
+          variable: 
+          path: 
+          none: 0
+          number: 0.8
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxPitch
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_SpatialBlend
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Category
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Delay
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_TemplateSource
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimited
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitedDuration
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitMaximum
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_LimitMaxOutOption
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths:
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ThornbushReact_01.wav
+        sounds:
+        - {fileID: 8300000, guid: 3fdc003947b8876df9cc54d0a62a7e79, type: 3}
+        weights:
+        - 1
+      transitions:
+      - eventName: FINISHED
+        toState: State 1
+    - name: State 3
+      actions:
+      - type: AnimationPlaythroughAction
+        parameters:
+        - name: m_GameObject
+          text: 
+          variable: 
+          path: ORG/ORG_GateTower/ORG_GateTowerThornsSkinned
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_AnimName
+          text: ORG_ThornsClickedClose
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_PhoneAnimName
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_PlayMode
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 4
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_CrossFadeSec
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: GetMouseX
+        parameters:
+        - name: storeResult
+          text: 
+          variable: MouseX
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: normalize
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: GetMouseY
+        parameters:
+        - name: storeResult
+          text: 
+          variable: MouseY
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: normalize
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: ScreenToWorldPoint
+        parameters:
+        - name: screenVector
+          text: 
+          variable: 
+          path: 
+          none: 1
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: screenX
+          text: 
+          variable: MouseX
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: screenY
+          text: 
+          variable: MouseY
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: screenZ
+          text: 18
+          variable: 
+          path: 
+          none: 0
+          number: 18
+          vector: {x: 0, y: 0, z: 0}
+        - name: normalized
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: storeWorldVector
+          text: 
+          variable: 
+          path: 
+          none: 1
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: storeWorldX
+          text: 
+          variable: WorldX
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: storeWorldY
+          text: 
+          variable: WorldY
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: storeWorldZ
+          text: 
+          variable: WorldZ
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: SetPosition
+        parameters:
+        - name: gameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/Thorns/FX_WoodChip1
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: vector
+          text: 
+          variable: 
+          path: 
+          none: 1
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: x
+          text: 
+          variable: WorldX
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: y
+          text: 
+          variable: WorldY
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: z
+          text: 
+          variable: WorldZ
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: space
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: everyFrame
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: lateUpdate
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: ParticlePlayAction
+        parameters:
+        - name: m_GameObject
+          text: 
+          variable: 
+          path: ORG/Clickables/Thorns/FX_WoodChip1
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_IncludeChildren
+          text: 0
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      - type: AudioPlayRandomClipAction
+        parameters:
+        - name: m_ParentObject
+          text: 
+          variable: 
+          path: $owner
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinVolume
+          text: 0.7
+          variable: 
+          path: 
+          none: 0
+          number: 0.7
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxVolume
+          text: 0.7
+          variable: 
+          path: 
+          none: 0
+          number: 0.7
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MinPitch
+          text: 0.8
+          variable: 
+          path: 
+          none: 0
+          number: 0.8
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_MaxPitch
+          text: 1.1
+          variable: 
+          path: 
+          none: 0
+          number: 1.1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_SpatialBlend
+          text: 1
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Category
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_Delay
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_TemplateSource
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimited
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitedDuration
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_InstanceLimitMaximum
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 1
+          vector: {x: 0, y: 0, z: 0}
+        - name: m_LimitMaxOutOption
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths:
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ThornbushPoke_01.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ThornbushPoke_02.wav
+        - Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ThornbushPoke_03.wav
+        sounds:
+        - {fileID: 8300000, guid: 7320320a40d7511218010ac031388b6a, type: 3}
+        - {fileID: 8300000, guid: 94f123e16dcb54497809f6892883daaf, type: 3}
+        - {fileID: 8300000, guid: 9c8bbe47e8911fdcf934ef92a87040ab, type: 3}
+        weights:
+        - 1
+        - 1
+        - 1
+      - type: Wait
+        parameters:
+        - name: time
+          text: 0.01
+          variable: 
+          path: 
+          none: 0
+          number: 0.01
+          vector: {x: 0, y: 0, z: 0}
+        - name: finishEvent
+          text: FINISHED
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        - name: realTime
+          text: 
+          variable: 
+          path: 
+          none: 0
+          number: 0
+          vector: {x: 0, y: 0, z: 0}
+        soundPaths: []
+        sounds: []
+        weights: []
+      transitions:
+      - eventName: FINISHED
+        toState: State 1

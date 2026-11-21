@@ -862,3 +862,16 @@ First preview exposed a hard shade edge in wide aspect windows; MatchPresentatio
 Craig requested a handoff whenever work is committed to main, with the previous handoff overwritten rather than archived. Added root HANDOFF.md and AGENTS.md requiring the update in the same commit. STATUS remains architectural/current-state reference; HISTORY retains decisions. A handoff cannot guarantee another model's repository/tool access and must identify uncommitted work and external assets explicitly.
 
 This documentation checkpoint does not commit or validate the unfinished corner adapter. It records recovered source FSM semantics, effects/audio evidence, the unfinished installer/audio contract and concrete Unity verification steps. Last verified gameplay checkpoint remains9e12621. No Unity checks rerun for this documentation-only change.
+
+
+## 21 November 2026 — remaining original corner interactions
+
+Merged eight native particle systems and eleven source colliders into the existing board hierarchy, preserving original transforms, modules, curves and layers. No duplicate board geometry or chimney. Wider-export Splinter1 dependencies resolve all selected particle paint; original materials use the approved compatibility shader with source5/10 blending. Compiled original shaders remain unrecovered.
+
+Six source FSMs now drive original flag, gate, spire, zeppelin, thorn and catapult clips. Disabled source actions are excluded; PlayAnimation waits for state completion while AnimationPlaythrough finishes immediately. Integer click-gate maxima are exclusive. Full catapult drag/cancel/basket/load/fire/wind/lock sequence uses original depth18, clips, waits and6.25-degree .25-second Self easeOutBounce rotation steps. Mono.Cecil inspection verified behavior without executing client assemblies.
+
+Exact SoundDef references were recovered directly from original UnityFS data, bypassing dead export GUIDs:18 actions,48 WAVs, original weights and pitch/volume. Zepp/thorn poke versus major-reaction mapping is verified from pointers. Moving prop audio now updates its near radius to the elevated listener each frame; fixed radius made the pickup sound attenuate after the rock moved.
+
+Integration checks passed all source collider/UI hits, animated transforms, particles/audio, repeat branches, full catapult and menu/reset. Gate dust has a source .2-second delay; tests were corrected to wait for emission. Catapult fixture needs Dynamic input-state observation rather than reading the separate Editor buffer. InputSettings swapping destroyed the old transient default, so fixture now temporarily restores only the routing property. Installer uses original GetTexture(_MainTex), since mainTexture on the null-shader source material returned null despite preserved paint. Dynamic temporary-script nested DTOs did not deserialize reliably with JsonUtility; committed logic now uses runtime-assembly data types.
+
+Regression checks passed native chimney, mulligan, mana, card layout, starting decks, native controls/End Turn and front-end/deck builder. Final console had zero errors/warnings. Captures inspected; no standalone build/full-match or speaker listening test claimed. Test fixtures discarded; Unity left on saved HearthstoneTable in clean Edit mode with auto-tick off. Rolling handoff updated in this checkpoint. Craig’s visual playtest is next.

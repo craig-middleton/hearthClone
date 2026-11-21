@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-20 — Last verified game checkpoint 9e12621: native mulligan. Remaining corner source assets/sounds/FSM semantics recovered; draft integration remains local, uninstalled and unverified. Ultra confirmed. Read HANDOFF.md for the exact resume point. Every main commit must overwrite that single rolling handoff in the same commit._
+_Last updated: 2026-11-21 — Original corner interactions installed and verified: flag, gate, spire, zeppelin, thorns and full catapult sequence; source particles/colliders and exact audio bindings. Existing chimney/mana/mulligan/card-layout/controls/deck/front-end regressions pass. Ready for Craig’s playtest. Read HANDOFF.md first; overwrite it in every main commit._
 
 ## How to use these files
 - **`HANDOFF.md`** — read first for latest checkpoint, local/unfinished work, validation limits and next steps. Overwrite this one file in every main commit, with no dated copies. `AGENTS.md` records the rule for incoming agents.

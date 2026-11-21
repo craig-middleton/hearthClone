@@ -1,0 +1,667 @@
+{
+  "method": "Original UnityFS serialized type trees, original PPtr fileID/pathID to SoundDef.m_AudioClip; not inferred by filenames. WAVs are user desktop exports. SoundDef internal random pitch/volume ranges all exactly1, random subclips empty. Source FSM applies action-level volume/pitch.",
+  "bundles": [
+    {
+      "name": "initial_base_qualityhigh_global-b6b43e63-prefab-0.unity3d",
+      "sha256": "72ca03bc0f4242e4cc747d40b174d7b30757aae7f8f746d2cae9ca0c52832cb1"
+    },
+    {
+      "name": "initial_base_global-9401fe9e-prefab-1.unity3d",
+      "sha256": "da8b1de5399080afe89108c8be1bd044025380a51f42b8dff091ce3574820abb"
+    },
+    {
+      "name": "initial_base_global-9401fe9e-prefab-2.unity3d",
+      "sha256": "ae44dfb0ef76236c4be80b4c954ec11fe7ac567a6a9d107f31bb6408559947a8"
+    }
+  ],
+  "actions": [
+    {
+      "machine": "Zepp",
+      "path": "ORG/Clickables/Zepp",
+      "state": "State 2",
+      "actionIndex": 1,
+      "clips": [
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_Zeppelin_Pilot_React_Vox_1.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_Zeppelin_Pilot_React_Vox_2.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_Zeppelin_Pilot_React_Vox_3.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_Zeppelin_Pilot_React_Vox_4.wav"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "soundDefs": [
+        {
+          "cab": "CAB-543f83c66550beceabf130fc06730a2c",
+          "pathID": -4323568141980816705,
+          "sourceFileID": 8,
+          "audioKey": "Orgrimmar_Clickable_Zeppelin_Pilot_React_Vox_1.wav:7cc39e040d6a36646805f53b92907bc5",
+          "sha256": "d70f2214b26e6cbda74b8d8ce282e3d525d7bfa2496d99c370c06db4976412fd"
+        },
+        {
+          "cab": "CAB-543f83c66550beceabf130fc06730a2c",
+          "pathID": 3473942038498552059,
+          "sourceFileID": 8,
+          "audioKey": "Orgrimmar_Clickable_Zeppelin_Pilot_React_Vox_2.wav:90e92c53b988bfb4caad861a8f4668ea",
+          "sha256": "1e3313779893ac24d3d12c117a10ce3c2b1e4488a37eee0da49926959507ee96"
+        },
+        {
+          "cab": "CAB-543f83c66550beceabf130fc06730a2c",
+          "pathID": -9173816165750806679,
+          "sourceFileID": 8,
+          "audioKey": "Orgrimmar_Clickable_Zeppelin_Pilot_React_Vox_3.wav:e62d877c67286f34393ff9dadd281fc0",
+          "sha256": "2166802487ec6e3925c29c8075a59e4c3b62848aa041285be19f37e7e94a79e6"
+        },
+        {
+          "cab": "CAB-543f83c66550beceabf130fc06730a2c",
+          "pathID": -4896074030885158980,
+          "sourceFileID": 8,
+          "audioKey": "Orgrimmar_Clickable_Zeppelin_Pilot_React_Vox_4.wav:68f836bf85a497c488bebc1b41946c31",
+          "sha256": "aac10be6711bc986a78b943ed44774abafc8a89f2996bcecc839c25badc2a7bc"
+        }
+      ]
+    },
+    {
+      "machine": "Zepp",
+      "path": "ORG/Clickables/Zepp",
+      "state": "State 2",
+      "actionIndex": 2,
+      "clips": [
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ZeppelinReact_03.wav"
+      ],
+      "weights": [
+        1.0
+      ],
+      "soundDefs": [
+        {
+          "cab": "CAB-543f83c66550beceabf130fc06730a2c",
+          "pathID": -4249344233080183592,
+          "sourceFileID": 8,
+          "audioKey": "Orgrimmar_Clickable_ZeppelinReact_03.wav:4f49ab68d6452aa4f81bdbd608e3f927",
+          "sha256": "ad4185dd2b8a1c1d8b93aff1ac97f6623dc9ad1dea214e57672537a510162754"
+        }
+      ]
+    },
+    {
+      "machine": "Zepp",
+      "path": "ORG/Clickables/Zepp",
+      "state": "State 3",
+      "actionIndex": 2,
+      "clips": [
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ZeppelinPoke_01.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ZeppelinPoke_02.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ZeppelinPoke_03.wav"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "soundDefs": [
+        {
+          "cab": "CAB-543f83c66550beceabf130fc06730a2c",
+          "pathID": -5516361786099395234,
+          "sourceFileID": 8,
+          "audioKey": "Orgrimmar_Clickable_ZeppelinPoke_01.wav:2d17d7940f02873499aec34c38f21af0",
+          "sha256": "72594a0e218c1f6112f32b21de0d69256719f7b9da10d5344076e6ffa9b217c8"
+        },
+        {
+          "cab": "CAB-543f83c66550beceabf130fc06730a2c",
+          "pathID": 2462349593416626802,
+          "sourceFileID": 8,
+          "audioKey": "Orgrimmar_Clickable_ZeppelinPoke_02.wav:574f124c2b3d98d419627c96d043a2f6",
+          "sha256": "6e8d74212cc4bc557d01af16b3d613478127d82914b844933c4bbf382c311cbd"
+        },
+        {
+          "cab": "CAB-543f83c66550beceabf130fc06730a2c",
+          "pathID": 8377436712143079966,
+          "sourceFileID": 8,
+          "audioKey": "Orgrimmar_Clickable_ZeppelinPoke_03.wav:e0f4d733d8fdef34ba1c7c0bd4257144",
+          "sha256": "f324341f399d87c4398881729c0882a2db951886ef5663439de7e8fe154b87f8"
+        }
+      ]
+    },
+    {
+      "machine": "Catapult",
+      "path": "ORG/Clickables/Catapult",
+      "state": "State 2",
+      "actionIndex": 6,
+      "clips": [
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_BoulderPickup_01.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_BoulderPickup_02.wav"
+      ],
+      "weights": [
+        1.0,
+        1.0
+      ],
+      "soundDefs": [
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 8677527414027501563,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_BoulderPickup_01.wav:1365086a31849334bbd76451935c41d4",
+          "sha256": "bf9cd97e48471df275f85c10cc5939309d07dc1a2a8852c56d048c47ca2360de"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": -6383350856451864633,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_BoulderPickup_02.wav:e24e58e22b8278f4aad7ca91321bced6",
+          "sha256": "9f119d5083fec36867d29d7a5ebb4532980c87282d3776298d02015275ef88b3"
+        }
+      ]
+    },
+    {
+      "machine": "Catapult",
+      "path": "ORG/Clickables/Catapult",
+      "state": "State 4",
+      "actionIndex": 1,
+      "clips": [
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultBoulderPlace_01.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultBoulderPlace_02.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultBoulderPlace_03.wav"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "soundDefs": [
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": -4126556435308753922,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_CatapultBoulderPlace_01.wav:12d8e8e390f431e4a9ba73c60893f6a2",
+          "sha256": "807537b9e191467b1d4076d40ac95cadb6f1a9feb733ce559d4e2fe327311e0f"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": -6746626103125306128,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_CatapultBoulderPlace_02.wav:222f1fdbfe194db46b3d768b0f1038b0",
+          "sha256": "fa3df8106102378ced8d135b7d7f0d8cc676bf3588f1613a05c14b54088453c0"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": -3481572188499834009,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_CatapultBoulderPlace_03.wav:0d5da6dff04f7f44893b03644625238d",
+          "sha256": "e8fb197c37238d6078f478a21f6ec10fb01246c62b7dcdf7e59449e5cb202544"
+        }
+      ]
+    },
+    {
+      "machine": "Catapult",
+      "path": "ORG/Clickables/Catapult",
+      "state": "State 6",
+      "actionIndex": 1,
+      "clips": [
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultLaunch_01.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultLaunch_02.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultLaunch_03.wav"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "soundDefs": [
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 8436045073540548138,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_CatapultLaunch_01.wav:5def4c4c709ab0642a78e4b021b27589",
+          "sha256": "06827ff48a75995c707ded88ac332e6e2409cefde60034b2cbc195df40501125"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": -3357579667402455169,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_CatapultLaunch_02.wav:0be0baf78ac01b346a2f3cdb125e47be",
+          "sha256": "5730a382adb13cbbe931679379ae13d22dbaf58697b9bb76b0953f8db5ea0c3b"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": -7614314021617940103,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_CatapultLaunch_03.wav:02c4c249108d99646ab8481468284924",
+          "sha256": "7b8303fa7a7e5b37983302e559415209728e51837caced20651ee3640ed345cc"
+        }
+      ]
+    },
+    {
+      "machine": "Catapult",
+      "path": "ORG/Clickables/Catapult",
+      "state": "State 6",
+      "actionIndex": 2,
+      "clips": [
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactBuilding_01.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactWorg_01.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactDirt_02.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactDirt_03.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactGoblin_01.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactMurloc_01.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactThud_01.wav"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "soundDefs": [
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 8371645582536989208,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_CatapultImpactBuilding_01.wav:bbd654e856c7074498c45a5c7eee0fa4",
+          "sha256": "495ffbbfe3c152ca54e9d299d62af0a9ca8f825cd87d3d58f5435d75e11d4c14"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 8529307766829330166,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_CatapultImpactWorg_01.wav:8527b99e21c672743a87cfec8550ff56",
+          "sha256": "00e68f11d2b0880545186e15f0a56be7bcb0662352d4b6d36463f118d26cdaef"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 2632375044948275978,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_CatapultImpactDirt_02.wav:d151cfd5c442d6540864c787b8b00f76",
+          "sha256": "0762d28b654d817ac9f7c130ddb8fd97d6b2366854e10542b91e98830a939986"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 4974492555347705359,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_CatapultImpactDirt_03.wav:6dcfd99931885c44d9e7543cc8b0fa7c",
+          "sha256": "e32a43f8b5b56d0f6b9c07e94c64e06d963b2d6015f8b3477b7e84c8f59f4b7e"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 6358700373661772115,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_CatapultImpactGoblin_01.wav:f3a309eb7b23b464caac20998d92e4b7",
+          "sha256": "c629254fc4443780cb3a7a9ec865935f6464af1b25c2fbe92f84d0e14c38de19"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": -8119512460333045368,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_CatapultImpactMurloc_01.wav:609eefb3f8486f4418fe89646906b58d",
+          "sha256": "ffa5c33bc603e5dcf78084669a3b9290b3eb942b78a519611dc1bb39bd884b77"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": -9003536621679436773,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_CatapultImpactThud_01.wav:66441ad77d6f7ce46b3a9bc57d5c70b6",
+          "sha256": "159a2f847c57e4ee6cbd47a2fbf2e9de304f943b0872262e7bf13fa4c3df1ddb"
+        }
+      ]
+    },
+    {
+      "machine": "Catapult",
+      "path": "ORG/Clickables/Catapult",
+      "state": "State 8",
+      "actionIndex": 1,
+      "clips": [
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultWinch_01.wav"
+      ],
+      "weights": [
+        1.0
+      ],
+      "soundDefs": [
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 5169419501263906603,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_CatapultWinch_01.wav:8da5d233cdc5b5f449414dff2b8e3b05",
+          "sha256": "8195e4543fa996eb5a48f0deb5fa61963fc1a9d644fc63358069603e056e16be"
+        }
+      ]
+    },
+    {
+      "machine": "Catapult",
+      "path": "ORG/Clickables/Catapult",
+      "state": "State 9",
+      "actionIndex": 3,
+      "clips": [
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_BoulderDropGround_01.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_BoulderDropGround_02.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_BoulderDropGround_03.wav"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "soundDefs": [
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": -5956377098951665382,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_BoulderDropGround_01.wav:91cbf040332047440a254becf572ea40",
+          "sha256": "c8890f579ff9e85e8b1c6394fe126e80e6025b082ab495e5508586d0a2810aac"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 7418538197172464921,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_BoulderDropGround_02.wav:c06e5715164998e45bc04a0b3a687387",
+          "sha256": "cb9b19a59b1914c0e0096933ebb4914daa55dbc2f326a686f03f68363fa97ba7"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 1798470530160212509,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_BoulderDropGround_03.wav:a7cc419fe82ef1748aba8107f56e1904",
+          "sha256": "8d54ea2b6c9d79458ac69efd9a556f77573cf95873455c7b6d3e644d39a404bb"
+        }
+      ]
+    },
+    {
+      "machine": "Catapult",
+      "path": "ORG/Clickables/Catapult",
+      "state": "State 10",
+      "actionIndex": 0,
+      "clips": [
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultLock_01.wav"
+      ],
+      "weights": [
+        1
+      ],
+      "soundDefs": [
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": -1999312990101521140,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_CatapultLock_01.wav:92a38b7f402f8b84aad069ef3332a886",
+          "sha256": "9b75d4538391e2eafb118d36d0639eccc8120bc9de595f0c005e9b6aadfc3d8c"
+        }
+      ]
+    },
+    {
+      "machine": "Hut_Flag",
+      "path": "ORG/Clickables/Hut_Flag",
+      "state": "State 2",
+      "actionIndex": 1,
+      "clips": [
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_OrcBanner_01.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_OrcBanner_02.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_OrcBanner_03.wav"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "soundDefs": [
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 5667872872972571274,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_OrcBanner_01.wav:2b222dd66fd8fcd479c5e9d2a2c9a1bd",
+          "sha256": "aa247f4211b8cd0320041546aeb63bdc8229219476db77c65087553f074941f8"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 4244514251958019679,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_OrcBanner_02.wav:b83a2c0409f555448be05f0cc5408dd0",
+          "sha256": "304d9715b47b55a407111a545623076dcb0061bcd8708f4318ecffb1b9a1486b"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": -9205450923221425925,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_OrcBanner_03.wav:35309bdef01df8b409c28d2538291876",
+          "sha256": "d06def779bef1cf868dabf90e5bc2999aa445e1e7e74624c8fb93cf5158b8e93"
+        }
+      ]
+    },
+    {
+      "machine": "Thorns",
+      "path": "ORG/Clickables/Thorns",
+      "state": "State 2",
+      "actionIndex": 6,
+      "clips": [
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ThornbushReact_01.wav"
+      ],
+      "weights": [
+        1.0
+      ],
+      "soundDefs": [
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 6100576976949533168,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_ThornbushReact_01.wav:9c32e2b0cf3677844a65eb38908420cd",
+          "sha256": "60e9c4c6f6798b6c801f1c4a9e583766a9d14e44f465a4714dac33d3754f6e88"
+        }
+      ]
+    },
+    {
+      "machine": "Thorns",
+      "path": "ORG/Clickables/Thorns",
+      "state": "State 3",
+      "actionIndex": 6,
+      "clips": [
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ThornbushPoke_01.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ThornbushPoke_02.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ThornbushPoke_03.wav"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "soundDefs": [
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": -8773732030311933971,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_ThornbushPoke_01.wav:b40845dd13917f644ad5b18965a3faa3",
+          "sha256": "9a53159299110728149ba7594c583b9abc709b9e2fa68014fca5bd08d853fab9"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": -8403656204436727152,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_ThornbushPoke_02.wav:a541e053d4c777e44ad54d700cdbc9ed",
+          "sha256": "98a4e92a45fbb9e2d77930e937420fcfa00e714669dbaf8294abf12797c49df8"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 889102476243650804,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_ThornbushPoke_03.wav:6f58c75079a6ee14fb3b90ec4d0fa5fe",
+          "sha256": "cff8829162a8a3a0918c1a9ebad23def3796d9e161eab5333722d0a3031e2537"
+        }
+      ]
+    },
+    {
+      "machine": "RockSpire",
+      "path": "ORG/Clickables/RockSpire",
+      "state": "Open State",
+      "actionIndex": 5,
+      "clips": [
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_GiantBoulderReact_01_KMW.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_GiantBoulderReact_02_KMW.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_GiantBoulderReact_03_KMW.wav"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "soundDefs": [
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 1325537422342995958,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_GiantBoulderReact_01_KMW.wav:5b09a8ec20c563340adb1bdbfb19c799",
+          "sha256": "4200e5fbc78e9262555c4dfba261c590081ad812f5f2d98fde07645fe6e677bb"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": -5359431668213896980,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_GiantBoulderReact_02_KMW.wav:d3130ccfe0c106e4bbc8c38649a00aa8",
+          "sha256": "21a1492c1e1bb2c04622b4539ac283747b30283d959ae13c50e646f9d1e537f3"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 7219878667104386710,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_GiantBoulderReact_03_KMW.wav:e11b422565d8f8b43bdac82a04ebf140",
+          "sha256": "e42e48679161b94420d2fdbba69aaf4714741f78dfa3f0d74be4e89b17d5698d"
+        }
+      ]
+    },
+    {
+      "machine": "RockSpire",
+      "path": "ORG/Clickables/RockSpire",
+      "state": "Close State",
+      "actionIndex": 2,
+      "clips": [
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_GiantBoulderPoke_01_KMW.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_GiantBoulderPoke_02_KMW.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_GiantBoulderPoke_03_KMW.wav"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "soundDefs": [
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": -576706007572179750,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_GiantBoulderPoke_01_KMW.wav:85f82ce4adec2ef4aa2fd0c2f4f99d77",
+          "sha256": "5b7bb2f990fa67483ce16d49c1751e1d6d6153f74b46e6a9a270bfbf3566cea5"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 7838740772273537870,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_GiantBoulderPoke_02_KMW.wav:c04a167ac41a61045a40acc1e0bb4d8b",
+          "sha256": "019eb045932f2fc1865c4b403950e8d1c0df5c22f46bf1f13399ffe22d6d3cf3"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": -2488950334081248954,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_GiantBoulderPoke_03_KMW.wav:4a57812b7822d8b488b22aec124def8e",
+          "sha256": "28b53970d84383e766b05448f9875fcfc70a421a426283529ed3017c3331fdd5"
+        }
+      ]
+    },
+    {
+      "machine": "TowerGate",
+      "path": "ORG/Clickables/TowerGate",
+      "state": "State 2",
+      "actionIndex": 1,
+      "clips": [
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisPoke_01.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisPoke_02.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisPoke_03.wav"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "soundDefs": [
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 5557331034419472775,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_PortcullisPoke_01.wav:67753d2c18442a74097552895161cd96",
+          "sha256": "c888cfce476f5626b17c8f9f0a0f2a0b195a57f79ba3c5b7f9c8e5fb338d609d"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 3876771438935913101,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_PortcullisPoke_02.wav:cc610a6ba16fa4444acd940a34789cf3",
+          "sha256": "b2ce2e76d8621652ea2f2dbaa1a68e4a14b58cf70c44127b1e6d166ae02f15a7"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 1697074290115794312,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_PortcullisPoke_03.wav:5089b2b5ea4f184489fcbe24118bdc8a",
+          "sha256": "f880e21758ecd7867cd68fde75d6fc45b91d0899ffa9347d9be0bc8be936b9e2"
+        }
+      ]
+    },
+    {
+      "machine": "TowerGate",
+      "path": "ORG/Clickables/TowerGate",
+      "state": "State 3",
+      "actionIndex": 1,
+      "clips": [
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisFall_01.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisFall_02.wav",
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisFall_03.wav"
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "soundDefs": [
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 6894393269416580197,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_PortcullisFall_01.wav:10f4c4f4a91791e4fabfbbb91c534923",
+          "sha256": "16e7559ff57edda50285f073925c6ad81fb644b1c60a3e5614a798c93b36f68e"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": -202794710568501465,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_PortcullisFall_02.wav:1a879534c4694bb4da8d6f0b301f8510",
+          "sha256": "02146aba9f14f7ecb57280915b5ef7a4aee0636460afe07303eaa31dc9c4b9a5"
+        },
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": -5647114043009685504,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_PortcullisFall_03.wav:7ac3ae5e6de291b47ae80a4506a5de77",
+          "sha256": "0e4dbec1880c9050c98eff9e632c4abb7ad63abeee00cc8dbe4adfb305ba5916"
+        }
+      ]
+    },
+    {
+      "machine": "TowerGate",
+      "path": "ORG/Clickables/TowerGate",
+      "state": "State 5",
+      "actionIndex": 1,
+      "clips": [
+        "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisRise_02.wav"
+      ],
+      "weights": [
+        1.0
+      ],
+      "soundDefs": [
+        {
+          "cab": "CAB-94702b40f3bc7e46c8686903984a1bff",
+          "pathID": 1575367313934293803,
+          "sourceFileID": 1,
+          "audioKey": "Orgrimmar_Clickable_PortcullisRise_02.wav:b3d89af8b9700244a94e511ce8f53cc2",
+          "sha256": "d2b65cc1f988c0efd3571bffce8e846834aaa5a7d1bc7540c20b832e32d1b708"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3880 @@
+{
+  "machines": [
+    {
+      "path": "ORG/Clickables/Catapult",
+      "start": "State 1",
+      "states": [
+        {
+          "name": "State 1",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 2"
+            }
+          ],
+          "actions": [
+            {
+              "type": "SetPosition",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/Clickables/Catapult/RockPickup"
+                },
+                {
+                  "name": "vector",
+                  "variable": "",
+                  "none": true
+                },
+                {
+                  "name": "x",
+                  "text": "-1.26",
+                  "number": -1.26
+                },
+                {
+                  "name": "y",
+                  "text": "-1.11",
+                  "number": -1.11
+                },
+                {
+                  "name": "z",
+                  "text": "-0.41",
+                  "number": -0.41
+                },
+                {
+                  "name": "space",
+                  "number": 0
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 0
+                },
+                {
+                  "name": "lateUpdate",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/Catapult/State 1/0"
+            },
+            {
+              "type": "MousePickRandomAction",
+              "parameters": [
+                {
+                  "name": "GameObject",
+                  "path": "ORG/Clickables/Catapult/Rockpile_Collision"
+                },
+                {
+                  "name": "RandomGateClicksMin",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "RandomGateClicksMax",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "ResetOnOpen",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "mouseDownGateOpen",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "mouseDownGateClosed",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "mouseOver",
+                  "text": ""
+                },
+                {
+                  "name": "mouseUp",
+                  "text": ""
+                },
+                {
+                  "name": "mouseOff",
+                  "text": ""
+                },
+                {
+                  "name": "checkFirstFrame",
+                  "number": 1
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                },
+                {
+                  "name": "oneShot",
+                  "number": 0
+                },
+                {
+                  "name": "ClickCount",
+                  "text": "0",
+                  "number": 0.0
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/Catapult/State 1/1"
+            },
+            {
+              "type": "SetVisibility",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/Catapult_Root/ORG_Catapult/CatapultArmRoot_mesh/Sphere"
+                },
+                {
+                  "name": "toggle",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "visible",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "resetOnExit",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 2,
+              "soundKey": "ORG/Clickables/Catapult/State 1/2"
+            }
+          ]
+        },
+        {
+          "name": "State 2",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 3"
+            },
+            {
+              "eventName": "gotOut",
+              "toState": "State 9"
+            }
+          ],
+          "actions": [
+            {
+              "type": "GetMouseX",
+              "parameters": [
+                {
+                  "name": "storeResult",
+                  "variable": "MouseX",
+                  "none": false
+                },
+                {
+                  "name": "normalize",
+                  "number": 0
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/Catapult/State 2/0"
+            },
+            {
+              "type": "GetMouseY",
+              "parameters": [
+                {
+                  "name": "storeResult",
+                  "variable": "MouseY",
+                  "none": false
+                },
+                {
+                  "name": "normalize",
+                  "number": 0
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/Catapult/State 2/1"
+            },
+            {
+              "type": "ScreenToWorldPoint",
+              "parameters": [
+                {
+                  "name": "screenVector",
+                  "variable": "",
+                  "none": true
+                },
+                {
+                  "name": "screenX",
+                  "variable": "MouseX",
+                  "none": false
+                },
+                {
+                  "name": "screenY",
+                  "variable": "MouseY",
+                  "none": false
+                },
+                {
+                  "name": "screenZ",
+                  "text": "18",
+                  "number": 18.0
+                },
+                {
+                  "name": "normalized",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "storeWorldVector",
+                  "variable": "WorldVector",
+                  "none": false
+                },
+                {
+                  "name": "storeWorldX",
+                  "variable": "WorldX",
+                  "none": false
+                },
+                {
+                  "name": "storeWorldY",
+                  "variable": "WorldY",
+                  "none": false
+                },
+                {
+                  "name": "storeWorldZ",
+                  "variable": "WorldZ",
+                  "none": false
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                }
+              ],
+              "sourceIndex": 2,
+              "soundKey": "ORG/Clickables/Catapult/State 2/2"
+            },
+            {
+              "type": "SetPosition",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/Clickables/Catapult/RockPickup"
+                },
+                {
+                  "name": "vector",
+                  "variable": "",
+                  "none": true
+                },
+                {
+                  "name": "x",
+                  "variable": "WorldX",
+                  "none": false
+                },
+                {
+                  "name": "y",
+                  "variable": "WorldY",
+                  "none": false
+                },
+                {
+                  "name": "z",
+                  "variable": "WorldZ",
+                  "none": false
+                },
+                {
+                  "name": "space",
+                  "number": 0
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                },
+                {
+                  "name": "lateUpdate",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 3,
+              "soundKey": "ORG/Clickables/Catapult/State 2/3"
+            },
+            {
+              "type": "SetProperty",
+              "parameters": [
+                {
+                  "name": "collider",
+                  "path": "ORG/Catapult_Root/ORG_Catapult/CatapultArmRoot_mesh/polySurface68/Basket_Collision"
+                },
+                {
+                  "name": "enabled",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 4,
+              "soundKey": "ORG/Clickables/Catapult/State 2/4"
+            },
+            {
+              "type": "MousePickRandomAction",
+              "parameters": [
+                {
+                  "name": "GameObject",
+                  "path": "ORG/Catapult_Root/ORG_Catapult/CatapultArmRoot_mesh/polySurface68/Basket_Collision"
+                },
+                {
+                  "name": "RandomGateClicksMin",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "RandomGateClicksMax",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "ResetOnOpen",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "mouseDownGateOpen",
+                  "text": ""
+                },
+                {
+                  "name": "mouseDownGateClosed",
+                  "text": ""
+                },
+                {
+                  "name": "mouseOver",
+                  "text": ""
+                },
+                {
+                  "name": "mouseUp",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "mouseOff",
+                  "text": ""
+                },
+                {
+                  "name": "checkFirstFrame",
+                  "number": 1
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                },
+                {
+                  "name": "oneShot",
+                  "number": 0
+                },
+                {
+                  "name": "ClickCount",
+                  "text": "0",
+                  "number": 0.0
+                }
+              ],
+              "sourceIndex": 5,
+              "soundKey": "ORG/Clickables/Catapult/State 2/5"
+            },
+            {
+              "type": "AudioPlayRandomClipAction",
+              "parameters": [
+                {
+                  "name": "m_ParentObject",
+                  "path": "ORG/Clickables/Catapult/RockPickup"
+                },
+                {
+                  "name": "m_MinVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MinPitch",
+                  "text": "0.85",
+                  "number": 0.85
+                },
+                {
+                  "name": "m_MaxPitch",
+                  "text": "1.05",
+                  "number": 1.05
+                },
+                {
+                  "name": "m_SpatialBlend",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_Category",
+                  "number": 1
+                },
+                {
+                  "name": "m_Delay",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_TemplateSource",
+                  "path": ""
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "number": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 6,
+              "soundKey": "ORG/Clickables/Catapult/State 2/6",
+              "weights": [
+                1.0,
+                1.0
+              ],
+              "soundPaths": [
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_BoulderPickup_01.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_BoulderPickup_02.wav"
+              ]
+            },
+            {
+              "type": "SetVisibility",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/Clickables/Catapult/RockPickup"
+                },
+                {
+                  "name": "toggle",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "visible",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "resetOnExit",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 7,
+              "soundKey": "ORG/Clickables/Catapult/State 2/7"
+            },
+            {
+              "type": "GetMainCamera",
+              "parameters": [
+                {
+                  "name": "storeGameObject",
+                  "variable": "MainCam",
+                  "none": false
+                }
+              ],
+              "sourceIndex": 10,
+              "soundKey": "ORG/Clickables/Catapult/State 2/10"
+            },
+            {
+              "type": "ScreenPick",
+              "parameters": [
+                {
+                  "name": "screenVector",
+                  "variable": "",
+                  "none": true
+                },
+                {
+                  "name": "screenX",
+                  "variable": "MouseX",
+                  "none": false
+                },
+                {
+                  "name": "screenY",
+                  "variable": "MouseY",
+                  "none": false
+                },
+                {
+                  "name": "normalized",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "rayDistance",
+                  "text": "55",
+                  "number": 55.0
+                },
+                {
+                  "name": "storeDidPickObject",
+                  "variable": "",
+                  "none": true
+                },
+                {
+                  "name": "storeGameObject",
+                  "variable": "bounds",
+                  "none": false
+                },
+                {
+                  "name": "storePoint",
+                  "variable": "",
+                  "none": true
+                },
+                {
+                  "name": "storeNormal",
+                  "variable": "",
+                  "none": true
+                },
+                {
+                  "name": "storeDistance",
+                  "variable": "",
+                  "none": true
+                },
+                {
+                  "name": "invertMask",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                }
+              ],
+              "sourceIndex": 11,
+              "soundKey": "ORG/Clickables/Catapult/State 2/11"
+            },
+            {
+              "type": "GameObjectCompare",
+              "parameters": [
+                {
+                  "name": "gameObjectVariable",
+                  "path": "$owner"
+                },
+                {
+                  "name": "compareTo",
+                  "variable": "bounds",
+                  "none": false
+                },
+                {
+                  "name": "equalEvent",
+                  "text": ""
+                },
+                {
+                  "name": "notEqualEvent",
+                  "text": "gotOut"
+                },
+                {
+                  "name": "storeResult",
+                  "variable": "",
+                  "none": true
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                }
+              ],
+              "sourceIndex": 12,
+              "soundKey": "ORG/Clickables/Catapult/State 2/12"
+            }
+          ]
+        },
+        {
+          "name": "State 3",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 4"
+            }
+          ],
+          "actions": [
+            {
+              "type": "SetVisibility",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/Clickables/Catapult/RockPickup"
+                },
+                {
+                  "name": "toggle",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "visible",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "resetOnExit",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/Catapult/State 3/0"
+            },
+            {
+              "type": "SetVisibility",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/Catapult_Root/ORG_Catapult/CatapultArmRoot_mesh/Sphere"
+                },
+                {
+                  "name": "toggle",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "visible",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "resetOnExit",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/Catapult/State 3/1"
+            },
+            {
+              "type": "SetProperty",
+              "parameters": [
+                {
+                  "name": "collider",
+                  "path": "ORG/Catapult_Root"
+                },
+                {
+                  "name": "enabled",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 2,
+              "soundKey": "ORG/Clickables/Catapult/State 3/2"
+            },
+            {
+              "type": "SetProperty",
+              "parameters": [
+                {
+                  "name": "collider",
+                  "path": "ORG/Catapult_Root/ORG_Catapult/CatapultArmRoot_mesh/polySurface68/Basket_Collision"
+                },
+                {
+                  "name": "enabled",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 3,
+              "soundKey": "ORG/Clickables/Catapult/State 3/3"
+            }
+          ]
+        },
+        {
+          "name": "State 4",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 5"
+            }
+          ],
+          "actions": [
+            {
+              "type": "PlayAnimation",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/Catapult_Root/ORG_Catapult"
+                },
+                {
+                  "name": "animName",
+                  "text": "ORG_CattapultRockFall"
+                },
+                {
+                  "name": "playMode",
+                  "number": 4
+                },
+                {
+                  "name": "blendTime",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "finishEvent",
+                  "text": ""
+                },
+                {
+                  "name": "loopEvent",
+                  "text": ""
+                },
+                {
+                  "name": "stopOnExit",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/Catapult/State 4/0"
+            },
+            {
+              "type": "AudioPlayRandomClipAction",
+              "parameters": [
+                {
+                  "name": "m_ParentObject",
+                  "path": "$owner"
+                },
+                {
+                  "name": "m_MinVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MinPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_SpatialBlend",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_Category",
+                  "number": 1
+                },
+                {
+                  "name": "m_Delay",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_TemplateSource",
+                  "path": ""
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "number": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/Catapult/State 4/1",
+              "weights": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "soundPaths": [
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultBoulderPlace_01.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultBoulderPlace_02.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultBoulderPlace_03.wav"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "State 5",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 6"
+            }
+          ],
+          "actions": [
+            {
+              "type": "MousePickRandomAction",
+              "parameters": [
+                {
+                  "name": "GameObject",
+                  "path": "ORG/Catapult_Root"
+                },
+                {
+                  "name": "RandomGateClicksMin",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "RandomGateClicksMax",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "ResetOnOpen",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "mouseDownGateOpen",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "mouseDownGateClosed",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "mouseOver",
+                  "text": ""
+                },
+                {
+                  "name": "mouseUp",
+                  "text": ""
+                },
+                {
+                  "name": "mouseOff",
+                  "text": ""
+                },
+                {
+                  "name": "checkFirstFrame",
+                  "number": 1
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                },
+                {
+                  "name": "oneShot",
+                  "number": 0
+                },
+                {
+                  "name": "ClickCount",
+                  "text": "0",
+                  "number": 0.0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/Catapult/State 5/0"
+            }
+          ]
+        },
+        {
+          "name": "State 6",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 7"
+            }
+          ],
+          "actions": [
+            {
+              "type": "AnimationPlaythroughAction",
+              "parameters": [
+                {
+                  "name": "m_GameObject",
+                  "path": "ORG/Catapult_Root/ORG_Catapult"
+                },
+                {
+                  "name": "m_AnimName",
+                  "text": "ORG_CattapultLaunch"
+                },
+                {
+                  "name": "m_PhoneAnimName",
+                  "text": ""
+                },
+                {
+                  "name": "m_PlayMode",
+                  "number": 0
+                },
+                {
+                  "name": "m_CrossFadeSec",
+                  "text": "0",
+                  "number": 0.0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/Catapult/State 6/0"
+            },
+            {
+              "type": "AudioPlayRandomClipAction",
+              "parameters": [
+                {
+                  "name": "m_ParentObject",
+                  "path": "ORG/Clickables/Catapult/Catapult Launch Sound"
+                },
+                {
+                  "name": "m_MinVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MinPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_SpatialBlend",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_Category",
+                  "number": 1
+                },
+                {
+                  "name": "m_Delay",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_TemplateSource",
+                  "path": ""
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "number": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/Catapult/State 6/1",
+              "weights": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "soundPaths": [
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultLaunch_01.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultLaunch_02.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultLaunch_03.wav"
+              ]
+            },
+            {
+              "type": "AudioPlayRandomClipAction",
+              "parameters": [
+                {
+                  "name": "m_ParentObject",
+                  "path": "ORG/Clickables/Catapult/Catapult Rock Flight Sound"
+                },
+                {
+                  "name": "m_MinVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MinPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_SpatialBlend",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_Category",
+                  "number": 1
+                },
+                {
+                  "name": "m_Delay",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_TemplateSource",
+                  "path": ""
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "number": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 2,
+              "soundKey": "ORG/Clickables/Catapult/State 6/2",
+              "weights": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "soundPaths": [
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactBuilding_01.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactWorg_01.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactDirt_02.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactDirt_03.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactGoblin_01.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactMurloc_01.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultImpactThud_01.wav"
+              ]
+            },
+            {
+              "type": "Wait",
+              "parameters": [
+                {
+                  "name": "time",
+                  "text": "0.5",
+                  "number": 0.5
+                },
+                {
+                  "name": "finishEvent",
+                  "text": ""
+                },
+                {
+                  "name": "realTime",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 3,
+              "soundKey": "ORG/Clickables/Catapult/State 6/3"
+            }
+          ]
+        },
+        {
+          "name": "State 7",
+          "transitions": [
+            {
+              "eventName": "close",
+              "toState": "State 8"
+            },
+            {
+              "eventName": "open",
+              "toState": "State 10"
+            }
+          ],
+          "actions": [
+            {
+              "type": "MousePickRandomAction",
+              "parameters": [
+                {
+                  "name": "GameObject",
+                  "path": "ORG/Catapult_Root"
+                },
+                {
+                  "name": "RandomGateClicksMin",
+                  "text": "7",
+                  "number": 7.0
+                },
+                {
+                  "name": "RandomGateClicksMax",
+                  "text": "7",
+                  "number": 7.0
+                },
+                {
+                  "name": "ResetOnOpen",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "mouseDownGateOpen",
+                  "text": "open"
+                },
+                {
+                  "name": "mouseDownGateClosed",
+                  "text": "close"
+                },
+                {
+                  "name": "mouseOver",
+                  "text": ""
+                },
+                {
+                  "name": "mouseUp",
+                  "text": ""
+                },
+                {
+                  "name": "mouseOff",
+                  "text": ""
+                },
+                {
+                  "name": "checkFirstFrame",
+                  "number": 1
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                },
+                {
+                  "name": "oneShot",
+                  "number": 0
+                },
+                {
+                  "name": "ClickCount",
+                  "text": "0",
+                  "number": 0.0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/Catapult/State 7/0"
+            },
+            {
+              "type": "SetVisibility",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/Catapult_Root/ORG_Catapult/CatapultArmRoot_mesh/Sphere"
+                },
+                {
+                  "name": "toggle",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "visible",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "resetOnExit",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/Catapult/State 7/1"
+            }
+          ]
+        },
+        {
+          "name": "State 8",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 7"
+            }
+          ],
+          "actions": [
+            {
+              "type": "iTweenRotateAdd",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/Catapult_Root/ORG_Catapult/CatapultArmRoot_mesh"
+                },
+                {
+                  "name": "id",
+                  "variable": "",
+                  "none": true
+                },
+                {
+                  "name": "vector",
+                  "vector": {
+                    "x": 6.25,
+                    "y": 0.0,
+                    "z": 0.0
+                  }
+                },
+                {
+                  "name": "time",
+                  "text": "0.25",
+                  "number": 0.25
+                },
+                {
+                  "name": "delay",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "speed",
+                  "variable": "",
+                  "none": true
+                },
+                {
+                  "name": "easeType",
+                  "number": 24
+                },
+                {
+                  "name": "loopType",
+                  "number": 0
+                },
+                {
+                  "name": "space",
+                  "number": 1
+                },
+                {
+                  "name": "startEvent",
+                  "text": ""
+                },
+                {
+                  "name": "finishEvent",
+                  "text": ""
+                },
+                {
+                  "name": "realTime",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "stopOnExit",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "loopDontFinish",
+                  "text": "1",
+                  "number": 1.0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/Catapult/State 8/0"
+            },
+            {
+              "type": "AudioPlayRandomClipAction",
+              "parameters": [
+                {
+                  "name": "m_ParentObject",
+                  "path": "$owner"
+                },
+                {
+                  "name": "m_MinVolume",
+                  "text": "0.5",
+                  "number": 0.5
+                },
+                {
+                  "name": "m_MaxVolume",
+                  "text": "0.5",
+                  "number": 0.5
+                },
+                {
+                  "name": "m_MinPitch",
+                  "text": "0.8",
+                  "number": 0.8
+                },
+                {
+                  "name": "m_MaxPitch",
+                  "text": "1.1",
+                  "number": 1.1
+                },
+                {
+                  "name": "m_SpatialBlend",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_Category",
+                  "number": 1
+                },
+                {
+                  "name": "m_Delay",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_TemplateSource",
+                  "path": ""
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "number": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/Catapult/State 8/1",
+              "weights": [
+                1.0
+              ],
+              "soundPaths": [
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultWinch_01.wav"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "State 9",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 1"
+            }
+          ],
+          "actions": [
+            {
+              "type": "SetVisibilityRecursiveAction",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/Clickables/Catapult/RockPickup"
+                },
+                {
+                  "name": "visible",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "resetOnExit",
+                  "number": 0
+                },
+                {
+                  "name": "includeChildren",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/Catapult/State 9/0"
+            },
+            {
+              "type": "Wait",
+              "parameters": [
+                {
+                  "name": "time",
+                  "text": "0.2",
+                  "number": 0.2
+                },
+                {
+                  "name": "finishEvent",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "realTime",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/Catapult/State 9/1"
+            },
+            {
+              "type": "ParticlePlayAction",
+              "parameters": [
+                {
+                  "name": "m_GameObject",
+                  "path": "ORG/Clickables/Catapult/RockPickup/FX_Dust1"
+                },
+                {
+                  "name": "m_IncludeChildren",
+                  "text": "1",
+                  "number": 1.0
+                }
+              ],
+              "sourceIndex": 2,
+              "soundKey": "ORG/Clickables/Catapult/State 9/2"
+            },
+            {
+              "type": "AudioPlayRandomClipAction",
+              "parameters": [
+                {
+                  "name": "m_ParentObject",
+                  "path": "$owner"
+                },
+                {
+                  "name": "m_MinVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MinPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_SpatialBlend",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_Category",
+                  "number": 1
+                },
+                {
+                  "name": "m_Delay",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_TemplateSource",
+                  "path": ""
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "number": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 3,
+              "soundKey": "ORG/Clickables/Catapult/State 9/3",
+              "weights": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "soundPaths": [
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_BoulderDropGround_01.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_BoulderDropGround_02.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_BoulderDropGround_03.wav"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "State 10",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 1"
+            }
+          ],
+          "actions": [
+            {
+              "type": "AudioPlayClipAction",
+              "parameters": [
+                {
+                  "name": "m_ParentObject",
+                  "path": "$owner"
+                },
+                {
+                  "name": "m_Sound",
+                  "path": ""
+                },
+                {
+                  "name": "m_Volume",
+                  "text": "0.9",
+                  "number": 0.9
+                },
+                {
+                  "name": "m_Pitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_SpatialBlend",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_Category",
+                  "number": 1
+                },
+                {
+                  "name": "m_Delay",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_TemplateSource",
+                  "path": ""
+                },
+                {
+                  "name": "m_IsMinionSummonVO",
+                  "number": 0
+                },
+                {
+                  "name": "m_IsKeywordVO",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "number": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/Catapult/State 10/0",
+              "soundPaths": [
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_CatapultLock_01.wav"
+              ],
+              "weights": [
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "ORG/Clickables/Hut_Flag",
+      "start": "State 1",
+      "states": [
+        {
+          "name": "State 1",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 2"
+            }
+          ],
+          "actions": [
+            {
+              "type": "MousePickRandomAction",
+              "parameters": [
+                {
+                  "name": "GameObject",
+                  "path": "$owner"
+                },
+                {
+                  "name": "RandomGateClicksMin",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "RandomGateClicksMax",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "ResetOnOpen",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "mouseDownGateOpen",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "mouseDownGateClosed",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "mouseOver",
+                  "text": ""
+                },
+                {
+                  "name": "mouseUp",
+                  "text": ""
+                },
+                {
+                  "name": "mouseOff",
+                  "text": ""
+                },
+                {
+                  "name": "checkFirstFrame",
+                  "number": 1
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                },
+                {
+                  "name": "oneShot",
+                  "number": 0
+                },
+                {
+                  "name": "ClickCount",
+                  "text": "0",
+                  "number": 0.0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/Hut_Flag/State 1/0"
+            },
+            {
+              "type": "PlayAnimation",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/ORG_Hut_Flag"
+                },
+                {
+                  "name": "animName",
+                  "text": "ORG_HutFlagIdle"
+                },
+                {
+                  "name": "playMode",
+                  "number": 4
+                },
+                {
+                  "name": "blendTime",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "finishEvent",
+                  "text": ""
+                },
+                {
+                  "name": "loopEvent",
+                  "text": ""
+                },
+                {
+                  "name": "stopOnExit",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/Hut_Flag/State 1/1"
+            }
+          ]
+        },
+        {
+          "name": "State 2",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 1"
+            }
+          ],
+          "actions": [
+            {
+              "type": "PlayAnimation",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/ORG_Hut_Flag"
+                },
+                {
+                  "name": "animName",
+                  "text": "ORG_HutFlagClicked1"
+                },
+                {
+                  "name": "playMode",
+                  "number": 4
+                },
+                {
+                  "name": "blendTime",
+                  "text": "0.3",
+                  "number": 0.3
+                },
+                {
+                  "name": "finishEvent",
+                  "text": ""
+                },
+                {
+                  "name": "loopEvent",
+                  "text": ""
+                },
+                {
+                  "name": "stopOnExit",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/Hut_Flag/State 2/0"
+            },
+            {
+              "type": "AudioPlayRandomClipAction",
+              "parameters": [
+                {
+                  "name": "m_ParentObject",
+                  "path": "$owner"
+                },
+                {
+                  "name": "m_MinVolume",
+                  "text": "0.5",
+                  "number": 0.5
+                },
+                {
+                  "name": "m_MaxVolume",
+                  "text": "0.5",
+                  "number": 0.5
+                },
+                {
+                  "name": "m_MinPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_SpatialBlend",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_Category",
+                  "number": 1
+                },
+                {
+                  "name": "m_Delay",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_TemplateSource",
+                  "path": ""
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "number": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/Hut_Flag/State 2/1",
+              "weights": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "soundPaths": [
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_OrcBanner_01.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_OrcBanner_02.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_OrcBanner_03.wav"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "ORG/Clickables/TowerGate",
+      "start": "State 1",
+      "states": [
+        {
+          "name": "State 1",
+          "transitions": [
+            {
+              "eventName": "close",
+              "toState": "State 2"
+            },
+            {
+              "eventName": "open",
+              "toState": "State 3"
+            }
+          ],
+          "actions": [
+            {
+              "type": "MousePickRandomAction",
+              "parameters": [
+                {
+                  "name": "GameObject",
+                  "path": "ORG/Clickables/TowerGate/Gate_Collision"
+                },
+                {
+                  "name": "RandomGateClicksMin",
+                  "text": "5",
+                  "number": 5.0
+                },
+                {
+                  "name": "RandomGateClicksMax",
+                  "text": "10",
+                  "number": 10.0
+                },
+                {
+                  "name": "ResetOnOpen",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "mouseDownGateOpen",
+                  "text": "open"
+                },
+                {
+                  "name": "mouseDownGateClosed",
+                  "text": "close"
+                },
+                {
+                  "name": "mouseOver",
+                  "text": ""
+                },
+                {
+                  "name": "mouseUp",
+                  "text": ""
+                },
+                {
+                  "name": "mouseOff",
+                  "text": ""
+                },
+                {
+                  "name": "checkFirstFrame",
+                  "number": 1
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                },
+                {
+                  "name": "oneShot",
+                  "number": 0
+                },
+                {
+                  "name": "ClickCount",
+                  "text": "0",
+                  "number": 0.0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/TowerGate/State 1/0"
+            }
+          ]
+        },
+        {
+          "name": "State 2",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 1"
+            }
+          ],
+          "actions": [
+            {
+              "type": "PlayAnimation",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/Clickables/TowerGate/GateTowers_GateRoot_mesh"
+                },
+                {
+                  "name": "animName",
+                  "text": "ORG_GateWiggle"
+                },
+                {
+                  "name": "playMode",
+                  "number": 4
+                },
+                {
+                  "name": "blendTime",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "finishEvent",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "loopEvent",
+                  "text": ""
+                },
+                {
+                  "name": "stopOnExit",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/TowerGate/State 2/0"
+            },
+            {
+              "type": "AudioPlayRandomClipAction",
+              "parameters": [
+                {
+                  "name": "m_ParentObject",
+                  "path": "$owner"
+                },
+                {
+                  "name": "m_MinVolume",
+                  "text": "0.8",
+                  "number": 0.8
+                },
+                {
+                  "name": "m_MaxVolume",
+                  "text": "0.8",
+                  "number": 0.8
+                },
+                {
+                  "name": "m_MinPitch",
+                  "text": "0.9",
+                  "number": 0.9
+                },
+                {
+                  "name": "m_MaxPitch",
+                  "text": "1.2",
+                  "number": 1.2
+                },
+                {
+                  "name": "m_SpatialBlend",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_Category",
+                  "number": 1
+                },
+                {
+                  "name": "m_Delay",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_TemplateSource",
+                  "path": ""
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "number": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/TowerGate/State 2/1",
+              "weights": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "soundPaths": [
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisPoke_01.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisPoke_02.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisPoke_03.wav"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "State 3",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 4"
+            }
+          ],
+          "actions": [
+            {
+              "type": "PlayAnimation",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/Clickables/TowerGate/GateTowers_GateRoot_mesh"
+                },
+                {
+                  "name": "animName",
+                  "text": "ORG_GateClose"
+                },
+                {
+                  "name": "playMode",
+                  "number": 4
+                },
+                {
+                  "name": "blendTime",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "finishEvent",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "loopEvent",
+                  "text": ""
+                },
+                {
+                  "name": "stopOnExit",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/TowerGate/State 3/0"
+            },
+            {
+              "type": "AudioPlayRandomClipAction",
+              "parameters": [
+                {
+                  "name": "m_ParentObject",
+                  "path": "$owner"
+                },
+                {
+                  "name": "m_MinVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MinPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_SpatialBlend",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_Category",
+                  "number": 1
+                },
+                {
+                  "name": "m_Delay",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_TemplateSource",
+                  "path": ""
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "number": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/TowerGate/State 3/1",
+              "weights": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "soundPaths": [
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisFall_01.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisFall_02.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisFall_03.wav"
+              ]
+            },
+            {
+              "type": "ParticlePlayAction",
+              "parameters": [
+                {
+                  "name": "m_GameObject",
+                  "path": "ORG/Clickables/TowerGate/FX_Dust1"
+                },
+                {
+                  "name": "m_IncludeChildren",
+                  "text": "1",
+                  "number": 1.0
+                }
+              ],
+              "sourceIndex": 2,
+              "soundKey": "ORG/Clickables/TowerGate/State 3/2"
+            }
+          ]
+        },
+        {
+          "name": "State 4",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 5"
+            }
+          ],
+          "actions": [
+            {
+              "type": "MousePickRandomAction",
+              "parameters": [
+                {
+                  "name": "GameObject",
+                  "path": "ORG/Clickables/TowerGate/Gate_Collision"
+                },
+                {
+                  "name": "RandomGateClicksMin",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "RandomGateClicksMax",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "ResetOnOpen",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "mouseDownGateOpen",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "mouseDownGateClosed",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "mouseOver",
+                  "text": ""
+                },
+                {
+                  "name": "mouseUp",
+                  "text": ""
+                },
+                {
+                  "name": "mouseOff",
+                  "text": ""
+                },
+                {
+                  "name": "checkFirstFrame",
+                  "number": 1
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                },
+                {
+                  "name": "oneShot",
+                  "number": 0
+                },
+                {
+                  "name": "ClickCount",
+                  "text": "0",
+                  "number": 0.0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/TowerGate/State 4/0"
+            }
+          ]
+        },
+        {
+          "name": "State 5",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 1"
+            }
+          ],
+          "actions": [
+            {
+              "type": "PlayAnimation",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/Clickables/TowerGate/GateTowers_GateRoot_mesh"
+                },
+                {
+                  "name": "animName",
+                  "text": "ORG_GateOpen"
+                },
+                {
+                  "name": "playMode",
+                  "number": 4
+                },
+                {
+                  "name": "blendTime",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "finishEvent",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "loopEvent",
+                  "text": ""
+                },
+                {
+                  "name": "stopOnExit",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/TowerGate/State 5/0"
+            },
+            {
+              "type": "AudioPlayRandomClipAction",
+              "parameters": [
+                {
+                  "name": "m_ParentObject",
+                  "path": "$owner"
+                },
+                {
+                  "name": "m_MinVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MinPitch",
+                  "text": "0.85",
+                  "number": 0.85
+                },
+                {
+                  "name": "m_MaxPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_SpatialBlend",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_Category",
+                  "number": 1
+                },
+                {
+                  "name": "m_Delay",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_TemplateSource",
+                  "path": ""
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "number": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/TowerGate/State 5/1",
+              "weights": [
+                1.0
+              ],
+              "soundPaths": [
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_PortcullisRise_02.wav"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "ORG/Clickables/RockSpire",
+      "start": "State 1",
+      "states": [
+        {
+          "name": "State 1",
+          "transitions": [
+            {
+              "eventName": "close",
+              "toState": "Close State"
+            },
+            {
+              "eventName": "open",
+              "toState": "Open State"
+            }
+          ],
+          "actions": [
+            {
+              "type": "MousePickRandomAction",
+              "parameters": [
+                {
+                  "name": "GameObject",
+                  "path": "$owner"
+                },
+                {
+                  "name": "RandomGateClicksMin",
+                  "text": "5",
+                  "number": 5.0
+                },
+                {
+                  "name": "RandomGateClicksMax",
+                  "text": "10",
+                  "number": 10.0
+                },
+                {
+                  "name": "ResetOnOpen",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "mouseDownGateOpen",
+                  "text": "open"
+                },
+                {
+                  "name": "mouseDownGateClosed",
+                  "text": "close"
+                },
+                {
+                  "name": "mouseOver",
+                  "text": ""
+                },
+                {
+                  "name": "mouseUp",
+                  "text": ""
+                },
+                {
+                  "name": "mouseOff",
+                  "text": ""
+                },
+                {
+                  "name": "checkFirstFrame",
+                  "number": 1
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                },
+                {
+                  "name": "oneShot",
+                  "number": 0
+                },
+                {
+                  "name": "ClickCount",
+                  "text": "0",
+                  "number": 0.0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/RockSpire/State 1/0"
+            }
+          ]
+        },
+        {
+          "name": "Open State",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 1"
+            }
+          ],
+          "actions": [
+            {
+              "type": "PlayAnimation",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/ORG_Spire"
+                },
+                {
+                  "name": "animName",
+                  "text": "ORG_SpireRockRocking"
+                },
+                {
+                  "name": "playMode",
+                  "number": 4
+                },
+                {
+                  "name": "blendTime",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "finishEvent",
+                  "text": ""
+                },
+                {
+                  "name": "loopEvent",
+                  "text": ""
+                },
+                {
+                  "name": "stopOnExit",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/RockSpire/Open State/1"
+            },
+            {
+              "type": "ParticlePlayAction",
+              "parameters": [
+                {
+                  "name": "m_GameObject",
+                  "path": "ORG/Clickables/RockSpire/FX_Dust1"
+                },
+                {
+                  "name": "m_IncludeChildren",
+                  "text": "0",
+                  "number": 0.0
+                }
+              ],
+              "sourceIndex": 2,
+              "soundKey": "ORG/Clickables/RockSpire/Open State/2"
+            },
+            {
+              "type": "ParticlePlayAction",
+              "parameters": [
+                {
+                  "name": "m_GameObject",
+                  "path": "ORG/Clickables/RockSpire/FX_Pebbles1"
+                },
+                {
+                  "name": "m_IncludeChildren",
+                  "text": "0",
+                  "number": 0.0
+                }
+              ],
+              "sourceIndex": 4,
+              "soundKey": "ORG/Clickables/RockSpire/Open State/4"
+            },
+            {
+              "type": "AudioPlayRandomClipAction",
+              "parameters": [
+                {
+                  "name": "m_ParentObject",
+                  "path": "$owner"
+                },
+                {
+                  "name": "m_MinVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MinPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_SpatialBlend",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_Category",
+                  "number": 1
+                },
+                {
+                  "name": "m_Delay",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_TemplateSource",
+                  "path": ""
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "number": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 5,
+              "soundKey": "ORG/Clickables/RockSpire/Open State/5",
+              "weights": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "soundPaths": [
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_GiantBoulderReact_01_KMW.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_GiantBoulderReact_02_KMW.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_GiantBoulderReact_03_KMW.wav"
+              ]
+            },
+            {
+              "type": "Wait",
+              "parameters": [
+                {
+                  "name": "time",
+                  "text": "0.1",
+                  "number": 0.1
+                },
+                {
+                  "name": "finishEvent",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "realTime",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 6,
+              "soundKey": "ORG/Clickables/RockSpire/Open State/6"
+            }
+          ]
+        },
+        {
+          "name": "Close State",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 1"
+            }
+          ],
+          "actions": [
+            {
+              "type": "PlayAnimation",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/ORG_Spire"
+                },
+                {
+                  "name": "animName",
+                  "text": "ORG_SpireRockClicked1"
+                },
+                {
+                  "name": "playMode",
+                  "number": 4
+                },
+                {
+                  "name": "blendTime",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "finishEvent",
+                  "text": ""
+                },
+                {
+                  "name": "loopEvent",
+                  "text": ""
+                },
+                {
+                  "name": "stopOnExit",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/RockSpire/Close State/1"
+            },
+            {
+              "type": "AudioPlayRandomClipAction",
+              "parameters": [
+                {
+                  "name": "m_ParentObject",
+                  "path": "$owner"
+                },
+                {
+                  "name": "m_MinVolume",
+                  "text": "0.5",
+                  "number": 0.5
+                },
+                {
+                  "name": "m_MaxVolume",
+                  "text": "0.6",
+                  "number": 0.6
+                },
+                {
+                  "name": "m_MinPitch",
+                  "text": "0.9",
+                  "number": 0.9
+                },
+                {
+                  "name": "m_MaxPitch",
+                  "text": "1.1",
+                  "number": 1.1
+                },
+                {
+                  "name": "m_SpatialBlend",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_Category",
+                  "number": 1
+                },
+                {
+                  "name": "m_Delay",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_TemplateSource",
+                  "path": ""
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "number": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 2,
+              "soundKey": "ORG/Clickables/RockSpire/Close State/2",
+              "weights": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "soundPaths": [
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_GiantBoulderPoke_01_KMW.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_GiantBoulderPoke_02_KMW.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_GiantBoulderPoke_03_KMW.wav"
+              ]
+            },
+            {
+              "type": "ParticlePlayAction",
+              "parameters": [
+                {
+                  "name": "m_GameObject",
+                  "path": "ORG/Clickables/RockSpire/FX_Dust1"
+                },
+                {
+                  "name": "m_IncludeChildren",
+                  "text": "0",
+                  "number": 0.0
+                }
+              ],
+              "sourceIndex": 3,
+              "soundKey": "ORG/Clickables/RockSpire/Close State/3"
+            },
+            {
+              "type": "Wait",
+              "parameters": [
+                {
+                  "name": "time",
+                  "text": "0.1",
+                  "number": 0.1
+                },
+                {
+                  "name": "finishEvent",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "realTime",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 6,
+              "soundKey": "ORG/Clickables/RockSpire/Close State/6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "ORG/Clickables/Zepp",
+      "start": "State 1",
+      "states": [
+        {
+          "name": "State 1",
+          "transitions": [
+            {
+              "eventName": "close",
+              "toState": "State 3"
+            },
+            {
+              "eventName": "open",
+              "toState": "State 2"
+            }
+          ],
+          "actions": [
+            {
+              "type": "AnimationPlaythroughAction",
+              "parameters": [
+                {
+                  "name": "m_GameObject",
+                  "path": "ORG/ORG_Zepp"
+                },
+                {
+                  "name": "m_AnimName",
+                  "text": "ORG_ZepIdle"
+                },
+                {
+                  "name": "m_PhoneAnimName",
+                  "text": ""
+                },
+                {
+                  "name": "m_PlayMode",
+                  "number": 4
+                },
+                {
+                  "name": "m_CrossFadeSec",
+                  "text": "0",
+                  "number": 0.0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/Zepp/State 1/0"
+            },
+            {
+              "type": "MousePickRandomAction",
+              "parameters": [
+                {
+                  "name": "GameObject",
+                  "path": "ORG/ORG_Zepp"
+                },
+                {
+                  "name": "RandomGateClicksMin",
+                  "text": "6",
+                  "number": 6.0
+                },
+                {
+                  "name": "RandomGateClicksMax",
+                  "text": "12",
+                  "number": 12.0
+                },
+                {
+                  "name": "ResetOnOpen",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "mouseDownGateOpen",
+                  "text": "open"
+                },
+                {
+                  "name": "mouseDownGateClosed",
+                  "text": "close"
+                },
+                {
+                  "name": "mouseOver",
+                  "text": ""
+                },
+                {
+                  "name": "mouseUp",
+                  "text": ""
+                },
+                {
+                  "name": "mouseOff",
+                  "text": ""
+                },
+                {
+                  "name": "checkFirstFrame",
+                  "number": 1
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                },
+                {
+                  "name": "oneShot",
+                  "number": 0
+                },
+                {
+                  "name": "ClickCount",
+                  "text": "0",
+                  "number": 0.0
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/Zepp/State 1/1"
+            }
+          ]
+        },
+        {
+          "name": "State 2",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 5"
+            }
+          ],
+          "actions": [
+            {
+              "type": "PlayAnimation",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/ORG_Zepp"
+                },
+                {
+                  "name": "animName",
+                  "text": "ORG_ZepClicked1"
+                },
+                {
+                  "name": "playMode",
+                  "number": 4
+                },
+                {
+                  "name": "blendTime",
+                  "text": "0.5",
+                  "number": 0.5
+                },
+                {
+                  "name": "finishEvent",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "loopEvent",
+                  "text": ""
+                },
+                {
+                  "name": "stopOnExit",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/Zepp/State 2/0"
+            },
+            {
+              "type": "AudioPlayRandomClipAction",
+              "parameters": [
+                {
+                  "name": "m_ParentObject",
+                  "path": "ORG/Clickables/Zepp/Zeppelin Sound"
+                },
+                {
+                  "name": "m_MinVolume",
+                  "text": "0.7",
+                  "number": 0.7
+                },
+                {
+                  "name": "m_MaxVolume",
+                  "text": "0.7",
+                  "number": 0.7
+                },
+                {
+                  "name": "m_MinPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_SpatialBlend",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_Category",
+                  "number": 1
+                },
+                {
+                  "name": "m_Delay",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_TemplateSource",
+                  "path": ""
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "number": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/Zepp/State 2/1",
+              "weights": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "soundPaths": [
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_Zeppelin_Pilot_React_Vox_1.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_Zeppelin_Pilot_React_Vox_2.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_Zeppelin_Pilot_React_Vox_3.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_Zeppelin_Pilot_React_Vox_4.wav"
+              ]
+            },
+            {
+              "type": "AudioPlayRandomClipAction",
+              "parameters": [
+                {
+                  "name": "m_ParentObject",
+                  "path": "ORG/Clickables/Zepp/Zeppelin Sound"
+                },
+                {
+                  "name": "m_MinVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MinPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_SpatialBlend",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_Category",
+                  "number": 1
+                },
+                {
+                  "name": "m_Delay",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_TemplateSource",
+                  "path": ""
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "number": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 2,
+              "soundKey": "ORG/Clickables/Zepp/State 2/2",
+              "weights": [
+                1.0
+              ],
+              "soundPaths": [
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ZeppelinReact_03.wav"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "State 3",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 4"
+            }
+          ],
+          "actions": [
+            {
+              "type": "AnimationPlaythroughAction",
+              "parameters": [
+                {
+                  "name": "m_GameObject",
+                  "path": "ORG/ORG_Zepp"
+                },
+                {
+                  "name": "m_AnimName",
+                  "text": "ORG_ZepClickedClosed"
+                },
+                {
+                  "name": "m_PhoneAnimName",
+                  "text": ""
+                },
+                {
+                  "name": "m_PlayMode",
+                  "number": 4
+                },
+                {
+                  "name": "m_CrossFadeSec",
+                  "text": "0.1",
+                  "number": 0.1
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/Zepp/State 3/0"
+            },
+            {
+              "type": "Wait",
+              "parameters": [
+                {
+                  "name": "time",
+                  "text": "2",
+                  "number": 2.0
+                },
+                {
+                  "name": "finishEvent",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "realTime",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/Zepp/State 3/1"
+            },
+            {
+              "type": "AudioPlayRandomClipAction",
+              "parameters": [
+                {
+                  "name": "m_ParentObject",
+                  "path": "ORG/Clickables/Zepp/Zeppelin Sound"
+                },
+                {
+                  "name": "m_MinVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxVolume",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MinPitch",
+                  "text": "0.9",
+                  "number": 0.9
+                },
+                {
+                  "name": "m_MaxPitch",
+                  "text": "1.1",
+                  "number": 1.1
+                },
+                {
+                  "name": "m_SpatialBlend",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_Category",
+                  "number": 1
+                },
+                {
+                  "name": "m_Delay",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_TemplateSource",
+                  "path": ""
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "number": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 2,
+              "soundKey": "ORG/Clickables/Zepp/State 3/2",
+              "weights": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "soundPaths": [
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ZeppelinPoke_01.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ZeppelinPoke_02.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ZeppelinPoke_03.wav"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "State 4",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 1"
+            }
+          ],
+          "actions": []
+        },
+        {
+          "name": "State 5",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 1"
+            }
+          ],
+          "actions": []
+        }
+      ]
+    },
+    {
+      "path": "ORG/Clickables/Thorns",
+      "start": "State 1",
+      "states": [
+        {
+          "name": "State 1",
+          "transitions": [
+            {
+              "eventName": "close",
+              "toState": "State 3"
+            },
+            {
+              "eventName": "open",
+              "toState": "State 2"
+            }
+          ],
+          "actions": [
+            {
+              "type": "MousePickRandomAction",
+              "parameters": [
+                {
+                  "name": "GameObject",
+                  "path": "$owner"
+                },
+                {
+                  "name": "RandomGateClicksMin",
+                  "text": "5",
+                  "number": 5.0
+                },
+                {
+                  "name": "RandomGateClicksMax",
+                  "text": "10",
+                  "number": 10.0
+                },
+                {
+                  "name": "ResetOnOpen",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "mouseDownGateOpen",
+                  "text": "open"
+                },
+                {
+                  "name": "mouseDownGateClosed",
+                  "text": "close"
+                },
+                {
+                  "name": "mouseOver",
+                  "text": ""
+                },
+                {
+                  "name": "mouseUp",
+                  "text": ""
+                },
+                {
+                  "name": "mouseOff",
+                  "text": ""
+                },
+                {
+                  "name": "checkFirstFrame",
+                  "number": 1
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                },
+                {
+                  "name": "oneShot",
+                  "number": 0
+                },
+                {
+                  "name": "ClickCount",
+                  "text": "0",
+                  "number": 0.0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/Thorns/State 1/0"
+            }
+          ]
+        },
+        {
+          "name": "State 2",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 1"
+            }
+          ],
+          "actions": [
+            {
+              "type": "GetMouseX",
+              "parameters": [
+                {
+                  "name": "storeResult",
+                  "variable": "MouseX",
+                  "none": false
+                },
+                {
+                  "name": "normalize",
+                  "number": 0
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/Thorns/State 2/0"
+            },
+            {
+              "type": "GetMouseY",
+              "parameters": [
+                {
+                  "name": "storeResult",
+                  "variable": "MouseY",
+                  "none": false
+                },
+                {
+                  "name": "normalize",
+                  "number": 0
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/Thorns/State 2/1"
+            },
+            {
+              "type": "ScreenToWorldPoint",
+              "parameters": [
+                {
+                  "name": "screenVector",
+                  "variable": "",
+                  "none": true
+                },
+                {
+                  "name": "screenX",
+                  "variable": "MouseX",
+                  "none": false
+                },
+                {
+                  "name": "screenY",
+                  "variable": "MouseY",
+                  "none": false
+                },
+                {
+                  "name": "screenZ",
+                  "text": "18",
+                  "number": 18.0
+                },
+                {
+                  "name": "normalized",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "storeWorldVector",
+                  "variable": "",
+                  "none": true
+                },
+                {
+                  "name": "storeWorldX",
+                  "variable": "WorldX",
+                  "none": false
+                },
+                {
+                  "name": "storeWorldY",
+                  "variable": "WorldY",
+                  "none": false
+                },
+                {
+                  "name": "storeWorldZ",
+                  "variable": "WorldZ",
+                  "none": false
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 2,
+              "soundKey": "ORG/Clickables/Thorns/State 2/2"
+            },
+            {
+              "type": "SetPosition",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/Clickables/Thorns/FX_WoodChip1"
+                },
+                {
+                  "name": "vector",
+                  "variable": "",
+                  "none": true
+                },
+                {
+                  "name": "x",
+                  "variable": "WorldX",
+                  "none": false
+                },
+                {
+                  "name": "y",
+                  "variable": "WorldY",
+                  "none": false
+                },
+                {
+                  "name": "z",
+                  "variable": "WorldZ",
+                  "none": false
+                },
+                {
+                  "name": "space",
+                  "number": 0
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 0
+                },
+                {
+                  "name": "lateUpdate",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 3,
+              "soundKey": "ORG/Clickables/Thorns/State 2/3"
+            },
+            {
+              "type": "ParticlePlayAction",
+              "parameters": [
+                {
+                  "name": "m_GameObject",
+                  "path": "ORG/Clickables/Thorns/FX_WoodChip1"
+                },
+                {
+                  "name": "m_IncludeChildren",
+                  "text": "0",
+                  "number": 0.0
+                }
+              ],
+              "sourceIndex": 4,
+              "soundKey": "ORG/Clickables/Thorns/State 2/4"
+            },
+            {
+              "type": "PlayAnimation",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/ORG_GateTower/ORG_GateTowerThornsSkinned"
+                },
+                {
+                  "name": "animName",
+                  "text": "ORG_ThornsClicked1"
+                },
+                {
+                  "name": "playMode",
+                  "number": 4
+                },
+                {
+                  "name": "blendTime",
+                  "text": "0.3",
+                  "number": 0.3
+                },
+                {
+                  "name": "finishEvent",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "loopEvent",
+                  "text": ""
+                },
+                {
+                  "name": "stopOnExit",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 5,
+              "soundKey": "ORG/Clickables/Thorns/State 2/5"
+            },
+            {
+              "type": "AudioPlayRandomClipAction",
+              "parameters": [
+                {
+                  "name": "m_ParentObject",
+                  "path": "$owner"
+                },
+                {
+                  "name": "m_MinVolume",
+                  "text": "0.8",
+                  "number": 0.8
+                },
+                {
+                  "name": "m_MaxVolume",
+                  "text": "0.8",
+                  "number": 0.8
+                },
+                {
+                  "name": "m_MinPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_MaxPitch",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_SpatialBlend",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_Category",
+                  "number": 1
+                },
+                {
+                  "name": "m_Delay",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_TemplateSource",
+                  "path": ""
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "number": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 6,
+              "soundKey": "ORG/Clickables/Thorns/State 2/6",
+              "weights": [
+                1.0
+              ],
+              "soundPaths": [
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ThornbushReact_01.wav"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "State 3",
+          "transitions": [
+            {
+              "eventName": "FINISHED",
+              "toState": "State 1"
+            }
+          ],
+          "actions": [
+            {
+              "type": "AnimationPlaythroughAction",
+              "parameters": [
+                {
+                  "name": "m_GameObject",
+                  "path": "ORG/ORG_GateTower/ORG_GateTowerThornsSkinned"
+                },
+                {
+                  "name": "m_AnimName",
+                  "text": "ORG_ThornsClickedClose"
+                },
+                {
+                  "name": "m_PhoneAnimName",
+                  "text": ""
+                },
+                {
+                  "name": "m_PlayMode",
+                  "number": 4
+                },
+                {
+                  "name": "m_CrossFadeSec",
+                  "text": "0",
+                  "number": 0.0
+                }
+              ],
+              "sourceIndex": 0,
+              "soundKey": "ORG/Clickables/Thorns/State 3/0"
+            },
+            {
+              "type": "GetMouseX",
+              "parameters": [
+                {
+                  "name": "storeResult",
+                  "variable": "MouseX",
+                  "none": false
+                },
+                {
+                  "name": "normalize",
+                  "number": 0
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                }
+              ],
+              "sourceIndex": 1,
+              "soundKey": "ORG/Clickables/Thorns/State 3/1"
+            },
+            {
+              "type": "GetMouseY",
+              "parameters": [
+                {
+                  "name": "storeResult",
+                  "variable": "MouseY",
+                  "none": false
+                },
+                {
+                  "name": "normalize",
+                  "number": 0
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 1
+                }
+              ],
+              "sourceIndex": 2,
+              "soundKey": "ORG/Clickables/Thorns/State 3/2"
+            },
+            {
+              "type": "ScreenToWorldPoint",
+              "parameters": [
+                {
+                  "name": "screenVector",
+                  "variable": "",
+                  "none": true
+                },
+                {
+                  "name": "screenX",
+                  "variable": "MouseX",
+                  "none": false
+                },
+                {
+                  "name": "screenY",
+                  "variable": "MouseY",
+                  "none": false
+                },
+                {
+                  "name": "screenZ",
+                  "text": "18",
+                  "number": 18.0
+                },
+                {
+                  "name": "normalized",
+                  "text": "0",
+                  "number": 0.0
+                },
+                {
+                  "name": "storeWorldVector",
+                  "variable": "",
+                  "none": true
+                },
+                {
+                  "name": "storeWorldX",
+                  "variable": "WorldX",
+                  "none": false
+                },
+                {
+                  "name": "storeWorldY",
+                  "variable": "WorldY",
+                  "none": false
+                },
+                {
+                  "name": "storeWorldZ",
+                  "variable": "WorldZ",
+                  "none": false
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 3,
+              "soundKey": "ORG/Clickables/Thorns/State 3/3"
+            },
+            {
+              "type": "SetPosition",
+              "parameters": [
+                {
+                  "name": "gameObject",
+                  "path": "ORG/Clickables/Thorns/FX_WoodChip1"
+                },
+                {
+                  "name": "vector",
+                  "variable": "",
+                  "none": true
+                },
+                {
+                  "name": "x",
+                  "variable": "WorldX",
+                  "none": false
+                },
+                {
+                  "name": "y",
+                  "variable": "WorldY",
+                  "none": false
+                },
+                {
+                  "name": "z",
+                  "variable": "WorldZ",
+                  "none": false
+                },
+                {
+                  "name": "space",
+                  "number": 0
+                },
+                {
+                  "name": "everyFrame",
+                  "number": 0
+                },
+                {
+                  "name": "lateUpdate",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 4,
+              "soundKey": "ORG/Clickables/Thorns/State 3/4"
+            },
+            {
+              "type": "ParticlePlayAction",
+              "parameters": [
+                {
+                  "name": "m_GameObject",
+                  "path": "ORG/Clickables/Thorns/FX_WoodChip1"
+                },
+                {
+                  "name": "m_IncludeChildren",
+                  "text": "0",
+                  "number": 0.0
+                }
+              ],
+              "sourceIndex": 5,
+              "soundKey": "ORG/Clickables/Thorns/State 3/5"
+            },
+            {
+              "type": "AudioPlayRandomClipAction",
+              "parameters": [
+                {
+                  "name": "m_ParentObject",
+                  "path": "$owner"
+                },
+                {
+                  "name": "m_MinVolume",
+                  "text": "0.7",
+                  "number": 0.7
+                },
+                {
+                  "name": "m_MaxVolume",
+                  "text": "0.7",
+                  "number": 0.7
+                },
+                {
+                  "name": "m_MinPitch",
+                  "text": "0.8",
+                  "number": 0.8
+                },
+                {
+                  "name": "m_MaxPitch",
+                  "text": "1.1",
+                  "number": 1.1
+                },
+                {
+                  "name": "m_SpatialBlend",
+                  "text": "1",
+                  "number": 1.0
+                },
+                {
+                  "name": "m_Category",
+                  "number": 1
+                },
+                {
+                  "name": "m_Delay",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_TemplateSource",
+                  "path": ""
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "number": 0
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "number": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "number": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 6,
+              "soundKey": "ORG/Clickables/Thorns/State 3/6",
+              "weights": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "soundPaths": [
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ThornbushPoke_01.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ThornbushPoke_02.wav",
+                "Assets/_Project/Art/NativeCorners/Audio/Orgrimmar_Clickable_ThornbushPoke_03.wav"
+              ]
+            },
+            {
+              "type": "Wait",
+              "parameters": [
+                {
+                  "name": "time",
+                  "text": "0.01",
+                  "number": 0.01
+                },
+                {
+                  "name": "finishEvent",
+                  "text": "FINISHED"
+                },
+                {
+                  "name": "realTime",
+                  "number": 0
+                }
+              ],
+              "sourceIndex": 7,
+              "soundKey": "ORG/Clickables/Thorns/State 3/7"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
