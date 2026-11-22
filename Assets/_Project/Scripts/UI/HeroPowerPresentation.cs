@@ -7,6 +7,7 @@ namespace HearthstoneClone.UI
     /// <summary>Reflects the existing power's state without changing its rules or input.</summary>
     public class HeroPowerPresentation : MonoBehaviour
     {
+        public NativeHeroPowerPresentation native;
         public Image artwork;
         public Image usedBack;
         public GameObject readyGlow;
@@ -19,6 +20,7 @@ namespace HearthstoneClone.UI
         void LateUpdate()
         {
             if (player == null) return;
+            if(native!=null){native.SetPlayer(player,available);return;}
             bool used = player.HasUsedHeroPowerThisTurn;
             if (artwork != null)
             {

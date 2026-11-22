@@ -875,3 +875,14 @@ Exact SoundDef references were recovered directly from original UnityFS data, by
 Integration checks passed all source collider/UI hits, animated transforms, particles/audio, repeat branches, full catapult and menu/reset. Gate dust has a source .2-second delay; tests were corrected to wait for emission. Catapult fixture needs Dynamic input-state observation rather than reading the separate Editor buffer. InputSettings swapping destroyed the old transient default, so fixture now temporarily restores only the routing property. Installer uses original GetTexture(_MainTex), since mainTexture on the null-shader source material returned null despite preserved paint. Dynamic temporary-script nested DTOs did not deserialize reliably with JsonUtility; committed logic now uses runtime-assembly data types.
 
 Regression checks passed native chimney, mulligan, mana, card layout, starting decks, native controls/End Turn and front-end/deck builder. Final console had zero errors/warnings. Captures inspected; no standalone build/full-match or speaker listening test claimed. Test fixtures discarded; Unity left on saved HearthstoneTable in clean Edit mode with auto-tick off. Rolling handoff updated in this checkpoint. Craig’s visual playtest is next.
+
+
+## 22 November 2026 — native hero powers checkpoint
+
+Craig approved corners and requested original hero powers, exploding hero deaths, authentic spells/sounds and missing hand/minion effects. Recovered89 selected source dependencies. Both powers now use original 3D frame/portrait/class-back geometry, mana gem, shadow/highlight, current original artwork and original used/restore transform curves. Existing UI input/power rules remain.
+
+Direct AnimationClip.SampleAnimation on the exported mixed bindings caused a native Unity assertion/exit during first preview. Replaced with AnimationUtility-baked source channels evaluated directly, composing full quaternion before normalization. The attempted tool-launched Editor restart was restricted from writing preferences/GI cache; Craig reopened through Hub. Do not repeat the restricted launch or unsafe sampling call.
+
+Original shadow paint is white-neutral grayscale with opaque alpha, so alpha blending made a rectangle. A disclosed multiplicative shader preserves neutral white and source opacity without multiplying vertexRGB at the edge. Original compiled specular/highlight shader behavior is not claimed fully recovered. VerifyNativeHeroPowers, VerifyNativeMatchControls and VerifyPowersAndBattle passed21Nov; final preview inspected and console clean.22Nov fresh Editor status/compile/console remains clean; no fresh game checks claimed.
+
+Unfinished death/minion drafts and exact carddef spell evidence are preserved locally and explicitly listed in the rolling handoff, not committed as completed features. Remaining source reconstruction is Ultra work.

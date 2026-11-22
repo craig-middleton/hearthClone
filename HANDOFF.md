@@ -1,86 +1,93 @@
 # HearthClone — current handoff
 
-Updated 21 November 2026. **Overwrite this single file in every main commit**, in
-the same commit as the work; see `AGENTS.md`. Start with `git log -1 --oneline`
-and `git status --short`. This handoff describes the corner-integration checkpoint
-containing it, following workflow commit163894f and mulligan checkpoint9e12621.
+Updated 22 November 2026. Overwrite this one file in the same commit as every main
+commit; see AGENTS.md. Read git log -1 and git status before editing. This checkpoint
+saves the verified native hero-power implementation after approved corner 2e92890.
 
-## Outcome and next step
+## Current request and status
 
-The original Orgrimmar corner interactions are installed and verified in
-`Assets/Scenes/HearthstoneTable.unity`: chimney, flag, gate, rock spire, zeppelin,
-thorns and the complete catapult sequence. **Ready for Craig's visual/play test.**
-Unity was left in clean Edit mode on that saved scene; temporary auto-tick is off.
-Press Play, choose Play Game, confirm mulligan and try the board corners.
+Craig confirmed Ultra and resumed. Current scope: fix both hero-power icons using
+original assets; make heroes explode on death; integrate real spells with original
+VFX/sound; improve hand cards and played minions with missing original rendering
+layers/effects. Only original art/sounds/animation data; compatibility rendering
+is authorized. Explain progress briefly. Commit significant verified changes to
+main, updating this handoff. Do not treat the unfinished parts below as complete.
 
-Craig last confirmed Ultra. Source integration is complete; High is appropriate
-for the next routine visual-feedback/fix pass. Craig controls the setting: explain
-and wait for his switch when needed. Preserve working mechanics; no new gameplay
-systems requested. Give brief progress explanations and commit significant work
-directly to main, updating this handoff in the same commit. Check remote state
-rather than assuming this containing commit has already been pushed.
+Hero powers are installed in HearthstoneTable and verified. Corners/mana/mulligan
+remain approved. Death/spell/card work is unfinished and being continued locally.
+Unity is currently clean Edit mode, auto-tick off, with zero compile/console errors
+on 22 Nov. Do not launch Unity from a restricted tool process: that caused preferences
+and GI-cache permission errors. Craig reopened through Unity Hub normally.
 
-## What this checkpoint includes
+## Verified hero-power checkpoint
 
-- Six source FSMs restored alongside the existing chimney. Original clips animate
-  existing board meshes/bones; no duplicate geometry or background overlays.
-- Eight source particle systems and eleven original colliders merged by source
-  path, preserving transforms, modules, curves and numeric layers. Native hierarchy
-  remains intact. Original material paint/tints/blends use the authorized Ubuntu
-  compatibility shader; original compiled shaders are not claimed identical.
-- Eighteen exact SoundDef action bindings,48 original WAVs and original weights,
-  volume/pitch ranges. Mappings recovered from original UnityFS references rather
-  than filename guesses. Moving prop audio adapts its near radius to the elevated
-  camera each frame, retaining3D position and source pitch.
-- Catapult pickup, depth18 dragging, out-of-bounds cancellation, basket release,
-  loading, firing, six6.25-degree bounce winding steps and seventh-click lock.
-- Source clips, disabled action flags, gate thresholds, waits and completion
-  semantics retained. See `Docs/Recovery/Corners-behavior.md` for provenance/limits.
+- Both buttons now render original Card_Play_HeroPower 3D actors: original three
+  submeshes (frame/portrait/class back), mana gem, shadow and ready highlight.
+  Current original Fireblast/Armor Up artwork is mapped onto source portrait UVs.
+  UI buttons/input remain, old flat images hidden. World geometry tracks input
+  anchors; cost uses native gem position and original Belwe font.
+- Original Used (.5333sec) and Restore (.4333sec) transform/enabled curves are baked
+  through AnimationUtility and evaluated directly. Direct SampleAnimation on the
+  mixed exported power clip triggered a Unity assertion/crash; DO NOT restore it.
+  Manual evaluation retains source keys/tangents, composes quaternion channels
+  before normalizing, and avoids the unsafe native clip binding.
+- Source white-neutral grayscale shadow uses a compatibility multiply shader;
+  ordinary alpha or vertex-RGB multiplication produced visible rectangles. Original
+  source color/paint are retained. Compiled source specular/highlight shader math
+  is not fully recovered, so bit-identical lighting/shimmer is not claimed.
+- Source closure89 assets includes future death/Fireball visual templates, imported
+  without client scripts. These inactive templates do not mean those features are
+  installed. NativeHeroEffects/SourceManifest.json records provenance/gaps; two
+  unused power animation slots were unresolved, while used/restore are recovered.
+- Tests passed 21 Nov: VerifyNativeHeroPowers (both meshes/paint/curves, input and
+  alignment, ready, used/restore, menu/new-game); VerifyNativeMatchControls;
+  VerifyPowersAndBattle (actual targeting,2-mana/once-per-turn, lethal, AI Armor Up,
+  cleanup). Console zero errors/warnings after safe preview. Native-hero-powers.png
+  inspected. 22 Nov fresh Editor status/compilation/console checked, no rerun claimed.
 
-## Verification actually performed
+## Unfinished LOCAL work, excluded from this commit
 
-All passed through the live Unity Editor API:
+A GitHub-only clone does not have these uncommitted files. Preserve the working
+copy; git status identifies any newer work. All is unattached/unverified so far:
 
-- `VerifyNativeCorners` Main: actual projected collider hits/UI clearance, changed
-  animation transforms, gate wiggle/close/open+dust, spire poke/rock+pebbles,
-  flag click/idle, thorns poke/reaction+wood chips, audio and menu/restart.
-  Observed larger-reaction counts: gate7, spire5, thorns9 (source range5–9).
-- Its Zeppelin entry: idle/poke/major reaction, audio, completion and reset;
-  observed threshold11 (source range6–11).
-- Its Catapult entry: complete pickup/cancel/load/fire/wind/lock and menu/reset,
-  using a disposable synthetic Mouse through actual Dynamic input updates.
-- Regressions: `VerifyNativeChimney`, `VerifyNativeMulligan`, `VerifyNativeManaRack`,
-  `VerifyNativeCardLayout`, `VerifyStartingDecks`, `VerifyNativeMatchControls`,
-  `VerifyFrontEnd`. Both decks still total30 including opening hand/Coin;60 card
-  instances distinct. End Turn flip/return, targeting and deck builder passed.
-- Final console: zero errors and warnings. Native captures inspected. No standalone
-  build, full automated match or speaker listening test claimed. Audio checks verify
-  real clip playback and listener radius. Craig's subjective visual review remains.
+1. Hero death: NativeHeroDeathLibrary.cs, NativeHeroDeathPresentation.cs,
+   Art/NativeHeroDeath.shader, Art/NativeHeroDeath/ two original WAVs,
+   Docs/Recovery/Hero-death-source.json. No installer/verifier existed at resume.
+   Exact source: crack .5s slow curve + crack sound volume.8; explosion17 debris
+   tracks, original HeroExplode/LightBurst, five emitter roots/smoke speed.5,
+   second slow curve.8s/explosion sound.9; final wait1.3. Need bake safe curves,
+   compatibility materials, attach table observer, lethal both/both-at-once and
+   pending spell/result/menu/reset checks. Root effect-clock adaptation, source
+   distortion/erosion and camera/minion shake gaps must be disclosed. Power hiding
+   must deactivate its UI Button; hiding its stage alone gets undone by LateUpdate.
+2. Minions/cards: Art/NativeMinions/ source closure + SourceManifest,
+   PrepareNativeMinionArt.py, draft NativeMinionPresentation.cs and
+   InstallNativeMinions.cs. DO NOT RUN installer until reviewed. Known drafts need
+   rootCanvas lookup, persistent hiding of old artwork (SetMinion re-enables it),
+   and original eligible highlight before removing existing feedback.532-vertex
+   original oval actor, real gems/taunt/shadow recovered. Hand original meshes
+   currently flatten lighting/depth/shadows. Highlight _MainTex is a black runtime
+   placeholder; original HighlightRender generates silhouettes with multiple
+   render/blur passes. Do not substitute a generic painted glow or invented motion.
+3. Spells: no BattleEffects edit at resume. Exact mappings/metadata remain outside
+   repo under recovery/CS2_024,025,029,032-carddef-source.json and matching
+   *-effect-source.json; spell-super-path-il.txt/spell-super-fields.txt. Frostbolt,
+   Arcane Explosion, Fireball, Flamestrike aliases resolve to original reuseFX.
+   Fireball/Frostbolt source missile .4sec; ease0 = easeInQuad (NOT linear).
+   Integrate through existing BattleEffects queue, preserving lethal holds and
+   input; original sound references/timeline still need completion.
 
-The Catapult audio-radius fix was made after the other corner tests and verified
-by the full Catapult check; controls/front-end were subsequently checked. No gameplay
-rules changed. Test fixtures and synthetic input settings/devices were discarded.
+Also excluded: pre-existing changed RecoveredDecks/Deck_75_mesh.mat and Unity
+recovery backup metadata Assets/_Recovery.meta. Do not discard either casually.
 
-## Important existing approvals
+## Resume and tools
 
-Native mana tray was approved in5d07762. Its recess belongs to the original
-`STW_Frame`/`FRAME.png`; extra UI tray/flat crystals remain hidden. Crystals render
-directly in the board. Do not restore RawImage/capture-camera overlays.
-Chimney/hand centring5f42986 and original mulligan9e12621 remain intact. The
-chimney's original ember material was null: its documented texture fallback is
-still a limitation, distinct from the eight fully mapped new corner emitters.
-
-## Working tree / portability
-
-All intended corner code, selected assets, scene bindings, baked logic and evidence
-belong to this checkpoint. The pre-existing unrelated modification
-`Assets/_Project/RecoveredDecks/Deck_75_mesh.mat` was excluded and remains local.
-Do not discard or casually commit it. Inspect git status for anything newer.
-
-A GitHub clone needs **Git LFS content** and matching Unity to play; selected runtime
-assets are included. A GitHub link does not grant an agent local Editor access.
-Further extraction/recovery requires the external source folders/evidence below.
-Do not assume another model has those files or can run tools.
+Read PROJECT_STATUS/HISTORY and the source manifests. Finish one original sequence
+at a time, install only in clean Edit mode and run meaningful live checks. Main
+checkpoint actor code: NativeHeroPowerPresentation.cs, HeroPowerPresentation.cs,
+InstallNativeHeroPowers.cs, PrepareNativeHeroEffects.py, VerifyNativeHeroPowers.cs.
+Run source hero power tests in Play with auto-tick enabled. Avoid concurrent scene
+mutations from multiple tools/agents. Scripts are not client-code execution.
 
 Project: `/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/outputs/HearthClone`
 Editor: `/home/craig-middleton/Unity/Hub/Editor/6000.6.9f1/Editor/Unity` (Unity6.6).

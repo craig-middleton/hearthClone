@@ -1,0 +1,452 @@
+{
+  "seeds": [
+    "Card_Play_HeroPower",
+    "Card_Play_Hero_EndGame_Lose_Impact",
+    "ReuseFX_Missile_Fire_Fireball_Medium",
+    "ReuseFX_Impact_Fire_Fireball_Medium"
+  ],
+  "files": [
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Impact_Fire_Fireball_Medium.prefab",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/ReuseFX_Impact_Fire_Fireball_Medium.prefab",
+      "sha256": "50b6f2316be7d5dc013b9a4b5d5e295c1a14ff68ce8210508c6678f8573142c8"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_FireballImpactGlow01.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireballImpactGlow01.mat",
+      "sha256": "757c855f2efdcf5551983807293584db9ae55a08a0cad970801a22e9eee79078"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Fireball_1Hot.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_Fireball_1Hot.png",
+      "sha256": "6ce5dabfdb4c4e5fa9f17735813b91cd729695482e61d173330c94f24fed7371"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_FireBallSparks01.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireBallSparks01.mat",
+      "sha256": "6f0a83cd1dcba7c76f0f1409940615207cec7200f751db815e3fb72ac5684e22"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_elecspark.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_elecspark.png",
+      "sha256": "94646281ae916e2fe8c2d09ec98d31c766cd70b2a66d269bb39a50e1aea2338b"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/Fireball_Start.anim",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/Fireball_Start.anim",
+      "sha256": "410db2318aa97224132800e9af2bd7d551003be022a1fafee1c1534059943677"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_FireBallSmoke02.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireBallSmoke02.mat",
+      "sha256": "399df3fc61a7c1b1f78788b3ee4f333546673e4c0f0c48530001d0c2161afdf7"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Smoke_Wispy_04.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_Smoke_Wispy_04.png",
+      "sha256": "2653f0f65b32e9cee847ebed317fd3860b2b2cc9ab241a8799d813873384e7e3"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_FireballBlastMark.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireballBlastMark.mat",
+      "sha256": "7a4652651c0647a4fae554b06e3cfd69a738b48c5467af7cc4cfab1a028c3797"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_BlastMark01.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_BlastMark01.png",
+      "sha256": "de096281f8d294899746e618478782cfbbf143c6b58a2614974a30b330efce73"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/pPlane1_12.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/pPlane1_12.asset",
+      "sha256": "b6bd0c87ff578117f3808ce877fa26203be960a613062248fba2ad0f8748b2b7"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_FireParticle01.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireParticle01.mat",
+      "sha256": "8fb4dfbc112652e0f5487a246cb78fb789fbcb871e01ffd50e1e410b5be4b4fb"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_FireballCrescentAlpha.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireballCrescentAlpha.png",
+      "sha256": "f9fa38354f80d3f779e41cb0011b90f26f11ba48bd5920a4effec66162d5cf67"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Smoke5.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_Smoke5.png",
+      "sha256": "e295a9f6cbfd9326b15d7912923d9d9319d362cd169babbf0527a8c8feb1434a"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Missile_Fire_Fireball_Medium.prefab",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/ReuseFX_Missile_Fire_Fireball_Medium.prefab",
+      "sha256": "17711de35b44c35400830c65653640df06f7d486ca9f959e7e72d5d20c49f8cd"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_FireParticle02.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireParticle02.mat",
+      "sha256": "86c6a3f1a77defdf22b21a6b1972decec0d4c943e81b8cf3e8abeb1b71dfc718"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_FireParticle03.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireParticle03.mat",
+      "sha256": "d77c79630dde5efe699bf5aac4bf9627384e9ce9351253cb8ccac4cf26a35bf2"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Sneaky_Attack_Impact_02.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_Sneaky_Attack_Impact_02.png",
+      "sha256": "9bff54d690dbe03528f07c6fcbce3ee63b2477cc94364f7ef86ce3ddf52a6ecd"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_FireballCore.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireballCore.mat",
+      "sha256": "bd1c3ee6993dd2439c8d692e3f97f4aac0f8b7fc1d0e1867bf329f64ed3ec81a"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_clouds6c.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_clouds6c.png",
+      "sha256": "fe6052feb00c58ab0873869e15cd7dbd63df44696c6103207db4b3636b30d860"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_FireballGlow01.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireballGlow01.mat",
+      "sha256": "fe91c7804fa795c9bbc702caed3bdabc93b9a8d2cb58e16861911407cc7e1c43"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_CoreBlack3.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_CoreBlack3.mat",
+      "sha256": "b2d1004ee51faa4f69896295198c5fd54e7fbce23880a57a93cb4ba05e511c39"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_cloudshadows.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_cloudshadows.png",
+      "sha256": "f4b6420c33fa334acb0b1f1a6fc8c7a3875c6ba900af2a3f0dc041a669ff4319"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_CoreBlack2.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_CoreBlack2.mat",
+      "sha256": "7016e5125334b78277538d5622dfa787bf579427467e7886e5b781d2d05e7c7f"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/Card_Play_Hero_EndGame_Lose_Impact.prefab",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/Card_Play_Hero_EndGame_Lose_Impact.prefab",
+      "sha256": "f7a91acabd7ed678f60f637aa62f0c386acd991c282fed1c040e702bf6b7df42"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_Debris1_mesh.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_Debris1_mesh.mat",
+      "sha256": "64341402500c7aaac2742410f543732f2fa1ee429935ed72a45847298ace8828"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_debris1b.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_debris1b.png",
+      "sha256": "9d988638611cc39579c882cd9d8246a89db47a592ec4d61c09939b579f97d54b"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/EndGameCraterPlayer_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/EndGameCraterPlayer_mesh.asset",
+      "sha256": "844f55560fe7c44145202134bfe784b9b1110df718b7de180f67e23bc9d688b6"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/HeroFrame_0.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/HeroFrame_0.mat",
+      "sha256": "d48444c914223496eb0e98ee3e457389e1b46d7e84e1a4a6c63af8a144b504c7"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_HeroFrame.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_HeroFrame.png",
+      "sha256": "5b3e4396bb339e1a39920b9b19c3b07efdba5372ceea8556b25279ba2f5fc5d0"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/heroDebris_polySurface11.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/heroDebris_polySurface11.asset",
+      "sha256": "3a8ad9aa40728a0673e4c13aeb3446d1b0f36337e272b7923edd547b0e8b8b89"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/heroDebris_polySurface31.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/heroDebris_polySurface31.asset",
+      "sha256": "1d9271311fa483574bd3360d4d15ed2d450cbe43281873f125687386bc8eb477"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/heroDebris_polySurface18.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/heroDebris_polySurface18.asset",
+      "sha256": "b97f22c018e0b2cc23374279cdc81cce41aed6159120095f92191b8f98e621db"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/HeroExplode.anim",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/HeroExplode.anim",
+      "sha256": "da4858f27585658044bc35a05980cd48fd9069a87129776e51b874ae16e36860"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_SmokeFatty.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_SmokeFatty.mat",
+      "sha256": "fd24ad9af7e0f7b9a8b15bf9f45da1ec8223defab922162b1ec115f96ae0cfa3"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_DustE.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_DustE.png",
+      "sha256": "25329c58f9478bd4b6214a3460abb38d06726c0d13f84ac63e4f8b4f9358a7aa"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_GlowDebris1.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_GlowDebris1.mat",
+      "sha256": "25092e74613a32f6a00d646cfcec66973667d9bdaee46b515658c01e6c76fcb3"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_moteB.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_moteB.png",
+      "sha256": "e46b150bc4ebf266c4948fe684b5468731784eaf8647e7a490431b4432064383"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/heroDebris_polySurface2.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/heroDebris_polySurface2.asset",
+      "sha256": "3ceffcf9a389b78103c33720cdedc2a25f35173e2de4939b8387c3a1e8906165"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Hero_portrait_template.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/Hero_portrait_template.mat",
+      "sha256": "1910ba87f92bd4ae7142948f7811379486898eab4037862f988e1d7c79bb1774"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/heroDebris_polySurface26.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/heroDebris_polySurface26.asset",
+      "sha256": "d5755d29c6e78212dcede3e76810514e05a3e31ebcc890c513ec1acfd780a7fc"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/heroDebris_polySurface19.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/heroDebris_polySurface19.asset",
+      "sha256": "5bf9b0bfca1a2611c79665def56051537b92d1acc820e211fe292ab5997a41ea"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_End Game_Craters.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_End Game_Craters.mat",
+      "sha256": "74107de9ebd7ec4ec55991f9e39e7f9345a999cdd645ebbfd87d004f50809e0b"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_End Game_Craters.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_End Game_Craters.png",
+      "sha256": "86f2f698e6f5d90cce13c0c6225cfae2e61463a4a500c9245660e5abbdb20cd8"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/heroDebris_polySurface16.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/heroDebris_polySurface16.asset",
+      "sha256": "b60cbfe0c014a0218b8cfcaa621fe6c0450c69c008123bad15cd18c18675af33"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/QuadVertAlpha_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/QuadVertAlpha_mesh.asset",
+      "sha256": "18c21fce68dc796bfdebc50da9f7f7e1ab71de2c218ded72680306b290766278"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/LightBurst.anim",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/LightBurst.anim",
+      "sha256": "891430fb9e27775e022dc95609da6d7deafb0315c8c142d5884a2d8741843a83"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/heroDebris_polySurface9.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/heroDebris_polySurface9.asset",
+      "sha256": "22dd5f64c89fa894896365fd76dc5b6aa1ce8d39739491f58c060ceb2956fd92"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_ManaMotes1.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_ManaMotes1.mat",
+      "sha256": "705909faa4b4f2d6f163a98f1b76f95ba0a422de661b69b7c6dd3ebaebbf925b"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_elecdot.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_elecdot.png",
+      "sha256": "f2a334b023e2c8ad47f72a39a23d57b203140f744beec4e014c245555f36198a"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/heroDebris_polySurface13.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/heroDebris_polySurface13.asset",
+      "sha256": "18cff72bc1951b546b57ec4d9930bf88eef0857cb8f4ba40d23beb04c1c854aa"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/heroDebris_polySurface8.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/heroDebris_polySurface8.asset",
+      "sha256": "7acc7d90ca2db37729377569946c472e1a840fca84f0c977348a24a7b0175f9b"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/RockDebrisA_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/RockDebrisA_mesh.asset",
+      "sha256": "9308e26b121f57e67c747a60860493bd8331a384605da09932825f06bed14984"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/heroDebris_polySurface22.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/heroDebris_polySurface22.asset",
+      "sha256": "596a5cfdb5c66c896b031107cafdaa6e7c6c3e8daecb162d72bc5d215f114352"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/heroDebris_polySurface24.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/heroDebris_polySurface24.asset",
+      "sha256": "ec84bc21502600f6827eb21aad75ba34c4ed5d8fe66d1e0bf4d01acbbd61acea"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/heroDebris_polySurface6.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/heroDebris_polySurface6.asset",
+      "sha256": "3db5e2156a12473f6b5c34b22c54a3afbca6b63e4b42253488aaf828eb9d213e"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/heroDebris_polySurface32.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/heroDebris_polySurface32.asset",
+      "sha256": "7c74832afe6f8c87c3f5367800112904469fccb020d9a9e8fad4e9174cd21b80"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/heroDebris_polySurface4.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/heroDebris_polySurface4.asset",
+      "sha256": "33c4f180b4c12e554bff472b319e9dc6cb4480d6d2b9e059208707c502cec142"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_DustA.mat",
+      "reused": "Assets/_Project/Art/NativeCorners/GenFX_DustA.mat"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/FX_HeroCracks.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/FX_HeroCracks.mat",
+      "sha256": "3921ad20d3f225a19f9c7fd0e9be594fe406a276f1fb55be58a8ed83e4a91f75"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/HeroDeathCracks.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/HeroDeathCracks.png",
+      "sha256": "ce70f701fa8b8f8a6d67c5cb622204b19b1cb21a7e38d887e68a808748f5b276"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/heroDebris_polySurface27.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/heroDebris_polySurface27.asset",
+      "sha256": "3ce26356c3d332452c223bf1e0039062b0f8df69c220bb8b87399926c90ca7ff"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/HeroCrackQuad_FadeIn.anim",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/HeroCrackQuad_FadeIn.anim",
+      "sha256": "36c8066b199b682e40b3d7de3bb9fa8b9dbd1b1a2f31cdc423cfee884a48184e"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/heroDebris_polySurface30.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/heroDebris_polySurface30.asset",
+      "sha256": "3f320242b01e5d3daf5694e04276d7fa76e863ac22e82336051a9bf20701abf1"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_HeroBurstFlare1.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_HeroBurstFlare1.mat",
+      "sha256": "729d9bcb909af04450ed69557e7f730af2438915679a2658b9794b43d2a0e640"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_FlareBurst1.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FlareBurst1.png",
+      "sha256": "4c902d4850de32697d1f00c06655448b58b7c2105f32848f5bee2b022763c38b"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/Card_Play_HeroPower.prefab",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/Card_Play_HeroPower.prefab",
+      "sha256": "2b43870e9361ae4f8daca452ffd71727d944cae46cb6f8ad73e2f1dc895b1620"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_HighlightGreen.mat",
+      "reused": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/GenFX_HighlightGreen.mat"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/HeroPower_Restore.anim",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/HeroPower_Restore.anim",
+      "sha256": "fd24af4211d509bc351cf67b4246ef23be86b6cc38e98af327f69a47a5c79478"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Gem_Mana_Blue_AmbinetLighting.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/Gem_Mana_Blue_AmbinetLighting.mat",
+      "sha256": "6c803617a6beebec6219735a6c09632c9eb80c9309816db65e5bbadda21547a8"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Gem_Mana_D.png",
+      "reused": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Gem_Mana_D.png"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_clouds03.png",
+      "reused": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_clouds03.png"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/HeroPower_Used.anim",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/HeroPower_Used.anim",
+      "sha256": "67fc584279352779c94136529f994aa6a59d63d37c7aa9081d2fff7ee5560e55"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/HeroPowerV2.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/HeroPowerV2.asset",
+      "sha256": "c979590600101d586f670108794fe42ecc8402be95e89857ef1726ce2f55c839"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/HeroPowerShadow.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/HeroPowerShadow.mat",
+      "sha256": "23785d9c721b48e6374b51806ab84b263ce4cbfd52d201f7c8aca8ee80d19353"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/AdvChooserHeroPowerShadow.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/AdvChooserHeroPowerShadow.png",
+      "sha256": "0c1b7c81c358371be36db4a0707930191e2cca789528398035b8b60d3e9ca0e9"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Card_HeroPower_HeroClass.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/Card_HeroPower_HeroClass.mat",
+      "sha256": "fbe96f50c568c6d009b3882a33543cd8b6922fa972e70f5775a8bd9c67fcc5b7"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/Hero_Power_D.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/Hero_Power_D.png",
+      "sha256": "7ed825f7dfb65d32d17b21a2b049a4a461769ac52eca22fcc92125c09557af1c"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/HeroPower_SuperFlip_Exhausted.anim",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/HeroPower_SuperFlip_Exhausted.anim",
+      "sha256": "cf451a7133578c3ef6b2b625bc22cafd05d82e9aed029f5158af96a81e7c187f"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/HeroPower_ManaFadeOn.anim",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/HeroPower_ManaFadeOn.anim",
+      "sha256": "08683ab7f3538abf00920c0864db3254e01c79b9d302a3fc76bac97954437a35"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/HeroPower_FadeIn.anim",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/HeroPower_FadeIn.anim",
+      "sha256": "e70da97d322691c1a19056287f063c58ab451a5781399f32e49e6969fd19eb26"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/HeroPower_SuperFlip.anim",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/HeroPower_SuperFlip.anim",
+      "sha256": "dc75a6b4bec975675428843a0077e483cd1602fccd29b64b9a2604fe39a75c08"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/pPlane2.asset",
+      "reused": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/pPlane2.asset"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Card_HeroPower_InPlayPortraitV2 InPlay.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/Card_HeroPower_InPlayPortraitV2 InPlay.mat",
+      "sha256": "380483884511abde581c8bb6d6fc725e46d016e33f5c22143dc0196753e12fe8"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_white32x32.png",
+      "reused": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_white32x32.png"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Card_HeroPower_Frame.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/Card_HeroPower_Frame.mat",
+      "sha256": "72448eb9153781de8a72f5ea19614e446b9d327723cb008b8ce92576d0cbb7c7"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/Hero_Power_Frame.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/Hero_Power_Frame.png",
+      "sha256": "d2ab926c6a41440488b66b681f6b3421cea1d7596de64ff494abbbbc3f6976ed"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/HeroPower_FadeOut.anim",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/HeroPower_FadeOut.anim",
+      "sha256": "5849cef61d455d7dc0824f3cde691393aa0cb3966808cf45981660f03dc4c508"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/ManaGem.asset",
+      "reused": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/ManaGem.asset"
+    }
+  ],
+  "unresolved": [
+    "AssetBundles/essential_base_global-prefab-0.unity3d/Card_Play_HeroPower.prefab: unresolved exported reference"
+  ],
+  "note": "Visual templates only: source client scripts removed, source controllers/clips retained for audit before playback; materials require disclosed compatibility mapping."
+}

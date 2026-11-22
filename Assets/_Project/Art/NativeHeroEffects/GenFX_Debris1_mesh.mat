@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GenFX_Debris1_mesh
+  m_Shader: {fileID: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties:
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _MainTex:
+        m_Texture: {fileID: 2800000, guid: b24453d58018efe4f8f650ac8b6f5e65, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: {}
+    m_Floats:
+      _Cutoff: 0.5
+      _InvFade: 3
+      _RimPower: 3
+    m_Colors:
+      _Color: {r: 0.92156863, g: 0.7848106, b: 0.57823914, a: 1}
+      _EmisColor: {r: 1, g: 1, b: 1, a: 1}
+      _RimColor: {r: 0.40392157, g: 0.2474403, b: 0.079200305, a: 1}
+      _TintColor: {r: 0.54901963, g: 0.46323475, b: 0.3423299, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 0
