@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HeroPowerButton_GenFX_HighlightGreen_Compatibility
-  m_Shader: {fileID: 4800000, guid: 57ff0a9d38b1e7d55914da0058483611, type: 3}
+  m_Shader: {fileID: 4800000, guid: 2436415837618ecd7af5a1501b38d2f5, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -24,14 +24,20 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: df6d9c74db0d3b348b67b8fccd69f9ec, type: 3}
+        m_Texture: {fileID: 2800000, guid: a1f3aad446f0193aebca9f2d41d8f655, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _ColorIntensity: 0
     - _DstBlend: 1
+    - _Intensity: 0
     - _SrcBlend: 5
+    - _UseUV2: 1
     m_Colors:
+    - _Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Colorize: {r: 0, g: 0, b: 0, a: 0}
+    - _HiColor: {r: 0, g: 0, b: 0, a: 0}
     - _TintColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

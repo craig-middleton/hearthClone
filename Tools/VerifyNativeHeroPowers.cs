@@ -10,7 +10,10 @@ public static class VerifyNativeHeroPowers
  static void Check(bool b,string s){if(!b)throw new Exception(s);}
  public static async Task<string> Main()
  {
-  await Task.Delay(150);var e=UnityEngine.Object.FindAnyObjectByType<EffectTester>();e.frontEnd.ShowMenu();e.frontEnd.Play();e.confirmMulliganButton.onClick.Invoke();await Task.Delay(200);
+  await Task.Delay(150);var e=UnityEngine.Object.FindAnyObjectByType<EffectTester>();e.frontEnd.ShowMenu();e.frontEnd.Play();e.confirmMulliganButton.onClick.Invoke();
+  var opening=System.Diagnostics.Stopwatch.StartNew();
+  while(e.ActionEffectsBusy||e.handDisplay.drawPresentation.IsBusy){if(opening.ElapsedMilliseconds>10000)throw new Exception("Opening presentation did not finish");await Task.Delay(20);}
+  await Task.Delay(60);
   var a=e.heroPowerButton.GetComponent<NativeHeroPowerPresentation>();var b=e.opponentHeroPowerButton.GetComponent<NativeHeroPowerPresentation>();
   foreach(var c in new[]{a,b})
   {
@@ -25,7 +28,8 @@ public static class VerifyNativeHeroPowers
    Vector2 screen=c.boardCamera.WorldToScreenPoint(r.bounds.center);Check(Vector2.Distance(screen,c.button.position)<8,"Original power face misaligned with input");
   }
   var owner=e.faceView.Player;owner.CurrentMana=10;typeof(EffectTester).GetMethod("RefreshFaceDisplay",System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance).Invoke(e,null);await Task.Delay(50);Check(a.highlight.enabled,"Original ready highlight not visible");
-  var initial=a.actor.localRotation;owner.HasUsedHeroPowerThisTurn=true;await Task.Delay(180);Check(Quaternion.Angle(initial,a.actor.localRotation)>20,"Original used motion did not start");
+  var initial=a.actor.localRotation;owner.HasUsedHeroPowerThisTurn=true;var motion=System.Diagnostics.Stopwatch.StartNew();
+  while(Quaternion.Angle(initial,a.actor.localRotation)<=20){if(motion.ElapsedMilliseconds>1200)throw new Exception("Original used motion did not start");await Task.Delay(10);}
   await Task.Delay(500);Check(Quaternion.Angle(initial,a.actor.localRotation)>170&&!a.highlight.enabled,"Power flip did not complete to class back");
   owner.HasUsedHeroPowerThisTurn=false;await Task.Delay(650);Check(Quaternion.Angle(initial,a.actor.localRotation)<5,"Original restore motion failed");
   e.frontEnd.ShowMenu();Check(!a.stage.gameObject.activeInHierarchy&&!b.stage.gameObject.activeInHierarchy,"Menu left power models visible");

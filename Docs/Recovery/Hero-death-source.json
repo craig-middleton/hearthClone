@@ -1,0 +1,2338 @@
+{
+  "objectPaths": {
+    "1709254077376921": "Card_Play_Hero_EndGame_Lose_Impact",
+    "1730242686860875": "Card_Play_Hero_EndGame_Lose_Impact/EndGame_CraterPlayer",
+    "1724804207875695": "Card_Play_Hero_EndGame_Lose_Impact/FX_CrackQuad",
+    "1618682377417806": "Card_Play_Hero_EndGame_Lose_Impact/FX_DustWave1",
+    "1703437598541787": "Card_Play_Hero_EndGame_Lose_Impact/FX_DustWave1_new",
+    "1884547391421755": "Card_Play_Hero_EndGame_Lose_Impact/FX_FlareBurst1",
+    "1099118695303065": "Card_Play_Hero_EndGame_Lose_Impact/FX_FlareBurst1/FX_GlowDebris",
+    "1243736805655561": "Card_Play_Hero_EndGame_Lose_Impact/FX_Rubble1",
+    "1061268324235159": "Card_Play_Hero_EndGame_Lose_Impact/FX_SmokeStay",
+    "1587765826080250": "Card_Play_Hero_EndGame_Lose_Impact/FX_Sparks2_new",
+    "1709867586078768": "Card_Play_Hero_EndGame_Lose_Impact/HeroBombDebris",
+    "1044625135789424": "Card_Play_Hero_EndGame_Lose_Impact/HeroBombDebris/heroDebris_polySurface2",
+    "1589667821646929": "Card_Play_Hero_EndGame_Lose_Impact/HeroBombDebris/heroDebris_polySurface4",
+    "1372920208702427": "Card_Play_Hero_EndGame_Lose_Impact/HeroBombDebris/heroDebris_polySurface6",
+    "1025901758691103": "Card_Play_Hero_EndGame_Lose_Impact/HeroBombDebris/heroDebris_polySurface8",
+    "1985305603660343": "Card_Play_Hero_EndGame_Lose_Impact/HeroBombDebris/heroDebris_polySurface9",
+    "1705390221481576": "Card_Play_Hero_EndGame_Lose_Impact/HeroBombDebris/heroDebris_polySurface11",
+    "1977153420339851": "Card_Play_Hero_EndGame_Lose_Impact/HeroBombDebris/heroDebris_polySurface13",
+    "1336590748365959": "Card_Play_Hero_EndGame_Lose_Impact/HeroBombDebris/heroDebris_polySurface16",
+    "1256069497284392": "Card_Play_Hero_EndGame_Lose_Impact/HeroBombDebris/heroDebris_polySurface18",
+    "1161607090078389": "Card_Play_Hero_EndGame_Lose_Impact/HeroBombDebris/heroDebris_polySurface19",
+    "1002669891404536": "Card_Play_Hero_EndGame_Lose_Impact/HeroBombDebris/heroDebris_polySurface22",
+    "1470112387431263": "Card_Play_Hero_EndGame_Lose_Impact/HeroBombDebris/heroDebris_polySurface24",
+    "1313026266067498": "Card_Play_Hero_EndGame_Lose_Impact/HeroBombDebris/heroDebris_polySurface26",
+    "1621510681728303": "Card_Play_Hero_EndGame_Lose_Impact/HeroBombDebris/heroDebris_polySurface27",
+    "1632457200066912": "Card_Play_Hero_EndGame_Lose_Impact/HeroBombDebris/heroDebris_polySurface30",
+    "1634108722742392": "Card_Play_Hero_EndGame_Lose_Impact/HeroBombDebris/heroDebris_polySurface31",
+    "1302127217294661": "Card_Play_Hero_EndGame_Lose_Impact/HeroBombDebris/heroDebris_polySurface32",
+    "1969106005120503": "Card_Play_Hero_EndGame_Lose_Impact/Point light"
+  },
+  "machines": [
+    {
+      "path": "Card_Play_Hero_EndGame_Lose_Impact",
+      "start": "State 1",
+      "states": [
+        {
+          "name": "State 1",
+          "actions": [
+            {
+              "type": "SetVisibilityRecursiveAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "gameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1709867586078768"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "visible",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                },
+                {
+                  "name": "resetOnExit",
+                  "type": 1,
+                  "value": false
+                },
+                {
+                  "name": "includeChildren",
+                  "type": 1,
+                  "value": true
+                }
+              ]
+            },
+            {
+              "type": "SetVisibilityRecursiveAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "gameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1724804207875695"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "visible",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                },
+                {
+                  "name": "resetOnExit",
+                  "type": 1,
+                  "value": true
+                },
+                {
+                  "name": "includeChildren",
+                  "type": 1,
+                  "value": false
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "name": "State 2",
+          "actions": [
+            {
+              "type": "SpellStateAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_SpellObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "0",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "0"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "SpellGetActorAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_SpellObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "0",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "0"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "m_WhichActor",
+                  "type": 7,
+                  "value": 1
+                },
+                {
+                  "name": "m_GameObject",
+                  "type": 19,
+                  "value": {
+                    "useVariable": "1",
+                    "name": "Actor",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": {
+                      "fileID": "0"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "SpellInitActorVariables",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_actorObject",
+                  "type": 19,
+                  "value": {
+                    "useVariable": "1",
+                    "name": "Actor",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": {
+                      "fileID": "0"
+                    }
+                  }
+                },
+                {
+                  "name": "m_rootObject",
+                  "type": 19,
+                  "value": {
+                    "useVariable": "1",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": {
+                      "fileID": "0"
+                    }
+                  }
+                },
+                {
+                  "name": "m_rootObjectMesh",
+                  "type": 19,
+                  "value": {
+                    "useVariable": "1",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": {
+                      "fileID": "0"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "SetVisibilityRecursiveAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "gameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1724804207875695"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "visible",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "1"
+                  }
+                },
+                {
+                  "name": "resetOnExit",
+                  "type": 1,
+                  "value": true
+                },
+                {
+                  "name": "includeChildren",
+                  "type": 1,
+                  "value": false
+                }
+              ]
+            },
+            {
+              "type": "PlayAnimation",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "gameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1724804207875695"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "animName",
+                  "type": 18,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "HeroCrackQuad_FadeIn"
+                  }
+                },
+                {
+                  "name": "playMode",
+                  "type": 7,
+                  "value": 4
+                },
+                {
+                  "name": "blendTime",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                },
+                {
+                  "name": "finishEvent",
+                  "type": 23,
+                  "value": ""
+                },
+                {
+                  "name": "loopEvent",
+                  "type": 23,
+                  "value": ""
+                },
+                {
+                  "name": "stopOnExit",
+                  "type": 1,
+                  "value": false
+                }
+              ]
+            },
+            {
+              "type": "AnimateFloatV2",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "floatVariable",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "1",
+                    "name": "time_amount_lose",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "1"
+                  }
+                },
+                {
+                  "name": "animCurve",
+                  "type": 22,
+                  "value": {
+                    "curve": {
+                      "serializedVersion": "2",
+                      "m_Curve": [
+                        {
+                          "serializedVersion": "3",
+                          "time": "0",
+                          "value": "1",
+                          "inSlope": "0",
+                          "outSlope": "0",
+                          "weightedMode": "0",
+                          "inWeight": "0.33333334",
+                          "outWeight": "0.33333334"
+                        },
+                        {
+                          "serializedVersion": "3",
+                          "time": "0.015",
+                          "value": "0.5",
+                          "inSlope": "0.10968516",
+                          "outSlope": "0.10968516",
+                          "weightedMode": "0",
+                          "inWeight": "0.33333334",
+                          "outWeight": "0.33333334"
+                        },
+                        {
+                          "serializedVersion": "3",
+                          "time": "0.035",
+                          "value": "1",
+                          "inSlope": "-5.986124E-06",
+                          "outSlope": "-5.986124E-06",
+                          "weightedMode": "0",
+                          "inWeight": "0.33333334",
+                          "outWeight": "0.33333334"
+                        },
+                        {
+                          "serializedVersion": "3",
+                          "time": "0.5",
+                          "value": "0.51",
+                          "inSlope": "0",
+                          "outSlope": "0",
+                          "weightedMode": "0",
+                          "inWeight": "0.33333334",
+                          "outWeight": "0.33333334"
+                        }
+                      ],
+                      "m_PreInfinity": "2",
+                      "m_PostInfinity": "2",
+                      "m_RotationOrder": "4"
+                    }
+                  }
+                },
+                {
+                  "name": "calculation",
+                  "type": 7,
+                  "value": 1
+                },
+                {
+                  "name": "time",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0.5"
+                  }
+                },
+                {
+                  "name": "speed",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "1",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                },
+                {
+                  "name": "delay",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "1",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                },
+                {
+                  "name": "ignoreCurveOffset",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "1"
+                  }
+                },
+                {
+                  "name": "finishEvent",
+                  "type": 23,
+                  "value": "FINISHED"
+                },
+                {
+                  "name": "realTime",
+                  "type": 1,
+                  "value": false
+                }
+              ]
+            },
+            {
+              "type": "SetTimeScaleAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_Scale",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "1",
+                    "name": "time_amount_lose",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "1"
+                  }
+                },
+                {
+                  "name": "m_EveryFrame",
+                  "type": 1,
+                  "value": true
+                }
+              ]
+            },
+            {
+              "type": "AudioPlaythroughAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_GameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "0",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "0"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "m_VolumeScale",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0.8"
+                  }
+                },
+                {
+                  "name": "m_OneShotClip",
+                  "type": 24,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "typeName": "UnityEngine.AudioClip",
+                    "value": {
+                      "fileID": "0",
+                      "guid": "0000000deadbeef15deadf00d0000000",
+                      "type": "2"
+                    }
+                  }
+                },
+                {
+                  "name": "m_Delay",
+                  "type": 2,
+                  "value": 0.0
+                },
+                {
+                  "name": "m_OneShotSound",
+                  "type": 24,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "typeName": "SoundDef",
+                    "value": {
+                      "fileID": "114618682377417806",
+                      "guid": "44a4c2522118ab44c93d3d41917dda86",
+                      "type": "2"
+                    }
+                  }
+                },
+                {
+                  "name": "m_FinishedEvent",
+                  "type": 23,
+                  "value": ""
+                },
+                {
+                  "name": "m_IsMinionSummonVO",
+                  "type": 1,
+                  "value": false
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "type": 1,
+                  "value": false
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "type": 2,
+                  "value": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "type": 0,
+                  "value": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "type": 7,
+                  "value": 0
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "fsmEvent": {
+                "name": "FINISHED",
+                "isSystemEvent": "1",
+                "isGlobal": "1"
+              },
+              "toState": "State 3",
+              "linkStyle": "0",
+              "linkConstraint": "0",
+              "linkTarget": "0",
+              "colorIndex": "0"
+            }
+          ]
+        },
+        {
+          "name": "State 3",
+          "actions": [
+            {
+              "type": "SpellInitActorVariables",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_actorObject",
+                  "type": 19,
+                  "value": {
+                    "useVariable": "1",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": {
+                      "fileID": "0"
+                    }
+                  }
+                },
+                {
+                  "name": "m_rootObject",
+                  "type": 19,
+                  "value": {
+                    "useVariable": "1",
+                    "name": "RootObject",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": {
+                      "fileID": "0"
+                    }
+                  }
+                },
+                {
+                  "name": "m_rootObjectMesh",
+                  "type": 19,
+                  "value": {
+                    "useVariable": "1",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": {
+                      "fileID": "0"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "SetVisibilityRecursiveAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "gameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1709867586078768"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "visible",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "1"
+                  }
+                },
+                {
+                  "name": "resetOnExit",
+                  "type": 1,
+                  "value": true
+                },
+                {
+                  "name": "includeChildren",
+                  "type": 1,
+                  "value": true
+                }
+              ]
+            },
+            {
+              "type": "AssignActorPortraitToChildrenAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_ActorToAssignPortraitTo",
+                  "type": 19,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": {
+                      "fileID": "1709867586078768"
+                    }
+                  }
+                },
+                {
+                  "name": "m_ActorToAssignPortraitFrom",
+                  "type": 19,
+                  "value": {
+                    "useVariable": "1",
+                    "name": "Actor",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": {
+                      "fileID": "0"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "PlayAnimation",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "gameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1709867586078768"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "animName",
+                  "type": 18,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "HeroExplode"
+                  }
+                },
+                {
+                  "name": "playMode",
+                  "type": 7,
+                  "value": 4
+                },
+                {
+                  "name": "blendTime",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                },
+                {
+                  "name": "finishEvent",
+                  "type": 23,
+                  "value": ""
+                },
+                {
+                  "name": "loopEvent",
+                  "type": 23,
+                  "value": ""
+                },
+                {
+                  "name": "stopOnExit",
+                  "type": 1,
+                  "value": false
+                }
+              ]
+            },
+            {
+              "type": "PlayAnimation",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "gameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1969106005120503"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "animName",
+                  "type": 18,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "LightBurst"
+                  }
+                },
+                {
+                  "name": "playMode",
+                  "type": 7,
+                  "value": 4
+                },
+                {
+                  "name": "blendTime",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                },
+                {
+                  "name": "finishEvent",
+                  "type": 23,
+                  "value": ""
+                },
+                {
+                  "name": "loopEvent",
+                  "type": 23,
+                  "value": ""
+                },
+                {
+                  "name": "stopOnExit",
+                  "type": 1,
+                  "value": false
+                }
+              ]
+            },
+            {
+              "type": "MainCameraShakerAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_Amount",
+                  "type": 28,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": {
+                      "x": "0.3",
+                      "y": "0.3",
+                      "z": "0.3"
+                    }
+                  }
+                },
+                {
+                  "name": "m_Time",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "1"
+                  }
+                },
+                {
+                  "name": "m_Delay",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                },
+                {
+                  "name": "m_FinishedEvent",
+                  "type": 23,
+                  "value": ""
+                }
+              ]
+            },
+            {
+              "type": "SetVisibilityRecursiveAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "gameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1724804207875695"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "visible",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                },
+                {
+                  "name": "resetOnExit",
+                  "type": 1,
+                  "value": true
+                },
+                {
+                  "name": "includeChildren",
+                  "type": 1,
+                  "value": false
+                }
+              ]
+            },
+            {
+              "type": "SetVisibilityRecursiveAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "gameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "1",
+                      "name": "RootObject",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "0"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "visible",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                },
+                {
+                  "name": "resetOnExit",
+                  "type": 1,
+                  "value": false
+                },
+                {
+                  "name": "includeChildren",
+                  "type": 1,
+                  "value": true
+                }
+              ]
+            },
+            {
+              "type": "SetVisibilityRecursiveAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "gameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "1",
+                      "name": "Actor",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "0"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "visible",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                },
+                {
+                  "name": "resetOnExit",
+                  "type": 1,
+                  "value": false
+                },
+                {
+                  "name": "includeChildren",
+                  "type": 1,
+                  "value": true
+                }
+              ]
+            },
+            {
+              "type": "SetVisibilityRecursiveAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "gameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1730242686860875"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "visible",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "1"
+                  }
+                },
+                {
+                  "name": "resetOnExit",
+                  "type": 1,
+                  "value": false
+                },
+                {
+                  "name": "includeChildren",
+                  "type": 1,
+                  "value": false
+                }
+              ]
+            },
+            {
+              "type": "GetHeroPowerAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_HeroPowerGameObject",
+                  "type": 19,
+                  "value": {
+                    "useVariable": "1",
+                    "name": "HeroPower",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": {
+                      "fileID": "0"
+                    }
+                  }
+                },
+                {
+                  "name": "m_OverrideOwnerToGetHeroPowerFrom",
+                  "type": 19,
+                  "value": {
+                    "useVariable": "1",
+                    "name": "Actor",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": {
+                      "fileID": "0"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "ActorSetVisibilityRecursiveAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_GameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "1",
+                      "name": "HeroPower",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "0"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "m_Visible",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                },
+                {
+                  "name": "m_IgnoreSpells",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                },
+                {
+                  "name": "m_ResetOnExit",
+                  "type": 1,
+                  "value": false
+                },
+                {
+                  "name": "m_IncludeChildren",
+                  "type": 1,
+                  "value": true
+                },
+                {
+                  "name": "m_IncludeParents",
+                  "type": 1,
+                  "value": false
+                }
+              ]
+            },
+            {
+              "type": "ParticlePlayAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_GameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1884547391421755"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "m_IncludeChildren",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "1"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "ParticlePlayAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_GameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1243736805655561"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "m_IncludeChildren",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "1"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "ParticlePlayAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_GameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1703437598541787"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "m_IncludeChildren",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "ParticlePlayAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_GameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1587765826080250"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "m_IncludeChildren",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "SetProperty",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "targetProperty",
+                  "type": 36,
+                  "value": {
+                    "TargetObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "typeName": "UnityEngine.Object",
+                      "value": {
+                        "fileID": "198632746491512912"
+                      }
+                    },
+                    "TargetTypeName": "UnityEngine.ParticleSystem",
+                    "PropertyName": "playbackSpeed",
+                    "BoolParameter": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": "0"
+                    },
+                    "FloatParameter": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": "0.5"
+                    },
+                    "IntParameter": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": "0"
+                    },
+                    "GameObjectParameter": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "0"
+                      }
+                    },
+                    "StringParameter": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": ""
+                    },
+                    "Vector2Parameter": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "x": "0",
+                        "y": "0"
+                      }
+                    },
+                    "Vector3Parameter": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "x": "0",
+                        "y": "0",
+                        "z": "0"
+                      }
+                    },
+                    "RectParamater": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "serializedVersion": "2",
+                        "x": "0",
+                        "y": "0",
+                        "width": "0",
+                        "height": "0"
+                      }
+                    },
+                    "QuaternionParameter": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "x": "0",
+                        "y": "0",
+                        "z": "0",
+                        "w": "0"
+                      }
+                    },
+                    "ObjectParameter": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "typeName": "System.Single",
+                      "value": {
+                        "fileID": "0"
+                      }
+                    },
+                    "MaterialParameter": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "typeName": "",
+                      "value": {
+                        "fileID": "0"
+                      }
+                    },
+                    "TextureParameter": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "typeName": "",
+                      "value": {
+                        "fileID": "0"
+                      }
+                    },
+                    "ColorParameter": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "r": "0",
+                        "g": "0",
+                        "b": "0",
+                        "a": "1"
+                      }
+                    },
+                    "EnumParameter": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "enumName": "HutongGames.PlayMaker.None",
+                      "intValue": "0"
+                    },
+                    "ArrayParameter": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "type": "-1",
+                      "objectTypeName": "UnityEngine.Object",
+                      "floatValues": [],
+                      "intValues": "",
+                      "boolValues": "",
+                      "stringValues": [],
+                      "vector4Values": [],
+                      "objectReferences": []
+                    },
+                    "setProperty": "1"
+                  }
+                },
+                {
+                  "name": "everyFrame",
+                  "type": 1,
+                  "value": false
+                }
+              ]
+            },
+            {
+              "type": "ParticlePlayAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_GameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1061268324235159"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "m_IncludeChildren",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "1"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "AnimateFloatV2",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "floatVariable",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "1",
+                    "name": "time_amount_lose",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "1"
+                  }
+                },
+                {
+                  "name": "animCurve",
+                  "type": 22,
+                  "value": {
+                    "curve": {
+                      "serializedVersion": "2",
+                      "m_Curve": [
+                        {
+                          "serializedVersion": "3",
+                          "time": "0",
+                          "value": "0.5",
+                          "inSlope": "0",
+                          "outSlope": "0",
+                          "weightedMode": "0",
+                          "inWeight": "0.33333334",
+                          "outWeight": "0.33333334"
+                        },
+                        {
+                          "serializedVersion": "3",
+                          "time": "0.099999994",
+                          "value": "0.1",
+                          "inSlope": "0",
+                          "outSlope": "0",
+                          "weightedMode": "0",
+                          "inWeight": "0.33333334",
+                          "outWeight": "0.33333334"
+                        },
+                        {
+                          "serializedVersion": "3",
+                          "time": "0.19999999",
+                          "value": "1",
+                          "inSlope": "5.685711E-06",
+                          "outSlope": "5.685711E-06",
+                          "weightedMode": "0",
+                          "inWeight": "0.33333334",
+                          "outWeight": "0.33333334"
+                        }
+                      ],
+                      "m_PreInfinity": "2",
+                      "m_PostInfinity": "2",
+                      "m_RotationOrder": "4"
+                    }
+                  }
+                },
+                {
+                  "name": "calculation",
+                  "type": 7,
+                  "value": 1
+                },
+                {
+                  "name": "time",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0.8"
+                  }
+                },
+                {
+                  "name": "speed",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "1",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                },
+                {
+                  "name": "delay",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "1",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                },
+                {
+                  "name": "ignoreCurveOffset",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "1"
+                  }
+                },
+                {
+                  "name": "finishEvent",
+                  "type": 23,
+                  "value": "FINISHED"
+                },
+                {
+                  "name": "realTime",
+                  "type": 1,
+                  "value": false
+                }
+              ]
+            },
+            {
+              "type": "SetTimeScaleAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_Scale",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "1",
+                    "name": "time_amount_lose",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "1"
+                  }
+                },
+                {
+                  "name": "m_EveryFrame",
+                  "type": 1,
+                  "value": true
+                }
+              ]
+            },
+            {
+              "type": "AudioPlaythroughAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_GameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "0",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "0"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "m_VolumeScale",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0.9"
+                  }
+                },
+                {
+                  "name": "m_OneShotClip",
+                  "type": 24,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "typeName": "UnityEngine.AudioClip",
+                    "value": {
+                      "fileID": "0",
+                      "guid": "0000000deadbeef15deadf00d0000000",
+                      "type": "2"
+                    }
+                  }
+                },
+                {
+                  "name": "m_Delay",
+                  "type": 2,
+                  "value": 0.0
+                },
+                {
+                  "name": "m_OneShotSound",
+                  "type": 24,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "typeName": "SoundDef",
+                    "value": {
+                      "fileID": "114618682377417806",
+                      "guid": "ad8c125de48d14b4eb302acd8ffc5ee8",
+                      "type": "2"
+                    }
+                  }
+                },
+                {
+                  "name": "m_FinishedEvent",
+                  "type": 23,
+                  "value": ""
+                },
+                {
+                  "name": "m_IsMinionSummonVO",
+                  "type": 1,
+                  "value": false
+                },
+                {
+                  "name": "m_InstanceLimited",
+                  "type": 1,
+                  "value": false
+                },
+                {
+                  "name": "m_InstanceLimitedDuration",
+                  "type": 2,
+                  "value": 0.0
+                },
+                {
+                  "name": "m_InstanceLimitMaximum",
+                  "type": 0,
+                  "value": 1
+                },
+                {
+                  "name": "m_LimitMaxOutOption",
+                  "type": 7,
+                  "value": 0
+                }
+              ]
+            },
+            {
+              "type": "ShakeMinionsAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "gameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "0",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "0"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "shakeType",
+                  "type": 7,
+                  "value": 2
+                },
+                {
+                  "name": "MinionsToShake",
+                  "type": 7,
+                  "value": 0
+                },
+                {
+                  "name": "shakeSize",
+                  "type": 7,
+                  "value": 3
+                },
+                {
+                  "name": "customShakeIntensity",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0.1"
+                  }
+                },
+                {
+                  "name": "radius",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "5"
+                  }
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "fsmEvent": {
+                "name": "FINISHED",
+                "isSystemEvent": "1",
+                "isGlobal": "1"
+              },
+              "toState": "State 4",
+              "linkStyle": "0",
+              "linkConstraint": "0",
+              "linkTarget": "0",
+              "colorIndex": "0"
+            }
+          ]
+        },
+        {
+          "name": "None State",
+          "actions": [
+            {
+              "type": "SpellFinishAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_SpellObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "0",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "0"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "m_Delay",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "name": "State 4",
+          "actions": [
+            {
+              "type": "Wait",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "time",
+                  "type": 15,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "1.3"
+                  }
+                },
+                {
+                  "name": "finishEvent",
+                  "type": 23,
+                  "value": ""
+                },
+                {
+                  "name": "realTime",
+                  "type": 1,
+                  "value": false
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "fsmEvent": {
+                "name": "FINISHED",
+                "isSystemEvent": "1",
+                "isGlobal": "1"
+              },
+              "toState": "None State",
+              "linkStyle": "0",
+              "linkConstraint": "0",
+              "linkTarget": "0",
+              "colorIndex": "0"
+            }
+          ]
+        },
+        {
+          "name": "Death",
+          "actions": [
+            {
+              "type": "SpellStateAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_SpellObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "0",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "0"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "ParticleStopAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_GameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1884547391421755"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "m_IncludeChildren",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "1"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "ParticleStopAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_GameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1243736805655561"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "m_IncludeChildren",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "ParticleStopAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_GameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1703437598541787"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "m_IncludeChildren",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "ParticleStopAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_GameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1587765826080250"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "m_IncludeChildren",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "ParticleStopAction",
+              "enabled": true,
+              "params": [
+                {
+                  "name": "m_GameObject",
+                  "type": 20,
+                  "value": {
+                    "ownerOption": "1",
+                    "gameObject": {
+                      "useVariable": "0",
+                      "name": "",
+                      "tooltip": "",
+                      "showInInspector": "0",
+                      "networkSync": "0",
+                      "value": {
+                        "fileID": "1061268324235159"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "m_IncludeChildren",
+                  "type": 17,
+                  "value": {
+                    "useVariable": "0",
+                    "name": "",
+                    "tooltip": "",
+                    "showInInspector": "0",
+                    "networkSync": "0",
+                    "value": "0"
+                  }
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "fsmEvent": {
+                "name": "FINISHED",
+                "isSystemEvent": "1",
+                "isGlobal": "1"
+              },
+              "toState": "None State",
+              "linkStyle": "0",
+              "linkConstraint": "0",
+              "linkTarget": "0",
+              "colorIndex": "0"
+            }
+          ]
+        }
+      ],
+      "variables": {
+        "floatVariables": [
+          {
+            "useVariable": "1",
+            "name": "time_amount_lose",
+            "tooltip": "",
+            "showInInspector": "0",
+            "networkSync": "0",
+            "value": "1"
+          }
+        ],
+        "intVariables": [],
+        "boolVariables": [],
+        "stringVariables": [],
+        "vector2Variables": [],
+        "vector3Variables": [],
+        "colorVariables": [],
+        "rectVariables": [],
+        "quaternionVariables": [],
+        "gameObjectVariables": [
+          {
+            "useVariable": "1",
+            "name": "RootObject",
+            "tooltip": "",
+            "showInInspector": "0",
+            "networkSync": "0",
+            "value": {
+              "fileID": "0"
+            }
+          },
+          {
+            "useVariable": "1",
+            "name": "Actor",
+            "tooltip": "",
+            "showInInspector": "0",
+            "networkSync": "0",
+            "value": {
+              "fileID": "0"
+            }
+          },
+          {
+            "useVariable": "1",
+            "name": "HeroPower",
+            "tooltip": "",
+            "showInInspector": "0",
+            "networkSync": "0",
+            "value": {
+              "fileID": "0"
+            }
+          }
+        ],
+        "objectVariables": [],
+        "materialVariables": [],
+        "textureVariables": [],
+        "arrayVariables": [],
+        "enumVariables": [],
+        "categories": [
+          ""
+        ],
+        "variableCategoryIDs": "00000000000000000000000000000000"
+      }
+    }
+  ],
+  "audio": [
+    {
+      "soundDef": "../../recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-prefab-0.unity3d/hero_portrait_crack_1.prefab",
+      "soundDefGuid": "44a4c2522118ab44c93d3d41917dda86",
+      "soundDef_sha256": "3d91d6fd1fd4b22e2da503925a8aef56757d9ee3b754cb336b14b0bc856f2385",
+      "clip": "hero_portrait_crack_1.wav",
+      "sha256": "95489f989f54bc6e4f87f5f0c0c19eb6ed709828967f21862f19e31acf67c97e",
+      "volumeScale": 0.8,
+      "pitch": 1
+    },
+    {
+      "soundDef": "../../recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-prefab-0.unity3d/hero_portrait_explode_1.prefab",
+      "soundDefGuid": "ad8c125de48d14b4eb302acd8ffc5ee8",
+      "soundDef_sha256": "3a64cde4504a60fdf1b4f0ee4a044d64ae7151dbcb950ca934d77d47c80b5186",
+      "clip": "hero_portrait_explode_1.wav",
+      "sha256": "9494d2a74270f71cd945ad46b45826d25b9c69b2f5b1d1425124ef31e832cb3f",
+      "volumeScale": 0.9,
+      "pitch": 1
+    }
+  ],
+  "compatibility": [
+    "Source time-scale curves applied to a local effect clock rather than globally slowing unrelated UI/gameplay.",
+    "Source shader refs for cracks/debris/flare are unresolved exported references; custom shader preserves source paint/tint/intensity/blends where explicit. Crack distortion/erosion shader behavior is not recovered.",
+    "Source camera/minion shake actions remain unimplemented pending original camera-shake math recovery."
+  ],
+  "integration": {
+    "runtime": "NativeHeroDeathPresentation; existing GameManager remains death/draw authority",
+    "clip_sampling": "Original transform/renderer/light/material curves baked via AnimationUtility; no AnimationClip.SampleAnimation/native controller execution",
+    "curve_roots": {
+      "HeroCrackQuad_FadeIn": "FX_CrackQuad",
+      "HeroExplode": "HeroBombDebris",
+      "LightBurst": "Point light"
+    },
+    "overlay": "Original crack mesh vertices/UVs/vertex colors projected into non-raycasting UI because live hero painting is on overlay Canvas; original source timing/visibility retained",
+    "source_mesh": "QuadVertAlpha_mesh copied to derived OriginalCrackReadable.asset with only CPU readability flag enabled; source asset unchanged",
+    "actor_portrait": "Intentional source template slot assigned from each dying hero sprite, including sprite UV scale/offset",
+    "labels": "Explicit CanvasGroups hide and restore detached health/armor labels; power Button is disabled at source explosion boundary",
+    "lifecycle": "Menu and Play Again reset effect stages/material copies/labels/power and per-match counters",
+    "crater": "Source RGBA alpha preserved; exact original custom queue2998 retained"
+  }
+}

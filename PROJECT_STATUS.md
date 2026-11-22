@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-22 — Verified native hero-power models and original used/restore curve playback saved. Craig approved corners and requested original hero-death, real spell VFX/sounds and card/minion rendering improvements; those remain unfinished local work. Ultra confirmed. HANDOFF.md records exact status and safe resume steps._
+_Last updated: 2026-11-22 — Hero-death source crack/shattering/particles/audio installed and verified for both heroes and simultaneous death, with result/menu/restart checks. Original power readiness silhouettes recovered through mesh projection. Original spells, minion/hand presentation and requested intro/mulligan improvements remain in progress on Ultra. Read HANDOFF.md for current files and validation limits._
 
 ## How to use these files
 - **`HANDOFF.md`** — read first for latest checkpoint, local/unfinished work, validation limits and next steps. Overwrite this one file in every main commit, with no dated copies. `AGENTS.md` records the rule for incoming agents.

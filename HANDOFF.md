@@ -1,23 +1,39 @@
 # HearthClone — current handoff
 
 Updated 22 November 2026. Overwrite this one file in the same commit as every main
-commit; see AGENTS.md. Read git log -1 and git status before editing. This checkpoint
-saves the verified native hero-power implementation after approved corner 2e92890.
+commit. Read AGENTS.md, git log -1 and git status. This checkpoint follows 37c4ca4
+hero powers and approved corner 2e92890.
 
 ## Current request and status
 
-Craig confirmed Ultra and resumed. Current scope: fix both hero-power icons using
-original assets; make heroes explode on death; integrate real spells with original
-VFX/sound; improve hand cards and played minions with missing original rendering
-layers/effects. Only original art/sounds/animation data; compatibility rendering
-is authorized. Explain progress briefly. Commit significant verified changes to
-main, updating this handoff. Do not treat the unfinished parts below as complete.
+Craig confirmed Ultra and resumed. Current scope includes original hero-power
+presentation, hero shattering, original spell VFX/sounds, hand/minion rendering,
+and now a faithful intro/menu and corrected mulligan. Use supplied original assets
+and animation data, with authorized compatibility rendering. Explain progress
+briefly. Update this handoff with every main commit.
 
-Hero powers are installed in HearthstoneTable and verified. Corners/mana/mulligan
-remain approved. Death/spell/card work is unfinished and being continued locally.
-Unity is currently clean Edit mode, auto-tick off, with zero compile/console errors
-on 22 Nov. Do not launch Unity from a restricted tool process: that caused preferences
-and GI-cache permission errors. Craig reopened through Unity Hub normally.
+This checkpoint saves the installed hero-death sequence and source-derived power
+readiness silhouette. Hero death passed opponent/player/simultaneous checks during
+the previous run. The explosion capture has now been inspected. Fresh 22 Nov Editor
+compile/console status is clean, and VerifyNativeHeroPowers passed after its fixture
+was corrected to wait for the opening draw before testing the used state.
+
+Hero death uses source crack geometry/paint,17-piece motion, original particles,
+light curves and exact crack/explosion audio. Detached health/armor and powers hide
+at explosion. Result UI waits, and Play Again/menu reset correctly. Local source
+slow-time curves preserve effect pacing. Original distortion/erosion and global
+camera/minion shake remain compatibility gaps. See Hero-death-source.json.
+
+Source readiness masks are reconstructed from actual source mesh triangles through
+recovered 256px projection/blur passes. The unavailable blur/composite shader kernels
+are compatibility reconstructions. No artist-drawn replacement shape or motion was
+added. NativeHighlightBaker and SourceSelectionHighlight are shared with pending
+minion work. Current Power mask is nonblank and original flip/restore/input checks
+pass. The previous grey square shadow issue remains fixed.
+
+Remaining spell/card/screen work is local and unfinished. Active source recovery
+continues on Ultra. Switch to High only at a tested visual-adjustment checkpoint.
+Unity is kept in clean Edit mode between installer passes. Launch it through Hub.
 
 ## Verified hero-power checkpoint
 
@@ -48,18 +64,13 @@ and GI-cache permission errors. Craig reopened through Unity Hub normally.
 ## Unfinished LOCAL work, excluded from this commit
 
 A GitHub-only clone does not have these uncommitted files. Preserve the working
-copy; git status identifies any newer work. All is unattached/unverified so far:
+copy; git status identifies any newer work. Pending parts must be checked before running their installers:
 
-1. Hero death: NativeHeroDeathLibrary.cs, NativeHeroDeathPresentation.cs,
-   Art/NativeHeroDeath.shader, Art/NativeHeroDeath/ two original WAVs,
-   Docs/Recovery/Hero-death-source.json. No installer/verifier existed at resume.
-   Exact source: crack .5s slow curve + crack sound volume.8; explosion17 debris
-   tracks, original HeroExplode/LightBurst, five emitter roots/smoke speed.5,
-   second slow curve.8s/explosion sound.9; final wait1.3. Need bake safe curves,
-   compatibility materials, attach table observer, lethal both/both-at-once and
-   pending spell/result/menu/reset checks. Root effect-clock adaptation, source
-   distortion/erosion and camera/minion shake gaps must be disclosed. Power hiding
-   must deactivate its UI Button; hiding its stage alone gets undone by LateUpdate.
+1. Hero death is now committed and installed. Files include NativeHeroDeathLibrary,
+   NativeHeroDeathPresentation, NativeHeroCrackPart, two shaders, derived source
+   prefab/materials/library, InstallNativeHeroDeath and VerifyNativeHeroDeath.
+   Actual source paths/curves/clocks/audio are in Docs/Recovery/Hero-death-source.json.
+   PreviewNativeHeroDeath creates a disposable lethal fixture for captures.
 2. Minions/cards: Art/NativeMinions/ source closure + SourceManifest,
    PrepareNativeMinionArt.py, draft NativeMinionPresentation.cs and
    InstallNativeMinions.cs. DO NOT RUN installer until reviewed. Known drafts need
@@ -69,7 +80,11 @@ copy; git status identifies any newer work. All is unattached/unverified so far:
    currently flatten lighting/depth/shadows. Highlight _MainTex is a black runtime
    placeholder; original HighlightRender generates silhouettes with multiple
    render/blur passes. Do not substitute a generic painted glow or invented motion.
-3. Spells: no BattleEffects edit at resume. Exact mappings/metadata remain outside
+3. Spells: NativeSpellLibrary/Presentation/Surface shader, preparation/configuration,
+   installer/verifier and BattleEffects queue seam now exist locally, unverified.
+   Last install failed on FireParticleBall second material slot, subsequently found
+   to be an intentionally null unused trail slot. Resolve through source semantics.
+   UI.asmdef adds Universal.Runtime for the capture camera. Exact mappings remain outside
    repo under recovery/CS2_024,025,029,032-carddef-source.json and matching
    *-effect-source.json; spell-super-path-il.txt/spell-super-fields.txt. Frostbolt,
    Arcane Explosion, Fireball, Flamestrike aliases resolve to original reuseFX.
