@@ -1,0 +1,739 @@
+{
+  "seeds": [
+    "AssetBundles/essential_base_box_global-prefab-0.unity3d/TheBox.prefab",
+    "AssetBundles/essential_base_qualityhigh_box_global-content-0.unity3d/StartOfGame_BoxCameraPerspective.anim",
+    "AssetBundles/essential_base_box_global-prefab-0.unity3d/StartOfGame_BoxOpen.anim",
+    "AssetBundles/essential_base_box_global-prefab-0.unity3d/StartOfGame_BoxClose.anim",
+    "AssetBundles/essential_base_box_global-prefab-0.unity3d/TheBox_FakeShadowFadeIn.anim",
+    "AssetBundles/essential_base_box_global-prefab-0.unity3d/TheBox_FakeShadowFadeOut.anim",
+    "AssetBundles/essential_base_box_global-prefab-0.unity3d/TheBox_Dark.anim",
+    "AssetBundles/essential_base_box_global-prefab-0.unity3d/TheBoxFrame_Dark.anim"
+  ],
+  "files": [
+    {
+      "source": "AssetBundles/essential_base_box_global-prefab-0.unity3d/TheBoxFrame_Dark.anim",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/TheBoxFrame_Dark.anim",
+      "guid": "d3a95be48e9142a41a973cbc48e8bca0",
+      "sha256": "cfab2206392255998d6205b290b5d11e7b4d144eee1616e5076afa739bf8be9a"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-prefab-0.unity3d/TheBox_Dark.anim",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/TheBox_Dark.anim",
+      "guid": "098e1d5f5f074db4089185882e9edd47",
+      "sha256": "d6df15b79df7a22bec591b8ee871c4afa3a2de1bffcb2337873db27826e71acd"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-prefab-0.unity3d/TheBox_FakeShadowFadeOut.anim",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/TheBox_FakeShadowFadeOut.anim",
+      "guid": "ee1ebf1432e394e43a4ee65563fbf871",
+      "sha256": "02203def16ea8934184f1e7c85d74959563a10945d8761161a434377a277112d"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-prefab-0.unity3d/TheBox_FakeShadowFadeIn.anim",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/TheBox_FakeShadowFadeIn.anim",
+      "guid": "677cdc7598e2ec34c92469e9c7478538",
+      "sha256": "40d1e2eb5f360b5265b909379dae22656145026f16a8099fc6370b5dd60fbf9d"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-prefab-0.unity3d/StartOfGame_BoxClose.anim",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/StartOfGame_BoxClose.anim",
+      "guid": "0266dfeb234633c4eb6ea2351233acb7",
+      "sha256": "886eac3387d1487417450d2bd39542dea1a5835043cf2bdf11a9e5822bb0ae51"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-prefab-0.unity3d/StartOfGame_BoxOpen.anim",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/StartOfGame_BoxOpen.anim",
+      "guid": "0236052efd360bc4ca00ee37e1d12c43",
+      "sha256": "fbc536367301836cf658321d816ea3dba32c98763ae6c7fbb9a678c2d4ba0a23"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_box_global-content-0.unity3d/StartOfGame_BoxCameraPerspective.anim",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/StartOfGame_BoxCameraPerspective.anim",
+      "guid": "ff4345b8860f6db4e8be5c17f28efa56",
+      "sha256": "2c20f83e4db4e2b85334d813448cc75a13d58dbbd8c2e554635417e7fc83335f"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-prefab-0.unity3d/TheBox.prefab",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/TheBox.prefab",
+      "guid": "dceb9651a3acd914f9a969332ec8a5a9",
+      "sha256": "c7e35d76b652b876cefdd6581de777723a5720b15916b54ca761ffa365bac1ce"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/TheBox_FakeLidShadow.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/709042c3_TheBox_FakeLidShadow.mat",
+      "guid": "709042c355a878b4e9438c09e621b94c",
+      "sha256": "c1256c4093f7f1e843ff80c31b41caa7352f703869a1c8e2a71e2dd033f0e997"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-texture-0.unity3d/FakeLidShadow.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/bf1831dc_FakeLidShadow.png",
+      "guid": "bf1831dc1df81ab47aa8d3525cfec55a",
+      "sha256": "778bb39c87ded16353d65eead2bc411b6550443603508213e7b18678b52b7e14"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/HighlightGreenHubButton3.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/cba9bb29_HighlightGreenHubButton3.mat",
+      "guid": "cba9bb291042b6e4585eabbfb27a8e50",
+      "sha256": "476e6cdb80b0a200a5bd90dc395286f05e588d6c06ef303a27e5bc7b23636424"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-texture-0.unity3d/BoxHudBtn_Silhouettes.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/6930b89e_BoxHudBtn_Silhouettes.png",
+      "guid": "6930b89ef9ff2d544b0a6277b8d60974",
+      "sha256": "8abdd82d45600a0192aad23a32e457a2f8b7c2ad320d4deb944a2d87bbb6e698"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Lines.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/cb589f18_GenFX_Lines.png",
+      "guid": "cb589f180b6800f41a1ba964eb117a67",
+      "sha256": "c2161da516d7297e940f1288d866d1ac820055fe2a9acbb86447d00da52f2460"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/FrontScreen_TableTop.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/0cc0d80f_FrontScreen_TableTop.mat",
+      "guid": "0cc0d80fe76634b4187f5816c3229b76",
+      "sha256": "7379b4c308b0773748502d1793107bbc49dc82d141be259a8b55ef3c0bf521c6"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/TheBox_Table.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/8f02f008_TheBox_Table.png",
+      "guid": "8f02f00840b492747a06ef3ec3843058",
+      "sha256": "dbd6806170aeb486bb964bd7e979e6563fa3233133b5074b2c5358620f23ca6d"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/TheBox_Top_phone_ThirdButtonDeactivated.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/89a2d5d7_TheBox_Top_phone_ThirdButtonDeactivated.mat",
+      "guid": "89a2d5d78fff4ce4fb1a43d8f52135f5",
+      "sha256": "e9671834bbedf88560c1a0d4dd8dbe87165fb42cc356adb7f36ed310999e8988"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-texture-0.unity3d/TheBox_Top_phone_thirdbuttondeactivate.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/3d451e0d_TheBox_Top_phone_thirdbuttondeactivate.png",
+      "guid": "3d451e0da297ec84684957c753718de2",
+      "sha256": "cdac63c611ee7b26067758edddf1499fe140a2b597048d91ecbd891c4b544fcb"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/Button3_glow.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/b10c887b_Button3_glow.asset",
+      "guid": "b10c887b7f0aaa54285ab27521ae2275",
+      "sha256": "374f8acd6a8c637322bd7d5a3db01f1501433806ea54682b83b0e36b2e3cf8d5"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/Button4.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/28210fed_Button4.asset",
+      "guid": "28210fedd1826674cac694830f455995",
+      "sha256": "910b927b36c5b86b31650ad382c5670abdd71e71d03b6ec0e18f5e7d428d16c3"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/Button3_0.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/f83c7c60_Button3_0.asset",
+      "guid": "f83c7c6021bed694ba2dcf5400bfe8e3",
+      "sha256": "b5062309be2a0519a8b21b8fd65a9e1ba03ee6a659b80532edca2d20d19def46"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/Button2_0.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/17291287_Button2_0.asset",
+      "guid": "172912876ae6b1b4cb737876cd2e4ded",
+      "sha256": "c7496288d52e7d719a26ef5473d92abfbbf57f1f4838c57c95f194c9489dcfcd"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualitylow_box_global-content-0.unity3d/pPlane9.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/1303dbf5_pPlane9.asset",
+      "guid": "1303dbf55f4af0e40929b28877972ae1",
+      "sha256": "edf18f7b0f674dd5bf3a54b148247b4fa52e5bec6851fe4fe9ff6325b29433c7"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/TheBox_TracerComet1_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/fc88bab7_TheBox_TracerComet1_mesh.asset",
+      "guid": "fc88bab7c2b56a94bb68944992e61946",
+      "sha256": "7949dbcbe4130415402b77767397f3f182fab0b51940c014aafcde99c7451fbf"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/BoxGlowInside1.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/fda25472_BoxGlowInside1.mat",
+      "guid": "fda254723f04f0941810d1528722f894",
+      "sha256": "b5d34e2a6bae890828495bb07669c41b866c197739082a0fac696d6c05712467"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_SpotFog1.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/8e0320b1_GenFX_SpotFog1.png",
+      "guid": "8e0320b1e69cddf469823a9bc5c1c97d",
+      "sha256": "8d86380954638e2b134de6c0f6f9677580a91c64f5b624e5c8f9a6ac25ceb9c0"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/TheBox_ButtonShadowsDark.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/49f2ea8e_TheBox_ButtonShadowsDark.mat",
+      "guid": "49f2ea8edac7bc84c8274b086c6a6a7a",
+      "sha256": "d7864903f613ed91c20c6b819e5cb16dca4048924cb82452037f76074d7f7616"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-texture-0.unity3d/TheBox_Button_DepressedShadows.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/fee6ba63_TheBox_Button_DepressedShadows.png",
+      "guid": "fee6ba630334cc74f9267383177006f3",
+      "sha256": "8c738c217cd30867ee11abbe2bcfcda38cee43a6b75ae2b34ac5a81ee8609b85"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/BannerMulliganGlow_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/9534f24d_BannerMulliganGlow_mesh.asset",
+      "guid": "9534f24dd1a75114dbc9d012febbaa09",
+      "sha256": "4ad626cb4610ae979a071f63babbab0069efbe13ecb14502abe97c7f62c2663e"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/Button4_glow.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/249b2896_Button4_glow.asset",
+      "guid": "249b2896961f7e548a8c24f4aa6d6de7",
+      "sha256": "6ed4a177cb0248cfe37621777b3b4914a4511a7b075b3a7eb257c4ed3d9132c9"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/Button1.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/eb8199c5_Button1.asset",
+      "guid": "eb8199c52df083a4e8b3da73fdeb3248",
+      "sha256": "9093ddce78464c176312c4127a08b46429e86325073c145c4ed9eb0dbf597004"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/TheBox_InsideGlow.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/69766e64_TheBox_InsideGlow.asset",
+      "guid": "69766e649961a2c46a699d0c4d46daa6",
+      "sha256": "66926c19adfdc74e689bd5f04be016a45f62fa3a38e4e589b69f662f9d836693"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/TheBox_Top.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/d99d1102_TheBox_Top.mat",
+      "guid": "d99d1102fb63a5f46858c756747ab1fd",
+      "sha256": "69ca2669819fc12241f1d4393155e14ff06d4ba9fbc5eaa09fc0702b1675fb99"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/TheBox_Top.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/21623c22_TheBox_Top.png",
+      "guid": "21623c2293f9d9945b113aac0e00c455",
+      "sha256": "cd683e1dd25a4cc9c67834885bbdf0624d9cc96b5c62584921064e36d1c85e1d"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/BoxGlowEdge.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/6b564480_BoxGlowEdge.mat",
+      "guid": "6b5644809cc92d348aea8d21a3c07941",
+      "sha256": "f6105347d8ba1992a59e6c1798c2ddef472400e59170a39a7a92e86f06b31901"
+    },
+    {
+      "source": "AssetBundles/essential_base_global_shared-mesh-0.unity3d/PackCount_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/b6d38cd9_PackCount_mesh.asset",
+      "guid": "b6d38cd95cef75c44840bf6884343096",
+      "sha256": "484fb5c7c45c023b8a6fe34134d3e771ba13d3e5ae66951d0d674ecb75c9d616"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/HighlightGreenHubPackButton.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/1b0e6fc2_HighlightGreenHubPackButton.mat",
+      "guid": "1b0e6fc2ed1fc9340846b2bd893d3a88",
+      "sha256": "73cf4401ad6db37cc0d04e040c8fbfadc016a780a8c0adbb8049c285c8aa6040"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-texture-0.unity3d/PacksBtn_Silhouette.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/39b05861_PacksBtn_Silhouette.png",
+      "guid": "39b05861bc00b5042823efa28b062ad7",
+      "sha256": "634fb6f81a460c1a27d4b814b43e7ad1720a725c3653f16c7da8bd79681a5bd1"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/Button1_glow.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/d98e1af2_Button1_glow.asset",
+      "guid": "d98e1af2faefd084591e0a71d41faea6",
+      "sha256": "d8f2d423590609662fdc20c0d1cc32f6d5c8e1ac1a2b99a61e623f83efc935b0"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/TheBox_FrameOuter.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/f0ec76cb_TheBox_FrameOuter.mat",
+      "guid": "f0ec76cbeced8c745a72895dd4c2978c",
+      "sha256": "9a902e580fdf469012e444db1be5e9ac5e013db8dd80e7681087ee171251a66e"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/TheBox_FrameV2.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/a3357fe9_TheBox_FrameV2.png",
+      "guid": "a3357fe9f4baae14b93667b1a20520fe",
+      "sha256": "463953510ae16d538081102fa72edbc0edf0d29704858b7d39d9fbd7909632af"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Store_Coin_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/3a112a78_Store_Coin_mesh.asset",
+      "guid": "3a112a784e127e64bbcba43dc8dd5758",
+      "sha256": "f02ac29613aef9d030ba97275035f09ed067ef6a79ef6179b7bf691a7268ea3e"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/StoreClosed.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/9e308f8c_StoreClosed.mat",
+      "guid": "9e308f8c33c312d4da3bb349441c9aec",
+      "sha256": "20afc1ad26076083b26fe6df6a116d81e0ce17d5f3268452397b8d21e01694c2"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/StoreClosed.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/d6d29479_StoreClosed.png",
+      "guid": "d6d29479383dcca438b702914a348371",
+      "sha256": "71328f9862abd8fdb6a8f9d2466465d30cdee46f2d858a349cc46f3125f510c2"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/TavernBrawl_PopupShadow.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/9d6883b3_TavernBrawl_PopupShadow.mat",
+      "guid": "9d6883b329752f1488a042b194d8f5fc",
+      "sha256": "752fe31419088f1423518177bce0fde281303bc7e24b44d986e018490439b8bb"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-texture-0.unity3d/TavernBrawl_PopupShadow.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/c2eae4f5_TavernBrawl_PopupShadow.png",
+      "guid": "c2eae4f589ebcde4780048dbda2b6bd4",
+      "sha256": "aa38a910bad091def43fce28ee7c4eabbbffe54812d1d48e14d59f42d2f934e0"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/TheBox_Frame.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/c5a768f0_TheBox_Frame.mat",
+      "guid": "c5a768f0a25002342b42f8eaed3ab9a8",
+      "sha256": "0d648b6a477f8c21c98b676e27ebd20d9334ab4eb36c02214ef8aeac4ea3eb05"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Mulligan_Banner_Glow.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/9bf64d37_Mulligan_Banner_Glow.mat",
+      "guid": "9bf64d374fa6ec14fbf9d57e16db75dd",
+      "sha256": "16c82929ee89026726cf0fd3a8a1ac85ab50568f36d434d69b3925f1f109d886"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_clouds6b.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/4028c1bc_GenFX_clouds6b.png",
+      "guid": "4028c1bc3426d5044bb9cc414531d161",
+      "sha256": "407dde9a19f4bef09b6d7ec737d98e15c99b26b76a6e8aabf11b763578a132b3"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/Mulligan_Banner.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/a30c27ef_Mulligan_Banner.png",
+      "guid": "a30c27ef26fe5854bb2f89e2e56e07c0",
+      "sha256": "5ed7c598c3612dbb500ac0ba96aa8fddaf852d56f871b9487fa29bf9b20f9d78"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/HighlightRenderPlane360.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/7d7d3fb5_HighlightRenderPlane360.asset",
+      "guid": "7d7d3fb5679535f4baeaefc2c83c39d9",
+      "sha256": "d12bec342170cdd720da68ea995e4b8999f3cd188752d19b9103d633adac9cf6"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Store_CoinShadow_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/52d5c8f6_Store_CoinShadow_mesh.asset",
+      "guid": "52d5c8f6d73d1484d86e2679d3824139",
+      "sha256": "f753eb52633d50cff6c553bd441c663ccc9ebe3cf0a54eb03cf7b3c0e57c5052"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/CometFillBar.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/234fea00_CometFillBar.mat",
+      "guid": "234fea0099722f34c995565877a7a571",
+      "sha256": "59d9b2ed45b9b2e95d095acb0b1ee3a3cabf9495fe60113364199123c327c5ba"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/Fillbarmask.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/f7eb3266_Fillbarmask.png",
+      "guid": "f7eb3266b4811be41899ec297b12dbb6",
+      "sha256": "3b41f3cdead3bc75c293b1c1081cb610416652904b7ff69671a9e48cd8c2b07c"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-texture-0.unity3d/CometFillBar.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/1ef97e00_CometFillBar.png",
+      "guid": "1ef97e00ca0026546bdd27b5fec63fc9",
+      "sha256": "85decc4671589f61cb91b1ed4b25f817ea016227e8ed09843edb2305a8b6661c"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/Title_Logo.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/35b337fc_Title_Logo.mat",
+      "guid": "35b337fc30c4ae74abeb439029031bb3",
+      "sha256": "fdacead2ca8da2115d5000e63d4c015eb52b8a13bf32077da9646794108a6957"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-texture-0.unity3d/TitleLogo.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/17897755_TitleLogo.png",
+      "guid": "17897755799b10d49a9457a7e2f57b84",
+      "sha256": "ae28415b5fc398cbc2d92b7192c02d7d52e3b6e70b69a91130b795b08af08907"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/TheBox_TableTop_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/93210908_TheBox_TableTop_mesh.asset",
+      "guid": "93210908dfb95854d9849d4f80d78eba",
+      "sha256": "55f3a3d3edc477eb9025ddf0d9bf7fb4e84d7cc4f56f562b636a59fe420b1f58"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/Button2_glow.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/306d9446_Button2_glow.asset",
+      "guid": "306d9446ce0f8e8449173c08c5dea377",
+      "sha256": "988017c1b6c4874ef7d2b0d4ad3c4bbb4206a40b50c386b5c60a7a4b6c3d4ebc"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/QuadVertAlpha_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/67837b6c_QuadVertAlpha_mesh.asset",
+      "guid": "67837b6cb16703a4ebe5eb063bbb0385",
+      "sha256": "18c21fce68dc796bfdebc50da9f7f7e1ab71de2c218ded72680306b290766278"
+    },
+    {
+      "source": "AssetBundles/essential_base_global_shared-mesh-0.unity3d/TheBox_FrameOuterPanelRShadow_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/503c2587_TheBox_FrameOuterPanelRShadow_mesh.asset",
+      "guid": "503c25878b6c65543aefea4dd8eccf4a",
+      "sha256": "038f3a1b90a3086ce87ab379db00d428ae9cfa07625618086f7d0ce1d578b64a"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/TheBox_CenterDiskV2_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/bccf05a2_TheBox_CenterDiskV2_mesh.asset",
+      "guid": "bccf05a2f9b8d064baa9d0f2a23862ea",
+      "sha256": "89938ae294ffdb258693415442a27aceb7b6bf99c14d5ff6b7c13b802d561a8a"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/TheBox_FrameOuter_mesh_0.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/9dbc82db_TheBox_FrameOuter_mesh_0.asset",
+      "guid": "9dbc82db1fc2d33429ff42eb1df71f1e",
+      "sha256": "554b4c2216b50f810622bfbd807f3f820e370a56d317728615429a8f3cd59e60"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/BoxGlowRing1.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/814cb666_BoxGlowRing1.mat",
+      "guid": "814cb6660ea66ea42aff1f003df0fbb8",
+      "sha256": "b707de640ea23c13d4fa34807b8f7c34fbe009a69832b86efa155b240e48f00f"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_clouds6.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/b5ec3f1e_GenFX_clouds6.png",
+      "guid": "b5ec3f1ef8e616446a56be103477b9d8",
+      "sha256": "f80b4f3d9a27c926ccce270c0a4551e1ef1c65fedf241147d7e83faf9b824525"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-texture-0.unity3d/TheBox_Glowring.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/463f48af_TheBox_Glowring.png",
+      "guid": "463f48af75c204f47ba3391068a930dd",
+      "sha256": "617ea2d4b12cc7467f305c0a14c3665e9e0d047deeb465ef3c75a8f52238c0eb"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/WeldSparkQuad.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/e3287d59_WeldSparkQuad.asset",
+      "guid": "e3287d59771cb7449927e86316a048ca",
+      "sha256": "c2ab4a8a466315d9e56bcde4a63e30c4ac89836117b8fd631dd4ef48051b3964"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/Tray_PacksCards_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/5d119436_Tray_PacksCards_mesh.asset",
+      "guid": "5d119436423c77c429ae397322eb1eee",
+      "sha256": "38c49df5727e2dc6ff18ca86fa7fbb1ef72a4f9b1b8dc6f1777e45075b422c09"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Mulligan_Banner.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/55ce46be_Mulligan_Banner.mat",
+      "guid": "55ce46be9c7189a47a84cedd46addd0b",
+      "sha256": "8f72f85222fee33eb02525381e1a08f93e91bd1c442aa4d283eebe5a2af21db7"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualitylow_box_global-content-0.unity3d/pPlane8.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/82c52849_pPlane8.asset",
+      "guid": "82c52849708b46341baf1fc69b183949",
+      "sha256": "1e98517da513ea79547ef18237ddd78d9d8439401e5caaa3c44f77578f6d6971"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/TracerComet.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/2ab3433f_TracerComet.mat",
+      "guid": "2ab3433f7124b274cb15a00d3efb252b",
+      "sha256": "9f1643ad572943a5a125c093bbc8e9c0007976596c8550e0adbeaf2a7cf6cb3e"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_TracerComet.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/d9353aaf_GenFX_TracerComet.png",
+      "guid": "d9353aaf7b0544f458d90dd88177cf08",
+      "sha256": "f4a6acec8a2e52382de8ada4ee62090328a0941dc3823edd325316752a2a02ce"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualitylow_box_global-content-0.unity3d/pPlane10.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/a6d2a47b_pPlane10.asset",
+      "guid": "a6d2a47ba0e6c4d4fb17bec274512cc6",
+      "sha256": "586a69c3b38556f7b67f8579d2719e9beee045743d90ae9306ca9865a20f9c94"
+    },
+    {
+      "source": "AssetBundles/essential_base_qualitylow_box_global-content-0.unity3d/pPlane7.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/b46f4d16_pPlane7.asset",
+      "guid": "b46f4d16a2839544fa34323e8e6ac4dd",
+      "sha256": "79fa30025a9042763ead54d2bac77cbe40200e4723c85d1a428462864a95d0b0"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/GodRay2Quad_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/37f0f33d_GodRay2Quad_mesh.asset",
+      "guid": "37f0f33dd416ee34fa8cc8868ad58a8e",
+      "sha256": "71325234f30802c346ed5fc56f234731eb4106fc1deea1c2e56d128889058a5d"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/ThirdButtonCover.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/c78a1459_ThirdButtonCover.asset",
+      "guid": "c78a14597d4a0ac4b9ba6654c67dd644",
+      "sha256": "8bbb362048d71eb756a4dbe6db891665d7ce3c511395838cb281657e4cf2a48e"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/BoxGodray1.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/93ea49a5_BoxGodray1.mat",
+      "guid": "93ea49a565ba3e24b8b2c99ab3a90382",
+      "sha256": "0102f87bafb372e392c9e2383670b8346a5b089b09184d4c9a4d8e80b7580d26"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-texture-0.unity3d/GodRays1.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/860ba70d_GodRays1.png",
+      "guid": "860ba70d71b33794c8425fcd14246548",
+      "sha256": "f034d943f4e49dd0842ca7c6216512b11719309240ea581593b0299f29e6ddf8"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/QuestLogButton.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/069f069e_QuestLogButton.mat",
+      "guid": "069f069ecef1b1a40a31d837315a3f87",
+      "sha256": "9bd57de4f6e7fd28905a31b39adb35413067a754fcfbf09c5413a9e9bf74677f"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-texture-0.unity3d/QuestLog.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/1b4c91de_QuestLog.png",
+      "guid": "1b4c91de7493fbf40a67c6f10e09e698",
+      "sha256": "1f5b221235b1b37eca880e50e4908149adffcf96cf5d892f3339651fbcc7850a"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/TheBox_CoverRight_Glow.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/84b22e1f_TheBox_CoverRight_Glow.asset",
+      "guid": "84b22e1f201d6634fa0b4deb46df5ee1",
+      "sha256": "b9b8ffe2b8c2bcd277328ba22a9a82ca0bda0505b0e818d7901a0128cec69353"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/StoreClosed_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/ce231d63_StoreClosed_mesh.asset",
+      "guid": "ce231d63233715d40b40a20068d374dd",
+      "sha256": "14a5c7c22f61bd6af0719e4f4d5ff55231c53628067bd9ac87856e4e166d4bef"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/HighlightRenderPlaneWide360.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/71c89a96_HighlightRenderPlaneWide360.asset",
+      "guid": "71c89a96f4620f0468a3fcc5bdf122f2",
+      "sha256": "84ecb9d20668ca51bf777c743afb9971e3c12b9e55c5c0052e5992ddbf53078a"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/BlackColorOnly.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/9d1e629c_BlackColorOnly.mat",
+      "guid": "9d1e629c53bd5964fa5afa91940f90e8",
+      "sha256": "c5084ee36563df77699e741acb9f7fd063bbc80707bd1704f6f89155e7bf5aaa"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/ButtonCover.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/a9db2729_ButtonCover.asset",
+      "guid": "a9db272948c32744386bdfcaedddc0a4",
+      "sha256": "ad0badcbee71c7c916135c474070cddcede220ff7df188db21dbe7e876fc7635"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/HighlightGreenHubButton4.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/e63f3a14_HighlightGreenHubButton4.mat",
+      "guid": "e63f3a14716d1c04093549fc0f92bbfe",
+      "sha256": "f6aabeb073a039df441327e080abf67b308c61709f354aa130ceac73ae0a9125"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/StoreCoin.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/cbbdef82_StoreCoin.mat",
+      "guid": "cbbdef8264a912a47a29bd51908fd2e9",
+      "sha256": "d7d324ad3a9926965281bee252be6d90d1fdc7e002ae731b17f9dc300bf0fca1"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/StoreCoin.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/6dadc91f_StoreCoin.png",
+      "guid": "6dadc91fc9fb3fc468ea4a951289d7a9",
+      "sha256": "f94104052180268743e6473b99648579a444f8a5efd5b488031f922ccc27279e"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/TheBoxTop_TurnRing_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/71daebea_TheBoxTop_TurnRing_mesh.asset",
+      "guid": "71daebea774317d4c84412ea35d08e11",
+      "sha256": "433b32576130b5ba29ffc5c7faefd7ee60f1eb3c8ef17d8fb183ab8e4201341b"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/TheBox_ButtonGlows.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/54210985_TheBox_ButtonGlows.mat",
+      "guid": "542109856f1fdd4479b92d9c68af5a46",
+      "sha256": "c5c094459d2150ab5b2aef1c3598d844e0b68ae6b2b2ec92233cdfd5bac3d71b"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-texture-0.unity3d/TheBox_Button_Glows.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/8093746f_TheBox_Button_Glows.png",
+      "guid": "8093746fe677e414083256d7d05c7dea",
+      "sha256": "d37eeed197b1b1a3b7baf230ac0d8b9761c374e744b0fa3a68bbf095ef4cf850"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/StoreCoin_Shadow.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/d13323a6_StoreCoin_Shadow.mat",
+      "guid": "d13323a635c2e894585ecb6b722d7f6a",
+      "sha256": "907cf20fad10cb62f943a53200364a50d7bd588d186c742c73ee769262f4cff8"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/TheBox_TurnRing.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/76a7b09b_TheBox_TurnRing.mat",
+      "guid": "76a7b09bc1a69fa4abda7514461f5eef",
+      "sha256": "4f1042b0316ebd824459feac79a2ea5d936068aeed153bb3525a2df727d06422"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/TheBox_Ring_Light.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/fff503b4_TheBox_Ring_Light.png",
+      "guid": "fff503b4130968b4ba5937a82e9e28f7",
+      "sha256": "b294bcdb5e2e8e0b2d2437fd4927630e1f9c2cb1b321e5aacd72a2a826e3e791"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-texture-0.unity3d/TheBox_Ring.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/32c24c1b_TheBox_Ring.png",
+      "guid": "32c24c1b471a4674298e1c2788d7f6e6",
+      "sha256": "2e210af844bbabc07cff61433a2126aada77e7a1d3a165b9f1acf9f03ddffe78"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/pPlane4.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/5ae0a40b_pPlane4.asset",
+      "guid": "5ae0a40b15a4ab14e805a41552afa8a6",
+      "sha256": "02413a35ca6af829fa2cb0e004522587020fefe691fa3aa37fd39ee30461f396"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/QuestLogShadow.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/124e39e8_QuestLogShadow.mat",
+      "guid": "124e39e8103d4d740b036032aabba267",
+      "sha256": "ea115fcfdaf83864d395b2f5a9a50bc9f63bc8cb8280f03442682abc7d76c129"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-texture-0.unity3d/QuestLogShadow.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/042adced_QuestLogShadow.png",
+      "guid": "042adced0a2b77e4d8a184831457f49c",
+      "sha256": "2978809d39b7c281f846b3386ccc8ce3ec17af39012f1e5d3c179bc5e500d32e"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/SpotLightHaze.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/6fdc23a5_SpotLightHaze.mat",
+      "guid": "6fdc23a548a85ee4abf930e6bc2f3f8e",
+      "sha256": "54b28465fb71aa2b3aa5a9da58ce375124556b3e8160ec54db3044efcb6ba21b"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/HighlightGreenHubButton2.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/0c5c5034_HighlightGreenHubButton2.mat",
+      "guid": "0c5c503407bee7b49ab8bdddf53855cb",
+      "sha256": "23d8ef203a47fdd987566c771a866cd2d0f2b1d19bc0a7cd5fe59fbb6077ef15"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/TheBox_CoverRight_mesh_0.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/b4f5d3e5_TheBox_CoverRight_mesh_0.asset",
+      "guid": "b4f5d3e5c3dbc8140bbbb7c14871e93a",
+      "sha256": "ca4f34b1638098a451267ea12b142417b2c777b8dd2afdc0df8b5c691ba2e101"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/TavernBrawl_Popup.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/d7dc0eb1_TavernBrawl_Popup.mat",
+      "guid": "d7dc0eb14254d7348ad3b7e16a72eaa2",
+      "sha256": "5b486a38db7795b1b6085380e0bf7659c084b3d952f0bb49ae1e457b45695258"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-texture-0.unity3d/Popup.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/5480a491_Popup.png",
+      "guid": "5480a491139f9d747a36195e92a61d77",
+      "sha256": "4b9303882339d8e2b4c407e0cff7e266fb0b5389fbca2484b34f329d187f7e2c"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/TheBox_Top_HearthGlow.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/c8fed76f_TheBox_Top_HearthGlow.mat",
+      "guid": "c8fed76fb4ff23a4f931b6463d36a50e",
+      "sha256": "e0a0aeff38c290cc3356e23f1d99abf2d2aa1d0124658f8f8c53c9ed5e51ba51"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-1.unity3d/MagicCloud01.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/05592eb2_MagicCloud01.png",
+      "guid": "05592eb258740ef4a9cb6e9b6183b163",
+      "sha256": "b7e8893f6f98f27025837d070508456948ef3bb517616d0a2605d9dbadcd707d"
+    },
+    {
+      "source": "AssetBundles/essential_base_global_shared-mesh-0.unity3d/TheBox_FrameOuterPanelL_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/8aaee0e2_TheBox_FrameOuterPanelL_mesh.asset",
+      "guid": "8aaee0e21f916dd4f99319c55ab6bc43",
+      "sha256": "b2847980a76b7b4f389b6fd28776d20eb2a6d36d91652c1ba1ebf2eea29ef7a6"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/BnetBarBg.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/743f1097_BnetBarBg.mat",
+      "guid": "743f1097acf6f994db3b47027bc6dfa7",
+      "sha256": "459908f4224bf521e2ff2aee9e7ba5b828faf40c6711a6ad4d1534ce49e43a22"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/BarBackground.png",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/27742b13_BarBackground.png",
+      "guid": "27742b1340849af459b60306ad750cc4",
+      "sha256": "692a464ef7028caed422501e7fab1c827e7e9826c2a7ae5a3b18a948e68b781d"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/pPlane1_12.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/4fd74c3f_pPlane1_12.asset",
+      "guid": "4fd74c3f958c21947af926136675359c",
+      "sha256": "b6bd0c87ff578117f3808ce877fa26203be960a613062248fba2ad0f8748b2b7"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/TheBox_Frame_Shadow.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/b16763d7_TheBox_Frame_Shadow.mat",
+      "guid": "b16763d79a4e99f49bd1ffccd558116d",
+      "sha256": "50b263c06efc2adfb0515d84901def7c9e7b64397a884e39f8eb20f6b993eca3"
+    },
+    {
+      "source": "AssetBundles/essential_base_global_shared-mesh-0.unity3d/TheBox_FrameOuterPanelLShadow_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/1420d776_TheBox_FrameOuterPanelLShadow_mesh.asset",
+      "guid": "1420d77674ac7cd43a683245a01d6545",
+      "sha256": "136a9a5c8b76dfa495a70242f15ed4761bc7efc9ec2686dbbab96b120b58a42d"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/pPlane1.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/be2ae976_pPlane1.asset",
+      "guid": "be2ae9761bdd8e846836e999e6fe6941",
+      "sha256": "026ab0c6b73a28f774df3076668f3faa0a1ae7091fe662668fee403f30f70e1d"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/pPlane2.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/3afec9aa_pPlane2.asset",
+      "guid": "3afec9aa4804794419c6e6bfb6384809",
+      "sha256": "c3710df48438230bea532aaa9cec0f94471643fe601a9573b0fd02d9d0845ff4"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/BannerMulligan_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/38f1ed44_BannerMulligan_mesh.asset",
+      "guid": "38f1ed4433b0b014187cfbb4c35ab406",
+      "sha256": "0b76c81809e56b1ab83a8a71804141c13e73888e4b4b9b6b392a3a63ba1a8692"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/HighlightGreenForLargeObjects.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/cba049e4_HighlightGreenForLargeObjects.mat",
+      "guid": "cba049e4b6b45a542a53f9f7ae36e99e",
+      "sha256": "086f67814384a01ad5cb81c3efb2ef9dbce5d4fe6baf91c2a715a954cc6071db"
+    },
+    {
+      "source": "AssetBundles/essential_base_global_shared-mesh-0.unity3d/TheBox_FrameOuterPanelR_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/dcd1f12b_TheBox_FrameOuterPanelR_mesh.asset",
+      "guid": "dcd1f12b81011ec478ee8b6f7b4364ea",
+      "sha256": "43b1a093bcc11530256429a0fb8805996b6593344c62b96f67f6ab4f5f9d71fb"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/GodRay1Quad_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/c5f1ae3f_GodRay1Quad_mesh.asset",
+      "guid": "c5f1ae3fcb22d2b4a99028bfb82461dd",
+      "sha256": "0aad359e8fb7cc1fb4e039041fdf7f8e5f10f346099040235bb193f7e45ed52d"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-material-0.unity3d/HighlightGreenHubButton1.mat",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/76f64772_HighlightGreenHubButton1.mat",
+      "guid": "76f647724bf5c5f4f9ac9599be9adc0a",
+      "sha256": "9ab3dd48b7f827a72ce0268b4aa962fc637134a4b8debac0793c536b1d8121ba"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/TheBox_CenterDisk_Glow.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/47a8013f_TheBox_CenterDisk_Glow.asset",
+      "guid": "47a8013f87a85bb4b8e64b56581450f7",
+      "sha256": "3410784238bb8ea0190cc96fb6fd5dd72fed08e41985a23fd3e1c9084825d65c"
+    },
+    {
+      "source": "AssetBundles/essential_base_box_global-mesh-0.unity3d/TheBox_CoverLeft_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/bbe9e8da_TheBox_CoverLeft_mesh.asset",
+      "guid": "bbe9e8da9b42db3499922af2ac3eebef",
+      "sha256": "f60eb73d715492b17b36b5c10c0a18d8cd1b3784e82d792d5147baf9df12bb94"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/RaysHalfCone_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMenu/Source/3b1cfc13_RaysHalfCone_mesh.asset",
+      "guid": "3b1cfc13cebc652428fbaafe1bd3a727",
+      "sha256": "7f57834c7fd7bcc7979fc423e94959bc07f3686e4f05850b04f033016491753e"
+    }
+  ],
+  "unresolved": [],
+  "note": "Source meshes/UVs/transforms/paint and complete camera clip. Client code and Animation drivers removed; shader exports are dummy source and mapped explicitly by installer. Original source camera intro only; lid open/close retained for later original transition work.",
+  "builtinReferences": [
+    "Unity built-in mesh GUID 0000000000000000e000000000000000"
+  ]
+}

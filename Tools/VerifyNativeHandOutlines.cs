@@ -8,6 +8,7 @@ using HearthstoneClone.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEditor;
 
 public static class VerifyNativeHandOutlines
 {
@@ -49,9 +50,13 @@ public static class VerifyNativeHandOutlines
         var image = outline as RawImage;
         Check(image != null && image.texture != null && image.texture.name == textureName,
             "Ready outline is missing its original card silhouette");
-        Check(!outline.raycastTarget && outline.maskable,
+        Check(!outline.raycastTarget && image.maskable,
             "Ready outline intercepts input or bypasses UI clipping");
-        Check(image.material.shader.isSupported && image.material.GetColor("_Color").g > .7f,
+        var original = AssetDatabase.LoadAssetAtPath<Material>("Assets/_Project/Art/NativeMinions/HighlightGreenInPlay.mat");
+        Check(image.material.shader.isSupported &&
+            image.material.GetColor("_Color") == SourceMaterialProperties.Color(original, "_Color") &&
+            image.material.GetColor("_HiColor") == SourceMaterialProperties.Color(original, "_HiColor") &&
+            Mathf.Approximately(image.material.GetFloat("_Intensity"), SourceMaterialProperties.Float(original, "_Intensity")),
             "Source highlight material is missing its original green parameters");
     }
 

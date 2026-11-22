@@ -30,7 +30,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _DstBlend: 0
-    - _Opacity: 0
+    - _Opacity: 1
     - _SrcBlend: 2
     m_Colors:
     - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}

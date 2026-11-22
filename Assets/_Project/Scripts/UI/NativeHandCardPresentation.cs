@@ -12,7 +12,14 @@ namespace HearthstoneClone.UI
         public Graphic spellOutline;
 
         CardView view;
-        EffectTester game;
+        Player owner;
+        Transform handPanel;
+
+        public void Bind(Player player, Transform panel)
+        {
+            owner = player;
+            handPanel = panel;
+        }
 
         void Awake()
         {
@@ -37,27 +44,10 @@ namespace HearthstoneClone.UI
                 return;
             }
 
-            if (game == null)
-            {
-                var canvas = GetComponentInParent<Canvas>();
-                if (canvas != null)
-                    game = canvas.rootCanvas.GetComponentInChildren<EffectTester>(true);
-            }
-            if (game == null)
-            {
-                Hide();
-                return;
-            }
-
-            Player owner = null;
-            if (transform.IsChildOf(game.handDisplay.handPanel))
-                owner = game.faceView.Player;
-            else if (transform.IsChildOf(game.opponentHandDisplay.handPanel))
-                owner = game.opponentFaceView.Player;
-
             var data = view.Card.Data;
             bool minion = data.cardType == CardType.Minion;
-            bool available = owner != null && owner.CurrentMana >= data.manaCost &&
+            bool available = owner != null && handPanel != null && transform.IsChildOf(handPanel) &&
+                owner.CurrentMana >= data.manaCost &&
                 (!minion || owner.BoardMinions.Count < 7);
             var face = view.nativeFace;
             minionOutline.enabled = available && minion && face != null && face.minionFace.activeInHierarchy;

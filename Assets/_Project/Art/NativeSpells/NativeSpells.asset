@@ -12,4 +12,252 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2990e38b67d744b092d84b43fb436a1, type: 3}
   m_Name: NativeSpells
   m_EditorClassIdentifier: UI::HearthstoneClone.UI.NativeSpellLibrary
-  entries: []
+  entries:
+  - cardId: CS2_029
+    cardName: Fireball
+    pathDuration: 0.4
+    easeType: 0
+    missile:
+      name: ReuseFX_Missile_Fire_Fireball_Medium
+      sourcePrefab: Assets/_Project/Art/NativeHeroEffects/ReuseFX_Missile_Fire_Fireball_Medium.prefab
+      soundPath: Assets/_Project/Art/NativeSpells/Shared_Fire_Cast_1.wav
+      prefab: {fileID: 2393900719130353338, guid: adf9dc11057fe087181ff38c59b96f7a, type: 3}
+      sound: {fileID: 8300000, guid: 6247654929bbb32dbb4900b9024b5cbd, type: 3}
+      width: 2.5
+      height: 8.5
+      cameraNear: -1
+      cameraFar: 5
+      cameraPosition: {x: 0, y: 0.71078205, z: -3.000001}
+      cameraRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
+      planeOffset: {x: 0, y: -3.000001}
+      flashRiseDuration: 0
+      flashRiseScale: 0.5
+      resolution: 380
+      rotators:
+      - path: Offscreen/Core1
+        speed: {x: 0, y: -475, z: 0}
+      - path: Offscreen/Core2
+        speed: {x: 400, y: 0, z: 0}
+      - path: Offscreen/Core0
+        speed: {x: 0, y: 450, z: 0}
+      flashAlpha:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      lightIntensity:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      flashAlphaKeys: []
+      lightKeys: []
+    impact:
+      name: ReuseFX_Impact_Fire_Fireball_Medium
+      sourcePrefab: Assets/_Project/Art/NativeHeroEffects/ReuseFX_Impact_Fire_Fireball_Medium.prefab
+      soundPath: Assets/_Project/Art/NativeSpells/Shared_Fire_Impact.wav
+      prefab: {fileID: 3353874100391416787, guid: 10a84d54eb3e27e04bc1cbcde8803664, type: 3}
+      sound: {fileID: 8300000, guid: a3c151cf10fcdf3f98e31cc6543e35a9, type: 3}
+      width: 5
+      height: 5
+      cameraNear: -1
+      cameraFar: 3
+      cameraPosition: {x: 0, y: 0.9292226, z: 0}
+      cameraRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
+      planeOffset: {x: 0, y: 0}
+      flashRiseDuration: 0.05
+      flashRiseScale: 4
+      resolution: 180
+      rotators: []
+      flashAlpha:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.59999996
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      lightIntensity:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0.39999998
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -0.16945583
+          outSlope: -0.16945583
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      flashAlphaKeys:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+      - time: 0.59999996
+        value: 0
+        inSlope: 0
+        outSlope: 0
+      lightKeys:
+      - time: 0
+        value: 0.39999998
+        inSlope: 0
+        outSlope: 0
+      - time: 1
+        value: 0
+        inSlope: -0.16945583
+        outSlope: -0.16945583
+  - cardId: CS2_024
+    cardName: Frostbolt
+    pathDuration: 0.4
+    easeType: 0
+    missile:
+      name: ReuseFX_Ice_Missile
+      sourcePrefab: Assets/_Project/Art/NativeSpells/ReuseFX_Ice_Missile.prefab
+      soundPath: Assets/_Project/Art/NativeSpells/Shared_Frost_Cast_1.wav
+      prefab: {fileID: 8496541408717141899, guid: c33b1df3bd6d4a7c7a91d2d8f3b4196a, type: 3}
+      sound: {fileID: 8300000, guid: 9f8c3fec1e39b63d3bccd36baf85173b, type: 3}
+      width: 2.5
+      height: 8.5
+      cameraNear: -1
+      cameraFar: 3
+      cameraPosition: {x: 0, y: 0.71078205, z: -3.000001}
+      cameraRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
+      planeOffset: {x: 0, y: -3.000001}
+      flashRiseDuration: 0
+      flashRiseScale: 0.5
+      resolution: 450
+      rotators:
+      - path: Offscreen/Core1
+        speed: {x: 0, y: -475, z: 0}
+      - path: Offscreen/Core2
+        speed: {x: 400, y: 0, z: 0}
+      - path: Offscreen/Core0
+        speed: {x: 0, y: 450, z: 0}
+      flashAlpha:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      lightIntensity:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      flashAlphaKeys: []
+      lightKeys: []
+    impact:
+      name: ReuseFX_Ice_Impact
+      sourcePrefab: Assets/_Project/Art/NativeSpells/ReuseFX_Ice_Impact.prefab
+      soundPath: Assets/_Project/Art/NativeSpells/Shared_Frost_Impact_1.wav
+      prefab: {fileID: 4571037905737527277, guid: 8aefce252c2a99402883da3e580b4be6, type: 3}
+      sound: {fileID: 8300000, guid: d6af593e5698eec6f988ee430f0b16d0, type: 3}
+      width: 5
+      height: 5
+      cameraNear: -1
+      cameraFar: 3
+      cameraPosition: {x: 0, y: 0.9292226, z: 0}
+      cameraRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
+      planeOffset: {x: 0, y: 0}
+      flashRiseDuration: 0
+      flashRiseScale: 0.5
+      resolution: 300
+      rotators: []
+      flashAlpha:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.59999996
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      lightIntensity:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0.39999998
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -0.16945583
+          outSlope: -0.16945583
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      flashAlphaKeys:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+      - time: 0.59999996
+        value: 0
+        inSlope: 0
+        outSlope: 0
+      lightKeys:
+      - time: 0
+        value: 0.39999998
+        inSlope: 0
+        outSlope: 0
+      - time: 1
+        value: 0
+        inSlope: -0.16945583
+        outSlope: -0.16945583

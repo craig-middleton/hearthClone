@@ -29,6 +29,8 @@ public static class VerifyNativeMinions
    var body=native.actor.Find("RootObject/Card_InPlay_Ally/Mesh").GetComponent<MeshRenderer>();
    Check(body.GetComponent<MeshFilter>().sharedMesh.vertexCount==532&&body.sharedMaterials.Length==2,"Original oval portrait/frame topology absent");
    Check(body.sharedMaterials.All(p=>p!=null&&p.shader.isSupported&&p.mainTexture!=null),"Source frame/portrait paint or compatibility shader missing");
+   Check(body.sharedMaterials.All(p=>p.GetColor("_BaseColor").a>0.99f),"Missing-shader getters erased original portrait/frame opacity");
+   Check(native.highlight.sharedMaterial.GetColor("_Color").g>.8f&&native.highlight.sharedMaterial.GetColor("_Color").r<.05f,"Playable actor state does not use original green material");
    Check(!view.artworkImage.enabled&&view.minionBackground.color.a==0,"Legacy atlas still overlays original model");
    Check(native.highlight.enabled==m.CanAttack,"Native eligibility ring does not match current minion rules");
    Check(native.taunt.gameObject.activeSelf==m.HasTaunt,"Native taunt model not following minion tag");

@@ -17,7 +17,7 @@ public static class InstallNativeHandOutlines
   var original=AssetDatabase.LoadAssetAtPath<Material>(Folder+"HighlightGreenInPlay.mat");
   var mat=AssetDatabase.LoadAssetAtPath<Material>(Folder+"OriginalHandOutline_Compatibility.mat");
   if(mat==null){mat=new Material(Shader.Find("HearthClone/UI/Source Hand Silhouette"));AssetDatabase.CreateAsset(mat,Folder+"OriginalHandOutline_Compatibility.mat");}
-  mat.shader=Shader.Find("HearthClone/UI/Source Hand Silhouette");foreach(var field in new[]{"_Color","_HiColor"})mat.SetColor(field,original.GetColor(field));foreach(var field in new[]{"_Intensity","_ColorIntensity"})mat.SetFloat(field,original.GetFloat(field));EditorUtility.SetDirty(mat);
+  mat.shader=Shader.Find("HearthClone/UI/Source Hand Silhouette");foreach(var field in new[]{"_Color","_HiColor"})mat.SetColor(field,SourceMaterialProperties.Color(original,field));foreach(var field in new[]{"_Intensity","_ColorIntensity"})mat.SetFloat(field,SourceMaterialProperties.Float(original,field));EditorUtility.SetDirty(mat);
   var root=PrefabUtility.LoadPrefabContents(Prefab);
   try
   {

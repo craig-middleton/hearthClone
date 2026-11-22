@@ -1,0 +1,357 @@
+{
+  "states": {
+    "m_CameraInfo": {
+      "m_ClosedBone": {
+        "fileID": "1904079258986964"
+      },
+      "m_ClosedMinAspectRatioBone": {
+        "fileID": "1527248355756736"
+      },
+      "m_ClosedExtraWideAspectRatioBone": {
+        "fileID": "1845025230388998"
+      },
+      "m_ClosedDelaySec": "0",
+      "m_ClosedMoveSec": "0.7",
+      "m_ClosedMoveEaseType": "4",
+      "m_ClosedWithDrawerBone": {
+        "fileID": "1527248355756736"
+      },
+      "m_ClosedWithDrawerMinAspectRatioBone": {
+        "fileID": "1657558218238974"
+      },
+      "m_ClosedWithDrawerExtraWideAspectRatioBone": {
+        "fileID": "1484755779879834"
+      },
+      "m_ClosedTutorialBone": {
+        "fileID": "1133854062310043"
+      },
+      "m_ClosedTutorialPreviewRightBone": {
+        "fileID": "1947810564538834"
+      },
+      "m_ClosedTutorialPreviewRightMinAspectRatioBone": {
+        "fileID": "1729821067651183"
+      },
+      "m_ClosedTutorialPreviewRightExtraWideAspectRatioBone": {
+        "fileID": "1041320612064254"
+      },
+      "m_ClosedWithDrawerDelaySec": "0",
+      "m_ClosedWithDrawerMoveSec": "0.7",
+      "m_ClosedWithDrawerMoveEaseType": "4",
+      "m_OpenedBone": {
+        "fileID": "1697715728111791"
+      },
+      "m_OpenedMinAspectRatioBone": {
+        "fileID": "1353891062718048"
+      },
+      "m_OpenedExtraWideAspectRatioBone": {
+        "fileID": "1719897623072781"
+      },
+      "m_OpenedDelaySec": "0",
+      "m_OpenedMoveSec": "0.7",
+      "m_OpenedMoveEaseType": "4"
+    },
+    "m_DiskInfo": {
+      "m_MainMenuRotation": {
+        "x": "0",
+        "y": "0",
+        "z": "180"
+      },
+      "m_MainMenuDelaySec": "0.1",
+      "m_MainMenuRotateSec": "0.17",
+      "m_MainMenuRotateEaseType": "0",
+      "m_LoadingRotation": {
+        "x": "0",
+        "y": "0",
+        "z": "0"
+      },
+      "m_LoadingDelaySec": "0.1",
+      "m_LoadingRotateSec": "0.17",
+      "m_LoadingRotateEaseType": "0"
+    },
+    "m_LeftDoorInfo": {
+      "m_OpenedRotation": {
+        "x": "0",
+        "y": "0",
+        "z": "-180"
+      },
+      "m_OpenedDelaySec": "0",
+      "m_OpenedRotateSec": "0.35",
+      "m_OpenedRotateEaseType": "0",
+      "m_ClosedRotation": {
+        "x": "0",
+        "y": "0",
+        "z": "0"
+      },
+      "m_ClosedDelaySec": "0",
+      "m_ClosedRotateSec": "0.35",
+      "m_ClosedRotateEaseType": "0"
+    },
+    "m_RightDoorInfo": {
+      "m_OpenedRotation": {
+        "x": "0",
+        "y": "0",
+        "z": "180"
+      },
+      "m_OpenedDelaySec": "0",
+      "m_OpenedRotateSec": "0.35",
+      "m_OpenedRotateEaseType": "0",
+      "m_ClosedRotation": {
+        "x": "0",
+        "y": "0",
+        "z": "0"
+      },
+      "m_ClosedDelaySec": "0",
+      "m_ClosedRotateSec": "0.35",
+      "m_ClosedRotateEaseType": "0"
+    },
+    "m_DrawerInfo": {
+      "m_ClosedBone": {
+        "fileID": "1696919880513765"
+      },
+      "m_ClosedDelaySec": "0",
+      "m_ClosedMoveSec": "1",
+      "m_ClosedMoveEaseType": "21",
+      "m_ClosedBoxOpenedBone": {
+        "fileID": "1965908813272002"
+      },
+      "m_ClosedBoxOpenedDelaySec": "0",
+      "m_ClosedBoxOpenedMoveSec": "1",
+      "m_ClosedBoxOpenedMoveEaseType": "21",
+      "m_OpenedBone": {
+        "fileID": "1689224686120706"
+      },
+      "m_OpenedDelaySec": "0",
+      "m_OpenedMoveSec": "1",
+      "m_OpenedMoveEaseType": "24"
+    },
+    "m_mobileDrawerInfo": {
+      "m_ClosedBone": {
+        "fileID": "1450889307774998"
+      },
+      "m_ClosedDelaySec": "0",
+      "m_ClosedMoveSec": "0.25",
+      "m_ClosedMoveEaseType": "0",
+      "m_ClosedBoxOpenedBone": {
+        "fileID": "1007271993718322"
+      },
+      "m_ClosedBoxOpenedDelaySec": "0",
+      "m_ClosedBoxOpenedMoveSec": "0.25",
+      "m_ClosedBoxOpenedMoveEaseType": "0",
+      "m_OpenedBone": {
+        "fileID": "1429401810989285"
+      },
+      "m_OpenedDelaySec": "0",
+      "m_OpenedMoveSec": "0.5",
+      "m_OpenedMoveEaseType": "24"
+    },
+    "m_LogoInfo": {
+      "m_ShownAlpha": "1",
+      "m_ShownDelaySec": "0",
+      "m_ShownFadeSec": "0.3",
+      "m_ShownFadeEaseType": "21",
+      "m_HiddenAlpha": "0",
+      "m_HiddenDelaySec": "0",
+      "m_HiddenFadeSec": "0.3",
+      "m_HiddenFadeEaseType": "21"
+    },
+    "m_SpinnerInfo": {
+      "m_DegreesPerSec": "36"
+    }
+  },
+  "materials": [
+    {
+      "guid": "709042c355a878b4e9438c09e621b94c",
+      "name": "TheBox_FakeLidShadow",
+      "sourceShader": "Hero/Multiply/Multiply"
+    },
+    {
+      "guid": "cba9bb291042b6e4585eabbfb27a8e50",
+      "name": "HighlightGreenHubButton3",
+      "sourceShader": "Custom/Selection/Highlight"
+    },
+    {
+      "guid": "0cc0d80fe76634b4187f5816c3229b76",
+      "name": "FrontScreen_TableTop",
+      "sourceShader": "Hero/Self-Illumin_Diffuse"
+    },
+    {
+      "guid": "89a2d5d78fff4ce4fb1a43d8f52135f5",
+      "name": "TheBox_Top_phone_ThirdButtonDeactivated",
+      "sourceShader": "Hero/Self-Illumin_Diffuse"
+    },
+    {
+      "guid": "fda254723f04f0941810d1528722f894",
+      "name": "BoxGlowInside1",
+      "sourceShader": "Hero/AddMultiply/AddMultiply"
+    },
+    {
+      "guid": "49f2ea8edac7bc84c8274b086c6a6a7a",
+      "name": "TheBox_ButtonShadowsDark",
+      "sourceShader": "Hero/Multiply/Multiply"
+    },
+    {
+      "guid": "d99d1102fb63a5f46858c756747ab1fd",
+      "name": "TheBox_Top",
+      "sourceShader": "Hero/Self-Illumin_Diffuse"
+    },
+    {
+      "guid": "6b5644809cc92d348aea8d21a3c07941",
+      "name": "BoxGlowEdge",
+      "sourceShader": "Effects/FX_AdditiveVertColor"
+    },
+    {
+      "guid": "1b0e6fc2ed1fc9340846b2bd893d3a88",
+      "name": "HighlightGreenHubPackButton",
+      "sourceShader": "Custom/Selection/Highlight"
+    },
+    {
+      "guid": "f0ec76cbeced8c745a72895dd4c2978c",
+      "name": "TheBox_FrameOuter",
+      "sourceShader": "Hero/Self-Illumin_Diffuse"
+    },
+    {
+      "guid": "9e308f8c33c312d4da3bb349441c9aec",
+      "name": "StoreClosed",
+      "sourceShader": "Hero/Self-Illumin_Diffuse"
+    },
+    {
+      "guid": "9d6883b329752f1488a042b194d8f5fc",
+      "name": "TavernBrawl_PopupShadow",
+      "sourceShader": "Hero/Particle/Particle Multiply"
+    },
+    {
+      "guid": "c5a768f0a25002342b42f8eaed3ab9a8",
+      "name": "TheBox_Frame",
+      "sourceShader": "Hero/Unlit/Unlit_Texture"
+    },
+    {
+      "guid": "9bf64d374fa6ec14fbf9d57e16db75dd",
+      "name": "Mulligan_Banner_Glow",
+      "sourceShader": "Hero/AddMultiply/AddMultiplyFXScrolling"
+    },
+    {
+      "guid": "234fea0099722f34c995565877a7a571",
+      "name": "CometFillBar",
+      "sourceShader": "Hero/MaskUV2PanUV1Alpha"
+    },
+    {
+      "guid": "35b337fc30c4ae74abeb439029031bb3",
+      "name": "Title_Logo",
+      "sourceShader": "Hero/Unlit/Unlit_TransparentColor"
+    },
+    {
+      "guid": "814cb6660ea66ea42aff1f003df0fbb8",
+      "name": "BoxGlowRing1",
+      "sourceShader": "Hero/AddMultiply/AddMultiplyFXRotation"
+    },
+    {
+      "guid": "55ce46be9c7189a47a84cedd46addd0b",
+      "name": "Mulligan_Banner",
+      "sourceShader": "Hero/Unlit/Unlit_Texture"
+    },
+    {
+      "guid": "2ab3433f7124b274cb15a00d3efb252b",
+      "name": "TracerComet",
+      "sourceShader": "Hero/Particle/Particle Additive + 1"
+    },
+    {
+      "guid": "93ea49a565ba3e24b8b2c99ab3a90382",
+      "name": "BoxGodray1",
+      "sourceShader": "Hero/AddMultiply/AddMultiply"
+    },
+    {
+      "guid": "069f069ecef1b1a40a31d837315a3f87",
+      "name": "QuestLogButton",
+      "sourceShader": "Hero/Unlit/Unlit_TextureColor"
+    },
+    {
+      "guid": "9d1e629c53bd5964fa5afa91940f90e8",
+      "name": "BlackColorOnly",
+      "sourceShader": "Utility/Black"
+    },
+    {
+      "guid": "e63f3a14716d1c04093549fc0f92bbfe",
+      "name": "HighlightGreenHubButton4",
+      "sourceShader": "Custom/Selection/Highlight"
+    },
+    {
+      "guid": "cbbdef8264a912a47a29bd51908fd2e9",
+      "name": "StoreCoin",
+      "sourceShader": "Hero/Self-Illumin_Diffuse"
+    },
+    {
+      "guid": "542109856f1fdd4479b92d9c68af5a46",
+      "name": "TheBox_ButtonGlows",
+      "sourceShader": "Hero/Additive/Additive"
+    },
+    {
+      "guid": "d13323a635c2e894585ecb6b722d7f6a",
+      "name": "StoreCoin_Shadow",
+      "sourceShader": "Hero/Multiply/Multiply"
+    },
+    {
+      "guid": "76a7b09bc1a69fa4abda7514461f5eef",
+      "name": "TheBox_TurnRing",
+      "sourceShader": "Custom/BoxRing"
+    },
+    {
+      "guid": "124e39e8103d4d740b036032aabba267",
+      "name": "QuestLogShadow",
+      "sourceShader": "Hero/Diffuse/Diffuse_Transparent"
+    },
+    {
+      "guid": "6fdc23a548a85ee4abf930e6bc2f3f8e",
+      "name": "SpotLightHaze",
+      "sourceShader": "Hero/Additive/Additive"
+    },
+    {
+      "guid": "0c5c503407bee7b49ab8bdddf53855cb",
+      "name": "HighlightGreenHubButton2",
+      "sourceShader": "Custom/Selection/Highlight"
+    },
+    {
+      "guid": "d7dc0eb14254d7348ad3b7e16a72eaa2",
+      "name": "TavernBrawl_Popup",
+      "sourceShader": "Hero/Unlit_Transparent"
+    },
+    {
+      "guid": "c8fed76fb4ff23a4f931b6463d36a50e",
+      "name": "TheBox_Top_HearthGlow",
+      "sourceShader": "Hero/AddMultiply/AddMultiplyFXScrolling"
+    },
+    {
+      "guid": "743f1097acf6f994db3b47027bc6dfa7",
+      "name": "BnetBarBg",
+      "sourceShader": "Hero/Unlit/Unlit_Texture"
+    },
+    {
+      "guid": "b16763d79a4e99f49bd1ffccd558116d",
+      "name": "TheBox_Frame_Shadow",
+      "sourceShader": "Hero/Particle/Particle Multiply"
+    },
+    {
+      "guid": "cba049e4b6b45a542a53f9f7ae36e99e",
+      "name": "HighlightGreenForLargeObjects",
+      "sourceShader": "Custom/Selection/Highlight"
+    },
+    {
+      "guid": "76f647724bf5c5f4f9ac9599be9adc0a",
+      "name": "HighlightGreenHubButton1",
+      "sourceShader": "Custom/Selection/Highlight"
+    }
+  ],
+  "sourceEnabledButtonColor": {
+    "r": "0.25490198",
+    "g": "0.1882353",
+    "b": "0.09411765",
+    "a": "1"
+  },
+  "sourceDisabledButtonColor": {
+    "r": "0.4509804",
+    "g": "0.25882354",
+    "b": "0.11372549",
+    "a": "1"
+  },
+  "cameraIntroSeconds": 4.983333,
+  "note": "All positions, rotations, source material values and camera motion come from TheBox original export. Compatibility surface response and UI-to-world hitbox projection are custom integration."
+}

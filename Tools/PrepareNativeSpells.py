@@ -14,10 +14,9 @@ idx=index(S);existing=index(P/'Assets');allowed={1,4,20,23,33,95,108,111,137,198
 def import_asset(f):
  guid=re.search(r'^guid: (\w+)',Path(str(f)+'.meta').read_text(),re.M)[1]
  if guid in paths:return paths[guid]
- if guid in existing:
-  paths[guid]=str(existing[guid].relative_to(P));records.append({'source':str(f.relative_to(S)),'asset':paths[guid],'sha256':hashlib.sha256(f.read_bytes()).hexdigest(),'reused':True});return paths[guid]
  if f.suffix not in ('.prefab','.mat','.png','.asset','.anim','.controller'):raise ValueError(f)
- target=D/f.name;paths[guid]=str(target.relative_to(P));seen.add(f)
+ reused=guid in existing
+ target=existing[guid] if reused else D/f.name;paths[guid]=str(target.relative_to(P));seen.add(f)
  if f.suffix in ('.prefab','.mat','.asset','.anim','.controller'):
   text=f.read_text()
   if f.suffix=='.prefab':
@@ -32,9 +31,11 @@ def import_asset(f):
   for dep in set(re.findall(r'guid: (\w+)',text)):
    if dep in idx and idx[dep].suffix not in ('.shader','.cs'):import_asset(idx[dep])
    elif dep=='0000000deadbeef15deadf00d0000000':unresolved.append(str(f.relative_to(S)))
-  text=re.sub(r'\{fileID: [^,}]+, guid: 0000000deadbeef15deadf00d0000000, type: \d+\}','{fileID: 0}',text);target.write_text(text)
- else:shutil.copyfile(f,target)
- shutil.copyfile(str(f)+'.meta',str(target)+'.meta');records.append({'source':str(f.relative_to(S)),'asset':str(target.relative_to(P)),'sha256':hashlib.sha256(f.read_bytes()).hexdigest()});return paths[guid]
+  text=re.sub(r'\{fileID: [^,}]+, guid: 0000000deadbeef15deadf00d0000000, type: \d+\}','{fileID: 0}',text)
+  if not reused:target.write_text(text)
+ elif not reused:shutil.copyfile(f,target)
+ if not reused:shutil.copyfile(str(f)+'.meta',str(target)+'.meta')
+ records.append({'source':str(f.relative_to(S)),'asset':str(target.relative_to(P)),'sha256':hashlib.sha256(f.read_bytes()).hexdigest(),'reused':reused});return paths[guid]
 def sound_clip(ref,source):
  f=idx[ref['guid']] if ref.get('guid') in idx else source;bs=blocks(f);sd=bs[int(ref['fileID'])][1];key=sd['m_AudioClip'];assert key and sd['m_RandomPitchMin']==sd['m_RandomPitchMax']=='1';assert sd['m_RandomVolumeMin']==sd['m_RandomVolumeMax']=='1';assert not sd['m_RandomClips']
  sourceclip=Path.home()/'Desktop/Hearthstone Export/AudioClip'/key.split(':')[0];target=D/sourceclip.name;shutil.copyfile(sourceclip,target)
@@ -88,6 +89,28 @@ entries=[]
 for card,name,missile,impact in [('CS2_029','Fireball','ReuseFX_Missile_Fire_Fireball_Medium','ReuseFX_Impact_Fire_Fireball_Medium'),('CS2_024','Frostbolt','ReuseFX_Ice_Missile','ReuseFX_Ice_Impact')]:
  src=json.loads((R/(card+'-effect-source.json')).read_text());info=src['scripts'][0]['m_MissileInfo'];assert info['m_PathEaseType']==0 and abs(info['m_PathDurationMin']-.4)<1e-5
  entries.append({'cardId':card,'cardName':name,'pathDuration':info['m_PathDurationMin'],'easeType':0,'missile':phase(missile,'missile'),'impact':phase(impact,'impact')})
-(D/'SourceConfiguration.json').write_text(json.dumps({'entries':entries,'sourceRecords':records,'unresolved':unresolved},indent=2)+'\n')
+# Exact art keys come from recovered CardDef metadata, not filename guesses.
+portraits=[]
+portrait_folder=D/'Portraits';portrait_folder.mkdir(exist_ok=True)
+for card,name in [('CS2_029','Fireball'),('CS2_024','Frostbolt'),('CS2_025','Arcane Explosion'),('CS2_032','Flamestrike')]:
+ carddef=json.loads((R/(card+'-carddef-source.json')).read_text())
+ def find_key(value):
+  if isinstance(value,dict):
+   if 'm_PortraitTexturePath' in value:return value['m_PortraitTexturePath']
+   for child in value.values():
+    found=find_key(child)
+    if found:return found
+  elif isinstance(value,list):
+   for child in value:
+    found=find_key(child)
+    if found:return found
+ key=find_key(carddef);assert key,card
+ filename=Path(key.split(':')[0]).with_suffix('.png').name
+ original=Path.home()/'Desktop/Hearthstone Export/Texture2D'/filename
+ target=portrait_folder/filename
+ shutil.copyfile(original,target)
+ record={'cardId':card,'cardName':name,'portraitKey':key,'asset':str(target.relative_to(P)),'sha256':hashlib.sha256(original.read_bytes()).hexdigest()}
+ portraits.append(record);records.append(record)
+(D/'SourceConfiguration.json').write_text(json.dumps({'entries':entries,'portraits':portraits,'sourceRecords':records,'unresolved':unresolved},indent=2)+'\n')
 (P/'Docs/Recovery/Spells-source.json').write_text(json.dumps({'cards':[json.loads((R/(c+'-effect-source.json')).read_text()) for c in ['CS2_029','CS2_024']],'files':records,'note':'Original prefab/SoundDef references verified. Original RotateOverTime Self axes and iTween easeInQuad0/easeOutQuad1 inspected from metadata. Source camera pose, longest-axis texture resolution, viewport and Fireball .05s linear flash rise to4 followed by .75s easeOutQuad to7 retained. Original shader bloom/blur/distortion/shake are compatibility gaps. Actor-root trail particles share the compatible capture instead of the original separate world rendering.'},indent=2)+'\n')
 print('Recovered',len(entries),'spell sequences;',len(records),'source assets/audio records')

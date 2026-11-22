@@ -92,6 +92,7 @@ namespace HearthstoneClone.UI
             if (mulliganPanel is RectTransform mulliganRect)
             {
                 LayoutRebuilder.ForceRebuildLayoutImmediate(mulliganRect);
+                if (presentation != null) presentation.LayoutCards();
             }
         }
 

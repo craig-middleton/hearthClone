@@ -30,12 +30,12 @@ Material:
     m_Ints: []
     m_Floats:
     - _DstBlend: 1
-    - _Intensity: 0
+    - _Intensity: 1
     - _ParticleMultiplier: 2
     - _SourceAlpha: 1
     - _SrcBlend: 5
     m_Colors:
-    - _Color: {r: 0, g: 0, b: 0, a: 0}
-    - _TintColor: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.05882353, g: 0.05613697, b: 0.05028835, a: 1}
+    - _TintColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

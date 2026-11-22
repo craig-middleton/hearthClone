@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Cards::HearthstoneClone.Cards.CardData
   cardName: Fireball
   description: Deal 3 damage.
-  artwork: {fileID: 21300000, guid: b690ccb58698cede6970029dc45dc701, type: 2}
+  artwork: {fileID: 21300000, guid: 90df5b8a4ea8c5b76ab27ec4a816eeb7, type: 3}
   manaCost: 4
   cardType: 1
   attack: 0

@@ -35,17 +35,17 @@ public static class InstallNativeHeroPowers
      string path=F+button.name+"_"+source.name.Replace(" ","_")+"_Compatibility.mat";
      var mat=AssetDatabase.LoadAssetAtPath<Material>(path);
      if(mat==null){mat=new Material(Shader.Find(transparent?"HearthClone/Compatibility/Source Board Particles":"Universal Render Pipeline/Unlit"));AssetDatabase.CreateAsset(mat,path);}
-     var paint=source.GetTexture("_MainTex");if(r.name=="Mesh"&&index==1)paint=texture;
+     var paint=SourceMaterialProperties.Texture(source,"_MainTex");if(r.name=="Mesh"&&index==1)paint=texture;
      if(paint==null)throw new Exception("Unresolved power paint: "+source.name);
-     if(transparent){mat.SetTexture("_MainTex",paint);mat.SetColor("_TintColor",r.name=="shadow"?new Color(.5f,.5f,.5f,.5f):source.GetColor("_Color")*.5f);mat.SetFloat("_SrcBlend",r.name=="shadow"?2:5);mat.SetFloat("_DstBlend",r.name=="shadow"?0:1);}
+     if(transparent){mat.SetTexture("_MainTex",paint);mat.SetColor("_TintColor",r.name=="shadow"?new Color(.5f,.5f,.5f,.5f):SourceMaterialProperties.Color(source,"_Color")*.5f);mat.SetFloat("_SrcBlend",r.name=="shadow"?2:5);mat.SetFloat("_DstBlend",r.name=="shadow"?0:1);}
      else{mat.SetTexture("_BaseMap",paint);mat.SetColor("_BaseColor",Color.white);}
-     if(r.name=="shadow"){mat.shader=Shader.Find("HearthClone/Compatibility/Source White Neutral Shadow");mat.SetTexture("_MainTex",paint);mat.SetFloat("_Opacity",source.GetColor("_Color").a);}
+     if(r.name=="shadow"){mat.shader=Shader.Find("HearthClone/Compatibility/Source White Neutral Shadow");mat.SetTexture("_MainTex",paint);mat.SetFloat("_Opacity",SourceMaterialProperties.Color(source,"_Color").a);}
      if(r.name=="Highlight_Card_Plane")
      {
       if(powerMask==null)powerMask=NativeHighlightBaker.Bake(actor.transform,r,actor.GetComponentsInChildren<MeshRenderer>(true).Where(x=>x.name=="Mesh"||x.name=="Gem_Mana"),F+"HeroPowerSourceSilhouette.png");
       mat.shader=Shader.Find("HearthClone/Compatibility/Source Selection Highlight");mat.SetTexture("_MainTex",powerMask);mat.SetFloat("_UseUV2",1);
-      foreach(var property in new[]{"_Color","_HiColor","_Colorize"})mat.SetColor(property,source.GetColor(property));
-      foreach(var property in new[]{"_ColorIntensity","_Intensity"})mat.SetFloat(property,source.GetFloat(property));
+      foreach(var property in new[]{"_Color","_HiColor","_Colorize"})mat.SetColor(property,SourceMaterialProperties.Color(source,property));
+      foreach(var property in new[]{"_ColorIntensity","_Intensity"})mat.SetFloat(property,SourceMaterialProperties.Float(source,property));
      }
      EditorUtility.SetDirty(mat);return mat;
     }).ToArray();r.sharedMaterials=mats;

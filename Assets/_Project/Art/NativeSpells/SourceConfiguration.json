@@ -679,6 +679,36 @@
       }
     }
   ],
+  "portraits": [
+    {
+      "cardId": "CS2_029",
+      "cardName": "Fireball",
+      "portraitKey": "W15_A087_D.psd:c33a12d3e475a6241a38c9f3456d84c2",
+      "asset": "Assets/_Project/Art/NativeSpells/Portraits/W15_A087_D.png",
+      "sha256": "608c151dba6acf50cbcd76cf9f0f6356f76dad1b341b212d0875849144d44443"
+    },
+    {
+      "cardId": "CS2_024",
+      "cardName": "Frostbolt",
+      "portraitKey": "WoW_CHI_006_D.psd:808ad7bfce2d0fa4cbcbf24749c70492",
+      "asset": "Assets/_Project/Art/NativeSpells/Portraits/WoW_CHI_006_D.png",
+      "sha256": "2394983a2b9e5a22c578169b464411f614ee1aabfebcc891cd27ac8c56ac6b3a"
+    },
+    {
+      "cardId": "CS2_025",
+      "cardName": "Arcane Explosion",
+      "portraitKey": "W10_A176_D.psd:ea0c7de9182d597429d03b73701fed8b",
+      "asset": "Assets/_Project/Art/NativeSpells/Portraits/W10_A176_D.png",
+      "sha256": "1ca14a00fcd65805cbbc8ddd114179cc70657a454179a1eb3b27e73569cc3872"
+    },
+    {
+      "cardId": "CS2_032",
+      "cardName": "Flamestrike",
+      "portraitKey": "WOW_SPE_006(b)_D.psd:d553e8ce7d68785408614a0e669951fb",
+      "asset": "Assets/_Project/Art/NativeSpells/Portraits/WOW_SPE_006(b)_D.png",
+      "sha256": "169f6fe92198cdb4406d4d169b3969035181fc719a0395ec12f73d2d2f7bc65f"
+    }
+  ],
   "sourceRecords": [
     {
       "sounddefSource": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Missile_Fire_Fireball_Medium.prefab",
@@ -686,6 +716,108 @@
       "audioKey": "Shared_Fire_Cast_1.wav:392319ce5d9054a46a9c1f1b04961af9",
       "asset": "Assets/_Project/Art/NativeSpells/Shared_Fire_Cast_1.wav",
       "sha256": "7eb2f306314419553eb7623a42bff55d3f6d4cef9121d3127e8cbe41ccccb985"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/Fireball_Start.anim",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/Fireball_Start.anim",
+      "sha256": "410db2318aa97224132800e9af2bd7d551003be022a1fafee1c1534059943677",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Sneaky_Attack_Impact_02.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_Sneaky_Attack_Impact_02.png",
+      "sha256": "9bff54d690dbe03528f07c6fcbce3ee63b2477cc94364f7ef86ce3ddf52a6ecd",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_FireParticle03.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireParticle03.mat",
+      "sha256": "d77c79630dde5efe699bf5aac4bf9627384e9ce9351253cb8ccac4cf26a35bf2",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_cloudshadows.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_cloudshadows.png",
+      "sha256": "f4b6420c33fa334acb0b1f1a6fc8c7a3875c6ba900af2a3f0dc041a669ff4319",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_CoreBlack2.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_CoreBlack2.mat",
+      "sha256": "7016e5125334b78277538d5622dfa787bf579427467e7886e5b781d2d05e7c7f",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_clouds6c.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_clouds6c.png",
+      "sha256": "fe6052feb00c58ab0873869e15cd7dbd63df44696c6103207db4b3636b30d860",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_FireballCore.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireballCore.mat",
+      "sha256": "bd1c3ee6993dd2439c8d692e3f97f4aac0f8b7fc1d0e1867bf329f64ed3ec81a",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_elecspark.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_elecspark.png",
+      "sha256": "94646281ae916e2fe8c2d09ec98d31c766cd70b2a66d269bb39a50e1aea2338b",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_FireBallSparks01.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireBallSparks01.mat",
+      "sha256": "6f0a83cd1dcba7c76f0f1409940615207cec7200f751db815e3fb72ac5684e22",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/pPlane1_12.asset",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/pPlane1_12.asset",
+      "sha256": "b6bd0c87ff578117f3808ce877fa26203be960a613062248fba2ad0f8748b2b7",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_CoreBlack3.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_CoreBlack3.mat",
+      "sha256": "b2d1004ee51faa4f69896295198c5fd54e7fbce23880a57a93cb4ba05e511c39",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_FireballCrescentAlpha.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireballCrescentAlpha.png",
+      "sha256": "f9fa38354f80d3f779e41cb0011b90f26f11ba48bd5920a4effec66162d5cf67",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Smoke5.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_Smoke5.png",
+      "sha256": "e295a9f6cbfd9326b15d7912923d9d9319d362cd169babbf0527a8c8feb1434a",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_FireParticle02.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireParticle02.mat",
+      "sha256": "86c6a3f1a77defdf22b21a6b1972decec0d4c943e81b8cf3e8abeb1b71dfc718",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Smoke_Wispy_04.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_Smoke_Wispy_04.png",
+      "sha256": "2653f0f65b32e9cee847ebed317fd3860b2b2cc9ab241a8799d813873384e7e3",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_FireBallSmoke02.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireBallSmoke02.mat",
+      "sha256": "399df3fc61a7c1b1f78788b3ee4f333546673e4c0f0c48530001d0c2161afdf7",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_FireballGlow01.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireballGlow01.mat",
+      "sha256": "fe91c7804fa795c9bbc702caed3bdabc93b9a8d2cb58e16861911407cc7e1c43",
+      "reused": true
     },
     {
       "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Missile_Fire_Fireball_Medium.prefab",
@@ -701,6 +833,36 @@
       "sha256": "602abd76955698fa25313ca914b91e3b257caf5257abebf9d26cde658d6daef7"
     },
     {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_BlastMark01.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_BlastMark01.png",
+      "sha256": "de096281f8d294899746e618478782cfbbf143c6b58a2614974a30b330efce73",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_FireballBlastMark.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireballBlastMark.mat",
+      "sha256": "7a4652651c0647a4fae554b06e3cfd69a738b48c5467af7cc4cfab1a028c3797",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Fireball_1Hot.png",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_Fireball_1Hot.png",
+      "sha256": "6ce5dabfdb4c4e5fa9f17735813b91cd729695482e61d173330c94f24fed7371",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_FireballImpactGlow01.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireballImpactGlow01.mat",
+      "sha256": "757c855f2efdcf5551983807293584db9ae55a08a0cad970801a22e9eee79078",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_FireParticle01.mat",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireParticle01.mat",
+      "sha256": "8fb4dfbc112652e0f5487a246cb78fb789fbcb871e01ffd50e1e410b5be4b4fb",
+      "reused": true
+    },
+    {
       "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Impact_Fire_Fireball_Medium.prefab",
       "asset": "Assets/_Project/Art/NativeHeroEffects/ReuseFX_Impact_Fire_Fireball_Medium.prefab",
       "sha256": "50b6f2316be7d5dc013b9a4b5d5e295c1a14ff68ce8210508c6678f8573142c8",
@@ -712,6 +874,84 @@
       "audioKey": "Shared_Frost_Cast_1.wav:62f409c56fe341041b252f153f204161",
       "asset": "Assets/_Project/Art/NativeSpells/Shared_Frost_Cast_1.wav",
       "sha256": "b378123d126768f486b72121b8f790cbc6dc89fb9a6d4b9fa8a09aa0ac671201"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Smoke4.png",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_Smoke4.png",
+      "sha256": "c200bb8a6b014caa3c02cb1da07bb3da9d02628fbeb8b353dcaffc6b0cf54173",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_IceSmoke.mat",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_IceSmoke.mat",
+      "sha256": "41f9bf72bfafe8c427ac9d8fba3649528101d1812db5136fe13fa2674af44219",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_IceCore01.mat",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_IceCore01.mat",
+      "sha256": "932aff92bc0183a4bd07f5bc9500d03ac8baebd20fc8896cec2158903f8abf63",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_IceGlow01.mat",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_IceGlow01.mat",
+      "sha256": "6d99d22fd68ce491fd9dd21aeaa4ce78cd96d9fa630362fd6cfc805b9470c547",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/shard_13.asset",
+      "asset": "Assets/_Project/Art/NativeSpells/shard_13.asset",
+      "sha256": "bf47ba3a01a9191bdcae558011742aa2ba4101dad66ce152512383c6a1921367",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Ice_Shards.png",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_Ice_Shards.png",
+      "sha256": "53a0cca9acab222cb394dab32cd553295bb34c4355c2ee54e4833aa2da9ca75e",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_IceParticle02.mat",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_IceParticle02.mat",
+      "sha256": "60e8d21ef8969f5e631808434a76d2dba737bda543106694b57d84561e8fc979",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_IceCore02.mat",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_IceCore02.mat",
+      "sha256": "6dcbb0cbe68c678b14d21fa8decadbce923620e686fd51208d669ce363f3be62",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Ice_Shards2.png",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_Ice_Shards2.png",
+      "sha256": "34d42acfd7ee3a0321550d55f33a4d74bea2c0e93d2a24b610f08f8a39ef210a",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_IceParticle03.mat",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_IceParticle03.mat",
+      "sha256": "af1f56fa03bb9553788be68f153dab7fc49df29d466f7146fd8965c4700f87c2",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_IceCore03.mat",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_IceCore03.mat",
+      "sha256": "892f67c2d34bf180691d63b2777028343a23523d42f1597afffc6aabcebf0ac2",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Flare13.png",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_Flare13.png",
+      "sha256": "d48b53db680bde1afe3d8f3a9d85990ac2f6eb4cbd73cc7c86512cd88c2f2c4f",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_IceChips02.mat",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_IceChips02.mat",
+      "sha256": "aabfbfb3a46ac674add83c79ba107e6d5649732ffebb7fe1eaec254a31616a3b",
+      "reused": true
     },
     {
       "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Ice_Missile.prefab",
@@ -727,10 +967,104 @@
       "sha256": "805b8fa6ce4786d87649cac768486ca5ac9fe7ee2e169063414abed7120ed4b8"
     },
     {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_FlareBurst2.png",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_FlareBurst2.png",
+      "sha256": "d517dd7382622298f5d27fd2e6a2e2ef6ffb084471a9eed2757cfcd13158fae1",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_IceImpactGlow01.mat",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_IceImpactGlow01.mat",
+      "sha256": "6d95d81080023b75387259636ad7c930ed6b4a26085ecf4dc3ad61f963b0593e",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_clouds04.png",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_clouds04.png",
+      "sha256": "79d2790bb01eda1ed1770cd33e843ac35a2afab962619e8d5be554bb426da3f8",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_IceShardMat.mat",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_IceShardMat.mat",
+      "sha256": "442eb8d9c879cd08873ba008940e36396ed823c845ea856889c373a7e6421c85",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/IceParticle.asset",
+      "asset": "Assets/_Project/Art/NativeSpells/IceParticle.asset",
+      "sha256": "59cb23a82a8e06a2510afb78ce8f99c637b4fef43cf50e60ee96d484a53d5726",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Ice_Shards3.png",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_Ice_Shards3.png",
+      "sha256": "9e01ab342e42493531da547bd667f91dc081c6317c187d76113c73596cc61ead",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_IceParticle04.mat",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_IceParticle04.mat",
+      "sha256": "c7028a836949dfe53f0d6f4ca0346c969f96d0eefe28aa39b56798d9d05b4d67",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_FrostMissles01.png",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_FrostMissles01.png",
+      "sha256": "86b01be1934f7b6202c4962ad5f848390782714e8d09d6e139b2470510c6cc26",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_IceBlast.mat",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_IceBlast.mat",
+      "sha256": "c4c94c9c833157807256ad58746a90bd5b0a36bca9c1df5a46d3ad8ce697ab4c",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_CometSweepStars.png",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_CometSweepStars.png",
+      "sha256": "5c8677d0ef827a83bea67442c9966703c36f7e8f17258f8806f6c28cb643c800",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_IceBlastMark.mat",
+      "asset": "Assets/_Project/Art/NativeSpells/GenFX_IceBlastMark.mat",
+      "sha256": "0058393b84f8ed9ca6b819aef657245562e80700dd2f967eb202f27b8ff774d2",
+      "reused": true
+    },
+    {
       "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Ice_Impact.prefab",
       "asset": "Assets/_Project/Art/NativeSpells/ReuseFX_Ice_Impact.prefab",
       "sha256": "2f1158650b3b3949b563839d836fee2b64ccfbde60678fe5b236973d96cf6e35",
       "reused": true
+    },
+    {
+      "cardId": "CS2_029",
+      "cardName": "Fireball",
+      "portraitKey": "W15_A087_D.psd:c33a12d3e475a6241a38c9f3456d84c2",
+      "asset": "Assets/_Project/Art/NativeSpells/Portraits/W15_A087_D.png",
+      "sha256": "608c151dba6acf50cbcd76cf9f0f6356f76dad1b341b212d0875849144d44443"
+    },
+    {
+      "cardId": "CS2_024",
+      "cardName": "Frostbolt",
+      "portraitKey": "WoW_CHI_006_D.psd:808ad7bfce2d0fa4cbcbf24749c70492",
+      "asset": "Assets/_Project/Art/NativeSpells/Portraits/WoW_CHI_006_D.png",
+      "sha256": "2394983a2b9e5a22c578169b464411f614ee1aabfebcc891cd27ac8c56ac6b3a"
+    },
+    {
+      "cardId": "CS2_025",
+      "cardName": "Arcane Explosion",
+      "portraitKey": "W10_A176_D.psd:ea0c7de9182d597429d03b73701fed8b",
+      "asset": "Assets/_Project/Art/NativeSpells/Portraits/W10_A176_D.png",
+      "sha256": "1ca14a00fcd65805cbbc8ddd114179cc70657a454179a1eb3b27e73569cc3872"
+    },
+    {
+      "cardId": "CS2_032",
+      "cardName": "Flamestrike",
+      "portraitKey": "WOW_SPE_006(b)_D.psd:d553e8ce7d68785408614a0e669951fb",
+      "asset": "Assets/_Project/Art/NativeSpells/Portraits/WOW_SPE_006(b)_D.png",
+      "sha256": "169f6fe92198cdb4406d4d169b3969035181fc719a0395ec12f73d2d2f7bc65f"
     }
   ],
   "unresolved": []

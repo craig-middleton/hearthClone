@@ -20,14 +20,17 @@ public static class InstallNativeMinions
    bool shadow=name.Contains("Shadow"),highlight=renderer.name=="Highlight_Card_Plane";
    renderer.sharedMaterials=renderer.sharedMaterials.Select(original=>
    {
+    // Original Card_Play_Ally actor states4/5/6 (selectable/selected/playable)
+    // map to HighlightGreenInPlay, rather than the template's inactive yellow.
+    if(highlight)original=AssetDatabase.LoadAssetAtPath<Material>(Folder+"HighlightGreenInPlay.mat");
     string path=Folder+original.name.Replace(" ","_")+"_Compatibility.mat";var material=AssetDatabase.LoadAssetAtPath<Material>(path);
     string shader=highlight?"HearthClone/Compatibility/Source Selection Highlight":shadow?"HearthClone/Compatibility/Source White Neutral Shadow":"Universal Render Pipeline/Unlit";
     if(material==null){material=new Material(Shader.Find(shader));AssetDatabase.CreateAsset(material,path);}material.shader=Shader.Find(shader);
-    var texture=original.GetTexture("_MainTex");
+    var texture=SourceMaterialProperties.Texture(original,"_MainTex");
     if(highlight)
     {
-     foreach(string field in new[]{"_Color","_HiColor","_Colorize"})material.SetColor(field,original.GetColor(field));
-     foreach(string field in new[]{"_ColorIntensity","_Intensity"})material.SetFloat(field,original.GetFloat(field));
+     foreach(string field in new[]{"_Color","_HiColor","_Colorize"})material.SetColor(field,SourceMaterialProperties.Color(original,field));
+     foreach(string field in new[]{"_ColorIntensity","_Intensity"})material.SetFloat(field,SourceMaterialProperties.Float(original,field));
      material.SetFloat("_UseUV2",renderer.GetComponent<MeshFilter>().sharedMesh.uv2.Length>0?1:0);
      material.SetTexture("_MainTex",Texture2D.blackTexture);
     }
@@ -36,8 +39,8 @@ public static class InstallNativeMinions
      // Source portrait is dynamic; no painted replacement. Runtime binds card artwork.
      if(texture==null&&original.name.Contains("Portrait"))texture=Texture2D.whiteTexture;
      if(texture==null)throw new Exception("Unresolved original minion paint: "+original.name);
-     if(shadow){material.SetTexture("_MainTex",texture);material.SetFloat("_Opacity",original.GetColor("_Color").a);}
-     else{material.SetTexture("_BaseMap",texture);material.SetColor("_BaseColor",original.GetColor("_Color"));}
+     if(shadow){material.SetTexture("_MainTex",texture);material.SetFloat("_Opacity",SourceMaterialProperties.Color(original,"_Color").a);}
+     else{material.SetTexture("_BaseMap",texture);material.SetColor("_BaseColor",SourceMaterialProperties.Color(original,"_Color"));}
     }
     EditorUtility.SetDirty(material);return material;
    }).ToArray();

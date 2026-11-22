@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HighlightGreenHubButton2
+  m_Shader: {fileID: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties:
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _FlareTex:
+        m_Texture: {fileID: 2800000, guid: cb589f180b6800f41a1ba964eb117a67, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _MainTex:
+        m_Texture: {fileID: 2800000, guid: 6930b89ef9ff2d544b0a6277b8d60974, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: {}
+    m_Floats:
+      _ColorAlphaWeight: 1
+      _ColorIntensity: 1.5
+      _FlareIntensity: 0.6
+      _Intensity: 1.3
+      _MoteIntensity: 1.6
+      _Seed: 1.78
+      _TexCoordTwoWeight: 1
+      _UflareScale: 1
+      _Umote2Scale: 3
+      _UmoteScale: 10
+      _Uscale: 1.87
+      _VflareScale: 0.4
+      _VflareSpeed: 3
+      _Vmote2Scale: 0.4
+      _Vmote2Speed: 1.5
+      _VmoteScale: 1
+      _VmoteSpeed: 4
+      _Vscale: 0.6
+      _Vshift: 0
+      _Vspeed: 4
+    m_Colors:
+      _Color: {r: 0.043137256, g: 0.8117647, b: 0, a: 1}
+      _Colorize: {r: 0.25882354, g: 0.7294118, b: 0.1882353, a: 1}
+      _HiColor: {r: 0.3764706, g: 0.7294118, b: 0.32941177, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 0

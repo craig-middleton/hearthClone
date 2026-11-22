@@ -413,7 +413,7 @@ namespace HearthstoneClone.UI
 
             if (handDisplay != null)
             {
-                handDisplay.RenderHand(playerOneHand.Hand, cardDragResolver.OnCardDragEnd, OnDragBegan, cardDragResolver.CanPlayerOneDrag);
+                handDisplay.RenderHand(playerOneHand.Hand, cardDragResolver.OnCardDragEnd, OnDragBegan, cardDragResolver.CanPlayerOneDrag, presentationOwner: playerOne);
             }
 
             if (opponentHandDisplay != null)
@@ -428,7 +428,7 @@ namespace HearthstoneClone.UI
                 // Craig is piloting Player Two), fanInteractive reads manualControlMode (fan only
                 // goes interactive when piloting). A future edit changing one must consider
                 // whether the other still needs to change too.
-                opponentHandDisplay.RenderHand(playerTwoHand.Hand, cardDragResolver.OnOpponentCardDragEnd, OnDragBegan, cardDragResolver.CanPlayerTwoDrag, () => !manualControlMode, () => manualControlMode);
+                opponentHandDisplay.RenderHand(playerTwoHand.Hand, cardDragResolver.OnOpponentCardDragEnd, OnDragBegan, cardDragResolver.CanPlayerTwoDrag, () => !manualControlMode, () => manualControlMode, presentationOwner: playerTwo);
             }
         }
 

@@ -17,21 +17,35 @@ public static class InstallNativeMulligan
   AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
   library=AssetDatabase.LoadAssetAtPath<NativeMulliganArt>(Folder+"NativeMulligan.asset");
   if(library==null){library=ScriptableObject.CreateInstance<NativeMulliganArt>();AssetDatabase.CreateAsset(library,Folder+"NativeMulligan.asset");}
-  library.shapes=new[]{Bake("header","BannerMulligan","BannerMulligan"),Bake("keep","Mulligan_Button_Keep","Quad_Btn_Keep_mesh"),Bake("replace","Mulligan_Button_Replace","Quad_Btn_Replace_mesh"),Bake("cross","Mulligan_X_Mark","Quad_mesh"),Bake("confirm","OriginalConfirm","Button_mesh")};
+  library.shapes=new[]{Bake("header","OriginalChooseBanner","BannerMulligan"),Bake("keep","Mulligan_Button_Keep","Quad_Btn_Keep_mesh"),Bake("replace","Mulligan_Button_Replace","Quad_Btn_Replace_mesh"),Bake("cross","Mulligan_X_Mark","Quad_mesh"),Bake("confirm","OriginalConfirm","Button_mesh")};
   EditorUtility.SetDirty(library);
   font=AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/_Project/RecoveredInterface/Proof/Belwe.asset");
   number=AssetDatabase.LoadAssetAtPath<Material>("Assets/_Project/RecoveredInterface/Proof/BelweOutlined.mat");opaque=AssetDatabase.LoadAssetAtPath<Material>("Assets/_Project/Art/NativeCards/OpaquePaint.mat");
   var e=UnityEngine.Object.FindObjectsByType<EffectTester>(FindObjectsInactive.Include).Single();var presentation=UnityEngine.Object.FindObjectsByType<MatchPresentation>(FindObjectsInactive.Include).Single();
+  var native=e.frontEnd.tableSurface.GetComponentsInChildren<NativeBoardPresentation>(true).Single();
+  var camera=native.boardCamera;
   var heading=(RectTransform)presentation.mulliganHeading.transform;
   heading.anchorMin=Vector2.zero;heading.anchorMax=Vector2.one;heading.anchoredPosition=Vector2.zero;heading.sizeDelta=Vector2.zero;
   foreach(Transform child in heading.Cast<Transform>().ToArray())if(child.name!="MulliganShade")UnityEngine.Object.DestroyImmediate(child.gameObject);
   var shade=heading.Find("MulliganShade").GetComponent<Image>();shade.rectTransform.anchorMin=shade.rectTransform.anchorMax=Vector2.one*.5f;shade.rectTransform.sizeDelta=((RectTransform)shade.GetComponentInParent<Canvas>().rootCanvas.transform).rect.size;presentation.mulliganShade=shade.rectTransform;shade.rectTransform.anchoredPosition=Vector2.zero;shade.raycastTarget=false;
-  Part("Original parchment banner",heading,"header",new Vector2(0,315),620,true);
-  Text("Starting Hand",heading,"Starting Hand",new Vector2(0,321),new Vector2(510,65),45,new Color(.16f,.09f,.025f),false);
-  Text("Original caption",heading,"Keep or Replace Cards",new Vector2(0,228),new Vector2(750,55),31,Color.white,true);
+  var bannerWorld=new Vector3(-7.7557516f,4.371788f,-1.8f);
+  var bannerSource=AssetDatabase.LoadAssetAtPath<GameObject>(Folder+"OriginalChooseBanner.prefab");
+  if(bannerSource==null)throw new Exception("Run Tools/PrepareNativeMulliganBanner.py before this installer.");
+  var bannerMesh=bannerSource.GetComponentsInChildren<MeshRenderer>(true).Single(r=>r.name=="BannerMulligan");
+  var bannerBounds=ProjectedMesh(camera,heading,bannerSource,bannerMesh,bannerWorld);
+  Part("Original parchment banner",heading,"header",bannerBounds.center,bannerBounds.width,true);
+  var headline=bannerSource.transform.Find("BannerMulligan/HeadlineText");
+  var headlineBounds=ProjectedText(camera,heading,bannerSource,headline,bannerWorld,1.82f,.24f);
+  Text("Starting Hand",heading,"Starting Hand",headlineBounds.center,headlineBounds.size,headlineBounds.height*.82f,new Color(.9019608f,.9019608f,.9019608f),true);
+  var caption=bannerSource.transform.Find("BannerMulligan/CaptionText");
+  var captionBounds=ProjectedText(camera,heading,bannerSource,caption,bannerWorld,2.68f,.22f);
+  Text("Original caption",heading,"Keep or Replace Cards",captionBounds.center,captionBounds.size,captionBounds.height*.88f,new Color(.99215686f,.81960785f,.16078432f),true);
   var panel=(RectTransform)e.mulliganPanel;panel.anchoredPosition=new Vector2(0,-20);panel.sizeDelta=new Vector2(1200,430);
-  var group=panel.GetComponent<HorizontalLayoutGroup>();group.spacing=70;group.childAlignment=TextAnchor.MiddleCenter;group.childControlWidth=group.childControlHeight=group.childForceExpandWidth=group.childForceExpandHeight=false;
-  var style=panel.GetComponent<NativeMulliganPresentation>();if(style==null)style=panel.gameObject.AddComponent<NativeMulliganPresentation>();style.cardSize=new Vector2(300,450);style.library=library;style.font=font;style.outlinedText=number;
+  var group=panel.GetComponent<HorizontalLayoutGroup>();group.spacing=70;group.childAlignment=TextAnchor.MiddleCenter;group.childControlWidth=group.childControlHeight=group.childForceExpandWidth=group.childForceExpandHeight=false;group.enabled=false;
+  var style=panel.GetComponent<NativeMulliganPresentation>();if(style==null)style=panel.gameObject.AddComponent<NativeMulliganPresentation>();style.library=library;style.font=font;style.outlinedText=number;style.boardCamera=camera;
+  style.sourceZoneCenter=new Vector3(-7.740872f,.0023448467f,-4.451679f);style.sourceZoneSize=new Vector2(10,5);style.sourceHandHeight=2.87161303f;style.sourceCardScale=1.1f;
+  style.sourceBadgeWidth=SourceWorldWidth("Mulligan_Button_Replace");style.sourceCrossWidth=SourceWorldWidth("Mulligan_X_Mark");
+  style.cardSize=style.SourceCardSize(style.SourceCardPosition(0,3));
   var button=e.confirmMulliganButton;foreach(Transform child in button.transform.Cast<Transform>().ToArray())UnityEngine.Object.DestroyImmediate(child.gameObject);
   var rect=(RectTransform)button.transform;rect.anchoredPosition=new Vector2(0,-390);rect.sizeDelta=new Vector2(190,95);
   var image=button.GetComponent<Image>();var contour=button.GetComponent<AtlasContour>();if(contour!=null)UnityEngine.Object.DestroyImmediate(contour);
@@ -41,7 +55,28 @@ public static class InstallNativeMulligan
   heading.SetAsLastSibling();panel.SetAsLastSibling();button.transform.SetAsLastSibling();
   foreach(var root in e.gameObject.scene.GetRootGameObjects())foreach(var c in root.GetComponentsInChildren<Component>(true))if(c!=null&&PrefabUtility.IsPartOfPrefabInstance(c))PrefabUtility.RecordPrefabInstancePropertyModifications(c);
   AssetDatabase.SaveAssets();EditorSceneManager.MarkSceneDirty(e.gameObject.scene);EditorSceneManager.SaveScene(e.gameObject.scene);
-  return "Native mulligan banner/blue button/keep-replace-X mesh UVs installed; enlarged three-card row and original source typography. Shapes: "+string.Join(",",library.shapes.Select(s=>s.key+"="+s.points.Length+"v "+s.aspect.ToString("F2")));
+  return "Native mulligan source StartingHandZone/camera-projected desktop card scale and badge positions installed; source banner/detail bones and typography. Shapes: "+string.Join(",",library.shapes.Select(s=>s.key+"="+s.points.Length+"v "+s.aspect.ToString("F2")));
+ }
+ static Vector2 Project(Camera camera,RectTransform parent,Vector3 world)
+ {
+  RectTransformUtility.ScreenPointToLocalPointInRectangle(parent,camera.WorldToScreenPoint(world),null,out var p);return p;
+ }
+ static float SourceWorldWidth(string prefab)
+ {
+  var root=AssetDatabase.LoadAssetAtPath<GameObject>(Folder+prefab+".prefab");
+  var vertices=root.GetComponentsInChildren<MeshRenderer>(true).Where(r=>r.enabled).SelectMany(r=>r.GetComponent<MeshFilter>().sharedMesh.vertices.Select(r.transform.TransformPoint)).ToArray();
+  return vertices.Max(v=>v.x)-vertices.Min(v=>v.x);
+ }
+ static Rect ProjectedMesh(Camera camera,RectTransform parent,GameObject root,MeshRenderer renderer,Vector3 position)
+ {
+  var points=renderer.GetComponent<MeshFilter>().sharedMesh.vertices.Select(v=>Project(camera,parent,renderer.transform.TransformPoint(v)-root.transform.position+position)).ToArray();
+  return Rect.MinMaxRect(points.Min(v=>v.x),points.Min(v=>v.y),points.Max(v=>v.x),points.Max(v=>v.y));
+ }
+ static Rect ProjectedText(Camera camera,RectTransform parent,GameObject root,Transform text,Vector3 position,float width,float height)
+ {
+  var points=new[]{new Vector3(-width*.5f,-height*.5f,0),new Vector3(-width*.5f,height*.5f,0),new Vector3(width*.5f,-height*.5f,0),new Vector3(width*.5f,height*.5f,0)}
+   .Select(v=>Project(camera,parent,text.TransformPoint(v)-root.transform.position+position)).ToArray();
+  return Rect.MinMaxRect(points.Min(v=>v.x),points.Min(v=>v.y),points.Max(v=>v.x),points.Max(v=>v.y));
  }
  static NativeMulliganShape Bake(string key,string prefab,string rendererName)
  {
@@ -67,6 +102,6 @@ public static class InstallNativeMulligan
  static void Text(string name,Transform parent,string value,Vector2 position,Vector2 size,float fontSize,Color color,bool outline)
  {
   var go=new GameObject(name,typeof(RectTransform),typeof(TextMeshProUGUI));go.transform.SetParent(parent,false);var rect=(RectTransform)go.transform;rect.anchoredPosition=position;rect.sizeDelta=size;
-  var text=go.GetComponent<TextMeshProUGUI>();text.font=font;if(outline)text.fontSharedMaterial=number;text.text=value;text.fontSize=fontSize;text.color=color;text.alignment=TextAlignmentOptions.Center;text.raycastTarget=false;
+  var text=go.GetComponent<TextMeshProUGUI>();text.font=font;if(outline)text.fontSharedMaterial=number;text.text=value;text.fontSize=fontSize;text.enableAutoSizing=true;text.fontSizeMax=fontSize;text.fontSizeMin=fontSize*.6f;text.textWrappingMode=TextWrappingModes.NoWrap;text.overflowMode=TextOverflowModes.Overflow;text.color=color;text.alignment=TextAlignmentOptions.Center;text.raycastTarget=false;
  }
 }

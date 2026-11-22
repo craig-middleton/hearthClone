@@ -1,0 +1,96 @@
+{
+  "purpose": "Original desktop starting-hand placement adapted through the existing native camera to overlay UI. No added replacement motion.",
+  "source_files": [
+    {
+      "path": "AssetBundles/essential_base_global-prefab-0.unity3d/BoardStandardGame.prefab",
+      "sha256": "6686571e356cb8f05474b5dc237678c29d56e5dffc14b13d1e3a53be8a2861d5"
+    },
+    {
+      "path": "AssetBundles/essential_base_global-prefab-0.unity3d/MulliganManager.prefab",
+      "sha256": "cb870f66f270fc71b2af8ebcfc561409c7d49a3b2436d1f2c0d6373dfd2b2fc2"
+    },
+    {
+      "path": "AssetBundles/essential_base_global-prefab-0.unity3d/Mulligan_Banner_Choose.prefab",
+      "sha256": "f8faa77e4e7804d478fc2fa42a400818fbe76ec63ddcd4ce63fcff626d45601c",
+      "destination": "Assets/_Project/Art/NativeMulligan/OriginalChooseBanner.prefab"
+    }
+  ],
+  "source_behaviour": {
+    "method": "MulliganManager/<DealStartingCards>d__193.MoveNext",
+    "zone": "BoardStandardGame/Bones/StartingHandZone",
+    "zone_position": [
+      -7.740872,
+      0.0023448467,
+      -4.451679
+    ],
+    "zone_size": [
+      10,
+      0.1,
+      5
+    ],
+    "friendly_hand_height": 2.87161303,
+    "card_z_offset": -0.3,
+    "desktop_card_scale": [
+      1.1,
+      0.28,
+      1.1
+    ],
+    "slot_spacing": "zone_width/(card_count+1)",
+    "slot_x": "zone_x-zone_width/2+slot_spacing/2+index*slot_spacing",
+    "label_method": "MulliganManager.CreateNewUILabelAtCardPosition",
+    "label_offset": [
+      0,
+      0.1,
+      "-zone_depth/2.6"
+    ],
+    "deal_time_seconds": 1.5
+  },
+  "source_bones": {
+    "ChoiceBanner": [
+      -7.7557516,
+      4.371788,
+      -1.8
+    ],
+    "MulliganDetail": [
+      -7.7557516,
+      4.371788,
+      -2.63
+    ]
+  },
+  "scope_limits": [
+    "Original hero socket clips belong to the earlier versus intro and do not move portraits away during starting-hand selection. Keep existing socket alignment.",
+    "Native card face is an existing flattened mesh UI adapter; projected source reference dimensions are used, without claiming full original card material/depth rendering.",
+    "Existing blue Confirm control retains the earlier UI placement pending reconstruction of the original overlay widget placement.",
+    "Deal/fly-out animations are not added in this layout pass."
+  ],
+  "external_il_evidence": [
+    "recovery/mulligan-original-flow-il.txt",
+    "recovery/mulligan-label-il.txt"
+  ],
+  "banner_wrapper": {
+    "root_scale": 1.75,
+    "mesh_child_scale": 1.630027,
+    "mesh_child_rotation_y_degrees": 180,
+    "headline": "BannerMulligan/HeadlineText",
+    "caption": "BannerMulligan/CaptionText",
+    "headline_rgba": [
+      0.9019608,
+      0.9019608,
+      0.9019608,
+      1
+    ],
+    "caption_rgba": [
+      0.99215686,
+      0.81960785,
+      0.16078432,
+      1
+    ],
+    "outline_rgba": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "note": "Preserve wrapper scale/rotation and use its own headline/caption anchors, not the standalone mesh or separate MulliganDetail bone."
+  }
+}

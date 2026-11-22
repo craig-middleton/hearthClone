@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using HearthstoneClone.Cards;
+using HearthstoneClone.Core;
 
 namespace HearthstoneClone.UI
 {
@@ -20,7 +21,7 @@ namespace HearthstoneClone.UI
         // plumbing. faceDown and fanInteractive are independent concerns (visibility vs.
         // interactivity) even though they may end up driven by the same underlying flag at a
         // call site - keep both wired if that flag's meaning ever changes.
-        public void RenderHand(List<CardInstance> hand, Action<CardInstance, CardView, PointerEventData> onCardDragEnded = null, Action<CardInstance, CardView> onCardDragBegan = null, Func<bool> canDrag = null, Func<bool> faceDown = null, Func<bool> fanInteractive = null)
+        public void RenderHand(List<CardInstance> hand, Action<CardInstance, CardView, PointerEventData> onCardDragEnded = null, Action<CardInstance, CardView> onCardDragBegan = null, Func<bool> canDrag = null, Func<bool> faceDown = null, Func<bool> fanInteractive = null, Player presentationOwner = null)
         {
             if (handPanel == null)
             {
@@ -67,6 +68,7 @@ namespace HearthstoneClone.UI
                 }
 
                 view.SetCard(card, onCardDragEnded, onCardDragBegan, canDrag, isFaceDown);
+                view.GetComponent<NativeHandCardPresentation>()?.Bind(presentationOwner, handPanel);
                 renderedViews.Add(view);
             }
 
