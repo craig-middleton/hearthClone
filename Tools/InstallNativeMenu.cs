@@ -61,7 +61,15 @@ public static class InstallNativeMenu
             mat.SetFloat("_ZWrite",transparent?0:1);mat.SetFloat("_UseAlpha",transparent?1:0);
             mat.SetFloat("_Cutoff",transparent?FloatValue(source,"_Cutoff",0):0);
         }
-        mat.renderQueue=shadow?2450:transparent?3000:2000;
+        if(!supported)
+        {
+            // Disable only the unsupported submesh, not its shared renderer:
+            // the centre disk also carries the opaque original wood surface.
+            mat.shader=Shader.Find("HearthClone/Compatibility/Source Menu Surface");
+            mat.SetColor("_Color",Color.clear);mat.SetFloat("_SrcBlend",5);mat.SetFloat("_DstBlend",10);
+            mat.SetFloat("_ZWrite",0);mat.SetFloat("_UseAlpha",1);
+        }
+        mat.renderQueue=!supported?3000:shadow?2450:transparent?3000:2000;
         EditorUtility.SetDirty(mat);return mat;
     }
     static Transform Find(Transform root,string name)=>root.GetComponentsInChildren<Transform>(true).Single(t=>t.name==name);
@@ -75,7 +83,7 @@ public static class InstallNativeMenu
         var contour=button.GetComponent<AtlasContour>();if(contour!=null)UnityEngine.Object.DestroyImmediate(contour);
         button.transition=Selectable.Transition.None;
         var text=button.GetComponentInChildren<TMP_Text>(true);text.font=AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/_Project/RecoveredInterface/Proof/Belwe.asset");
-        text.fontSharedMaterial=text.font.material;text.text=value;text.color=Ink;text.fontStyle=FontStyles.Normal;text.fontSize=36;text.enableAutoSizing=true;text.fontSizeMin=20;text.fontSizeMax=36;
+        text.fontSharedMaterial=AssetDatabase.LoadAssetAtPath<Material>("Assets/_Project/RecoveredInterface/Proof/BelweOutlined.mat");text.text=value;text.color=new Color(.96f,.85f,.62f);text.fontStyle=FontStyles.Normal;text.fontSize=36;text.enableAutoSizing=true;text.fontSizeMin=20;text.fontSizeMax=36;
         text.alignment=TextAlignmentOptions.Center;text.raycastTarget=false;
         var points=source.GetComponent<MeshFilter>().sharedMesh.vertices;
         if(points.Length==0)throw new Exception("Original menu slot points could not be baked in Edit mode: "+source.name);
@@ -106,13 +114,13 @@ public static class InstallNativeMenu
         foreach(var light in root.GetComponentsInChildren<Light>(true))light.cullingMask=1<<MenuLayer;
         foreach(var r in root.GetComponentsInChildren<MeshRenderer>(true))
         {
-            bool enabled=r.enabled;var originals=r.sharedMaterials;var mapped=new List<Material>();
+            bool enabled=r.enabled;bool anySupported=false;var originals=r.sharedMaterials;var mapped=new List<Material>();
             foreach(var material in originals)
             {
-                if(material==null){enabled=false;mapped.Add(null);continue;}
-                mapped.Add(Map(material,r,out bool supported));enabled&=supported;
+                if(material==null){mapped.Add(null);continue;}
+                mapped.Add(Map(material,r,out bool supported));anySupported|=supported;
             }
-            r.sharedMaterials=mapped.ToArray();r.enabled=enabled;r.shadowCastingMode=ShadowCastingMode.Off;r.receiveShadows=false;
+            r.sharedMaterials=mapped.ToArray();r.enabled=enabled&&anySupported;r.shadowCastingMode=ShadowCastingMode.Off;r.receiveShadows=false;
         }
         // PC main-menu state from original TheBox.m_StateInfoList. The spinner
         // loading pose is zero; the authored MainMenu disk rotation is Z=180.

@@ -100,7 +100,7 @@ namespace HearthstoneClone.UI
         {
             if(menuRoot==null||menuCamera==null)return;
             menuCamera.ResetAspect();
-            float fit=Mathf.Max(1,(16f/9f)/menuCamera.aspect);
+            float fit=1.08f*Mathf.Max(1,(16f/9f)/menuCamera.aspect);
             menuCamera.fieldOfView=2*Mathf.Atan(Mathf.Tan(sourceFieldOfView*Mathf.Deg2Rad*.5f)*fit)*Mathf.Rad2Deg;
             foreach(var slot in slots??Array.Empty<Slot>())Place(slot);
             if(deckLabel!=null)
@@ -139,6 +139,15 @@ namespace HearthstoneClone.UI
                 slot.label.rectTransform.anchorMax=Vector2.one;
                 slot.label.rectTransform.offsetMin=Vector2.zero;
                 slot.label.rectTransform.offsetMax=Vector2.zero;
+                // Match the source button's projected baseline during the original
+                // camera movement, rather than leaving overlay text horizontal.
+                var origin=menuCamera.WorldToScreenPoint(slot.source.transform.position);
+                var right=menuCamera.WorldToScreenPoint(slot.source.transform.TransformPoint(Vector3.right));
+                var direction=right-origin;
+                float angle=Mathf.Atan2(direction.y,direction.x)*Mathf.Rad2Deg;
+                if(angle>90)angle-=180;if(angle< -90)angle+=180;
+                slot.label.rectTransform.localRotation=Quaternion.Euler(0,0,angle);
+                slot.label.rectTransform.sizeDelta=Vector2.zero;
             }
         }
     }

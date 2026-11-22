@@ -25,10 +25,10 @@ namespace HearthstoneClone.UI
 
         public Vector3 SourceCardPosition(int index, int count)
         {
-            // The original first-player layout reserves the fourth slot to the
-            // right for the coin presentation; it is deliberately not recentered.
+            // Adapt the source spacing to the actual visible hand. This local
+            // player receives three cards and no Coin: do not reserve a phantom slot.
             float spacing = sourceZoneSize.x / (count + 1);
-            return new Vector3(sourceZoneCenter.x - sourceZoneSize.x * .5f + spacing * (.5f + index),
+            return new Vector3(sourceZoneCenter.x - sourceZoneSize.x * .5f + spacing * (1f + index),
                 sourceHandHeight, sourceZoneCenter.z - .3f);
         }
 
@@ -116,6 +116,18 @@ namespace HearthstoneClone.UI
             text.fontSize = 25; text.enableAutoSizing = true; text.fontSizeMin = 14; text.fontSizeMax = 25;
             text.alignment = TextAlignmentOptions.Center; text.raycastTarget = false;
             marker.cross = Part("Original red X", view.transform, "cross", Vector2.zero, cardSize.x * .75f).gameObject;
+            // Reuse the original silhouette geometry/material, independently of
+            // the hand-only eligibility component that correctly hides its own copy.
+            var handStyle=view.GetComponent<NativeHandCardPresentation>();
+            var source=view.Card.Data.cardType==HearthstoneClone.Cards.CardType.Minion
+                ?handStyle?.minionOutline:handStyle?.spellOutline;
+            if(source!=null)
+            {
+                marker.readyOutline=Instantiate(source,source.transform.parent);
+                marker.readyOutline.name="Original mulligan selectable silhouette";
+                marker.readyOutline.transform.SetAsFirstSibling();
+                marker.readyOutline.raycastTarget=false;
+            }
             marker.SetSelected(false);
         }
 

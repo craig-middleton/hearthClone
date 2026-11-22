@@ -19,6 +19,8 @@ public static class VerifyNativeMulligan
   foreach(var view in views){var marker=view.GetComponent<NativeMulliganCard>();Check(marker!=null&&marker.keep.activeSelf&&!marker.cross.activeSelf,"Keep state missing");var rect=(RectTransform)view.transform;var expected=style.SourceCardSize(style.SourceCardPosition(Array.IndexOf(views,view),views.Length));Check(Vector2.Distance(rect.rect.size,expected)<.5f,"Mulligan card lost original desktop scale");Check(Vector2.Distance(rect.anchoredPosition,style.Project(style.SourceCardPosition(Array.IndexOf(views,view),views.Length)))<.5f,"Mulligan card not aligned to original StartingHandZone slot");}
   Check(style.boardCamera!=null&&!e.mulliganPanel.GetComponent<HorizontalLayoutGroup>().enabled,"Source projection is being overwritten by layout group");
   var selected=views[1];var instance=selected.Card;Click(selected.button);var mark=selected.GetComponent<NativeMulliganCard>();
+  Check(mark.readyOutline!=null&&!mark.readyOutline.enabled&&!mark.readyOutline.raycastTarget,"Replacement retained selectable glow or blocked input");
+  Check(views.Where(v=>v!=selected).All(v=>v.GetComponent<NativeMulliganCard>().readyOutline.enabled),"Kept cards lost their original selectable outline");
   Check(mark.cross.activeSelf&&mark.replace.activeSelf&&!mark.keep.activeSelf,"Replace click did not show source X/badge");
   Check(views.Where(v=>v!=selected).All(v=>v.GetComponent<NativeMulliganCard>().keep.activeSelf),"Replace click changed another card");
   Check(new[]{mark.keep,mark.replace,mark.cross}.SelectMany(o=>o.GetComponentsInChildren<Graphic>(true)).All(g=>!g.raycastTarget),"Mulligan marks intercept input");

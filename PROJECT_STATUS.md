@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-22 — Native TheBox menu/camera intro, source mulligan layout/banner, original minions/hand outlines and Fireball/Frostbolt effects installed and Play-verified. Final fresh menu/deck checks have zero Console errors/warnings. Unity stopped in clean Edit; visual playtest next on High. Shader richness remains incomplete; HANDOFF.md is the authoritative resume point._
+_Last updated: 2026-11-22 — Craig rejected prior menu/mulligan visuals. Corrected centre-disk submesh suppression, menu labels/framing and centred mulligan selection/glow. Actual Game-view captures reviewed; menu/mulligan/frontend checks pass with clean Console. Visual acceptance and lighting/type/material work remain pending; see HANDOFF.md._
 
 ## How to use these files
 - **`HANDOFF.md`** — read first for latest checkpoint, local/unfinished work, validation limits and next steps. Overwrite this one file in every main commit, with no dated copies. `AGENTS.md` records the rule for incoming agents.

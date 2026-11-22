@@ -917,3 +917,12 @@ Mulligan now projects original StartingHandZone10-unit spacing,1.1desktopscale a
 Actual Fireball/Frostbolt casts use source prefab/particles/curves/audio/camera/path timing with independent tails and lethal snapshot cleanup. Full58-record dependency manifest repaired; four CardDef-proven portraits wired. Generic source-surface compatibility still omits electrical/noise/scrolling-flame shaders and exact bloom/distortion/shake. Captures inspected; source playback is not a pixel-identical shader claim.
 
 Verifiers passed: native menu, frontend, mulligan, minions, hand outlines, spells, powers, starting decks, native controls and mana. Deck test confirms30total including opening hands/Coin. No full-match manual playtest, standalone build or physical listening claim. Hero-death/corners retain prior verified checkpoints. Unity left stopped in clean Edit, auto-tick off; High recommended for Craig's visual playtest. Rolling handoff updated in this commit; unrelated Deck_75 material/recovery metadata/early hero preview preserved.
+
+
+## 22 November 2026 — rejected visuals and targeted corrections
+
+Craig supplied Game-view screenshots and rejected the previous menu/mulligan result. Functional checks had not established visual correctness. The menu centre disk had both opaque wood and unsupported glow materials; installer disabled the whole renderer when either was unsupported. It now blanks only unsupported submeshes, retaining original wood. Added regression check for visible opaque disk. Existing button labels use the original outlined Belwe font with readable gold tint and rotate along projected source baselines during original camera movement. An explicit1.08compatibility framing margin reduces edge crowding. Original source camera curves remain unchanged.
+
+Centred original mulligan spacing for the actual three-card/no-Coin local hand, removing the previous phantom fourth-slot reservation. Separate copies of original silhouette geometry/materials now mark keepable cards, hiding on replacement; existing hand-only outlines remain suppressed. Source marks and nonblocking input preserved. Hero/banner/confirm crowding, card typography and dark/flat material response still need review; this is not visual sign-off.
+
+Inspected actual screen-source captures Native-menu-corrected.png and Native-mulligan-corrected.png. Menu, mulligan and real frontend/deck tests pass; final Console zero errors/warnings. Unity stopped clean Edit/auto-tickoff; unrelated pre-existing files preserved. Rolling handoff updated in same main commit.

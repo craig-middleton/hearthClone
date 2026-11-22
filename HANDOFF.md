@@ -2,23 +2,31 @@
 
 Updated 22 November 2026. Single rolling handoff shared by Codex and local Gemini.
 Read AGENTS.md, GEMINI.md, PROJECT_STATUS.md and git status before editing. Run
-`git log -1` to identify the containing checkpoint. Previous baseline:30325c4.
+`git log -1` to identify the containing checkpoint. Previous baseline:2b462b5.
 
 ## Current checkpoint
 
-Original native menu/camera intro, corrected source mulligan layout, playable
-minions/hand highlights and Fireball/Frostbolt presentation are installed in the
-saved Assets/Scenes/HearthstoneTable.unity. Unity6000.6.9f1 is open normally via
-Hub, stopped in clean Edit mode; temporary auto-tick is off. Gameplay fixtures
-were discarded. Current C#/shader compilation succeeds. Final fresh menu/deck
-verification and review capture finished with zero Console errors or warnings.
+Craig REJECTED the visual result of2b462b5 in screenshots22Nov20:47. Do not
+present the menu/mulligan as visually finished. This checkpoint fixes specific
+faults: opaque centre-disk wood disabled by an unsupported glow submesh, unreadable
+menu text, horizontal labels during camera tilt, and a left-shifted mulligan row.
+Original selectable silhouette glow now appears on kept mulligan cards and hides
+on replacement. Captured actual Game view screen (not only isolated-camera renders)
+in Docs/Previews/Native-menu-corrected.png and Native-mulligan-corrected.png.
+Menu/mulligan/frontend verifiers pass and final Console has zero errors/warnings.
+Unity is stopped in clean Edit, temporary auto-tick off. Visual acceptance pending.
 
-Craig chose Ultra for this implementation. Recommend switching to High now for
-his visual playtest and routine alignment/tuning; stop implementation at this
-checkpoint. Do not change effort yourself. Complex remaining shader/source
-reconstruction warrants Ultra when resumed. Craig requires brief progress
-explanations, original assets/motion, direct-main significant commits/pushes and
-this handoff overwritten in the same commit. Compatibility rendering is allowed.
+Remaining visible shortcomings include dark/flat source-surface compatibility,
+card typography/material richness and hero/banner/confirm crowding. Do not treat
+functional tests as visual approval. New menu fit margin1.08 and gold outlined
+labels are explicit compatibility presentation choices, not recovered source values.
+Mulligan spacing is original but centred for our three-card/no-Coin local player;
+the earlier asymmetric source layout reserved a phantom Coin slot in this flow.
+Continue using original assets. No new motion was invented. Original camera clip
+remains. Complex original shader reconstruction needs Ultra; Craig controls effort.
+
+Craig requires brief progress explanations, direct-main significant commits/pushes
+and this handoff overwritten in the same commit. Compatibility rendering is allowed.
 Do not claim pixel-identical original shaders or full visual completion.
 
 ## Implemented and verified in this checkpoint
@@ -42,7 +50,7 @@ Do not claim pixel-identical original shaders or full visual completion.
   1.75×1.630027 scale, Y180 rotation, headline/caption anchors and original colors.
   Standalone BannerMulligan alone was too small. New visual-only wrapper retained.
   Hero socket clips occur BEFORE dealing; no invented move-aside animation added.
-  Source card layout is intentionally asymmetric. Existing confirm/deal remains.
+  Source spacing now centres the actual visible local hand; see checkpoint correction. Existing confirm/deal remains.
 - **Source material values:** SourceMaterialProperties reads preserved serialized
   colors/floats/textures/UV values. Material.GetColor/GetFloat with unavailable
   original shaders returned zeros despite source values existing. Fixed hand,
@@ -84,8 +92,7 @@ not rerun here. Corner checkpoint2e92890 and approved mana5d07762 preserved.
 
 ## Remaining visual work / next actions
 
-1. Craig's visual playtest of menu→deck chooser→mulligan→match. On High, fix specific
-   alignment/readability feedback before broad source reconstruction.
+1. Craig rejected previous menu/mulligan visuals. Review new actual-screen captures with him; prioritize lighting, card typography and portrait/modal composition. No visual approval yet.
 2. Hand/minion material richness is unfinished: original gloss/reflection/bloom,
    animated source highlight motes, source taunt birth spring are not installed.
    No invented shimmer or tweens. Existing name meshes/typography need review.

@@ -54,6 +54,8 @@ public static class VerifyNativeMenu
         await Until(()=>!menu.IntroPlaying,7000,"Original menu camera intro did not complete");await Task.Delay(50);
         Check(Vector3.Distance(menu.menuCamera.transform.localPosition,menu.restingCameraPosition)<.001f,"Source resting camera pose not restored");
         Check(menu.menuRoot.GetComponentsInChildren<Renderer>().Where(r=>r.enabled).All(r=>r.sharedMaterials.All(m=>m!=null&&m.shader.isSupported)),"Unsupported original menu material still visible");
+        var disk=menu.menuRoot.GetComponentsInChildren<MeshRenderer>(true).Single(r=>r.name=="TheBox_CenterDisk_mesh");
+        Check(disk.enabled&&disk.sharedMaterials.Any(m=>m.HasProperty("_Color")&&m.GetColor("_Color").a>.9f),"Opaque original centre disk was disabled with its glow submesh");
         FirstHit(front.playButton);FirstHit(front.chooseDeckButton);
         foreach(var slot in menu.slots)
         {
