@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-22 — Craig rejected prior menu/mulligan visuals. Corrected centre-disk submesh suppression, menu labels/framing and centred mulligan selection/glow. Actual Game-view captures reviewed; menu/mulligan/frontend checks pass with clean Console. Visual acceptance and lighting/type/material work remain pending; see HANDOFF.md._
+_Last updated: 2026-11-22 — Focused typography/mulligan pass follows rejected visuals: consistent native Belwe titles, larger spell body area, corrected stale artwork/name rebinding, Confirm above player painting. Card/layout/mulligan checks pass, Console clean; visual approval and source lighting/material work pending. See HANDOFF.md._
 
 ## How to use these files
 - **`HANDOFF.md`** — read first for latest checkpoint, local/unfinished work, validation limits and next steps. Overwrite this one file in every main commit, with no dated copies. `AGENTS.md` records the rule for incoming agents.

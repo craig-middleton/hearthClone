@@ -2,9 +2,32 @@
 
 Updated 22 November 2026. Single rolling handoff shared by Codex and local Gemini.
 Read AGENTS.md, GEMINI.md, PROJECT_STATUS.md and git status before editing. Run
-`git log -1` to identify the containing checkpoint. Previous baseline:2b462b5.
+`git log -1` to identify the containing checkpoint. Previous baseline:5d14c52.
 
 ## Current checkpoint
+
+Latest focused pass: native Belwe title textures rebaked for47cards with consistent
+.82-unit glyph height and thinner.14 outline (compatibility typography choices,
+not source font metrics). Original curved-name mesh/UVs unchanged. Spell body boxes
+use unused upper parchment space (+6width/+8height/up4 native units), preserving
+lower edge/school separation; sample long-description font increased11.1→13.1.
+Tools/RefreshNativeCardNames.cs updates names and idempotently patches spell body
+boxes; future InstallNativeCards uses same dimensions. Do not rerun the full card
+installer casually: it replaces native card children/outlines.
+
+NativeCardFace.Bind now calls SetMaterialDirty as well as SetVerticesDirty.
+Actual-screen review of reused views caught stale portrait/name texture binding
+that prior property-only checks missed. Correct source artwork/name now appears.
+Mulligan card compositionOffset(0,75) lifts row; Confirm now at(0,-155),170×85,
+clear of the player painting in reviewed1280×720 Game view. Shade alpha.4. These
+are explicit UI compatibility composition choices. No new motion/assets invented.
+
+VerifyNativeCards, VerifyNativeCardLayout and VerifyNativeMulligan pass; latest
+card-binding change retested with real rendered fixture. Current Console0 errors/
+0 warnings. Actual screen capture Docs/Previews/Native-mulligan-type-spacing.png
+inspected. Unity stopped in clean Edit, auto-tickoff; no saved gameplay fixtures.
+This improves readability/spacing; it is NOT visual acceptance. Remaining source
+lighting/material work and banner/opponent portrait composition still need review.
 
 Craig REJECTED the visual result of2b462b5 in screenshots22Nov20:47. Do not
 present the menu/mulligan as visually finished. This checkpoint fixes specific

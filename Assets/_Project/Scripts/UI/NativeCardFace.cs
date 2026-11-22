@@ -41,6 +41,7 @@ namespace HearthstoneClone.UI
                 part.artwork=data.artwork;part.nameTexture=name;
                 part.enabled=part.Definition.role!=NativeCardRole.Name||name!=null;
                 part.SetVerticesDirty();
+                part.SetMaterialDirty(); // Artwork/name textures changed as well as geometry.
             }
             foreach(var label in labels)
                 label.text.text=Value(label.role,data);

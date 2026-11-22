@@ -20,10 +20,14 @@ public static class NativeCardTextBaker
             text.rectTransform.sizeDelta = new Vector2(5.15f, .94f);
             text.alignment = TextAlignmentOptions.Center; text.enableAutoSizing = true; text.fontSizeMin = 1; text.fontSizeMax = 40;
             text.textWrappingMode = TextWrappingModes.NoWrap; text.overflowMode = TextOverflowModes.Overflow;
-            text.fontMaterial.SetFloat("_OutlineWidth", outline ? .25f : 0);
+            text.fontMaterial.SetFloat("_OutlineWidth", outline ? .14f : 0);
             text.fontMaterial.SetColor("_OutlineColor", new Color(.08f, .035f, .012f));
             if (outline) text.fontMaterial.EnableKeyword("OUTLINE_ON");
             text.ForceMeshUpdate();
+            // Fit glyphs consistently into the native curved strip. Width-based
+            // autosizing otherwise makes long titles much thinner than short ones.
+            float inkHeight=text.textBounds.size.y;
+            if(inkHeight>.0001f)text.transform.localScale=new Vector3(1,.82f/inkHeight,1);
             var camera = new GameObject("Name capture", typeof(Camera)).GetComponent<Camera>(); camera.transform.SetParent(stage.transform, false);
             camera.transform.localPosition = new Vector3(0, 0, -5); camera.orthographic = true; camera.orthographicSize = .5f;
             camera.aspect = (float)width / height; camera.clearFlags = CameraClearFlags.SolidColor; camera.backgroundColor = Color.clear;

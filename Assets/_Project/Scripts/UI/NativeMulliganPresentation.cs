@@ -17,6 +17,7 @@ namespace HearthstoneClone.UI
         public Vector2 sourceZoneSize = new Vector2(10, 5);
         public float sourceHandHeight = 2.87161303f;
         public float sourceCardScale = 1.1f;
+        public Vector2 compositionOffset = new Vector2(0,75);
         public float sourceBadgeWidth = 2.1f;
         public float sourceCrossWidth = 1.8f;
 
@@ -36,7 +37,7 @@ namespace HearthstoneClone.UI
         {
             RectTransformUtility.ScreenPointToLocalPointInRectangle(Panel,
                 boardCamera.WorldToScreenPoint(world), null, out var position);
-            return position;
+            return position + compositionOffset;
         }
 
         public Vector2 SourceCardSize(Vector3 world)

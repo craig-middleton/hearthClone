@@ -27,7 +27,7 @@ public static class InstallNativeMulligan
   var heading=(RectTransform)presentation.mulliganHeading.transform;
   heading.anchorMin=Vector2.zero;heading.anchorMax=Vector2.one;heading.anchoredPosition=Vector2.zero;heading.sizeDelta=Vector2.zero;
   foreach(Transform child in heading.Cast<Transform>().ToArray())if(child.name!="MulliganShade")UnityEngine.Object.DestroyImmediate(child.gameObject);
-  var shade=heading.Find("MulliganShade").GetComponent<Image>();shade.rectTransform.anchorMin=shade.rectTransform.anchorMax=Vector2.one*.5f;shade.rectTransform.sizeDelta=((RectTransform)shade.GetComponentInParent<Canvas>().rootCanvas.transform).rect.size;presentation.mulliganShade=shade.rectTransform;shade.rectTransform.anchoredPosition=Vector2.zero;shade.raycastTarget=false;
+  var shade=heading.Find("MulliganShade").GetComponent<Image>();shade.rectTransform.anchorMin=shade.rectTransform.anchorMax=Vector2.one*.5f;shade.rectTransform.sizeDelta=((RectTransform)shade.GetComponentInParent<Canvas>().rootCanvas.transform).rect.size;presentation.mulliganShade=shade.rectTransform;shade.rectTransform.anchoredPosition=Vector2.zero;shade.raycastTarget=false;shade.color=new Color(0,0,0,.4f);
   var bannerWorld=new Vector3(-7.7557516f,4.371788f,-1.8f);
   var bannerSource=AssetDatabase.LoadAssetAtPath<GameObject>(Folder+"OriginalChooseBanner.prefab");
   if(bannerSource==null)throw new Exception("Run Tools/PrepareNativeMulliganBanner.py before this installer.");
@@ -47,11 +47,11 @@ public static class InstallNativeMulligan
   style.sourceBadgeWidth=SourceWorldWidth("Mulligan_Button_Replace");style.sourceCrossWidth=SourceWorldWidth("Mulligan_X_Mark");
   style.cardSize=style.SourceCardSize(style.SourceCardPosition(0,3));
   var button=e.confirmMulliganButton;foreach(Transform child in button.transform.Cast<Transform>().ToArray())UnityEngine.Object.DestroyImmediate(child.gameObject);
-  var rect=(RectTransform)button.transform;rect.anchoredPosition=new Vector2(0,-390);rect.sizeDelta=new Vector2(190,95);
+  var rect=(RectTransform)button.transform;rect.anchoredPosition=new Vector2(0,-155);rect.sizeDelta=new Vector2(170,85);
   var image=button.GetComponent<Image>();var contour=button.GetComponent<AtlasContour>();if(contour!=null)UnityEngine.Object.DestroyImmediate(contour);
   image.sprite=null;image.color=Color.clear;image.material=null;image.raycastTarget=true;
-  Part("Original blue confirm button",button.transform,"confirm",Vector2.zero,190,true);
-  Text("Confirm",button.transform,"Confirm",Vector2.zero,new Vector2(210,60),31,Color.white,true);
+  Part("Original blue confirm button",button.transform,"confirm",Vector2.zero,170,true);
+  Text("Confirm",button.transform,"Confirm",Vector2.zero,new Vector2(170,50),28,Color.white,true);
   heading.SetAsLastSibling();panel.SetAsLastSibling();button.transform.SetAsLastSibling();
   foreach(var root in e.gameObject.scene.GetRootGameObjects())foreach(var c in root.GetComponentsInChildren<Component>(true))if(c!=null&&PrefabUtility.IsPartOfPrefabInstance(c))PrefabUtility.RecordPrefabInstancePropertyModifications(c);
   AssetDatabase.SaveAssets();EditorSceneManager.MarkSceneDirty(e.gameObject.scene);EditorSceneManager.SaveScene(e.gameObject.scene);

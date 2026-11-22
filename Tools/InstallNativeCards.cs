@@ -132,7 +132,7 @@ public static class InstallNativeCards
             var size=Vector2.Scale(original.rectTransform.rect.size,new Vector2(sx,sy))*Scale;
             var rect=Rect(role.ToString(),root,Point(actor,original.transform.position),size);
             if(spell&&role==NativeCardRole.Description)
-            {rect.anchoredPosition+=Vector2.up*6;rect.sizeDelta-=new Vector2(0,12);}
+            {rect.anchoredPosition+=Vector2.up*10;rect.sizeDelta+=new Vector2(6,-4);}
             var text=rect.gameObject.AddComponent<TextMeshProUGUI>();
             text.font=original.font;text.fontSharedMaterial=original.fontSharedMaterial;text.color=original.color;
             text.alignment=TextAlignmentOptions.Center;text.richText=true;text.raycastTarget=false;

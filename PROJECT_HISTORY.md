@@ -926,3 +926,12 @@ Craig supplied Game-view screenshots and rejected the previous menu/mulligan res
 Centred original mulligan spacing for the actual three-card/no-Coin local hand, removing the previous phantom fourth-slot reservation. Separate copies of original silhouette geometry/materials now mark keepable cards, hiding on replacement; existing hand-only outlines remain suppressed. Source marks and nonblocking input preserved. Hero/banner/confirm crowding, card typography and dark/flat material response still need review; this is not visual sign-off.
 
 Inspected actual screen-source captures Native-menu-corrected.png and Native-mulligan-corrected.png. Menu, mulligan and real frontend/deck tests pass; final Console zero errors/warnings. Unity stopped clean Edit/auto-tickoff; unrelated pre-existing files preserved. Rolling handoff updated in same main commit.
+
+
+## 22 November 2026 — card typography and mulligan clearance
+
+Craig had credits remaining and requested continued work. Recovered Belwe title bakes now use consistent.82-unit ink height after width fitting, with thinner.14 compatibility outline; original curved mesh and UVs preserved. These are raster-fit choices, not recovered UberText metrics. Spell description rectangles gain6width/8height/up4 native units using unused upper parchment; lower edge/school strip unchanged. The long Rebirth's Touch example grows from11.1 to13.1 font. Targeted RefreshNativeCardNames avoids full card installer replacing installed outline children.
+
+Actual Game-view typography fixture caught an existing rebind bug: NativeCardLayer's mainTexture property changed, but CanvasRenderer retained previous artwork/name. NativeCardFace.Bind now marks material dirty alongside vertices. Before/after screenshot confirmed restored correct Fireball/Rebirth'sTouch art/names. Earlier property-based verifier had not caught this.
+
+Lifted mulligan row75 UI units and moved/resized existing original Confirm to(0,-155),170×85, leaving player painting clear in reviewed720-high screen capture. Shade.4. Layout offsets are disclosed compatibility choices; source spacing, marks, card geometry, selection and original motion retained. Card, ten-card hover/layout and mulligan checks pass; binding fix retested and Console clean. Latest actual-screen preview Native-mulligan-type-spacing.png inspected. Stopped clean Edit/auto-tickoff, updated rolling handoff. Overall visuals still unapproved; lighting/material richness and upper hero/banner composition remain.
