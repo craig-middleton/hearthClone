@@ -48,6 +48,7 @@ namespace HearthstoneClone.UI
 
         private CardInstance card;
         public CardInstance Card => card;
+        public bool CanDragForPresentation => canDrag!=null&&canDrag();
         private Action<CardInstance> onMulliganToggled;
         private Action<CardInstance, CardView> onDragBegan;
         private Action<CardInstance, CardView, PointerEventData> onDragEnded;

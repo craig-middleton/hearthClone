@@ -1,148 +1,223 @@
 # HearthClone — current handoff
 
-Updated 22 November 2026. Overwrite this one file in the same commit as every main
-commit. Read AGENTS.md, git log -1 and git status. This checkpoint follows 37c4ca4
-hero powers and approved corner 2e92890.
+Updated 22 November 2026 for immediate local handover to Gemini. This is the single
+rolling handoff shared by Codex and Gemini. Overwrite it in every main commit.
+Read AGENTS.md, GEMINI.md, git log -1 and git status before editing. The containing
+commit is a WIP handover checkpoint following verified hero-death 98d3481 and
+hero-power 37c4ca4. Run git log -1 to identify this commit without a self-hash cycle.
 
-## Current request and status
+## User objective and working preferences
 
-Craig confirmed Ultra and resumed. Current scope includes original hero-power
-presentation, hero shattering, original spell VFX/sounds, hand/minion rendering,
-and now a faithful intro/menu and corrected mulligan. Use supplied original assets
-and animation data, with authorized compatibility rendering. Explain progress
-briefly. Update this handoff with every main commit.
+Continue the existing Unity card game using Craig's supplied original assets.
+Current requested work is original hero powers, shattering hero deaths, real spell
+animations/sounds, better hand/played-minion graphics, and now an original-asset
+intro/menu plus a corrected mulligan. Preserve the existing working mechanics,
+30-card deck totals and approved board/mana/corner work.
 
-This checkpoint saves the installed hero-death sequence and source-derived power
-readiness silhouette. Hero death passed opponent/player/simultaneous checks during
-the previous run. The explosion capture has now been inspected. Fresh 22 Nov Editor
-compile/console status is clean, and VerifyNativeHeroPowers passed after its fixture
-was corrected to wait for the opening draw before testing the used state.
+Craig last chose Ultra. Recommend Carbon for the next source-integration pass in
+Gemini. Neon High is suitable for later routine fixes/visual tuning. Craig controls
+model/effort settings. Explain meaningful progress briefly. Stop promptly if asked.
+Significant work goes directly to main and GitHub. Include this updated handoff in
+the same commit. Use original models, textures, fonts, sounds and animation data.
+Compatibility rendering is authorized. Record rendering gaps honestly and keep
+added motion grounded in recovered clips/curves/source behavior.
 
-Hero death uses source crack geometry/paint,17-piece motion, original particles,
-light curves and exact crack/explosion audio. Detached health/armor and powers hide
-at explosion. Result UI waits, and Play Again/menu reset correctly. Local source
-slow-time curves preserve effect pacing. Original distortion/erosion and global
-camera/minion shake remain compatibility gaps. See Hero-death-source.json.
+## Immediate state at handover
 
-Source readiness masks are reconstructed from actual source mesh triangles through
-recovered 256px projection/blur passes. The unavailable blur/composite shader kernels
-are compatibility reconstructions. No artist-drawn replacement shape or motion was
-added. NativeHighlightBaker and SourceSelectionHighlight are shared with pending
-minion work. Current Power mask is nonblank and original flip/restore/input checks
-pass. The previous grey square shadow issue remains fixed.
+All implementation agents were stopped at safe file boundaries for this handover.
+Unity is open normally through Hub on Assets/Scenes/HearthstoneTable.unity, clean
+Edit mode, with temporary auto-tick disabled. Fresh recompile completed successfully.
+Fresh console reports zero errors/warnings. Current code compiles, but the WIP
+features below still require Play tests and visual review. No new feature work was
+performed after the handover request.
 
-Remaining spell/card/screen work is local and unfinished. Active source recovery
-continues on Ultra. Switch to High only at a tested visual-adjustment checkpoint.
-Unity is kept in clean Edit mode between installer passes. Launch it through Hub.
+This commit includes the previously local pending minion/hand/spell code and selected
+assets, rather than leaving another agent dependent on an untracked draft. Their
+status is explicit below. Large source archives stay local at the listed paths.
+The pre-existing unrelated RecoveredDecks/Deck_75_mesh.mat change and recovery
+metadata Assets/_Recovery.meta remain excluded. The superseded local
+Docs/Previews/Native-hero-powers-first.png is an early grey-shadow proof, not an
+approved reference. Inspect git status for newer work before staging anything.
 
-## Verified hero-power checkpoint
+## Finished and verified
 
-- Both buttons now render original Card_Play_HeroPower 3D actors: original three
-  submeshes (frame/portrait/class back), mana gem, shadow and ready highlight.
-  Current original Fireblast/Armor Up artwork is mapped onto source portrait UVs.
-  UI buttons/input remain, old flat images hidden. World geometry tracks input
-  anchors; cost uses native gem position and original Belwe font.
-- Original Used (.5333sec) and Restore (.4333sec) transform/enabled curves are baked
-  through AnimationUtility and evaluated directly. Direct SampleAnimation on the
-  mixed exported power clip triggered a Unity assertion/crash; DO NOT restore it.
-  Manual evaluation retains source keys/tangents, composes quaternion channels
-  before normalizing, and avoids the unsafe native clip binding.
-- Source white-neutral grayscale shadow uses a compatibility multiply shader;
-  ordinary alpha or vertex-RGB multiplication produced visible rectangles. Original
-  source color/paint are retained. Compiled source specular/highlight shader math
-  is not fully recovered, so bit-identical lighting/shimmer is not claimed.
-- Source closure89 assets includes future death/Fireball visual templates, imported
-  without client scripts. These inactive templates do not mean those features are
-  installed. NativeHeroEffects/SourceManifest.json records provenance/gaps; two
-  unused power animation slots were unresolved, while used/restore are recovered.
-- Tests passed 21 Nov: VerifyNativeHeroPowers (both meshes/paint/curves, input and
-  alignment, ready, used/restore, menu/new-game); VerifyNativeMatchControls;
-  VerifyPowersAndBattle (actual targeting,2-mana/once-per-turn, lethal, AI Armor Up,
-  cleanup). Console zero errors/warnings after safe preview. Native-hero-powers.png
-  inspected. 22 Nov fresh Editor status/compilation/console checked, no rerun claimed.
+- Corner2e92890, hero powers37c4ca4 and hero death98d3481 are pushed checkpoints.
+- Mana recess5d07762 is approved. It is original STW_Frame/FRAME.png with direct
+  native crystal models. Extra UI tray/capture overlay stays hidden.
+- Both power actors use original frame/portrait/class-back geometry, native mana
+  gems and original used/restore curves. Direct AnimationClip.SampleAnimation on
+  mixed exported bindings caused a native editor crash. Use the safe baked-channel
+  path already implemented. Source white-neutral shadow uses multiply rendering.
+- Hero death uses source crack quad/paint,17 fragment tracks, original particles,
+  light curves, source effect clocks and exact crack/explode WAVs. Detached health,
+  armor and power disappear at the explosion. Result text waits. Opponent, player,
+  simultaneous-draw, menu and Play Again verifiers passed in the previous run.
+  Original-hero-explosion.png was inspected. Distortion/erosion and global scene
+  shake remain compatibility gaps. Effect-local slow time is an integration choice.
+- VerifyNativeHeroPowers passed again during this session. Its fixture now waits
+  for opening draw completion before setting the used flag, preventing a test race.
+- Selection masks derive from actual source mesh triangles and recovered 256px
+  projection/pass layout. CPU fill/blur/composite kernels are compatibility
+  reconstructions. Extra blur offset1.5 is a reconstruction choice. Original hand
+  gloss/reflection rendering remains unfinished.
 
-## Unfinished LOCAL work, excluded from this commit
+## Installed WIP — first tests for Gemini
 
-A GitHub-only clone does not have these uncommitted files. Preserve the working
-copy; git status identifies any newer work. Pending parts must be checked before running their installers:
+Tools/InstallNativeMinions.cs and Tools/InstallNativeHandOutlines.cs both completed
+successfully during this session. They changed TableMinion.prefab and TableCard.prefab.
+They have NOT received their live Play-mode/visual verification yet.
 
-1. Hero death is now committed and installed. Files include NativeHeroDeathLibrary,
-   NativeHeroDeathPresentation, NativeHeroCrackPart, two shaders, derived source
-   prefab/materials/library, InstallNativeHeroDeath and VerifyNativeHeroDeath.
-   Actual source paths/curves/clocks/audio are in Docs/Recovery/Hero-death-source.json.
-   PreviewNativeHeroDeath creates a disposable lethal fixture for captures.
-2. Minions/cards: Art/NativeMinions/ source closure + SourceManifest,
-   PrepareNativeMinionArt.py, draft NativeMinionPresentation.cs and
-   InstallNativeMinions.cs. DO NOT RUN installer until reviewed. Known drafts need
-   rootCanvas lookup, persistent hiding of old artwork (SetMinion re-enables it),
-   and original eligible highlight before removing existing feedback.532-vertex
-   original oval actor, real gems/taunt/shadow recovered. Hand original meshes
-   currently flatten lighting/depth/shadows. Highlight _MainTex is a black runtime
-   placeholder; original HighlightRender generates silhouettes with multiple
-   render/blur passes. Do not substitute a generic painted glow or invented motion.
-3. Spells: NativeSpellLibrary/Presentation/Surface shader, preparation/configuration,
-   installer/verifier and BattleEffects queue seam now exist locally, unverified.
-   Last install failed on FireParticleBall second material slot, subsequently found
-   to be an intentionally null unused trail slot. Resolve through source semantics.
-   UI.asmdef adds Universal.Runtime for the capture camera. Exact mappings remain outside
-   repo under recovery/CS2_024,025,029,032-carddef-source.json and matching
-   *-effect-source.json; spell-super-path-il.txt/spell-super-fields.txt. Frostbolt,
-   Arcane Explosion, Fireball, Flamestrike aliases resolve to original reuseFX.
-   Fireball/Frostbolt source missile .4sec; ease0 = easeInQuad (NOT linear).
-   Integrate through existing BattleEffects queue, preserving lethal holds and
-   input; original sound references/timeline still need completion.
+Files include NativeMinionPresentation.cs, NativeHandCardPresentation.cs,
+NativeMinions assets/source manifest, NativeHandOutline.shader, CardView/MinionView
+read-only presentation state and shared NativeHighlightBaker/SelectionHighlight.
 
-Also excluded: pre-existing changed RecoveredDecks/Deck_75_mesh.mat and Unity
-recovery backup metadata Assets/_Recovery.meta. Do not discard either casually.
+The minion uses original 532-vertex oval actor, original stat gems/shadow/taunt and
+source-geometry eligibility outline. Taunt uses source settled scale.9775736. Its
+source spring birth motion is still unported. Draft fixes already saved include
+rootCanvas lookup for held minions, suppressing legacy art after SetMinion,
+null-art rebinding and stage disposal. Hand outlines use exact original static
+Ally/Ability silhouettes and source green parameters. Eligibility checks turn,
+canDrag, mana, board space and correct hand ancestry. Concealed, ghost, mulligan and
+collection views should suppress it.
 
-## Resume and tools
+Run in Play with auto-tick, sequentially:
 
-Read PROJECT_STATUS/HISTORY and the source manifests. Finish one original sequence
-at a time, install only in clean Edit mode and run meaningful live checks. Main
-checkpoint actor code: NativeHeroPowerPresentation.cs, HeroPowerPresentation.cs,
-InstallNativeHeroPowers.cs, PrepareNativeHeroEffects.py, VerifyNativeHeroPowers.cs.
-Run source hero power tests in Play with auto-tick enabled. Avoid concurrent scene
-mutations from multiple tools/agents. Scripts are not client-code execution.
+python3 Tools/editor_api.py 'script run' '{"file":"Tools/VerifyNativeMinions.cs"}'
+python3 Tools/editor_api.py 'script run' '{"file":"Tools/VerifyNativeHandOutlines.cs"}'
 
-Project: `/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/outputs/HearthClone`
-Editor: `/home/craig-middleton/Unity/Hub/Editor/6000.6.9f1/Editor/Unity` (Unity6.6).
-Desktop: `/home/craig-middleton/Desktop/Hearthstone Card Database`,
-`/home/craig-middleton/Desktop/Hearthstone Export`,
-`/home/craig-middleton/Desktop/Hearthstone Extraction`.
-Original client:
-`/home/craig-middleton/.local/share/Steam/steamapps/compatdata/2505554610/pfx/drive_c/Program Files (x86)/Hearthstone`.
-Recovery: `/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/`,
-including `ORG-native-source`, `Interface-native-source`,
-`corner-source-normalized.json`, `corner-semantics-notes.md` and CIL captures.
-Read client metadata only; do not execute/import original assemblies.
+Inspect a disposable visual fixture through Tools/PreviewNativeCards.cs. Do not
+save its gameplay objects. Fix actual failures before claiming this WIP complete.
 
-## Tools to resume or reproduce
+## Spell WIP — compiled, installer still needs retry
 
-Read `PROJECT_STATUS.md` for architecture/constraints and `PROJECT_HISTORY.md` for
-previous decisions. Key implementation: `NativeCornerInteractions.cs`,
-`NativeCornerLibrary.cs`, `Art/NativeCorners/CornerLogic.json` and baked
-`NativeCorners.asset`. `SourceManifest.json` and
-`Docs/Recovery/Corners-audio-source.json` preserve exact dependency provenance.
+NativeSpellLibrary.cs, NativeSpellPresentation.cs, NativeSpellSurface.shader,
+NativeSpells assets/configuration, PrepareNativeSpells.py, InstallNativeSpells.cs,
+VerifyNativeSpells.cs and the BattleEffects queue seam are included. UI.asmdef adds
+Universal.Runtime for isolated capture-camera setup. Updated runtime compiled at
+handover. The original spell presenter is not installed into the live scene yet.
 
-`Tools/PrepareNativeCornerEffects.py`, `AuditNativeCornerFsms.py`,
-`PrepareNativeCornerAudio.py`, then `PrepareNativeCornerLogic.py` regenerate
-selected data using external recovery/client sources. The installer reads committed
-`CornerLogic.json` and selected assets, so reinstalling does not need those sources.
-Run `InstallNativeCorners.cs` only in clean Edit mode. It preserves source geometry,
-remaps native component references and records prefab GameObject-layer overrides.
+Last installation failed on FireParticleBall null material. Source inspection
+proved it is the intentionally null second particle-trail slot with TrailModule
+disabled. Installer now preserves that exact case, rejects active/primary missing
+materials and cleans temporary actors in finally. Retry it in clean Edit mode.
+The failed temporary scene was reopened/discarded earlier. Current scene is clean.
 
-Editor API (project open, automation package imported):
+Source corrections saved and still unverified in Play:
+- Original Fireball/Frostbolt missile duration.4sec, ease0 = easeInQuad.
+- Source capture camera90deg X, original near/far/plane offsets and resolution on
+  longest texture axis.
+- Fireball flash first .05sec linear expansion.5 to4, then .75sec easeOutQuad to7.
+  Original alpha/light keys and finish/tail timing are retained.
+- Exact cast/impact SoundDefs and source prefab/PS data are selected.
+- Moving-target fallback retains last live target location.
 
-```sh
+Next commands:
+python3 Tools/editor_api.py 'script run' '{"file":"Tools/InstallNativeSpells.cs"}'
+Then in Play/autotick:
+python3 Tools/editor_api.py 'script run' '{"file":"Tools/VerifyNativeSpells.cs"}'
+
+Inspect actual Fireball/Frostbolt captures. Original bloom/blur/distortion/shake
+internals remain approximated. Root Sparks/Smoke share the capture instead of the
+original separate world trails. Preparation currently short-circuits existing
+GUIDs, so rerunning can produce an incomplete 8-record manifest. Assets remain
+present. Preserve/re-walk existing dependency records before treating a regenerated
+manifest as exhaustive. See Docs/Recovery/Spells-source.json and external spell CIL.
+
+Exact source portrait PNGs already exist in Desktop/Hearthstone Export/Texture2D:
+WoW_CHI_006_D.png (Frostbolt), W15_A087_D.png (Fireball), W10_A176_D.png (Arcane
+Explosion), WOW_SPE_006(b)_D.png (Flamestrike). Card artwork binding still needs review.
+
+## Intro/menu and mulligan — recovered source, implementation pending
+
+Current frontend still uses the earlier cropped box image and side buttons. Current
+mulligan has original banner/keep/replace/X/confirm assets but oversized layout
+obscures hero portraits. Craig explicitly wants both improved.
+
+New original source recovered outside the repo at:
+/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Box-complete-source
+Use ExportedProject/Assets/AssetBundles/essential_base_box_global-prefab-0.unity3d/TheBox.prefab.
+It contains 242 transforms, 68 renderers, actual box/lid/center disk/buttons/table,
+source cameras, TitleLogo and open/close/camera clips. Selected game-project closure
+has not been prepared or installed yet. Use complete 30-bundle export, not the first
+incomplete Box-native-source export.
+
+Detailed source procedure and next steps:
+recovery/box-recovery-handoff.md
+recovery/box-objects-summary.json
+recovery/mulligan-manager-methods.txt
+recovery/mulligan-layout-il.txt
+recovery/mulligan-constants-il.txt
+
+Original main camera local(0,31.17171,-.025),90deg X,FOV20.7. Source TheBox authored
+opened/closed states and clip transitions are available. Existing Play Game and
+Choose Deck actions should map to original button slots. Isolate menu camera and
+listeners, preserve deck builder and menu/match visibility.
+
+For mulligan, original MulliganManager uses BoardStandardGame.StartingHandZone.
+PC friendly card scale(1.1,.28,1.1), original deal time1.5sec. Recover original hero
+move-position clips (GUIDs in external notes) so portraits move clear of the cards.
+Keep CardInstance-based selection,30-card counts and non-raycasting art.
+
+## Local environment and access
+
+Project root:
+/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/outputs/HearthClone
+Git remote: https://github.com/craig-middleton/hearthClone.git
+Branch main. Git LFS 3.8.1 and authenticated GitHub CLI verified. Python yaml/Pillow
+and liblz4 source-prep dependencies verified. Gemini account/client/tool access is
+user-side setup. No gemini/antigravity/agy executable was found on current PATH,
+which does not determine whether a graphical client is installed.
+
+Unity 6.6/6000.6.9f1:
+/home/craig-middleton/Unity/Hub/Editor/6000.6.9f1/Editor/Unity
+Main scene Assets/Scenes/HearthstoneTable.unity. Launch via Unity Hub if closed.
+
+Desktop source folders:
+/home/craig-middleton/Desktop/Hearthstone Card Database
+/home/craig-middleton/Desktop/Hearthstone Export
+/home/craig-middleton/Desktop/Hearthstone Extraction
+
+Original installed client:
+/home/craig-middleton/.local/share/Steam/steamapps/compatdata/2505554610/pfx/drive_c/Program Files (x86)/Hearthstone
+Bundles Data/Win, metadata Hearthstone_Data/Managed. Inspect metadata without
+executing/importing the original client assemblies.
+
+External recovery root:
+/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery
+Contains Interface-native-source, ORG-native-source, Box-complete-source,
+box-bundles, card-animation-audit/InspectManagedMetadata.exe and Mono.Cecil, exact
+CS2_024/025/029/032-carddef/effect JSON, spell-super-path-il.txt,
+spell-render-to-texture-camera-il.txt and card-highlight-render-il.txt.
+Source tool ../../tooling/AssetRipper-2.0.0/AssetRipper.GUI.Free. A source-export
+server may still listen at 127.0.0.1:58741. Check before starting another instance.
+
+All these paths were verified on this laptop. A fresh GitHub clone includes selected
+runtime assets via Git LFS, but the external archives require transfer/regeneration
+on another computer. Local Gemini can access the existing folders if its file and
+terminal permissions permit them.
+
+## Unity API and switching models
+
+Run Tools/editor_api.py from project root. It reads ignored Library/Pipeline
+credentials itself. Never print or commit those credentials.
+
 python3 Tools/editor_api.py get /api/editor_status
+python3 Tools/editor_api.py 'script recompile' '{"focus":true}'
 python3 Tools/editor_api.py 'script recompile_status'
 python3 Tools/editor_api.py 'console get' '{"level":"error","tail":20}'
-python3 Tools/editor_api.py 'script run' '{"file":"Tools/VerifyNativeCorners.cs"}'
-python3 Tools/editor_api.py 'script run' '{"file":"Tools/VerifyNativeCorners.cs","entry":"Zeppelin"}'
-python3 Tools/editor_api.py 'script run' '{"file":"Tools/VerifyNativeCorners.cs","entry":"Catapult"}'
-```
+python3 Tools/editor_api.py 'editor.playmode start'
+python3 Tools/editor_api.py 'editor set_auto_tick' '{"enabled":true,"interval-ms":16,"persist":false}'
+python3 Tools/editor_api.py 'capture game_view' '{"output-path":"Docs/Previews/review.png","source":"camera","width":1469,"height":740}'
+python3 Tools/editor_api.py 'editor.playmode stop'
+python3 Tools/editor_api.py 'editor set_auto_tick' '{"enabled":false,"persist":false}'
 
-Checks require Play mode/auto-tick; run them sequentially. Script arguments use
-`args`. Allow reload/Start to finish. API credentials stay in ignored `Library/`;
-never print or commit them. Sandbox permission may need renewal for loopback/GitHub.
-Stop temporary auto-tick and discard Play fixtures before handing back control.
+Use args for script arguments, entry for alternate verifier entry points. Allow
+reload/Start completion. Run installers in clean Edit mode and fixtures in Play.
+Temporary fixtures must be discarded before saving the scene. Check output and
+captures rather than claiming success from a command's existence.
+
+For each switch, have the current agent update this same HANDOFF.md and commit/push
+its checkpoint, record any remaining local files, and stop active implementation
+before the next agent edits. The next agent reads the files and git status, rather
+than assuming access to the other chat. Say continue from HANDOFF.md when returning
+to Codex. Keep PROJECT_STATUS current and history in PROJECT_HISTORY.

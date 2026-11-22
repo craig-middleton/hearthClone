@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6559319831830954225}
   - component: {fileID: 7432918137091417020}
   - component: {fileID: 7940058470047819842}
+  - component: {fileID: 8879597798480564409}
   m_Layer: 0
   m_Name: TableMinion
   m_TagString: Untagged
@@ -151,11 +152,11 @@ MonoBehaviour:
   healthText: {fileID: 3547781009659487223}
   tauntVisual: {fileID: 6588833868394839269}
   frozenVisual: {fileID: 3546849885661922406}
-  readyGlow: {fileID: 7226016090118201405}
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 1, g: 1, b: 1, a: 1}
-  cannotAttackColor: {r: 1, g: 1, b: 1, a: 1}
-  frozenColor: {r: 1, g: 1, b: 1, a: 1}
+  readyGlow: {fileID: 0}
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  cannotAttackColor: {r: 0, g: 0, b: 0, a: 0}
+  frozenColor: {r: 0, g: 0, b: 0, a: 0}
   reactionDuration: 0.25
   damageFlashColor: {r: 1, g: 0.3, b: 0.3, a: 1}
 --- !u!114 &7940058470047819842
@@ -251,6 +252,30 @@ MonoBehaviour:
   - {x: 0.9715994, y: 0.38677904}
   - {x: 0.9790289, y: 0.42412934}
   - {x: 0.98350495, y: 0.4619474}
+--- !u!114 &8879597798480564409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685811176227473029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2389411aa65a8c3a243342d1fd5bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UI::HearthstoneClone.UI.NativeMinionPresentation
+  actorPrefab: {fileID: 5865982889421422393, guid: c6eade1cccab9bdd597e5ecb5badd4e7, type: 3}
+  shadowPrefab: {fileID: 7406204985367603301, guid: e17711a99efa5cb87a4d4b3c0e0d3144, type: 3}
+  tauntPrefab: {fileID: 3943184632300960283, guid: dbc2b8b4146f0310380b46bae5900dfb, type: 3}
+  normalHighlight: {fileID: 2800000, guid: 6e27fef0b6676d3a298c6fdc6903397a, type: 3}
+  tauntHighlight: {fileID: 2800000, guid: 4cb51dec9794b81bfb80ded69e9e5c8c, type: 3}
+  sourceCenter: {x: 0.01779518, y: 0.087567866, z: 0.021880776}
+  sourceWidth: 1.505776
+  stage: {fileID: 0}
+  actor: {fileID: 0}
+  taunt: {fileID: 0}
+  boardCamera: {fileID: 0}
+  highlight: {fileID: 0}
 --- !u!1 &2608716073735977285
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,7 +467,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2854832378534353279}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -864,7 +889,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4754557585298316570}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1102,7 +1127,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5580989365361652376}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1157,7 +1182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2519217417418998237
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1259,7 +1284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6901674956241998990
 RectTransform:
   m_ObjectHideFlags: 0

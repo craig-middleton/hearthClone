@@ -14,6 +14,7 @@ namespace HearthstoneClone.UI
     public class BattleEffects : MonoBehaviour
     {
         public RectTransform overlay;
+        public NativeSpellPresentation originalSpells;
         public Sprite fire, frost, arcane, impact, slash;
         public Material lightMaterial;
         public TMP_FontAsset font;
@@ -31,6 +32,7 @@ namespace HearthstoneClone.UI
         public void ResetEffects()
         {
             StopAllCoroutines();queue.Clear();IsBusy=false;
+            if(originalSpells!=null)originalSpells.ResetEffects();
             if(audioSource!=null)audioSource.Stop();
             foreach(var group in hidden)if(group!=null)group.alpha=1;hidden.Clear();
             foreach(var go in temporary)if(go!=null){go.SetActive(false);Destroy(go);}temporary.Clear();
@@ -93,6 +95,18 @@ namespace HearthstoneClone.UI
         public void PlaySpell(CardData card,Player caster,Target target)
         {
             if(card.cardType!=CardType.Spell||card.onPlayEffect is IAreaDamageEffect)return;
+            var destination=View(target);
+            if(originalSpells!=null&&destination!=null)
+            {
+                Vector3 last=destination.position;GameObject victim=null;
+                if(originalSpells.TryCreate(card,(caster==board.PlayerOne?oneFace:twoFace).transform.position,
+                    ()=>{var live=View(target);if(live!=null)last=live.position;return last;},
+                    ()=>{Remove(victim);React(target);},out var original))
+                {
+                    if(target.TargetMinion!=null&&target.TargetMinion.IsDead)victim=Ghost(destination);
+                    Enqueue(original);return;
+                }
+            }
             if(card.visualShape==SpellVisualShape.BoardSweep)
             {
                 var enemy=board.GetOpponent(caster);var targets=new List<Target>();foreach(var minion in enemy.BoardMinions)if(!minion.IsDead)targets.Add(new Target(minion));

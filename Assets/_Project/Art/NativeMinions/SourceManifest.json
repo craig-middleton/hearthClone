@@ -1,0 +1,136 @@
+{
+  "method": "Narrow source GameObjects and transform ancestry; original MeshFilter/MeshRenderer only. No client scripts or animation invented. Portrait material is dynamically bound as in source.",
+  "files": [
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-prefab-0.unity3d/Card_Play_Ally.prefab",
+      "asset": "Assets/_Project/Art/NativeMinions/Card_Play_Ally.prefab",
+      "sha256": "b88c91dff8a08dca6918fa988d9884401ae8e1d8b0afba40acdd4732c4d67058"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-prefab-0.unity3d/Card_Play_Ally_Taunt.prefab",
+      "asset": "Assets/_Project/Art/NativeMinions/Card_Play_Ally_Taunt.prefab",
+      "sha256": "d0f6e6bcaf2e246f50cbcaa89b34c1a6e944d25421dad844436d0f2997efe164"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InPlay_Ally_Shadow.prefab",
+      "asset": "Assets/_Project/Art/NativeMinions/Card_InPlay_Ally_Shadow.prefab",
+      "sha256": "a7379bb306eb884c970c6676fda7deaf4ecfc6d50d19c88e0dde4adc162c0fc3"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-material-0.unity3d/HighlightGreenInPlay.mat",
+      "asset": "Assets/_Project/Art/NativeMinions/HighlightGreenInPlay.mat",
+      "sha256": "749ef2f41e7b355e19c0aa3df2a376065a6bb5171bf95dea2c728c63bf667858"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Black32x32.png",
+      "reused": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Black32x32.png"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Lines.png",
+      "reused": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Lines.png"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-texture-0.unity3d/Card_Inhand_Ability_Silhouette.png",
+      "asset": "Assets/_Project/Art/NativeMinions/Card_Inhand_Ability_Silhouette.png",
+      "sha256": "6c48d8692468ff856cdd0a24a567b604a4410d8baeab23692ef09366d65d0bd4"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-texture-0.unity3d/Card_InHand_Ally_Silhouette.png",
+      "asset": "Assets/_Project/Art/NativeMinions/Card_InHand_Ally_Silhouette.png",
+      "sha256": "e320ebebdd4c90922c16190109ee5fdccb5fdaef3a0cc0deeec12e2675cb35aa"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InPlay_Ally_Shadow.asset",
+      "asset": "Assets/_Project/Art/NativeMinions/Card_InPlay_Ally_Shadow.asset",
+      "sha256": "8004baa1892a21ff3ae20a6d8e73e2582575d68f398d468ca5d0f1fffab30aba"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-material-0.unity3d/Card_InPlay_Ally_Shadow-mat_shadow_ability.mat",
+      "asset": "Assets/_Project/Art/NativeMinions/Card_InPlay_Ally_Shadow-mat_shadow_ability.mat",
+      "sha256": "4312d4be6d0cf7ef4d423e9e560ba74be4cef8517667277dd6c2b846a5b2342d"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_gradient_shadow_Edge.png",
+      "asset": "Assets/_Project/Art/NativeMinions/GenFX_gradient_shadow_Edge.png",
+      "sha256": "834e111b1575c6e4da0f6ec12df19d72f98e99ffc09fac93a920061bcf542112"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-mesh-0.unity3d/TauntShield_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMinions/TauntShield_mesh.asset",
+      "sha256": "509a9f4c540cc74735dc1f1c1be51624b96a63ddf0ab8aa4a9077794dc5b759c"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-material-0.unity3d/GenFX_Taunt_Shield-mat_tauntshield.mat",
+      "asset": "Assets/_Project/Art/NativeMinions/GenFX_Taunt_Shield-mat_tauntshield.mat",
+      "sha256": "fe518f78d8ce5dda28cec15197b0944491f983f71c9522d3d1e04183f1711e2c"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_ally_taunt_d.png",
+      "asset": "Assets/_Project/Art/NativeMinions/GenFX_ally_taunt_d.png",
+      "sha256": "97ea40068876bd9273658ac9b53c34d824cb5ca8e0b8b09c1dff9cda93b04372"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-material-0.unity3d/GenFX_Gem_Attack_Gem.mat",
+      "asset": "Assets/_Project/Art/NativeMinions/GenFX_Gem_Attack_Gem.mat",
+      "sha256": "c3917cc8545c94c816874e2b2b3eb12ea8e4a692219c10f5617fd70ddc3714d6"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Gem_Attack_D.png",
+      "reused": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Gem_Attack_D.png"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_clouds03.png",
+      "reused": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_clouds03.png"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-material-0.unity3d/GenFX_Card_InPlay-AllyPortrait InPlay.mat",
+      "asset": "Assets/_Project/Art/NativeMinions/GenFX_Card_InPlay-AllyPortrait InPlay.mat",
+      "sha256": "cee9aacdf3238183f28c273919fde4fa43660105ffb696b637357e4153ab6d2c"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_InHand_BannerAtlas.png",
+      "reused": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_InHand_BannerAtlas.png"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-mesh-0.unity3d/polySurface6.asset",
+      "reused": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/polySurface6.asset"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-material-0.unity3d/GenFX_Gem_Health_Gem.mat",
+      "asset": "Assets/_Project/Art/NativeMinions/GenFX_Gem_Health_Gem.mat",
+      "sha256": "45e36e27cf269dc4e46f01bb17f229c9de20e717daa17a544236b81107097c84"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Gem_Health_D.png",
+      "reused": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Gem_Health_D.png"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-material-0.unity3d/HighlightYellow.mat",
+      "asset": "Assets/_Project/Art/NativeMinions/HighlightYellow.mat",
+      "sha256": "97e0aef66d0679b17e66d6065968cd78730a7be340f6431bbdaa6f8886de8fbf"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InPlay_Ally_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeMinions/Card_InPlay_Ally_mesh.asset",
+      "sha256": "19953f92df955752b9ccf38a5b6c025f083ce2f14675c0859f1fcb3b56a57fb6"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-mesh-0.unity3d/mesh_Gem_Health.asset",
+      "reused": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/mesh_Gem_Health.asset"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-mesh-0.unity3d/pPlane2.asset",
+      "reused": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/pPlane2.asset"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-material-0.unity3d/GenFX_Card_InPlay_AllyFrame InPlay.mat",
+      "asset": "Assets/_Project/Art/NativeMinions/GenFX_Card_InPlay_AllyFrame InPlay.mat",
+      "sha256": "48b71da8ebc11e586c10c7ef6228b796a320cae7a769adebaffc913b08ab6898"
+    },
+    {
+      "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_InPlay_AllyFrame.png",
+      "asset": "Assets/_Project/Art/NativeMinions/GenFX_Card_InPlay_AllyFrame.png",
+      "sha256": "bdd5643d9a0d729a24ceb7ef88e0ee75e76bc26772b14fd1a7f9239f3046702c"
+    }
+  ]
+}

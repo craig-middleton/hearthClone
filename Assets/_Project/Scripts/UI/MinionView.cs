@@ -36,6 +36,8 @@ namespace HearthstoneClone.UI
         private Coroutine reactionRoutine;
 
         public Minion Minion => minion;
+        public bool PresentationSelected {get;private set;}
+        public bool PresentationShowsEligibility {get;private set;}
 
         private int holdCount = 0;
         private float holdExpiresAt = 0f;
@@ -125,6 +127,7 @@ namespace HearthstoneClone.UI
             }
 
             minion = minionData;
+            PresentationSelected=isSelected;PresentationShowsEligibility=showAttackEligibility;
             onClicked = clickCallback;
             if (tauntVisual != null) tauntVisual.SetActive(minion.HasTaunt);
             if (frozenVisual != null) frozenVisual.SetActive(minion.IsFrozen);

@@ -1,0 +1,737 @@
+{
+  "entries": [
+    {
+      "cardId": "CS2_029",
+      "cardName": "Fireball",
+      "pathDuration": 0.4000000059604645,
+      "easeType": 0,
+      "missile": {
+        "cameraPosition": {
+          "x": 0.0,
+          "y": 0.71078205,
+          "z": -3.0000009536743
+        },
+        "cameraRotation": {
+          "x": 0.7071067811865476,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.7071067811865476
+        },
+        "planeOffset": {
+          "x": 0.0,
+          "y": -3.0000009536743
+        },
+        "flashRiseDuration": 0,
+        "flashRiseScale": 0.5,
+        "name": "ReuseFX_Missile_Fire_Fireball_Medium",
+        "sourcePrefab": "Assets/_Project/Art/NativeHeroEffects/ReuseFX_Missile_Fire_Fireball_Medium.prefab",
+        "soundPath": "Assets/_Project/Art/NativeSpells/Shared_Fire_Cast_1.wav",
+        "rotators": [
+          {
+            "path": "Offscreen/Core1",
+            "speed": {
+              "x": 0.0,
+              "y": -475.0,
+              "z": 0.0
+            }
+          },
+          {
+            "path": "Offscreen/Core2",
+            "speed": {
+              "x": 400.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          {
+            "path": "Offscreen/Core0",
+            "speed": {
+              "x": 0.0,
+              "y": 450.0,
+              "z": 0.0
+            }
+          }
+        ],
+        "width": 2.5,
+        "height": 8.5,
+        "resolution": 380,
+        "cameraNear": -1.0,
+        "cameraFar": 5.0,
+        "captureSettings": {
+          "m_ObjectHideFlags": "0",
+          "m_CorrespondingSourceObject": {
+            "fileID": "0"
+          },
+          "m_PrefabInstance": {
+            "fileID": "0"
+          },
+          "m_PrefabAsset": {
+            "fileID": "0"
+          },
+          "m_GameObject": {
+            "fileID": "1705390221481576"
+          },
+          "m_Enabled": "1",
+          "m_EditorHideFlags": "0",
+          "m_Script": {
+            "fileID": "11500000",
+            "guid": "e21a5a94f9a70e802131acd2ce9cac41",
+            "type": "3"
+          },
+          "m_Name": "",
+          "m_EditorClassIdentifier": "",
+          "m_ObjectToRender": {
+            "fileID": "1099118695303065"
+          },
+          "m_AlphaObjectToRender": {
+            "fileID": "0"
+          },
+          "m_HideRenderObject": "1",
+          "m_RealtimeRender": "1",
+          "m_RealtimeTranslation": "1",
+          "m_RenderMeshAsAlpha": "0",
+          "m_OpaqueObjectAlphaFill": "0",
+          "m_UsesStencilBuffer": "0",
+          "m_RenderMaterial": "5",
+          "m_Material": {
+            "fileID": "0"
+          },
+          "m_CreateRenderPlane": "1",
+          "m_RenderToObject": {
+            "fileID": "0"
+          },
+          "m_ShaderTextureName": "",
+          "m_Resolution": "380",
+          "m_Width": "2.5",
+          "m_Height": "8.5",
+          "m_NearClip": "-1",
+          "m_FarClip": "5",
+          "m_BloomIntensity": "1.15",
+          "m_BloomThreshold": "0.07",
+          "m_BloomBlur": "0.1",
+          "m_BloomResolutionRatio": "0.9",
+          "m_BloomRenderType": "0",
+          "m_BloomAlphaIntensity": "1",
+          "m_BloomBlend": "0",
+          "m_BloomColor": {
+            "r": "0.5",
+            "g": "0.5",
+            "b": "0.5",
+            "a": "0.5"
+          },
+          "m_AlphaClipRenderStyle": "0",
+          "m_AlphaClip": "15",
+          "m_AlphaClipIntensity": "2",
+          "m_AlphaClipAlphaIntensity": "1",
+          "m_AlphaClipGradientMap": {
+            "fileID": "0"
+          },
+          "m_BlurAmount": "0",
+          "m_BlurAlphaOnly": "0",
+          "m_TintColor": {
+            "r": "1",
+            "g": "1",
+            "b": "1",
+            "a": "1"
+          },
+          "m_RenderQueueOffset": "3000",
+          "m_RenderQueue": "200",
+          "m_ClearColor": {
+            "r": "0.45490196",
+            "g": "0.25128558",
+            "b": "0.08384467",
+            "a": "0"
+          },
+          "m_ReplacmentShader": {
+            "fileID": "0"
+          },
+          "m_ReplacmentTag": "",
+          "m_AlphaReplacementTag": "",
+          "m_RenderTextureFormat": "7",
+          "m_PositionOffset": {
+            "x": "0",
+            "y": "0",
+            "z": "-3"
+          },
+          "m_CameraOffset": {
+            "x": "0",
+            "y": "0",
+            "z": "0"
+          },
+          "m_LayerMask": {
+            "serializedVersion": "2",
+            "m_Bits": "4294967295"
+          },
+          "m_UniformWorldScale": "0",
+          "m_OverrideCameraSize": "0",
+          "m_LateUpdate": "0",
+          "m_RenderOnStart": "1",
+          "m_RenderOnEnable": "1"
+        },
+        "flashAlphaKeys": [],
+        "lightKeys": []
+      },
+      "impact": {
+        "cameraPosition": {
+          "x": 0.0,
+          "y": 0.9292226,
+          "z": 0.0
+        },
+        "cameraRotation": {
+          "x": 0.7071067811865476,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.7071067811865476
+        },
+        "planeOffset": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "flashRiseDuration": 0.05,
+        "flashRiseScale": 4,
+        "name": "ReuseFX_Impact_Fire_Fireball_Medium",
+        "sourcePrefab": "Assets/_Project/Art/NativeHeroEffects/ReuseFX_Impact_Fire_Fireball_Medium.prefab",
+        "soundPath": "Assets/_Project/Art/NativeSpells/Shared_Fire_Impact.wav",
+        "rotators": [],
+        "width": 5.0,
+        "height": 5.0,
+        "resolution": 180,
+        "cameraNear": -1.0,
+        "cameraFar": 3.0,
+        "captureSettings": {
+          "m_ObjectHideFlags": "0",
+          "m_CorrespondingSourceObject": {
+            "fileID": "0"
+          },
+          "m_PrefabInstance": {
+            "fileID": "0"
+          },
+          "m_PrefabAsset": {
+            "fileID": "0"
+          },
+          "m_GameObject": {
+            "fileID": "1044625135789424"
+          },
+          "m_Enabled": "1",
+          "m_EditorHideFlags": "0",
+          "m_Script": {
+            "fileID": "11500000",
+            "guid": "e21a5a94f9a70e802131acd2ce9cac41",
+            "type": "3"
+          },
+          "m_Name": "",
+          "m_EditorClassIdentifier": "",
+          "m_ObjectToRender": {
+            "fileID": "1243736805655561"
+          },
+          "m_AlphaObjectToRender": {
+            "fileID": "0"
+          },
+          "m_HideRenderObject": "1",
+          "m_RealtimeRender": "1",
+          "m_RealtimeTranslation": "0",
+          "m_RenderMeshAsAlpha": "0",
+          "m_OpaqueObjectAlphaFill": "0",
+          "m_UsesStencilBuffer": "0",
+          "m_RenderMaterial": "5",
+          "m_Material": {
+            "fileID": "0"
+          },
+          "m_CreateRenderPlane": "1",
+          "m_RenderToObject": {
+            "fileID": "0"
+          },
+          "m_ShaderTextureName": "",
+          "m_Resolution": "180",
+          "m_Width": "5",
+          "m_Height": "5",
+          "m_NearClip": "-1",
+          "m_FarClip": "3",
+          "m_BloomIntensity": "1",
+          "m_BloomThreshold": "0.1",
+          "m_BloomBlur": "0.4",
+          "m_BloomResolutionRatio": "0.75",
+          "m_BloomRenderType": "0",
+          "m_BloomAlphaIntensity": "1",
+          "m_BloomBlend": "0",
+          "m_BloomColor": {
+            "r": "0.5",
+            "g": "0.5",
+            "b": "0.5",
+            "a": "0.5"
+          },
+          "m_AlphaClipRenderStyle": "0",
+          "m_AlphaClip": "15",
+          "m_AlphaClipIntensity": "1.5",
+          "m_AlphaClipAlphaIntensity": "1",
+          "m_AlphaClipGradientMap": {
+            "fileID": "0"
+          },
+          "m_BlurAmount": "0",
+          "m_BlurAlphaOnly": "0",
+          "m_TintColor": {
+            "r": "1",
+            "g": "1",
+            "b": "1",
+            "a": "1"
+          },
+          "m_RenderQueueOffset": "3000",
+          "m_RenderQueue": "200",
+          "m_ClearColor": {
+            "r": "0.45490196",
+            "g": "0.25128558",
+            "b": "0.08384467",
+            "a": "0"
+          },
+          "m_ReplacmentShader": {
+            "fileID": "0"
+          },
+          "m_ReplacmentTag": "",
+          "m_AlphaReplacementTag": "",
+          "m_RenderTextureFormat": "7",
+          "m_PositionOffset": {
+            "x": "0",
+            "y": "0",
+            "z": "0"
+          },
+          "m_CameraOffset": {
+            "x": "0",
+            "y": "0",
+            "z": "0"
+          },
+          "m_LayerMask": {
+            "serializedVersion": "2",
+            "m_Bits": "4294967295"
+          },
+          "m_UniformWorldScale": "0",
+          "m_OverrideCameraSize": "0",
+          "m_LateUpdate": "0",
+          "m_RenderOnStart": "1",
+          "m_RenderOnEnable": "1"
+        },
+        "flashAlphaKeys": [
+          {
+            "time": 0.0,
+            "value": 1.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0
+          },
+          {
+            "time": 0.59999996,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0
+          }
+        ],
+        "lightKeys": [
+          {
+            "time": 0.0,
+            "value": 0.39999998,
+            "inSlope": 0.0,
+            "outSlope": 0.0
+          },
+          {
+            "time": 1.0,
+            "value": 0.0,
+            "inSlope": -0.16945583,
+            "outSlope": -0.16945583
+          }
+        ]
+      }
+    },
+    {
+      "cardId": "CS2_024",
+      "cardName": "Frostbolt",
+      "pathDuration": 0.4000000059604645,
+      "easeType": 0,
+      "missile": {
+        "cameraPosition": {
+          "x": 0.0,
+          "y": 0.71078205,
+          "z": -3.0000009536743
+        },
+        "cameraRotation": {
+          "x": 0.7071067811865476,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.7071067811865476
+        },
+        "planeOffset": {
+          "x": 0.0,
+          "y": -3.0000009536743
+        },
+        "flashRiseDuration": 0,
+        "flashRiseScale": 0.5,
+        "name": "ReuseFX_Ice_Missile",
+        "sourcePrefab": "Assets/_Project/Art/NativeSpells/ReuseFX_Ice_Missile.prefab",
+        "soundPath": "Assets/_Project/Art/NativeSpells/Shared_Frost_Cast_1.wav",
+        "rotators": [
+          {
+            "path": "Offscreen/Core1",
+            "speed": {
+              "x": 0.0,
+              "y": -475.0,
+              "z": 0.0
+            }
+          },
+          {
+            "path": "Offscreen/Core2",
+            "speed": {
+              "x": 400.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          {
+            "path": "Offscreen/Core0",
+            "speed": {
+              "x": 0.0,
+              "y": 450.0,
+              "z": 0.0
+            }
+          }
+        ],
+        "width": 2.5,
+        "height": 8.5,
+        "resolution": 450,
+        "cameraNear": -1.0,
+        "cameraFar": 3.0,
+        "captureSettings": {
+          "m_ObjectHideFlags": "0",
+          "m_CorrespondingSourceObject": {
+            "fileID": "0"
+          },
+          "m_PrefabInstance": {
+            "fileID": "0"
+          },
+          "m_PrefabAsset": {
+            "fileID": "0"
+          },
+          "m_GameObject": {
+            "fileID": "1589667821646929"
+          },
+          "m_Enabled": "1",
+          "m_EditorHideFlags": "0",
+          "m_Script": {
+            "fileID": "11500000",
+            "guid": "e21a5a94f9a70e802131acd2ce9cac41",
+            "type": "3"
+          },
+          "m_Name": "",
+          "m_EditorClassIdentifier": "",
+          "m_ObjectToRender": {
+            "fileID": "1618682377417806"
+          },
+          "m_AlphaObjectToRender": {
+            "fileID": "0"
+          },
+          "m_HideRenderObject": "1",
+          "m_RealtimeRender": "1",
+          "m_RealtimeTranslation": "1",
+          "m_RenderMeshAsAlpha": "0",
+          "m_OpaqueObjectAlphaFill": "0",
+          "m_UsesStencilBuffer": "0",
+          "m_RenderMaterial": "5",
+          "m_Material": {
+            "fileID": "0"
+          },
+          "m_CreateRenderPlane": "1",
+          "m_RenderToObject": {
+            "fileID": "0"
+          },
+          "m_ShaderTextureName": "",
+          "m_Resolution": "450",
+          "m_Width": "2.5",
+          "m_Height": "8.5",
+          "m_NearClip": "-1",
+          "m_FarClip": "3",
+          "m_BloomIntensity": "1",
+          "m_BloomThreshold": "0.01",
+          "m_BloomBlur": "0.5",
+          "m_BloomResolutionRatio": "0.75",
+          "m_BloomRenderType": "1",
+          "m_BloomAlphaIntensity": "50",
+          "m_BloomBlend": "0",
+          "m_BloomColor": {
+            "r": "0.85882354",
+            "g": "0.90588236",
+            "b": "0.9254902",
+            "a": "0.078431375"
+          },
+          "m_AlphaClipRenderStyle": "0",
+          "m_AlphaClip": "5",
+          "m_AlphaClipIntensity": "2",
+          "m_AlphaClipAlphaIntensity": "7",
+          "m_AlphaClipGradientMap": {
+            "fileID": "0"
+          },
+          "m_BlurAmount": "0.25",
+          "m_BlurAlphaOnly": "0",
+          "m_TintColor": {
+            "r": "0.84327567",
+            "g": "0.86031747",
+            "b": "0.87058824",
+            "a": "0.27450982"
+          },
+          "m_RenderQueueOffset": "3000",
+          "m_RenderQueue": "0",
+          "m_ClearColor": {
+            "r": "0.3063043",
+            "g": "0.37128517",
+            "b": "0.41044778",
+            "a": "0"
+          },
+          "m_ReplacmentShader": {
+            "fileID": "0"
+          },
+          "m_ReplacmentTag": "",
+          "m_AlphaReplacementTag": "",
+          "m_RenderTextureFormat": "7",
+          "m_PositionOffset": {
+            "x": "0",
+            "y": "0",
+            "z": "-3"
+          },
+          "m_CameraOffset": {
+            "x": "0",
+            "y": "0",
+            "z": "0"
+          },
+          "m_LayerMask": {
+            "serializedVersion": "2",
+            "m_Bits": "4294967295"
+          },
+          "m_UniformWorldScale": "0",
+          "m_OverrideCameraSize": "0",
+          "m_LateUpdate": "0",
+          "m_RenderOnStart": "1",
+          "m_RenderOnEnable": "1"
+        },
+        "flashAlphaKeys": [],
+        "lightKeys": []
+      },
+      "impact": {
+        "cameraPosition": {
+          "x": 0.0,
+          "y": 0.9292226,
+          "z": 0.0
+        },
+        "cameraRotation": {
+          "x": 0.7071067811865476,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.7071067811865476
+        },
+        "planeOffset": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "flashRiseDuration": 0,
+        "flashRiseScale": 0.5,
+        "name": "ReuseFX_Ice_Impact",
+        "sourcePrefab": "Assets/_Project/Art/NativeSpells/ReuseFX_Ice_Impact.prefab",
+        "soundPath": "Assets/_Project/Art/NativeSpells/Shared_Frost_Impact_1.wav",
+        "rotators": [],
+        "width": 5.0,
+        "height": 5.0,
+        "resolution": 300,
+        "cameraNear": -1.0,
+        "cameraFar": 3.0,
+        "captureSettings": {
+          "m_ObjectHideFlags": "0",
+          "m_CorrespondingSourceObject": {
+            "fileID": "0"
+          },
+          "m_PrefabInstance": {
+            "fileID": "0"
+          },
+          "m_PrefabAsset": {
+            "fileID": "0"
+          },
+          "m_GameObject": {
+            "fileID": "1044625135789424"
+          },
+          "m_Enabled": "1",
+          "m_EditorHideFlags": "0",
+          "m_Script": {
+            "fileID": "11500000",
+            "guid": "e21a5a94f9a70e802131acd2ce9cac41",
+            "type": "3"
+          },
+          "m_Name": "",
+          "m_EditorClassIdentifier": "",
+          "m_ObjectToRender": {
+            "fileID": "1061268324235159"
+          },
+          "m_AlphaObjectToRender": {
+            "fileID": "0"
+          },
+          "m_HideRenderObject": "1",
+          "m_RealtimeRender": "1",
+          "m_RealtimeTranslation": "0",
+          "m_RenderMeshAsAlpha": "0",
+          "m_OpaqueObjectAlphaFill": "0",
+          "m_UsesStencilBuffer": "0",
+          "m_RenderMaterial": "5",
+          "m_Material": {
+            "fileID": "0"
+          },
+          "m_CreateRenderPlane": "1",
+          "m_RenderToObject": {
+            "fileID": "0"
+          },
+          "m_ShaderTextureName": "",
+          "m_Resolution": "300",
+          "m_Width": "5",
+          "m_Height": "5",
+          "m_NearClip": "-1",
+          "m_FarClip": "3",
+          "m_BloomIntensity": "0.06",
+          "m_BloomThreshold": "0.93",
+          "m_BloomBlur": "0.2",
+          "m_BloomResolutionRatio": "0.5",
+          "m_BloomRenderType": "1",
+          "m_BloomAlphaIntensity": "50",
+          "m_BloomBlend": "0",
+          "m_BloomColor": {
+            "r": "0.8253509",
+            "g": "0.92756146",
+            "b": "0.9701493",
+            "a": "0.15686275"
+          },
+          "m_AlphaClipRenderStyle": "0",
+          "m_AlphaClip": "1.5",
+          "m_AlphaClipIntensity": "2",
+          "m_AlphaClipAlphaIntensity": "7",
+          "m_AlphaClipGradientMap": {
+            "fileID": "0"
+          },
+          "m_BlurAmount": "0.25",
+          "m_BlurAlphaOnly": "0",
+          "m_TintColor": {
+            "r": "1",
+            "g": "1",
+            "b": "1",
+            "a": "1"
+          },
+          "m_RenderQueueOffset": "3000",
+          "m_RenderQueue": "0",
+          "m_ClearColor": {
+            "r": "0.2901961",
+            "g": "0.3764706",
+            "b": "0.4117647",
+            "a": "0"
+          },
+          "m_ReplacmentShader": {
+            "fileID": "0"
+          },
+          "m_ReplacmentTag": "",
+          "m_AlphaReplacementTag": "",
+          "m_RenderTextureFormat": "7",
+          "m_PositionOffset": {
+            "x": "0",
+            "y": "0",
+            "z": "0"
+          },
+          "m_CameraOffset": {
+            "x": "0",
+            "y": "0",
+            "z": "0"
+          },
+          "m_LayerMask": {
+            "serializedVersion": "2",
+            "m_Bits": "4294967295"
+          },
+          "m_UniformWorldScale": "0",
+          "m_OverrideCameraSize": "0",
+          "m_LateUpdate": "0",
+          "m_RenderOnStart": "1",
+          "m_RenderOnEnable": "1"
+        },
+        "flashAlphaKeys": [
+          {
+            "time": 0.0,
+            "value": 1.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0
+          },
+          {
+            "time": 0.59999996,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0
+          }
+        ],
+        "lightKeys": [
+          {
+            "time": 0.0,
+            "value": 0.39999998,
+            "inSlope": 0.0,
+            "outSlope": 0.0
+          },
+          {
+            "time": 1.0,
+            "value": 0.0,
+            "inSlope": -0.16945583,
+            "outSlope": -0.16945583
+          }
+        ]
+      }
+    }
+  ],
+  "sourceRecords": [
+    {
+      "sounddefSource": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Missile_Fire_Fireball_Medium.prefab",
+      "sounddefComponent": "114969106005120503",
+      "audioKey": "Shared_Fire_Cast_1.wav:392319ce5d9054a46a9c1f1b04961af9",
+      "asset": "Assets/_Project/Art/NativeSpells/Shared_Fire_Cast_1.wav",
+      "sha256": "7eb2f306314419553eb7623a42bff55d3f6d4cef9121d3127e8cbe41ccccb985"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Missile_Fire_Fireball_Medium.prefab",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/ReuseFX_Missile_Fire_Fireball_Medium.prefab",
+      "sha256": "17711de35b44c35400830c65653640df06f7d486ca9f959e7e72d5d20c49f8cd",
+      "reused": true
+    },
+    {
+      "sounddefSource": "AssetBundles/essential_base_global-prefab-0.unity3d/Shared_Fire_Impact.prefab",
+      "sounddefComponent": "114618682377417806",
+      "audioKey": "Shared_Fire_Impact.wav:783cac59839c61e4c810cd046a28c926",
+      "asset": "Assets/_Project/Art/NativeSpells/Shared_Fire_Impact.wav",
+      "sha256": "602abd76955698fa25313ca914b91e3b257caf5257abebf9d26cde658d6daef7"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Impact_Fire_Fireball_Medium.prefab",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/ReuseFX_Impact_Fire_Fireball_Medium.prefab",
+      "sha256": "50b6f2316be7d5dc013b9a4b5d5e295c1a14ff68ce8210508c6678f8573142c8",
+      "reused": true
+    },
+    {
+      "sounddefSource": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Ice_Missile.prefab",
+      "sounddefComponent": "114002669891404536",
+      "audioKey": "Shared_Frost_Cast_1.wav:62f409c56fe341041b252f153f204161",
+      "asset": "Assets/_Project/Art/NativeSpells/Shared_Frost_Cast_1.wav",
+      "sha256": "b378123d126768f486b72121b8f790cbc6dc89fb9a6d4b9fa8a09aa0ac671201"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Ice_Missile.prefab",
+      "asset": "Assets/_Project/Art/NativeSpells/ReuseFX_Ice_Missile.prefab",
+      "sha256": "94444da864e5dd66e1a8f5598322210ba23e35d248cf813a82bbfa8d87c01975",
+      "reused": true
+    },
+    {
+      "sounddefSource": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Ice_Impact.prefab",
+      "sounddefComponent": "114161607090078389",
+      "audioKey": "Shared_Frost_Impact_1.wav:04cf56b4010b5314eb18bd8984df2f5f",
+      "asset": "Assets/_Project/Art/NativeSpells/Shared_Frost_Impact_1.wav",
+      "sha256": "805b8fa6ce4786d87649cac768486ca5ac9fe7ee2e169063414abed7120ed4b8"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Ice_Impact.prefab",
+      "asset": "Assets/_Project/Art/NativeSpells/ReuseFX_Ice_Impact.prefab",
+      "sha256": "2f1158650b3b3949b563839d836fee2b64ccfbde60678fe5b236973d96cf6e35",
+      "reused": true
+    }
+  ],
+  "unresolved": []
+}

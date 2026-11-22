@@ -1,0 +1,487 @@
+{
+  "cards": [
+    {
+      "card": "CS2_029",
+      "sourceGuid": "563aacc1b2a435441988eae90cf8de94",
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "externals": [
+        "archive:/CAB-66e7137de3b79380e05eb711ae004556/CAB-66e7137de3b79380e05eb711ae004556",
+        "archive:/CAB-3563ba8b89db13ca6eb196aa111591f1/CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "archive:/CAB-705da26e9aa366bdb912f703068dc208/CAB-705da26e9aa366bdb912f703068dc208",
+        "archive:/CAB-e02b69b1bbe893a6736884865127e637/CAB-e02b69b1bbe893a6736884865127e637",
+        "archive:/CAB-82d08c8cc01bd15ce55e7d57190fd3af/CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+        "archive:/CAB-d3313e0f4b27e9ffc6f70f1a47bdeb6b/CAB-d3313e0f4b27e9ffc6f70f1a47bdeb6b",
+        "Library/unity default resources",
+        "archive:/CAB-cfdc5301ac0b17c5a76ad477fba38b57/CAB-cfdc5301ac0b17c5a76ad477fba38b57",
+        "archive:/CAB-572cbaceb2612afe464bd92ebbf0736a/CAB-572cbaceb2612afe464bd92ebbf0736a",
+        "archive:/CAB-c491983cea83897756f11fa097177509/CAB-c491983cea83897756f11fa097177509",
+        "archive:/CAB-93ce91e5953dced408f61269ec90fec3/CAB-93ce91e5953dced408f61269ec90fec3",
+        "archive:/CAB-29155062fb23fa05472cfd5ec90cc365/CAB-29155062fb23fa05472cfd5ec90cc365",
+        "archive:/CAB-c394926ba464822396a05cbfae08a8b3/CAB-c394926ba464822396a05cbfae08a8b3",
+        "archive:/CAB-4f6ee048c10001b0a2c3fb3e615b15b1/CAB-4f6ee048c10001b0a2c3fb3e615b15b1",
+        "archive:/CAB-005df680c2deeae279a9ca68cef0424b/CAB-005df680c2deeae279a9ca68cef0424b",
+        "archive:/CAB-8ad6ff647f18851acb8f7ba6010d958c/CAB-8ad6ff647f18851acb8f7ba6010d958c"
+      ],
+      "go": {
+        "m_Component": [
+          {
+            "component": {
+              "m_FileID": 0,
+              "m_PathID": 2538954462195367279
+            }
+          },
+          {
+            "component": {
+              "m_FileID": 0,
+              "m_PathID": 6490721609610837359
+            }
+          }
+        ],
+        "m_Layer": 0,
+        "#427": "ReuseFX_Fire_Missile_Fireball_Medium_Super_Simultaneous_WithIdle",
+        "m_Tag": 0,
+        "m_IsActive": 1
+      },
+      "scripts": [
+        {
+          "#374": {
+            "m_FileID": 0,
+            "m_PathID": -1369697975919297169
+          },
+          "#349": 1,
+          "#490": {
+            "m_FileID": 0,
+            "m_PathID": 4054998870446383644
+          },
+          "#427": "",
+          "m_Location": 2,
+          "m_LocationTransformName": "",
+          "m_SetParentToLocation": 0,
+          "m_Facing": 0,
+          "m_FacingOptions": {
+            "m_RotateX": 1,
+            "m_RotateY": 1
+          },
+          "m_source": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "m_BlockServerEvents": 0,
+          "m_BlockPowerProcessing": {
+            "m_OnEnterDeathState": 0
+          },
+          "m_ObjectContainer": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "m_TargetReticle": 0,
+          "m_ZonesToDisable": [],
+          "m_ZoneLayoutDelayForDeaths": 0.0,
+          "m_UseFastActorTriggers": 0,
+          "m_ExclusivelyUseMetadataForTargeting": 0,
+          "m_MakeClones": 1,
+          "m_SkipAutoDestroyForSubspell": 0,
+          "m_TargetInfo": {
+            "m_Behavior": 0,
+            "m_RandomTargetCountMin": 8,
+            "m_RandomTargetCountMax": 10,
+            "m_SuppressPlaySounds": 0
+          },
+          "m_StartInfo": {
+            "#349": 1,
+            "m_Prefab": {
+              "m_FileID": 0,
+              "m_PathID": -5753530510366325364
+            },
+            "m_UseSuperSpellLocation": 1,
+            "m_DeathAfterAllMissilesFire": 1,
+            "m_AdjustRotation": 0,
+            "m_StartRotationAdjustment": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "m_ActionInfo": {
+            "m_ShowSpellVisuals": 0,
+            "m_StartDelayMin": 0.0,
+            "m_StartDelayMax": 0.0
+          },
+          "m_MissileInfo": {
+            "#349": 1,
+            "m_Prefab": {
+              "m_FileID": 0,
+              "m_PathID": -2513526418571973008
+            },
+            "m_ReversePrefab": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_reverseDelay": 0.0,
+            "m_UseSuperSpellLocation": 1,
+            "m_SpawnDelaySecMin": 0.0,
+            "m_SpawnDelaySecMax": 0.0,
+            "m_SpawnInSequence": 0,
+            "m_SpawnOffset": 0.0,
+            "m_PathDurationMin": 0.4000000059604645,
+            "m_PathDurationMax": 0.4000000059604645,
+            "m_PathEaseType": 0,
+            "m_OrientToPath": 1,
+            "m_CenterOffsetPercent": 50.0,
+            "m_CenterPointHeightMin": 0.0,
+            "m_CenterPointHeightMax": 0.0,
+            "m_RightMin": 0.0,
+            "m_RightMax": 0.0,
+            "m_LeftMin": 0.0,
+            "m_LeftMax": 0.0,
+            "m_DebugForceMax": 0,
+            "m_DistanceScaleFactor": 8.0,
+            "m_TargetJoint": "TargetJoint",
+            "m_TargetHeightOffset": 1.0,
+            "m_JointUpVector": {
+              "x": 0.0,
+              "y": 1.0,
+              "z": 0.0
+            },
+            "m_UseTargetCardPositionInsteadOfHandSlot": 0,
+            "m_TimesToHitSameTarget": 0
+          },
+          "m_ImpactInfo": {
+            "#349": 1,
+            "m_Prefab": {
+              "m_FileID": 0,
+              "m_PathID": -1001538045043050767
+            },
+            "m_damageAmountImpactSpells": [],
+            "m_UseSuperSpellLocation": 0,
+            "m_Location": 6,
+            "m_SetParentToLocation": 0,
+            "m_SpawnDelaySecMin": 0.0,
+            "m_SpawnDelaySecMax": 0.0,
+            "m_SpawnOffset": 0.0,
+            "m_GameDelaySecMin": 0.0,
+            "m_GameDelaySecMax": 0.0,
+            "m_AdjustRotation": 0,
+            "m_ImpactRotationAdjustment": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "m_FriendlyAreaEffectInfo": {
+            "#349": 0,
+            "m_Prefab": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_UseSuperSpellLocation": 0,
+            "m_Location": 0,
+            "m_SetParentToLocation": 0,
+            "m_Facing": 0,
+            "m_FacingOptions": {
+              "m_RotateX": 1,
+              "m_RotateY": 1
+            },
+            "m_SpawnDelaySecMin": 0.0,
+            "m_SpawnDelaySecMax": 0.0
+          },
+          "m_OpponentAreaEffectInfo": {
+            "#349": 0,
+            "m_Prefab": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_UseSuperSpellLocation": 0,
+            "m_Location": 0,
+            "m_SetParentToLocation": 0,
+            "m_Facing": 0,
+            "m_FacingOptions": {
+              "m_RotateX": 1,
+              "m_RotateY": 1
+            },
+            "m_SpawnDelaySecMin": 0.0,
+            "m_SpawnDelaySecMax": 0.0
+          },
+          "m_ChainInfo": {
+            "#349": 0,
+            "m_Prefab": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_SpawnDelayMin": 0.0,
+            "m_SpawnDelayMax": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "card": "CS2_024",
+      "sourceGuid": "af58499642cec471992ecb9e653b92b6",
+      "cab": "CAB-69c88b234dfa427e02d1fcee9337ae34",
+      "externals": [
+        "archive:/CAB-66e7137de3b79380e05eb711ae004556/CAB-66e7137de3b79380e05eb711ae004556",
+        "archive:/CAB-3563ba8b89db13ca6eb196aa111591f1/CAB-3563ba8b89db13ca6eb196aa111591f1",
+        "archive:/CAB-705da26e9aa366bdb912f703068dc208/CAB-705da26e9aa366bdb912f703068dc208",
+        "archive:/CAB-e02b69b1bbe893a6736884865127e637/CAB-e02b69b1bbe893a6736884865127e637",
+        "archive:/CAB-82d08c8cc01bd15ce55e7d57190fd3af/CAB-82d08c8cc01bd15ce55e7d57190fd3af",
+        "archive:/CAB-d3313e0f4b27e9ffc6f70f1a47bdeb6b/CAB-d3313e0f4b27e9ffc6f70f1a47bdeb6b",
+        "Library/unity default resources",
+        "archive:/CAB-cfdc5301ac0b17c5a76ad477fba38b57/CAB-cfdc5301ac0b17c5a76ad477fba38b57",
+        "archive:/CAB-572cbaceb2612afe464bd92ebbf0736a/CAB-572cbaceb2612afe464bd92ebbf0736a",
+        "archive:/CAB-c491983cea83897756f11fa097177509/CAB-c491983cea83897756f11fa097177509",
+        "archive:/CAB-93ce91e5953dced408f61269ec90fec3/CAB-93ce91e5953dced408f61269ec90fec3",
+        "archive:/CAB-29155062fb23fa05472cfd5ec90cc365/CAB-29155062fb23fa05472cfd5ec90cc365",
+        "archive:/CAB-c394926ba464822396a05cbfae08a8b3/CAB-c394926ba464822396a05cbfae08a8b3",
+        "archive:/CAB-4f6ee048c10001b0a2c3fb3e615b15b1/CAB-4f6ee048c10001b0a2c3fb3e615b15b1",
+        "archive:/CAB-005df680c2deeae279a9ca68cef0424b/CAB-005df680c2deeae279a9ca68cef0424b",
+        "archive:/CAB-8ad6ff647f18851acb8f7ba6010d958c/CAB-8ad6ff647f18851acb8f7ba6010d958c"
+      ],
+      "go": {
+        "m_Component": [
+          {
+            "component": {
+              "m_FileID": 0,
+              "m_PathID": 1454884081657850497
+            }
+          },
+          {
+            "component": {
+              "m_FileID": 0,
+              "m_PathID": 7293340693472029313
+            }
+          }
+        ],
+        "m_Layer": 0,
+        "#427": "zDeprecatedFX_Frost_Missile_Snowball_Medium_Super_WithIdle_Simultaneous_Duplicate",
+        "m_Tag": 0,
+        "m_IsActive": 1
+      },
+      "scripts": [
+        {
+          "#374": {
+            "m_FileID": 0,
+            "m_PathID": 4447764272041634433
+          },
+          "#349": 1,
+          "#490": {
+            "m_FileID": 0,
+            "m_PathID": 4054998870446383644
+          },
+          "#427": "",
+          "m_Location": 2,
+          "m_LocationTransformName": "",
+          "m_SetParentToLocation": 0,
+          "m_Facing": 0,
+          "m_FacingOptions": {
+            "m_RotateX": 1,
+            "m_RotateY": 1
+          },
+          "m_source": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "m_BlockServerEvents": 0,
+          "m_BlockPowerProcessing": {
+            "m_OnEnterDeathState": 0
+          },
+          "m_ObjectContainer": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "m_TargetReticle": 0,
+          "m_ZonesToDisable": [],
+          "m_ZoneLayoutDelayForDeaths": 0.0,
+          "m_UseFastActorTriggers": 0,
+          "m_ExclusivelyUseMetadataForTargeting": 0,
+          "m_MakeClones": 1,
+          "m_SkipAutoDestroyForSubspell": 0,
+          "m_TargetInfo": {
+            "m_Behavior": 0,
+            "m_RandomTargetCountMin": 8,
+            "m_RandomTargetCountMax": 10,
+            "m_SuppressPlaySounds": 0
+          },
+          "m_StartInfo": {
+            "#349": 1,
+            "m_Prefab": {
+              "m_FileID": 0,
+              "m_PathID": -8025360274526582757
+            },
+            "m_UseSuperSpellLocation": 1,
+            "m_DeathAfterAllMissilesFire": 1,
+            "m_AdjustRotation": 0,
+            "m_StartRotationAdjustment": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "m_ActionInfo": {
+            "m_ShowSpellVisuals": 0,
+            "m_StartDelayMin": 0.0,
+            "m_StartDelayMax": 0.0
+          },
+          "m_MissileInfo": {
+            "#349": 1,
+            "m_Prefab": {
+              "m_FileID": 0,
+              "m_PathID": 8645211784071365776
+            },
+            "m_ReversePrefab": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_reverseDelay": 0.0,
+            "m_UseSuperSpellLocation": 1,
+            "m_SpawnDelaySecMin": 0.0,
+            "m_SpawnDelaySecMax": 0.0,
+            "m_SpawnInSequence": 0,
+            "m_SpawnOffset": 0.0,
+            "m_PathDurationMin": 0.4000000059604645,
+            "m_PathDurationMax": 0.4000000059604645,
+            "m_PathEaseType": 0,
+            "m_OrientToPath": 1,
+            "m_CenterOffsetPercent": 50.0,
+            "m_CenterPointHeightMin": 0.0,
+            "m_CenterPointHeightMax": 0.0,
+            "m_RightMin": 0.0,
+            "m_RightMax": 0.0,
+            "m_LeftMin": 0.0,
+            "m_LeftMax": 0.0,
+            "m_DebugForceMax": 0,
+            "m_DistanceScaleFactor": 8.0,
+            "m_TargetJoint": "TargetJoint",
+            "m_TargetHeightOffset": 1.0,
+            "m_JointUpVector": {
+              "x": 0.0,
+              "y": 1.0,
+              "z": 0.0
+            },
+            "m_UseTargetCardPositionInsteadOfHandSlot": 0,
+            "m_TimesToHitSameTarget": 0
+          },
+          "m_ImpactInfo": {
+            "#349": 1,
+            "m_Prefab": {
+              "m_FileID": 0,
+              "m_PathID": 2124422836847541724
+            },
+            "m_damageAmountImpactSpells": [],
+            "m_UseSuperSpellLocation": 0,
+            "m_Location": 6,
+            "m_SetParentToLocation": 0,
+            "m_SpawnDelaySecMin": 0.0,
+            "m_SpawnDelaySecMax": 0.0,
+            "m_SpawnOffset": 0.0,
+            "m_GameDelaySecMin": 0.0,
+            "m_GameDelaySecMax": 0.0,
+            "m_AdjustRotation": 0,
+            "m_ImpactRotationAdjustment": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "m_FriendlyAreaEffectInfo": {
+            "#349": 0,
+            "m_Prefab": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_UseSuperSpellLocation": 0,
+            "m_Location": 0,
+            "m_SetParentToLocation": 0,
+            "m_Facing": 0,
+            "m_FacingOptions": {
+              "m_RotateX": 1,
+              "m_RotateY": 1
+            },
+            "m_SpawnDelaySecMin": 0.0,
+            "m_SpawnDelaySecMax": 0.0
+          },
+          "m_OpponentAreaEffectInfo": {
+            "#349": 0,
+            "m_Prefab": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_UseSuperSpellLocation": 0,
+            "m_Location": 0,
+            "m_SetParentToLocation": 0,
+            "m_Facing": 0,
+            "m_FacingOptions": {
+              "m_RotateX": 1,
+              "m_RotateY": 1
+            },
+            "m_SpawnDelaySecMin": 0.0,
+            "m_SpawnDelaySecMax": 0.0
+          },
+          "m_ChainInfo": {
+            "#349": 0,
+            "m_Prefab": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_SpawnDelayMin": 0.0,
+            "m_SpawnDelayMax": 0.0
+          }
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "sounddefSource": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Missile_Fire_Fireball_Medium.prefab",
+      "sounddefComponent": "114969106005120503",
+      "audioKey": "Shared_Fire_Cast_1.wav:392319ce5d9054a46a9c1f1b04961af9",
+      "asset": "Assets/_Project/Art/NativeSpells/Shared_Fire_Cast_1.wav",
+      "sha256": "7eb2f306314419553eb7623a42bff55d3f6d4cef9121d3127e8cbe41ccccb985"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Missile_Fire_Fireball_Medium.prefab",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/ReuseFX_Missile_Fire_Fireball_Medium.prefab",
+      "sha256": "17711de35b44c35400830c65653640df06f7d486ca9f959e7e72d5d20c49f8cd",
+      "reused": true
+    },
+    {
+      "sounddefSource": "AssetBundles/essential_base_global-prefab-0.unity3d/Shared_Fire_Impact.prefab",
+      "sounddefComponent": "114618682377417806",
+      "audioKey": "Shared_Fire_Impact.wav:783cac59839c61e4c810cd046a28c926",
+      "asset": "Assets/_Project/Art/NativeSpells/Shared_Fire_Impact.wav",
+      "sha256": "602abd76955698fa25313ca914b91e3b257caf5257abebf9d26cde658d6daef7"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Impact_Fire_Fireball_Medium.prefab",
+      "asset": "Assets/_Project/Art/NativeHeroEffects/ReuseFX_Impact_Fire_Fireball_Medium.prefab",
+      "sha256": "50b6f2316be7d5dc013b9a4b5d5e295c1a14ff68ce8210508c6678f8573142c8",
+      "reused": true
+    },
+    {
+      "sounddefSource": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Ice_Missile.prefab",
+      "sounddefComponent": "114002669891404536",
+      "audioKey": "Shared_Frost_Cast_1.wav:62f409c56fe341041b252f153f204161",
+      "asset": "Assets/_Project/Art/NativeSpells/Shared_Frost_Cast_1.wav",
+      "sha256": "b378123d126768f486b72121b8f790cbc6dc89fb9a6d4b9fa8a09aa0ac671201"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Ice_Missile.prefab",
+      "asset": "Assets/_Project/Art/NativeSpells/ReuseFX_Ice_Missile.prefab",
+      "sha256": "94444da864e5dd66e1a8f5598322210ba23e35d248cf813a82bbfa8d87c01975",
+      "reused": true
+    },
+    {
+      "sounddefSource": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Ice_Impact.prefab",
+      "sounddefComponent": "114161607090078389",
+      "audioKey": "Shared_Frost_Impact_1.wav:04cf56b4010b5314eb18bd8984df2f5f",
+      "asset": "Assets/_Project/Art/NativeSpells/Shared_Frost_Impact_1.wav",
+      "sha256": "805b8fa6ce4786d87649cac768486ca5ac9fe7ee2e169063414abed7120ed4b8"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/ReuseFX_Ice_Impact.prefab",
+      "asset": "Assets/_Project/Art/NativeSpells/ReuseFX_Ice_Impact.prefab",
+      "sha256": "2f1158650b3b3949b563839d836fee2b64ccfbde60678fe5b236973d96cf6e35",
+      "reused": true
+    }
+  ],
+  "note": "Original prefab/SoundDef references verified. Original RotateOverTime Self axes and iTween easeInQuad0/easeOutQuad1 inspected from metadata. Source camera pose, longest-axis texture resolution, viewport and Fireball .05s linear flash rise to4 followed by .75s easeOutQuad to7 retained. Original shader bloom/blur/distortion/shake are compatibility gaps. Actor-root trail particles share the compatible capture instead of the original separate world rendering."
+}

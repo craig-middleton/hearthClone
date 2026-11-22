@@ -1,5 +1,6 @@
 # HearthClone agent instructions
 
+Gemini users also have `GEMINI.md`, which points to these shared instructions.
 Read `HANDOFF.md` first, then `PROJECT_STATUS.md` and relevant entries in
 `PROJECT_HISTORY.md`. Inspect `git status` before editing; preserve existing work.
 These instructions apply throughout this repository. Current user instructions
