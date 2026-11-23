@@ -1,6 +1,5 @@
 # HearthClone agent instructions
 
-Gemini users also have `GEMINI.md`, which points to these shared instructions.
 Read `HANDOFF.md` first, then `PROJECT_STATUS.md` and relevant entries in
 `PROJECT_HISTORY.md`. Inspect `git status` before editing; preserve existing work.
 These instructions apply throughout this repository. Current user instructions
@@ -23,6 +22,8 @@ take precedence over older project notes.
   decision history belongs in `PROJECT_HISTORY.md`.
 
 ## Project preferences
+
+- Work continues in Codex. Do not recreate alternate-model handover configuration unless Craig asks.
 
 - Significant work goes directly to `main` and GitHub, as authorized by Craig.
   Stage intended files only; never discard unrelated edits or commit credentials.

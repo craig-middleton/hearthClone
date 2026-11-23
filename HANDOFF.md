@@ -1,184 +1,151 @@
-# HearthClone — current handoff
+# HearthClone — current checkpoint
 
-Updated 22 November 2026. Single rolling handoff shared by Codex and local Gemini.
-Read AGENTS.md, GEMINI.md, PROJECT_STATUS.md and git status before editing. Run
-`git log -1` to identify the containing checkpoint. Previous baseline:5d14c52.
+Updated 23 November 2026. Codex project continuity. Read AGENTS.md, this file,
+PROJECT_STATUS.md and relevant PROJECT_HISTORY.md entries before editing. Inspect
+Git status first. Run git log -1 to identify this containing checkpoint. Recovery
+baseline is bd24473 (the final Codex typography/mulligan commit of22November).
 
-## Current checkpoint
+## Recovery completed
 
-Latest focused pass: native Belwe title textures rebaked for47cards with consistent
-.82-unit glyph height and thinner.14 outline (compatibility typography choices,
-not source font metrics). Original curved-name mesh/UVs unchanged. Spell body boxes
-use unused upper parchment space (+6width/+8height/up4 native units), preserving
-lower edge/school separation; sample long-description font increased11.1→13.1.
-Tools/RefreshNativeCardNames.cs updates names and idempotently patches spell body
-boxes; future InstallNativeCards uses same dimensions. Do not rerun the full card
-installer casually: it replaces native card children/outlines.
+Craig reported that the external-model session was a disaster and requested its
+code changes and project setup removed. No new commits had been made after
+bd24473. Restored all20 modified code/shader/tool files together to that baseline.
+Gameplay code, shaders, scene, prefab and saved presentation assets now match
+bd24473. No experimental pieces were retained.
 
-NativeCardFace.Bind now calls SetMaterialDirty as well as SetVerticesDirty.
-Actual-screen review of reused views caught stale portrait/name texture binding
-that prior property-only checks missed. Correct source artwork/name now appears.
-Mulligan card compositionOffset(0,75) lifts row; Confirm now at(0,-155),170×85,
-clear of the player painting in reviewed1280×720 Game view. Shade alpha.4. These
-are explicit UI compatibility composition choices. No new motion/assets invented.
+Deleted project additions: NativeMinionSummonLibrary.cs, NativeInPlayMinion.shader,
+native-card AudioManifest, copied NativeCards/Audio and NativeMinions/Audio folders,
+and their metadata. Original Desktop source audio remains untouched. Removed the
+alternate-model project instructions and setup references. Do not recreate them
+unless Craig explicitly asks. Keep this single rolling HANDOFF for Codex continuity.
 
-VerifyNativeCards, VerifyNativeCardLayout and VerifyNativeMulligan pass; latest
-card-binding change retested with real rendered fixture. Current Console0 errors/
-0 warnings. Actual screen capture Docs/Previews/Native-mulligan-type-spacing.png
-inspected. Unity stopped in clean Edit, auto-tickoff; no saved gameplay fixtures.
-This improves readability/spacing; it is NOT visual acceptance. Remaining source
-lighting/material work and banner/opponent portrait composition still need review.
+The uncommitted recovery is not visible as a gameplay diff in this commit because
+those failed experiments had never been committed. Git now records their verified
+removal and the setup/documentation cleanup. No destructive branch/history reset.
 
-Craig REJECTED the visual result of2b462b5 in screenshots22Nov20:47. Do not
-present the menu/mulligan as visually finished. This checkpoint fixes specific
-faults: opaque centre-disk wood disabled by an unsupported glow submesh, unreadable
-menu text, horizontal labels during camera tilt, and a left-shifted mulligan row.
-Original selectable silhouette glow now appears on kept mulligan cards and hides
-on replacement. Captured actual Game view screen (not only isolated-camera renders)
-in Docs/Previews/Native-menu-corrected.png and Native-mulligan-corrected.png.
-Menu/mulligan/frontend verifiers pass and final Console has zero errors/warnings.
-Unity is stopped in clean Edit, temporary auto-tick off. Visual acceptance pending.
+## Current Editor / verification
 
-Remaining visible shortcomings include dark/flat source-surface compatibility,
-card typography/material richness and hero/banner/confirm crowding. Do not treat
-functional tests as visual approval. New menu fit margin1.08 and gold outlined
-labels are explicit compatibility presentation choices, not recovered source values.
-Mulligan spacing is original but centred for our three-card/no-Coin local player;
-the earlier asymmetric source layout reserved a phantom Coin slot in this flow.
-Continue using original assets. No new motion was invented. Original camera clip
-remains. Complex original shader reconstruction needs Ultra; Craig controls effort.
+Unity6000.6.9f1 is open normally via Hub on Assets/Scenes/HearthstoneTable.unity.
+Stopped in clean Edit, temporary auto-tick off; gameplay fixtures discarded. Fresh
+C#/shader compile passes. Final Console zero errors/warnings. No ongoing edit jobs.
 
-Craig requires brief progress explanations, direct-main significant commits/pushes
-and this handoff overwritten in the same commit. Compatibility rendering is allowed.
-Do not claim pixel-identical original shaders or full visual completion.
+Fresh recovery checks passed all11 suites:
+- VerifyNativeMenu: original intro, menu model/camera/slots/raycast/lifecycle.
+- VerifyFrontEnd: actual deck clicks, copy/size limits, save/reload, exact composition.
+- VerifyNativeMulligan: source marks/layout, per-copy replacement and reset.
+- VerifyNativeCards: values/art/text/type rebinding, input, hover/ghost/concealment.
+- VerifyNativeCardLayout: both ten-card hover bounds and body/school separation.
+- VerifyNativeMinions: original models, readiness, gems/taunt/input/held lifecycle.
+- VerifyNativeHandOutlines: mana/turn/space eligibility and non-hand suppression.
+- VerifyNativeSpells: real Fireball/Frostbolt casts, sound/render/capture/tails/cleanup.
+- VerifyStartingDecks:30total per player including opening hands/Coin, distinct copies.
+- VerifyNativeMatchControls: targeting/cancel, actual End Turn and return from effects.
+- VerifyNativeManaRack: approved native recess/models, spend/refill and restart.
 
-## Implemented and verified in this checkpoint
+Inspected actual Game-view capture Docs/Previews/Recovery-verified-2026-11-23.png.
+No standalone build, full manual match, physical speaker listening or new visual
+approval claimed. This is recovery to the previous implementation, not new polish.
 
-- **Menu/intro:** imported120 original dependencies,242 transforms and68 mesh
-  renderers from complete TheBox export. Original chest, table, disk and button
-  geometry/camera/state poses; safely baked7 transform channels drive original
-  4.983s camera intro once per launch. Existing Play Game/Choose Deck actions map
-  onto the original first/second slots. Other slots remain decorative. Source
-  Startup_Hub hides its loading Logo, reproduced here. Camera isolated on layer30,
-  no new listener/client scripts; model/camera hide in deck builder and match.
-- **Important menu fix:** source GPU meshes are not runtime-readable. Installer
-  bakes exact vertices into serialized Slot.sourcePoints. Runtime projects those
-  points, without mesh.vertices reads/per-frame arrays. Earlier tests passed while
-  console spam exposed this fault; fixed and retested fresh launch with clean
-  Console. Do not regress to direct runtime vertex reads. Ordinary lifecycle plus
-  Start fallback is used; no unsafe AnimationClip.SampleAnimation.
-- **Mulligan:** original10-unit StartingHandZone slots, original1.1 desktop X/Z
-  scale, height/z offsets and source keep/replace positions projected through the
-  board camera. Original Mulligan_Banner_Choose wrapper supplies missing
-  1.75×1.630027 scale, Y180 rotation, headline/caption anchors and original colors.
-  Standalone BannerMulligan alone was too small. New visual-only wrapper retained.
-  Hero socket clips occur BEFORE dealing; no invented move-aside animation added.
-  Source spacing now centres the actual visible local hand; see checkpoint correction. Existing confirm/deal remains.
-- **Source material values:** SourceMaterialProperties reads preserved serialized
-  colors/floats/textures/UV values. Material.GetColor/GetFloat with unavailable
-  original shaders returned zeros despite source values existing. Fixed hand,
-  minion, power and spell installers, then reinstalled. Do not use missing-shader
-  getters for source data.
-- **Played minions:** original532-vertex oval actor/frame, portrait, native gems,
-  shadow and settled taunt. Source states4/5/6 map to HighlightGreenInPlay, now used
-  for ready/selected; Yellow is original combo-hover state10. Eligibility mask is
-  source geometry. Existing input/stats/lifecycle are retained. rootCanvas handles
-  held views. Legacy art suppressed after refresh; portrait/stage cleanup checked.
-- **Hand:** original Ally/Ability silhouette textures, original green parameters.
-  Explicit owner/panel binding from EffectTester→HandDisplay avoids a failed
-  canvas search (EffectTester is a separate root). Mana, space, turn, concealment,
-  ghost/mulligan/collection suppression verified; graphics do not intercept input.
-- **Spells:** actual Fireball/Frostbolt casts use original missile/impact prefabs,
-  particle modules, source .4s easeInQuad paths, flash/light curves, exact sounds,
-  original viewport sizing/camera and independent original tails. Queue completion,
-  lethal target snapshot and menu/new-game disposal checked. Full58-record source
-  manifest dependency traversal repaired (previous rerun produced8records).
-  Exact source portraits wired for Fireball/Frostbolt/Arcane Explosion/Flamestrike.
-  Only the first TWO have newly installed original spell VFX; others keep prior FX.
+## Preserved baseline behaviour and important constraints
 
-## Actual verification and limits
+- Original native board geometry; no full-board background overlay. Approved mana
+  recess is source STW_Frame/FRAME with resource meshes directly in the board.
+- Native TheBox menu: original242transform/68renderer hierarchy, camera/state poses,
+  safely evaluated original4.983s camera intro, Play/Choose Deck source slots. Menu
+  layer30 camera Untagged, named TheBoxCamera. Main Camera remains board camera.
+  NativeMenuPresentation.Slot.sourcePoints are baked in Edit because original GPU
+  meshes are not readable in Play. Never regress to runtime mesh.vertices reads.
+  Unsupported glow submeshes are transparent; keep shared opaque centre disk enabled.
+- Mulligan: source StartingHandZone spacing/card scale/badge/banner wrapper, centred
+  to actual three-card local hand without a phantom Coin slot. Static compatibility
+  compositionOffset(0,75), Confirm(0,-155),170x85, shade.4. Original source card
+  geometry and selection remain. Original hero intro/deal sequences not installed.
+- SourceMaterialProperties reads preserved serialized material values: unsupported
+  original shader getters can return zero. Compatibility rendering is authorized.
+- Played minions: original532vertex oval actor, portrait/frame/gems/shadow/settled
+  taunt and source-shaped green readiness. Source states4/5/6 use green, not yellow.
+- Hand: original Ally/Ability silhouette textures and saved green parameters.
+  Explicit owner/panel binding. Concealed/ghost/collection/mulligan hand glows off;
+  kept mulligan cards use independent original selectable silhouette copies.
+- Cards: source curved-name geometry/UVs with recovered Belwe title raster, consistent
+  .82-unit ink height and.14outline (custom raster-fit choices, not recovered metrics).
+  Spell body boxes use upper parchment (+6width/+8height/up4) without moving lower
+  edge/school. Targeted Tools/RefreshNativeCardNames.cs avoids full card reinstall
+  replacing installed outline children. NativeCardFace.Bind must mark material AND
+  vertices dirty so CanvasRenderer updates changed name/art textures.
+- Fireball/Frostbolt: original prefabs/particle modules/sounds/source.4s easeInQuad,
+  viewport camera/timing/flash/light curves and independent tails.58-record manifest.
+  Exact portraits also wired for Arcane Explosion/Flamestrike; only the first TWO
+  have newly installed original VFX. Remaining spells keep previous presentation.
+- Powers/death/corners/draw remain earlier original-source integrations. NEVER use
+  AnimationClip.SampleAnimation on mixed exported actor bindings: native crash.
+  Evaluate safely baked source channels. Do not launch Unity from a restricted shell;
+  use Hub (previous preferences/GI-cache failure). Never execute original client code.
 
-Passed this session: VerifyNativeMinions, VerifyNativeHandOutlines,
-VerifyNativeHeroPowers, VerifyNativeSpells, VerifyNativeMulligan, VerifyNativeMenu,
-VerifyFrontEnd, VerifyStartingDecks, VerifyNativeMatchControls, VerifyNativeManaRack.
-Menu verified again after source-point fix, including actual intro advancement,
-slot raycasts, Choose Deck/back, match start and return. FrontEnd real collection
-clicks/save/reload/exact30 composition passed on a fresh start. Deck counts include
-opening hands (P1:26+4 at turn1, P2:25+5 including Coin). Disposable fixtures only.
+## Remaining work / next action
 
-Inspected captures in Docs/Previews: Native-menu-verified.png,
-Native-mulligan-source-layout.png, Native-cards-verified.png,
-Original-Fireball-impact.png, Original-Frostbolt-missile.png. No standalone build,
-full-match manual playtest or physical-speaker listening claim. Audio checks prove
-bindings and AudioSource playback. Hero-death all3 branches passed prior98d3481;
-not rerun here. Corner checkpoint2e92890 and approved mana5d07762 preserved.
+Craig rejected earlier menu/mulligan visuals; subsequent corrections remain without
+his final visual approval. Mechanics work but this is not an exact visual replica.
+Priorities: source material/lighting fidelity, one representative minion/spell card
+through hand/hover/play, card typography, hero/banner/modal composition, source VFX
+shader behaviour and remaining original sequences. Inspect actual Game-view output;
+functional tests do not establish visual correctness.
 
-## Remaining visual work / next actions
+Compatibility gaps: original gloss/reflections, animated highlight motes, taunt birth
+spring, spell electrical/noise/scrolling flame/AlphaClipBloom, exact bloom/distortion/
+shake. Spell root Sparks/Smoke share capture instead of separate original world
+trails. Menu compatibility unlit/multiply hides unsupported scrolling/glow; original
+lid clips retained but not played and menu sounds not wired. Hero-death erosion/
+distortion/global shake remain incomplete. No invented tweens/shimmer.
 
-1. Craig rejected previous menu/mulligan visuals. Review new actual-screen captures with him; prioritize lighting, card typography and portrait/modal composition. No visual approval yet.
-2. Hand/minion material richness is unfinished: original gloss/reflection/bloom,
-   animated source highlight motes, source taunt birth spring are not installed.
-   No invented shimmer or tweens. Existing name meshes/typography need review.
-3. Spell surface shader remains generic compatibility: original electrical/noise,
-   scrolling-flame, AlphaClipBloom compositor, bloom/distortion/shake are incomplete.
-   Source root Sparks/Smoke share capture instead of original separate world trail.
-   Preserve originals, investigate their shader semantics before more changes.
-4. Menu uses compatibility unlit/multiply surfaces, with unsupported scrolling/glow
-   placeholders hidden. Original lid open/close clips are retained but not played;
-   only original camera intro is wired. Original menu sounds not added in this pass.
-5. Mulligan original hero intro/deal motion remains unported; confirm position is
-   existing adapted UI. Banner font sizing is TMP compatibility conversion.
-6. Existing hero-death crack distortion/erosion/global shake remain incomplete.
+Craig selected High for recovery; sufficient. He controls effort. If later source
+rendering reconstruction needs Ultra, explain and stop at a safe checkpoint until
+he switches. Give brief progress explanations. Significant work goes directly to
+main with this file overwritten in the SAME commit, then push and verify.
 
-## Files / tools for next agent
+## Tools and files
 
-Runtime: Assets/_Project/Scripts/UI/{NativeMenuPresentation,
-NativeMenuSourceConfiguration,NativeMulliganPresentation,NativeMinionPresentation,
-NativeHandCardPresentation,NativeSpellPresentation,NativeSpellLibrary}.cs.
-Authoring helper: Assets/_Project/Editor/SourceMaterialProperties.cs.
-Installers/preparers/verifiers: Tools/*NativeMenu*, *NativeMulligan*,
-*NativeMinions*, *NativeHandOutlines*, *NativeSpells*. PreviewNativeSpell has
-Fireball/Frostbolt entries that PAUSE Time.timeScale for capture; always run its
-Resume entry or stop Play afterward. Do not save gameplay fixtures.
-Source records: NativeMenu/SourceManifest.json + SourceConfiguration.json,
-Docs/Recovery/Mulligan-layout-source.json, Docs/Recovery/Spells-source.json.
+Project root:
+/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/outputs/HearthClone
+Remote: https://github.com/craig-middleton/hearthClone.git, main, Git LFS.
+Unity: /home/craig-middleton/Unity/Hub/Editor/6000.6.9f1/Editor/Unity
 
-Use Tools/editor_api.py authenticated loopback API; it reads ignored credentials
-privately. Never print/commit credentials. Do not launch Unity from a restricted
-tool shell (previous preferences/GI-cache failure); use Hub.
+Tools/editor_api.py uses authenticated local Unity API and privately reads ignored
+credentials. Never print/commit them. Run installers in clean Edit. Recompile new
+runtime types before dynamic installer scripts. Temporary previews are disposable.
+PreviewNativeSpell pauses Time.timeScale; run its Resume entry or stop Play after.
 
 python3 Tools/editor_api.py get /api/editor_status
 python3 Tools/editor_api.py 'script recompile_status'
 python3 Tools/editor_api.py 'editor.playmode start'
 python3 Tools/editor_api.py 'editor set_auto_tick' '{"enabled":true,"interval-ms":16,"persist":false}'
 python3 Tools/editor_api.py 'script run' '{"file":"Tools/VerifyNativeMenu.cs"}'
-python3 Tools/editor_api.py 'capture game_view' '{"output-path":"Docs/Previews/review.png","source":"camera","camera":"TheBoxCamera","width":1469,"height":740}'
+python3 Tools/editor_api.py 'capture game_view' '{"output-path":"Docs/Previews/review.png","source":"screen"}'
 python3 Tools/editor_api.py 'editor.playmode stop'
 python3 Tools/editor_api.py 'editor set_auto_tick' '{"enabled":false,"persist":false}'
 
-Menu camera is Untagged; named TheBoxCamera. Default Camera.main capture shows the
-board, not the native menu. Gameplay captures use Main Camera. Run installers in
-clean Edit, recompile new runtime types first. Run menu verifier before pointer
-frontend tests on fresh launch; controls wait for the5-second source intro.
+For isolated menu captures source=camera,camera=TheBoxCamera; default Camera.main
+captures board instead. On fresh launch wait for original intro before pointer
+frontend tests. Prefer actual source=screen capture for visual review.
 
-## Local environment, external sources and unrelated files
+## External source assets and unrelated files
 
-Project: /home/craig-middleton/Documents/Codex/2026-11-12/if-x20/outputs/HearthClone
-Remote: https://github.com/craig-middleton/hearthClone.git, branch main, Git LFS.
-Unity: /home/craig-middleton/Unity/Hub/Editor/6000.6.9f1/Editor/Unity
-Recovery: /home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery
-Complete menu: recovery/Box-complete-source/ExportedProject/Assets (use this, not
-incomplete Box-native-source). Interface-native-source and ORG-native-source also
-remain external. Source CIL/evidence includes box-recovery-handoff.md,
-box-objects-summary.json, mulligan-original-flow-il.txt, spell-super-path-il.txt,
-spell-render-to-texture-camera-il.txt and card-highlight-render-il.txt.
-Desktop: /home/craig-middleton/Desktop/{Hearthstone Card Database,Hearthstone Export,
-Hearthstone Extraction}. Original installed client:
+Recovery root:
+/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery
+Contains Interface-native-source, ORG-native-source, Box-complete-source and source
+CIL/evidence files. Use complete menu export, not Box-native-source. Provenance in
+NativeMenu/SourceManifest+SourceConfiguration, Docs/Recovery/Mulligan-layout-source,
+Docs/Recovery/Spells-source.json. Source inspection is metadata only.
+
+Desktop source folders:
+/home/craig-middleton/Desktop/Hearthstone Card Database
+/home/craig-middleton/Desktop/Hearthstone Export
+/home/craig-middleton/Desktop/Hearthstone Extraction
+Original installed client:
 /home/craig-middleton/.local/share/Steam/steamapps/compatdata/2505554610/pfx/drive_c/Program Files (x86)/Hearthstone
-Inspect assemblies as metadata only, never execute original client scripts.
 
-Unrelated pre-existing local changes remain excluded:
-Assets/_Project/RecoveredDecks/Deck_75_mesh.mat, Assets/_Recovery.meta,
-Docs/Previews/Native-hero-powers-first.png (rejected early shadow proof).
-Selected runtime assets are committed, large recovery archives stay local. A fresh
-GitHub clone needs LFS; it does not supply external archives or Editor access.
+Unrelated pre-existing local files preserved byte-for-byte and excluded from commit:
+Assets/_Project/RecoveredDecks/Deck_75_mesh.mat (tracked edit), Assets/_Recovery.meta,
+Docs/Previews/Native-hero-powers-first.png (early rejected proof). Do not discard them.
+Selected runtime assets are tracked; archives stay external. Fresh clones need LFS
+and do not automatically provide external exports or access to Craig's Editor.

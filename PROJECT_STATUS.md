@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-22 — Focused typography/mulligan pass follows rejected visuals: consistent native Belwe titles, larger spell body area, corrected stale artwork/name rebinding, Confirm above player painting. Card/layout/mulligan checks pass, Console clean; visual approval and source lighting/material work pending. See HANDOFF.md._
+_Last updated: 2026-11-23 — Recovered exact bd24473 game code after removing uncommitted external-model experiments and project handover setup. Fresh compile and11 live UI/gameplay verifier suites pass; Console clean; Unity stopped in clean Edit. Codex-only workflow resumes. Prior visual shortcomings remain; see HANDOFF.md._
 
 ## How to use these files
 - **`HANDOFF.md`** — read first for latest checkpoint, local/unfinished work, validation limits and next steps. Overwrite this one file in every main commit, with no dated copies. `AGENTS.md` records the rule for incoming agents.
@@ -14,6 +14,7 @@ _Last updated: 2026-11-22 — Focused typography/mulligan pass follows rejected 
 - **`NETWORKING_PREP.md`** — checklist for the networked 2-player phase: prerequisites and every place UI/input mutates game state today. Read it before starting networking work.
 
 ## Working Preferences
+- Continue in Codex; Craig requested removal of alternate-model handover setup. Keep the rolling HANDOFF for normal project continuity.
 - Craig requires original game presentation throughout: sounds, animations, models, textures, materials/shaders, transforms, lighting and special effects, including original timing/placement. Audit current reconstructed presentation and recover original setups/dependencies; do not call original textures on adapted geometry/materials a completed original effect. Identify missing/unrecoverable dependencies honestly. Craig subsequently authorized compatibility rendering code for the Ubuntu editor, preserving original models/textures/transforms/curves. Integration and compatibility shader code are custom; do not claim bit-identical original shaders.
 - Added card animations must use recovered original Hearthstone clips/curves/timing. Do not invent replacement tweens or animated shimmer; missing motions require source investigation.
 - Craig controls effort settings: stop at a clean checkpoint when a switch is appropriate, explain which setting/why, and wait for him to switch and say continue. Current native-card integration pass used Ultra; visual tuning awaits High.
