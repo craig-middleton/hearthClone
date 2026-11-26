@@ -34,6 +34,7 @@ public static class VerifyNativeCardStudy
   try
   {
    var face=probe.nativeFace;Check(face.study!=null,"Study profile not installed");
+   float tribeFontSize=0;
    foreach(var card in new[]{target,fire,control,target,fire,otherSpell,fire})
    {
     probe.SetCard(new CardInstance(card));await Task.Delay(50);
@@ -43,7 +44,16 @@ public static class VerifyNativeCardStudy
     Check(layers.All(p=>p.library==expected),"Source study leaked or failed to restore after rebinding");
     Check(layers.All(p=>!p.raycastTarget&&p.maskable),"Prototype intercepted input or bypassed clipping");
     Check(face.studyTribe.gameObject.activeInHierarchy==(card==target),"Beast label leaked to another card");
-    if(card==target)Check(face.studyTribe.text=="Beast"&&face.studyDecorations.All(p=>p.gameObject.activeInHierarchy),"Original Grizzly tribe plate absent");
+    if(card==target)
+    {
+     Check(face.studyTribe.text=="Beast"&&face.studyDecorations.All(p=>p.gameObject.activeInHierarchy),"Original Grizzly tribe plate absent");
+     face.studyTribe.ForceMeshUpdate();tribeFontSize=face.studyTribe.fontSize;
+     Check(Vector2.Distance(face.studyTribe.rectTransform.sizeDelta,new Vector2(74.79374f,14.958747f))<.01f,
+      "Beast label lost its original .85 x .17 source text box");
+     foreach(var gem in layers.Where(p=>p.Definition.source.Contains("/Gem_Attack")||p.Definition.source.Contains("/Gem_Health")))
+      Check(face.studyDecorations.All(p=>p.transform.GetSiblingIndex()<gem.transform.GetSiblingIndex()),
+       "Beast plate draws over the attack sword or health droplet");
+    }
     if(selected)
     {
      var portrait=layers.Single(p=>p.Definition.role==NativeCardRole.Artwork);
@@ -54,6 +64,8 @@ public static class VerifyNativeCardStudy
       Neutral(portrait.material);
       var school=face.labels.Single(l=>l.role==NativeCardRole.School&&l.text.transform.IsChildOf(face.spellFace.transform)).text;
       school.ForceMeshUpdate();
+      Check(Mathf.Abs(school.fontSize-tribeFontSize)<.1f&&school.font==face.studyTribe.font&&school.fontSharedMaterial==face.studyTribe.fontSharedMaterial,
+       "Beast/Fire labels use inconsistent font sizing or paint");
       var plate=layers.Single(p=>p.Definition.source.EndsWith("Description_mesh [1]"));
       float bottom=plate.Definition.triangles.Select(i=>plate.Definition.points[i].y).Min();
       Check(school.text=="Fire","Fireball school label missing");
@@ -93,7 +105,7 @@ public static class VerifyNativeCardStudy
    var ghosts=probe.GetComponentInParent<Canvas>().rootCanvas.GetComponentsInChildren<CardView>().Where(v=>v.name.EndsWith("(DragGhost)")).ToArray();
    Check(ghosts.Length==1&&ghosts[0].nativeFace.studyTribe.gameObject.activeInHierarchy,"Drag ghost lost source prototype binding");
    probe.OnEndDrag(new PointerEventData(EventSystem.current){button=PointerEventData.InputButton.Left,position=Vector2.zero});
-   return "Grizzly/Fireball-only profiles, original UV2/materials/tribe/school anchor and rendered school ink, non-prototype fallback and rebind, clipping/input isolation, concealment, drag ghost and GPU white-neutral source color-space check passed.";
+   return "Grizzly/Fireball-only profiles, original UV2/materials/tribe/school anchor, shared label sizing, stat-gem foreground order and rendered school ink, non-prototype fallback and rebind, clipping/input isolation, concealment, drag ghost and GPU white-neutral source color-space check passed.";
   }
   finally{UnityEngine.Object.Destroy(probe.gameObject);game.frontEnd.ShowMenu();}
  }

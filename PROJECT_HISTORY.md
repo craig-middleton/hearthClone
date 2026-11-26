@@ -977,3 +977,32 @@ VerifyNativeCardStudy, VerifyNativeCards and VerifyNativeCardLayout pass. Update
 actual Game-view Card-study-review.png inspected; final saved scene clean in Edit,
 auto-tickoff, compile clean and Console0errors/0warnings. No full match/build or
 whole-card visual parity claim. Unrelated material/recovery/early preview preserved.
+
+
+## 26 November 2026 — consistent tribe typography and stat-gem layering
+
+Craig spotted oversized Beast text and tribe-plate overlap on the health droplet
+and attack sword. Complete original Card_Hand_Ally prefab confirms RaceUberText
+width.85/height.17, font40/min10 and original outlined white source style, matching
+the spell school configuration. Used original transform projection for study text
+box(74.79374,14.958747) instead of arbitrary96x18; reused Fire school TMP font/material
+and fitting parameters instead of fixed15. This is shared UberText-to-TMP
+compatibility sizing, not a recovered bit-identical glyph rasteriser. Original
+font, plate mesh, anchor and texture retained.
+
+The tribe plate had been appended after all stat layers. Placing it before the
+original Gem_Attack/Gem_Health UI siblings restores the sword/droplet foreground.
+Targeted RefreshTribePresentation preserves prefab child IDs; full installer now
+uses the same source dimensions/style/order. Fresh study/card checks pass, including
+rendered Beast/Fire size equality, stat-layer order, rebinding and input. Actual
+Card-study-review.png inspected; clean saved Edit, auto-tickoff, Console0errors/
+0warnings. No full match/build/user visual approval claim.
+
+Craig asked for a quick visual boost and approved the Fireball “Deal 3 damage” body
+style across all cards. All47 CardData assets were audited through a live CardView:
+the same recovered FranklinGothic/FranklinGothicInk, base17.25346, ink/line spacing
+already apply to every description.21 nonempty bodies auto-fit12.05..17.25346 with
+no overflow; longest Cone of Cold. No extra font change was necessary; preserve
+keyword markup. Suggested broader shared-card/whole-match visual pass as next
+milestone. High remains appropriate for typography/layout; source shader/sequence
+work is Ultra. Unrelated pre-existing files preserved; rolling handoff updated.

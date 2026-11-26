@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-26 — Fireball study school label restored to original RaceUberText source anchor; “Fire” now sits in its original gold school plate. Study/cards/layout checks pass; updated actual-screen review inspected, Console clean. Ironfur Grizzly/Fireball remain the opt-in pair, awaiting visual review; broader shader/sequence fidelity remains partial. See HANDOFF.md and Docs/Recovery/TWO_CARD_STUDY.md._
+_Last updated: 2026-11-26 — Beast label now uses recovered source text-box dimensions/shared Fire school fitting; original sword/health gem draw in front of the tribe plate. Focused study/card checks pass, actual-screen review updated, Console clean. Craig approved Fireball description typography for every card; all47 assets audited already share its FranklinGothic font/ink/base size with no overflow. Wants broader visible progress next. See HANDOFF.md._
 
 ## How to use these files
 - **`HANDOFF.md`** — read first for latest checkpoint, local/unfinished work, validation limits and next steps. Overwrite this one file in every main commit, with no dated copies. `AGENTS.md` records the rule for incoming agents.

@@ -7,26 +7,39 @@ baseline is bd24473 (the final Codex typography/mulligan commit of22November).
 
 ## Current two-card review checkpoint
 
-Craig reviewed the first pair and reported that Fireball's “Fire” label sat above
-its school plate. He switched to High for the targeted correction and reiterated
-original game assets only, wired properly. Fixed the label binding using the
-original Card_Hand_Ability/Description_mesh/RaceUberText anchor. Its projected
-position is (3.4838707,-105.92626), replacing the earlier adapted Y=-95.14285 only
-for Fireball study entries. The source school mesh, textures and recovered font
-are unchanged. Other spells restore their baseline anchor on the same view.
+Craig reported that Beast was larger than Fire, and the Beast plate overlapped the
+attack sword and health droplet. Fixed both in High. Recovered complete source
+Card_Hand_Ally RaceUberText has the same .85 x .17 text box as the spell school
+label. Projected through original transforms, this is(74.79374,14.958747), replacing
+the study's manually chosen(96,18). Beast now uses the existing Fire label's recovered
+Belwe font/material and shared TMP auto-fitting. Original plate/anchor/art unchanged.
+Moved the plate's UI sibling before the original stat gems, which draw in front.
+InstallNativeCardStudy.RefreshTribePresentation applies these changes without
+recreating the existing prefab children. Full installer applies them too.
 
-Fresh focused checks pass: VerifyNativeCardStudy (source anchor, visible font-glyph
-ink in the plate band, Fireball→Frostbolt→Fireball rebinding), VerifyNativeCards and
-VerifyNativeCardLayout. Actual Game-view Card-study-review.png was updated and
-inspected: “Fire” now sits inside its gold plate. Final Console0 errors/0 warnings,
-clean compile, saved scene clean in Edit, auto-tick off. No full match or build was
-run for this anchor fix. No exact whole-card parity or Craig's approval is claimed.
+Fresh VerifyNativeCardStudy and VerifyNativeCards pass; study explicitly compares
+rendered Beast/Fire sizes and verifies plate order below sword/health. Updated
+actual Game-view Card-study-review.png inspected. Saved clean Edit, auto-tick off,
+Console0 errors/0 warnings. No full match/build/user visual approval is claimed.
+Prior Fire anchor fix remains: original RaceUberText(3.4838707,-105.92626), with
+baseline spell anchor restored on rebind. Verified baseline3551696; git log -1
+identifies this containing checkpoint.
 
-The opt-in Ironfur Grizzly/Fireball prototype remains the scope. Other card faces
-use the baseline library; Frostbolt retains its baseline spell entry. Card rules
-are unchanged (Fireball still deals3 here). Review this pair before wider rollout.
-Details/source limits: Docs/Recovery/TWO_CARD_STUDY.md. The preceding verified study
-checkpoint is051296c; use git log -1 for this containing commit.
+Craig wants a quicker project-wide visual boost rather than prolonged small-detail
+iterations. Recommended next milestone is shared card presentation across the
+existing deck, then a whole-match composition pass with before/after screens.
+He specifically APPROVED Fireball's “Deal 3 damage” description font and requested
+it throughout. Audited all47 CardData assets in a disposable live CardView: every
+body ALREADY shares FranklinGothic/FranklinGothicInk, base size17.25346, ink and line
+spacing.21 nonempty descriptions fit, sizes12.05..17.25346; longest Cone of Cold.
+No font substitution was needed. Retain this approved standard and original keyword
+markup; longer descriptions auto-fit. Audit was a temporary /tmp script, not a new
+runtime feature. Current effort High; Ultra only when complex source rendering or
+sequence reconstruction is next. Craig controls switching.
+
+Only Ironfur Grizzly/Fireball opt into the source-presentation study. Other card
+faces use the baseline library; card rules unchanged (Fireball deals3 here). No
+exact whole-card parity claim. See Docs/Recovery/TWO_CARD_STUDY.md for source limits.
 
 Implemented:
 - CardStudy profiles retain original UV2/secondary paint and source gem mask inputs;
@@ -71,10 +84,12 @@ this new prototype is separately sourced implementation, not salvaged code.
 
 ## Next action / effort
 
-Review the corrected school-label preview with Craig. Continue specific feedback
-on ONLY these two cards before applying a study profile to more cards. High is suitable for review and small
-layout refinements; source shader/sequence reconstruction remains Ultra work. Craig
-controls effort; explain and wait at a switch point. Keep brief progress updates.
+Use the approved Fireball description typography throughout (already verified on
+all47 assets). Prioritize shared card presentation and full-match visual impact,
+with actual Game-view comparisons; Craig wants faster visible progress. Wider
+source-presentation rollout still needs original dependencies and must preserve
+approved mana/board and mechanics. High is suitable for current font/layout work;
+complex shader/sequence reconstruction needs Ultra. Explain and wait at a switch.
 
 ## Prototype files / reinstall
 

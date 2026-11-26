@@ -49,6 +49,43 @@ public static class InstallNativeCardStudy
   var st=SourceMaterialProperties.Scale(original,"_MainTex");var offset=SourceMaterialProperties.Offset(original,"_MainTex");
   return new NativeCardMesh{source=AnimationUtility.CalculateTransformPath(renderer.transform,actor.transform)+" ["+sub+"]",role=NativeCardRole.Paint,points=world.Select(v=>Point(actor,v)).ToArray(),uv=mesh.uv.Select(v=>Vector2.Scale(v,st)+offset).ToArray(),secondaryUV=mesh.uv2,sourceNormals=mesh.normals,triangles=triangles.ToArray(),paint=paint,sourceMaterial=PrototypeCardMaterialBaker.Bake(original,Folder+"Materials",key)};
  }
+ // Original Card_Hand_Ally RaceUberText: .85 x .17, matching the spell school box.
+ // UberText-to-TMP fitting remains compatibility; both use the same recovered Belwe style.
+ static Vector2 SourceTribeSize()
+ {
+  var original=AssetDatabase.LoadAssetAtPath<GameObject>(Source+"Card_Hand_Ally.prefab");
+  var anchor=original.transform.Find("RootObject/RacePlate_mesh/RaceUberText");
+  var x=anchor.TransformVector(Vector3.right);var y=anchor.TransformVector(Vector3.up);
+  return Vector2.Scale(new Vector2(.85f,.17f),new Vector2(new Vector2(x.x,x.z).magnitude,new Vector2(y.x,y.z).magnitude))*Scale;
+ }
+ static void TribePresentation(NativeCardFace face)
+ {
+  var school=face.labels.Single(l=>l.role==NativeCardRole.School&&l.text.transform.IsChildOf(face.spellFace.transform)).text;
+  var text=face.studyTribe;
+  text.font=school.font;text.fontSharedMaterial=school.fontSharedMaterial;
+  text.enableAutoSizing=school.enableAutoSizing;text.fontSizeMin=school.fontSizeMin;
+  text.fontSizeMax=school.fontSizeMax;text.fontSize=school.fontSizeMax;
+  text.alignment=school.alignment;text.textWrappingMode=school.textWrappingMode;
+  text.overflowMode=school.overflowMode;text.margin=school.margin;
+  // UI sibling order must preserve the source plate behind the original stat gems.
+  var firstGem=face.minionFace.GetComponentsInChildren<NativeCardLayer>(true)
+   .Where(p=>p.Definition.source.Contains("/Gem_")).OrderBy(p=>p.transform.GetSiblingIndex()).First();
+  foreach(var plate in face.studyDecorations)plate.transform.SetSiblingIndex(firstGem.transform.GetSiblingIndex());
+ }
+ public static string RefreshTribePresentation()
+ {
+  if(EditorApplication.isPlaying||EditorSceneManager.GetActiveScene().isDirty)throw new Exception("Clean Edit required");
+  var root=PrefabUtility.LoadPrefabContents(Table);
+  try
+  {
+   var face=root.GetComponent<NativeCardFace>();
+   foreach(var entry in face.study.entries)entry.tribeSize=SourceTribeSize();
+   EditorUtility.SetDirty(face.study);TribePresentation(face);
+   PrefabUtility.SaveAsPrefabAsset(root,Table);AssetDatabase.SaveAssets();
+   return "Beast uses original .85 x .17 source text box and shared school font fitting; source plate draws behind attack/health gems.";
+  }
+  finally{PrefabUtility.UnloadPrefabContents(root);}
+ }
  public static string Main()
  {
   if(EditorApplication.isPlaying||EditorSceneManager.GetActiveScene().isDirty)throw new Exception("Clean Edit required");
@@ -74,8 +111,7 @@ public static class InstallNativeCardStudy
      var mat=plate.sharedMaterial;
      clone.minion=clone.minion.Concat(new[]{Geometry(original,plate,0,mat,SourceMaterialProperties.Texture(mat,"_MainTex"),"Grizzly_source_Beast_plate")}).ToArray();
      var anchor=plate.transform.Find("RaceUberText");tribePosition=Point(original,anchor.position);
-     // Original tribe plate width, not a new decorative rectangle.
-     tribeSize=new Vector2(96,18);
+     tribeSize=SourceTribeSize();
     }
     else
     {
@@ -116,7 +152,8 @@ public static class InstallNativeCardStudy
    var rect=(RectTransform)go.transform;rect.sizeDelta=new Vector2(180,270);
    var part=go.GetComponent<NativeCardLayer>();part.library=library;part.layerIndex=baseline.minion.Length;part.raycastTarget=false;go.SetActive(false);face.studyDecorations=new[]{part};
    var label=new GameObject("Original Grizzly Beast label",typeof(RectTransform),typeof(TextMeshProUGUI));label.transform.SetParent(face.minionFace.transform,false);
-   var text=label.GetComponent<TextMeshProUGUI>();text.font=AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/_Project/RecoveredInterface/Proof/Belwe.asset");text.fontSharedMaterial=AssetDatabase.LoadAssetAtPath<Material>("Assets/_Project/RecoveredInterface/Proof/BelweOutlined.mat");text.text="Beast";text.fontSize=15;text.alignment=TextAlignmentOptions.Center;text.raycastTarget=false;label.SetActive(false);face.studyTribe=text;
+   var text=label.GetComponent<TextMeshProUGUI>();text.font=AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/_Project/RecoveredInterface/Proof/Belwe.asset");text.fontSharedMaterial=AssetDatabase.LoadAssetAtPath<Material>("Assets/_Project/RecoveredInterface/Proof/BelweOutlined.mat");text.text="Beast";text.alignment=TextAlignmentOptions.Center;text.raycastTarget=false;label.SetActive(false);face.studyTribe=text;
+   TribePresentation(face);
    PrefabUtility.SaveAsPrefabAsset(root,Table);
   }
   finally{PrefabUtility.UnloadPrefabContents(root);}

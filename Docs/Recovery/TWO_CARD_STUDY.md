@@ -44,7 +44,12 @@ Grizzly has its original RacePlate_mesh and Beast label; Fireball uses the origi
 source NameUberText rectangles1.9×.3(minion)/.28(spell), source outlineRGB/size3 and
 resolution300×2. TMP metric conversion, supersampling and outline rasterisation
 are compatibility choices. No global name textures/fonts were changed. Beast font
-size uses UI conversion, not a recovered UberText pixel-size claim.
+fitting uses the same recovered Belwe/font material and TMP sizing as the Fire school
+label. Both source text boxes are .85 x .17. Grizzly's original transform projects
+that to(74.79374,14.958747); this replaces an arbitrary96x18/fixed15 study setting.
+The tribe plate draws before Gem_Attack/Gem_Health in UI sibling order so the
+original sword and droplet remain foreground. TMP conversion is compatibility,
+not a recovered UberText pixel-size claim.
 
 Fireball's school label is bound to the original Card_Hand_Ability source anchor
 Description_mesh/RaceUberText, projected to(3.4838707,-105.92626). It no longer
@@ -102,7 +107,14 @@ VerifyNativeSpells, VerifyNativeCards, VerifyNativeCardLayout, VerifyNativeMulli
 VerifyNativeMenu, VerifyFrontEnd, VerifyStartingDecks, VerifyNativeMatchControls,
 VerifyNativeManaRack. Console0 errors/0 warnings; clean compilation.
 
-The study test covers exact opt-in/fallback, prototype→ordinary→prototype rebind,
+Craig approved Fireball's description typography as the global standard. A live
+audit of all47 CardData assets confirms they already share FranklinGothic with
+FranklinGothicInk, base17.25346, ink and line spacing.21 nonempty descriptions fit
+at12.05..17.25346 without overflow; existing keyword markup remains. No font change
+was needed for this global request.
+
+The study test covers matched Beast/Fire fitted size, tribe plate behind stat gems,
+exact opt-in/fallback, prototype→ordinary→prototype rebind,
 masking/input, concealment, ghost cloning and GPU neutral-white result. Grizzly test
 also checks same-art isolation, summon landing, source spring overshoot/settled
 scale, one sound, refresh/menu and mid-birth rebind. It temporarily slows only the
