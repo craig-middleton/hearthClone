@@ -7,12 +7,26 @@ baseline is bd24473 (the final Codex typography/mulligan commit of22November).
 
 ## Current two-card review checkpoint
 
-Craig chose Ironfur Grizzly and Fireball as the first source-presentation pair,
-and switched to Ultra. Their opt-in prototype is installed and tested. Other card
-faces use the baseline library; Frostbolt retains its baseline spell entry. Card
-rules/data are unchanged (Fireball still deals3 in this project). No visual approval
-or exact-parity claim: Craig's review of this pair is the next action before wider
-rollout. Details/source limits: Docs/Recovery/TWO_CARD_STUDY.md.
+Craig reviewed the first pair and reported that Fireball's “Fire” label sat above
+its school plate. He switched to High for the targeted correction and reiterated
+original game assets only, wired properly. Fixed the label binding using the
+original Card_Hand_Ability/Description_mesh/RaceUberText anchor. Its projected
+position is (3.4838707,-105.92626), replacing the earlier adapted Y=-95.14285 only
+for Fireball study entries. The source school mesh, textures and recovered font
+are unchanged. Other spells restore their baseline anchor on the same view.
+
+Fresh focused checks pass: VerifyNativeCardStudy (source anchor, visible font-glyph
+ink in the plate band, Fireball→Frostbolt→Fireball rebinding), VerifyNativeCards and
+VerifyNativeCardLayout. Actual Game-view Card-study-review.png was updated and
+inspected: “Fire” now sits inside its gold plate. Final Console0 errors/0 warnings,
+clean compile, saved scene clean in Edit, auto-tick off. No full match or build was
+run for this anchor fix. No exact whole-card parity or Craig's approval is claimed.
+
+The opt-in Ironfur Grizzly/Fireball prototype remains the scope. Other card faces
+use the baseline library; Frostbolt retains its baseline spell entry. Card rules
+are unchanged (Fireball still deals3 here). Review this pair before wider rollout.
+Details/source limits: Docs/Recovery/TWO_CARD_STUDY.md. The preceding verified study
+checkpoint is051296c; use git log -1 for this containing commit.
 
 Implemented:
 - CardStudy profiles retain original UV2/secondary paint and source gem mask inputs;
@@ -57,8 +71,8 @@ this new prototype is separately sourced implementation, not salvaged code.
 
 ## Next action / effort
 
-Review ONLY these two cards with Craig first. Improve specific feedback on these
-before applying a study profile to more cards. High is suitable for review and small
+Review the corrected school-label preview with Craig. Continue specific feedback
+on ONLY these two cards before applying a study profile to more cards. High is suitable for review and small
 layout refinements; source shader/sequence reconstruction remains Ultra work. Craig
 controls effort; explain and wait at a switch point. Keep brief progress updates.
 

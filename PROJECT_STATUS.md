@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-26 — Opt-in Ironfur Grizzly/Fireball source presentation study installed and tested. Original secondary UV/material inputs, source-proportion titles, Beast plate, Grizzly summon/Taunt and Fireball material families; current11 study/UI/gameplay suites pass, Console clean. User visual review of ONLY this pair is next; shader/sequence fidelity remains partial. See HANDOFF.md and Docs/Recovery/TWO_CARD_STUDY.md._
+_Last updated: 2026-11-26 — Fireball study school label restored to original RaceUberText source anchor; “Fire” now sits in its original gold school plate. Study/cards/layout checks pass; updated actual-screen review inspected, Console clean. Ironfur Grizzly/Fireball remain the opt-in pair, awaiting visual review; broader shader/sequence fidelity remains partial. See HANDOFF.md and Docs/Recovery/TWO_CARD_STUDY.md._
 
 ## How to use these files
 - **`HANDOFF.md`** — read first for latest checkpoint, local/unfinished work, validation limits and next steps. Overwrite this one file in every main commit, with no dated copies. `AGENTS.md` records the rule for incoming agents.

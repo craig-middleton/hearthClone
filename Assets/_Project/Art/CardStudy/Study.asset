@@ -13,19 +13,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UI::HearthstoneClone.UI.NativeCardStudy
   baselinePaint: {fileID: 2100000, guid: 653331f5e15dd7df2bce8600eab4aea7, type: 2}
+  baselineSchoolPosition: {x: 3.483871, y: -95.14285}
   entries:
   - card: {fileID: 11400000, guid: e3e0e00adbadf8a608b8a14585cd50a5, type: 2}
     library: {fileID: 11400000, guid: 756881a1503eb4f1aacaf5f06c91ee65, type: 2}
     tribe: 
     tribePosition: {x: 3.5691862, y: -104.592926}
     tribeSize: {x: 96, y: 18}
+    useOriginalSchoolAnchor: 1
+    schoolPosition: {x: 3.4838707, y: -105.92626}
   - card: {fileID: 11400000, guid: 6a2a4893482e908e9933700906973d29, type: 2}
     library: {fileID: 11400000, guid: 756881a1503eb4f1aacaf5f06c91ee65, type: 2}
     tribe: 
     tribePosition: {x: 3.5691862, y: -104.592926}
     tribeSize: {x: 96, y: 18}
+    useOriginalSchoolAnchor: 1
+    schoolPosition: {x: 3.4838707, y: -105.92626}
   - card: {fileID: 11400000, guid: 9afc0c22738ecffd3b386a321522164a, type: 2}
     library: {fileID: 11400000, guid: 756881a1503eb4f1aacaf5f06c91ee65, type: 2}
     tribe: Beast
     tribePosition: {x: 3.5691862, y: -104.592926}
     tribeSize: {x: 96, y: 18}
+    useOriginalSchoolAnchor: 0
+    schoolPosition: {x: 3.4838707, y: -105.92626}

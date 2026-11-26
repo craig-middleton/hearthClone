@@ -69,7 +69,12 @@ namespace HearthstoneClone.UI
                 part.SetMaterialDirty(); // Artwork/name textures changed as well as geometry.
             }
             foreach(var label in labels)
+            {
                 label.text.text=Value(label.role,data);
+                if(study!=null&&label.role==NativeCardRole.School&&label.text.transform.IsChildOf(spellFace.transform))
+                    label.text.rectTransform.anchoredPosition=entry!=null&&entry.useOriginalSchoolAnchor
+                        ?entry.schoolPosition:study.baselineSchoolPosition;
+            }
             fallbackName.gameObject.SetActive(name==null);fallbackName.text=data.cardName;
             SetTint(tint);
         }

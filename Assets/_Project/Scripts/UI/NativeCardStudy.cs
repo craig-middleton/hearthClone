@@ -14,8 +14,11 @@ namespace HearthstoneClone.UI
             public NativeCardLibrary library;
             public string tribe;
             public Vector2 tribePosition, tribeSize;
+            public bool useOriginalSchoolAnchor;
+            public Vector2 schoolPosition;
         }
         public Material baselinePaint;
+        public Vector2 baselineSchoolPosition;
         public Entry[] entries = Array.Empty<Entry>();
         public Entry Find(CardData card) => Array.Find(entries, e => e.card == card);
     }

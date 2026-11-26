@@ -46,6 +46,16 @@ resolution300×2. TMP metric conversion, supersampling and outline rasterisation
 are compatibility choices. No global name textures/fonts were changed. Beast font
 size uses UI conversion, not a recovered UberText pixel-size claim.
 
+Fireball's school label is bound to the original Card_Hand_Ability source anchor
+Description_mesh/RaceUberText, projected to(3.4838707,-105.92626). It no longer
+inherits the earlier neutral-layout +.13world-Z offset. Baseline spells restore
+their existing position on rebind. The school plate, font and textures are unchanged.
+VerifyNativeCardStudy checks this exact source anchor, visible glyph ink within the
+lower plate band, and Fireball→Frostbolt→Fireball position reset. TMP mesh bounds
+include transparent SDF padding, so the ink check uses font glyph metrics with final
+baseline/scale. Actual-screen Card-study-review.png was refreshed for this fix.
+
+
 ## Grizzly summon and Taunt
 
 The ordinary source AllyInPlaySpawn clip supplies seven position/quaternion

@@ -29,11 +29,12 @@ public static class VerifyNativeCardStudy
   var target=game.cardPool.Single(c=>c.cardName=="Ironfur Grizzly");
   var fire=game.cardPool.Single(c=>c.cardName=="Fireball");
   var control=game.cardPool.First(c=>c.cardType==CardType.Minion&&c.cardName!="Ironfur Grizzly");
+  var otherSpell=game.cardPool.Single(c=>c.cardName=="Frostbolt");
   var probe=UnityEngine.Object.Instantiate(game.cardViewPrefab,game.frontEnd.mainMenu.transform).GetComponent<CardView>();
   try
   {
    var face=probe.nativeFace;Check(face.study!=null,"Study profile not installed");
-   foreach(var card in new[]{target,fire,control,target,fire})
+   foreach(var card in new[]{target,fire,control,target,fire,otherSpell,fire})
    {
     probe.SetCard(new CardInstance(card));await Task.Delay(50);
     bool selected=card==target||card==fire;
@@ -48,9 +49,41 @@ public static class VerifyNativeCardStudy
      var portrait=layers.Single(p=>p.Definition.role==NativeCardRole.Artwork);
      Check(portrait.Definition.secondaryUV.Length==portrait.Definition.points.Length,"Original second UV channel missing");
      Check(portrait.material.shader.isSupported&&portrait.material.shader.name=="HearthClone/UI/Prototype Original Card Surface","Source material adapter absent");
-     if(card==fire)Neutral(portrait.material);
+     if(card==fire)
+     {
+      Neutral(portrait.material);
+      var school=face.labels.Single(l=>l.role==NativeCardRole.School&&l.text.transform.IsChildOf(face.spellFace.transform)).text;
+      school.ForceMeshUpdate();
+      var plate=layers.Single(p=>p.Definition.source.EndsWith("Description_mesh [1]"));
+      float bottom=plate.Definition.triangles.Select(i=>plate.Definition.points[i].y).Min();
+      Check(school.text=="Fire","Fireball school label missing");
+      Check(Vector2.Distance(school.rectTransform.anchoredPosition,new Vector2(3.4838707f,-105.92626f))<.01f,
+       "Fireball school label left the recovered RaceUberText source anchor");
+      // TMP mesh bounds include transparent SDF padding. Check ink using the recovered
+      // font's glyph metrics and TMP's final baseline/scale, not that padded quad.
+      var glyphs=school.textInfo.characterInfo.Take(school.textInfo.characterCount).Where(c=>c.isVisible).ToArray();
+      Check(glyphs.Length==4,"Fireball school glyphs not rendered");
+      foreach(var glyph in glyphs)
+      {
+       var metrics=glyph.textElement.glyph.metrics;
+       float top=glyph.baseLine+metrics.horizontalBearingY*glyph.scale;
+       float low=top-metrics.height*glyph.scale;
+       float inkBottom=face.spellFace.transform.InverseTransformPoint(school.transform.TransformPoint(new Vector3(0,low,0))).y;
+       float inkTop=face.spellFace.transform.InverseTransformPoint(school.transform.TransformPoint(new Vector3(0,top,0))).y;
+       Check(inkBottom>=bottom&&inkTop<=bottom+school.rectTransform.rect.height,
+        $"Fireball school ink outside plate band: {inkBottom}..{inkTop}");
+      }
+     }
     }
-    else Check(layers.Where(p=>p.Definition.role!=NativeCardRole.Name).All(p=>p.material==face.study.baselinePaint),"Other cards changed material");
+    else
+    {
+     Check(layers.Where(p=>p.Definition.role!=NativeCardRole.Name).All(p=>p.material==face.study.baselinePaint),"Other cards changed material");
+     if(card==otherSpell)
+     {
+      var school=face.labels.Single(l=>l.role==NativeCardRole.School&&l.text.transform.IsChildOf(face.spellFace.transform)).text;
+      Check(school.rectTransform.anchoredPosition==face.study.baselineSchoolPosition,"Other spell retained Fireball school anchor after rebind");
+     }
+    }
    }
    probe.SetCard(new CardInstance(target),faceDown:true);await Task.Delay(30);
    Check(!face.minionFace.activeInHierarchy&&!face.studyTribe.gameObject.activeInHierarchy,"Concealed study card exposes its tribe");
@@ -60,7 +93,7 @@ public static class VerifyNativeCardStudy
    var ghosts=probe.GetComponentInParent<Canvas>().rootCanvas.GetComponentsInChildren<CardView>().Where(v=>v.name.EndsWith("(DragGhost)")).ToArray();
    Check(ghosts.Length==1&&ghosts[0].nativeFace.studyTribe.gameObject.activeInHierarchy,"Drag ghost lost source prototype binding");
    probe.OnEndDrag(new PointerEventData(EventSystem.current){button=PointerEventData.InputButton.Left,position=Vector2.zero});
-   return "Grizzly/Fireball-only profiles, original UV2/materials/tribe, non-prototype fallback and rebind, clipping/input isolation, concealment, drag ghost and GPU white-neutral source color-space check passed.";
+   return "Grizzly/Fireball-only profiles, original UV2/materials/tribe/school anchor and rendered school ink, non-prototype fallback and rebind, clipping/input isolation, concealment, drag ghost and GPU white-neutral source color-space check passed.";
   }
   finally{UnityEngine.Object.Destroy(probe.gameObject);game.frontEnd.ShowMenu();}
  }

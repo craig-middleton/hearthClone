@@ -57,7 +57,7 @@ public static class InstallNativeCardStudy
   var clone=UnityEngine.Object.Instantiate(baseline);clone.name="Grizzly and Fireball source study";
   var cards=AssetDatabase.FindAssets("t:CardData",new[]{"Assets/_Project"}).Select(g=>AssetDatabase.LoadAssetAtPath<CardData>(AssetDatabase.GUIDToAssetPath(g))).Where(c=>c.cardName=="Ironfur Grizzly"||c.cardName=="Fireball").ToArray();
   if(cards.Count(c=>c.cardName=="Ironfur Grizzly")!=1||!cards.Any(c=>c.cardName=="Fireball"))throw new Exception("Target card data missing");
-  Vector2 tribePosition=default,tribeSize=default;
+  Vector2 tribePosition=default,tribeSize=default,schoolPosition=default;
   var proof=EditorSceneManager.OpenScene("Assets/Scenes/RecoveredInterfaceProof.unity",OpenSceneMode.Additive);
   try
   {
@@ -84,6 +84,7 @@ public static class InstallNativeCardStudy
      description.GetComponent<MeshFilter>().sharedMesh=AssetDatabase.LoadAssetAtPath<Mesh>(Folder+"Source/Card_InHand_Ability_Description_School_mesh.asset");
      if(description.GetComponent<MeshFilter>().sharedMesh==null)throw new Exception("Original school description mesh absent");
      var sourceDescription=original.transform.Find("RootObject/NonQuestObjects/Mesh/Description_mesh").GetComponent<MeshRenderer>();
+     schoolPosition=Point(original,sourceDescription.transform.Find("RaceUberText").position);
      for(int i=0;i<clone.spell.Length;i++)
       if(clone.spell[i].source.Contains("Description_mesh ["))
       {
@@ -101,7 +102,9 @@ public static class InstallNativeCardStudy
     Folder+"Names/"+name.card.name+"_"+AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(name.card)).Substring(0,8)+".png");
   var library=Save(clone,Folder+"GrizzlyFireball.asset");
   var study=ScriptableObject.CreateInstance<NativeCardStudy>();study.baselinePaint=AssetDatabase.LoadAssetAtPath<Material>("Assets/_Project/Art/NativeCards/OpaquePaint.mat");
-  study.entries=cards.Select(c=>new NativeCardStudy.Entry{card=c,library=library,tribe=c.cardName=="Ironfur Grizzly"?"Beast":"",tribePosition=tribePosition,tribeSize=tribeSize}).ToArray();
+  var baselineFace=AssetDatabase.LoadAssetAtPath<GameObject>(Table).GetComponent<NativeCardFace>();
+  study.baselineSchoolPosition=baselineFace.labels.Single(l=>l.role==NativeCardRole.School&&l.text.transform.IsChildOf(baselineFace.spellFace.transform)).text.rectTransform.anchoredPosition;
+  study.entries=cards.Select(c=>new NativeCardStudy.Entry{card=c,library=library,tribe=c.cardName=="Ironfur Grizzly"?"Beast":"",tribePosition=tribePosition,tribeSize=tribeSize,useOriginalSchoolAnchor=c.cardType==CardType.Spell,schoolPosition=schoolPosition}).ToArray();
   study=Save(study,Folder+"Study.asset");
   var root=PrefabUtility.LoadPrefabContents(Table);
   try

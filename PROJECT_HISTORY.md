@@ -955,3 +955,25 @@ Grizzly uses safely baked source AllyInPlaySpawn(.48333338s), original.6s Taunt 
 Fireball-only phase prefabs reconstruct recovered material families. Cross-export material GUID mismatch initially failed; exact-name fallback now validates active values, texture hashes and UVs against complete source. Frostbolt entry unchanged. Source particles/audio/clocks/path/camera remain. Original compiled noise/glow kernels and compositor are still approximated; remaining Taunt gleam/fade/particles/death/VO are unported. No camera shake or substitute motion invented.
 
 Fresh11 checks passed: card study, Grizzly sequence, native spells/cards/layout/mulligan/menu, frontend, starting decks, controls and mana. Original source assets/copy limits preserved; Fireball remains this project's3damage. Actual-screen face/impact captures inspected; no full match/build/physical listening/user visual approval claim. Saved clean Edit and auto-tickoff. Next is Craig's review of the pair before broad rollout; rolling HANDOFF updated in same commit.
+
+
+## 26 November 2026 — Fireball school-label source anchor
+
+Craig found “Fire” above the gold plate and reiterated original assets wired
+properly. The study used the recovered Description_School mesh but inherited an
+older +.13 world-Z text offset intended for the neutral description layout.
+InstallNativeCardStudy now derives the school anchor directly from the original
+Card_Hand_Ability prefab's Description_mesh/RaceUberText. The study profile stores
+(3.4838707,-105.92626); NativeCardFace applies it only to Fireball study entries and
+restores baseline(3.483871,-95.14285) for other spells when rebinding. No artwork,
+font, mesh, motion or card rule was replaced. Installer-only regenerated prefab
+local IDs were discarded; the saved prefab remains unchanged.
+
+The first new glyph containment assertion incorrectly treated TMP's transparent
+SDF quad padding as visible ink. Corrected the verifier to use recovered glyph
+metrics with final TMP baseline/scale; each Fire glyph fits the lower plate band.
+Source anchor and Fireball→Frostbolt→Fireball reset are explicitly checked. Fresh
+VerifyNativeCardStudy, VerifyNativeCards and VerifyNativeCardLayout pass. Updated
+actual Game-view Card-study-review.png inspected; final saved scene clean in Edit,
+auto-tickoff, compile clean and Console0errors/0warnings. No full match/build or
+whole-card visual parity claim. Unrelated material/recovery/early preview preserved.
