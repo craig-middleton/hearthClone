@@ -1,0 +1,92 @@
+{
+    "materials": [
+        {
+            "importedPath": "Assets/_Project/Art/NativeHeroEffects/GenFX_CoreBlack2.mat",
+            "importedGuid": "8c73f71aa2922474b99a0d7a01aab339",
+            "sourceGuid": "336b91fd04b47dd428742107aeaa984a",
+            "sourceShader": "Hero/Unlit/Unlit_Cutout",
+            "sourceSha256": "bf917a70c5a420ee59957b60e28f180b4f4c1988b225abfe945e9389cfda5dd7",
+            "matchedByValidatedName": true
+        },
+        {
+            "importedPath": "Assets/_Project/Art/NativeHeroEffects/GenFX_CoreBlack3.mat",
+            "importedGuid": "43482cf214047304eb7b25a8f815ae61",
+            "sourceGuid": "509a8db8930689644a3192783120be0c",
+            "sourceShader": "Hero/Unlit/Unlit_Cutout",
+            "sourceSha256": "2e7f3eaba4bc1c7f77fc710b596290f774ae87d2ef1c280be9d2ffe8102931ab",
+            "matchedByValidatedName": true
+        },
+        {
+            "importedPath": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireballBlastMark.mat",
+            "importedGuid": "272cbaadbb9150c4da3c6d56d5d32dda",
+            "sourceGuid": "6e00322022aa6b04b96bba98834b5955",
+            "sourceShader": "Hero/Particle/Particle Multiply",
+            "sourceSha256": "42e0a18e66c08b84123a03795b688fa637bc9654862f2324cf6f4ee21d170673",
+            "matchedByValidatedName": true
+        },
+        {
+            "importedPath": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireballCore.mat",
+            "importedGuid": "101926dff85b77643a1ee6dc1b3d082d",
+            "sourceGuid": "ec65e19271ecb9b4faabf18c79e30e9a",
+            "sourceShader": "Hero/Additive/Additive",
+            "sourceSha256": "4bf92dead6083ebb3c663d603fc0b27d944265f46139818041abe2bd28b95988",
+            "matchedByValidatedName": true
+        },
+        {
+            "importedPath": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireballGlow01.mat",
+            "importedGuid": "f22e24cd6b3502640a33915592913a77",
+            "sourceGuid": "7a6dceda144413644a418f7b6bf041cf",
+            "sourceShader": "Hero/Particle/Particle Additive + 1",
+            "sourceSha256": "f25c2e61424012f43c32569dbbff389d52a61ffd8515962e9663a74e70fdec7b",
+            "matchedByValidatedName": true
+        },
+        {
+            "importedPath": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireballImpactGlow01.mat",
+            "importedGuid": "a2348ff5d23f83649a2dbff24c2c2cd2",
+            "sourceGuid": "412e2cc15fda3114a862116c5603c477",
+            "sourceShader": "Hero/Particle/Particle Additive + 1",
+            "sourceSha256": "4b0a81b0b1eff4f24793a8395ebd2602f89c8c3fdd572a7b12e4803419daeae7",
+            "matchedByValidatedName": true
+        },
+        {
+            "importedPath": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireBallSmoke02.mat",
+            "importedGuid": "f0a695dd1cfe92e438cfa66e732dfcba",
+            "sourceGuid": "4372bd0b795c8124c9984700e2421d41",
+            "sourceShader": "Hero/Particle/Particles_Transparent",
+            "sourceSha256": "27fc4a076b8f2c17e9d67d90149aa98c8b8cc2a09e12bd07ad90d9746181b8b1",
+            "matchedByValidatedName": true
+        },
+        {
+            "importedPath": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireBallSparks01.mat",
+            "importedGuid": "2d3bf4ecc69f9914daa777627a63c098",
+            "sourceGuid": "4d61126101bddd84f99b65c36b877dd6",
+            "sourceShader": "Hero/Particle/Particle Additive",
+            "sourceSha256": "70f94ada301433e96b69d414857398fcb87d0622a758e3167a26780433115b4c",
+            "matchedByValidatedName": true
+        },
+        {
+            "importedPath": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireParticle01.mat",
+            "importedGuid": "4eae5ab5e6be7db4e8c2cdc3d60d23e7",
+            "sourceGuid": "1d68299aba4df1240b8ae5a8a60c4a2e",
+            "sourceShader": "Hero/Particle/FX Particle Additive Alpha 2Layer",
+            "sourceSha256": "433f5ac2fc84c7662651167485394d1ad75fa50370b576182c925fc525558122",
+            "matchedByValidatedName": true
+        },
+        {
+            "importedPath": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireParticle02.mat",
+            "importedGuid": "7367005d716f4cb4c804aade6af22f0d",
+            "sourceGuid": "0c90d9ce8d1c62a44bc700db7d39a712",
+            "sourceShader": "Hero/Particle/FX Particle Additive Alpha 2Layer",
+            "sourceSha256": "d095e53c7b1528366a927c33539900844613b6cb1a261c1380d440fd96f6d246",
+            "matchedByValidatedName": true
+        },
+        {
+            "importedPath": "Assets/_Project/Art/NativeHeroEffects/GenFX_FireParticle03.mat",
+            "importedGuid": "5f5a30e01430a674cbda03446749ca49",
+            "sourceGuid": "b2083e2263594f7449d4b4332fdcc105",
+            "sourceShader": "Hero/Particle/Particle Additive",
+            "sourceSha256": "87a903e24c81a07f10c8966b2bbe7b47c75cfa75990c72432f7c2102268cc1b9",
+            "matchedByValidatedName": true
+        }
+    ]
+}

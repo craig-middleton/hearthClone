@@ -1,0 +1,37 @@
+{
+  "sourcePrefab": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-prefab-0.unity3d/Card_Play_Ally_Taunt.prefab",
+  "sourceSha256": "d0f6e6bcaf2e246f50cbcaa89b34c1a6e944d25421dad844436d0f2997efe164",
+  "state": "Idle State\u2192State 6",
+  "values": {
+    "idleDelay": 0.6000000238418579,
+    "initialScale": [
+      0.10000000149011612,
+      0.10000000149011612,
+      0.10000000149011612
+    ],
+    "settledScale": [
+      0.977573573589325,
+      0.977573573589325,
+      0.977573573589325
+    ],
+    "duration": 0.4000000059604645,
+    "delay": 0.0,
+    "easeType": 30,
+    "upVolume": 0.8999999761581421,
+    "upPitch": 1.0,
+    "upSpatialBlend": 0.0
+  },
+  "sound": {
+    "source": "/home/craig-middleton/Desktop/Hearthstone Export/AudioClip/taunt_shield_up.wav",
+    "sha256": "497cd36ea017e7a06fcea778e6278eb8366f31085c80adb7d3a6c245a1ef54fb",
+    "soundDefGuid": "1fc272e143ba92949b28a80b752836f0"
+  },
+  "spawnClip": {
+    "source": "/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets/AssetBundles/essential_base_global-prefab-0.unity3d/AllyInPlaySpawn.anim",
+    "sha256": "2db4eda1145c2fe0a5b6a6e59a3211a9b0a8d164adf8ac3fe16bd931c9ebd783",
+    "context": "Card_Play_Ally_SummonIn BIRTH AnimationPlaythrough Actor: AllyInPlaySpawn, crossfade0, playmode4",
+    "maxCurveTime": 0.48333338
+  },
+  "springIL": "Blizzard.T5.iTween.dll iTween.spring, inspected as metadata only",
+  "limits": "Original summon position/quaternion channels, shield visibility/birth scale and exact up SFX are ported. Taunt glow/particles/root fade/death/VO omitted. Shared Bear artwork requires additional exact minion-name gate. Initial birth time is view first observation because existing game exposes no source spell-entry clock."
+}

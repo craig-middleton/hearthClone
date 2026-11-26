@@ -7607,6 +7607,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1709254077376921, guid: e8f50915756b2c24092ff6b15f741224, type: 3}
       insertIndex: -1
       addedObject: {fileID: 254297939}
+    - targetCorrespondingSourceObject: {fileID: 1709254077376921, guid: e8f50915756b2c24092ff6b15f741224, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 254297940}
     - targetCorrespondingSourceObject: {fileID: 1642988549198181, guid: e8f50915756b2c24092ff6b15f741224, type: 3}
       insertIndex: -1
       addedObject: {fileID: 776078978}
@@ -9627,6 +9630,18 @@ MonoBehaviour:
     enabled: 0
   - target: {fileID: 106793179}
     enabled: 1
+--- !u!114 &254297940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191192529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cccdf02ca8232d6ba440ddff80275c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UI::HearthstoneClone.UI.GrizzlyTauntPrototypeDirector
 --- !u!1 &255134727
 GameObject:
   m_ObjectHideFlags: 0

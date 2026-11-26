@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-23 — Recovered exact bd24473 game code after removing uncommitted external-model experiments and project handover setup. Fresh compile and11 live UI/gameplay verifier suites pass; Console clean; Unity stopped in clean Edit. Codex-only workflow resumes. Prior visual shortcomings remain; see HANDOFF.md._
+_Last updated: 2026-11-26 — Opt-in Ironfur Grizzly/Fireball source presentation study installed and tested. Original secondary UV/material inputs, source-proportion titles, Beast plate, Grizzly summon/Taunt and Fireball material families; current11 study/UI/gameplay suites pass, Console clean. User visual review of ONLY this pair is next; shader/sequence fidelity remains partial. See HANDOFF.md and Docs/Recovery/TWO_CARD_STUDY.md._
 
 ## How to use these files
 - **`HANDOFF.md`** — read first for latest checkpoint, local/unfinished work, validation limits and next steps. Overwrite this one file in every main commit, with no dated copies. `AGENTS.md` records the rule for incoming agents.

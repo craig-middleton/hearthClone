@@ -44,7 +44,7 @@ public static class VerifyNativeCards
         var layers = VisibleLayers(view);
         Check(layers.Length >= 4 && layers.All(p => p.mainTexture != null && p.GetComponent<CanvasRenderer>()!=null && !p.raycastTarget && p.maskable), "Native mesh layers are missing renderer/paint, intercept input or bypass clipping");
         Check(layers.Any(p => p.artwork == data.artwork && p.mainTexture == data.artwork.texture), "Native portrait did not receive this card's artwork");
-        Check(layers.Any(p => p.nameTexture == face.library.NameFor(data) && p.mainTexture == p.nameTexture), "Original curved-name geometry has the wrong native-font name texture");
+        Check(layers.Any(p => p.nameTexture == (face.study!=null&&face.study.Find(data)!=null?face.study.Find(data).library:face.library).NameFor(data) && p.mainTexture == p.nameTexture), "Original curved-name geometry has the wrong native-font name texture");
         foreach(var label in face.labels.Where(l=>l.text.gameObject.activeInHierarchy))
         {
             if(label.role==NativeCardRole.Description)Check(label.text.text==data.description,"Visible native description is stale");

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7432918137091417020}
   - component: {fileID: 7940058470047819842}
   - component: {fileID: 8879597798480564409}
+  - component: {fileID: 7735857911054328873}
   m_Layer: 0
   m_Name: TableMinion
   m_TagString: Untagged
@@ -276,6 +277,19 @@ MonoBehaviour:
   taunt: {fileID: 0}
   boardCamera: {fileID: 0}
   highlight: {fileID: 0}
+--- !u!114 &7735857911054328873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685811176227473029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89378b0190b3b4411aa043033854a03f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UI::HearthstoneClone.UI.GrizzlyTauntPrototype
+  library: {fileID: 11400000, guid: 1a73e90e7e88e7068966842bc530b3a5, type: 2}
 --- !u!1 &2608716073735977285
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,209 @@
+{
+  "purpose": "Two-card source geometry/material study; original source params and dependencies, source shaders stripped only where unavailable; no source game code.",
+  "files": [
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_Description_School_mesh.asset",
+      "asset": "Assets/_Project/Art/CardStudy/Source/Card_InHand_Ability_Description_School_mesh.asset",
+      "sha256": "a274badeed909cff5d2c2378558ef1efb495dd5eb71382ea036d2dead0bf06f4",
+      "reused": false
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_Card_Back_Default_D.mat",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/GenFX_Card_Back_Default_D.mat",
+      "sha256": "e063bd8c060a3299e6912e359220c098752ad2d1176463828a1dd6cb33a1db24",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_Back_Default_D.png",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_Back_Default_D.png",
+      "sha256": "891be2ee3cfe1f1ea3288070062b8117929a6e36229a01facf0c58c5b0613cc2",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Card_Inhand_Ability_Warlock.mat",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Card_Inhand_Ability_Warlock.mat",
+      "sha256": "3cc1609e528ca55bbae7a8ed5657251caa559d06c9b50055d3768ecebad3841f",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-0.unity3d/Card_Inhand_Ability_Warlock.png",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-0.unity3d/Card_Inhand_Ability_Warlock.png",
+      "sha256": "8a5d149d8fd23b4f37739cf618d2ebaad6ed66b2b5631a0e4af959afd4b56f1f",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_mesh.asset",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_mesh.asset",
+      "sha256": "7db9837dc96e5fe8bcfa4d2e1ce02ca99514ec397873b71b7117479e7914f229",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Gem_Mana_Blue.mat",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Gem_Mana_Blue.mat",
+      "sha256": "615289221da06a7b9caaa2ce430f481e028db8e19967c55e2bdafc6b653de362",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Gem_Mana_D.png",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Gem_Mana_D.png",
+      "sha256": "6b1c9b112bc536242341325246958808fc05b08a82aee79b24963757e44312dd",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_clouds03.png",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_clouds03.png",
+      "sha256": "0a5906ebcd6b1c9685da343007d0e2a21aa25739165085c2ce1e75cfbfa516ac",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/ManaGem.asset",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_qualityhigh_global-content-0.unity3d/ManaGem.asset",
+      "sha256": "6d775b0333c54ca1bf54b7ed294ef39b9a6d6a4e5c06f5127e18d269837c75ca",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Card_InHand_Ability_BannerAtlasMod2x.mat",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Card_InHand_Ability_BannerAtlasMod2x.mat",
+      "sha256": "9bf84292ddbd3b5133285e5787f6ea36adf66c18d6c0dba08b0a2ec6f5c0a8a6",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Set1_Icon.png",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Set1_Icon.png",
+      "sha256": "00182759a046cca7e4565cd1b8b93a3b1df7535e96c46e42c5cde2b853600818",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_Description_Neutral_mesh.asset",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_Description_Neutral_mesh.asset",
+      "sha256": "f868285597ff75550ff42adb3805f2a7e69ae4c6335d9f9f6cd97f509df04422",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Card_InHand_Ability-portrait.mat",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Card_InHand_Ability-portrait.mat",
+      "sha256": "29d09654853ecc9936d3848d987a2136e54e1fe18d0d7758719e21d479948d5d",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_white32x32.png",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_white32x32.png",
+      "sha256": "bf2b1172168b87765f2e3beefb3ec29fb040c98bd3f822f9f7b41d023bd63302",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_InHand_BannerAtlas.png",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Card_InHand_BannerAtlas.png",
+      "sha256": "34451c087230cc5126d7fd6b5792ce0693a033e87f9954f4ba35e4921d82a6fc",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_Portrait_mesh.asset",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_Portrait_mesh.asset",
+      "sha256": "6892a279ce63279a1c9d54f5a66f48cfd9155123edab776e5b2b1a99458f7b08",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_NameBanner_mesh.asset",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ability_NameBanner_mesh.asset",
+      "sha256": "05e3b2bcf43166b7dc0315bd9a66a455854a5dca9b987dcaf6a21d21905c7eed",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_Card_Inhand_Warlock.mat",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/GenFX_Card_Inhand_Warlock.mat",
+      "sha256": "c8c1add946fa36871d731259c2d748b1cd40b9aefd3cbd528a980d8a489fcd91",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/Card_Inhand_Minion_Warlock.png",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/Card_Inhand_Minion_Warlock.png",
+      "sha256": "a5e49dd4a04455dcecbfd0feb578a27436d1c7fcd03fd1dd8804b704cb1ef650",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ally_Base_mesh.asset",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ally_Base_mesh.asset",
+      "sha256": "dcb7634dad981c005a86a051c9277910a188fec2a8da1a3cb0f2918e5dfe535d",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Card_InHand_Ally-Card_InPlay_AllyPortrait.mat",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Card_InHand_Ally-Card_InPlay_AllyPortrait.mat",
+      "sha256": "c71482a87a99b98f264f48db12786a3a06e2b3f49daa5b52263f289334990985",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ally_Portrait_mesh.asset",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ally_Portrait_mesh.asset",
+      "sha256": "5e2c24784002c1b077cd5f4822d1192daac8b59f9bf16203f64455c0763c3ba4",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Card_InHand_BannerAtlasMod2x.mat",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Card_InHand_BannerAtlasMod2x.mat",
+      "sha256": "201b820c5f545eae5261eb1579db342c6c95490a50b4bc18a0aa76643275e305",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ally_Discrption_mesh.asset",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/Card_InHand_Ally_Discrption_mesh.asset",
+      "sha256": "470f421d9eaa1e5073cf181925514c51d90d80c8d46f05ba42efeec367c7020c",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Gem_Health_Gem InHand.mat",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Gem_Health_Gem InHand.mat",
+      "sha256": "b34b9e0cc8a1396233a773831b2c918a049c8787e421562ca6c7122b3400e3ab",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Gem_Health_D.png",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Gem_Health_D.png",
+      "sha256": "879e24a4a7e5d0f1f123bc84c8e0b5cfe64502190440f4bc17092483084fde3d",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/mesh_Gem_Health.asset",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/mesh_Gem_Health.asset",
+      "sha256": "1bd72aa47e8539486f462ceeb635b8fdf0d21fbaecd28ad0dea2ba1d186c0da9",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_Card_InHand_BannerAtlas.mat",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/GenFX_Card_InHand_BannerAtlas.mat",
+      "sha256": "e2aca5f71242a6ed45884c7d97582d851ec38cf677286ef7779669db47631174",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/AllyInHand_RacePlate_mesh.asset",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/AllyInHand_RacePlate_mesh.asset",
+      "sha256": "ebb9ece22590f829c88abd95b8b5251805f191483280aba4a06b88924ee7e0f9",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/AllyInHand_NameBanner_mesh.asset",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/AllyInHand_NameBanner_mesh.asset",
+      "sha256": "a4b4111161512cd6ac8666584a380b7ebdf16ea35a8308d24cb693b84695dad4",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/Gem_Attack_Gem InHand.mat",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-material-0.unity3d/Gem_Attack_Gem InHand.mat",
+      "sha256": "8fc6b5a8f97f9bc7b036606dc4a8a9fded74209f1e9ff6558a2b770120e034b9",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Gem_Attack_D.png",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Gem_Attack_D.png",
+      "sha256": "0be78f2c6cf24fda6e6e5d732b46c7180f511bfea7c3c732fe40a85331e956d6",
+      "reused": true
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/polySurface6.asset",
+      "asset": "Assets/_Project/RecoveredInterface/AssetBundles/essential_base_global-mesh-0.unity3d/polySurface6.asset",
+      "sha256": "7a482d8d5fd1dba8279b7cdca784ae5a43c892e08cd239b11d73c7e139bcbfbf",
+      "reused": true
+    }
+  ]
+}

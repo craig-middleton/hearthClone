@@ -1,50 +1,84 @@
 # HearthClone — current checkpoint
 
-Updated 23 November 2026. Codex project continuity. Read AGENTS.md, this file,
+Updated 26 November 2026. Codex project continuity. Read AGENTS.md, this file,
 PROJECT_STATUS.md and relevant PROJECT_HISTORY.md entries before editing. Inspect
 Git status first. Run git log -1 to identify this containing checkpoint. Recovery
 baseline is bd24473 (the final Codex typography/mulligan commit of22November).
 
-## Recovery completed
+## Current two-card review checkpoint
 
-Craig reported that the external-model session was a disaster and requested its
-code changes and project setup removed. No new commits had been made after
-bd24473. Restored all20 modified code/shader/tool files together to that baseline.
-Gameplay code, shaders, scene, prefab and saved presentation assets now match
-bd24473. No experimental pieces were retained.
+Craig chose Ironfur Grizzly and Fireball as the first source-presentation pair,
+and switched to Ultra. Their opt-in prototype is installed and tested. Other card
+faces use the baseline library; Frostbolt retains its baseline spell entry. Card
+rules/data are unchanged (Fireball still deals3 in this project). No visual approval
+or exact-parity claim: Craig's review of this pair is the next action before wider
+rollout. Details/source limits: Docs/Recovery/TWO_CARD_STUDY.md.
 
-Deleted project additions: NativeMinionSummonLibrary.cs, NativeInPlayMinion.shader,
-native-card AudioManifest, copied NativeCards/Audio and NativeMinions/Audio folders,
-and their metadata. Original Desktop source audio remains untouched. Removed the
-alternate-model project instructions and setup references. Do not recreate them
-unless Craig explicitly asks. Keep this single rolling HANDOFF for Codex continuity.
+Implemented:
+- CardStudy profiles retain original UV2/secondary paint and source gem mask inputs;
+  restored original Beast plate/label and Fireball school description mesh.
+- Prototype-only Belwe titles use source name rectangles/outline; TMP conversion,
+  supersampling and raster outline are compatibility. Global titles unchanged.
+- Linear-space GPU test found .5 mod2x tint made white.428; shader now preserves
+  numeric neutral factor, GPU white1. Source frame shaders are primarily unlit,
+  not PBR. Extra specular/reflection based on stale material fields is not justified.
+- Grizzly uses original.48333338s summon position/quaternion channels and original
+  .6wait/.4Spring Taunt.1→.9775736 plus exact up sound. Board-owned per-Minion clock
+  survives view refresh; name+art gate avoids Bear. Mid-birth rebind restores pose.
+- Fireball-only adapted prefabs use recovered active shader families: cutout cores,
+  alpha-noise particles, additive glow, smoke and multiply mark. Source PS, motion,
+  camera, clocks and sounds retained. Cross-export GUID fallback validates source
+  values/texture hashes/UVs; see FireballPrototype/ResolvedMaterialBindings.json.
 
-The uncommitted recovery is not visible as a gameplay diff in this commit because
-those failed experiments had never been committed. Git now records their verified
-removal and the setup/documentation cleanup. No destructive branch/history reset.
+Important limits: UI geometry projection is retained, not full original3D card
+lighting. Shader kernels/scroller timebase/multiply and final compositor remain
+compatibility approximations. Taunt fade/gleam/particles/death/VO, original bloom/
+distortion/camera shake and separate world trails remain unported. First observation
+starts Grizzly birth clock. Do not present this prototype as finished visual parity.
 
-## Current Editor / verification
+## Editor and verification
 
-Unity6000.6.9f1 is open normally via Hub on Assets/Scenes/HearthstoneTable.unity.
-Stopped in clean Edit, temporary auto-tick off; gameplay fixtures discarded. Fresh
-C#/shader compile passes. Final Console zero errors/warnings. No ongoing edit jobs.
+Unity6000.6.9f1 on saved HearthstoneTable, stopped clean Edit, auto-tick off. Disposable
+fixtures discarded. Fresh compile and final Console0 errors/0 warnings.
 
-Fresh recovery checks passed all11 suites:
-- VerifyNativeMenu: original intro, menu model/camera/slots/raycast/lifecycle.
-- VerifyFrontEnd: actual deck clicks, copy/size limits, save/reload, exact composition.
-- VerifyNativeMulligan: source marks/layout, per-copy replacement and reset.
-- VerifyNativeCards: values/art/text/type rebinding, input, hover/ghost/concealment.
-- VerifyNativeCardLayout: both ten-card hover bounds and body/school separation.
-- VerifyNativeMinions: original models, readiness, gems/taunt/input/held lifecycle.
-- VerifyNativeHandOutlines: mana/turn/space eligibility and non-hand suppression.
-- VerifyNativeSpells: real Fireball/Frostbolt casts, sound/render/capture/tails/cleanup.
-- VerifyStartingDecks:30total per player including opening hands/Coin, distinct copies.
-- VerifyNativeMatchControls: targeting/cancel, actual End Turn and return from effects.
-- VerifyNativeManaRack: approved native recess/models, spend/refill and restart.
+Passed25–26November: VerifyNativeCardStudy, VerifyGrizzlyTauntPrototype,
+VerifyNativeSpells, VerifyNativeCards, VerifyNativeCardLayout, VerifyNativeMulligan,
+VerifyNativeMenu, VerifyFrontEnd, VerifyStartingDecks, VerifyNativeMatchControls,
+VerifyNativeManaRack. Study checks opt-in/fallback/rebind/clip/ghost/concealment and
+GPU neutral-white. Grizzly test slows only its fixture to.25timeScale to observe
+brief overshoot on background Editor frames, restoring it in finally. Runtime
+source curves/timings unchanged. Wall timeouts accommodate background stalls.
 
-Inspected actual Game-view capture Docs/Previews/Recovery-verified-2026-11-23.png.
-No standalone build, full manual match, physical speaker listening or new visual
-approval claimed. This is recovery to the previous implementation, not new polish.
+Actual Game-view captures inspected: Card-study-review.png (real hand views enlarged
+for review) and Fireball-study-impact.png. No standalone build, full manual match,
+physical speaker listening or visual approval claimed. Earlier recovery58371da
+removed all uncommitted external-model experiments/setup and restored bd24473;
+this new prototype is separately sourced implementation, not salvaged code.
+
+## Next action / effort
+
+Review ONLY these two cards with Craig first. Improve specific feedback on these
+before applying a study profile to more cards. High is suitable for review and small
+layout refinements; source shader/sequence reconstruction remains Ultra work. Craig
+controls effort; explain and wait at a switch point. Keep brief progress updates.
+
+## Prototype files / reinstall
+
+New source/runtime: NativeCardStudy, GrizzlyTauntPrototype/Director/Library,
+PrototypeCardSurface, FireballPrototype shader/DTO, PrototypeCardMaterialBaker and
+TypographyBaker. Minimal optional bindings in NativeCardFace/Layer/Library.
+
+Tools preparers: PrepareCardStudySource.py, PrepareGrizzlyTauntPrototype.py,
+PrepareFireballPrototype.py. Clean Edit installers: InstallNativeCardStudy.cs,
+InstallGrizzlyTauntPrototype.cs, InstallFireballPrototype.cs. Import/recompile new
+runtime/Editor types first. NativeCardStudy installer opens proof scene additively
+and closes it without saving. Do not rerun historical broad card installers that
+replace outline/decorative children.
+
+PreviewCardStudy.cs enlarges real hand views and DISABLES FAN only in its disposable
+Play session: stop Play before normal testing. PreviewNativeSpell.Fireball waits
+for real impact/source time and PAUSES Time.timeScale for capture: call Resume or
+stop Play afterward. Never save the fixtures. Use source=screen for actual Game view.
 
 ## Preserved baseline behaviour and important constraints
 
@@ -81,27 +115,6 @@ approval claimed. This is recovery to the previous implementation, not new polis
   AnimationClip.SampleAnimation on mixed exported actor bindings: native crash.
   Evaluate safely baked source channels. Do not launch Unity from a restricted shell;
   use Hub (previous preferences/GI-cache failure). Never execute original client code.
-
-## Remaining work / next action
-
-Craig rejected earlier menu/mulligan visuals; subsequent corrections remain without
-his final visual approval. Mechanics work but this is not an exact visual replica.
-Priorities: source material/lighting fidelity, one representative minion/spell card
-through hand/hover/play, card typography, hero/banner/modal composition, source VFX
-shader behaviour and remaining original sequences. Inspect actual Game-view output;
-functional tests do not establish visual correctness.
-
-Compatibility gaps: original gloss/reflections, animated highlight motes, taunt birth
-spring, spell electrical/noise/scrolling flame/AlphaClipBloom, exact bloom/distortion/
-shake. Spell root Sparks/Smoke share capture instead of separate original world
-trails. Menu compatibility unlit/multiply hides unsupported scrolling/glow; original
-lid clips retained but not played and menu sounds not wired. Hero-death erosion/
-distortion/global shake remain incomplete. No invented tweens/shimmer.
-
-Craig selected High for recovery; sufficient. He controls effort. If later source
-rendering reconstruction needs Ultra, explain and stop at a safe checkpoint until
-he switches. Give brief progress explanations. Significant work goes directly to
-main with this file overwritten in the SAME commit, then push and verify.
 
 ## Tools and files
 

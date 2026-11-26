@@ -53,14 +53,14 @@ public static class VerifyNativeSpells
   }
   var fireball=native.library.entries.First(entry=>entry.cardName=="Fireball");
   var core=fireball.missile.prefab.GetComponentsInChildren<Renderer>(true).SelectMany(r=>r.sharedMaterials)
-   .First(m=>m!=null&&m.name=="GenFX_FireballCore_Compatibility");
+   .First(m=>m!=null&&(m.name=="GenFX_FireballCore_Compatibility"||m.name=="GenFX_FireballCore"));
   var tint=core.GetColor("_TintColor");
   Check(core.shader.isSupported&&Mathf.Abs(tint.r-1)<.00001f&&Mathf.Abs(tint.g-.08208954f)<.00001f&&Mathf.Abs(tint.a-.45882353f)<.00001f,
    "Original Fireball tint was lost while adapting its missing source shader");
   int health=e.opponentFaceView.Player.Health;await Cast(e,"Fireball",new Target(e.opponentFaceView.Player));Check(e.opponentFaceView.Player.Health<health,"Actual Fireball did not damage hero");
   var enemy=e.opponentFaceView.Player;var art=e.cardPool.First(c=>c.cardType==CardType.Minion&&c.artwork!=null).artwork;var minion=new Minion("Original frost lethal fixture",2,1,false,art);enemy.BoardMinions.Add(minion);typeof(EffectTester).GetMethod("RefreshAll",Flags).Invoke(e,null);await Task.Delay(50);
   await Cast(e,"Frostbolt",new Target(minion));Check(minion.IsDead,"Actual Frostbolt did not resolve lethal damage");
-  await Until(()=>native.ActiveCount==0,7000,"Source spell tails/cameras did not release after original lifetimes");
+  await Until(()=>native.ActiveCount==0,20000,"Source spell tails/cameras did not release after original lifetimes");
   Check(!e.battleEffects.overlay.GetComponentsInChildren<Transform>().Any(t=>t.name=="CombatSnapshot"),"Lethal original spell left a combat snapshot");
   await Cast(e,"Fireball",new Target(enemy));e.frontEnd.ShowMenu();Check(native.ActiveCount==0,"Menu retained original spell stages");
   Check(!UnityEngine.Object.FindObjectsByType<Camera>().Any(c=>c.name=="Original spell source viewport camera"&&c.enabled),"Menu left capture camera active");

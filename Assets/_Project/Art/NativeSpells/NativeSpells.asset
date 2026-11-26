@@ -21,7 +21,7 @@ MonoBehaviour:
       name: ReuseFX_Missile_Fire_Fireball_Medium
       sourcePrefab: Assets/_Project/Art/NativeHeroEffects/ReuseFX_Missile_Fire_Fireball_Medium.prefab
       soundPath: Assets/_Project/Art/NativeSpells/Shared_Fire_Cast_1.wav
-      prefab: {fileID: 2393900719130353338, guid: adf9dc11057fe087181ff38c59b96f7a, type: 3}
+      prefab: {fileID: 2109549229819918910, guid: b1c164e38d6631e7dab9fc19d703d2be, type: 3}
       sound: {fileID: 8300000, guid: 6247654929bbb32dbb4900b9024b5cbd, type: 3}
       width: 2.5
       height: 8.5
@@ -58,7 +58,7 @@ MonoBehaviour:
       name: ReuseFX_Impact_Fire_Fireball_Medium
       sourcePrefab: Assets/_Project/Art/NativeHeroEffects/ReuseFX_Impact_Fire_Fireball_Medium.prefab
       soundPath: Assets/_Project/Art/NativeSpells/Shared_Fire_Impact.wav
-      prefab: {fileID: 3353874100391416787, guid: 10a84d54eb3e27e04bc1cbcde8803664, type: 3}
+      prefab: {fileID: 771673448733988690, guid: 351156541adf159d5b107faa3e02e8a4, type: 3}
       sound: {fileID: 8300000, guid: a3c151cf10fcdf3f98e31cc6543e35a9, type: 3}
       width: 5
       height: 5

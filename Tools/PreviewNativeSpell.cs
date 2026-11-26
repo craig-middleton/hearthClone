@@ -32,7 +32,16 @@ public static class PreviewNativeSpell
             game.opponentFaceView.Player)), new Target(game.opponentFaceView.Player)))
             throw new Exception("Actual source spell cast rejected");
         typeof(EffectTester).GetMethod("RefreshAll", flags).Invoke(game, null);
-        await Task.Delay(pauseAfterMilliseconds);
+        if(name=="Fireball")
+        {
+            var wait=System.Diagnostics.Stopwatch.StartNew();
+            while(game.battleEffects.originalSpells.ActiveCount<2)
+            {if(wait.ElapsedMilliseconds>15000)throw new Exception("Fireball impact did not start");await Task.Delay(10);}
+            float impact=Time.time;
+            while(Time.time-impact<.12f)
+            {if(wait.ElapsedMilliseconds>15000)throw new Exception("Impact frames stopped");await Task.Delay(10);}
+        }
+        else await Task.Delay(pauseAfterMilliseconds);
         Time.timeScale = 0;
         return "Paused actual " + name + " for capture. Run Resume or stop Play afterward.";
     }

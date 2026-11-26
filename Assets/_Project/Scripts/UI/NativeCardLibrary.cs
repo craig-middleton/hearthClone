@@ -10,6 +10,9 @@ namespace HearthstoneClone.UI
         public string source;
         public NativeCardRole role;
         public Vector2[] points, uv;
+        public Vector2[] secondaryUV;
+        public Vector3[] sourceNormals;
+        public Material sourceMaterial;
         public int[] triangles;
         public Texture paint;
     }

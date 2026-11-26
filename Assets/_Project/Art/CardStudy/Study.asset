@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c3d0ff1ec1c3998ae5407cafe581cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UI::HearthstoneClone.UI.NativeCardStudy
+  baselinePaint: {fileID: 2100000, guid: 653331f5e15dd7df2bce8600eab4aea7, type: 2}
+  entries:
+  - card: {fileID: 11400000, guid: e3e0e00adbadf8a608b8a14585cd50a5, type: 2}
+    library: {fileID: 11400000, guid: 756881a1503eb4f1aacaf5f06c91ee65, type: 2}
+    tribe: 
+    tribePosition: {x: 3.5691862, y: -104.592926}
+    tribeSize: {x: 96, y: 18}
+  - card: {fileID: 11400000, guid: 6a2a4893482e908e9933700906973d29, type: 2}
+    library: {fileID: 11400000, guid: 756881a1503eb4f1aacaf5f06c91ee65, type: 2}
+    tribe: 
+    tribePosition: {x: 3.5691862, y: -104.592926}
+    tribeSize: {x: 96, y: 18}
+  - card: {fileID: 11400000, guid: 9afc0c22738ecffd3b386a321522164a, type: 2}
+    library: {fileID: 11400000, guid: 756881a1503eb4f1aacaf5f06c91ee65, type: 2}
+    tribe: Beast
+    tribePosition: {x: 3.5691862, y: -104.592926}
+    tribeSize: {x: 96, y: 18}
