@@ -1006,3 +1006,39 @@ no overflow; longest Cone of Cold. No extra font change was necessary; preserve
 keyword markup. Suggested broader shared-card/whole-match visual pass as next
 milestone. High remains appropriate for typography/layout; source shader/sequence
 work is Ultra. Unrelated pre-existing files preserved; rolling handoff updated.
+
+
+## 26 November 2026 — original rope and production-code audit checkpoint
+
+Craig requested the real burning turn rope, then a broad code audit, and finally
+asked to stop safely with2% weekly credits. Source recovery supplied TurnTimer's
+10-joint skin, gradient/diffuse textures, original modern controller-selected curves,
+spiral,5 particle systems and8WAV dependencies. Standard client settings use fuse.4,
+rollout/explosion1 and no per-second tick. Safe baked transform/material curves retain
+source speeds2/1/2 and.87s birth. Deadline is unscaled; local75seconds is explicit
+policy, unlike original server-driven opening/AFK/card variants. Source button timeout
+ends in waiting; ordinary waiting must not replay. Actual imported clip.85s (serialized
+stop marker1s) governs this adapter. No original client gameplay code executes.
+
+Visual inspection corrected a mismatched mask kernel and vector tint conversion;
+original masks/UVs retained, horizontal doubling is a disclosed inference from the
+source offset range/gradient. Smoke/audio/button motion installed; original shader,
+lighting/shadow/shake/compositor/mixer parity remains incomplete. Importer temp actor
+was initially saved before destruction; corrected to dispose before scene save and
+removed the stray saved hierarchy. Scene diff reduced to the intended17lines.
+
+Code audit found/fixed real issues: zero-attack attacks; own-turn Freeze/re-freeze
+expiry; AI continuing after lethal and stale corpses; invalid/malformed/off-board
+spell/combat targets mutating state; win/draw committed after HUD refresh; foreign
+mouse/pointer drags; absent Escape/right cancellation; and combat ghosts sharing and
+destroying external native minion stages/materials. Snapshots now own displayed model
+copies; live attackers hide/restored through refresh, lethal snapshots survive impact.
+No substitute animation was added; existing synthetic attack/fallback VFX remain gaps.
+
+Inspection covered89 runtime C# files,20 custom shaders,6 Editor helpers. Original
+source kernels/complete game rules/content are not certified by reading code. Deferred
+resource leaks and other parity gaps are in Code-audit.md. Focused verification and
+limits are recorded there. A first snapshot assertion incorrectly assumed every
+restored view had a CanvasGroup; a fresh normal view can be fully visible without one.
+Corrected that fixture rather than modifying legitimate renderer behavior. Rolling
+handoff/standing effort-switch preference updated with this stopping checkpoint.

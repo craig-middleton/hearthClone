@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using HearthstoneClone.Cards;
 using HearthstoneClone.Core;
@@ -33,6 +34,21 @@ namespace HearthstoneClone.UI
         // powers or other hand cards; combat effects retain their existing action lock.
         private bool PresentationBusy => battleEffects!=null&&battleEffects.IsBusy;
         public bool ActionEffectsBusy => PresentationBusy;
+        [Header("Turn timer")]
+        [Min(.1f)] public float turnDurationSeconds = 75;
+        private readonly TurnClock turnClock = new TurnClock();
+        private TurnManager timedTurnManager;
+        private int timedTurnNumber;
+        private bool expiredInputCancelled;
+        private bool MatchPlayable => gameManager != null && !gameManager.GameOver &&
+            mulliganController != null && mulliganController.MulliganComplete &&
+            (frontEnd == null || frontEnd.tableSurface.activeInHierarchy);
+        public bool TurnTimerActive => isActiveAndEnabled && MatchPlayable && turnClock.Active;
+        public float TurnTimeRemaining => TurnTimerActive ? turnClock.RemainingSeconds : 0;
+        public bool TurnTimeExpired => TurnTimerActive && turnClock.Expired;
+        public int TimedTurnNumber => turnManager != null ? turnManager.TurnNumber : 0;
+        public event System.Action TurnTimerElapsed;
+        private bool InputBlocked => PresentationBusy || TurnTimeExpired;
         public bool IsOpponentTurn => turnManager!=null&&turnManager.CurrentPlayer==playerTwo;
         // Conservative visual hint: affordable cards may still require a valid target.
         public bool HasVisibleActions => playerOne!=null&&(playerOne.BoardMinions.Exists(m=>m.CanAttack)||
@@ -107,7 +123,7 @@ namespace HearthstoneClone.UI
 
             if (endTurnButton != null)
             {
-                endTurnButton.onClick.AddListener(() => {var native=endTurnButton.GetComponent<NativeTurnButtonPresentation>();if(native!=null&&native.IsTransitioning)return;CancelPendingInput();int before=turnManager.TurnNumber;gameManager.OnEndTurnClicked();if(turnManager.TurnNumber!=before)native?.TurnEnded();});
+                endTurnButton.onClick.AddListener(() => RequestEndTurn(false));
             }
 
             if (confirmMulliganButton != null)
@@ -124,13 +140,70 @@ namespace HearthstoneClone.UI
             else BeginNewGame();
         }
 
+        void Update()
+        {
+            if (cardDragResolver != null && cardDragResolver.DragInProgress &&
+                ((Mouse.current != null && Mouse.current.rightButton.wasPressedThisFrame) ||
+                 (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)))
+            {
+                CancelPendingInput();
+                RefreshHandDisplay();
+            }
+            if (!MatchPlayable) { StopTurnClock(); return; }
+            if (timedTurnManager != turnManager || timedTurnNumber != turnManager.TurnNumber)
+                StartTurnClock();
+            // Original TurnTimer uses realtimeSinceStartup/ignoreTimeScale: accepted
+            // animations and slow motion do not extend a player's input deadline.
+            turnClock.Advance(Time.unscaledDeltaTime);
+            if (!turnClock.Expired) return;
+            if (!expiredInputCancelled)
+            {
+                expiredInputCancelled = true;
+                CancelPendingInput();
+                TurnTimerElapsed?.Invoke();
+                RefreshAll();
+            }
+            // Resolve the already accepted effect first; no new input is accepted meanwhile.
+            if (!PresentationBusy) RequestEndTurn(true);
+        }
+        private void StartTurnClock()
+        {
+            if (!MatchPlayable) { StopTurnClock(); return; }
+            timedTurnManager = turnManager;
+            timedTurnNumber = turnManager.TurnNumber;
+            expiredInputCancelled = false;
+            turnClock.Start(Mathf.Max(.1f, turnDurationSeconds));
+        }
+        private void StopTurnClock()
+        {
+            turnClock.Stop(); timedTurnManager = null; timedTurnNumber = 0;
+            expiredInputCancelled = false;
+        }
+        private bool RequestEndTurn(bool timeout)
+        {
+            if (!MatchPlayable || PresentationBusy) return false;
+            if (timeout && !TurnTimeExpired) return false;
+            var native = endTurnButton != null ? endTurnButton.GetComponent<NativeTurnButtonPresentation>() : null;
+            if (!timeout && native != null && native.IsTransitioning) return false;
+            CancelPendingInput();
+            int before = turnManager.TurnNumber;
+            gameManager.OnEndTurnClicked();
+            if (turnManager.TurnNumber == before) return false;
+            // AI may synchronously consume its entire turn, so key the final current turn,
+            // rather than carrying the expired clock into the player's next turn.
+            StartTurnClock();
+            native?.TurnEnded();
+            RefreshFaceDisplay();
+            return true;
+        }
+
         public bool StartNewGame(IReadOnlyList<CardData> deck = null)
         {
             if(deck!=null&&!DeckSelection.IsValid(deck,cardPool,copiesPerCard))return false;
             selectedDeck=deck==null?null:new List<CardData>(deck);
             BeginNewGame();return true;
         }
-        public void CancelPendingInput() {powerPending=false;targetingRibbon?.Hide();combatInputController?.ClearSelection();}
+        public void CancelPendingInput() {powerPending=false;targetingRibbon?.Hide();combatInputController?.ClearSelection();cardDragResolver?.CancelDrag();}
         public void ResetPresentation(){battleEffects?.ResetEffects();areaSpellAnimator?.ClearEffects();handDisplay?.drawPresentation?.ResetDraws();opponentHandDisplay?.drawPresentation?.ResetDraws();}
         private void OnPowerPressed(bool opponent)
         {
@@ -158,7 +231,7 @@ namespace HearthstoneClone.UI
         // from the same visual state Start() does, not wherever the last game left off.
         private void BeginNewGame()
         {
-            CancelPendingInput();ResetPresentation();
+            StopTurnClock();CancelPendingInput();ResetPresentation();
             if (cardPool == null || cardPool.Count == 0)
             {
                 Debug.LogWarning("No cards assigned to EffectTester's Card Pool.", this);
@@ -259,7 +332,7 @@ namespace HearthstoneClone.UI
 
             combatInputController = new CombatInputController(
                 board, turnManager, playerOne, playerTwo,
-                () => gameManager.GameOver||PresentationBusy, () => mulliganController.MulliganComplete, () => manualControlMode,
+                () => gameManager.GameOver||InputBlocked, () => mulliganController.MulliganComplete, () => manualControlMode,
                 RefreshBoardDisplay, () => gameManager.AfterGameAction());
 
             cardDragResolver = new CardDragResolver(
@@ -267,7 +340,7 @@ namespace HearthstoneClone.UI
                 playerOneHand, playerTwoHand, turnManager,
                 boardDisplay, opponentBoardDisplay,
                 faceView, opponentFaceView, spellAnimationSequencer,
-                () => gameManager.GameOver||PresentationBusy, () => mulliganController.MulliganComplete, () => manualControlMode,
+                () => gameManager.GameOver||InputBlocked, () => mulliganController.MulliganComplete, () => manualControlMode,
                 () => gameManager.AfterGameAction());
 
             gameManager = new GameManager(
@@ -277,6 +350,7 @@ namespace HearthstoneClone.UI
                 () => mulliganController.MulliganComplete, () => manualControlMode,
                 RefreshAll);
             gameManager.IsPresentationBusy=()=>PresentationBusy;
+            gameManager.IsInputLocked=()=>TurnTimeExpired;
             if(battleEffects!=null)
             {
                 battleEffects.Bind(board,boardDisplay,opponentBoardDisplay,faceView,opponentFaceView);
@@ -394,6 +468,7 @@ namespace HearthstoneClone.UI
             // To revert, replace this call with the turn log line it absorbed:
             // Debug.Log($"Turn {turnManager.TurnNumber}: {turnManager.CurrentPlayer.PlayerName}'s turn. Mana: {turnManager.CurrentPlayer.CurrentMana}/{turnManager.CurrentPlayer.MaxMana}");
             gameManager.BeginFirstTurn();
+            StartTurnClock();
             RefreshAll();
         }
 
@@ -455,7 +530,7 @@ namespace HearthstoneClone.UI
 
         private void RefreshFaceDisplay()
         {
-            if(endTurnButton!=null)endTurnButton.interactable=!gameManager.GameOver&&!PresentationBusy&&mulliganController.MulliganComplete;
+            if(endTurnButton!=null)endTurnButton.interactable=!gameManager.GameOver&&!InputBlocked&&mulliganController.MulliganComplete;
             if (heroPowerButton != null)
             {
                 var presentation = heroPowerButton.GetComponent<HeroPowerPresentation>();

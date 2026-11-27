@@ -16,7 +16,6 @@ namespace HearthstoneClone.Core
         public bool HasTaunt;
         public bool HasCharge;
         public bool IsFrozen;
-        public bool IsNewlyFrozen;
         public Sprite Artwork;
 
         public Minion(string minionName, int attack, int health, bool hasTaunt = false, Sprite artwork = null, bool hasCharge = false)
@@ -38,26 +37,27 @@ namespace HearthstoneClone.Core
 
         public bool IsDead => CurrentHealth <= 0;
 
-        public bool CanAttack => !IsDead && !HasSummoningSickness && !HasAttackedThisTurn && !IsFrozen;
+        public bool CanAttack => !IsDead && CurrentAttack > 0 && !HasSummoningSickness && !HasAttackedThisTurn && !IsFrozen;
 
         public void Freeze()
         {
             IsFrozen = true;
-            IsNewlyFrozen = true;
+        }
+
+        public void EndTurn()
+        {
+            // Freeze consumes the next attack opportunity. A ready, unspent minion
+            // thawing here missed this turn's attack; one that already attacked or
+            // was summoned without Charge must wait through its next owner turn.
+            // Attack value is irrelevant to thawing, including zero-attack minions.
+            if (IsFrozen && !HasSummoningSickness && !HasAttackedThisTurn)
+                IsFrozen = false;
         }
 
         public void ResetForNewTurn()
         {
             HasSummoningSickness = false;
             HasAttackedThisTurn = false;
-
-            if (IsFrozen)
-            {
-                if (IsNewlyFrozen)
-                    IsNewlyFrozen = false;
-                else
-                    IsFrozen = false;
-            }
         }
     }
 }

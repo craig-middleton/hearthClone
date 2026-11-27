@@ -44,11 +44,12 @@ namespace HearthstoneClone.AI
         {
             Player aiPlayer = aiHand.CorePlayer;
             Player opponent = board.GetOpponent(aiPlayer);
+            if (aiPlayer.Health <= 0 || opponent.Health <= 0) return;
 
             Debug.Log($"--- {aiPlayer.PlayerName} (AI) is taking its turn ---");
 
             bool playedSomething = true;
-            while (playedSomething)
+            while (playedSomething && aiPlayer.Health > 0 && opponent.Health > 0)
             {
                 playedSomething = false;
 
@@ -71,6 +72,9 @@ namespace HearthstoneClone.AI
 
                     if (aiHand.PlayCard(card, context, target))
                     {
+                        // Resolve each action's deaths before choosing the next card.
+                        // Corpses must not occupy board slots or remain target candidates.
+                        board.RemoveDeadMinions();
                         playedSomething = true;
                         break;
                     }
@@ -79,7 +83,8 @@ namespace HearthstoneClone.AI
 
             board.RemoveDeadMinions();
 
-            AttackPhase(aiPlayer, opponent);
+            if (aiPlayer.Health > 0 && opponent.Health > 0)
+                AttackPhase(aiPlayer, opponent);
 
             Debug.Log($"--- {aiPlayer.PlayerName} (AI) ends its turn ---");
         }
@@ -150,8 +155,7 @@ namespace HearthstoneClone.AI
             foreach (var enemyMinion in opponent.BoardMinions)
             {
                 // A corpse (CurrentHealth <= 0) trivially satisfies the damage check below.
-                // TakeTurn only sweeps the board after its whole card loop, so a minion an
-                // earlier spell killed this turn is still in BoardMinions here.
+                // Retain this guard even though normal actions now sweep immediately.
                 if (enemyMinion == null || enemyMinion.IsDead) continue;
                 if (damageAmount >= enemyMinion.CurrentHealth) return enemyMinion;
             }
@@ -182,7 +186,7 @@ namespace HearthstoneClone.AI
 
             foreach (var minion in new List<Minion>(aiPlayer.BoardMinions))
             {
-                if (opponent.Health <= 0) break;
+                if (aiPlayer.Health <= 0 || opponent.Health <= 0) break;
                 if (minion == null || !minion.CanAttack) continue;
 
                 Target attackTarget = SelectAttackTarget(minion, opponent, lethalAvailable);

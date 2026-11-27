@@ -57,6 +57,7 @@ namespace HearthstoneClone.UI
 
         private GameObject dragGhost;
         private bool dragActive;
+        private int dragPointerId;
 
         // Captured once, before ShowFaceDown can ever run, so the face-up path can restore
         // cardBackground's true prefab sprite (frame/background art) instead of guessing at it
@@ -283,11 +284,16 @@ namespace HearthstoneClone.UI
 
         public void OnBeginDrag(PointerEventData eventData)
         {
+            if (eventData.button != PointerEventData.InputButton.Left || dragActive) return;
             if (card == null) return;
             if (canDrag != null && !canDrag()) return;
 
             dragActive = true;
+            dragPointerId = eventData.pointerId;
             onDragBegan?.Invoke(card, this);
+            // The accepted gesture alone owns the fan lock. Separate drag handlers
+            // would also receive rejected buttons and other pointers' release events.
+            GetComponentInParent<HandFanLayout>()?.SetDragActive(true);
 
             Canvas rootCanvas = GetComponentInParent<Canvas>()?.rootCanvas;
             if (rootCanvas == null) return;
@@ -322,6 +328,7 @@ namespace HearthstoneClone.UI
 
         public void OnDrag(PointerEventData eventData)
         {
+            if (!dragActive || eventData.button != PointerEventData.InputButton.Left || eventData.pointerId != dragPointerId) return;
             if (dragGhost == null) return;
 
             Canvas rootCanvas = GetComponentInParent<Canvas>()?.rootCanvas;
@@ -330,19 +337,33 @@ namespace HearthstoneClone.UI
             MoveGhostTo(eventData, rootCanvas);
         }
 
+        // Cancelling a timed-out turn must remove the ghost without resolving a drop.
+        // A later EventSystem OnEndDrag sees dragActive=false and is harmless.
+        public void CancelDrag()
+        {
+            dragActive = false;
+            if (dragGhost != null)
+            {
+                dragGhost.SetActive(false);
+                Destroy(dragGhost);
+            }
+            dragGhost = null;
+            GetComponentInParent<HandFanLayout>()?.SetDragActive(false);
+        }
+
         public void OnEndDrag(PointerEventData eventData)
         {
+            // A second mouse/touch pointer must not remove or release the card owned
+            // by the accepted left-button gesture. Cancelled gestures stay inert.
+            if (!dragActive || eventData.button != PointerEventData.InputButton.Left || eventData.pointerId != dragPointerId) return;
             if (dragGhost != null)
             {
                 Destroy(dragGhost);
                 dragGhost = null;
             }
 
-            // EventSystem still calls OnEndDrag even when OnBeginDrag declined the drag
-            // (canDrag false) - dragActive tells us this drag never actually started, so
-            // there's nothing to resolve.
-            if (!dragActive) return;
             dragActive = false;
+            GetComponentInParent<HandFanLayout>()?.SetDragActive(false);
 
             onDragEnded?.Invoke(card, this, eventData);
         }

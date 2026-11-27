@@ -21,6 +21,9 @@ public static class VerifyFrontEnd
         {
             var e=UnityEngine.Object.FindAnyObjectByType<EffectTester>();var ui=e.frontEnd;
             Check(ui.mainMenu.activeInHierarchy&&!ui.tableSurface.activeSelf,"Project must start at its menu");
+            // Original TheBox intro intentionally disables its buttons while opening.
+            var intro=System.Diagnostics.Stopwatch.StartNew();
+            while(!ui.chooseDeckButton.interactable){if(intro.Elapsed.TotalSeconds>10)throw new Exception("Original menu intro never enabled buttons");await Frame();}
             Click(ui.chooseDeckButton);ui.clearButton.onClick.Invoke();await Frame();
             Check(ui.deckScreen.activeInHierarchy&&!ui.saveButton.interactable,"Empty deck can be saved");
             var card=ui.collectionGrid.GetComponentsInChildren<DeckCollectionEntry>().First().view.Card.Data;

@@ -25,7 +25,13 @@ namespace HearthstoneClone.UI
         Board board;BoardDisplay oneBoard,twoBoard;FaceView oneFace,twoFace;
         readonly Queue<IEnumerator> queue=new Queue<IEnumerator>();
         readonly List<GameObject> temporary=new List<GameObject>();
-        readonly List<CanvasGroup> hidden=new List<CanvasGroup>();
+        sealed class HiddenView
+        {
+            public CanvasGroup group;public float alpha;
+            public NativeMinionPresentation native;public bool nativeVisible;
+        }
+        readonly List<HiddenView> hidden=new List<HiddenView>();
+        Minion attacking;
         AudioSource audioSource;
         public void Bind(Board model,BoardDisplay one,BoardDisplay two,FaceView a,FaceView b)
         {ResetEffects();board=model;oneBoard=one;twoBoard=two;oneFace=a;twoFace=b;}
@@ -34,7 +40,7 @@ namespace HearthstoneClone.UI
             StopAllCoroutines();queue.Clear();IsBusy=false;
             if(originalSpells!=null)originalSpells.ResetEffects();
             if(audioSource!=null)audioSource.Stop();
-            foreach(var group in hidden)if(group!=null)group.alpha=1;hidden.Clear();
+            attacking=null;RestoreHidden();
             foreach(var go in temporary)if(go!=null){go.SetActive(false);Destroy(go);}temporary.Clear();
         }
         Transform View(Target target)
@@ -48,6 +54,8 @@ namespace HearthstoneClone.UI
         {
             if(source==null)return null;
             var copy=Instantiate(source.gameObject,overlay,true);copy.name="CombatSnapshot";
+            var native=copy.GetComponent<NativeMinionPresentation>();
+            if(native!=null)native.CaptureSnapshotFrom(source.GetComponent<NativeMinionPresentation>());
             foreach(var view in copy.GetComponentsInChildren<MinionView>())view.enabled=false;
             foreach(var button in copy.GetComponentsInChildren<Button>())button.enabled=false;
             foreach(var graphic in copy.GetComponentsInChildren<Graphic>())graphic.raycastTarget=false;
@@ -56,6 +64,27 @@ namespace HearthstoneClone.UI
             temporary.Add(copy);return copy;
         }
         void Enqueue(IEnumerator routine){queue.Enqueue(routine);if(!IsBusy){IsBusy=true;StartCoroutine(Run());}}
+        void HideAttacker()
+        {
+            var live=attacking!=null?View(new Target(attacking)):null;if(live==null)return;
+            var group=live.GetComponent<CanvasGroup>();if(group==null)group=live.gameObject.AddComponent<CanvasGroup>();
+            if(hidden.Exists(h=>h.group==group))return;
+            var native=live.GetComponent<NativeMinionPresentation>();
+            hidden.Add(new HiddenView{group=group,alpha=group.alpha,native=native,nativeVisible=native!=null&&native.IsPresentationVisible});
+            group.alpha=0;native?.SetPresentationVisible(false);
+        }
+        void RestoreHidden()
+        {
+            foreach(var view in hidden)
+            {
+                if(view.group!=null)view.group.alpha=view.alpha;
+                if(view.native!=null)view.native.SetPresentationVisible(view.nativeVisible);
+            }
+            hidden.Clear();
+        }
+        // Draw completion can rebuild the board during an accepted attack. Apply the
+        // same visibility to its replacement view before the next rendered frame.
+        void LateUpdate(){if(attacking!=null)HideAttacker();}
         IEnumerator Run()
         {yield return null;while(queue.Count>0)yield return queue.Dequeue();IsBusy=false;Completed?.Invoke();}
         void Remove(GameObject go){if(go==null)return;temporary.Remove(go);Destroy(go);}
@@ -81,8 +110,7 @@ namespace HearthstoneClone.UI
         }
         IEnumerator Attack(Minion attacker,Target target,GameObject ghost,GameObject victim,Vector3 from,Vector3 to)
         {
-            var live=View(new Target(attacker));CanvasGroup group=null;
-            if(live!=null){group=live.GetComponent<CanvasGroup>();if(group==null)group=live.gameObject.AddComponent<CanvasGroup>();group.alpha=0;hidden.Add(group);}
+            attacking=attacker;HideAttacker();
             if(ghost!=null)ghost.SetActive(true);
             float t=0;Vector3 hit=Vector3.Lerp(from,to,.82f);
             while(t<.19f){t+=Time.deltaTime;if(ghost!=null)ghost.transform.position=Vector3.Lerp(from,hit,Mathf.SmoothStep(0,1,t/.19f));yield return null;}
@@ -90,7 +118,7 @@ namespace HearthstoneClone.UI
             if(target.TargetMinion!=null&&target.TargetMinion.CurrentAttack>0)StartCoroutine(Burst(from,impact,Color.white,target.TargetMinion.CurrentAttack,.4f));
             Remove(victim);t=0;
             while(t<.22f){t+=Time.deltaTime;if(ghost!=null)ghost.transform.position=Vector3.Lerp(hit,from,Mathf.SmoothStep(0,1,t/.22f));yield return null;}
-            Remove(ghost);if(group!=null){group.alpha=1;hidden.Remove(group);}yield return new WaitForSeconds(.22f);
+            Remove(ghost);attacking=null;RestoreHidden();yield return new WaitForSeconds(.22f);
         }
         public void PlaySpell(CardData card,Player caster,Target target)
         {

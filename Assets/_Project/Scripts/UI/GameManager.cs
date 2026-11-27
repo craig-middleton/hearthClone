@@ -28,6 +28,7 @@ namespace HearthstoneClone.UI
         private readonly Func<bool> isManualControlMode;
         private readonly Action onRefreshAll;
         public Func<bool> IsPresentationBusy;
+        public Func<bool> IsInputLocked;
         public event Action<Player,HeroPowerKind,Target> HeroPowerUsed;
 
         private Player winner = null;
@@ -65,7 +66,7 @@ namespace HearthstoneClone.UI
 
         public bool CanUseHeroPower(Player owner,bool ai=false)
             => owner!=null&&!GameOver&&isMulliganComplete()&&owner==turnManager.CurrentPlayer&&owner.Health>0&&owner.CurrentMana>=HeroPowerCost&&!owner.HasUsedHeroPowerThisTurn
-                &&(ai||owner!=playerTwo||isManualControlMode())&&(ai||IsPresentationBusy==null||!IsPresentationBusy());
+                &&(ai||owner!=playerTwo||isManualControlMode())&&(ai||IsPresentationBusy==null||!IsPresentationBusy())&&(ai||IsInputLocked==null||!IsInputLocked());
 
         public bool TryUseHeroPower(Player owner,Target target,bool ai=false)
         {
@@ -80,8 +81,11 @@ namespace HearthstoneClone.UI
             board.RemoveDeadMinions();
             combatInputController.ClearSelectionIfDead();
 
-            onRefreshAll?.Invoke();
             CheckWinCondition();
+            // Views derive their enabled/ready states from GameOver. Resolve a lethal
+            // action first so the HUD is correct even when no presentation component
+            // will issue another refresh after the action.
+            onRefreshAll?.Invoke();
         }
 
         public void OnEndTurnClicked()
@@ -99,6 +103,7 @@ namespace HearthstoneClone.UI
             if (!GameOver && !isManualControlMode() && turnManager.CurrentPlayer == playerTwo)
             {
                 aiController.TakeTurn();
+                CheckWinCondition();
                 if(!GameOver&&CanUseHeroPower(playerTwo,true))TryUseHeroPower(playerTwo,new Target(playerTwo),true);
                 CheckWinCondition();
 

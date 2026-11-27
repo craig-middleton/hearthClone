@@ -113,6 +113,15 @@ namespace HearthstoneClone.Cards
 
         public bool PlayCard(CardInstance card, GameContext context, Target effectTarget = null)
         {
+            if (card == null || card.Data == null || CorePlayer == null || context?.Board == null)
+                return false;
+
+            var board = context.Board;
+            if (board.PlayerOne == null || board.PlayerTwo == null ||
+                (CorePlayer != board.PlayerOne && CorePlayer != board.PlayerTwo) ||
+                board.PlayerOne.Health <= 0 || board.PlayerTwo.Health <= 0)
+                return false;
+
             if (!Hand.Contains(card))
             {
                 UnityEngine.Debug.LogWarning($"{CorePlayer.PlayerName} tried to play a card not in hand: {card.Data.cardName}");
@@ -131,15 +140,15 @@ namespace HearthstoneClone.Cards
                 return false;
             }
 
-            // Rejected here, before any mana is spent or the card leaves the hand - the same
-            // "validate before mutating" shape as Combat.TryAttack's dead-attacker/dead-target
-            // guards. This is the one chokepoint both the human-drag and AI paths share, so no
-            // caller can spend a card on a corpse however it built its Target.
-            if (effectTarget != null && effectTarget.TargetMinion != null && effectTarget.TargetMinion.IsDead)
+            // Both human and AI callers share this pre-mutation boundary. An omitted
+            // None/Self target resolves to the caster; chosen targets must be living,
+            // in this match, and satisfy the card's declared requirement.
+            if (!CardTargeting.TryResolveTarget(card.Data, CorePlayer, board, effectTarget, out var resolvedTarget))
             {
-                UnityEngine.Debug.Log($"{CorePlayer.PlayerName} cannot play {card.Data.cardName} - target {effectTarget.TargetMinion.MinionName} is already dead.");
+                UnityEngine.Debug.Log($"{CorePlayer.PlayerName} cannot play {card.Data.cardName} - invalid target.");
                 return false;
             }
+            effectTarget = resolvedTarget;
 
             var areaEffect = card.Data.onPlayEffect as HearthstoneClone.Effects.IAreaDamageEffect;
             var affectedMinions = areaEffect?.GetAffectedMinions(context, effectTarget, CorePlayer);
@@ -156,13 +165,9 @@ namespace HearthstoneClone.Cards
                 UnityEngine.Debug.Log($"{minion.MinionName} summoned to {CorePlayer.PlayerName}'s board.");
             }
 
-            if (card.Data.onPlayEffect != null && effectTarget != null)
+            if (card.Data.onPlayEffect != null)
             {
                 card.Data.onPlayEffect.Execute(context, effectTarget, CorePlayer);
-            }
-            else if (card.Data.onPlayEffect != null)
-            {
-                UnityEngine.Debug.LogWarning($"{card.Data.cardName} has an onPlayEffect but no target was provided — effect was skipped.");
             }
 
             CardResolved?.Invoke(card, effectTarget);

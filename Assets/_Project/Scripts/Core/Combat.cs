@@ -18,9 +18,9 @@ namespace HearthstoneClone.Core
                 return false;
             }
 
-            if (target.TargetPlayer == null && target.TargetMinion == null)
+            if ((target.TargetPlayer == null) == (target.TargetMinion == null))
             {
-                failReason = "Attack rejected: target had neither a player nor a minion.";
+                failReason = "Attack rejected: target must contain exactly one player or minion.";
                 return false;
             }
 
@@ -43,15 +43,28 @@ namespace HearthstoneClone.Core
                 return false;
             }
 
-            if (defender == null)
+            if (defender == null || (defender != board.PlayerOne && defender != board.PlayerTwo))
             {
-                failReason = "Target minion is not on the board.";
+                failReason = "Target is not on this board.";
                 return false;
             }
 
-            if (board.GetOwnerOf(attacker) == defender)
+            Player attackerOwner = board.GetOwnerOf(attacker);
+            if (attackerOwner == null)
+            {
+                failReason = "Attacking minion is not on the board.";
+                return false;
+            }
+
+            if (attackerOwner == defender)
             {
                 failReason = "Cannot attack your own side of the board.";
+                return false;
+            }
+
+            if (attackerOwner.Health <= 0 || defender.Health <= 0)
+            {
+                failReason = "Cannot attack after a hero has died.";
                 return false;
             }
 
@@ -72,7 +85,9 @@ namespace HearthstoneClone.Core
                     ? $"{attacker.MinionName} is frozen and cannot attack."
                     : attacker.HasSummoningSickness
                         ? $"{attacker.MinionName} has summoning sickness and cannot attack yet."
-                        : $"{attacker.MinionName} has already attacked this turn.";
+                        : attacker.CurrentAttack <= 0
+                            ? $"{attacker.MinionName} has no Attack and cannot attack."
+                            : $"{attacker.MinionName} has already attacked this turn.";
                 return false;
             }
 

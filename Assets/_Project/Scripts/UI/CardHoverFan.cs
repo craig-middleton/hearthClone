@@ -3,9 +3,10 @@ using UnityEngine.EventSystems;
 
 namespace HearthstoneClone.UI
 {
-    // Reports pointer enter/exit (and drag start/end) for one card up to the HandFanLayout on
+    // Reports pointer enter/exit for one card up to the HandFanLayout on
     // its parent panel. Deliberately holds NO layout maths and no lift state of its own - the
     // layout owns every position, so there is exactly one place that decides where a card sits.
+    // CardView owns the fan's drag lock alongside its accepted drag pointer.
     //
     // Self-disables when its parent has no HandFanLayout, which is what keeps this component
     // safe to sit on the shared CardView prefab. Two callers depend on that:
@@ -14,7 +15,7 @@ namespace HearthstoneClone.UI
     //   - The drag ghost, which CardView clones into the ROOT CANVAS - a clone of a hovered
     //     card would otherwise keep reporting hover for a card that is no longer in the hand.
     [RequireComponent(typeof(CardView))]
-    public class CardHoverFan : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IEndDragHandler
+    public class CardHoverFan : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         private HandFanLayout fanLayout;
         private CardView cardView;
@@ -52,21 +53,5 @@ namespace HearthstoneClone.UI
             fanLayout.ClearHovered(cardView, eventData);
         }
 
-        // CardView also implements these - ExecuteEvents delivers to every component on the
-        // GameObject implementing the interface, so both run. CardView owns the ghost and the
-        // play resolution; this only tells the layout to stop hovering, so a card can't sit
-        // lifted while its own ghost is being dragged, and so cards the pointer sweeps across
-        // mid-drag don't pop up under the cursor.
-        public void OnBeginDrag(PointerEventData eventData)
-        {
-            if (fanLayout == null) return;
-            fanLayout.SetDragActive(true);
-        }
-
-        public void OnEndDrag(PointerEventData eventData)
-        {
-            if (fanLayout == null) return;
-            fanLayout.SetDragActive(false);
-        }
     }
 }

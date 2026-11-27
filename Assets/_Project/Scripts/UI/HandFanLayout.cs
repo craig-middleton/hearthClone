@@ -107,12 +107,10 @@ namespace HearthstoneClone.UI
             // carrying the reference over would leave the layout hovering a dead object.
             hoveredView = null;
 
-            // Self-heals the drag flag instead of depending on CardHoverFan.OnEndDrag running
-            // after CardView's (component order decides that, and the rebuild CardView triggers
-            // destroys the very CardHoverFan still owing us its OnEndDrag). Safe unconditionally:
-            // RefreshHandDisplay is gated on CardDragResolver.DragInProgress, so the only rebuild
-            // that can reach here during a drag gesture is the one the drop itself triggered -
-            // by which point the gesture is already over.
+            // A rebuilt hand has no accepted drag gesture. CardView clears the flag before
+            // resolving a drop/cancellation; reset it here too for a replacement set of views.
+            // RefreshHandDisplay is gated on CardDragResolver.DragInProgress, so a rebuild
+            // cannot interrupt an accepted gesture.
             dragActive = false;
 
             // Snapped, not lerped: these views were instantiated this frame and still sit at the

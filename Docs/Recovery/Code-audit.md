@@ -1,0 +1,80 @@
+# Production-code audit and rope checkpoint
+
+Stopped at Craig's request because weekly credits were nearly exhausted. This is
+a verified checkpoint, not a claim that every part matches Hearthstone exactly.
+
+## Scope
+
+Read all89 production C# files:64UI,9Core,4Cards,10Effects,2AI. Reviewed all20 custom
+shader sources and6 Editor helpers. Historical recovery/install/verification tools
+were inspected selectively; all78 historical C# tools were not audited. Reading
+code does not certify every asset parameter or exact original GPU/audio behavior.
+
+## Corrected faults
+
+| Area | Correction | Focused check |
+|---|---|---|
+| Attack rules | Zero attack, detached attackers, malformed/off-board targets and finished-match combat rejected | VerifyCoreRules |
+| Freeze | Thaw at appropriate owner turn end; spent/summoning/Charge/re-freeze cases | VerifyCoreRules |
+| Spell boundaries | Validate target/context before spending mana, removing cards or emitting events; None/Self defaults preserved | VerifyCoreRules |
+| AI/result | Stop cards/powers after lethal; sweep each resolved card; commit win/draw before HUD refresh | VerifyCoreRules, VerifyGameManagerLifecycle |
+| Drag | Left pointer ownership; foreign events inert; one fan owner; Escape/right cancel, ghost cleanup and late-release safety | VerifyCardDragInput |
+| Native combat | Independent snapshot stages/materials, moving original model, live attacker hide/restore through refresh, lethal hold to impact | VerifyNativeCombatSnapshots |
+| Turn deadline |75seconds configurable local policy; final20second rope; cancel/lock input at expiry, accepted VFX completes, exactly-once advancement and resets | VerifyTurnTimer |
+| Rope/button | Original rig/curves/particles/audio/mask inputs; friendly-only timeout clip, no double flip; normal upright return | VerifyNativeTurnTimer |
+| Frontend fixture | Wait for original intro to enable menu controls before simulated clicks | VerifyFrontEnd |
+
+Freeze evidence: [Blizzard patch note](https://hearthstone.blizzard.com/en-us/news/11868609).
+The supported model has one attack plus Charge; this is not a new Windfury/freeze-
+hero implementation. Source client metadata confirms tags but not server thaw logic.
+
+## Actual verification
+
+After final production compilation, Unity passed VerifyCoreRules(all11 groups),
+VerifyGameManagerLifecycle, VerifyCardDragInput(including temporary keyboard/mouse),
+VerifyNativeCombatSnapshots(real attack and lethal original Frostbolt), VerifyTurnTimer
+(real Fireball busy expiry), VerifyNativeTurnTimer and VerifyFrontEnd.
+
+Earlier in the same session, native spells/cards/starting decks/match controls passed.
+No claim that those earlier checks were all rerun after every audit change. New core
+boundary tests exercise legal casts/attacks as well as rejection; live snapshot/timer
+checks exercise both native spells after the audit edits. Fresh compile clean.
+Final saved HearthstoneTable is stopped in clean Edit, auto-tick off, Console0errors/
+0warnings, no disposable source importer actor. No full manual match, standalone
+build, physical speaker listening, performance profile or exact-parity approval.
+
+Inspected actual Game-view Native-turn-rope.png shows mid-burn original rope/sparks
+aligned across the board. Preview uses a disposable injected clock, not production
+75-second waits. Stop Play afterward. No fixture saved. Source/model mask/particle
+binding tests supplement this image; they do not prove original shader equivalence.
+
+## Deferred confirmed issues at the requested stop
+
+- SpellBurstFactory.cs:344 allocates a per-burst Material without explicit lifetime
+  ownership. This legacy fallback is normally bypassed by the current native route.
+- UIParticleBurstRenderer.cs:155 allocates SpellBurstRT without OnDestroy detaching,
+  releasing and destroying it when its component is destroyed.
+
+Fix these first on resume. No new fixes were started after the stop request.
+
+## Remaining exact-game gaps
+
+Existing synthetic attack motion, generic power/projectile/burst/area-spell paths,
+hero idle/flash and damage-number timing still need original-source replacement.
+Only Fireball/Frostbolt original spell VFX are installed; compiled shader/noise/glow,
+bloom/distortion/compositor/shake and full lighting remain partial. Grizzly-only
+summon/Taunt study does not cover all cards or remaining shield/death/VO sequences.
+UI-projected actors/text raster/blur are compatibility. Original hero intro/opening
+deal and menu/mulligan motion/composition remain incomplete. Chosen minion placement
+is unimplemented. Existing custom/prototype card balance remains, including Fireball3
+and Frostbolt1/minion-only freeze. User's30inclusive/Coin deck rule remains unchanged.
+
+Rope uses standard local75seconds, not the original server's opening/AFK/card-modified
+policy. Its source10-joint rig/transforms/UVs/particles/WAVs are preserved; missing
+mask kernel's doubled horizontalUV2 is an explicit compatibility inference. Shadow
+alignment, original lighting, camera shake and mixer ducking aren't certified.
+Details: Turn-timer-source-audit.md and NativeTurnTimer source configuration/manifest.
+
+Standing workflow: recommend High for playtest and routine layout; Ultra for complex
+source reconstruction. Pause at a switch and wait for Craig. Current stopping level
+Ultra; High is appropriate for the next review. Rolling HANDOFF is in this commit.

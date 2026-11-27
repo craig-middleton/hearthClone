@@ -28124,6 +28124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 957132551}
   - component: {fileID: 957132552}
+  - component: {fileID: 957132553}
   m_Layer: 0
   m_Name: TableSurface
   m_TagString: Untagged
@@ -28201,6 +28202,21 @@ MonoBehaviour:
   - {fileID: 2083701762}
   - {fileID: 651157707}
   - {fileID: 1795474776}
+--- !u!114 &957132553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957132550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead0e931f3f38a6ab83476cf000a9471, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: UI::HearthstoneClone.UI.NativeTurnTimerPresentation
+  match: {fileID: 5493842290916087515}
+  library: {fileID: 11400000, guid: aeef4f710db45ddeaa33a9ea68869927, type: 2}
+  boardRoot: {fileID: 191192530}
 --- !u!1 &957367716
 GameObject:
   m_ObjectHideFlags: 0
@@ -63263,6 +63279,7 @@ MonoBehaviour:
   opponentHeroPowerButton: {fileID: 461540683}
   targetingRibbon: {fileID: 1185940491}
   battleEffects: {fileID: 8891225264576291120}
+  turnDurationSeconds: 75
   faceView: {fileID: 1192946945}
   opponentFaceView: {fileID: 573316583}
   spellAnimationSequencer: {fileID: 8891225264576291118}

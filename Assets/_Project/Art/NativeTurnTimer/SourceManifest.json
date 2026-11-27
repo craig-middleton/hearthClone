@@ -1,0 +1,254 @@
+{
+  "purpose": "Recovered original TurnTimer assets/audio; compatibility rendering remains separate.",
+  "files": [
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GradientWickMask_Clamped.png",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/GradientWickMask_Clamped.png",
+      "sourceSha256": "427f88ab23bcf0877fc85a1aeca7b4a8c5f82bf6ad60bef9b24a6590a21e94dd",
+      "reused": true,
+      "treatment": "original bytes"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/WickRope.png",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/WickRope.png",
+      "sourceSha256": "5930f8922a78fbfe5f7ea8a299e6d7885e776feeabf123901eb705f2c057bd81",
+      "reused": true,
+      "treatment": "original bytes"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/TurnTimerWick.mat",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/TurnTimerWick.mat",
+      "sourceSha256": "250115515d65e58ac85d3bc57613060185200365215b0ae2bc4c6ef32a4ce17f",
+      "reused": true,
+      "treatment": "shader reference removed; saved properties retained"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_flare1.png",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/GenFX_flare1.png",
+      "sourceSha256": "e1530c2448328ce4b6190e9252e56e763fe25d02f72aec71c19818f15756a028",
+      "reused": true,
+      "treatment": "original bytes"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_Embers3.mat",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/GenFX_Embers3.mat",
+      "sourceSha256": "5f64a3ff2061679c23d8687e0be876609c257ee0d850d234bac8a4dcb272a5f0",
+      "reused": true,
+      "treatment": "shader reference removed; saved properties retained"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/TurnTimer_Wick_mat.anim",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/TurnTimer_Wick_mat.anim",
+      "sourceSha256": "1ffeb52822bc698c9c0bd4ad5880161696523802a22ff4fc692010d049cac370",
+      "reused": true,
+      "treatment": "original animation data; original script reference removed where present"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/TurnTimer_Wick_mat.controller",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/TurnTimer_Wick_mat.controller",
+      "sourceSha256": "c06b75b34c9acffb4f1ff1ade4110cc030a510e5c467de571401f89e2c5d4fea",
+      "reused": true,
+      "treatment": "original bytes"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_SmokeTP_01.png",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/GenFX_SmokeTP_01.png",
+      "sourceSha256": "f6bfb712771e20ea1eb1fa90b1c449fd8f21ddea767be6fa5ed88590dc64dc9a",
+      "reused": true,
+      "treatment": "original bytes"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_SmokeTP5.mat",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/GenFX_SmokeTP5.mat",
+      "sourceSha256": "1a81b0c86a1d7bdec07d542adb057659a6f2dae67964e1781ddf8e75e46c1ce6",
+      "reused": true,
+      "treatment": "shader reference removed; saved properties retained"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/WickRopeSpiral.png",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/WickRopeSpiral.png",
+      "sourceSha256": "e9236747a26de3575ff1f0fade4daf1144c8ee668e6f844d6deb6a48479589b3",
+      "reused": true,
+      "treatment": "original bytes"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/TurnTimerWickSpiral.mat",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/TurnTimerWickSpiral.mat",
+      "sourceSha256": "2ce198b3795f2e435dc228034bda7f8c8c0936caf1a616644b645c2eef48a77a",
+      "reused": true,
+      "treatment": "shader reference removed; saved properties retained"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/TurnTimerSpiral_Mesh.asset",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/TurnTimerSpiral_Mesh.asset",
+      "sourceSha256": "ea07f1368987b30600b89ea054a3c22b1e1499ee51954f4e73fc77d513da58c8",
+      "reused": true,
+      "treatment": "original bytes"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/FX_SmokeTP_Purple.mat",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/FX_SmokeTP_Purple.mat",
+      "sourceSha256": "6985232f321dbe0c7953abf596d4fa2f401bf303f028290dd01a9939e38a120c",
+      "reused": true,
+      "treatment": "shader reference removed; saved properties retained"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/TurnTimer_edit.anim",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/TurnTimer_edit.anim",
+      "sourceSha256": "f398f41d72eeac0ddf17e4a5705b65c449b44e699a731f3de9220f2c8c2ba39f",
+      "reused": true,
+      "treatment": "original animation data; original script reference removed where present"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/TurnTimer_Wick.controller",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/TurnTimer_Wick.controller",
+      "sourceSha256": "c2c818da2bba61b4d80212f8678667c448f272a69556bc9d1b733156a6417011",
+      "reused": true,
+      "treatment": "original bytes"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/TurnTimer_Wick_Skinnedmesh.asset",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/TurnTimer_Wick_Skinnedmesh.asset",
+      "sourceSha256": "d0e4cf4a7632b66ddfd4a2dbb577ec7ff7c04da3b537235595449d5f43b1f7cf",
+      "reused": true,
+      "treatment": "original bytes"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/GenFX_Flare_Gold2.png",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/GenFX_Flare_Gold2.png",
+      "sourceSha256": "36a05b6cbfa9b200c097addd891d3dc1c4debf5d8de9c0fd1a94f4ac3bc85f1f",
+      "reused": true,
+      "treatment": "original bytes"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/GenFX_SparkGlow.mat",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/GenFX_SparkGlow.mat",
+      "sourceSha256": "b34d2a59cdb688b03d7339dd6fe88727e90e2b98157823000a2a2e54cd4616b7",
+      "reused": true,
+      "treatment": "shader reference removed; saved properties retained"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-texture-2.unity3d/WickShadow.png",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/WickShadow.png",
+      "sourceSha256": "61398372a92f6d0ce6dae1d8503c1c30b1f4d35f412213fe4bd67567d9c25f9d",
+      "reused": true,
+      "treatment": "original bytes"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-material-0.unity3d/TurnTimerWickShadow.mat",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/TurnTimerWickShadow.mat",
+      "sourceSha256": "be161dc9132041da087ebca5de1d2e0669b847ccc726b53b07c8da128f9317d4",
+      "reused": true,
+      "treatment": "shader reference removed; saved properties retained"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-mesh-0.unity3d/WickShadowQuad_mesh.asset",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/WickShadowQuad_mesh.asset",
+      "sourceSha256": "72a0f78006e3df751e2946bc9dc87db1f9c4aa538565a87f75ccd96a8fadcd94",
+      "reused": true,
+      "treatment": "original bytes"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/TurnTimer_SpiralUnwrap.anim",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/TurnTimer_SpiralUnwrap.anim",
+      "sourceSha256": "0ad63bc045b65d1f43e4b039b02c3bf0f5964b42802a4a5e2b869929bdd0faf7",
+      "reused": true,
+      "treatment": "original animation data; original script reference removed where present"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/TurnTimer_Spiral.controller",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/TurnTimer_Spiral.controller",
+      "sourceSha256": "ad218785c983ff8016c0f63dd1ce40b3cebeac3d3088c78b13335681bcafceb2",
+      "reused": true,
+      "treatment": "original bytes"
+    },
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/TurnTimer.prefab",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Source/TurnTimer.prefab",
+      "sourceSha256": "e0e4aa1ec6f06ca7285abc4d1ce389836e3ab157b9d6e9b410fccf118cfae07f",
+      "reused": true,
+      "treatment": "builtin hierarchy/rendering components only"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "Pegasus_Stinger_Fuse_Timer",
+      "sourceObject": "Fuse Timer Music Stinger",
+      "sourceSoundDef": "AssetBundles/essential_base_global-prefab-0.unity3d/TurnTimer.prefab",
+      "sourceComponent": "114808113985169905",
+      "audioKey": "Pegasus_Stinger_Fuse_Timer.wav:645aa9a24fb51fe4da19922952dd5af0",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Pegasus_Stinger_Fuse_Timer.wav",
+      "sha256": "84d74e2fda0dc75cf9afb433187a12153671ce032a7dab2e257143166ce103fe"
+    },
+    {
+      "name": "Countdown_Tick",
+      "sourceObject": "Fuse Timer Tick Sound",
+      "sourceSoundDef": "AssetBundles/essential_base_global-prefab-0.unity3d/TurnTimer.prefab",
+      "sourceComponent": "114472185465350827",
+      "audioKey": "Countdown_Tick.wav:d4cbcbff6b2c84843839a2787776a2b8",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Countdown_Tick.wav",
+      "sha256": "d3ae5fcd634542190783ac2b2a42e0bc24933be4bdc4a97d6166d1a372801d6c"
+    },
+    {
+      "name": "Countdown_Tick_Final",
+      "sourceObject": "Fuse Timer Final Tick Sound",
+      "sourceSoundDef": "AssetBundles/essential_base_global-prefab-0.unity3d/TurnTimer.prefab",
+      "sourceComponent": "114841364053301648",
+      "audioKey": "Countdown_Tick_Final.wav:e99b87e5dc68bcc4dbe04e8e05190b6a",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/Countdown_Tick_Final.wav",
+      "sha256": "2aae87e82446b729e3fea6a4008d063be4440e7260c39445ffa36d709798d510"
+    },
+    {
+      "name": "turn_timer_fuse_burns",
+      "sourceObject": "Sparks/FX_Sparks/Fuse sound loop",
+      "sourceSoundDef": "AssetBundles/essential_base_global-prefab-0.unity3d/TurnTimer.prefab",
+      "sourceComponent": "114632746491512912",
+      "audioKey": "turn_timer_fuse_burns.wav:2e2ea4b8495030e40a5f06761176259e",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/turn_timer_fuse_burns.wav",
+      "sha256": "1fc41f5e8e1c0edf45bbf2e6d4d512112f6880e9ec27b81d1547618b27b3b457"
+    },
+    {
+      "name": "rollout",
+      "sourceObject": "",
+      "sourceSoundDef": "AssetBundles/essential_base_global-prefab-0.unity3d/turn_timer_end_turn_button_opens.prefab",
+      "sourceComponent": "114618682377417806",
+      "audioKey": "turn_timer_end_turn_button_opens.wav:c01f4eb480ae21340afff6f46a8c7c30",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/turn_timer_end_turn_button_opens.wav",
+      "sha256": "49869bef3cd469af43528dd20fe2d95ab866312e7238dfe8d627b6801c7a0d60"
+    },
+    {
+      "name": "rollout_secondary",
+      "sourceObject": "",
+      "sourceSoundDef": "AssetBundles/essential_base_global-prefab-0.unity3d/turn_timer_fuse_unravels.prefab",
+      "sourceComponent": "114618682377417806",
+      "audioKey": "turn_timer_fuse_unravels.wav:870656cb9c266404a81e45e87978faad",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/turn_timer_fuse_unravels.wav",
+      "sha256": "aa9d932cc6b1f7f937d390a7290f2b393407f55c90a89b41389c1a0528c0f47e"
+    },
+    {
+      "name": "expiry_explosion",
+      "sourceObject": "",
+      "sourceSoundDef": "AssetBundles/essential_base_global-prefab-0.unity3d/turn_timer_end_turn_button_explodes.prefab",
+      "sourceComponent": "114618682377417806",
+      "audioKey": "turn_timer_end_turn_button_explodes.wav:b822e18bb76afee4c8c38229a84af3b9",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/turn_timer_end_turn_button_explodes.wav",
+      "sha256": "01cdf807d62aa007e81e5132b7e33bc9340d4b87b510d8090788f3a5aea7213c"
+    },
+    {
+      "name": "expiry_explosion_secondary",
+      "sourceObject": "",
+      "sourceSoundDef": "AssetBundles/essential_base_global-prefab-0.unity3d/turn_timer_end_turn_button_flips_over.prefab",
+      "sourceComponent": "114618682377417806",
+      "audioKey": "turn_timer_end_turn_button_flips_over.wav:ec47d5fcbf637dd4f83d36d65fb5d800",
+      "asset": "Assets/_Project/Art/NativeTurnTimer/turn_timer_end_turn_button_flips_over.wav",
+      "sha256": "c3a1120e10c214b82f8c73889da5427dce7cec37b2dce2b03dda61c2cba30c5e"
+    }
+  ],
+  "unresolvedReferences": [],
+  "strippedOriginalScriptReferences": [
+    {
+      "source": "AssetBundles/essential_base_global-prefab-0.unity3d/TurnTimer_Wick_mat.anim",
+      "guid": "c080077db50816373a86b0e8865197b6"
+    }
+  ]
+}

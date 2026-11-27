@@ -22,6 +22,10 @@ namespace HearthstoneClone.Core
 
         public void EndTurn()
         {
+            foreach (var minion in CurrentPlayer.BoardMinions)
+            {
+                minion.EndTurn();
+            }
             CurrentPlayer = Board.GetOpponent(CurrentPlayer);
             TurnNumber++;
             StartTurnFor(CurrentPlayer);

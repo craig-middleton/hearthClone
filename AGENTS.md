@@ -32,5 +32,9 @@ take precedence over older project notes.
   Do not invent replacement motion or reintroduce full-board image overlays.
 - Preserve approved native mana recess, working mechanics and source geometry.
 - Give brief progress explanations. Pause promptly when Craig asks to stop.
-- Craig controls High/Ultra. At a useful switch point, explain the recommendation
-  and wait for him to change it; an agent cannot change that setting itself.
+- Standing preference for all future sessions: proactively recommend High/Ultra at
+  useful task boundaries. Use High for review, routine code/layout and small fixes;
+  recommend Ultra for complex source shader/sequence reconstruction. Pause before
+  dependent work when a switch is useful, explain why, and wait for Craig to change
+  it. Record the current level/next switch in HANDOFF.md. An agent cannot change
+  the setting itself; reminders must not be silently dropped after compaction.

@@ -16,9 +16,8 @@ namespace HearthstoneClone.Cards
     // AnyMinion requires dropping on a MinionView specifically (either side) - a FaceView drop
     // is invalid, for effects (e.g. GrowthEffect) with no sensible behavior when cast on a face.
     // Friendly requires a friendly-side MinionView or the caster's own FaceView - an enemy
-    // minion or the opponent's face is an invalid drop. This is a UX nicety only (e.g.
-    // HealEffect); the actual "never heal the opponent" rule is enforced in HealEffect.Execute
-    // itself, since AIController bypasses this drag-resolver path entirely.
+    // minion or the opponent's face is an invalid drop. PlayerHand also applies these rules
+    // through CardTargeting before spending a card, including callers that bypass the UI.
     public enum TargetRequirement
     {
         None,
@@ -52,6 +51,52 @@ namespace HearthstoneClone.Cards
         public static Target DefaultTarget(CardData card, Player caster)
         {
             return RequiresChosenTarget(card) ? null : new Target(caster);
+        }
+
+        public static bool TryResolveTarget(CardData card, Player caster, Board board,
+            Target suppliedTarget, out Target resolvedTarget)
+        {
+            resolvedTarget = suppliedTarget;
+            if (card == null || caster == null || board == null ||
+                (caster != board.PlayerOne && caster != board.PlayerTwo)) return false;
+
+            if (resolvedTarget == null) resolvedTarget = DefaultTarget(card, caster);
+            if (resolvedTarget == null) return false;
+
+            var player = resolvedTarget.TargetPlayer;
+            var minion = resolvedTarget.TargetMinion;
+            // Public Target fields can be empty or simultaneously populated. Neither
+            // shape names one legal character, regardless of the card's requirement.
+            if ((player == null) == (minion == null)) return false;
+
+            Player owner;
+            if (player != null)
+            {
+                if ((player != board.PlayerOne && player != board.PlayerTwo) || player.Health <= 0)
+                    return false;
+                owner = player;
+            }
+            else
+            {
+                if (minion.IsDead) return false;
+                owner = board.GetOwnerOf(minion);
+                if (owner == null) return false;
+            }
+
+            switch (card.targetRequirement)
+            {
+                case TargetRequirement.None:
+                case TargetRequirement.Self:
+                    return player == caster;
+                case TargetRequirement.Any:
+                    return true;
+                case TargetRequirement.AnyMinion:
+                    return minion != null;
+                case TargetRequirement.Friendly:
+                    return owner == caster;
+                default:
+                    return false;
+            }
         }
     }
 

@@ -1,193 +1,90 @@
-# HearthClone — current checkpoint
+# HearthClone — safe stopping checkpoint
 
-Updated 26 November 2026. Codex project continuity. Read AGENTS.md, this file,
-PROJECT_STATUS.md and relevant PROJECT_HISTORY.md entries before editing. Inspect
-Git status first. Run git log -1 to identify this containing checkpoint. Recovery
-baseline is bd24473 (the final Codex typography/mulligan commit of22November).
+Read AGENTS.md, this file and PROJECT_STATUS.md before editing. Use git log -1 for
+this containing checkpoint. Baseline before this work:2243ae4. Craig has only2%
+weekly credits and requested a safe stop. No further feature work until resumed.
+Current effort Ultra; recommend High for playtest/layout review after resuming,
+Ultra before complex source shader/sequence reconstruction. AGENTS.md now records
+this as a standing preference across all sessions/compactions. Craig changes it.
 
-## Current two-card review checkpoint
+## Completed changes
 
-Craig reported that Beast was larger than Fire, and the Beast plate overlapped the
-attack sword and health droplet. Fixed both in High. Recovered complete source
-Card_Hand_Ally RaceUberText has the same .85 x .17 text box as the spell school
-label. Projected through original transforms, this is(74.79374,14.958747), replacing
-the study's manually chosen(96,18). Beast now uses the existing Fire label's recovered
-Belwe font/material and shared TMP auto-fitting. Original plate/anchor/art unchanged.
-Moved the plate's UI sibling before the original stat gems, which draw in front.
-InstallNativeCardStudy.RefreshTribePresentation applies these changes without
-recreating the existing prefab children. Full installer applies them too.
+- Original turn rope installed: source10-joint skin, spiral/rollout curves, particles,
+  texture/mask inputs and exact WAVs.75-second configurable local turn limit; rope
+  appears in final20seconds. Source client uses server TIMEOUT; special opening,
+  AFK and card-modified limits are not implemented. Debug30 is not used.
+- Source .87s birth, correct controller speeds2/1/2, linear spark/mask movement over
+  remaining time after birth. Real unscaled deadline, source fuse volume.4 and fades.
+  Original standard settings disable ticks (tick assets retained). Friendly timeout
+  uses safely baked ENDTURN_YOUR_TIMER_DONE pose/atlas/visibility; no double flip.
+  Export stop marker1s differs from Unity's effective.85s clip length; adapter uses
+  actual imported length. Opponent timeout doesn't use friendly button animation.
+- Timeout cancels pending powers/combat/held-card ghost, locks new input, waits for
+  already accepted VFX, then advances exactly once. Menu/mulligan/game-over/restart
+  and synchronous AI return have explicit timer resets. No original client code runs.
+- Code audit corrections: zero-attack eligibility; owner-end Freeze semantics;
+  AI stops after lethal and sweeps between cards; win/draw before HUD refresh and
+  before further AI power; invalid/off-board/dual targets rejected before mutation.
+- Drag requires accepted left pointer; foreign pointer/button cannot resolve it.
+  CardView alone owns fan lock. Escape/right-click cancel through EffectTester.
+- Native combat snapshots own separate original model stages and portrait materials.
+  Disabling/deleting a ghost no longer destroys the live model. Actual attacker hides
+  while its snapshot moves, survives refresh, and restores; lethal spell snapshots
+  keep their model/material to impact. Existing attack trajectory is unchanged.
 
-Fresh VerifyNativeCardStudy and VerifyNativeCards pass; study explicitly compares
-rendered Beast/Fire sizes and verifies plate order below sword/health. Updated
-actual Game-view Card-study-review.png inspected. Saved clean Edit, auto-tick off,
-Console0 errors/0 warnings. No full match/build/user visual approval is claimed.
-Prior Fire anchor fix remains: original RaceUberText(3.4838707,-105.92626), with
-baseline spell anchor restored on rebind. Verified baseline3551696; git log -1
-identifies this containing checkpoint.
+## Verification and stopping state
 
-Craig wants a quicker project-wide visual boost rather than prolonged small-detail
-iterations. Recommended next milestone is shared card presentation across the
-existing deck, then a whole-match composition pass with before/after screens.
-He specifically APPROVED Fireball's “Deal 3 damage” description font and requested
-it throughout. Audited all47 CardData assets in a disposable live CardView: every
-body ALREADY shares FranklinGothic/FranklinGothicInk, base size17.25346, ink and line
-spacing.21 nonempty descriptions fit, sizes12.05..17.25346; longest Cone of Cold.
-No font substitution was needed. Retain this approved standard and original keyword
-markup; longer descriptions auto-fit. Audit was a temporary /tmp script, not a new
-runtime feature. Current effort High; Ultra only when complex source rendering or
-sequence reconstruction is next. Craig controls switching.
+Fresh Unity compilation passed after all production edits. New focused verifiers:
+VerifyCoreRules(11groups), VerifyGameManagerLifecycle, VerifyCardDragInput,
+VerifyTurnTimer, VerifyNativeTurnTimer, VerifyNativeCombatSnapshots. Actual results
+and final scene/Console state are recorded in Docs/Recovery/Code-audit.md.
+Earlier in this session, native spells/cards/starting decks/match controls passed.
+Frontend verifier now waits for original menu intro instead of clicking disabled
+buttons; recheck results in audit document. No full manual match or standalone build.
 
-Only Ironfur Grizzly/Fireball opt into the source-presentation study. Other card
-faces use the baseline library; card rules unchanged (Fireball deals3 here). No
-exact whole-card parity claim. See Docs/Recovery/TWO_CARD_STUDY.md for source limits.
+Source evidence: Docs/Recovery/Turn-timer-source-audit.md. Assets under
+Assets/_Project/Art/NativeTurnTimer with safe source prefab/configuration/manifest.
+Installer destroys its disposable actor BEFORE saving scene; never save preview
+fixtures. PreviewNativeTurnTimer uses injected remaining time only in Play.
+Tools/editor_api.py privately reads ignored localhost credentials; never print them.
+Wait for script recompile_status COMPLETED before dynamic verification: running
+immediately after triggering compilation can execute stale types or lose connection.
 
-Implemented:
-- CardStudy profiles retain original UV2/secondary paint and source gem mask inputs;
-  restored original Beast plate/label and Fireball school description mesh.
-- Prototype-only Belwe titles use source name rectangles/outline; TMP conversion,
-  supersampling and raster outline are compatibility. Global titles unchanged.
-- Linear-space GPU test found .5 mod2x tint made white.428; shader now preserves
-  numeric neutral factor, GPU white1. Source frame shaders are primarily unlit,
-  not PBR. Extra specular/reflection based on stale material fields is not justified.
-- Grizzly uses original.48333338s summon position/quaternion channels and original
-  .6wait/.4Spring Taunt.1→.9775736 plus exact up sound. Board-owned per-Minion clock
-  survives view refresh; name+art gate avoids Bear. Mid-birth rebind restores pose.
-- Fireball-only adapted prefabs use recovered active shader families: cutout cores,
-  alpha-noise particles, additive glow, smoke and multiply mark. Source PS, motion,
-  camera, clocks and sounds retained. Cross-export GUID fallback validates source
-  values/texture hashes/UVs; see FireballPrototype/ResolvedMaterialBindings.json.
+## Remaining work — do not call this exact parity
 
-Important limits: UI geometry projection is retained, not full original3D card
-lighting. Shader kernels/scroller timebase/multiply and final compositor remain
-compatibility approximations. Taunt fade/gleam/particles/death/VO, original bloom/
-distortion/camera shake and separate world trails remain unported. First observation
-starts Grizzly birth clock. Do not present this prototype as finished visual parity.
+Runtime89 C# files,20 custom shaders and6 Editor helpers inspected across this audit;
+historical tools reviewed selectively, not all78 scripts. See Code-audit.md.
+Two confirmed lower-priority resource ownership issues deferred at requested stop:
+SpellBurstFactory.cs344 creates an unowned per-burst Material; UIParticleBurstRenderer
+allocates a RenderTexture without component teardown release. Fix on resume.
 
-## Editor and verification
+Original shader bodies are unavailable. Rope UV2 mask kernel (horizontal doubling
+inferred from endpoints/gradient) and unlit response are compatibility. Original
+shadow mesh/transform retained but shadow alignment isn't certified; original camera
+shake/compositor/ducking kernels unported. Source smoke/audio/button motion present.
 
-Unity6000.6.9f1 on saved HearthstoneTable, stopped clean Edit, auto-tick off. Disposable
-fixtures discarded. Fresh compile and final Console0 errors/0 warnings.
+Wider exact-game gaps remain: generic attack/power/area-spell fallback motion and
+bursts, hero idle/flash; only Fireball/Frostbolt original VFX installed; partial
+lighting/bloom/distortion; other Taunt sequences; original intro/deal/menu motions;
+chosen minion placement; prototype/custom card balance. Fireball remains3damage,
+Frostbolt1/minionfreeze; don't silently rebalance approved existing content. User
+still wants these closer to the original; prioritize broad visible gains next.
 
-Passed25–26November: VerifyNativeCardStudy, VerifyGrizzlyTauntPrototype,
-VerifyNativeSpells, VerifyNativeCards, VerifyNativeCardLayout, VerifyNativeMulligan,
-VerifyNativeMenu, VerifyFrontEnd, VerifyStartingDecks, VerifyNativeMatchControls,
-VerifyNativeManaRack. Study checks opt-in/fallback/rebind/clip/ghost/concealment and
-GPU neutral-white. Grizzly test slows only its fixture to.25timeScale to observe
-brief overshoot on background Editor frames, restoring it in finally. Runtime
-source curves/timings unchanged. Wall timeouts accommodate background stalls.
+Prior approved work preserved: native board/mana recess, deck pockets, cards/source
+fonts. Beast/Fire labels matched, stat gems above tribe plate. All47 card assets
+already share approved FranklinGothic body typography; original rich-text retained.
 
-Actual Game-view captures inspected: Card-study-review.png (real hand views enlarged
-for review) and Fireball-study-impact.png. No standalone build, full manual match,
-physical speaker listening or visual approval claimed. Earlier recovery58371da
-removed all uncommitted external-model experiments/setup and restored bd24473;
-this new prototype is separately sourced implementation, not salvaged code.
+## Workspace/source access
 
-## Next action / effort
+Project /home/craig-middleton/Documents/Codex/2026-11-12/if-x20/outputs/HearthClone
+GitHub https://github.com/craig-middleton/hearthClone.git main with Git LFS.
+Unity6000.6.9f1. Open through Hub; never launch from a restricted tool shell.
+Never AnimationClip.SampleAnimation exported mixed bindings (known native crash).
+Original assets external: if-x20/recovery/{Box-complete-source,Interface-native-source,
+ORG-native-source}, Desktop/{Hearthstone Export,Hearthstone Extraction,Hearthstone
+Card Database}; installed client in Steam compatdata2505554610. Fresh Git clone
+alone doesn't include exports/Editor access. Managed client inspected as metadata
+only, never executed. Network permission session may need renewal for localhost.
 
-Use the approved Fireball description typography throughout (already verified on
-all47 assets). Prioritize shared card presentation and full-match visual impact,
-with actual Game-view comparisons; Craig wants faster visible progress. Wider
-source-presentation rollout still needs original dependencies and must preserve
-approved mana/board and mechanics. High is suitable for current font/layout work;
-complex shader/sequence reconstruction needs Ultra. Explain and wait at a switch.
-
-## Prototype files / reinstall
-
-New source/runtime: NativeCardStudy, GrizzlyTauntPrototype/Director/Library,
-PrototypeCardSurface, FireballPrototype shader/DTO, PrototypeCardMaterialBaker and
-TypographyBaker. Minimal optional bindings in NativeCardFace/Layer/Library.
-
-Tools preparers: PrepareCardStudySource.py, PrepareGrizzlyTauntPrototype.py,
-PrepareFireballPrototype.py. Clean Edit installers: InstallNativeCardStudy.cs,
-InstallGrizzlyTauntPrototype.cs, InstallFireballPrototype.cs. Import/recompile new
-runtime/Editor types first. NativeCardStudy installer opens proof scene additively
-and closes it without saving. Do not rerun historical broad card installers that
-replace outline/decorative children.
-
-PreviewCardStudy.cs enlarges real hand views and DISABLES FAN only in its disposable
-Play session: stop Play before normal testing. PreviewNativeSpell.Fireball waits
-for real impact/source time and PAUSES Time.timeScale for capture: call Resume or
-stop Play afterward. Never save the fixtures. Use source=screen for actual Game view.
-
-## Preserved baseline behaviour and important constraints
-
-- Original native board geometry; no full-board background overlay. Approved mana
-  recess is source STW_Frame/FRAME with resource meshes directly in the board.
-- Native TheBox menu: original242transform/68renderer hierarchy, camera/state poses,
-  safely evaluated original4.983s camera intro, Play/Choose Deck source slots. Menu
-  layer30 camera Untagged, named TheBoxCamera. Main Camera remains board camera.
-  NativeMenuPresentation.Slot.sourcePoints are baked in Edit because original GPU
-  meshes are not readable in Play. Never regress to runtime mesh.vertices reads.
-  Unsupported glow submeshes are transparent; keep shared opaque centre disk enabled.
-- Mulligan: source StartingHandZone spacing/card scale/badge/banner wrapper, centred
-  to actual three-card local hand without a phantom Coin slot. Static compatibility
-  compositionOffset(0,75), Confirm(0,-155),170x85, shade.4. Original source card
-  geometry and selection remain. Original hero intro/deal sequences not installed.
-- SourceMaterialProperties reads preserved serialized material values: unsupported
-  original shader getters can return zero. Compatibility rendering is authorized.
-- Played minions: original532vertex oval actor, portrait/frame/gems/shadow/settled
-  taunt and source-shaped green readiness. Source states4/5/6 use green, not yellow.
-- Hand: original Ally/Ability silhouette textures and saved green parameters.
-  Explicit owner/panel binding. Concealed/ghost/collection/mulligan hand glows off;
-  kept mulligan cards use independent original selectable silhouette copies.
-- Cards: source curved-name geometry/UVs with recovered Belwe title raster, consistent
-  .82-unit ink height and.14outline (custom raster-fit choices, not recovered metrics).
-  Spell body boxes use upper parchment (+6width/+8height/up4) without moving lower
-  edge/school. Targeted Tools/RefreshNativeCardNames.cs avoids full card reinstall
-  replacing installed outline children. NativeCardFace.Bind must mark material AND
-  vertices dirty so CanvasRenderer updates changed name/art textures.
-- Fireball/Frostbolt: original prefabs/particle modules/sounds/source.4s easeInQuad,
-  viewport camera/timing/flash/light curves and independent tails.58-record manifest.
-  Exact portraits also wired for Arcane Explosion/Flamestrike; only the first TWO
-  have newly installed original VFX. Remaining spells keep previous presentation.
-- Powers/death/corners/draw remain earlier original-source integrations. NEVER use
-  AnimationClip.SampleAnimation on mixed exported actor bindings: native crash.
-  Evaluate safely baked source channels. Do not launch Unity from a restricted shell;
-  use Hub (previous preferences/GI-cache failure). Never execute original client code.
-
-## Tools and files
-
-Project root:
-/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/outputs/HearthClone
-Remote: https://github.com/craig-middleton/hearthClone.git, main, Git LFS.
-Unity: /home/craig-middleton/Unity/Hub/Editor/6000.6.9f1/Editor/Unity
-
-Tools/editor_api.py uses authenticated local Unity API and privately reads ignored
-credentials. Never print/commit them. Run installers in clean Edit. Recompile new
-runtime types before dynamic installer scripts. Temporary previews are disposable.
-PreviewNativeSpell pauses Time.timeScale; run its Resume entry or stop Play after.
-
-python3 Tools/editor_api.py get /api/editor_status
-python3 Tools/editor_api.py 'script recompile_status'
-python3 Tools/editor_api.py 'editor.playmode start'
-python3 Tools/editor_api.py 'editor set_auto_tick' '{"enabled":true,"interval-ms":16,"persist":false}'
-python3 Tools/editor_api.py 'script run' '{"file":"Tools/VerifyNativeMenu.cs"}'
-python3 Tools/editor_api.py 'capture game_view' '{"output-path":"Docs/Previews/review.png","source":"screen"}'
-python3 Tools/editor_api.py 'editor.playmode stop'
-python3 Tools/editor_api.py 'editor set_auto_tick' '{"enabled":false,"persist":false}'
-
-For isolated menu captures source=camera,camera=TheBoxCamera; default Camera.main
-captures board instead. On fresh launch wait for original intro before pointer
-frontend tests. Prefer actual source=screen capture for visual review.
-
-## External source assets and unrelated files
-
-Recovery root:
-/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery
-Contains Interface-native-source, ORG-native-source, Box-complete-source and source
-CIL/evidence files. Use complete menu export, not Box-native-source. Provenance in
-NativeMenu/SourceManifest+SourceConfiguration, Docs/Recovery/Mulligan-layout-source,
-Docs/Recovery/Spells-source.json. Source inspection is metadata only.
-
-Desktop source folders:
-/home/craig-middleton/Desktop/Hearthstone Card Database
-/home/craig-middleton/Desktop/Hearthstone Export
-/home/craig-middleton/Desktop/Hearthstone Extraction
-Original installed client:
-/home/craig-middleton/.local/share/Steam/steamapps/compatdata/2505554610/pfx/drive_c/Program Files (x86)/Hearthstone
-
-Unrelated pre-existing local files preserved byte-for-byte and excluded from commit:
-Assets/_Project/RecoveredDecks/Deck_75_mesh.mat (tracked edit), Assets/_Recovery.meta,
-Docs/Previews/Native-hero-powers-first.png (early rejected proof). Do not discard them.
-Selected runtime assets are tracked; archives stay external. Fresh clones need LFS
-and do not automatically provide external exports or access to Craig's Editor.
+Unrelated pre-existing files preserved/excluded: RecoveredDecks/Deck_75_mesh.mat,
+Assets/_Recovery.meta, Docs/Previews/Native-hero-powers-first.png.

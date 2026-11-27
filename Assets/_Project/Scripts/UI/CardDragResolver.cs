@@ -42,6 +42,7 @@ namespace HearthstoneClone.UI
         // Nothing currently calls RefreshAll/RefreshHandDisplay during that window, but this
         // guards against a future change accidentally introducing one.
         private bool dragInProgress = false;
+        private CardView activeDragView;
 
         public bool DragInProgress => dragInProgress;
 
@@ -76,7 +77,15 @@ namespace HearthstoneClone.UI
 
         public void OnCardDragBegan(CardInstance card, CardView cardView)
         {
+            activeDragView = cardView;
             dragInProgress = true;
+        }
+
+        public void CancelDrag()
+        {
+            activeDragView?.CancelDrag();
+            activeDragView = null;
+            dragInProgress = false;
         }
 
         // Shared eligibility checks - used both to gate drop resolution (below) and to gate
@@ -95,6 +104,7 @@ namespace HearthstoneClone.UI
         public void OnCardDragEnd(CardInstance card, CardView cardView, PointerEventData eventData)
         {
             dragInProgress = false;
+            activeDragView = null;
 
             if (!CanPlayerOneDrag()) return;
 
@@ -104,6 +114,7 @@ namespace HearthstoneClone.UI
         public void OnOpponentCardDragEnd(CardInstance card, CardView cardView, PointerEventData eventData)
         {
             dragInProgress = false;
+            activeDragView = null;
 
             if (!CanPlayerTwoDrag()) return;
 
