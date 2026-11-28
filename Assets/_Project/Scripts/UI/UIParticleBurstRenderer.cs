@@ -144,7 +144,7 @@ namespace HearthstoneClone.UI
         {
             if (renderTexture != null && renderTexture.width == width && renderTexture.height == height) return;
 
-            if (renderTexture != null) Destroy(renderTexture);
+            ReleaseRenderTexture();
 
             RenderTextureDescriptor descriptor = new RenderTextureDescriptor(width, height)
             {
@@ -158,6 +158,22 @@ namespace HearthstoneClone.UI
             };
             burstCamera.targetTexture = renderTexture;
             displayImage.texture = renderTexture;
+        }
+
+        void OnDestroy() => ReleaseRenderTexture();
+
+        private void ReleaseRenderTexture()
+        {
+            if (renderTexture == null) return;
+
+            // Camera/image may outlive this component or have received an external target.
+            if (burstCamera != null && burstCamera.targetTexture == renderTexture)
+                burstCamera.targetTexture = null;
+            if (displayImage != null && displayImage.texture == renderTexture)
+                displayImage.texture = null;
+            renderTexture.Release();
+            Destroy(renderTexture);
+            renderTexture = null;
         }
     }
 }

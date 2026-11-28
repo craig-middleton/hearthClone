@@ -1058,3 +1058,36 @@ original-asset constraints and broader incomplete parity work. The three unrelat
 local files were preserved and excluded. Documentation only; first new-chat action
 is reading/status review before Craig resumes feature work. Chat starter provided
 in the final response; no alternate-model files or duplicate handoffs created.
+
+
+## 28 November 2026 — resumed review and burst resource cleanup
+
+Craig authorised continuation after the read-only checkpoint summary. Recommended
+High for the review and small fixes. Verified the correct live Unity 6000.6.9f1
+project; requested session network permission after the sandbox blocked localhost.
+Baseline VerifyTurnTimer, VerifyCardDragInput, VerifyNativeTurnTimer and
+VerifyNativeCombatSnapshots passed. Existing unrelated material/meta/preview files
+were preserved; no broad installer or original asset changes.
+
+Added VerifySpellBurstResources and reproduced both deferred ownership defects:
+all five builders retained per-burst Materials after interruption, natural stop
+retained its Material, resized textures held GPU allocation until deferred deletion,
+and renderer teardown retained its texture/bindings. Fixtures dispose even on failure.
+SpellBurstMaterialOwner now destroys the Material allocated for its own particle
+object; sharedMaterial avoids implicit copies. UIParticleBurstRenderer detaches only
+its own references, releases and destroys its texture on resize or component death,
+leaving external replacement bindings intact. No presentation timing or motion changed.
+
+Fresh Unity production compile completed cleanly. Post-fix resource verifier passed
+all builders, natural/interrupted destruction, point reuse, region/point resize and
+GPU release, surviving camera/image teardown and external binding preservation.
+VerifyNativeSpells and VerifyTurnTimer passed after edits. A fresh actual screen
+capture of the mid-burn original rope was inspected in this chat's temporary work
+folder. Final HearthstoneTable loaded/not dirty, Edit stopped, auto-tick off,
+Console 0 errors/warnings. No full manual match, standalone build, performance profile
+or physical audio listening claimed; broad historical audit tests not all repeated.
+
+Updated the single rolling HANDOFF in this code commit. Next recommendation is
+Ultra for tracing/recovering original attack sequences and their rendering/sound
+dependencies; pause for Craig's effort switch and continue before dependent work.
+The agent cannot inspect/change the actual effort UI setting.

@@ -1,19 +1,21 @@
 # HearthClone — fresh-chat handoff
 
-Prepared28November2026. Handover only: no game/source assets changed. Read this and
-AGENTS.md first. Use git log -1 to identify the containing documentation commit.
-Verified game/code baseline:7b6abfb (original rope and production-code audit fixes).
-GitHub main was independently verified at that baseline before this handoff update;
-recent LFS objects passed integrity checks. This handoff is committed with its update.
+Prepared 28 November 2026. Burst resource-lifetime fixes and focused review completed.
+Read this and AGENTS.md first. Use git log -1 to identify the containing checkpoint;
+this handoff is included in the same main commit as the code and verifier.
+Previous game/code baseline: 7b6abfb (rope and production-code audit fixes), followed
+by documentation-only 79cdc0e. Push verification is performed after the commit;
+this document does not claim its own future push has already succeeded.
 
 ## Incoming-chat instructions
 
 1. Use the existing project folder below; do not create another clone or checkout.
    Read AGENTS.md, this file, PROJECT_STATUS.md, Docs/Recovery/Code-audit.md, then
    relevant PROJECT_HISTORY.md sections. Inspect git status before any edits.
-2. Start with a short status and next-step recommendation. This request prepares
-   handover only; feature work was paused at Craig's request when credits ran low.
-   Wait for him to resume before changing gameplay or presentation.
+2. Start with a short status and next-step recommendation. Craig resumed on
+   28 November and authorised the focused review and two resource-lifetime fixes.
+   Those are complete. Next complex source reconstruction awaits an Ultra switch;
+   pause for Craig to switch and say continue before starting that dependent work.
 3. Recommend High for the initial review/playtest and routine fixes. Recommend
    Ultra before complex source shader/animation reconstruction. At useful switches,
    explain why, stop dependent work and wait for Craig. This standing preference is
@@ -26,28 +28,41 @@ recent LFS objects passed integrity checks. This handoff is committed with its u
    to main/GitHub; overwrite this ONE HANDOFF.md in the SAME commit every time.
    Stage only intended files. Do not discard the three unrelated local files below.
 
-## First actions when Craig resumes
+## Next actions / effort switch
 
-- High: review/playtest the rope, timeouts, card cancellation and native combat
-  snapshots from the latest code checkpoint; no full manual match has been claimed.
-- Fix the two confirmed resource lifetime issues listed below, with focused checks.
-- Then prioritize broad visible improvements using original source effects rather
-  than prolonged tiny typography adjustments. Original attack/power/area-spell
-  presentation and shared card rendering are key remaining work. Use Ultra for
-  source sequence/shader reconstruction, and stop for Craig to switch first.
+- High was recommended for this resumed review and the routine lifetime fixes.
+  The agent cannot inspect or change Craig's actual effort setting.
+- Baseline rope/deadline/card-cancellation/native-snapshot focused checks passed;
+  the two resource leaks are now fixed and verified. No full manual match claimed.
+- Recommend Ultra next for original attack sequence recovery: trace the source
+  transforms, curves, timing, sounds and effect dependencies, then replace the
+  existing generic attack presentation with an honestly scoped source adapter.
+  Stop for Craig to switch and say continue before that investigation/implementation.
+- Prioritize broad visible improvements. Power/area-spell presentation and shared
+  card rendering also remain. Return to High for routine review/layout fixes;
+  remind Craig and pause at useful effort-switch boundaries.
 - Do not rerun historical broad card/board installers: they can overwrite approved
   bindings. Use the targeted installer/check documented for each subsystem.
 
 ## Current local access and verification limits
 
-On28November the Unity API reported ready, not compiling, Play stopped, project
-HearthClone, Unity6000.6.9f1. No runtime tests were repeated for this documentation
-handover. Last final scene/Console checks from the game checkpoint are below.
-All named source folders and required continuity documents were checked present.
-The full first-chat prompt is supplied to Craig in the closing chat message; the
-incoming agent should trust repository evidence over any presumed chat memory.
+On 28 November the authenticated Unity API was used for actual runtime checks in
+HearthClone, Unity 6000.6.9f1. Network permission was granted for localhost/GitHub
+in this chat; another chat may need its own permission. Final state: Play stopped,
+auto-tick off, active HearthstoneTable loaded/not dirty, Console 0 errors/0 warnings.
+No scene or source-art changes. Trust repository evidence over presumed chat memory.
 
 ## Completed changes
+
+- Resumed resource cleanup: SpellBurstMaterialOwner owns each fallback burst's
+  runtime Material and destroys it with the particle object (natural stop or
+  interrupted cleanup). Renderer uses sharedMaterial to avoid hidden material copies.
+- UIParticleBurstRenderer detaches only its own camera/image bindings, releases GPU
+  storage and destroys its RenderTexture on resize and component teardown. External
+  replacement bindings are preserved. No new artwork, motion, timing or rebalance.
+- VerifySpellBurstResources reproduced the pre-fix leaks and now passes all five
+  builders, natural/forced cleanup, point reuse, region resize/release, point restore,
+  component-only destruction with surviving camera/image, and external binding checks.
 
 - Original turn rope installed: source10-joint skin, spiral/rollout curves, particles,
   texture/mask inputs and exact WAVs.75-second configurable local turn limit; rope
@@ -74,7 +89,16 @@ incoming agent should trust repository evidence over any presumed chat memory.
 
 ## Verification and stopping state
 
-Fresh Unity compilation passed after all production edits. New focused verifiers:
+This resume: baseline VerifyTurnTimer, VerifyCardDragInput, VerifyNativeTurnTimer
+and VerifyNativeCombatSnapshots passed. Fresh production compilation completed
+without errors after the lifetime changes. Post-fix VerifySpellBurstResources,
+VerifyNativeSpells (real Fireball/Frostbolt) and VerifyTurnTimer passed. These were
+the checks rerun this resume; earlier broad audit checks below remain prior evidence.
+A fresh source=screen mid-burn rope capture was inspected in this chat's work folder;
+it is temporary external evidence, not a tracked deliverable or saved fixture.
+No full manual match, standalone build, performance profile or physical audio review.
+
+Prior checkpoint: fresh Unity compilation passed after its production edits. Focused verifiers:
 VerifyCoreRules(11groups), VerifyGameManagerLifecycle, VerifyCardDragInput,
 VerifyTurnTimer, VerifyNativeTurnTimer, VerifyNativeCombatSnapshots. Actual results
 and final scene/Console state are recorded in Docs/Recovery/Code-audit.md.
@@ -96,9 +120,9 @@ immediately after triggering compilation can execute stale types or lose connect
 
 Runtime89 C# files,20 custom shaders and6 Editor helpers inspected across this audit;
 historical tools reviewed selectively, not all78 scripts. See Code-audit.md.
-Two confirmed lower-priority resource ownership issues deferred at requested stop:
-SpellBurstFactory.cs344 creates an unowned per-burst Material; UIParticleBurstRenderer
-allocates a RenderTexture without component teardown release. Fix on resume.
+The two resource ownership issues deferred at the previous stop are now fixed.
+The new SpellBurstMaterialOwner adds one small production C# component; this resume
+is not a repeat of the full 89-file audit or a certification that no other leaks exist.
 
 Original shader bodies are unavailable. Rope UV2 mask kernel (horizontal doubling
 inferred from endpoints/gradient) and unlit response are compatibility. Original
@@ -175,6 +199,6 @@ Assets/_Project/RecoveredDecks/Deck_75_mesh.mat (tracked edit)
 Assets/_Recovery.meta (untracked)
 Docs/Previews/Native-hero-powers-first.png (untracked rejected early proof)
 
-These are the only pre-existing local changes. All requested game/audit work is in
-7b6abfb; this handover adds documentation only. Incoming agents must not discard or
-accidentally commit these files, or claim the whole working tree is clean.
+These remain the only pre-existing unrelated local changes and are excluded from
+this resource-fix checkpoint. Prior game/audit work is in 7b6abfb. Incoming agents
+must not discard or accidentally commit these files, or claim the whole tree clean.

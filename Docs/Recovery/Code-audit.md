@@ -1,7 +1,8 @@
 # Production-code audit and rope checkpoint
 
-Stopped at Craig's request because weekly credits were nearly exhausted. This is
-a verified checkpoint, not a claim that every part matches Hearthstone exactly.
+Original audit stopped at Craig's request because weekly credits were nearly exhausted.
+On 28 November Craig resumed the focused review and deferred resource fixes below.
+This remains a verified checkpoint, not a claim of exact Hearthstone parity.
 
 ## Scope
 
@@ -48,14 +49,33 @@ aligned across the board. Preview uses a disposable injected clock, not producti
 75-second waits. Stop Play afterward. No fixture saved. Source/model mask/particle
 binding tests supplement this image; they do not prove original shader equivalence.
 
-## Deferred confirmed issues at the requested stop
+## Deferred resource issues resolved on 28 November
 
-- SpellBurstFactory.cs:344 allocates a per-burst Material without explicit lifetime
-  ownership. This legacy fallback is normally bypassed by the current native route.
-- UIParticleBurstRenderer.cs:155 allocates SpellBurstRT without OnDestroy detaching,
-  releasing and destroying it when its component is destroyed.
+- SpellBurstFactory now attaches SpellBurstMaterialOwner to each fallback burst.
+  It owns only the newly created runtime Material and destroys it with the particle
+  object, including ParticleSystem natural-stop destruction and forced interruption.
+  Assigning sharedMaterial avoids implicit renderer-owned copies. Existing fallback
+  presentation is unchanged; current native spell routes normally bypass it.
+- UIParticleBurstRenderer now detaches only bindings that still reference its own
+  texture, calls Release, destroys the object and clears its field on resize and
+  OnDestroy. Camera/image may survive teardown; external bindings remain untouched.
+- VerifySpellBurstResources first reproduced the leaks (all five burst builders,
+  natural stop, GPU allocation retained during resize, teardown and rebound renderer).
+  It passes after the fixes: materials die on forced and natural cleanup, unchanged
+  point framing reuses a texture, region/point resize releases old allocations,
+  component-only teardown clears owned bindings, and external replacement survives.
+  Fixtures clean themselves even on failure; no scene or source art was saved.
 
-Fix these first on resume. No new fixes were started after the stop request.
+Baseline checks this resume: VerifyTurnTimer, VerifyCardDragInput,
+VerifyNativeTurnTimer, VerifyNativeCombatSnapshots all passed before code changes.
+Fresh production compilation completed without errors after edits; post-fix checks
+VerifySpellBurstResources, VerifyNativeSpells (real Fireball/Frostbolt) and
+VerifyTurnTimer passed. Other historical checks above were not rerun this resume.
+A fresh source=screen mid-burn rope image was inspected (temporary chat work folder,
+not a tracked asset). Final HearthstoneTable is loaded/not dirty, Play stopped,
+auto-tick off, Console 0 errors/0 warnings. No full manual match, build, audio listening
+or performance profile claimed. One small owner component was added to the previously
+89-file production audit; this is not a new exhaustive code audit.
 
 ## Remaining exact-game gaps
 
@@ -76,5 +96,6 @@ alignment, original lighting, camera shake and mixer ducking aren't certified.
 Details: Turn-timer-source-audit.md and NativeTurnTimer source configuration/manifest.
 
 Standing workflow: recommend High for playtest and routine layout; Ultra for complex
-source reconstruction. Pause at a switch and wait for Craig. Current stopping level
-Ultra; High is appropriate for the next review. Rolling HANDOFF is in this commit.
+source reconstruction. Pause at a switch and wait for Craig. High was recommended for this review/fix pass;
+actual UI effort cannot be inspected by the agent. Recommend Ultra next for original
+attack sequence recovery and pause for Craig to switch and say continue. Rolling HANDOFF is in this commit.

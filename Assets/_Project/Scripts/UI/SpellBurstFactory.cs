@@ -341,7 +341,9 @@ namespace HearthstoneClone.UI
                 Debug.LogError("SpellBurstFactory: no compatible unlit particle shader found.");
                 return;
             }
-            renderer.material = new Material(shader);
+            var material = new Material(shader);
+            particles.gameObject.AddComponent<SpellBurstMaterialOwner>().material = material;
+            renderer.sharedMaterial = material;
         }
     }
 }
