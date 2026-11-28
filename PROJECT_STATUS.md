@@ -2,7 +2,7 @@
 
 > **Current state only.** For *why* — session narratives, past bugs, Editor gotchas, asset pipelines, tooling setup — see `PROJECT_HISTORY.md`.
 
-_Last updated: 2026-11-26 — Original rope timer and broad production-code audit checkpoint. Fixed turn deadlines, Freeze/zero-attack/AI lethal/target validation, drag ownership/cancellation, HUD result ordering and independent native combat snapshots. Stopping for Craig's weekly credits; see HANDOFF.md and Docs/Recovery/Code-audit.md for actual verification and remaining parity/resource gaps._
+_Last updated: 2026-11-28 — Fresh-chat handoff prepared; game/code checkpoint remains7b6abfb. Original rope and audit fixes are committed on main; no gameplay changes in this handover. Unity API ready/stopped, recent LFS assets verified. Read HANDOFF.md for resume steps, effort switches, original asset paths, test limits and preserved unrelated files._
 
 ## How to use these files
 - **`HANDOFF.md`** — read first for latest checkpoint, local/unfinished work, validation limits and next steps. Overwrite this one file in every main commit, with no dated copies. `AGENTS.md` records the rule for incoming agents.

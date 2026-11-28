@@ -1042,3 +1042,19 @@ limits are recorded there. A first snapshot assertion incorrectly assumed every
 restored view had a CanvasGroup; a fresh normal view can be fully visible without one.
 Corrected that fixture rather than modifying legitimate renderer behavior. Rolling
 handoff/standing effort-switch preference updated with this stopping checkpoint.
+
+
+## 28 November 2026 — fresh-chat continuity prepared
+
+Craig requested handover to a fresh chat. Verified GitHub main at7b6abfb and recent
+LFS object integrity; checked the continuity documents, playable scene, API helper,
+Desktop source folders and recovered Box/Interface source roots. Unity API reports
+6000.6.9f1 ready/not compiling/Play stopped. No runtime tests rerun or game changes.
+
+Overwrote the rolling HANDOFF with a concrete incoming-chat workflow, resume order,
+standing High/Ultra stop-and-remind preference, full local/source paths, safe Editor
+commands, prior verification limits and the two deferred lifetime issues. Retained
+original-asset constraints and broader incomplete parity work. The three unrelated
+local files were preserved and excluded. Documentation only; first new-chat action
+is reading/status review before Craig resumes feature work. Chat starter provided
+in the final response; no alternate-model files or duplicate handoffs created.

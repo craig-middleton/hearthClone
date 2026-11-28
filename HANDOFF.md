@@ -1,11 +1,51 @@
-# HearthClone — safe stopping checkpoint
+# HearthClone — fresh-chat handoff
 
-Read AGENTS.md, this file and PROJECT_STATUS.md before editing. Use git log -1 for
-this containing checkpoint. Baseline before this work:2243ae4. Craig has only2%
-weekly credits and requested a safe stop. No further feature work until resumed.
-Current effort Ultra; recommend High for playtest/layout review after resuming,
-Ultra before complex source shader/sequence reconstruction. AGENTS.md now records
-this as a standing preference across all sessions/compactions. Craig changes it.
+Prepared28November2026. Handover only: no game/source assets changed. Read this and
+AGENTS.md first. Use git log -1 to identify the containing documentation commit.
+Verified game/code baseline:7b6abfb (original rope and production-code audit fixes).
+GitHub main was independently verified at that baseline before this handoff update;
+recent LFS objects passed integrity checks. This handoff is committed with its update.
+
+## Incoming-chat instructions
+
+1. Use the existing project folder below; do not create another clone or checkout.
+   Read AGENTS.md, this file, PROJECT_STATUS.md, Docs/Recovery/Code-audit.md, then
+   relevant PROJECT_HISTORY.md sections. Inspect git status before any edits.
+2. Start with a short status and next-step recommendation. This request prepares
+   handover only; feature work was paused at Craig's request when credits ran low.
+   Wait for him to resume before changing gameplay or presentation.
+3. Recommend High for the initial review/playtest and routine fixes. Recommend
+   Ultra before complex source shader/animation reconstruction. At useful switches,
+   explain why, stop dependent work and wait for Craig. This standing preference is
+   in AGENTS.md and must persist across chats/compactions; agents cannot switch it.
+4. Use original Hearthstone assets, sounds, animation curves and transforms. Custom
+   compatibility rendering is authorized, with limits disclosed. No invented artwork,
+   substitute motion or full-board background overlays. Preserve approved board,
+   mana recess, deck pockets and card typography. Do not silently rebalance content.
+5. Give brief progress updates explaining what/why. Significant work goes directly
+   to main/GitHub; overwrite this ONE HANDOFF.md in the SAME commit every time.
+   Stage only intended files. Do not discard the three unrelated local files below.
+
+## First actions when Craig resumes
+
+- High: review/playtest the rope, timeouts, card cancellation and native combat
+  snapshots from the latest code checkpoint; no full manual match has been claimed.
+- Fix the two confirmed resource lifetime issues listed below, with focused checks.
+- Then prioritize broad visible improvements using original source effects rather
+  than prolonged tiny typography adjustments. Original attack/power/area-spell
+  presentation and shared card rendering are key remaining work. Use Ultra for
+  source sequence/shader reconstruction, and stop for Craig to switch first.
+- Do not rerun historical broad card/board installers: they can overwrite approved
+  bindings. Use the targeted installer/check documented for each subsystem.
+
+## Current local access and verification limits
+
+On28November the Unity API reported ready, not compiling, Play stopped, project
+HearthClone, Unity6000.6.9f1. No runtime tests were repeated for this documentation
+handover. Last final scene/Console checks from the game checkpoint are below.
+All named source folders and required continuity documents were checked present.
+The full first-chat prompt is supplied to Craig in the closing chat message; the
+incoming agent should trust repository evidence over any presumed chat memory.
 
 ## Completed changes
 
@@ -39,8 +79,10 @@ VerifyCoreRules(11groups), VerifyGameManagerLifecycle, VerifyCardDragInput,
 VerifyTurnTimer, VerifyNativeTurnTimer, VerifyNativeCombatSnapshots. Actual results
 and final scene/Console state are recorded in Docs/Recovery/Code-audit.md.
 Earlier in this session, native spells/cards/starting decks/match controls passed.
-Frontend verifier now waits for original menu intro instead of clicking disabled
-buttons; recheck results in audit document. No full manual match or standalone build.
+VerifyFrontEnd also passed after waiting for the original menu intro. Final saved
+HearthstoneTable was clean Edit, auto-tick off, Console0errors/0warnings. The inspected
+mid-burn Game-view is Docs/Previews/Native-turn-rope.png. No full manual match,
+standalone build or user visual approval of this checkpoint is claimed.
 
 Source evidence: Docs/Recovery/Turn-timer-source-audit.md. Assets under
 Assets/_Project/Art/NativeTurnTimer with safe source prefab/configuration/manifest.
@@ -76,15 +118,63 @@ already share approved FranklinGothic body typography; original rich-text retain
 
 ## Workspace/source access
 
-Project /home/craig-middleton/Documents/Codex/2026-11-12/if-x20/outputs/HearthClone
-GitHub https://github.com/craig-middleton/hearthClone.git main with Git LFS.
-Unity6000.6.9f1. Open through Hub; never launch from a restricted tool shell.
-Never AnimationClip.SampleAnimation exported mixed bindings (known native crash).
-Original assets external: if-x20/recovery/{Box-complete-source,Interface-native-source,
-ORG-native-source}, Desktop/{Hearthstone Export,Hearthstone Extraction,Hearthstone
-Card Database}; installed client in Steam compatdata2505554610. Fresh Git clone
-alone doesn't include exports/Editor access. Managed client inspected as metadata
-only, never executed. Network permission session may need renewal for localhost.
+Project root:
+/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/outputs/HearthClone
+Workspace root:
+/home/craig-middleton/Documents/Codex/2026-11-12/if-x20
+GitHub: https://github.com/craig-middleton/hearthClone.git — main, Git LFS.
+Scene: Assets/Scenes/HearthstoneTable.unity. Unity6000.6.9f1.
+Editor binary: /home/craig-middleton/Unity/Hub/Editor/6000.6.9f1/Editor/Unity
+Open through Unity Hub; never launch from a restricted tool shell (past preferences/
+GI-cache failures). Never AnimationClip.SampleAnimation exported mixed bindings
+(known native crash). Safely bake/evaluate specific original data channels.
 
-Unrelated pre-existing files preserved/excluded: RecoveredDecks/Deck_75_mesh.mat,
-Assets/_Recovery.meta, Docs/Previews/Native-hero-powers-first.png.
+Original source roots (external to Git):
+/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Box-complete-source/ExportedProject/Assets
+/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/Interface-native-source/ExportedProject/Assets
+/home/craig-middleton/Documents/Codex/2026-11-12/if-x20/recovery/ORG-native-source
+/home/craig-middleton/Desktop/Hearthstone Export
+/home/craig-middleton/Desktop/Hearthstone Extraction
+/home/craig-middleton/Desktop/Hearthstone Card Database
+Installed original client:
+/home/craig-middleton/.local/share/Steam/steamapps/compatdata/2505554610/pfx/drive_c/Program Files (x86)/Hearthstone
+
+Selected playable assets/source manifests are tracked. A GitHub clone alone does
+not supply external exports, this Editor or laptop access. Temporary /tmp audit
+scripts/IL are not required handoff artifacts and may disappear; durable findings
+are in Docs/Recovery. Original managed client is inspected as metadata only, never
+executed/imported as gameplay logic. No alternate-model setup is needed.
+
+## Editor commands / credentials
+
+Run from the project root. Tools/editor_api.py validates the project and privately
+reads the ignored Library/Pipeline descriptor/token. Never print, copy into a prompt
+or commit credentials. A new environment may need network permission for localhost
+and GitHub. Do not treat missing permissions as a Unity/code defect.
+
+python3 Tools/editor_api.py get /api/editor_status
+python3 Tools/editor_api.py 'script recompile'
+python3 Tools/editor_api.py 'script recompile_status'
+# Wait until status COMPLETED and compilationFailed=false before further commands.
+python3 Tools/editor_api.py 'editor.playmode start'
+python3 Tools/editor_api.py 'editor set_auto_tick' '{"enabled":true,"interval-ms":0,"persist":false}'
+python3 Tools/editor_api.py 'script run' '{"file":"Tools/VerifyTurnTimer.cs"}'
+python3 Tools/editor_api.py 'capture game_view' '{"output-path":"Docs/Previews/review.png","source":"screen"}'
+python3 Tools/editor_api.py 'editor.playmode stop'
+python3 Tools/editor_api.py 'editor set_auto_tick' '{"enabled":false,"persist":false}'
+
+Run each lifecycle verifier in its documented state; fixtures can leave a match/menu
+changed. VerifyFrontEnd starts at the menu; its original intro initially disables
+buttons. Preview fixtures are disposable: stop Play before normal tests/play and
+never save them. Always inspect actual source=screen captures for visual claims.
+No new tests are required merely for this documentation handover.
+
+## Unrelated local files — preserve/exclude
+
+Assets/_Project/RecoveredDecks/Deck_75_mesh.mat (tracked edit)
+Assets/_Recovery.meta (untracked)
+Docs/Previews/Native-hero-powers-first.png (untracked rejected early proof)
+
+These are the only pre-existing local changes. All requested game/audit work is in
+7b6abfb; this handover adds documentation only. Incoming agents must not discard or
+accidentally commit these files, or claim the whole working tree is clean.
